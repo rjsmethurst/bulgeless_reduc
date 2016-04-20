@@ -340,28 +340,43 @@ results = Table.read('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits
 
 mtot = N.linspace(10**8, 10**13, 20)
 mbh = 8.2 + 1.12 * N.log10(mtot/1E11)
+mbhplus = 8.3 + 1.18 * N.log10(mtot/1E11)
+mbhminus = 8.1 + 1.06 * N.log10(mtot/1E11)
+
+# yhr = Column(data=N.log10([3E9, 1.4E7, 1E8, 4.3E8, 5.2E8, 5.3E8, 3.3E8, 1.4E7, 3.7E7, 2.5E9, 4.5E7, 2.5E6, 4.4E7, 1.4E7, 1.0E9, 2.1E8, 1.0E8, 1.6E7, 1.9E8, 3.1E8, 3.0E8, 1.1E8, 5.6E7, 1.0E9, 2.0E9, 1.7E8, 2.4E8, 1.3E7, 3.5E6, 3.7E6]), name='Haring and Rix MBH', unit=un.MsolMass)
+# yhrerr = Column(data=([1E9, 1E7, 0.55E8, 2.45E8, 1.05E8, 3E8, 2.8E8, 0.45E7, 1.6E7, 0.45E9, 3.25E7, 0.5E6, 0.5E7, 1.2E7, 0.8E9, 0.8E8, 0.5E8, 0.11E7, 0.8E8, 1.2E8, 1.35E8, 0.6E8, 0.5E7, 0.85E9, 0.75E9, 0.11E8, 0.9E8, 0.55E7, 1.25E6, 1.5E6]/(10**yhr.data * N.log(10))), name='Haring and Rix Err MBH', unit =un.MsolMass)
+# yhrerrs = yhr - N.log10(10**yhr - yhrerr)
+# xhr = Column(data=N.log10([6E11, 2.3E10, 6.8E10, 3.6E11, 3.6E11, 5.6E11, 2.9E11, 6.2E9, 1.3E11, 2.9E11, 3.7E10, 8E8, 6.9E10, 7.6E10, 1.2E11, 6.8E10, 1.6E10, 2E10, 9.7E10, 1.3E11, 1.2E10, 9.2E10, 4.4E10, 2.7E11, 4.9E11, 1.1E11, 3.7E10, 1.5E10, 7E9, 1.1E10]), name='Haring and Rix bulge mass', unit=un.MsolMass)
+# xhrerr = Column(data=0.18*N.log10(xhr.data), name='Haring and Rix Err bulge mass', unit =un.MsolMass)
 
 brooke_mtot = N.array([10.05, 10.03])
 brooke_mbh = N.array([7.1, 6.6])
 brooke_lbol = N.array([44.1, 43.4])
 
-mbhs = results['MBH']
-Err_mbhs = results['Err MBH']
-mtots = results['stellar mass']
-Err_mtots = results['Err stellar mass']
+y = results['MBH']
+yerr = results['Err MBH']
+x = results['stellar mass']
+xerr = results['Err stellar mass']
+
+def lnlike3(theta, x, y, xerr, yerr):
+    m, b = theta 
+    model = m*x + b
+    return -0.5*N.sum( ((y-model)**2) / (yerr**2 + ((b**2) * xerr**2 )) ) 
 
 def lnlike2(theta, x, y, xerr, yerr):
     m, b = theta
-    likelihood=1
+    likelihood=0
     for i in range(len(x)):
-        phi = N.arctan2(x[i], m*x[i] + b)
-        v = N.matrix([[-N.sin(phi)],[N.cos(phi)]])
+        #phi = N.arctan2(x[i], m*x[i] + b)
+        #v = N.matrix([[-N.sin(phi)],[N.cos(phi)]])
+        v = (1/N.sqrt(1+m**2))*N.matrix([[-1*m],[1]])
         Zi = N.matrix([[x[i]],[y[i]]])
         Si = N.matrix([[xerr[i]**2, 0],[0, yerr[i]**2]])
-        Deli = v.T*Zi - b*N.cos(phi)
+        Deli = v.T*Zi - b*(1/N.sqrt(1+m**2))
         Sigi2 = v.T * Si * v
-        likelihood *= (N.log(Deli**2) - N.log(2*Sigi2))
-        return likelihood
+        #likelihood *= (N.log(Deli**2) - N.log(2*Sigi2))
+        likelihood -= Deli**2 / (2*Sigi2)
+    return likelihood
 
 def lnlike(theta, x, y, yerr):
     m, b, lnf = theta
@@ -370,8 +385,8 @@ def lnlike(theta, x, y, yerr):
     return -0.5*(N.sum((y-model)**2*inv_sigma2 - N.log(inv_sigma2)))
 
 def lnprior(theta):
-    m, b = theta
-    if -20 < m < 20 and -100 < b < 100.0:
+    m, b, lnf = theta
+    if -5 < m < 5 and -10 < b < 10.0 and -10 < lnf < 10:
         return 0.0
     return -N.inf
 
@@ -379,40 +394,51 @@ def lnprob(theta, x, y, xerr, yerr):
     lp = lnprior(theta)
     if not N.isfinite(lp):
         return -N.inf
-    return lp + lnlike2(theta, x, y, xerr, yerr)
+    return lp + lnlike(theta, x, y, yerr)
 
-print 'emceeing...'
-start = [1.12, 1.5]
-ndim, nwalkers, burnin, nsteps = 2, 50, 10000, 1000
-p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
-import emcee
-sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(results['stellar mass'], results['MBH'], results['Err stellar mass'], results['Err MBH']))
-pos, prob, state = sampler.run_mcmc(p0, burnin)
-samples = sampler.chain[:,:,:].reshape((-1,ndim))
-N.save('mtot_mbh_fit_line_samples_burn_in.npy', samples)
-#walker_plot(samples, nwalkers, burnin)
-sampler.reset()
-print 'RESET', pos
-# main sampler run 
-sampler.run_mcmc(pos, nsteps)
-samples = sampler.chain[:,:,:].reshape((-1,ndim))
-N.save('mtot_mbh_fit_line_samples.npy', samples)
-#walker_plot(samples, nwalkers, nsteps)
-import triangle
-#fig = triangle.corner(samples, labels=[r'$m$', r'$b$'])
-#fig.savefig('mbh_mtot_fit_line_triangle.pdf')
-bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [34,50,66],axis=0)))
-N.save('mtot_mbh_best_fit.npy', bf)
-bestres = bf[0][0] * N.log10(mtot) + bf[1][0]
-plusres = (bf[0][0]+bf[0][1]) * N.log10(mtot) + (bf[1][0]+bf[1][1])
-minusres = (bf[0][0]-bf[0][2]) * N.log10(mtot) + (bf[1][0]-bf[1][2])
+# print 'emceeing...'
+# start = [1.12, -3, 0.7]
+# ndim, nwalkers, burnin, nsteps = 3, 50, 1000, 100
+# p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
+# import emcee
+# sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(results['stellar mass'], results['MBH'], results['Err stellar mass'], results['Err MBH']))
+# pos, prob, state = sampler.run_mcmc(p0, burnin)
+# samples = sampler.chain[:,:,:].reshape((-1,ndim))
+# N.save('mtot_mbh_fit_yerr_line_samples_burn_in.npy', samples)
+# #walker_plot(samples, nwalkers, burnin)
+# sampler.reset()
+# print 'RESET', pos
+# # main sampler run 
+# sampler.run_mcmc(pos, nsteps)
+# samples = sampler.chain[:,:,:].reshape((-1,ndim))
+# N.save('mtot_mbh_fit_yerr_line_samples.npy', samples)
+# #walker_plot(samples, nwalkers, nsteps)
+# import triangle
+# #fig = triangle.corner(samples, labels=[r'$m$', r'$b$'])
+# #fig.savefig('mbh_mtot_fit_line_triangle.pdf')
+# bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [34,50,66],axis=0)))
+# N.save('mtot_mbh_best_fit_yerr_line.npy', bf)
 
-#samples = N.load('mtot_mbh_fit_line_samples.npy')
-#bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [1,50,99],axis=0)))
+
+samples = N.load('mtot_mbh_fit_line_samples.npy')
+bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [1,50,99],axis=0)))
 s = N.sort(samples, axis=0)
+# bestres = s[0.5*len(s), 0] * N.log10(mtot) + s[0.5*len(s), 1]/N.cos(N.arctan(s[0.5*len(s), 0])/2)
+# plusres = s[0.84*len(s), 0] * N.log10(mtot) + s[0.16 *len(s), 1]/N.cos(N.arctan(s[0.84*len(s), 0])/2)
+# minusres = s[0.16*len(s), 0] * N.log10(mtot) + s[0.84*len(s), 1]/N.cos(N.arctan(s[0.16*len(s), 0])/2)
 bestres = s[0.5*len(s), 0] * N.log10(mtot) + s[0.5*len(s), 1]
-plusres = s[0.99*len(s), 0] * N.log10(mtot) + s[0.01*len(s), 1]
+plusres = s[0.99*len(s), 0] * N.log10(mtot) + s[0.01 *len(s), 1]
 minusres = s[0.01*len(s), 0] * N.log10(mtot) + s[0.99*len(s), 1]
+
+
+sampleshr = N.load('mtot_mbh_fit_haring_rix_samples.npy')
+bfhr = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(sampleshr, [1,50,99],axis=0)))
+shr = N.sort(sampleshr, axis=0)
+bestreshr = shr[0.5*len(shr), 0] * N.log10(mtot) + shr[0.5*len(shr), 1]/N.cos(N.arctan(shr[0.5*len(shr), 0]))
+plusreshr = shr[0.84*len(shr), 0] * N.log10(mtot) + shr[0.16*len(shr), 1]/N.cos(N.arctan(shr[0.84*len(shr), 0]))
+minusreshr = shr[0.16*len(shr), 0] * N.log10(mtot) + shr[0.84*len(shr), 1]/N.cos(N.arctan(shr[0.16*len(shr), 0]))
+
+
 
 fig = P.figure(figsize=(5,5))
 ax = fig.add_subplot(1,1,1)
@@ -430,6 +456,11 @@ ax.scatter(sdss_mtot, sdss_mbh, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\r
 ax.errorbar(qso_mtot, qso_mbh, xerr=Err_qso_mtot, yerr=Err_qso_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
 ax.scatter(qso_mtot, qso_mbh, marker='x', c='k', s=30)
 ax.plot(N.log10(mtot), mbh, linestyle='dashed', c='k', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{2004}$')
+ax.plot(N.log10(mtot), mbhplus, linestyle='-.', c='k')
+ax.plot(N.log10(mtot), mbhminus, linestyle='-.', c='k')
+# ax.plot(N.log10(mtot), bestreshr, linestyle='dashed', c='k', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{2004}$')
+# ax.plot(N.log10(mtot), plusreshr, linestyle='-.', c='k')
+# ax.plot(N.log10(mtot), minusreshr, linestyle='-.', c='k')
 ax.set_xlabel(r'$log_{10}(M_{*}/M_{\odot})$')
 ax.set_ylabel(r'$log_{10}(M_{BH}/M_{\odot})$')
 ax.minorticks_on()
@@ -437,7 +468,7 @@ ax.set_xlim(9.5, 11.5)
 ax.set_ylim(5.5, 10.5)
 ax.legend(frameon=False, loc=2, fontsize=12)
 #P.tight_layout()
-P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_total_mass_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_total_mass_only_yerr_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 
@@ -453,9 +484,9 @@ ax.scatter(brooke_mbh, brooke_lbol, marker='o', c='None', edgecolor='k', s=30, l
 line1 = ax.plot(mbh, N.log10(0.01*1.26E38*(10**mbh)), linestyle=':', c='0.6')
 line2 = ax.plot(mbh, N.log10(0.1*1.26E38*(10**mbh)), linestyle='-.', c='0.6')
 line3 = ax.plot(mbh, N.log10(1.26E38*(10**mbh)), linestyle='dashed', c='0.6')
-ax.text(8.75, 45.45, r'$\lambda_{Edd}=0.01$', rotation=N.arctan2(mbh[-1],N.log10(0.01*1.26E38*(10**mbh))[-1]), color='0.6')
-ax.text(8.25, 45.9, r'$\lambda_{Edd}=0.1$', rotation=N.arctan2(mbh[-1],N.log10(0.1*1.26E38*(10**mbh))[-1]), color='0.6')
-ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=N.arctan2(mbh[-1],N.log10(1.26E38*(10**mbh))[-1]), color='0.6')
+ax.text(8.75, 45.45, r'$\lambda_{Edd}=0.01$', rotation=50.5, color='0.6')
+ax.text(8.25, 45.9, r'$\lambda_{Edd}=0.1$', rotation=50.5, color='0.6')
+ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=50.5, color='0.6')
 ax.set_xlabel(r'$log_{10}(M_{BH}/M_{\odot})$')
 ax.set_ylabel(r'$log_{10}(L_{bol}$ $[\rm{erg}$ $\rm{s}^{-1}])$')
 ax.minorticks_on()
