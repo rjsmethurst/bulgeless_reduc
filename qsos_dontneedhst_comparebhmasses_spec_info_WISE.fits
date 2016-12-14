@@ -1,0 +1,1278 @@
+SIMPLE  =                    T / Standard FITS format                           BITPIX  =                    8 / Character data                                 NAXIS   =                    1 / Text string                                    NAXIS1  =                28877 / Number of characters                           VOTMETA =                    T / Table metadata in VOTable format               EXTEND  =                    T / There are standard extensions                  COMMENT                                                                         COMMENT The data in this primary HDU consists of bytes which                    COMMENT comprise a VOTABLE document.                                            COMMENT The VOTable describes the metadata of the table contained               COMMENT in the following BINTABLE extension.                                    COMMENT Such a BINTABLE extension can be used on its own as a perfectly         COMMENT good table, but the information from this HDU may provide some          COMMENT useful additional metadata.                                             COMMENT There is one following BINTABLE.                                        NTABLE  =                    1 / Number of following BINTABLE HDUs              END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <?xml version='1.0' encoding='UTF-8'?>
+<VOTABLE version='1.1'>
+<!--
+ !  VOTable written by uk.ac.starlink.votable.FitsPlusTableWriter
+ !  Describes BINTABLE extensions in following HDUs
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="46">
+<PARAM arraysize="19" datatype="char" name="DATE-HDU" value="2016-01-27T16:42:39">
+<DESCRIPTION>Date of HDU creation (UTC)</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="6" datatype="char" name="STILVERS" value="3.0-11">
+<DESCRIPTION>Version of STIL software</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="42" datatype="char" name="STILCLAS" value="uk.ac.starlink.votable.FitsPlusTableWriter">
+<DESCRIPTION>Author class in STIL so</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="51" datatype="char" name="First input table" value="67: qsos_dontneedhst_comparebhmasses_spec_info.fits"/>
+<PARAM arraysize="55" datatype="char" name="Second input table" value="68: qsos_dontneedhst_comparebhmasses_spec_info_wise_..."/>
+<FIELD datatype="short" name="Row">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="2MASS ID">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD arraysize="11" datatype="char" name="RA_1" unit="hms"/>
+<FIELD arraysize="11" datatype="char" name="Dec_1" unit="dms"/>
+<FIELD datatype="double" name="RA_deg">
+<DESCRIPTION>(radiansToDegrees(hmsToRadians(RA)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Dec_deg">
+<DESCRIPTION>(radiansToDegrees(dmsToRadians(Dec)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="J"/>
+<FIELD datatype="float" name="SIX"/>
+<FIELD datatype="float" name="SI"/>
+<FIELD datatype="float" name="log10(SX)"/>
+<FIELD arraysize="21" datatype="char" name="RASS Name"/>
+<FIELD arraysize="17" datatype="char" name="VCV Name"/>
+<FIELD arraysize="4" datatype="char" name="Type"/>
+<FIELD datatype="float" name="z"/>
+<FIELD arraysize="19" datatype="char" name="objID_1" ucd="ID_MAIN"/>
+<FIELD datatype="short" name="skyVersion">
+<DESCRIPTION>Layer of catalog (currently only one layer, 0; 0-15 available)</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="run">
+<DESCRIPTION>Run number</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rerun">
+<DESCRIPTION>Rerun number</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="camcol">
+<DESCRIPTION>Camera column</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="field">
+<DESCRIPTION>Field number</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="obj">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="mode">
+<DESCRIPTION>1: primary, 2: secondary, 3: other</DESCRIPTION>
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="nChild">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="psfMag_u" unit="mag">
+<DESCRIPTION>PSF magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMag_g" unit="mag">
+<DESCRIPTION>PSF magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMag_r" unit="mag">
+<DESCRIPTION>PSF magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMag_i" unit="mag">
+<DESCRIPTION>PSF magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMag_z" unit="mag">
+<DESCRIPTION>PSF magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMagErr_u" unit="mag">
+<DESCRIPTION>PSF magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMagErr_g" unit="mag">
+<DESCRIPTION>PSF magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMagErr_r" unit="mag">
+<DESCRIPTION>PSF magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMagErr_i" unit="mag">
+<DESCRIPTION>PSF magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="psfMagErr_z" unit="mag">
+<DESCRIPTION>PSF magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_u" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_g" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_r" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_i" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_z" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_u" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_g" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_r" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_i" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_z" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="htmID">
+<DESCRIPTION>20-deep hierarchical trangular mesh ID of this object</DESCRIPTION>
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="long" name="fieldID">
+<DESCRIPTION>Link to the field this object is in</DESCRIPTION>
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="long" name="parentID">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="long" name="specObjID">
+<DESCRIPTION>Pointer to the spectrum of object, if exists, else 0</DESCRIPTION>
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="float" name="u" unit="mag">
+<DESCRIPTION>Shorthand alias for modelMag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="g" unit="mag">
+<DESCRIPTION>Shorthand alias for modelMag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="r" unit="mag">
+<DESCRIPTION>Shorthand alias for modelMag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="i" unit="mag">
+<DESCRIPTION>Shorthand alias for modelMag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="z_cone" unit="mag">
+<DESCRIPTION>Shorthand alias for modelMag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_u" unit="mag">
+<DESCRIPTION>Error in modelMag alias</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_g" unit="mag">
+<DESCRIPTION>Error in modelMag alias</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_r" unit="mag">
+<DESCRIPTION>Error in modelMag alias</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_i" unit="mag">
+<DESCRIPTION>Error in modelMag alias</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_z" unit="mag">
+<DESCRIPTION>Error in modelMag alias</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="dered_u" unit="mag">
+<DESCRIPTION>Simplified mag, corrected for extinction: modelMag-extinction</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="dered_g" unit="mag">
+<DESCRIPTION>Simplified mag, corrected for extinction: modelMag-extinction</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="dered_r" unit="mag">
+<DESCRIPTION>Simplified mag, corrected for extinction: modelMag-extinction</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="dered_i" unit="mag">
+<DESCRIPTION>Simplified mag, corrected for extinction: modelMag-extinction</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="dered_z" unit="mag">
+<DESCRIPTION>Simplified mag, corrected for extinction: modelMag-extinction</DESCRIPTION>
+</FIELD>
+<FIELD datatype="int" name="cloudCam_u">
+<DESCRIPTION>Cloud camera status for observation in u-band</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="cloudCam_g">
+<DESCRIPTION>Cloud camera status for observation in g-band</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="cloudCam_r">
+<DESCRIPTION>Cloud camera status for observation in r-band</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="cloudCam_i">
+<DESCRIPTION>Cloud camera status for observation in i-band</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="cloudCam_z">
+<DESCRIPTION>Cloud camera status for observation in z-band</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="resolveStatus">
+<DESCRIPTION>Resolve status of object</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="thingId">
+<DESCRIPTION>Unique identifier from global resolve</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="balkanId">
+<DESCRIPTION>What balkan object is in from window</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="nObserve">
+<DESCRIPTION>Number of observations of this object</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="nDetect">
+<DESCRIPTION>Number of detections of this object</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="int" name="nEdge">
+<DESCRIPTION>Number of observations of this object near an edge</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="score">
+<DESCRIPTION>Quality of field (0-1)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="nMgyPerCount_u" unit="nmgy/count">
+<DESCRIPTION>nanomaggies per count in u-band</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="nMgyPerCount_g" unit="nmgy/count">
+<DESCRIPTION>nanomaggies per count in g-band</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="nMgyPerCount_r" unit="nmgy/count">
+<DESCRIPTION>nanomaggies per count in r-band</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="nMgyPerCount_i" unit="nmgy/count">
+<DESCRIPTION>nanomaggies per count in i-band</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="nMgyPerCount_z" unit="nmgy/count">
+<DESCRIPTION>nanomaggies per count in z-band</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="16" datatype="char" name="flag"/>
+<FIELD datatype="long" name="sdss_dr8_id">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD arraysize="149" datatype="char" name="image"/>
+<FIELD arraysize="19" datatype="char" name="SDSS9" ucd="meta.id"/>
+<FIELD datatype="double" name="RAdeg" ucd="pos.eq.ra;meta.main" unit="deg"/>
+<FIELD datatype="double" name="DEdeg" ucd="pos.eq.dec;meta.main" unit="deg"/>
+<FIELD datatype="float" name="errHalfMaj" ucd="phys.angSize.smajAxis;pos.errorEllipse;meta.main" unit="arcsec">
+<DESCRIPTION>Half Major axis of the positional error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="errHalfMin" ucd="phys.angSize.sminAxis;pos.errorEllipse;meta.main" unit="arcsec">
+<DESCRIPTION>Half Minor axis of the positional error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="errPosAng" ucd="pos.posAng;pos.errorEllipse;meta.main" unit="deg">
+<DESCRIPTION>Position angle of the positional error</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="umag" ucd="phot.mag;em.opt.U" unit="mag">
+<DESCRIPTION>Magnitude umag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="gmag" ucd="phot.mag;em.opt.B" unit="mag">
+<DESCRIPTION>Magnitude gmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="rmag" ucd="phot.mag;em.opt.R" unit="mag">
+<DESCRIPTION>Magnitude rmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="imag" ucd="phot.mag;em.opt.I" unit="mag">
+<DESCRIPTION>Magnitude imag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="zmag" ucd="phot.mag;em.opt.I" unit="mag">
+<DESCRIPTION>Magnitude zmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_umag" ucd="stat.error;phot.mag;em.opt.U" unit="mag">
+<DESCRIPTION>Magnitude error e_umag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_gmag" ucd="stat.error;phot.mag;em.opt.B" unit="mag">
+<DESCRIPTION>Magnitude error e_gmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_rmag" ucd="stat.error;phot.mag;em.opt.R" unit="mag">
+<DESCRIPTION>Magnitude error e_rmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_imag" ucd="stat.error;phot.mag;em.opt.I" unit="mag">
+<DESCRIPTION>Magnitude error e_imag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_zmag" ucd="stat.error;phot.mag;em.opt.I" unit="mag">
+<DESCRIPTION>Magnitude error e_zmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="objID_2" ucd="meta.id;meta.main"/>
+<FIELD datatype="unsignedByte" name="cl" ucd="src.class"/>
+<FIELD datatype="boolean" name="q_mode" ucd="meta.code"/>
+<FIELD arraysize="16" datatype="char" name="flags_2" ucd="meta.code"/>
+<FIELD datatype="unsignedByte" name="Q" ucd="meta.code"/>
+<FIELD datatype="double" name="ObsDate" ucd="time.epoch;obs;stat.mean"/>
+<FIELD datatype="int" name="pmRA" ucd="pos.pm;pos.eq.ra" unit="mas/yr">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="short" name="e_pmRA" ucd="stat.error;pos.pm;pos.eq.ra" unit="mas/yr">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="pmDE" ucd="pos.pm;pos.eq.dec" unit="mas/yr">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="short" name="e_pmDE" ucd="stat.error;pos.pm;pos.eq.dec" unit="mas/yr">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="long" name="SpObjID" ucd="meta.id"/>
+<FIELD datatype="float" name="zsp" ucd="src.redshift"/>
+<FIELD datatype="float" name="e_zsp" ucd="stat.error;src.redshift"/>
+<FIELD datatype="short" name="f_zsp" ucd="meta.code;src.redshift">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="21" datatype="char" name="spType" ucd="src.class"/>
+<FIELD arraysize="6" datatype="char" name="spCl" ucd="meta.code.class"/>
+<FIELD arraysize="22" datatype="char" name="subClass" ucd="meta.note"/>
+<FIELD datatype="float" name="ra1"/>
+<FIELD datatype="float" name="dec1"/>
+<FIELD datatype="long" name="objid_2a">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="double" name="distance"/>
+<FIELD datatype="double" name="ra2"/>
+<FIELD datatype="double" name="dec2"/>
+<FIELD datatype="short" name="plate">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="mjd">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="short" name="fiberID">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="Separation_1" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<FIELD datatype="short" name="cntr_01">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="dist_x"/>
+<FIELD datatype="double" name="pang_x"/>
+<FIELD datatype="double" name="ra_01"/>
+<FIELD datatype="double" name="dec_01"/>
+<FIELD arraysize="19" datatype="char" name="designation"/>
+<FIELD datatype="double" name="ra_2"/>
+<FIELD datatype="double" name="dec_2"/>
+<FIELD datatype="float" name="sigra"/>
+<FIELD datatype="float" name="sigdec"/>
+<FIELD datatype="float" name="sigradec"/>
+<FIELD datatype="double" name="glon"/>
+<FIELD datatype="double" name="glat"/>
+<FIELD datatype="double" name="elon"/>
+<FIELD datatype="double" name="elat"/>
+<FIELD datatype="double" name="wx"/>
+<FIELD datatype="double" name="wy"/>
+<FIELD datatype="long" name="cntr">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD arraysize="20" datatype="char" name="source_id"/>
+<FIELD arraysize="13" datatype="char" name="coadd_id"/>
+<FIELD datatype="int" name="src">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="w1mpro"/>
+<FIELD datatype="float" name="w1sigmpro"/>
+<FIELD datatype="float" name="w1snr"/>
+<FIELD datatype="double" name="w1rchi2"/>
+<FIELD datatype="float" name="w2mpro"/>
+<FIELD datatype="float" name="w2sigmpro"/>
+<FIELD datatype="float" name="w2snr"/>
+<FIELD datatype="double" name="w2rchi2"/>
+<FIELD datatype="float" name="w3mpro"/>
+<FIELD datatype="float" name="w3sigmpro"/>
+<FIELD datatype="float" name="w3snr"/>
+<FIELD datatype="double" name="w3rchi2"/>
+<FIELD datatype="float" name="w4mpro"/>
+<FIELD datatype="float" name="w4sigmpro"/>
+<FIELD datatype="float" name="w4snr"/>
+<FIELD datatype="double" name="w4rchi2"/>
+<FIELD datatype="double" name="rchi2"/>
+<FIELD datatype="short" name="nb">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="na">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1sat"/>
+<FIELD datatype="float" name="w2sat"/>
+<FIELD datatype="float" name="w3sat"/>
+<FIELD datatype="float" name="w4sat"/>
+<FIELD datatype="short" name="satnum">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="cc_flags"/>
+<FIELD datatype="short" name="ext_flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="var_flg"/>
+<FIELD arraysize="4" datatype="char" name="ph_qual"/>
+<FIELD datatype="short" name="det_bit">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="moon_lev">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1cov"/>
+<FIELD datatype="float" name="w2cov"/>
+<FIELD datatype="float" name="w3cov"/>
+<FIELD datatype="float" name="w4cov"/>
+<FIELD datatype="float" name="w1frtr"/>
+<FIELD datatype="float" name="w2frtr"/>
+<FIELD datatype="float" name="w3frtr"/>
+<FIELD datatype="float" name="w4frtr"/>
+<FIELD datatype="short" name="w1cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="2" datatype="char" name="w1cc_map_str"/>
+<FIELD datatype="short" name="w2cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="w2cc_map_str"/>
+<FIELD datatype="short" name="w3cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="w3cc_map_str"/>
+<FIELD datatype="short" name="w4cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w4cc_map_str"/>
+<FIELD datatype="double" name="w1flux"/>
+<FIELD datatype="double" name="w1sigflux"/>
+<FIELD datatype="float" name="w1sky"/>
+<FIELD datatype="float" name="w1sigsk"/>
+<FIELD datatype="float" name="w1conf"/>
+<FIELD datatype="double" name="w2flux"/>
+<FIELD datatype="double" name="w2sigflux"/>
+<FIELD datatype="float" name="w2sky"/>
+<FIELD datatype="float" name="w2sigsk"/>
+<FIELD datatype="float" name="w2conf"/>
+<FIELD datatype="double" name="w3flux"/>
+<FIELD datatype="double" name="w3sigflux"/>
+<FIELD datatype="double" name="w3sky"/>
+<FIELD datatype="float" name="w3sigsk"/>
+<FIELD datatype="float" name="w3conf"/>
+<FIELD datatype="double" name="w4flux"/>
+<FIELD datatype="double" name="w4sigflux"/>
+<FIELD datatype="double" name="w4sky"/>
+<FIELD datatype="float" name="w4sigsk"/>
+<FIELD datatype="float" name="w4conf"/>
+<FIELD datatype="float" name="w1mag"/>
+<FIELD datatype="float" name="w1sigm"/>
+<FIELD datatype="short" name="w1flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mcor"/>
+<FIELD datatype="float" name="w2mag"/>
+<FIELD datatype="float" name="w2sigm"/>
+<FIELD datatype="short" name="w2flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mcor"/>
+<FIELD datatype="float" name="w3mag"/>
+<FIELD datatype="float" name="w3sigm"/>
+<FIELD datatype="short" name="w3flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mcor"/>
+<FIELD datatype="float" name="w4mag"/>
+<FIELD datatype="float" name="w4sigm"/>
+<FIELD datatype="short" name="w4flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mcor"/>
+<FIELD datatype="float" name="w1mag_1"/>
+<FIELD datatype="float" name="w1sigm_1"/>
+<FIELD datatype="short" name="w1flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_1"/>
+<FIELD datatype="float" name="w2sigm_1"/>
+<FIELD datatype="short" name="w2flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_1"/>
+<FIELD datatype="float" name="w3sigm_1"/>
+<FIELD datatype="short" name="w3flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_1"/>
+<FIELD datatype="float" name="w4sigm_1"/>
+<FIELD datatype="short" name="w4flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_2"/>
+<FIELD datatype="float" name="w1sigm_2"/>
+<FIELD datatype="short" name="w1flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_2"/>
+<FIELD datatype="float" name="w2sigm_2"/>
+<FIELD datatype="short" name="w2flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_2"/>
+<FIELD datatype="float" name="w3sigm_2"/>
+<FIELD datatype="short" name="w3flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_2"/>
+<FIELD datatype="float" name="w4sigm_2"/>
+<FIELD datatype="short" name="w4flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_3"/>
+<FIELD datatype="float" name="w1sigm_3"/>
+<FIELD datatype="short" name="w1flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_3"/>
+<FIELD datatype="float" name="w2sigm_3"/>
+<FIELD datatype="short" name="w2flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_3"/>
+<FIELD datatype="float" name="w3sigm_3"/>
+<FIELD datatype="short" name="w3flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_3"/>
+<FIELD datatype="float" name="w4sigm_3"/>
+<FIELD datatype="short" name="w4flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_4"/>
+<FIELD datatype="float" name="w1sigm_4"/>
+<FIELD datatype="short" name="w1flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_4"/>
+<FIELD datatype="float" name="w2sigm_4"/>
+<FIELD datatype="short" name="w2flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_4"/>
+<FIELD datatype="float" name="w3sigm_4"/>
+<FIELD datatype="short" name="w3flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_4"/>
+<FIELD datatype="float" name="w4sigm_4"/>
+<FIELD datatype="short" name="w4flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_5"/>
+<FIELD datatype="float" name="w1sigm_5"/>
+<FIELD datatype="short" name="w1flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_5"/>
+<FIELD datatype="float" name="w2sigm_5"/>
+<FIELD datatype="short" name="w2flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_5"/>
+<FIELD datatype="float" name="w3sigm_5"/>
+<FIELD datatype="short" name="w3flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_5"/>
+<FIELD datatype="float" name="w4sigm_5"/>
+<FIELD datatype="short" name="w4flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_6"/>
+<FIELD datatype="float" name="w1sigm_6"/>
+<FIELD datatype="short" name="w1flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_6"/>
+<FIELD datatype="float" name="w2sigm_6"/>
+<FIELD datatype="short" name="w2flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_6"/>
+<FIELD datatype="float" name="w3sigm_6"/>
+<FIELD datatype="short" name="w3flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_6"/>
+<FIELD datatype="float" name="w4sigm_6"/>
+<FIELD datatype="short" name="w4flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_7"/>
+<FIELD datatype="float" name="w1sigm_7"/>
+<FIELD datatype="short" name="w1flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_7"/>
+<FIELD datatype="float" name="w2sigm_7"/>
+<FIELD datatype="short" name="w2flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_7"/>
+<FIELD datatype="float" name="w3sigm_7"/>
+<FIELD datatype="short" name="w3flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_7"/>
+<FIELD datatype="float" name="w4sigm_7"/>
+<FIELD datatype="short" name="w4flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_8"/>
+<FIELD datatype="float" name="w1sigm_8"/>
+<FIELD datatype="short" name="w1flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_8"/>
+<FIELD datatype="float" name="w2sigm_8"/>
+<FIELD datatype="short" name="w2flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_8"/>
+<FIELD datatype="float" name="w3sigm_8"/>
+<FIELD datatype="short" name="w3flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_8"/>
+<FIELD datatype="float" name="w4sigm_8"/>
+<FIELD datatype="short" name="w4flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1magp"/>
+<FIELD datatype="float" name="w1sigp1"/>
+<FIELD datatype="float" name="w1sigp2"/>
+<FIELD datatype="float" name="w1dmag"/>
+<FIELD datatype="short" name="w1ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w1mjdmin"/>
+<FIELD datatype="double" name="w1mjdmax"/>
+<FIELD datatype="double" name="w1mjdmean"/>
+<FIELD datatype="float" name="w2magp"/>
+<FIELD datatype="float" name="w2sigp1"/>
+<FIELD datatype="float" name="w2sigp2"/>
+<FIELD datatype="double" name="w2dmag"/>
+<FIELD datatype="short" name="w2ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w2mjdmin"/>
+<FIELD datatype="double" name="w2mjdmax"/>
+<FIELD datatype="double" name="w2mjdmean"/>
+<FIELD datatype="float" name="w3magp"/>
+<FIELD datatype="float" name="w3sigp1"/>
+<FIELD datatype="float" name="w3sigp2"/>
+<FIELD datatype="double" name="w3dmag"/>
+<FIELD datatype="short" name="w3ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w3mjdmin"/>
+<FIELD datatype="double" name="w3mjdmax"/>
+<FIELD datatype="double" name="w3mjdmean"/>
+<FIELD datatype="float" name="w4magp"/>
+<FIELD datatype="float" name="w4sigp1"/>
+<FIELD datatype="float" name="w4sigp2"/>
+<FIELD datatype="double" name="w4dmag"/>
+<FIELD datatype="short" name="w4ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w4mjdmin"/>
+<FIELD datatype="double" name="w4mjdmax"/>
+<FIELD datatype="double" name="w4mjdmean"/>
+<FIELD datatype="short" name="rho12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="xscprox"/>
+<FIELD datatype="float" name="w1rsemi"/>
+<FIELD datatype="float" name="w1ba"/>
+<FIELD datatype="float" name="w1pa"/>
+<FIELD datatype="float" name="w1gmag"/>
+<FIELD datatype="float" name="w1gerr"/>
+<FIELD datatype="short" name="w1gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2rsemi"/>
+<FIELD datatype="float" name="w2ba"/>
+<FIELD datatype="float" name="w2pa"/>
+<FIELD datatype="float" name="w2gmag"/>
+<FIELD datatype="float" name="w2gerr"/>
+<FIELD datatype="short" name="w2gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3rsemi"/>
+<FIELD datatype="float" name="w3ba"/>
+<FIELD datatype="float" name="w3pa"/>
+<FIELD datatype="float" name="w3gmag"/>
+<FIELD datatype="float" name="w3gerr"/>
+<FIELD datatype="short" name="w3gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4rsemi"/>
+<FIELD datatype="float" name="w4ba"/>
+<FIELD datatype="float" name="w4pa"/>
+<FIELD datatype="float" name="w4gmag"/>
+<FIELD datatype="float" name="w4gerr"/>
+<FIELD datatype="short" name="w4gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="tmass_key">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="j_m_2mass"/>
+<FIELD datatype="float" name="j_msig_2mass"/>
+<FIELD datatype="float" name="h_m_2mass"/>
+<FIELD datatype="float" name="h_msig_2mass"/>
+<FIELD datatype="float" name="k_m_2mass"/>
+<FIELD datatype="float" name="k_msig_2mass"/>
+<FIELD datatype="double" name="Separation" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<!-- Dummy VOTable - no DATA element -->
+</TABLE>
+</RESOURCE>
+</VOTABLE>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional table                            NAXIS1  =                 1998 / width of table in bytes                        NAXIS2  =                   46 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group                                 TFIELDS =                  407 / number of columns                              EXTNAME = 'Joined  '           / table name                                     TTYPE1  = 'Row     '           / label for column 1                             TFORM1  = 'I       '           / format for column 1                            TNULL1  =               -32768 / blank value for column 1                       TTYPE2  = '2MASS ID'           / label for column 2                             TFORM2  = 'J       '           / format for column 2                            TNULL2  =          -2147483648 / blank value for column 2                       TTYPE3  = 'RA_1    '           / label for column 3                             TFORM3  = '11A     '           / format for column 3                            TUNIT3  = 'hms     '           / units for column 3                             TTYPE4  = 'Dec_1   '           / label for column 4                             TFORM4  = '11A     '           / format for column 4                            TUNIT4  = 'dms     '           / units for column 4                             TTYPE5  = 'RA_deg  '           / label for column 5                             TFORM5  = 'D       '           / format for column 5                            TCOMM5  = '(radiansToDegrees(hmsToRadians(RA)))'                                TTYPE6  = 'Dec_deg '           / label for column 6                             TFORM6  = 'D       '           / format for column 6                            TCOMM6  = '(radiansToDegrees(dmsToRadians(Dec)))'                               TTYPE7  = 'J       '           / label for column 7                             TFORM7  = 'E       '           / format for column 7                            TTYPE8  = 'SIX     '           / label for column 8                             TFORM8  = 'E       '           / format for column 8                            TTYPE9  = 'SI      '           / label for column 9                             TFORM9  = 'E       '           / format for column 9                            TTYPE10 = 'log10(SX)'          / label for column 10                            TFORM10 = 'E       '           / format for column 10                           TTYPE11 = 'RASS Name'          / label for column 11                            TFORM11 = '21A     '           / format for column 11                           TTYPE12 = 'VCV Name'           / label for column 12                            TFORM12 = '17A     '           / format for column 12                           TTYPE13 = 'Type    '           / label for column 13                            TFORM13 = '4A      '           / format for column 13                           TTYPE14 = 'z       '           / label for column 14                            TFORM14 = 'E       '           / format for column 14                           TTYPE15 = 'objID_1 '           / label for column 15                            TFORM15 = '19A     '           / format for column 15                           TUCD15  = 'ID_MAIN '                                                            TTYPE16 = 'skyVersion'         / label for column 16                            TFORM16 = 'I       '           / format for column 16                           TNULL16 =               -32768 / blank value for column 16                      TCOMM16 = 'Layer of catalog (currently only one layer, 0; 0-15 available)'      TTYPE17 = 'run     '           / label for column 17                            TFORM17 = 'I       '           / format for column 17                           TNULL17 =               -32768 / blank value for column 17                      TCOMM17 = 'Run number'                                                          TTYPE18 = 'rerun   '           / label for column 18                            TFORM18 = 'I       '           / format for column 18                           TNULL18 =               -32768 / blank value for column 18                      TCOMM18 = 'Rerun number'                                                        TTYPE19 = 'camcol  '           / label for column 19                            TFORM19 = 'I       '           / format for column 19                           TNULL19 =               -32768 / blank value for column 19                      TCOMM19 = 'Camera column'                                                       TTYPE20 = 'field   '           / label for column 20                            TFORM20 = 'I       '           / format for column 20                           TNULL20 =               -32768 / blank value for column 20                      TCOMM20 = 'Field number'                                                        TTYPE21 = 'obj     '           / label for column 21                            TFORM21 = 'I       '           / format for column 21                           TNULL21 =               -32768 / blank value for column 21                      TTYPE22 = 'mode    '           / label for column 22                            TFORM22 = 'I       '           / format for column 22                           TNULL22 =               -32768 / blank value for column 22                      TCOMM22 = '1: primary, 2: secondary, 3: other'                                  TTYPE23 = 'nChild  '           / label for column 23                            TFORM23 = 'I       '           / format for column 23                           TNULL23 =               -32768 / blank value for column 23                      TTYPE24 = 'psfMag_u'           / label for column 24                            TFORM24 = 'E       '           / format for column 24                           TUNIT24 = 'mag     '           / units for column 24                            TCOMM24 = 'PSF magnitude'                                                       TTYPE25 = 'psfMag_g'           / label for column 25                            TFORM25 = 'E       '           / format for column 25                           TUNIT25 = 'mag     '           / units for column 25                            TCOMM25 = 'PSF magnitude'                                                       TTYPE26 = 'psfMag_r'           / label for column 26                            TFORM26 = 'E       '           / format for column 26                           TUNIT26 = 'mag     '           / units for column 26                            TCOMM26 = 'PSF magnitude'                                                       TTYPE27 = 'psfMag_i'           / label for column 27                            TFORM27 = 'E       '           / format for column 27                           TUNIT27 = 'mag     '           / units for column 27                            TCOMM27 = 'PSF magnitude'                                                       TTYPE28 = 'psfMag_z'           / label for column 28                            TFORM28 = 'E       '           / format for column 28                           TUNIT28 = 'mag     '           / units for column 28                            TCOMM28 = 'PSF magnitude'                                                       TTYPE29 = 'psfMagErr_u'        / label for column 29                            TFORM29 = 'E       '           / format for column 29                           TUNIT29 = 'mag     '           / units for column 29                            TCOMM29 = 'PSF magnitude error'                                                 TTYPE30 = 'psfMagErr_g'        / label for column 30                            TFORM30 = 'E       '           / format for column 30                           TUNIT30 = 'mag     '           / units for column 30                            TCOMM30 = 'PSF magnitude error'                                                 TTYPE31 = 'psfMagErr_r'        / label for column 31                            TFORM31 = 'E       '           / format for column 31                           TUNIT31 = 'mag     '           / units for column 31                            TCOMM31 = 'PSF magnitude error'                                                 TTYPE32 = 'psfMagErr_i'        / label for column 32                            TFORM32 = 'E       '           / format for column 32                           TUNIT32 = 'mag     '           / units for column 32                            TCOMM32 = 'PSF magnitude error'                                                 TTYPE33 = 'psfMagErr_z'        / label for column 33                            TFORM33 = 'E       '           / format for column 33                           TUNIT33 = 'mag     '           / units for column 33                            TCOMM33 = 'PSF magnitude error'                                                 TTYPE34 = 'petroMag_u'         / label for column 34                            TFORM34 = 'E       '           / format for column 34                           TUNIT34 = 'mag     '           / units for column 34                            TCOMM34 = 'Petrosian magnitude'                                                 TTYPE35 = 'petroMag_g'         / label for column 35                            TFORM35 = 'E       '           / format for column 35                           TUNIT35 = 'mag     '           / units for column 35                            TCOMM35 = 'Petrosian magnitude'                                                 TTYPE36 = 'petroMag_r'         / label for column 36                            TFORM36 = 'E       '           / format for column 36                           TUNIT36 = 'mag     '           / units for column 36                            TCOMM36 = 'Petrosian magnitude'                                                 TTYPE37 = 'petroMag_i'         / label for column 37                            TFORM37 = 'E       '           / format for column 37                           TUNIT37 = 'mag     '           / units for column 37                            TCOMM37 = 'Petrosian magnitude'                                                 TTYPE38 = 'petroMag_z'         / label for column 38                            TFORM38 = 'E       '           / format for column 38                           TUNIT38 = 'mag     '           / units for column 38                            TCOMM38 = 'Petrosian magnitude'                                                 TTYPE39 = 'petroMagErr_u'      / label for column 39                            TFORM39 = 'E       '           / format for column 39                           TUNIT39 = 'mag     '           / units for column 39                            TCOMM39 = 'Petrosian magnitude error'                                           TTYPE40 = 'petroMagErr_g'      / label for column 40                            TFORM40 = 'E       '           / format for column 40                           TUNIT40 = 'mag     '           / units for column 40                            TCOMM40 = 'Petrosian magnitude error'                                           TTYPE41 = 'petroMagErr_r'      / label for column 41                            TFORM41 = 'E       '           / format for column 41                           TUNIT41 = 'mag     '           / units for column 41                            TCOMM41 = 'Petrosian magnitude error'                                           TTYPE42 = 'petroMagErr_i'      / label for column 42                            TFORM42 = 'E       '           / format for column 42                           TUNIT42 = 'mag     '           / units for column 42                            TCOMM42 = 'Petrosian magnitude error'                                           TTYPE43 = 'petroMagErr_z'      / label for column 43                            TFORM43 = 'E       '           / format for column 43                           TUNIT43 = 'mag     '           / units for column 43                            TCOMM43 = 'Petrosian magnitude error'                                           TTYPE44 = 'htmID   '           / label for column 44                            TFORM44 = 'K       '           / format for column 44                           TNULL44 = -9223372036854775808 / blank value for column 44                      TCOMM44 = '20-deep hierarchical trangular mesh ID of this object'               TTYPE45 = 'fieldID '           / label for column 45                            TFORM45 = 'K       '           / format for column 45                           TNULL45 = -9223372036854775808 / blank value for column 45                      TCOMM45 = 'Link to the field this object is in'                                 TTYPE46 = 'parentID'           / label for column 46                            TFORM46 = 'K       '           / format for column 46                           TNULL46 = -9223372036854775808 / blank value for column 46                      TTYPE47 = 'specObjID'          / label for column 47                            TFORM47 = 'K       '           / format for column 47                           TNULL47 = -9223372036854775808 / blank value for column 47                      TCOMM47 = 'Pointer to the spectrum of object, if exists, else 0'                TTYPE48 = 'u       '           / label for column 48                            TFORM48 = 'E       '           / format for column 48                           TUNIT48 = 'mag     '           / units for column 48                            TCOMM48 = 'Shorthand alias for modelMag'                                        TTYPE49 = 'g       '           / label for column 49                            TFORM49 = 'E       '           / format for column 49                           TUNIT49 = 'mag     '           / units for column 49                            TCOMM49 = 'Shorthand alias for modelMag'                                        TTYPE50 = 'r       '           / label for column 50                            TFORM50 = 'E       '           / format for column 50                           TUNIT50 = 'mag     '           / units for column 50                            TCOMM50 = 'Shorthand alias for modelMag'                                        TTYPE51 = 'i       '           / label for column 51                            TFORM51 = 'E       '           / format for column 51                           TUNIT51 = 'mag     '           / units for column 51                            TCOMM51 = 'Shorthand alias for modelMag'                                        TTYPE52 = 'z_cone  '           / label for column 52                            TFORM52 = 'E       '           / format for column 52                           TUNIT52 = 'mag     '           / units for column 52                            TCOMM52 = 'Shorthand alias for modelMag'                                        TTYPE53 = 'err_u   '           / label for column 53                            TFORM53 = 'E       '           / format for column 53                           TUNIT53 = 'mag     '           / units for column 53                            TCOMM53 = 'Error in modelMag alias'                                             TTYPE54 = 'err_g   '           / label for column 54                            TFORM54 = 'E       '           / format for column 54                           TUNIT54 = 'mag     '           / units for column 54                            TCOMM54 = 'Error in modelMag alias'                                             TTYPE55 = 'err_r   '           / label for column 55                            TFORM55 = 'E       '           / format for column 55                           TUNIT55 = 'mag     '           / units for column 55                            TCOMM55 = 'Error in modelMag alias'                                             TTYPE56 = 'err_i   '           / label for column 56                            TFORM56 = 'E       '           / format for column 56                           TUNIT56 = 'mag     '           / units for column 56                            TCOMM56 = 'Error in modelMag alias'                                             TTYPE57 = 'err_z   '           / label for column 57                            TFORM57 = 'E       '           / format for column 57                           TUNIT57 = 'mag     '           / units for column 57                            TCOMM57 = 'Error in modelMag alias'                                             TTYPE58 = 'dered_u '           / label for column 58                            TFORM58 = 'E       '           / format for column 58                           TUNIT58 = 'mag     '           / units for column 58                            TCOMM58 = 'Simplified mag, corrected for extinction: modelMag-extinction'       TTYPE59 = 'dered_g '           / label for column 59                            TFORM59 = 'E       '           / format for column 59                           TUNIT59 = 'mag     '           / units for column 59                            TCOMM59 = 'Simplified mag, corrected for extinction: modelMag-extinction'       TTYPE60 = 'dered_r '           / label for column 60                            TFORM60 = 'E       '           / format for column 60                           TUNIT60 = 'mag     '           / units for column 60                            TCOMM60 = 'Simplified mag, corrected for extinction: modelMag-extinction'       TTYPE61 = 'dered_i '           / label for column 61                            TFORM61 = 'E       '           / format for column 61                           TUNIT61 = 'mag     '           / units for column 61                            TCOMM61 = 'Simplified mag, corrected for extinction: modelMag-extinction'       TTYPE62 = 'dered_z '           / label for column 62                            TFORM62 = 'E       '           / format for column 62                           TUNIT62 = 'mag     '           / units for column 62                            TCOMM62 = 'Simplified mag, corrected for extinction: modelMag-extinction'       TTYPE63 = 'cloudCam_u'         / label for column 63                            TFORM63 = 'J       '           / format for column 63                           TNULL63 =          -2147483648 / blank value for column 63                      TCOMM63 = 'Cloud camera status for observation in u-band'                       TTYPE64 = 'cloudCam_g'         / label for column 64                            TFORM64 = 'J       '           / format for column 64                           TNULL64 =          -2147483648 / blank value for column 64                      TCOMM64 = 'Cloud camera status for observation in g-band'                       TTYPE65 = 'cloudCam_r'         / label for column 65                            TFORM65 = 'J       '           / format for column 65                           TNULL65 =          -2147483648 / blank value for column 65                      TCOMM65 = 'Cloud camera status for observation in r-band'                       TTYPE66 = 'cloudCam_i'         / label for column 66                            TFORM66 = 'J       '           / format for column 66                           TNULL66 =          -2147483648 / blank value for column 66                      TCOMM66 = 'Cloud camera status for observation in i-band'                       TTYPE67 = 'cloudCam_z'         / label for column 67                            TFORM67 = 'J       '           / format for column 67                           TNULL67 =          -2147483648 / blank value for column 67                      TCOMM67 = 'Cloud camera status for observation in z-band'                       TTYPE68 = 'resolveStatus'      / label for column 68                            TFORM68 = 'J       '           / format for column 68                           TNULL68 =          -2147483648 / blank value for column 68                      TCOMM68 = 'Resolve status of object'                                            TTYPE69 = 'thingId '           / label for column 69                            TFORM69 = 'J       '           / format for column 69                           TNULL69 =          -2147483648 / blank value for column 69                      TCOMM69 = 'Unique identifier from global resolve'                               TTYPE70 = 'balkanId'           / label for column 70                            TFORM70 = 'J       '           / format for column 70                           TNULL70 =          -2147483648 / blank value for column 70                      TCOMM70 = 'What balkan object is in from window'                                TTYPE71 = 'nObserve'           / label for column 71                            TFORM71 = 'J       '           / format for column 71                           TNULL71 =          -2147483648 / blank value for column 71                      TCOMM71 = 'Number of observations of this object'                               TTYPE72 = 'nDetect '           / label for column 72                            TFORM72 = 'J       '           / format for column 72                           TNULL72 =          -2147483648 / blank value for column 72                      TCOMM72 = 'Number of detections of this object'                                 TTYPE73 = 'nEdge   '           / label for column 73                            TFORM73 = 'J       '           / format for column 73                           TNULL73 =          -2147483648 / blank value for column 73                      TCOMM73 = 'Number of observations of this object near an edge'                  TTYPE74 = 'score   '           / label for column 74                            TFORM74 = 'E       '           / format for column 74                           TCOMM74 = 'Quality of field (0-1)'                                              TTYPE75 = 'nMgyPerCount_u'     / label for column 75                            TFORM75 = 'E       '           / format for column 75                           TUNIT75 = 'nmgy/count'         / units for column 75                            TCOMM75 = 'nanomaggies per count in u-band'                                     TTYPE76 = 'nMgyPerCount_g'     / label for column 76                            TFORM76 = 'E       '           / format for column 76                           TUNIT76 = 'nmgy/count'         / units for column 76                            TCOMM76 = 'nanomaggies per count in g-band'                                     TTYPE77 = 'nMgyPerCount_r'     / label for column 77                            TFORM77 = 'E       '           / format for column 77                           TUNIT77 = 'nmgy/count'         / units for column 77                            TCOMM77 = 'nanomaggies per count in r-band'                                     TTYPE78 = 'nMgyPerCount_i'     / label for column 78                            TFORM78 = 'E       '           / format for column 78                           TUNIT78 = 'nmgy/count'         / units for column 78                            TCOMM78 = 'nanomaggies per count in i-band'                                     TTYPE79 = 'nMgyPerCount_z'     / label for column 79                            TFORM79 = 'E       '           / format for column 79                           TUNIT79 = 'nmgy/count'         / units for column 79                            TCOMM79 = 'nanomaggies per count in z-band'                                     TTYPE80 = 'flag    '           / label for column 80                            TFORM80 = '16A     '           / format for column 80                           TTYPE81 = 'sdss_dr8_id'        / label for column 81                            TFORM81 = 'K       '           / format for column 81                           TNULL81 = -9223372036854775808 / blank value for column 81                      TTYPE82 = 'image   '           / label for column 82                            TFORM82 = '149A    '           / format for column 82                           TTYPE83 = 'SDSS9   '           / label for column 83                            TFORM83 = '19A     '           / format for column 83                           TUCD83  = 'meta.id '                                                            TTYPE84 = 'RAdeg   '           / label for column 84                            TFORM84 = 'D       '           / format for column 84                           TUNIT84 = 'deg     '           / units for column 84                            TUCD84  = 'pos.eq.ra;meta.main'                                                 TTYPE85 = 'DEdeg   '           / label for column 85                            TFORM85 = 'D       '           / format for column 85                           TUNIT85 = 'deg     '           / units for column 85                            TUCD85  = 'pos.eq.dec;meta.main'                                                TTYPE86 = 'errHalfMaj'         / label for column 86                            TFORM86 = 'E       '           / format for column 86                           TUNIT86 = 'arcsec  '           / units for column 86                            TCOMM86 = 'Half Major axis of the positional error'                             TUCD86  = 'phys.angSize.smajAxis;pos.errorEllipse;meta.main'                    TTYPE87 = 'errHalfMin'         / label for column 87                            TFORM87 = 'E       '           / format for column 87                           TUNIT87 = 'arcsec  '           / units for column 87                            TCOMM87 = 'Half Minor axis of the positional error'                             TUCD87  = 'phys.angSize.sminAxis;pos.errorEllipse;meta.main'                    TTYPE88 = 'errPosAng'          / label for column 88                            TFORM88 = 'E       '           / format for column 88                           TUNIT88 = 'deg     '           / units for column 88                            TCOMM88 = 'Position angle of the positional error'                              TUCD88  = 'pos.posAng;pos.errorEllipse;meta.main'                               TTYPE89 = 'umag    '           / label for column 89                            TFORM89 = 'E       '           / format for column 89                           TUNIT89 = 'mag     '           / units for column 89                            TCOMM89 = 'Magnitude umag'                                                      TUCD89  = 'phot.mag;em.opt.U'                                                   TTYPE90 = 'gmag    '           / label for column 90                            TFORM90 = 'E       '           / format for column 90                           TUNIT90 = 'mag     '           / units for column 90                            TCOMM90 = 'Magnitude gmag'                                                      TUCD90  = 'phot.mag;em.opt.B'                                                   TTYPE91 = 'rmag    '           / label for column 91                            TFORM91 = 'E       '           / format for column 91                           TUNIT91 = 'mag     '           / units for column 91                            TCOMM91 = 'Magnitude rmag'                                                      TUCD91  = 'phot.mag;em.opt.R'                                                   TTYPE92 = 'imag    '           / label for column 92                            TFORM92 = 'E       '           / format for column 92                           TUNIT92 = 'mag     '           / units for column 92                            TCOMM92 = 'Magnitude imag'                                                      TUCD92  = 'phot.mag;em.opt.I'                                                   TTYPE93 = 'zmag    '           / label for column 93                            TFORM93 = 'E       '           / format for column 93                           TUNIT93 = 'mag     '           / units for column 93                            TCOMM93 = 'Magnitude zmag'                                                      TUCD93  = 'phot.mag;em.opt.I'                                                   TTYPE94 = 'e_umag  '           / label for column 94                            TFORM94 = 'E       '           / format for column 94                           TUNIT94 = 'mag     '           / units for column 94                            TCOMM94 = 'Magnitude error e_umag'                                              TUCD94  = 'stat.error;phot.mag;em.opt.U'                                        TTYPE95 = 'e_gmag  '           / label for column 95                            TFORM95 = 'E       '           / format for column 95                           TUNIT95 = 'mag     '           / units for column 95                            TCOMM95 = 'Magnitude error e_gmag'                                              TUCD95  = 'stat.error;phot.mag;em.opt.B'                                        TTYPE96 = 'e_rmag  '           / label for column 96                            TFORM96 = 'E       '           / format for column 96                           TUNIT96 = 'mag     '           / units for column 96                            TCOMM96 = 'Magnitude error e_rmag'                                              TUCD96  = 'stat.error;phot.mag;em.opt.R'                                        TTYPE97 = 'e_imag  '           / label for column 97                            TFORM97 = 'E       '           / format for column 97                           TUNIT97 = 'mag     '           / units for column 97                            TCOMM97 = 'Magnitude error e_imag'                                              TUCD97  = 'stat.error;phot.mag;em.opt.I'                                        TTYPE98 = 'e_zmag  '           / label for column 98                            TFORM98 = 'E       '           / format for column 98                           TUNIT98 = 'mag     '           / units for column 98                            TCOMM98 = 'Magnitude error e_zmag'                                              TUCD98  = 'stat.error;phot.mag;em.opt.I'                                        TTYPE99 = 'objID_2 '           / label for column 99                            TFORM99 = 'K       '           / format for column 99                           TUCD99  = 'meta.id;meta.main'                                                   TTYPE100= 'cl      '           / label for column 100                           TFORM100= 'B       '           / format for column 100                          TUCD100 = 'src.class'                                                           TTYPE101= 'q_mode  '           / label for column 101                           TFORM101= 'L       '           / format for column 101                          TUCD101 = 'meta.code'                                                           TTYPE102= 'flags_2 '           / label for column 102                           TFORM102= '16A     '           / format for column 102                          TUCD102 = 'meta.code'                                                           TTYPE103= 'Q       '           / label for column 103                           TFORM103= 'B       '           / format for column 103                          TUCD103 = 'meta.code'                                                           TTYPE104= 'ObsDate '           / label for column 104                           TFORM104= 'D       '           / format for column 104                          TUCD104 = 'time.epoch;obs;stat.mean'                                            TTYPE105= 'pmRA    '           / label for column 105                           TFORM105= 'J       '           / format for column 105                          TUNIT105= 'mas/yr  '           / units for column 105                           TNULL105=          -2147483648 / blank value for column 105                     TUCD105 = 'pos.pm;pos.eq.ra'                                                    TTYPE106= 'e_pmRA  '           / label for column 106                           TFORM106= 'I       '           / format for column 106                          TUNIT106= 'mas/yr  '           / units for column 106                           TNULL106=               -32768 / blank value for column 106                     TUCD106 = 'stat.error;pos.pm;pos.eq.ra'                                         TTYPE107= 'pmDE    '           / label for column 107                           TFORM107= 'J       '           / format for column 107                          TUNIT107= 'mas/yr  '           / units for column 107                           TNULL107=          -2147483648 / blank value for column 107                     TUCD107 = 'pos.pm;pos.eq.dec'                                                   TTYPE108= 'e_pmDE  '           / label for column 108                           TFORM108= 'I       '           / format for column 108                          TUNIT108= 'mas/yr  '           / units for column 108                           TNULL108=               -32768 / blank value for column 108                     TUCD108 = 'stat.error;pos.pm;pos.eq.dec'                                        TTYPE109= 'SpObjID '           / label for column 109                           TFORM109= 'K       '           / format for column 109                          TUCD109 = 'meta.id '                                                            TTYPE110= 'zsp     '           / label for column 110                           TFORM110= 'E       '           / format for column 110                          TUCD110 = 'src.redshift'                                                        TTYPE111= 'e_zsp   '           / label for column 111                           TFORM111= 'E       '           / format for column 111                          TUCD111 = 'stat.error;src.redshift'                                             TTYPE112= 'f_zsp   '           / label for column 112                           TFORM112= 'I       '           / format for column 112                          TNULL112=               -32768 / blank value for column 112                     TUCD112 = 'meta.code;src.redshift'                                              TTYPE113= 'spType  '           / label for column 113                           TFORM113= '21A     '           / format for column 113                          TUCD113 = 'src.class'                                                           TTYPE114= 'spCl    '           / label for column 114                           TFORM114= '6A      '           / format for column 114                          TUCD114 = 'meta.code.class'                                                     TTYPE115= 'subClass'           / label for column 115                           TFORM115= '22A     '           / format for column 115                          TUCD115 = 'meta.note'                                                           TTYPE116= 'ra1     '           / label for column 116                           TFORM116= 'E       '           / format for column 116                          TTYPE117= 'dec1    '           / label for column 117                           TFORM117= 'E       '           / format for column 117                          TTYPE118= 'objid_2a'           / label for column 118                           TFORM118= 'K       '           / format for column 118                          TNULL118= -9223372036854775808 / blank value for column 118                     TTYPE119= 'distance'           / label for column 119                           TFORM119= 'D       '           / format for column 119                          TTYPE120= 'ra2     '           / label for column 120                           TFORM120= 'D       '           / format for column 120                          TTYPE121= 'dec2    '           / label for column 121                           TFORM121= 'D       '           / format for column 121                          TTYPE122= 'plate   '           / label for column 122                           TFORM122= 'I       '           / format for column 122                          TNULL122=               -32768 / blank value for column 122                     TTYPE123= 'mjd     '           / label for column 123                           TFORM123= 'J       '           / format for column 123                          TNULL123=          -2147483648 / blank value for column 123                     TTYPE124= 'fiberID '           / label for column 124                           TFORM124= 'I       '           / format for column 124                          TNULL124=               -32768 / blank value for column 124                     TTYPE125= 'Separation_1'       / label for column 125                           TFORM125= 'D       '           / format for column 125                          TUNIT125= 'arcsec  '           / units for column 125                           TCOMM125= 'Distance between matched objects along a great circle'               TUCD125 = 'pos.angDistance'                                                     TTYPE126= 'cntr_01 '           / label for column 126                           TFORM126= 'I       '           / format for column 126                          TTYPE127= 'dist_x  '           / label for column 127                           TFORM127= 'D       '           / format for column 127                          TTYPE128= 'pang_x  '           / label for column 128                           TFORM128= 'D       '           / format for column 128                          TTYPE129= 'ra_01   '           / label for column 129                           TFORM129= 'D       '           / format for column 129                          TTYPE130= 'dec_01  '           / label for column 130                           TFORM130= 'D       '           / format for column 130                          TTYPE131= 'designation'        / label for column 131                           TFORM131= '19A     '           / format for column 131                          TTYPE132= 'ra_2    '           / label for column 132                           TFORM132= 'D       '           / format for column 132                          TTYPE133= 'dec_2   '           / label for column 133                           TFORM133= 'D       '           / format for column 133                          TTYPE134= 'sigra   '           / label for column 134                           TFORM134= 'E       '           / format for column 134                          TTYPE135= 'sigdec  '           / label for column 135                           TFORM135= 'E       '           / format for column 135                          TTYPE136= 'sigradec'           / label for column 136                           TFORM136= 'E       '           / format for column 136                          TTYPE137= 'glon    '           / label for column 137                           TFORM137= 'D       '           / format for column 137                          TTYPE138= 'glat    '           / label for column 138                           TFORM138= 'D       '           / format for column 138                          TTYPE139= 'elon    '           / label for column 139                           TFORM139= 'D       '           / format for column 139                          TTYPE140= 'elat    '           / label for column 140                           TFORM140= 'D       '           / format for column 140                          TTYPE141= 'wx      '           / label for column 141                           TFORM141= 'D       '           / format for column 141                          TTYPE142= 'wy      '           / label for column 142                           TFORM142= 'D       '           / format for column 142                          TTYPE143= 'cntr    '           / label for column 143                           TFORM143= 'K       '           / format for column 143                          TTYPE144= 'source_id'          / label for column 144                           TFORM144= '20A     '           / format for column 144                          TTYPE145= 'coadd_id'           / label for column 145                           TFORM145= '13A     '           / format for column 145                          TTYPE146= 'src     '           / label for column 146                           TFORM146= 'J       '           / format for column 146                          TTYPE147= 'w1mpro  '           / label for column 147                           TFORM147= 'E       '           / format for column 147                          TTYPE148= 'w1sigmpro'          / label for column 148                           TFORM148= 'E       '           / format for column 148                          TTYPE149= 'w1snr   '           / label for column 149                           TFORM149= 'E       '           / format for column 149                          TTYPE150= 'w1rchi2 '           / label for column 150                           TFORM150= 'D       '           / format for column 150                          TTYPE151= 'w2mpro  '           / label for column 151                           TFORM151= 'E       '           / format for column 151                          TTYPE152= 'w2sigmpro'          / label for column 152                           TFORM152= 'E       '           / format for column 152                          TTYPE153= 'w2snr   '           / label for column 153                           TFORM153= 'E       '           / format for column 153                          TTYPE154= 'w2rchi2 '           / label for column 154                           TFORM154= 'D       '           / format for column 154                          TTYPE155= 'w3mpro  '           / label for column 155                           TFORM155= 'E       '           / format for column 155                          TTYPE156= 'w3sigmpro'          / label for column 156                           TFORM156= 'E       '           / format for column 156                          TTYPE157= 'w3snr   '           / label for column 157                           TFORM157= 'E       '           / format for column 157                          TTYPE158= 'w3rchi2 '           / label for column 158                           TFORM158= 'D       '           / format for column 158                          TTYPE159= 'w4mpro  '           / label for column 159                           TFORM159= 'E       '           / format for column 159                          TTYPE160= 'w4sigmpro'          / label for column 160                           TFORM160= 'E       '           / format for column 160                          TTYPE161= 'w4snr   '           / label for column 161                           TFORM161= 'E       '           / format for column 161                          TTYPE162= 'w4rchi2 '           / label for column 162                           TFORM162= 'D       '           / format for column 162                          TTYPE163= 'rchi2   '           / label for column 163                           TFORM163= 'D       '           / format for column 163                          TTYPE164= 'nb      '           / label for column 164                           TFORM164= 'I       '           / format for column 164                          TTYPE165= 'na      '           / label for column 165                           TFORM165= 'I       '           / format for column 165                          TTYPE166= 'w1sat   '           / label for column 166                           TFORM166= 'E       '           / format for column 166                          TTYPE167= 'w2sat   '           / label for column 167                           TFORM167= 'E       '           / format for column 167                          TTYPE168= 'w3sat   '           / label for column 168                           TFORM168= 'E       '           / format for column 168                          TTYPE169= 'w4sat   '           / label for column 169                           TFORM169= 'E       '           / format for column 169                          TTYPE170= 'satnum  '           / label for column 170                           TFORM170= 'I       '           / format for column 170                          TTYPE171= 'cc_flags'           / label for column 171                           TFORM171= '4A      '           / format for column 171                          TTYPE172= 'ext_flg '           / label for column 172                           TFORM172= 'I       '           / format for column 172                          TTYPE173= 'var_flg '           / label for column 173                           TFORM173= '4A      '           / format for column 173                          TTYPE174= 'ph_qual '           / label for column 174                           TFORM174= '4A      '           / format for column 174                          TTYPE175= 'det_bit '           / label for column 175                           TFORM175= 'I       '           / format for column 175                          TTYPE176= 'moon_lev'           / label for column 176                           TFORM176= 'I       '           / format for column 176                          TTYPE177= 'w1nm    '           / label for column 177                           TFORM177= 'I       '           / format for column 177                          TTYPE178= 'w1m     '           / label for column 178                           TFORM178= 'I       '           / format for column 178                          TTYPE179= 'w2nm    '           / label for column 179                           TFORM179= 'I       '           / format for column 179                          TTYPE180= 'w2m     '           / label for column 180                           TFORM180= 'I       '           / format for column 180                          TTYPE181= 'w3nm    '           / label for column 181                           TFORM181= 'I       '           / format for column 181                          TTYPE182= 'w3m     '           / label for column 182                           TFORM182= 'I       '           / format for column 182                          TTYPE183= 'w4nm    '           / label for column 183                           TFORM183= 'I       '           / format for column 183                          TTYPE184= 'w4m     '           / label for column 184                           TFORM184= 'I       '           / format for column 184                          TTYPE185= 'w1cov   '           / label for column 185                           TFORM185= 'E       '           / format for column 185                          TTYPE186= 'w2cov   '           / label for column 186                           TFORM186= 'E       '           / format for column 186                          TTYPE187= 'w3cov   '           / label for column 187                           TFORM187= 'E       '           / format for column 187                          TTYPE188= 'w4cov   '           / label for column 188                           TFORM188= 'E       '           / format for column 188                          TTYPE189= 'w1frtr  '           / label for column 189                           TFORM189= 'E       '           / format for column 189                          TTYPE190= 'w2frtr  '           / label for column 190                           TFORM190= 'E       '           / format for column 190                          TTYPE191= 'w3frtr  '           / label for column 191                           TFORM191= 'E       '           / format for column 191                          TTYPE192= 'w4frtr  '           / label for column 192                           TFORM192= 'E       '           / format for column 192                          TTYPE193= 'w1cc_map'           / label for column 193                           TFORM193= 'I       '           / format for column 193                          TTYPE194= 'w1cc_map_str'       / label for column 194                           TFORM194= '2A      '           / format for column 194                          TTYPE195= 'w2cc_map'           / label for column 195                           TFORM195= 'I       '           / format for column 195                          TTYPE196= 'w2cc_map_str'       / label for column 196                           TFORM196= '1A      '           / format for column 196                          TTYPE197= 'w3cc_map'           / label for column 197                           TFORM197= 'I       '           / format for column 197                          TTYPE198= 'w3cc_map_str'       / label for column 198                           TFORM198= '1A      '           / format for column 198                          TTYPE199= 'w4cc_map'           / label for column 199                           TFORM199= 'I       '           / format for column 199                          TTYPE200= 'w4cc_map_str'       / label for column 200                           TFORM200= 'L       '           / format for column 200                          TTYPE201= 'w1flux  '           / label for column 201                           TFORM201= 'D       '           / format for column 201                          TTYPE202= 'w1sigflux'          / label for column 202                           TFORM202= 'D       '           / format for column 202                          TTYPE203= 'w1sky   '           / label for column 203                           TFORM203= 'E       '           / format for column 203                          TTYPE204= 'w1sigsk '           / label for column 204                           TFORM204= 'E       '           / format for column 204                          TTYPE205= 'w1conf  '           / label for column 205                           TFORM205= 'E       '           / format for column 205                          TTYPE206= 'w2flux  '           / label for column 206                           TFORM206= 'D       '           / format for column 206                          TTYPE207= 'w2sigflux'          / label for column 207                           TFORM207= 'D       '           / format for column 207                          TTYPE208= 'w2sky   '           / label for column 208                           TFORM208= 'E       '           / format for column 208                          TTYPE209= 'w2sigsk '           / label for column 209                           TFORM209= 'E       '           / format for column 209                          TTYPE210= 'w2conf  '           / label for column 210                           TFORM210= 'E       '           / format for column 210                          TTYPE211= 'w3flux  '           / label for column 211                           TFORM211= 'D       '           / format for column 211                          TTYPE212= 'w3sigflux'          / label for column 212                           TFORM212= 'D       '           / format for column 212                          TTYPE213= 'w3sky   '           / label for column 213                           TFORM213= 'D       '           / format for column 213                          TTYPE214= 'w3sigsk '           / label for column 214                           TFORM214= 'E       '           / format for column 214                          TTYPE215= 'w3conf  '           / label for column 215                           TFORM215= 'E       '           / format for column 215                          TTYPE216= 'w4flux  '           / label for column 216                           TFORM216= 'D       '           / format for column 216                          TTYPE217= 'w4sigflux'          / label for column 217                           TFORM217= 'D       '           / format for column 217                          TTYPE218= 'w4sky   '           / label for column 218                           TFORM218= 'D       '           / format for column 218                          TTYPE219= 'w4sigsk '           / label for column 219                           TFORM219= 'E       '           / format for column 219                          TTYPE220= 'w4conf  '           / label for column 220                           TFORM220= 'E       '           / format for column 220                          TTYPE221= 'w1mag   '           / label for column 221                           TFORM221= 'E       '           / format for column 221                          TTYPE222= 'w1sigm  '           / label for column 222                           TFORM222= 'E       '           / format for column 222                          TTYPE223= 'w1flg   '           / label for column 223                           TFORM223= 'I       '           / format for column 223                          TTYPE224= 'w1mcor  '           / label for column 224                           TFORM224= 'E       '           / format for column 224                          TTYPE225= 'w2mag   '           / label for column 225                           TFORM225= 'E       '           / format for column 225                          TTYPE226= 'w2sigm  '           / label for column 226                           TFORM226= 'E       '           / format for column 226                          TTYPE227= 'w2flg   '           / label for column 227                           TFORM227= 'I       '           / format for column 227                          TTYPE228= 'w2mcor  '           / label for column 228                           TFORM228= 'E       '           / format for column 228                          TTYPE229= 'w3mag   '           / label for column 229                           TFORM229= 'E       '           / format for column 229                          TTYPE230= 'w3sigm  '           / label for column 230                           TFORM230= 'E       '           / format for column 230                          TTYPE231= 'w3flg   '           / label for column 231                           TFORM231= 'I       '           / format for column 231                          TTYPE232= 'w3mcor  '           / label for column 232                           TFORM232= 'E       '           / format for column 232                          TTYPE233= 'w4mag   '           / label for column 233                           TFORM233= 'E       '           / format for column 233                          TTYPE234= 'w4sigm  '           / label for column 234                           TFORM234= 'E       '           / format for column 234                          TTYPE235= 'w4flg   '           / label for column 235                           TFORM235= 'I       '           / format for column 235                          TTYPE236= 'w4mcor  '           / label for column 236                           TFORM236= 'E       '           / format for column 236                          TTYPE237= 'w1mag_1 '           / label for column 237                           TFORM237= 'E       '           / format for column 237                          TTYPE238= 'w1sigm_1'           / label for column 238                           TFORM238= 'E       '           / format for column 238                          TTYPE239= 'w1flg_1 '           / label for column 239                           TFORM239= 'I       '           / format for column 239                          TTYPE240= 'w2mag_1 '           / label for column 240                           TFORM240= 'E       '           / format for column 240                          TTYPE241= 'w2sigm_1'           / label for column 241                           TFORM241= 'E       '           / format for column 241                          TTYPE242= 'w2flg_1 '           / label for column 242                           TFORM242= 'I       '           / format for column 242                          TTYPE243= 'w3mag_1 '           / label for column 243                           TFORM243= 'E       '           / format for column 243                          TTYPE244= 'w3sigm_1'           / label for column 244                           TFORM244= 'E       '           / format for column 244                          TTYPE245= 'w3flg_1 '           / label for column 245                           TFORM245= 'I       '           / format for column 245                          TTYPE246= 'w4mag_1 '           / label for column 246                           TFORM246= 'E       '           / format for column 246                          TTYPE247= 'w4sigm_1'           / label for column 247                           TFORM247= 'E       '           / format for column 247                          TTYPE248= 'w4flg_1 '           / label for column 248                           TFORM248= 'I       '           / format for column 248                          TTYPE249= 'w1mag_2 '           / label for column 249                           TFORM249= 'E       '           / format for column 249                          TTYPE250= 'w1sigm_2'           / label for column 250                           TFORM250= 'E       '           / format for column 250                          TTYPE251= 'w1flg_2 '           / label for column 251                           TFORM251= 'I       '           / format for column 251                          TTYPE252= 'w2mag_2 '           / label for column 252                           TFORM252= 'E       '           / format for column 252                          TTYPE253= 'w2sigm_2'           / label for column 253                           TFORM253= 'E       '           / format for column 253                          TTYPE254= 'w2flg_2 '           / label for column 254                           TFORM254= 'I       '           / format for column 254                          TTYPE255= 'w3mag_2 '           / label for column 255                           TFORM255= 'E       '           / format for column 255                          TTYPE256= 'w3sigm_2'           / label for column 256                           TFORM256= 'E       '           / format for column 256                          TTYPE257= 'w3flg_2 '           / label for column 257                           TFORM257= 'I       '           / format for column 257                          TTYPE258= 'w4mag_2 '           / label for column 258                           TFORM258= 'E       '           / format for column 258                          TTYPE259= 'w4sigm_2'           / label for column 259                           TFORM259= 'E       '           / format for column 259                          TTYPE260= 'w4flg_2 '           / label for column 260                           TFORM260= 'I       '           / format for column 260                          TTYPE261= 'w1mag_3 '           / label for column 261                           TFORM261= 'E       '           / format for column 261                          TTYPE262= 'w1sigm_3'           / label for column 262                           TFORM262= 'E       '           / format for column 262                          TTYPE263= 'w1flg_3 '           / label for column 263                           TFORM263= 'I       '           / format for column 263                          TTYPE264= 'w2mag_3 '           / label for column 264                           TFORM264= 'E       '           / format for column 264                          TTYPE265= 'w2sigm_3'           / label for column 265                           TFORM265= 'E       '           / format for column 265                          TTYPE266= 'w2flg_3 '           / label for column 266                           TFORM266= 'I       '           / format for column 266                          TTYPE267= 'w3mag_3 '           / label for column 267                           TFORM267= 'E       '           / format for column 267                          TTYPE268= 'w3sigm_3'           / label for column 268                           TFORM268= 'E       '           / format for column 268                          TTYPE269= 'w3flg_3 '           / label for column 269                           TFORM269= 'I       '           / format for column 269                          TTYPE270= 'w4mag_3 '           / label for column 270                           TFORM270= 'E       '           / format for column 270                          TTYPE271= 'w4sigm_3'           / label for column 271                           TFORM271= 'E       '           / format for column 271                          TTYPE272= 'w4flg_3 '           / label for column 272                           TFORM272= 'I       '           / format for column 272                          TTYPE273= 'w1mag_4 '           / label for column 273                           TFORM273= 'E       '           / format for column 273                          TTYPE274= 'w1sigm_4'           / label for column 274                           TFORM274= 'E       '           / format for column 274                          TTYPE275= 'w1flg_4 '           / label for column 275                           TFORM275= 'I       '           / format for column 275                          TTYPE276= 'w2mag_4 '           / label for column 276                           TFORM276= 'E       '           / format for column 276                          TTYPE277= 'w2sigm_4'           / label for column 277                           TFORM277= 'E       '           / format for column 277                          TTYPE278= 'w2flg_4 '           / label for column 278                           TFORM278= 'I       '           / format for column 278                          TTYPE279= 'w3mag_4 '           / label for column 279                           TFORM279= 'E       '           / format for column 279                          TTYPE280= 'w3sigm_4'           / label for column 280                           TFORM280= 'E       '           / format for column 280                          TTYPE281= 'w3flg_4 '           / label for column 281                           TFORM281= 'I       '           / format for column 281                          TTYPE282= 'w4mag_4 '           / label for column 282                           TFORM282= 'E       '           / format for column 282                          TTYPE283= 'w4sigm_4'           / label for column 283                           TFORM283= 'E       '           / format for column 283                          TTYPE284= 'w4flg_4 '           / label for column 284                           TFORM284= 'I       '           / format for column 284                          TTYPE285= 'w1mag_5 '           / label for column 285                           TFORM285= 'E       '           / format for column 285                          TTYPE286= 'w1sigm_5'           / label for column 286                           TFORM286= 'E       '           / format for column 286                          TTYPE287= 'w1flg_5 '           / label for column 287                           TFORM287= 'I       '           / format for column 287                          TTYPE288= 'w2mag_5 '           / label for column 288                           TFORM288= 'E       '           / format for column 288                          TTYPE289= 'w2sigm_5'           / label for column 289                           TFORM289= 'E       '           / format for column 289                          TTYPE290= 'w2flg_5 '           / label for column 290                           TFORM290= 'I       '           / format for column 290                          TTYPE291= 'w3mag_5 '           / label for column 291                           TFORM291= 'E       '           / format for column 291                          TTYPE292= 'w3sigm_5'           / label for column 292                           TFORM292= 'E       '           / format for column 292                          TTYPE293= 'w3flg_5 '           / label for column 293                           TFORM293= 'I       '           / format for column 293                          TTYPE294= 'w4mag_5 '           / label for column 294                           TFORM294= 'E       '           / format for column 294                          TTYPE295= 'w4sigm_5'           / label for column 295                           TFORM295= 'E       '           / format for column 295                          TTYPE296= 'w4flg_5 '           / label for column 296                           TFORM296= 'I       '           / format for column 296                          TTYPE297= 'w1mag_6 '           / label for column 297                           TFORM297= 'E       '           / format for column 297                          TTYPE298= 'w1sigm_6'           / label for column 298                           TFORM298= 'E       '           / format for column 298                          TTYPE299= 'w1flg_6 '           / label for column 299                           TFORM299= 'I       '           / format for column 299                          TTYPE300= 'w2mag_6 '           / label for column 300                           TFORM300= 'E       '           / format for column 300                          TTYPE301= 'w2sigm_6'           / label for column 301                           TFORM301= 'E       '           / format for column 301                          TTYPE302= 'w2flg_6 '           / label for column 302                           TFORM302= 'I       '           / format for column 302                          TTYPE303= 'w3mag_6 '           / label for column 303                           TFORM303= 'E       '           / format for column 303                          TTYPE304= 'w3sigm_6'           / label for column 304                           TFORM304= 'E       '           / format for column 304                          TTYPE305= 'w3flg_6 '           / label for column 305                           TFORM305= 'I       '           / format for column 305                          TTYPE306= 'w4mag_6 '           / label for column 306                           TFORM306= 'E       '           / format for column 306                          TTYPE307= 'w4sigm_6'           / label for column 307                           TFORM307= 'E       '           / format for column 307                          TTYPE308= 'w4flg_6 '           / label for column 308                           TFORM308= 'I       '           / format for column 308                          TTYPE309= 'w1mag_7 '           / label for column 309                           TFORM309= 'E       '           / format for column 309                          TTYPE310= 'w1sigm_7'           / label for column 310                           TFORM310= 'E       '           / format for column 310                          TTYPE311= 'w1flg_7 '           / label for column 311                           TFORM311= 'I       '           / format for column 311                          TTYPE312= 'w2mag_7 '           / label for column 312                           TFORM312= 'E       '           / format for column 312                          TTYPE313= 'w2sigm_7'           / label for column 313                           TFORM313= 'E       '           / format for column 313                          TTYPE314= 'w2flg_7 '           / label for column 314                           TFORM314= 'I       '           / format for column 314                          TTYPE315= 'w3mag_7 '           / label for column 315                           TFORM315= 'E       '           / format for column 315                          TTYPE316= 'w3sigm_7'           / label for column 316                           TFORM316= 'E       '           / format for column 316                          TTYPE317= 'w3flg_7 '           / label for column 317                           TFORM317= 'I       '           / format for column 317                          TTYPE318= 'w4mag_7 '           / label for column 318                           TFORM318= 'E       '           / format for column 318                          TTYPE319= 'w4sigm_7'           / label for column 319                           TFORM319= 'E       '           / format for column 319                          TTYPE320= 'w4flg_7 '           / label for column 320                           TFORM320= 'I       '           / format for column 320                          TTYPE321= 'w1mag_8 '           / label for column 321                           TFORM321= 'E       '           / format for column 321                          TTYPE322= 'w1sigm_8'           / label for column 322                           TFORM322= 'E       '           / format for column 322                          TTYPE323= 'w1flg_8 '           / label for column 323                           TFORM323= 'I       '           / format for column 323                          TTYPE324= 'w2mag_8 '           / label for column 324                           TFORM324= 'E       '           / format for column 324                          TTYPE325= 'w2sigm_8'           / label for column 325                           TFORM325= 'E       '           / format for column 325                          TTYPE326= 'w2flg_8 '           / label for column 326                           TFORM326= 'I       '           / format for column 326                          TTYPE327= 'w3mag_8 '           / label for column 327                           TFORM327= 'E       '           / format for column 327                          TTYPE328= 'w3sigm_8'           / label for column 328                           TFORM328= 'E       '           / format for column 328                          TTYPE329= 'w3flg_8 '           / label for column 329                           TFORM329= 'I       '           / format for column 329                          TTYPE330= 'w4mag_8 '           / label for column 330                           TFORM330= 'E       '           / format for column 330                          TTYPE331= 'w4sigm_8'           / label for column 331                           TFORM331= 'E       '           / format for column 331                          TTYPE332= 'w4flg_8 '           / label for column 332                           TFORM332= 'I       '           / format for column 332                          TTYPE333= 'w1magp  '           / label for column 333                           TFORM333= 'E       '           / format for column 333                          TTYPE334= 'w1sigp1 '           / label for column 334                           TFORM334= 'E       '           / format for column 334                          TTYPE335= 'w1sigp2 '           / label for column 335                           TFORM335= 'E       '           / format for column 335                          TTYPE336= 'w1dmag  '           / label for column 336                           TFORM336= 'E       '           / format for column 336                          TTYPE337= 'w1ndf   '           / label for column 337                           TFORM337= 'I       '           / format for column 337                          TTYPE338= 'w1mlq   '           / label for column 338                           TFORM338= 'I       '           / format for column 338                          TTYPE339= 'w1mjdmin'           / label for column 339                           TFORM339= 'D       '           / format for column 339                          TTYPE340= 'w1mjdmax'           / label for column 340                           TFORM340= 'D       '           / format for column 340                          TTYPE341= 'w1mjdmean'          / label for column 341                           TFORM341= 'D       '           / format for column 341                          TTYPE342= 'w2magp  '           / label for column 342                           TFORM342= 'E       '           / format for column 342                          TTYPE343= 'w2sigp1 '           / label for column 343                           TFORM343= 'E       '           / format for column 343                          TTYPE344= 'w2sigp2 '           / label for column 344                           TFORM344= 'E       '           / format for column 344                          TTYPE345= 'w2dmag  '           / label for column 345                           TFORM345= 'D       '           / format for column 345                          TTYPE346= 'w2ndf   '           / label for column 346                           TFORM346= 'I       '           / format for column 346                          TTYPE347= 'w2mlq   '           / label for column 347                           TFORM347= 'I       '           / format for column 347                          TTYPE348= 'w2mjdmin'           / label for column 348                           TFORM348= 'D       '           / format for column 348                          TTYPE349= 'w2mjdmax'           / label for column 349                           TFORM349= 'D       '           / format for column 349                          TTYPE350= 'w2mjdmean'          / label for column 350                           TFORM350= 'D       '           / format for column 350                          TTYPE351= 'w3magp  '           / label for column 351                           TFORM351= 'E       '           / format for column 351                          TTYPE352= 'w3sigp1 '           / label for column 352                           TFORM352= 'E       '           / format for column 352                          TTYPE353= 'w3sigp2 '           / label for column 353                           TFORM353= 'E       '           / format for column 353                          TTYPE354= 'w3dmag  '           / label for column 354                           TFORM354= 'D       '           / format for column 354                          TTYPE355= 'w3ndf   '           / label for column 355                           TFORM355= 'I       '           / format for column 355                          TTYPE356= 'w3mlq   '           / label for column 356                           TFORM356= 'I       '           / format for column 356                          TTYPE357= 'w3mjdmin'           / label for column 357                           TFORM357= 'D       '           / format for column 357                          TTYPE358= 'w3mjdmax'           / label for column 358                           TFORM358= 'D       '           / format for column 358                          TTYPE359= 'w3mjdmean'          / label for column 359                           TFORM359= 'D       '           / format for column 359                          TTYPE360= 'w4magp  '           / label for column 360                           TFORM360= 'E       '           / format for column 360                          TTYPE361= 'w4sigp1 '           / label for column 361                           TFORM361= 'E       '           / format for column 361                          TTYPE362= 'w4sigp2 '           / label for column 362                           TFORM362= 'E       '           / format for column 362                          TTYPE363= 'w4dmag  '           / label for column 363                           TFORM363= 'D       '           / format for column 363                          TTYPE364= 'w4ndf   '           / label for column 364                           TFORM364= 'I       '           / format for column 364                          TTYPE365= 'w4mlq   '           / label for column 365                           TFORM365= 'I       '           / format for column 365                          TTYPE366= 'w4mjdmin'           / label for column 366                           TFORM366= 'D       '           / format for column 366                          TTYPE367= 'w4mjdmax'           / label for column 367                           TFORM367= 'D       '           / format for column 367                          TTYPE368= 'w4mjdmean'          / label for column 368                           TFORM368= 'D       '           / format for column 368                          TTYPE369= 'rho12   '           / label for column 369                           TFORM369= 'I       '           / format for column 369                          TTYPE370= 'rho23   '           / label for column 370                           TFORM370= 'I       '           / format for column 370                          TTYPE371= 'rho34   '           / label for column 371                           TFORM371= 'I       '           / format for column 371                          TTYPE372= 'q12     '           / label for column 372                           TFORM372= 'I       '           / format for column 372                          TTYPE373= 'q23     '           / label for column 373                           TFORM373= 'I       '           / format for column 373                          TTYPE374= 'q34     '           / label for column 374                           TFORM374= 'I       '           / format for column 374                          TTYPE375= 'xscprox '           / label for column 375                           TFORM375= 'E       '           / format for column 375                          TTYPE376= 'w1rsemi '           / label for column 376                           TFORM376= 'E       '           / format for column 376                          TTYPE377= 'w1ba    '           / label for column 377                           TFORM377= 'E       '           / format for column 377                          TTYPE378= 'w1pa    '           / label for column 378                           TFORM378= 'E       '           / format for column 378                          TTYPE379= 'w1gmag  '           / label for column 379                           TFORM379= 'E       '           / format for column 379                          TTYPE380= 'w1gerr  '           / label for column 380                           TFORM380= 'E       '           / format for column 380                          TTYPE381= 'w1gflg  '           / label for column 381                           TFORM381= 'I       '           / format for column 381                          TNULL381=               -32768 / blank value for column 381                     TTYPE382= 'w2rsemi '           / label for column 382                           TFORM382= 'E       '           / format for column 382                          TTYPE383= 'w2ba    '           / label for column 383                           TFORM383= 'E       '           / format for column 383                          TTYPE384= 'w2pa    '           / label for column 384                           TFORM384= 'E       '           / format for column 384                          TTYPE385= 'w2gmag  '           / label for column 385                           TFORM385= 'E       '           / format for column 385                          TTYPE386= 'w2gerr  '           / label for column 386                           TFORM386= 'E       '           / format for column 386                          TTYPE387= 'w2gflg  '           / label for column 387                           TFORM387= 'I       '           / format for column 387                          TNULL387=               -32768 / blank value for column 387                     TTYPE388= 'w3rsemi '           / label for column 388                           TFORM388= 'E       '           / format for column 388                          TTYPE389= 'w3ba    '           / label for column 389                           TFORM389= 'E       '           / format for column 389                          TTYPE390= 'w3pa    '           / label for column 390                           TFORM390= 'E       '           / format for column 390                          TTYPE391= 'w3gmag  '           / label for column 391                           TFORM391= 'E       '           / format for column 391                          TTYPE392= 'w3gerr  '           / label for column 392                           TFORM392= 'E       '           / format for column 392                          TTYPE393= 'w3gflg  '           / label for column 393                           TFORM393= 'I       '           / format for column 393                          TNULL393=               -32768 / blank value for column 393                     TTYPE394= 'w4rsemi '           / label for column 394                           TFORM394= 'E       '           / format for column 394                          TTYPE395= 'w4ba    '           / label for column 395                           TFORM395= 'E       '           / format for column 395                          TTYPE396= 'w4pa    '           / label for column 396                           TFORM396= 'E       '           / format for column 396                          TTYPE397= 'w4gmag  '           / label for column 397                           TFORM397= 'E       '           / format for column 397                          TTYPE398= 'w4gerr  '           / label for column 398                           TFORM398= 'E       '           / format for column 398                          TTYPE399= 'w4gflg  '           / label for column 399                           TFORM399= 'I       '           / format for column 399                          TNULL399=               -32768 / blank value for column 399                     TTYPE400= 'tmass_key'          / label for column 400                           TFORM400= 'J       '           / format for column 400                          TTYPE401= 'j_m_2mass'          / label for column 401                           TFORM401= 'E       '           / format for column 401                          TTYPE402= 'j_msig_2mass'       / label for column 402                           TFORM402= 'E       '           / format for column 402                          TTYPE403= 'h_m_2mass'          / label for column 403                           TFORM403= 'E       '           / format for column 403                          TTYPE404= 'h_msig_2mass'       / label for column 404                           TFORM404= 'E       '           / format for column 404                          TTYPE405= 'k_m_2mass'          / label for column 405                           TFORM405= 'E       '           / format for column 405                          TTYPE406= 'k_msig_2mass'       / label for column 406                           TFORM406= 'E       '           / format for column 406                          TTYPE407= 'Separation'         / label for column 407                           TFORM407= 'D       '           / format for column 407                          TUNIT407= 'arcsec  '           / units for column 407                           TCOMM407= 'Distance between matched objects along a great circle'               TUCD407 = 'pos.angDistance'                                                     DATE-HDU= '2016-01-28T13:05:39' / Date of HDU creation (UTC)                    STILVERS= '3.0-11  '           / Version of STIL software                       STILCLAS= 'uk.ac.starlink.votable.FitsPlusTableWriter' / Author class in STIL soEND                                                                                                                                                              ÿ4~ˇ07 42 32.81+49 48 34.9@\Ëø‘O0z@HÁ§KR&AHƒúøxìu=@Éæínò1RXS J074232.9+494830MARK   79        S1.2<¥9X1237663789027688497 ®-  \ 1   Ak6)AieåAáÓ(AdúlAa£p<îú!<hNc=^Ω°<c@†<hu˘Ai˜∑Ae∑eAsΩ∞A[„5AYÓ∑;(J⁄;C‚ã</ßﬂ;®¬Ω;ñÎ‹  …ÓtL}-®†\  -®†\ 0        AtpAgé*AwÀ©AW1AW⁄e;ø‹";,∏è<V›æ;-;T¶AnA/AcA<At≠-AT‘xAV-                      ˘] —≠          ?ql<ñ;ÇÚØ;†åÒ;‹®<¥ﬁ8dontneedhst     -®†\ 1http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=115.63670833333336&dec=49.809694444444446&scale=0.19806&width=512&height=512&opt=&query= J074232.81+494834.8@\Ë¿e∂=>@HÁ£3vO=óçP=ïÅ    AtìAgçPAw ¡AW33AW€#;ƒõ¶;Dõ¶<T˝Ù;Dõ¶;Dõ¶-®†\ 1F0000B81092161210@üOã)^û       
+         ¿  ¿  Ä                                                  ¿  ¿  Ä       ¯      ¯      ¯      Ä Ä   Ä ¯       ?¥’0Hù'ƒ@F∫¬÷©≈a@\Ëø“ÈFÄ@HÁ§ê‚;J074232.81+494834.9@\Ë¿=Òå@HÁ§ñL›ˇ=S√a=]óˆº'Á@eGd„Øg@<a’¶ê""@[Œ4@ym@;ˇáB_ @¶}®r∞ ≈@ô6â7K∆®;Æ‚sD˛1161p499_ab41-0094061161p499_ab41  $æA?}<¥9XBFÃÕ@ÉnóçPA ƒú<£◊
+BV  ?˛óçOﬂ;d@¢E¢<e`BBúff@©˚ÁlãD@(ƒú<¨1BOôö?‰[¿6‚Î@ Ò©˚Álã                     0000 1100AAAA           A]∏A\á+A^5?A]≤-                             @‚‡    @áNè_‘{ÓAK°À@"Ò™=aGÆ@‚ö¿    @ÜC3?»lÏB%„@bM”    Ap    @ù¨     @†Yîz·GÆA Èy    @ÀH     @p“=Ä^_1@É“á+A„T>|ÌëAS¯;£◊
+  >Ö°ÀA ƒú;£◊
+  >£S¯@£o;ƒõ¶  ?S33@'\);ƒõ¶  ?tºAÛ∂;ƒõ¶  A&È;ƒõ¶  @–ÃÕ;ƒõ¶  @lI∫;Â`B  AÅ;£◊
+  Aﬂ;;£◊
+  @Ωx’;ƒõ¶  @L9X;ƒõ¶  AŸ;£◊
+  A˘€;£◊
+  @≤»¥;ƒõ¶  @9â7;ƒõ¶ A|Ó;£◊
+  A≤-;£◊
+  @¨ãD;ƒõ¶  @/æw;Â`B Aóç;£◊
+  A ˝Ù;£◊
+  @®›/;ƒõ¶  @+dZ;Â`B AÔû;£◊
+  A á+;£◊
+  @¶∞!;ƒõ¶  @)hs<o Ap§;£◊
+  A 1';£◊
+  @•X;ƒõ¶  @(£◊<tº A
+=;ƒõ¶  @ˇ◊
+;£◊
+  @§z·;ƒõ¶  @(QÏ<#◊
+ A?}<¥9X;ƒõ¶=Æ{   @Íˇ"c˛≤x@ÍˇFa∞:@Íˇ4ÙoTA ƒú<ı¬è<o?πá+J   @Íˇ"c˛≤x@ÍˇFa∞:@Íˇ4ÙoT@¢ff<ãCñ;£◊
+?∂ìtºj   @Íˇ"c˛≤x@ÍˇFa∞:@Íˇ4bçés@(‘˛<£◊
+;ƒõ¶?¥˝Û∂E°À   @Íˇ"c˛≤x@ÍˇFa∞:@Íˇ4ÙoTˇª       ?ôöA˘33?∏RBÇ  A
+=;ƒõ¶  A˘33?∏RBÇ  @ˇÔû;£◊
+  A˘33?∏RBÇ  @§¥9;ƒõ¶  Bôö?.{BÇ  @0ìu;Â`B 4~ˇAHƒú=oA:É=0 ≈A*·H<‘˝Ù?]ñÑó®í Ï≈ﬂÔ04 47 20.72-05 08 14.0@QıÜ|>Œ*¿åÉ˚rÍbAZ¨øq©¸=•„Tø1RXS J044720.4-050813NPM1G-05.0216    S1.5=49X1237676304021127206 
+-   &   AâÊjAÇgA}èAvBAq¸~<©…¸<ÇÒY<C æ<jgñ<bÊ\AÑ˝AuÓSAkŒAeb±A`Ùn<|Ç@<H'ñ<L“∫<>?<>¯º  ∏èK…ä-
+Ä  -
+Ä %        AÉ¢QAt(AjHíAcø≈A_-i<y ;9Ä;‹ç;Ø•;l˛YAÅx¬Ap˙UAg˘¿Aaˇ≈A]Ô∆                      ∞˝0 Zgy          >¶ù<L˛ø;Äìù;∞ç ;◊n=¿hdontneedhst     -
+Ä &http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=71.83633333333333&dec=-5.137222222222222&scale=0.19806&width=512&height=512&opt=&query=  J044720.72-050814.1@QıÜ â¸n¿åã y¢É;o;oB¥  AÉ°ÀAt(ˆAjI∫AcæwA_/<tº;o;o;o;Éo-
+Ä &T0000201090021010@ü_àÀí:ˇˇˇ˛             ¿  ¿  Ä                                                  ¿  ¿  Ä       ¯      ¯      ¯      Ä Ä   Ä ¯       ?•ôö‰Û4@eÈ-˝iLÀ@QıÜzÿ‰2¿åÉÏâ*∑J044720.72-050814.0@QıÜÄL¡z¿åá!ú2<‹]d<÷°bªöu@iU¬?
+¿=ÿôá˚‚d@Qc8ÁÏ¿;K”/m¨@ã“(ı¬è\@~À˜ŒŸá	ÂË<0]í0713m046_ab41-0013620713m046_ab41  RA%+<ºjB@  @	"–Â`AâA%<£◊
+BTÃÕ?˘|Ìëhr∞@–ƒú<u¬èBî  ?ˇGÆz·H@Ö„T<õ•„B`ÃÕ?Ô>´6zë@ á+I∫                     0000 0110AAAA  7     	 	 
+ 
+AñüæAñ ≈AÒ™A\)                             @∆˝Ä    @n≠pü•LUAãtº@@‘˛>Fß@ƒ™Ä    @hﬂ\ íFøBÑ}q@îõ¶?E¢@„‡    @Äpz‡;>ö@ùƒRÒ©˚ÁAÏ›/@ÛS¯@™>ô†ƒe@MÈ∫^5?}@ÅgZ¨1A#˚Á@bNA%X;ƒõ¶  >Ö°ÀA†;ƒõ¶  >£S¯@—¬è;Â`B  ?S33@Öâ7<Dõ¶ ?tºA/€#;ƒõ¶  A#`B;ƒõ¶  @ˇdZ;Â`B  @ßçP<Dõ¶ A)Ö;ƒõ¶  A5?;ƒõ¶  @Ï(ˆ;Â`B  @ó˜œ<Dõ¶ A'V;ƒõ¶ Ahs;ƒõ¶ @·ëh;ƒõ¶  @éÈy<Dõ¶ A%Û∂;ƒõ¶ A9X;ƒõ¶ @€ù≤;ƒõ¶ @äE¢<e`B A%S¯;ƒõ¶ Aù≤;ƒõ¶ @ÿQÏ;Â`B @à1'<Éo A$Èy;ƒõ¶ A?};ƒõ¶ @÷è\;Â`B @á†<õ•„ A$üæ;ƒõ¶ A˘€;ƒõ¶ @’ôö;Â`B @Üüæ<ºj A$ff;ƒõ¶ A»¥;ƒõ¶ @’V<o @ÜV<›/ A%+<‘˝Ù;ƒõ¶= ¿É   @Í˙ï¯/&@Í˙z °œ@Í˙Tä≈[>A%<‘˝Ù;ƒõ¶?∑K∆ßÔù≤   @Í˙ï¯/&@Í˙z °œ@Í˙Tä≈[>@–ºj<Éo;£◊
+?™¨1&È   @Í˙£Á¶@Í˙z °œ@Í˙O¸F»@Ö“Ú<ÃÃÕ<o?∂ìtºj 	  @Í˙—Œt@Í˙z °œ@Í˙J´:∂äˇˆ (ˇˇ     >.{A?Æ?Bè\A»  A'Å;ƒõ¶  A?Æ?Bè\A»  A„T;ƒõ¶  A?Æ?Bè\A»  @„çP;ƒõ¶  AÑÃÕ?aGÆA»  @ö¨<Dõ¶ ≈ﬂÔAZ¨=Å%AN5?=Ö∏AB=Dõ¶?WêL®øJB£éG09 18 26.00+16 18 19.8@aswwwwx@0N5?|ÌëAKdZø)∫^>Cñæ∏R1RXS J091826.2+161825MARK  704        S1.2<Ìëh1237667782815907862 J-  ∞    AvkóAq ±Am2ÃA^XiAg÷”<Å~ñ<≥·<úcÆ:ãzA<ãAuq¥AlüîAe°ïAc£‰A_˚*;ußu;ôMt;…
+ò;¸–<@ƒ  ﬁqJ;:-JÄ∞  -JÄ∞ &Œ” h A|·‹AkúâA_ÊÄAb„∑AWEÜ<°n;*…;+”C<];R∞ AzÄÉAi‹/A^°QAaÌ$AVñ≥                      KÒ– E≤          ?|”H<&Ü≥;p&£;®„ê;œè=ì≤dontneedhst     -JÄ∞ http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=139.60833333333335&dec=16.3055&scale=0.19806&width=512&height=512&opt=&query=            J091826.00+161819.6@aswâ§Y@0N3XÚ‡]:Éo    B¥  A|·HAkù≤A_ÁmAbÂ`AWCñ<o;Dõ¶;Dõ¶<o;Dõ¶-JÄ∞ T0000B81090061010@üT∆‹]càˇˇˇ˙     &Œ” h <ÎÖ7˚®Ç  ROSAT_D              GALAXY                      CõºAÇq™-JÄ∞ ?\!ãSÚÖ@aswå+ !@0N3iÅÁ	á  “# ?åÀRüt˘ ?≤Ñ{$cåó@Kä˝Cçä@aswvƒÇ{@0N5?|ÌëJ091826.00+161819.8@aswõw¿+@0N6 mJ=_§@=cS¯ºÏ¿@j∫^còV@C‹≤¸(@a%Œ∆¢?‚±µÑ±´@•¸r-V@ëçôôôôöj©"–RzÚ1399p166_ab41-0088821399p166_ab41  "≤A&È<ºjB?33?˝∆ßÔù≤-A˘€<£◊
+B\  ?Û+I∫^@£◊
+<u¬èBå33?Òüæv»¥@Bnò<¥9XBDÃÕ?Âﬂ;dZ¨?Ûtºj~˘€                     0000 0010AAAA        
+ 
+ 
+ 
+A=`BACïÅA1≤-A.–Â                             @‹Á@    @É]3?»lÏAã›/@9 ¡=≤-@‡`†    @Ép†+ÑB(cT@lI∫    AR    @üõ3@à @®HbM“ÚA‚V    @¬ŸÃø¸⁄≤@hà£ﬂmπA@êe¨1&ÈA*·H?DìA`B;ƒõ¶  >Ö°ÀAdZ;ƒõ¶  >£S¯@§Ìë;ƒõ¶  ?S33@Büæ;Â`B ?tºAæw;ƒõ¶  A©¸;ƒõ¶  @“-;ƒõ¶  @ÉCñ<o  AçP;ƒõ¶  A~˙;ƒõ¶  @øS¯;ƒõ¶  @g|Ó;Â`B A&È;ƒõ¶  A≤-;ƒõ¶  @¥ı√;ƒõ¶  @U?}<o A{;ƒõ¶  AãD;ƒõ¶  @Ø"—;ƒõ¶  @KÁm<o AÖ;ƒõ¶  A˚Á;ƒõ¶  @´Ám;ƒõ¶  @H  <tº A+;ƒõ¶  A©¸;ƒõ¶  @™$›;ƒõ¶  @FV<#◊
+ AÌë;ƒõ¶  Ap§;ƒõ¶  @©&È;ƒõ¶  @E¬è<Dõ¶ A¿É;ƒõ¶ AK«;ƒõ¶ @®ìu;ƒõ¶ @Eëh<e`B AÌë<£◊
+;ƒõ¶>V 
+  @ÎŒ-ò#Œ@ÎÌÓ‰yΩ@Î›ìîVAŸ<õ•„;ƒõ¶?æ˘€"–Â` 
+  @ÎŒ-ò#Œ@ÎÌÓ‰yΩ@Î›ìîV@£ﬂ;<ƒõ¶<o?≤Ò©˚Álã 	  @Î“in-∞@ÎÌÓ‰yΩ@ÎﬂA90@Bnò<õ•„;ƒõ¶?∞Â`Aâ7L 	  @Î“in-∞@ÎÌÓ‰yΩ@ÎﬂA90ˇ¸ˇÎ       >◊
+=AÑ=q?.{Bå  A9X;ƒõ¶  AÑ=q?.{Bå  A¿É;ƒõ¶  AÑ=q?.{Bå  @∞ì;ƒõ¶  A¶∏R?LÃÕBå  @_æw;Â`B éGAKdZ<ı¬èA;©¸<˝Û∂A+7L<ÃÃÕ?Rﬁπ•z@˜="3î11 53 26.23+35 56 53.7@fKQ<¡‡@A˘`Aâ7MAuŒŸø!â7=ãCñ>æw1RXS J115325.5+355706KUG 1150+362     S2  =ãCñ1237665026513371141 »-  A   Aì‡VAçöãAäw\AÜ°JAÜH∑<®¿r<¨Ö[<ÅT˛<°H<Ä,_AÑ˛áA|°√Au6AoArÈ‚<¡¸I;år3;é≥t;¨]√<»&D  Í†Ñ-»¿A                  AÑ3æAy}aArÖqAk˛Aj”<Sl6;Yq;LßI;U[;˜± AÉN9Ax+üAqêyAkD^Aiò                        ˇˇˇˇˇˇˇˇ            ?hŸ¶<\3#;Å√Å;≠Îˇ;‚áK=	zsdontneedhst     -»¿A http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=178.35929166666665&dec=35.94825000000001&scale=0.19806&width=512&height=512&opt=&query=  J115326.23+355653.7@fKV!t≈@A˘`ÿáÎÚ;o;oB¥  AÜI∫A}çPAw+An·HAm&È<e`B;Dõ¶;Dõ¶;Dõ¶<o-»¿A T0000201090021010@üQ!|⁄Qˇˇˇ˚     Ã%l h =ã¨q7'≈¨  ROSAT_D              GALAXYSTARBURST             C2[˚BÀ-»¿A ?WÉjµ[∂å@fKIø@Ã@A˘`˚B„Û  –º î?ï√, ?√¸¡ál”@I=”‰ÔÇ@fKQÔ∂›@A˘`Aâ7LJ115326.23+355653.7@fKßÎkÙ@A˘a)√¬=r‰è=vîFª˘	l@e∏ß:◊lc@R∂ 8L@dPø
+
+¬@?ˆ„Ç˜”@´∂|Ìëh@èìëhr∞!◊◊{? ~£1790p363_ab41-0077791790p363_ab41  cA<‘˛<ºjB:ÃÕ@W
+=p£◊A.ì<£◊
+BZ  ?¯      @¸Aâ<ãCñBÄ  ?¸¨1&È@≠V<˝Û∂Bff? ƒõ•„T@=p£◊
+=                     0000 0000AAAA           AÜ∆®AÖ"—AÜ$›AÜâ7                             @ßäf_˙;õ@P!hEZ}A2ìu@,ãD=@É@•‰ÃøÙw6@I∂ ˆçAÔŸ@`ìu>(ı√@≈ø     @eæ∏`ôùÀ@ù%:^5?}A“∏R>˙·H@ëf`…ä@? É#5è.@Åÿ•„S˜œA∆®>∑ŒŸA<Z;Â`B  >Ö°ÀA.1;ƒõ¶  >£S¯@˘€#<tº  ?S33@´Cñ<ƒõ¶ ?tºAGâ7;Â`B  A:∞!;Â`B  A(ˆ<49X  @Õ¬è<‘˝Ù A@á+;Â`B  A3"—;ƒõ¶  A
+ ≈<tº  @Ω≤-<ƒõ¶ A=`B;Â`B  A/ÎÖ;ƒõ¶  A~˙<tº  @¥r∞<ÃÃÕ A;“Ú;Â`B A.r∞;Â`B ACñ<tº @Ø•„<Â`B A;;Â`B A-≤-;Â`B @˛·H<#◊
+ @≠Oﬂ=+ A:á+;Â`B A-?};Â`B @¸‘˛<#◊
+ @¨b=#◊
+ A:5?<o A,Ò™;Â`B @˚∂F<49X @´K«=@É A9˚Á<o A,¥9<o @˚"—<Dõ¶ @™~˙=aGÆ A<‘˛<¨1;£◊
+=Ö∏   @Î!W14Ä@ÎETK ª@Î6`ïú_A.<ºj;ƒõ¶?¡GÆz·H   @Î!W14Ä@ÎETK ª@Î6`ïú_@¸QÏ=o<o?Ωp£◊
+=q   @Î!W14Ä@ÎETK ª@Î6`ïú_@≠&È=©˚Á<¨1?ŒóçOﬂ;d   @Î!W14Ä@ÎETK ª@Î6`ïú_ˇÊ ˇ˚      >ı¬èA&∏R?hı√¬p  A>^5;Â`B  A&∏R?hı√¬p  A0Ìë;ƒõ¶  A&∏R?hı√¬p  AbN<tº  Avè\?s33¬p  @¡V<ƒõ¶ ="3îAuŒŸ=“Ò™AhQÏ=¬è\AYX=e`B?O’,qiXí=0˙'15 59 09.62+35 01 47.5@m˘H\◊π@AÉ“}'“~AY7Lø?}>u¬èø;dZ1RXS J155909.5+350144MARK  493        S1n =o1237662504293892158 }-  B >   ADA{ÖÓAxAuèYAqAã<Âf<ªIê<nÙ©<ìÃ<∫÷HAx ¶AgàYA]¥£AXª√AXd<îÅw;OD5<‘;æ#∑<#ÁÉ  Ílg¬-}ÄB  -}ÄB =$åE h AzÖHAi÷wA`æùAZªWAUº4;ˇ9º;åT;∑ä;=‘;yMØAxwçAhS£A_¶AYÊôAU%^                      ó* âÜ         ?c≠$<ı,;sq;¨BÊ;’ﬂM= 1Bdontneedhst     -}ÄB >http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=239.79008333333337&dec=35.02986111111112&scale=0.19806&width=512&height=512&opt=&query=  J155909.62+350147.5@m˘H´’‹@@AÉ“Ñú≤S:Éo:ÉoB¥  Azá+Ai◊
+A`¿ÉAZºjAU∫^<o;o;o;o;Éo-}ÄB >T0000201090021210@üM†uˆ˝"ˇˇˇı ˇˇˇˇ $åE h <˛®7ß≈¨ QSO                  QSO   STARBURST_BROADLINE   Co CBî-}ÄB >?Ze4(s€@m˘H§§t@AÉ“ryâ/â  œï N?r⁄á,P∑ç ?¿Æ[»}≤≥@O/7 GMú@m˘H\$ƒ@AÉ“|96ÇJ155909.62+350147.5@m˘HÆ˚*Æ@AÉ”	˝Øƒ=W
+==["—ºK)_@Lù˚˛ÈÄ@H¥™qX1@l3òì?Ö@JÙÿå∞@í¢bM“Ò™@§fffff!6lò–T2393p348_ab41-0348362393p348_ab41  àA'Ö<ºjB<  @üæv»¥9A„T<£◊
+BXff?˚`Aâ7K«@”Ám<u¬èBîff?ıæv»¥9X@âá<¨1BNff?ÔOﬂ;dZ@ ßÔù≤-                     0000 0011AAAA   ) ) ) ) ' ' ' 'B%0!B$∫^B ÈyB!†                             @ƒ     @kNf`…äAÁm@&»¥<£◊
+@¡ÜÄ    @dæf`…äAŒÖ@WÔû=+@·`     @}˝ø®˜€@ïr∑K∆ßA»`B    @ßf_˙;õ@MØ|‹ p“@x_"–Â`BA  ?ãÁmA'`B;ƒõ¶  >Ö°ÀAÁm;ƒõ¶  >£S¯@‘ì;ƒõ¶  ?S33@àìu<o ?tºA25?;ƒõ¶  A&QÏ;ƒõ¶  A Èy;ƒõ¶  @™»¥<o  A+çP;ƒõ¶  A;ƒõ¶  @Ó~˙;ƒõ¶  @õ<o A(ìu;ƒõ¶  AÛ∂;ƒõ¶  @„∆®;ƒõ¶  @ë ¡<o A&Â`;ƒõ¶  AÉ;ƒõ¶  @›°À;ƒõ¶  @åı√<o A% ¡;ƒõ¶  AÆ;ƒõ¶  @⁄;ƒõ¶  @ä–Â<tº A%;ƒõ¶  A∏;ƒõ¶  @◊ﬂ;;ƒõ¶  @â ¡<#◊
+ A$v…;ƒõ¶ A∏R;ƒõ¶ @÷á+;ƒõ¶  @â`B<Dõ¶ A$J;ƒõ¶ Anò;ƒõ¶ @’°À;ƒõ¶ @â/<T˝Ù A'ëh<ÃÃÕ;Éo>üæ (  @Í˜¿HñÆ@Î}}@ß@Î‡ì∞GA€#<Éo;o?∏ìtºj~˙ (  @Í˜¿HñÆ@Î}}@ß@Î‡ì∞G@”Ám<£◊
+;Dõ¶?∂á+I∫ &  @Í˜¿HñÆ@Î}}@ß@Î‹∫<|]@âV=+;£◊
+?¡$›/† &  @Í˜¿HñÆ@Î}}@ß@Î‹∫<|] 	ˇı      ?∏RA∏ff>ı¬èB\  A&ì;ƒõ¶  A∏ff>ı¬èB\  Ab;ƒõ¶  A∏ff>ı¬èB\  @‹1';ƒõ¶  A‰z·?∏RB\  @í{<o =0˙'AY7L=Dõ¶ALJ=aGÆA@E¢=#◊
+?Qa—?˜ üg>—;t11 39 13.92+33 55 51.2@eŸ€"–Âa@@˜']˙˛hAhI∫ææv…>√ïÅæ‡Aâ1RXS J113913.6+335552MCG +06.26.012   S1n =+1237665127466532865 ‡- à   Aâ6#Aà∞ﬂAáÊAÜÅ±AÑ÷q<“|9<„∂‹<ò/(<¨]<{¯πA~˛EAo}AeõA`z˘Aa¡˙<û±=;g"L;üR;;≥≈t<õ–;  l¯G-‡Aà                  A˚HAoQ~Ad˘…A_}\A[kı<2Ê;9DÀ;%e;(°w;§ÒÌA~e An&éAd ¯A^ÿÙAZ˜d                       ˇˇˇˇˇˇˇˇ            ?f¢<)V9;Å`ö;´à™;Ìıà=	Cñdontneedhst     -‡Aà http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=174.80800000000002&dec=33.93088888888889&scale=0.19806&width=512&height=512&opt=&query=  J113913.91+335551.1@eŸ⁄Úî›r@@˜&Èx‘˛;o;oB¥  AÄºjAoôöAe\)A_ÔûA[∂F<Dõ¶;Dõ¶;Dõ¶;Dõ¶;£◊
+-‡Aà T0000201090021210@üQ)˚Álã     ˇˇˇ˜  »ëçÑ h =-å7ß≈¨  QSO                  QSO   STARBURST_BROADLINE   C.ŒŸBπ;-‡Aà ?Q»≠€",Æ@eŸ€!k‹@@˜&Ãû2  –‘F?pŒ∂Ä≈Ì4 ?∫∞»äGÏˇ@Fﬂ4&x9Œ@eŸ€"–Â`@@˜'^ÈöcJ113913.92+335551.2@eŸ€W>´6@@˜(Ü?=ÄùI=ÉoºSZÜ@g»OY⁄g@RC·$FE@dS˚ Á@<’^\¨©A@òÍ=p£◊
+@¨ãtºj~˙7ı} -,/1745p333_ab41-0317271745p333_ab41  {ÔA;ŒŸ<ºjB=ôö@%®ı¬è\)A/“Ú<¨1BOôö@$›/†AÁm<õ•„B_ôö?Ù‘˝Û∂E¢@≥†=oB33?Ò¬è\(ı√@›/üæw                     0000 0000AAAA           An-Alè\Ap{AjÈy                             @®˘f_˙;õ@P◊Æ! A8¥9@/Æ>ôö@£—     @Hk"·¨W‚A¯∂F@f=¥9X@¡Ç@    @dÖ —0‡@ûÁ…∫^5?A€◊
+?K@åîf`…ä@;∞ ƒõ¶@É ~˘€"—A$Z?Ñ˝ÙA:J;ƒõ¶  >Ö°ÀA/&È;Â`B  >£S¯A £◊<T˝Ù  ?S33@±Oﬂ<˝Û∂ ?tºAFJ;Â`B  A<1'<o  A€#<Éo  @‘1=+  A>9X;ƒõ¶  A4Aâ;Â`B  A◊
+<T˝Ù  @√æw<˝Û∂ A:$›;ƒõ¶  A0ãD;Â`B  A1<Dõ¶  @∫M”=+ A7∂F;ƒõ¶  A.ìu;Â`B  Aá+<Dõ¶  @µp§=çP A6 ≈;ƒõ¶  A-X;Â`B  Aff<T˝Ù  @≥|Ó=49X A5%;ƒõ¶  A,á+;Â`B  A†<e`B  @≤»¥=]/ A4=q;ƒõ¶ A+Û∂<o A M”<u¬è @≤~˙=Ö∏ A3Æ;ƒõ¶ A+çP<o @ˇçP<Éo @≤M”=üæw A;ŒŸ=\)<tº>Cñ   @ÎÊf@Î
+	j¢`@Î¯X„A/€#=Cñ<tº?∫üæv»¥9   @ÎÊf@Î
+	j¢`@Î¯X„AÎÖ=+<tº?¿Aâ7K∆®   @ÎÊf@Î
+	j¢`@Î¯X„@≤∏R=<j<Dõ¶?Œ5?|Ìëh   @ÎÊf@Î
+	j¢`@Î¯X„ˇ˙ˇÓ       ?@  AÅôö?GÆ¡†  A7X;ƒõ¶  AÅôö?GÆ¡†  A.QÏ;Â`B  AÅôö?GÆ¡†  Aì<Dõ¶  A£◊
+?\(ˆ¡†  @ø<˝Û∂ >—;tAhI∫=∫^5A\b=ìtºAN~˙=Dõ¶?:6‚Úq◊öf6Ó22 58 01.93-02 19 44.6@uà Lum¿°Á·m AkïÅæßlã>$›>Ô†1RXS J225802.2-021924                     ¿  1237679997698965522 f-  t    Aóœ`Aê—÷AãÌAÖ±AÖ,6=
+=ëc$=Û<}≈<2®Aà$∆ASµAtA‰AgèÓAg…[>ap>_ºπ>V˝Î<I≥>-2È  áj2-fÄt  -fÄt         Aäû©AÜ~fA|-<AgbAoC_<˛®—<œg;ƒ¢§;Y≠K<|Î‹Aá≤˜AÑX@Ay6AdÆDAmñV                       ˇˇˇˇˇˇˇˇ            ?n5<Nß(;Ü’†;∫∂Ò;‰k2=0Bâdontneedhst     -fÄt http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=344.50804166666677&dec=-2.3290555555555557&scale=0.19806&width=512&height=512&opt=&query=J225801.93-021944.8@uà!yW¿¢√Ç°0;o;oB¥  Aã7LAÄ˜œAt¨Al¥9Ai33<¨1;Éo;Dõ¶;Dõ¶;Â`B-fÄt T0000B01010021010@üf÷RΩ<6   	 ˇˇˇ˚         ¿  ¿  Ä                                                  ¿  ¿  Ä       ¯      ¯      ¯      Ä Ä   Ä ¯       ?°ı±»dà@f=˘=º@uà •ÔÈ¿°Ë¥k≠J225801.93-021944.6@uà •ÔÈ¿°Ïπ“E={~ë=|PHª#◊
+@Qü°∑u¿JûWòmIØ@uçPŒiÑˇ@òBt÷ë@ßÇcS˜ŒŸ@ÆP∏QÎÖ/ŸƒçaÍæ.3448m031_ab41-0322383448m031_ab41  }ÓA6ƒú<ƒõ¶B7ôö@–Â`Aâ7A'ôö<¨1BPff?ˆ1&Èx‘˛@Ó<ìtºBw33?˚Å$›/@¢5?<Â`BBÃÕ?Aâ7K∆®@üæv»¥                     0000 1101AAAA ÷        A]XAKoAO7LANºj                             @∞±3?˙¡”@WK˜æÊAêV@9GÆ    @Ø“f_˙;õ@Sà^	BH◊
+@äá+>333@–d¿    @p¯ı¿v}5@®	˝Û∂E¢AÓÆ>dZ@ó<f`…ä@CxQ„!¢Ë@è‘° ¿ÉA.›/?Ï(ˆA6ff;ƒõ¶  >Ö°ÀA'çP;Â`B  >£S¯@ÌOﬂ<o  ?S33@°∏<ÃÃÕ ?tºAA|Ó;Â`B  A4ì<o  A“Ú<#◊
+  @√çP<‘˝Ù A:ìu;ƒõ¶  A,ß;Â`B  A€#<o  @≥çP<ÃÃÕ A7ïÅ;ƒõ¶  A)ïÅ;Â`B  @¸£◊<o  @™$›<‘˝Ù A61;ƒõ¶  A(-;Â`B  @ˆ=q<o  @§ı√<Ìëh A5V;ƒõ¶  A'hs<o  @Úv…<tº  @¢óç=\) A4^5;Â`B A&Ìë<o @(ˆ<tº @°ëh=,1 A3“Ú;Â`B A&óç<tº @Ó»¥<#◊
+ @†˝Ù=LÃÕ A3S¯;Â`B A&QÏ<#◊
+ @Ì„T<49X @†j=q©¸ A6ƒú<£◊
+;ƒõ¶=° ¡   @Î/˘C£@ÎN∆25@Î=≠8R,A'ôö<Â`B<o?πá+J   @Î3AŒ6Y@ÎN∆25@Î>Â“Ì£@Ó<¨1;ƒõ¶?±&Èx‘˝Ù   @Î3AŒ6Y@ÎN∆25@Î>Â“Ì£@¢{=©˚Á<ƒõ¶?«ŒŸá+   @Î3AŒ6Y@ÎN∆25@Î>Â“Ì£ˇ—  
+     >kÖA
+=?c◊
+¬   A9`B;ƒõ¶  A
+=?c◊
+¬   A+`B;Â`B  A
+=?c◊
+¬   A¬è<o  Atz·?xQÏ¬   @∑<ÃÃÕ f6ÓAkïÅ=≤-A]Ö=æv…AQlã=y€#?`av∫∞
+ 2ªêñ11 27 36.90+24 49 23.4@e|ÎÖ∏R@8“ª¯}úAh–Âæç“Ú?%ø.{1RXS J112736.7+244926SDSS J11276+2449 AG  =q©¸1237667486470176778 -  
+   AìyÙAå,MAáo§AÉOëAÅH™=kD<‰,ã<<æ|<úàÉ<≥Ì–Aåç±AÇ˜°Az–øAsazAp/K=î5ò=è=J{<…Ä<¢˙  pñ≠Î-Å  -Å         Aã∑éAÇƒöAz8!ArìAm≠h<Ç^;g√¿;LIl;J±D;ﬂAä˜ãAÇ7RAyk1Aq{-Am?:                      {<€ E"O          ?J”<&ƒ‚;oòÛ;©3;œ Æ=Xädontneedhst     -Å 
+http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=171.90375&dec=24.823166666666665&scale=0.19806&width=512&height=512&opt=&query=          J112736.90+244923.4@e|Î∑sü4@8“ª∫U—ƒ;o;oB¥  Aå©¸AÉz·A{ÖAslãAnnò<Éo;Éo;Dõ¶;Dõ¶;ƒõ¶-ÄÖ HT0000201090021210@üTbúwök         '`Ù h =qk7˚®Ç  GALAXY               QSO   BROADLINE             C+Á\A∆ïÿ-ÄÖ H?W„ÕTc@e|Î∞Ù°@8“ª«õçÄ	≈  ”DÄ?ÅMÅÎ)ÃÇ ?£ß÷s>º@>Çl±B´@e|ÎÖ∏R@8“ªê%}J112736.90+244923.4@e|ÎëHí@@8“ª¢ÿ›|=ú‡v=óˆ+=ªô@jÊYÛ%¸Í@Q¬¬ãï ÿ@dN:(ÖZG@3à(q8QÄ@ö¯‘˝Û∂@¨¥9Xb‘s]2π`1717p242_ab41-0330561717p242_ab41  Å A=
+=<ƒõ¶B3ôö@	üæv»¥A0ÃÕ<¥9XBBff?Ú·GÆz·AX<ºjB9ôö?Ú¥9XbN@ø
+==ix’AòÃÕ?Ìå~($x?˘Æz·GÆ                    0000 nnnnAAAA          
+ AJ·HAL·HAJAâAD-                             @ßD3@à @Pì∂ApÿAX ≈@,Ìë    @¢æÃøÙw6@H™=ÅjŒ´B
+£◊@gçP    @º∑L¿>-@c–Q·√Ù@¢\|ÌëhsA‰Ôû?ı√@ÑEÆ ´Ü@A˝¸¡r@áÉ∂E° ¡A,Ìë?∑ŒŸA<E¢;ƒõ¶ >Ö°ÀA0QÏ;Â`B >£S¯A\)<e`B ?S33@∫∞!=8QÏ ?tºAGX;Â`B A<»¥<o Aj<ãCñ @›Å=Dõ¶ A@r∞;ƒõ¶ A5lã;Â`B Aè\<e`B @Õ∏=8QÏ A=x’;ƒõ¶ A2^5;Â`B Ao<T˝Ù @¬Ò™=8QÏ A<1;ƒõ¶ A1;Â`B AÛ∂<T˝Ù @º˝Ù=H¥9 A;Cñ;Â`B A0M”<o A$›<e`B @πÎÖ=ix’ A:ÃÕ;Â`B A/„T<o AV<u¬è @∑˜œ=á+ A:~˙;Â`B A/ù≤<tº AV<ãCñ @∂ß=ù≤- A:Aâ;Â`B A/hs<tº AŒŸ<õ•„ @µ“Ú=∂E¢ A=∏<e`B;Éo=ìtº 
+  @Î!Djh)@ÎAØ
+@Î1†0<A0·H<Éo;£◊
+?≥∂E° ¿É 
+  @Î!Djh)@ÎAØ
+@Î1†0<A`B=y€#<ìtº? üæv»¥9 
+  @Î!Djh)@ÎAØ
+@Î1†0<@æß>ì=æw?‹ºj~˘€# 
+  @Î!Djh)@ÎAØ
+@Î1†0<   +      >·GÆAUôö?ôöA»  A>b;ƒõ¶ AUôö?ôöA»  A3∏;Â`B AUôö?ôöA»  AQÏ<T˝Ù A¶z·?O\)A»  @»¨=49X 2ªêñAh–Â=u¬èAZÌë=u¬èAMÆ=H¥9?S©*2Ø®+«ÉÇ00 47 19.38+14 42 12.7@'©XbM”@-h4 ˙ƒ(A\»¥æ#◊
+?/ﬂ;ø∏QÏ1RXS J004719.4+144215MARK 1146        S1.0=æw1237649953863368738 -  N "   Aç@Aâ≈AÑıAÅVA}ºT<≥øh<†«<ÃXM<ÅŸr<É√ûAÉ…5Aq$mAdª¬A]¨SAYA<ænÀ;oÇ‚;THÌ;`æ∞<Áô  µ‡Ïë¥-`N  -`N          AÅ"AoÍ+AbÙA[U_AUê˛< a9;$ú;≈Û;0œ;Ä4A{ÖMAiƒVA^~îAWÛ‘AS+O                      x∆ ∏·         ?Ki{;Â∞;e⁄);ñ@ÿ;–^=Å©dontneedhst     -`N "http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=11.83075&dec=14.70352777777778&scale=0.19806&width=512&height=512&opt=&query=            J004719.39+144212.5@'©^|çY@-h. Ó¶;;o:Éo    AÉbApßAc˚ÁA\è\AVÒ™<#◊
+;Dõ¶;o;o;Éo-p`„ *T0000201010021210@üC©˘rGÄ   Ä Ä   Ä êNáO h = ›7ß≈¨  GALAXY               QSO   STARBURST_BROADLINE   A=J¡AkA¶-p`„ *?n1à%…ú@'©^fM @-h/≈ﬁã§   ü:?`iâˇ•®à 	?¬E#ˆMæ@SÇOãXé@'©XbM”@-h4“o£˝J004719.38+144212.7@'©]QÍÆ_@-h5ﬁﬂ=z¨⁄=x7µªê-‡@^\-”w·π¿H ÙÚÖƒ@0£L‘ƒË”@!∑næ˙|3@≠´r-V@åfffffºÖçÅ›Z0125p151_ab41-0074500125p151_ab41  A0Ìë<¥9XBC33@+u¬è\(ˆA&á+<¨1BPff@ÁlãCïÅ@Û+<ãCñB|  @©˚ÁlãD@¨Z<ÌëhB  ?ı©˚ÁlãD@Ÿá+                     0000 0111AAAA           A-/A.ìuA/∏A/V                             @∑\Ä    @^™=ÅjŒ´A|˘€@7çP=,1@∞Ì†ƒe@T ·?Jò´Bö@x      @ÃCÄ    @l∞£ﬂmπA@•ãfffffA◊˘€?A ¡@ëZf`…ä@=î9XbN@å5z·GÆAI∫?DìA/˜œ;ƒõ¶  >Ö°ÀA&(ˆ;ƒõ¶  >£S¯@Ò%<Dõ¶  ?S33@©`B=0 ≈ ?tºA;ﬂ;;ƒõ¶  A37L;Â`B  A{<u¬è  @Ãı√=@É A4$›;ƒõ¶  A+Cñ;ƒõ¶  A∂F<Dõ¶  @ªŒŸ=0 ≈ A0E¢;ƒõ¶  A'ëh;ƒõ¶  @ˇS¯<49X  @±˚Á=8QÏ A.b;ƒõ¶  A%°À;ƒõ¶  @¯b<49X  @¨Ìë=LÃÕ A,∏R;ƒõ¶ A$~˙;ƒõ¶ @Ûù≤<49X  @™»¥=u¬è A+ﬂ;;ƒõ¶ A# ¡;Â`B @Â`<Dõ¶ @™¨=ïÅ A+Oﬂ;ƒõ¶ A#Oﬂ;Â`B @Ô+<T˝Ù @©˚Á=∂E¢ A*Ìë;ƒõ¶ A"ı√;Â`B @Ì˚Á<e`B @©∫^=◊
+= A0Ìë<£◊
+;ƒõ¶=u¬è 
+  @ÎM =lÛ@Îl‡u[L@Î]{âA&á+<¥9X;Â`B?¥9XbM” 
+  @ÎM =lÛ@Îl‡u[L@Î]{â@Û33<Â`B<tº?∂á+I∫ 
+  @ÎM =lÛ@Îl‡u[L@Î]{â@¨ìu=ù≤-<ºj?÷$›/üæ 
+  @ÎM =lÛ@Îl‡u[L@Î]{â   C &    ?5¬èAy∏?\(ˆBÇ  A-ôö;ƒõ¶  Ay∏?\(ˆBÇ  A%Cñ;ƒõ¶  Ay∏?\(ˆBÇ  @ˆ∞!<49X  AôÖ?hı√BÇ  @∏  =0 ≈ +«ÉÇA\»¥=ÉoAO◊
+=óçPACÛ∂=mëh?J6‚Ï&d›A~x∆02 38 27.41+01 54 27.9@CŒû`Lu?˛Ü$›/üAZ¨Ω∫^5?MëhøñÈy1RXS J023827.5+015426NGC 1019         S1.5<ƒõ¶1237678438090080275 ˚-  Ö    Açb◊AàáIAÉfAÄ:A|E^<òæπ<’Î<á85<œßπ<“´pAyJAaπäAVŸAPÿVAMÄ⁄<úçƒ;D5*;,|E;CÉ;¿›¿  ìXPºµ-˚`Ö  -˚`Ö         A{¸Ae~AXÒPARÉóAM?I<c-;	fz:ıu!:Úå¸;6ƒ›AxÅxAcï‹AWè9AQwALÄÎ                      ∏W fˇ~          ?s»¶<%%ñ;xÖª;¢„ˆ;◊˚Ú=%Údontneedhst     -˚`Ö http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=39.61420833333333&dec=1.9077499999999998&scale=0.19806&width=512&height=512&opt=&query=  J023827.41+015427.7@CŒüå!·“?˛Ö˝¢¸;o;oB¥  A{†Ae|ÓAXÒ™ARÉAM?}<o;o;o;o;Dõ¶-˚`Ö T0000201090021210@übªdZ¨ˇˇˇÛ ˇˇˇ˚         ¿  ¿  Ä                                                  ¿  ¿  Ä       ¯      ¯      ¯      Ä Ä   Ä ¯       
+?•¥â	(ùÆ@RØ'˙Ú@CŒû^$xÖ?˛Ü$›/†J023827.41+015427.9@CŒû¿Jã?˛Ü(U{]=m(ç=fö‘º_@epißã¿Iñ©T¯Ÿ@BÍë6…?¿)√úΩ:àí@îJÔù≤-@®ôôôôötìªé$Ò00393p015_ab41-0289120393p015_ab41  pA/Æ<¨1BKôö@/W
+=p£◊A'?}<£◊
+BTff@bM“Ò™@ÒÎÖ<ÉoBÉÃÕ@è\(ı¬è@£lã<ı¬èBôö?ÛçOﬂ;dZ@x‘˝Û∂F                     0000 9611AAAA K # # # #      B
+À«B
+¢—Aü°ÀB Õ”                             @π     @_ä·?Jò´A¢1'@BÒ™=Ò©¸@∞;ô†ƒe@Sî†	ˆ#B¶<j@§ºj?à‘˛@ÕH     @lm¿µgU@ßM6E° ¡A˜J@M?}@ñp     @D–‹¸≈π@çwìtºA6Ÿ@©¸A.¿É;ƒõ¶  >Ö°ÀA&nò;ƒõ¶  >£S¯@Ì≤-<o  ?S33@ü;d<ºj  ?tºA:Ÿ;ƒõ¶  A3Æ;Â`B  A¿É<tº  @√<ÃÃÕ  A2Ìë;ƒõ¶  A+â7;ƒõ¶  AJ<o  @±©¸<ºj  A.¨;ƒõ¶  A'â7;ƒõ¶  @˚33;Â`B  @ß∂F<ƒõ¶ A+€#;ƒõ¶  A%&È;ƒõ¶  @ÚŸ;Â`B  @¢ff<›/ A) ¡;ƒõ¶  A#tº;Â`B  @ÌOﬂ;Â`B  @ü˜œ<˝Û∂ A($›;ƒõ¶  A"-;Â`B  @Èâ7;Â`B  @ü=•„ A&–Â;ƒõ¶  A!"—;Â`B  @Ê˘€<o  @û–Â=8QÏ A%¬è;ƒõ¶  A QÏ;Â`B  @Â/<o  @ü
+==aGÆ A/Æ=H¥9<o>PÂ` "  @ÍˆH∞XGï@Îm_[D @Íˇ€ºU0A'GÆ=0 ≈;Â`B?…∫^5?|Ó "  @ÍˆH∞XGï@Îm_[D @Íˇ€ºU0@Ò„T=#◊
+<tº?æv»¥9X   @ÍˆH∞XGï@Îm_[D @ÎﬂØoâ¶@¢Ò™=Å%<49X?÷ffffff   @ÍˆH∞XGï@Îm_[D @Î æüaZ Lˇ‹ !   >îz·A•◊
+?Bè\Ap  A(∞!;ƒõ¶  A•◊
+?Bè\Ap  A"£◊;Â`B  A•◊
+?Bè\Ap  @ÎCñ;Â`B  A√
+=?Tz·Ap  @ß|Ó<ƒõ¶ A~x∆AZ¨=è\)AM∫^=≤-A@M”=0 ≈?S¶`“ÃpYúÕ11 40 03.40+41 15 03.6@e‡tß@‹@D† ƒõ•„AahsΩãCñ?U¬èøC◊
+1RXS J114003.3+411508RXS J11401+4115  S1  =ìtº1237661966353104933  -  } %  Aä∫éAáR,AÖ<AÅåDAŒ˙<âÂ<Éë<ûÖŒ<nÙØ<p<!AÖvAzdgAq'ìAjˆIAg#n<˝Á>;Æ9;≠◊•;†™ü<mp  qsËã- @}                  AÖä‹A~=ÖAt‹ëAnâAi´ã<É-;K§è;5ûN;4‰};îyàAÑµA}◊As¯UAmcyAi0◊                       ˇˇˇˇˇˇˇˇ            ?Wµ,<'¬F;~µ;®#Ã;ÊøÅ=Èzdontneedhst     - @} %http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=175.0141666666667&dec=41.251&scale=0.19806&width=512&height=512&opt=&query=              J114003.39+411503.5@e‡s‚OÎ—@D† >cËﬁ;o;oB¥  AÖ‘˛A~è\Au7LAnbNAj(ˆ<#◊
+;Dõ¶;Dõ¶;Dõ¶;£◊
+- @} 'T0000201090021210@üL˝p£◊
+ˇˇˇ˛      î=ãˆ h =ëˆ8'≈¨  QSO                  QSO   BROADLINE             C/†B%- @} '?Vz˝Øì÷@e‡sÃÑcÇ@D† Nªˇö•  œF ˆ?í(;/_— ?±ØJ€∆d‘@<Â\Ö<É@e‡tZ5÷@D† ƒõ•„J114003.40+411503.6@e‡t'Ñ©H@D†!Qâ_ê=Ä4n=ó$ºo@dçåùgÑt@Qiê®ƒØ»@có%[\@A∞MäÕM¸@f„◊
+=p§@ßv∞£◊
+=&8÷Õ"õ1740p408_ab41-0293971740p408_ab41  r’A6Èy<ºjB@ÃÕ@K∆ßÔù≤A+æw<¨1BQôö?ı€"–Â`B@˘?}<£◊
+BU33?˝Û∂E°À@™E¢<ı¬èBôö?Ò"–Â`Aâ?˛üæv»¥9                     0000 0011AAAA       	 	  A`bAbjA/AeX                             @∞çÄ    @U˝ÅÛGAJ1@+Cñ    @©ÃøÙw6@Nûó|àÁõB´@~V?“Ú@«ª     @lÇ=QÔ∑@úÉ˙·GÆA“ì>∑K«@ínÃøÙw6@@pb=˙	@Å7"–Â`BA ì?ñßA6ƒú;ƒõ¶  >Ö°ÀA+„T;Â`B  >£S¯@¯ÃÕ<49X  ?S33@™üæ<‘˝Ù  ?tºAAù≤;Â`B  A8j<o  A\)<T˝Ù  @Ãºj<›/  A:Ò™;ƒõ¶  A0˝Ù;Â`B  A	ôö<49X  @ΩV<‘˝Ù  A8¨;ƒõ¶  A-Ôû;Â`B  A-<49X  @≥˜œ<›/ A6¨;ƒõ¶  A,óç;Â`B  Ao<49X  @ØS¯<˝Û∂ A5“Ú;ƒõ¶  A+ﬂ;<o  @˛è\<49X  @≠Oﬂ=tº A5Oﬂ;Â`B  A+tº<o  @¸É<Dõ¶  @¨¨=49X A4˝Ù;Â`B  A+7L<tº  @˚K«<e`B  @≠%=]/ A4»¥;Â`B  A+o<#◊
+  @˙è\<u¬è  @≠°À=á+ A6Ìë<£◊
+;ƒõ¶=Éo   @Î#Wy‘W@Îìàå%æ@Îz»úVbA+æw<£◊
+;£◊
+?∞£◊
+=p§   @Î#Wy‘W@Îìàå%æ@Îz»úVb@˘%<õ•„;ƒõ¶?∂á+I∫   @Î#Wy‘W@Îìàå%æ@Îy0Ìw@™=•„<#◊
+?¿         @Î#Wy‘W@Îìàå%æ@Îz»úVbˇÂ  /     >ÃÃÕA)¬è?Tz·B†  A9Oﬂ;ƒõ¶  A)¬è?Tz·B†  A/;d;Â`B  A)¬è?Tz·B†  Aìu<49X  A{33?n{B†  @¿9X<‘˝Ù  YúÕAahs=+AU∏<ı¬èALá+=Cñ?Mê&p ëoÄ:¢ÁV15 05 56.55+03 42 26.3@lOä=p£÷@®è–´-AYΩÖ∏?K∆®æÉo1RXS J150556.3+034212MARK 1392        S1.8=tº1237654880205209621 é- )   A{ÖAxfAu…◊Aq˘RAmÒv<ë9Ä<@⁄<`œã<6VW<\ﬂAtñ\AeA[9AU|¨AR^£<AÈ/; Tg;j;_\Y; Ú  –Ó/™/-éa)  -éa)         Ay£(Ai•çA^¥>AX˜èAT;ú;ÀSm;õ¢;;'˙;<ˆ¥Auﬂ“Af‡ΩA\≤'AWqΩAS'9                       ˇˇˇˇˇˇˇˇ            >®Ú®<	ï±;qkÿ;ö´ı;Ã¥S=Pndontneedhst     -éa) http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=226.48562499999997&dec=3.7073055555555556&scale=0.19806&width=512&height=512&opt=&query= J150556.55+034226.3@lOäX≥ˆ<@®ë¡óÂ:Éo:ÉoB¥  Ay∂FAi ¡A^˝ÙAYGÆAT£◊;ƒõ¶;o;o;o;Dõ¶-éa) T0000201090021210@üD€"–Â`         	4» h =ˆË7ß≈¨  QSO                  QSO   BROADLINE             Cb|R@mD-éa) ?AÅåb∑@lOäPπ7T@®ë˜‚ÛM  ÀW o?r
+á…≤:ÿ ?¡ó√÷Ñ¥@M√0j+@lOä=p£◊@®êR⁄J150556.55+034226.3@lOäÅòÒ‘@®ö`hˆd=^“â=YcºP©@AèÌHm@I!ÀñkÁ∞@k‹tkÁï@4PƒÍÄ;˚@®I¯‘˝Û∂@≠‡ﬁ∏QÎÖyÎ©¶¯5˜2268p030_ab41-0403752268p030_ab41  ù∑A(9X<¥9XBC33@ öüæv»¥AJ<£◊
+B\ÃÕ@óçOﬂ;d@”33<ÉoBâôö@ı¬è\(ˆ@ÄÂ`<¨1BLff?      @z·GÆ{                     0000 4200AAAA          AæI∫AΩÁmAø+AæÅ                             @√FÄ    @iHQ·√ÙAfÈy@65?=q©¸@æÓ3?˙¡”@aÔÆ˜<B#Ñ@}Oﬂ=è\)@·º`    @Ä}\ @¢⁄üæv…A‰E¢?ßçP@ÆNf_˙;õ@R˙MﬂÜ„¥@á=ìtºjA"è\?RnòA(  ;ƒõ¶  >Ö°ÀA˜œ;ƒõ¶  >£S¯@”;d;ƒõ¶  ?S33@Äb<o ?tºA3S¯;ƒõ¶  A(∞!;ƒõ¶  A ºj;ƒõ¶  @¢V<o  A,-;ƒõ¶  A!o;ƒõ¶  @Ì°À;ƒõ¶  @í~˙<o A(‘˛;ƒõ¶  A ¡;ƒõ¶  @‚á+;ƒõ¶  @âOﬂ<o A&Â`;ƒõ¶  A(ˆ;ƒõ¶  @€Ôû;ƒõ¶  @Ñ£◊<tº A%ù≤;ƒõ¶  A/;ƒõ¶  @◊˜œ;ƒõ¶  @Çè\<#◊
+ A$∞!;ƒõ¶  AÉ;ƒõ¶  @’Å;ƒõ¶  @ÅÅ<Dõ¶ A$;ƒõ¶ A1;ƒõ¶ @”˜œ;ƒõ¶  @ÅV<e`B A#Å;ƒõ¶ AÆ;ƒõ¶ @”;ƒõ¶ @ÄÃÕ<Éo A(9X=,1<tº>0 ≈   @Í˜x}∑·X@Î$ck∆@Î‰3Ü¿AJ<Ìëh;ƒõ¶?æ˘€"–Â`   @Í˜x}∑·X@Î$ck∆@Î‰3Ü¿@”33<õ•„;Éo?∞Â`Aâ7L   @Í˜x}∑·X@Î$ck∆@Î‰3Ü¿@ÅV=+;Â`B?¬nóçOﬂ;   @Í˜x}∑·X@Î$ck∆@Î‰3Ü¿ ;ˇÒˇÓ     ?!GÆAí=q?ÆBH  A'GÆ;ƒõ¶  Aí=q?ÆBH  Aß;ƒõ¶  Aí=q?ÆBH  @ﬁJ;ƒõ¶  Aº∏R?.{BH  @çhs<o :¢ÁVAY=ëhsAJŸ=mëhAA∏=LÃÕ?Z6‚Î\ˆ…Ä Ä                         @dÕ2ﬂP]@ dÁ´ud0¿  ¿  ¿  ¿                                            =ÿb1237651753467510819 ∂-  #   AÑTπAÑ§mAÑ>ŒAadAÄÉ´<Ü‚<NIe<B5<|~U<§%AÑ¶AÉMAÄ‹∞Ayç}AxË\;Ÿ	5;á´«;∫«;Æ∫><) •  	≈*ír-∂a  -∂a "â> h ¿  AÇ®¿  Ax=oAwjÀ;Û`∆;e¥í;lÔ¿;iπû;ÿ´AÇX6AÅ\ŸA~ë†Av—"AvhÄ                      ƒy  g∑          ?Wx<(c;ÅùÇ;•Aw;€˝®= ¬Ómeh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=166.41245999999998&dec=2.04927&scale=0.19806&width=512&height=512&opt=&query=            J110538.99+020257.3@dÕ2ÎÂñ»@ dÍ–√“R;o;oB¥  AÑ†AÇßAÄ9XAx=qAwlã;Â`B;Éo;Éo;Éo;Â`B-∂a #T0000201090020010@üA_!-w2    ˇˇˇ˛ â> h =ÿ?í8{®Ç  QSO                  QSO   STARBURST_BROADLINE   C&ió@'=-∂a #?0©U˛É#¡@dÕ2‰)@ dÈòqR¸  Ãé J?SÓ&a◊˚á ?≈´—™Ç*@Bèc^t)û@dÕ2ﬂP]@ dÁ´ud0J110538.99+020257.5@dÕ3ﬂW@ d˚TüîÖ=êbN=åÁª«‚Ç@o§X§qc@K-s¬o{π@d÷d¨Û≤¿…Á—Æ@û˜çOﬂ;@™∏‘˝Û∂Ü ˛„¸1663p015_ab41-0316831663p015_ab41  {√A>1'<ƒõ¶B7ôö@¬è\(ı√A1/<¨1BLff?ÚÌëhr∞!A	Ö<ƒõ¶B7ôö?Úƒõ•„S¯@»¨=YáA§ÃÕ?M“Ò©˚Á?ˆAâ7K∆®                     0000  0000AAAA          
+ AK¬èAZ1'AM“ÚAK€#                             @•«ÃøÙw6@N`ƒ§	_$AÑè\@7lã;Dõ¶@¢SÃøÙw6@FÚ∞ ƒõ¶B ‡B@z¿É=aGÆ@∂ñf_˙;õ@_\ íFø@¶ıŒŸá+A33?ª∆®@~ª\Ö◊E@7‡AxpT&@é‹Èx‘˝ÙA-\)?– ≈A>1';Â`B  >Ö°ÀA1V;Â`B  >£S¯A	X<ºj  ?S33@∆·H=Å% ?tºAH»¥;Â`B  A=tº<o  AÎÖ<Â`B  @È€#=çOﬂ AB^5;Â`B  A6(ˆ;Â`B  AãD<ºj  @ŸOﬂ=Å% A?Ôû;Â`B  A3S¯;Â`B  AïÅ<¥9X  @Œ–Â=}Û∂ A>·H;Â`B A2(ˆ<o AÌë<ƒõ¶  @»Z=Ö∏ A>QÏ<o A1çP<o AïÅ<‘˝Ù @ƒı√=ïÅ A=Û∂<o A1"—<tº AÒ™<ı¬è @¬nò=•„T A=≤-<tº A0ÃÕ<#◊
+ A∞!=Cñ @¿Z=∏QÏ A=x’<#◊
+ A0~˙<#◊
+ Aóç=•„ @æ·H=ŒŸ A>-<¨1;ƒõ¶=õ•„   @Î§_≈®@@Îƒ!
+FÄ@Î∂Íu™A133=o<tº?ªdZ¨1   @Î§_≈®@@Îƒ!
+FÄ@Î∂Íu™A	p§=ïÅ<¨1?Œ∏QÎÖ∏   @Î§_≈®@@Îƒ!
+FÄ@Î∂Íu™@«ﬂ;>@É=]/?ÊE° ¿É   @Î§_≈®@@Îƒ!
+FÄ@Î∂Íu™ˇÛ         ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 1LAg˚Á=YáAZ¨=ix’AKo=#◊
+=Ÿ)ßrº›Ä Ä                         @e≤ˇ`b(ä@√ù®⁄ˆä¿  ¿  ¿  ¿                                            =›/1237655124467646507 «-  V +   AÇAÉãVAÉ.A|B‚A^ª=6A=gk><ú∆<˜Œg<òÎüA~‚;AÄkAqT|A[aÙA˙›R>¸ú>å==œU´>Yó∂?ΩGX  º˘å-«@V  -«@V )        ¿  AÄKQ¿  Ar˛úAt¬;«wV;M∏;IçŸ;;Eﬂ;ΩìºAÄ"˛A~˙(A{_Ar√As`Ï                       ˇˇˇˇˇˇˇˇ            ?DgÒ<![;ˇD;•T;‰úo=#nope            Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=173.59367388888887&dec=4.19103111111111&scale=0.19806&width=512&height=512&opt=&query=   J113422.48+041127.6@e≤ˇdœçq@√òÈpqÇ=©˚Á=ïÅB¥  AÄı√AXA{+Ar{AsK«;ƒõ¶;Dõ¶;Dõ¶;Dõ¶;ƒõ¶-«@V .F0000201090161010@üE(€ã¨q    ˇˇˇ˘  R h =›^J7ß≈¨  GALAXY               QSO   BROADLINE             C-ó˚@ÜÌ-«@V .?Z∞•˛ËŸ∏@e≤ˇ'∞Ú9@√úsY)E  Õ¢ ;?Jç>
+∫äA ?º+{ÆÕ@TaÆBû
+B@e≤ˇ`ùœâ@√ù°fµJ113422.48+041127.7@e≤ˇüΩ†	@√û÷|©=}ä€=zC˛ª∑Ä4@pMeqé∏ï@NL˜
+ç¯|@eé¿48Ò?Ù‰3Ü?I¬@å¯ﬂ;dZ@ëó‚M“Ò™_Aåﬁ1731p045_ab41-0117161731p045_ab41  -ƒA5GÆ<ƒõ¶B7ôö@¬è\(ı√A&{<£◊
+BVff?¯¿Énóç@ÙI∫<ìtºBwôö?˘çOﬂ;dZ@≠ëh=oBôö?Û"–Â`Aâ?˚ù≤-V                     hh00  0021AAAA           A[ÁmA]?}A`A]æw                 h  h      @≤.ô†ƒe@YU¬~ï1UAÖÆ@0Aâ    @±`3?˙¡”@T¡€ü'xB Ωq@dõ¶    @À[Ä    @lHQ·√Ù@ß‹‹¨1'AÓI∫    @ê¡ôü‰6v@@r¿Áº<@ê`Ò©˚ÁmA2=q?YXA3ﬂ;;ƒõ¶  >Ö°ÀA%â7;ƒõ¶  >£S¯@Û˜œ<#◊
+  ?S33@¨Ìë=•„ ?tºA?;ƒõ¶  A2$›;Â`B  A‘˛<Dõ¶  @œ†=#◊
+ A8J;ƒõ¶  A*£◊;ƒõ¶  A/<#◊
+  @ø\)=•„ A4bN;ƒõ¶  A'?};ƒõ¶  AÎÖ<#◊
+  @∂J=#◊
+ A0É;ƒõ¶ A$¨;ƒõ¶ @˝∫^<#◊
+ @±7L=8QÏ A*J;ƒõ¶ A Â`;ƒõ¶ @˘„T<#◊
+ @ØçP=aGÆ A ãD;ƒõ¶ A33;ƒõ¶ @˜<49X @Øtº=ãCñ A%;ƒõ¶ A‘˛;ƒõ¶ @Ùj<Dõ¶ @Ø˜œ=¨1 AÉ;ƒõ¶ AŒŸ;ƒõ¶ @Ò˚Á<Dõ¶ @∞bN=–Â` A5/<ìtº;£◊
+=∂E¢   @ÎV5Ú?Œ@Îz3`@ÎeÔ˚††A&{=o<tº?Ωp£◊
+=q   @ÎV5Ú?Œ@Îz3`@ÎeÔ˚††@ÙI∫=Dõ¶<T˝Ù?√ïÅ$›/   @ÎV5Ú?Œ@Îz3`@ÎeÔ˚††@≠7L=ÃÃÕ<›/?Ÿ˚ÁlãCñ   @ÎV5Ú?Œ@Îz3`@ÎeÔ˚††ˇ˝ ˇ˙      >®ı√A#\)?J=q¬H  A6óç;ƒõ¶  A#\)?J=q¬H  A)\);ƒõ¶  A#\)?J=q¬H  AOﬂ<#◊
+  AÄQÏ?kÖ¬H  @¡ÎÖ=•„ 3$AjI∫=Å%A\õ¶=è\)AN~˙=Dõ¶?BÇ˘"SÄ Ä                         @m∑ø¨≤J@i›¡Áñ|¿  ¿  ¿  ¿                                            =‡ﬁ”1237662262716137619 E-  ì  AåAâoÈAÜÌyAÉVçAÇÛØ<qQå<UI<J‘≠<Wª<îI≠Aâg;AÇtáAz-∫AqıAmÓB=~Ô}<%õ=ënO=k=Ù=£Ò<  .¡Añv-EA                  ¿  AÑä¿  Aw%◊Aså<D8†;å…;m(!;x~};ÃJÖAÜ˙MAÇqÑA{~eAt◊∏Aqv%                       ˇˇˇˇˇˇˇˇ            ?fƒ<*äó;Åœ ;™È”;Î„È=
++¿meh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=237.7215269444444&dec=5.353384999999999&scale=0.19806&width=512&height=512&opt=&query=   J155053.16+052112.1@m∑Ω±¶◊@i‹r\=Ó;o;oB¥  Aã\)AÑù≤A~á+Aw"—AsK«<T˝Ù;Éo;Éo;Éo;ƒõ¶-F†∑ IT0000201010021210@üMI‘ï+     ˇˇˇˇ .Që h =·(98íÃ˜  QA                   QSO   BROADLINE             Cm∏∂@´NÓ-F†∑ I?A'-\í1Ö@m∑Ã¶÷@i‹Emká  ’@F?BávôÇ≈t ?¬ËÚù@Ó@árO®¥¿@m∑ø ÖÀ@i›¡Áñ}J155053.16+052112.3@m∑√[4@iËÅ^9q=óˆ+=îØOº[ã¨@,OËâ¡µB@E∫˜∏2‚@mD%.ç≤@8‹øÁ<t@Qüæv»¥9@i©“Ò©˚Á ‡¡['7HJ2369p060_ab41-0000102369p060_ab41   
+A?„T<ƒõ¶B533@üæv»¥A4Â`<¥9XBAôö?Û©˚ÁlãDAÁm<‘˝ÙB&ÃÕ?ıâ7K∆ß@À•„=e`BAú  ?Ô˜ŒŸá+?¸¨1&Èy                     0000 1100AAAA           A\ƒúA^AOCñAK€#                             @£¿ô†ƒe@KÊ»ºú”·A`(ˆ@E/>ñ@ùü3@à @Còr¿Áº<Bh@kCñ    @≥ÆÄ    @^5¿µgU@¢ä¿ÉoA÷ ≈?9€#@|6=Ä^_1@7.Ÿ'N"£@Öæ=p£◊
+A$=q?ú(ˆA?á;Â`B  >Ö°ÀA4¿É<tº  >£S¯A`B<¨1  ?S33@ÀïÅ=çOﬂ ?tºAJ$›;Â`B  AAK«<#◊
+  A"^5<‘˝Ù  @Ì`B=ïÅ  ACCñ;Â`B  A9€#<tº  Aìu<¨1  @ﬁ=çOﬂ A@1';Â`B  A6£◊<tº  A
+=<£◊
+  @’á=ïÅ A>üæ;Â`B  A5†<tº  A“Ú<£◊
+  @–j=ßÔû A=∂F;Â`B  A4E¢<#◊
+  AÎÖ<¥9X  @Œ=ƒõ¶ A=∏<o  A3∆®<49X  Aƒú<ƒõ¶  @Ã  =·GÆ A<¿É<o A3|Ó<T˝Ù Aì<›/  @ >    A<~˙<tº A3Oﬂ<e`B A∂F<ı¬è @»ìu>nò A?ŒŸ<Dõ¶;Dõ¶=ßÔû   @Í˘Ö‚√@Í˘*ÖI”@Í˘#MA“A4Â`<õ•„;£◊
+?¨¨1&Èy   @Í˘Ö‚√@Í˘*ÖI”@Í˘#MA“A˜œ=©˚Á<ƒõ¶?—ÎÖ∏QÏ   @Í˘Ö‚√@Í˘*ÖI”@Í˘vµæ@ ~˙=ÃÃÕ<Ìëh?„çOﬂ;dZ   @Í˘Ö‚√@Í˘*ÖI”@Í˘vµæ !ˇ˚ˇÈ     >ÊffAÃÕ?E∏¡†  ACx’;Â`B  AÃÕ?E∏¡†  A: ≈<tº  AÃÕ?E∏¡†  AÌë<¨1  A}ÎÖ?hı√¡†  @·&È=è\) ;˛ÏgAm=ìtºA`QÏ=° ¡AS“Ú=q©¸?*ü˙bÒÄ Ä                         @a1U‡èòæ@H8}øH¿  ¿  ¿  ¿                                            =Ôù≤1237657596230238291 -  ﬁ S  Aá!íAázAáMqAÇÆaAÉﬂä<¯·˜<ÿ^=¸\<ô ^<¬óAÖ◊ AÉûAÄ⁄ÔAz\≈Az€<({˘;◊)<≠<˝<aÎÙ  Ù•)jp-¿ﬁ                  ¿  AÉÉü¿  Ay˚ˆAy‹y;ˇÊ˛;hfã;Z∑Y;[;Á;ÂL<AÑ{ÄAÇAÄZ⁄AyZüAyj                       ˇˇˇˇˇˇˇˇ            ?UË<>⁄E;qòÉ;¢P\;◊v‘= check_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=137.54173305555554&dec=48.228275&scale=0.19806&width=512&height=512&opt=&query=          J091010.01+481341.7@a1U‡q≈?@H7dÒa;o;oB¥  AÖ~˙AÉ;dAÄŸAzìAzV<o;Éo;Dõ¶;Dõ¶;Â`B-/¿o 'T0000201090021010@üHìtºjˇˇˇ˝     ÙàŒ h =Ôç¯7˚®Ç  GALAXY               QSO   STARBURST_BROADLINE   C	äØB@È¡-/¿o '?t¨ˇ¥"˜<@a1U•∆d∫@H:–w¡e˝  Ã :?Tàá–Y,5 ?¥î’∫≠Ê¿XüŸ	ÒÒJ@a1U‡q≈?@H8}øHJ091010.00+481341.7@a1UõW„@H8œ=kÌ˙=péºo@eb$e:|@ERgr’‡r@_.¬¿ë@>[WÛ‹‹@ò„S˜ŒŸ@ñqÊffff
+Ÿ≥s7Ì1372p484_ab41-0122051372p484_ab41  /≠A:1'<ºjB;33?˜GÆz·HA)+<õ•„Bbff?ÒÁlãCïÅ@Ò€#<ãCñBÉôö?Ò`Aâ7K«@£ŒŸ<ÌëhB33?ÎŒ_o“ ?Úz·GÆ               ;Éo  0000  0110AAAA          APŸAY©¸AX–ÂAZff                             @´gÃøÙw6@R∏QﬁÔÂ A9©¸@2·H=∏QÏ@≠ÃøÙw6@Pr=ÅjŒ´B …∫@ix’>)˚Á@ÕZÄ    @lí=QÔ∑@ûømëhr∞Aÿ∞!>Ìëh@ñ3ôü‰6v@Có|àÁõ@ÇµŸá+AãD?æwA:(ˆ;ƒõ¶  >Ö°ÀA(ı√;ƒõ¶  >£S¯@Ú5?<#◊
+  ?S33@¶nò<ı¬è ?tºADz·;Â`B  A533;Â`B  A¬è<Dõ¶  @»QÏ=o A>V;ƒõ¶  A.b;ƒõ¶  AM”<#◊
+  @∏›/<ı¬è A<  ;Â`B  A+K«;ƒõ¶  A&È<#◊
+  @∞  =o A;;Â`B A*$›;ƒõ¶ @¸ìu<#◊
+ @´çP=çP A:ãD;Â`B A)ïÅ;Â`B @˘â7<49X @©˚Á=49X A:E¢;Â`B A)?};Â`B @˜Ám<Dõ¶ @©“Ú=]/ A:J<o A(˝Ù;Â`B @˜<T˝Ù @™üæ=ãCñ A9◊
+<o A(ƒú;Â`B @ˆv…<u¬è @´ïÅ=©˚Á A:1'<u¬è;Éo=Dõ¶   @Î?)a@ÎäuB,@Î-O˚¿÷A)+=o<tº?∏‘˝Û∂E¢   @Î?)a@ÎäuB,@Î-O˚¿÷@Ò€#=o<tº?∑
+=p£◊
+   @Î?)a@ÎäuB,@Î-O˚¿÷@£•„=o<tº?ƒ›/üæw   @Î?)a@ÎäuB,@Î-O˚¿÷  +      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä "t⁄üAnÂ`=e`BA`Ÿ=]/AN¨=çP?!vçÜ¯ƒÄ Ä                         @dªk ‚¿@EW[’Ï¿  ¿  ¿  ¿                                            > ùI1237661871860613138 Í-  L    AãPßAãáÍAàË8AÑ¨CAÑœV<¥’<ÏRæ=H	|<•©z=öÆAä~ßAà±AÑÓAÄ!eA}˚é<T¯E;ªd%;Ãâ);≈iW<V@s  ‚¶ID∏-Í@L  -Í@L L9KÌ h ¿  Aá¶È¿  A~XA|ÃE<#*Ú;ået;v&Ó;m ;È∏AâN–Aáo"AÉ`ûA~≤˛A|†∆                      »®w "          ?JÙh<æ;yÎk;¶]3;Á•§=¯check_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=165.85681194444442&dec=42.67979&scale=0.19806&width=512&height=512&opt=&query=           J110325.63+424047.2@dªj›Y@EWtˇÜ];Éo;ÉoB¥  AâôöAá•„AÉâ7A~Ò™A|ÃÕ<#◊
+;Éo;Éo;Éo;Â`B-Í@L T0000201010021010@üLÏŸË>Bˇˇˇ˚ ˇˇˇ¸ L9KÌ h > ∫8Q∑  QSO                  QSO   BROADLINE             C%€XB*∏-Í@L ?Qòr!%Òø@dªjÃ˚SÎ@EWfåçS  œ= Â?aC6˝P∫ ?ÃÌ‘ÑQ2¯@CkfQm∞ﬁ@dªk ˇ⁄@@EW[’ÏJ110325.64+424047.4@dªkq2rC@EWˆ	9=†˘	=†ê.ºB¯8@eQn_˙;õ@Oë ˆÕ1@bîwcÆ¸@@≥rÑÅ⁄`@üõCïÅ%@•¢"M“Ò™Á∫å¸V1658p424_ab41-0266461658p424_ab41  hAGÎÖ<ÃÃÕB0  ?Ûp£◊
+=qA; ¡<ºjB=33?Ï\ë—N;ÕA¿É<˝Û∂Bff?Aâ7K∆®@Ï£◊=‘˝ÙA(  ?Úìtºj?Èx‘˝Û∂                     0000  1111AAAA          A|£◊A|5?A7LA{Å                             @òﬂ3@à @B,˝èxA2Z@3S¯    @ìÊf`…ä@:ÏI∫^5?Aˆ˘€@f˘€>Å%@•3@à @RÙ9`sﬁ@ùÌëhr∞A÷Ôû    @e—Güfb5@0£÷˘vy@Å≤ôôôôöA!á?€ÖAG¬è<o  >Ö°ÀA;Æ<tº  >£S¯A‘˛=æw  ?S33@ı√>GÆ ?tºARAâ<tº  AHb<#◊
+  A-tº=Dõ¶  A	GÆ>Oﬂ; AKÔû<o  A@»¥<tº  A$1=æw  A≤->GÆ AIx’<o  A=Ám<#◊
+  AŸ=çP  @˚Ám>\(ˆ AH^5<tº  A<∏R<#◊
+  A=æw  @¸1'>ëÎÖ AGæw<tº A<-<49X AÉ=0 ≈ A Â`>Ÿôö AGS¯<#◊
+ A;ﬂ;<T˝Ù Aæw=H¥9 @Óè\¿    AG%<49X A;°À<e`B A`B=e`B @Aâ¿    AF¿É<Dõ¶ A;hs<Éo Ao=Å% @bN¿    AGÎÖ<¥9X;£◊
+=üæw   @Î-«´@Î'ë9´@Î^ò±¬ÖA;Ám=+<o?¡ ¿Énò   @Î-«´@Î'ë9´@Î^ò±¬ÖA»¥=á+<ãCñ?À•„S˜ŒŸ   @Î-«´@Î'ë9´@Î^ò±¬Ö@Î†>õ"—=õ•„?ÛÁlãCïÅ   @Î-«´@Î'ë9´@Î^ò±¬Ö ˇˇ (    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ö±|Ao˚Á=@ÉAd˘€=}Û∂A[≤-=PÂ`?#EâHG:Ä Ä                         @bœ†QCø@@a∏ÄÖ¸¿  ¿  ¿  ¿                                            >@∏1237664668967960579 u-  „   AÄtlAÅÁ≠AÇ'A|XBAÅ<uø#<ﬂ-˜<aê_<é&´<cÎëAÄLïAÄ©FA~ñ†Av»™Avúú;¶ k;§m5<º}<$F<Uˇ  ÒR•§Ï-uÄ„                  ¿  AÄàb¿  Au]˝AuùD;¡2k;TG0;T‚];K´;æuõAÄAdAÄ3A|À#AtŒÃAu7æ                       ˇˇˇˇˇˇˇˇ            ?^´t<é;i5;•‘;Õ}=Ñ˜meh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=144.369095&dec=32.76344305555555&scale=0.19806&width=512&height=512&opt=&query=          J093728.57+324548.5@bœÇıf@@aπj8„:Éo:ÉoB¥  AÇ£◊AÅp§A~ÉAvbNAvóç;Â`B;Éo;Éo;Dõ¶;ƒõ¶-§`{ ÉT0000B01090021010@üPÿD–©        \tç: h >	´8'≈¨  QSO                  QSO   BROADLINE             C^}Bƒ-§`{ É?`,ì»ì@bœzJ©@@aπu!\óó  –ä“?@∏›`£ ?√R*o?R¸¿<Ç¥RÇÉ”@bœ†QCø@@a∏ÄÆJ093728.57+324548.5@bœngº®@@aπµò”°=ÉF‹=Ç@∏;Â`B@h"(F:vÙ@G˚Ÿﬁ-Ga@`˘ÅìHF¡@1éåj‹Ì¨@ìHv»¥9X@Ç±ºj~˘€¯‘‘Á∂G1439p333_ab41-0015431439p333_ab41  A=¬è<ƒõ¶B8  @ ƒõ•„TA,J<¨1BLÃÕ?Û◊
+=p£◊@˙∏R<ìtºBv  ?ıÖ∏QÎÖ@¿Aâ=,1AÕôö?=p£◊
+=?¯»¥9Xb                     0000  2211AAAA           A\A\jA_K«A^£◊                             @¶Uô†ƒe@O3C˙*‘A_©¸@4Z    @®•3@à @NÕ/#:GB‘˛@up§>•„@∆ª     @g¨) >Í!@£d’Å$›AÂ•„    @ÉìÖƒ¡f@8_æáè´⁄@àÈ ¿ÉoA&V?>˘€A=ïÅ;Â`B  >Ö°ÀA,ì;Â`B  >£S¯@˙è\<#◊
+  ?S33@øÖ=T˝Ù ?tºAH5?;Â`B  A8r∞;Â`B  AÎÖ<Dõ¶  @·©¸=aGÆ AA¬è;Â`B  A133;Â`B  A
+z·<#◊
+  @—Û∂=T˝Ù A?/;Â`B  A.QÏ;Â`B  A\)<#◊
+  @»õ¶=]/ A=Û∂;Â`B  A-á;Â`B  AãD<#◊
+  @√˜œ=}Û∂ A=?};Â`B A,j<o A%<49X @¬5?=óçP A<–Â;Â`B A,<o A -<Dõ¶ @¡X=∏QÏ A<ãD<o A+æw<tº @ˇdZ<T˝Ù @¡&È=ﬂ;d A<^5<o A+çP<tº @˛Ÿ<e`B @¡â7>+ A=Æ<#◊
+;Dõ¶>∏R   @Î®,K@Î«Ìeô7@Î∑øéZ˜A,J<˝Û∂<o?∫¨1&È   @Î®,K@Î«Ìeô7@Î∑øéZ˜@˙»¥=o<tº?Ωp£◊
+=q   @Î®,K@Î«Ìeô7@Î∑øéZ˜@ø\)=ÎÖ<˝Û∂?‚I∫^5?   @Î®,K@Î«Ìeô7@Î∑øéZ˜ˇπˇÍˇ€    ?
+=qAQÏ?QÎÖ¬Ç  AAïÅ;Â`B  AQÏ?QÎÖ¬Ç  A1o;Â`B  AQÏ?QÎÖ¬Ç  A
+-<#◊
+  Anè\?n{¬Ç  @◊o=T˝Ù ÃAl¨=YáA]&È=<jAN¨=+?*6‚ç∫º¿Ä Ä                         @^_¸?¯mL@:ƒ˚/W4¿  ¿  ¿  ¿                                            >)_1237660343925997872 Ü-  L0  AÖ7AÖ2ÿAÖoÜAÅeÆAÇ›…<Ygê< D<}P2<îõ≠<}âÖAÖ2ûAÑéRAÉè«ALÔAÄ;(;Œë;ÉL÷;≈®›;¿&P<BI£  ¯ÁÓ∏-ÜÄL  -ÜÄL-        ¿  AÑ7∑¿  A}û≠A~Æ;¯±ï;ák[;åÙê;èÊ<‹AÉ©AÇ¯AÅ»ÌA|?A}i                       ˇˇˇˇˇˇˇˇ            ?^ü‚<√ú;bP';üﬂé;∆)9=3Nyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=121.4997711111111&dec=26.10066194444444&scale=0.19806&width=512&height=512&opt=&query=   J080559.94+260602.3@^_¸*ài∆@:≈.r⁄;o;oB¥  AÖVAÑ;dAÇ‘˛A}ﬂ;A~É<o;Éo;Éo;Éo<o-ÜÄL1T0000201090020010@üKg†˘	lˇˇˇ˝     ‘{Jn h >
+ÿ7ß≈¨  QSO                  QSO   BROADLINE             BÚˇ‚A–Œ(-ÜÄL1?7@~.ïÊ@^_¸0?Si@:≈Q} Êµ  ÕæÌ?PÓüäÀ'Q ?≤1ìˆ¬iú@G∂≥™º◊å@^_¸?ÅO@:ƒ¸Û0J080559.94+260602.4@^_¸Éﬂ1@:≈€A÷=ë—N=ãCñ<Ï¿@h|Õøp√∑@;".Õ˚°@]àê[,vÅ@æ'?ﬂÈ‡@£«Æz·@ßD1&Èy‡ã·»±µ´1216p257_ab41-0259631216p257_ab41  ekA=¬è<ÃÃÕB*ÃÕ@∏QÎÖ∏A01<£◊
+BUôö?ÚAâ7K∆®A\)<ºjB<ff?ÔÑM:ì@∆^5=H¥9A±ôö?ÒdZ¨1?ıâ7K∆ß                     0000  0110AAAA           A]7LA^ffA^AXZ                             @¶RÃøÙw6@PΩÅÛGAÑŒŸ@A%    @£ñ3@à @Gt9`sﬁB#`B@{dZ=Éo@º∞f_˙;õ@c}pü•LU@ß\ÏãCïÅAÔì@J@ÄhÃ¿7ì@7új~˘€#@è*5?|ÌëA*^5?Tz·A=Å;ƒõ¶  >Ö°ÀA0b;Â`B  >£S¯A<Éo  ?S33@ƒÌë=y€# ?tºAH$›;Â`B  A<v…<o  A ¡<£◊
+  @ÁS¯=Ö∏ AAÆ;ƒõ¶  A5+;Â`B  A5?<Éo  @◊\)=y€# A?†;ƒõ¶  A2=q;Â`B  AÌë<u¬è  @ÕÛ∂=Éo A=Ôû;Â`B  A1<o  A	Û∂<Éo  @»ı√=ïÅ A=Oﬂ;Â`B  A0^5<o  AI∫<ãCñ  @«Cñ=¥9X A<·H;Â`B A/Û∂<tº AS¯<õ•„ @«S¯=ﬂ;d A<ãD;Â`B A/•„<tº A»¥<¨1 @»ãD>I∫ A<E¢<o A/dZ<#◊
+ A~˙<ƒõ¶ @ ^5>2- A=◊
+<e`B;Éo=óçP   @Î J•Z®@Î jg∞H2@Î ZÜÖÖêA0 ≈<ºj;Â`B?√S˜ŒŸá   @Î J•Z®@Î jg∞H2@Î ZÜÖÖêAS¯=H¥9<e`B?¡ ¿Énò   @Î J•Z®@Î jg∞H2@Î ZÜÖÖê@∆~˙>á+=0 ≈?·„S˜ŒŸ   @Î J•Z®@Î jg∞H2@Î ZÜÖÖê  -ˇˆ     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 	t◊∑AmÛ∂=,1Ab¨=@ÉAT˝Ù=Cñ?:ÒÆÆ~qñÄ Ä                         @n<aÄ/ƒπ@HbŸŸBÃ¿  ¿  ¿  ¿                                            >Å1237651250439913598 A- J ~   Aò√mAí·JAç AáAáïﬁ<™„S<âÈ<öNa<dÆï<‘F<Aï£¥Aç:,AÜsdAÅìãAÄÀ8=#ﬂŒ<I—j<M¸Ê<AM…<üD◊  Ê•’N-ABJ  -ABJ }	∏4à h ¿  Aç>À¿  AÅè·AÄÚ´<¶;¸;∏,p<á[õ;~ºÀ<<˛Aì€∂Aå®ÓAÑŒ°AÅ=vAÄ∏;                      ±ò SÛ          ?_N¨<”„;hu.;ù*J;¸∑{=H0edgeon_prob     Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=241.88690194444442&dec=48.7722511111111&scale=0.19806&width=512&height=512&opt=&query=   J160732.86+484619.9@n<a«õ4§@Hb◊ù
+gb?'lã?‘˛B¥  AîßAç?}AÖ;dAÅè\AÄÒ™<£◊
+;ƒõ¶<ãCñ;Éo<o-ABJ ~F0000201090020230@üA]ÃcÒ    ˇˇˇ˛ 	∏4à h >®X7ß≈¨  GALAXY               QSO   STARBURST_BROADLINE   Cq„BC…-ABJ ~?X˙õæ¢@n<aº„W√@HbŸ¨926n  ÀV “?,Û9≥0› ?ªÕxƒ6¸@Rè˙eåK”@n<aÄMò9@HbŸÍ¶“J160732.86+484620.1@n<a‹ìÍ-@HbŸdäƒ=ÜYK=É‰&ºIÖ@Sü·≤7@GW&É!à@k ã;”Â@P«bV6m@Ø „◊
+=q@¶se`Aâ7!∂ô ≠˘V2429p484_ab41-0289502429p484_ab41  qA@M”<ºjB>  ?˝ﬂ;dZ¨A2£◊<¨1BN  ?Úìtºj~˙A
+=q<¨1BPff?Û“Ò©˚Ám@√Æ=•„AÊff?Ìﬁi≠B√ ?ÙÂ`Aâ7L                     0000  5300AAAA    1 1 1 1 . . $ .BIá+BF˛˙B=¯’B=êb                             @£Iô†ƒe@I˘7Cc,A»¥@&˘€<ãCñ@†€ô†ƒe@DÓ5?|ÌëAµ
+=@OçP=ix’@µ™f_˙;õ@Zûñ@í„CïÅ%A–˝Ù@∑dZ@ÅæQﬂ¸Tz@3ºj~˘€#@uRz·GÆA#Æ?ÎCñA@nò;ƒõ¶  >Ö°ÀA2»¥;ƒõ¶  >£S¯A
+  <49X  ?S33@√lã<Â`B ?tºAJ–Â;ƒõ¶  A?%;ƒõ¶  A ƒú<T˝Ù  @‰ı√<Ìëh ADõ¶;ƒõ¶  A7„T;ƒõ¶  A33<49X  @’€#<Â`B ABV;ƒõ¶  A5&È;ƒõ¶  Ab<49X  @Õá<ı¬è AAlã;ƒõ¶ A4b;ƒõ¶ ACñ<49X @»‘˛=\) A@˝Ù;Â`B A3Ö;Â`B A∫^<Dõ¶ @«Cñ=,1 A@¥9;Â`B A333;Â`B AÌë<e`B @∆v…=LÃÕ A@z·;Â`B A2Ìë;Â`B AãD<u¬è @≈∫^=u¬è A@Aâ<o A2∞!<o A^5<ãCñ @≈%=ëhs A@I∫=8QÏ;ƒõ¶>,1 0  @Íˆ ó
+˘X@Î{S: ¨@ÎÊ…ŒA2£◊=#◊
+;ƒõ¶?«+I∫^ 0  @Íˆ ó
+˘X@Î{S: ¨@ÎÊ…ŒA
+=q=y€#<tº?‘j~˘€"— -  @Íˆ ó
+˘X@Î{S: ¨@Î&‰Àú@√Ö=Û∂F<ìtº?‡z·GÆ{ -  @Íˆ ó
+˘X@Î{S: ¨@Î&‰Àú 7       ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä :JjAt=ÉoAeçP=ïÅATì=æw?;ô€…èÖjÄ Ä                         @fY¿ú¥/@J/¬ejΩ¿  ¿  ¿  ¿                                            >≤-1237657628990701614 - ã .   AäÈ^Aäô=Aä{AàûÃAàsC=%0≠=ŸŸ<i	ò<q'+<ïΩBAâÍZAáøÿAÖ6¸AÇ≈EAÅù><oïô< Ó<©ıÿ<≤{Ü<Ëqj  a∫#ÕG-aã  -aã -ƒ	@ h ¿  Aá†7¿  AÉÈAÇH_<#>Á;ãåÕ;áËú;åic<⁄ÂAà}LAÜØ∂AÑ¢AÇè•AÅÍò                      Ö=„ '¡ì          ?]<<7V;u^h;°åü;Õcö=C?check_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=178.78170805555553&dec=52.024894999999994&scale=0.19806&width=512&height=512&opt=&query= J115507.61+520129.6@fY∆…}ç@J0´º≤;o;oB¥  AâƒúAáüæAÖOﬂAÉ{AÇGÆ<#◊
+;Éo;Éo;Éo<tº-aã .T0000201090021010@üG‡ﬁ“àŒˇˇˇˇ     ƒ	@ h >ﬁæ7ß≈¨  QSO                  QSO   BROADLINE             C2»BP~-aã .?ni7¡P	@fY®«‹Z@J1√€ ∆q  Ãê @?SÊœ_€ÕE ?»Õ–ÿÀ—@OT+
+p@fY¿~‡±@J/¬ejæJ115507.62+520129.7@fYeTÓo@J0â4«à=ä	=âk∫ºIR@aƒπQ6S@OyÀº+îŸ@cí,æ}@FÚ)(Ó5”@†ZóçOﬂ;@™Î,1&È– 9≥ñ∫ú1788p514_ab41-0333721788p514_ab41  Ç\ALAâ<ƒõ¶B533?˚◊
+=p£◊A?†<¨1BL  ?ºj~˘€#A~˙<¨1BPÃÕ?Ï˘	kπå~@ª+=tºA  ?Ôé!ñRΩ<?Ú∞ ƒõ•„                     0000  1100AAAA           A}\)A}ëhA7LA~E¢                             @ìcôü‰6v@;d§;¥A¨@.    @êrÃøÙw6@4£]–ïØA“Z@^»¥=y€#@∫ﬂf_˙;õ@`xı¿v}5@òNŸá+A’&È?^˘€@Ü´\ @80Â`Aâ7@|rQÎÖ∏AŸ?V»¥AK∫^<tº >Ö°ÀA>·H<T˝Ù >£S¯A~˙<u¬è  ?S33@∫ff=æw ?tºAVAâ<#◊
+  AKGÆ<e`B  A+<õ•„  @‹ºj='Ôû AOÁm<tº AC˚Á<T˝Ù A≤-<u¬è  @Ã‘˛=æw AMp§<tº AAá<T˝Ù Aìu<u¬è @√33=#◊
+ ALQÏ<#◊
+ A?€#<u¬è A∫^<u¬è @ΩÛ∂=8QÏ AKçP<49X A?33<ãCñ A
+-<ãCñ @ªÆ=]/ AJ¿É<Dõ¶ A>¥9<õ•„ A	Cñ<õ•„ @∫Ÿ=Ö∏ AIÎÖ<T˝Ù A>Aâ<¨1 A£◊<¨1 @∫v…=üæw AI+<e`B A=€#<ƒõ¶ Aì<ºj @∫¨=æv… AL=q=•„<tº=˝Û∂   @Îó±ß∏@Î0üÈj@ÎµmÜA?†=PÂ`<T˝Ù? ¨1&È   @Îó±ß∏@Î0üÈj@ÎµmÜAz·=æw<#◊
+?ƒõ•„S˜œ   @Îó±ß∏@Î0üÈj@ÎµmÜ@∫»¥=∆ß<ƒõ¶?–Aâ7K∆®   @Îó±ß∏@Î0üÈj@ÎµmÜ '       ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 2AwÔû=ìtºAj¨=ëhsA^£◊=Yá? !U5ÄpÄ Ä                         @aÎ óv?[ﬁe6ﬁ¿  ¿  ¿  ¿                                            >#◊
+1237650797292486896 ◊-  ô   AöÕoAï“‘AèÓNAã?Aà‚2<‹VØ<Üw^<Å‚Q<J∞<áßfAóÉàAêdAâG5AÖwqAÉ}±=Q≠<∫Ï <∞í<°•ë<—ˇK  !Ÿˇ∫-◊¿ô  -◊¿ô Ô        ¿  AèlÚ¿  AÑæàAÇrX<Ã¬~;ﬁE;§\Ä;†(§</ë¶AìµAç˙Aáz˙AÉÚóAÅ·ø                       ˇˇˇˇˇˇˇˇ            ?T√{<*ÙY;kÃA;†"©;◊Tv=8xedgeon_def      Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=143.34509305555554&dec=1.0224288888888888&scale=0.19806&width=512&height=512&opt=&query= J093322.82+010120.7@aÎ‹<?[‚¥ïûb;Â`B;£◊
+B¥  AïæwAè~˙AàôöAÑŒŸAÇÉ<ÃÃÕ;Â`B;£◊
+;£◊
+<49X-◊¿ô ÒT0100201090021010@ü@±[W>´ˇˇˇˇ     l≠ h >#ƒ±7˚®Ç  GALAXY               GALAXYAGN_BROADLINE         CXX?ÇﬁÛ-◊¿ô Ò?P√¨œ@aÎ##W”?[·µIœ˘€   ˝ ?P¨ïL›ó ?—ÿf^Íñ@G®M”ÿ@aÎ y¢É?[ﬁÇ◊∂5J093322.83+010120.9@aÎxF‹?\t‹JÔ=⁄Q=‚M”<z¨⁄@m$Ì∑˛ﬂo@AÓ∏?wT@b*£c|ß¿)äÈki¶@ß7nóçOﬂ@á¿|ÌëhsÓ¥‚‡1436p015_ab41-0048281436p015_ab41  ‹AX(ˆ<Â`BB  ?¯bM“Ò™AP<˝Û∂Bff?Ú ƒõ•„TA)€#=∏QÏA@  ?Ì∆ßÔù≤-A"—>ó
+=@lÃÕ?ÔF‹]càf?Úìtºj                     0000  110nAAAB            A6üæA>ÉA:I∫A6ìu                             @Éá\ @0Ôù≤-Af5?@9%    @x€3?»lÏ@&™~˘€"—Bhs@q7L> ƒú@å
+@∫à@R®ìÅQ§8@¢Ì]≤-VAÍÁm@=°À@Pïpü•LU@2	7:ˇ∞O@à=–Â`AâA&9X?Ï(ˆAV·H<ãCñ >Ö°ÀAOtº<ÃÃÕ >£S¯A'æw=Ÿá  ?S33@˘¬è¿    ?tºAaæw<õ•„  A\(ˆ<Ìëh  A>~˙>$›  AOﬂ¿    A[V<ãCñ ATè\<ÃÃÕ A4Ò™=Ÿá  Aì¿    AX-<ìtº AQ7L<›/ A0=‘˝Ù A`B¿    AVI∫<£◊
+ AO33<Ìëh A-•„=Â`B @˛v…¿    ATb<¨1 AMGÆ<˝Û∂ A,õ¶>J @˝Å¿    AQS¯<¨1 AKOﬂ=+ A,1>z· @˙V¿    ANÒ™<¨1 AI∂F=\) A+p§>&Èy @Ûlã¿    AMÅ<¥9X AHß=•„ A*v…>5?} @ÌV¿    AX-=•„<49X=Èx’ 
+  @ÎÃ ˙:@ÎÎ‚C◊p@Î‹|¬©AO˜œ=çOﬂ<¨1?Ãj~˘€"— 
+  @ÎÃ ˙:@ÎÎ‚C◊p@Î‹|¬©A(¨>tºj=ìtº?˙-Vì 
+  @ÎÃ ˙:@ÎÎ‚C◊p@Î‹|¬©A33?`Aâ>á+@hr∞ ƒú   @ÎÃ ˙:@ÎÎ‚C◊p@Î‹|¬© /       ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 0√Ayp§=° ¡AmïÅ=óçPAdÒ™=¨1?=N¬{‡µÄ Ä                         @e:?ª@GÏ†˝≤wû¿  ¿  ¿  ¿                                            >&Äù1237658611444154405 Û-  U %   Aí∆—Aéà∆AäÌEAá@»AÜkh<á8Û<¥ŸW=É="Á=~»XAéèAàÕòAÇø#A}K A~∞Ü=kM=FB=–∑z>¸>Ñn  „èKrT-Û U  -Û U #        ¿  Aâ%Á¿  AÄ!A}œ±<h∞÷;°¡B;Ç<;uŒé<0≥Aç≠Aà∑ÜAÉksAπA}yù                       ˇˇˇˇˇˇˇˇ            ?XˆV<.≤;[ü¢;¢Öñ;›Åç<˚;Âyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=169.81594805555554&dec=47.84866305555555&scale=0.19806&width=512&height=512&opt=&query=  J111915.82+475055.2@e:#∑ï-@GÏ°YÅ{ñ;Dõ¶;Dõ¶B¥  Aè&ÈAâI∫AÑK«AÄüæA~üæ<u¬è;£◊
+;Éo;Éo<o-Û U (T0000601010021010@üHﬂÚ‰éäÄ   Ä Ä   Ä 2…Ü h >&9÷7ß≈¨  QSO                  QSO   STARBURST_BROADLINE   C)–‚B?e-Û U (?bÉ'f@e:Ì ó(@GÏ°‡Nö≈  Ã÷ À?WÉ¶z‘Nû ?–•2.@N°%ëä ü@e:>˙Áí@GÏ†˝;)¢J111915.84+475055.3@e:˛=à!@GÏ¢ú˙=ÜYK=âk∫ªÂ`B@c∂Œ&gs@OJZì L¿@bí›¢x@C¢ÀÜ´Ä@e‡ ƒõ•„@|l¨1'iÙà3VàI1687p484_ab41-0000091687p484_ab41   	A>nò<ºjB;ôö@E° ¿ÉA1X<¥9XBB  ?ıŒŸá+Aì<£◊
+BZ  ?ÚI∫^5?}@Ωhs=çPAÏÃÕ?ÒÆz·GÆ@-Vì                     0000 1100AAAA           Aqù≤Ay%Ax˘€Atff                             @•zô†ƒe@MQ&·Y.A ˘€@)∫^    @¢*     @GÚ–‹¸≈πAﬂ=q@\9X>%@ªÉÄ    @`'Æ˜<@öPNŸá+Aÿ„T>–Â`@Ö<è_‘{Ó@6˙^Fté@Ñ^5?|ÓA%&È?√ïÅA>=q;Â`B  >Ö°ÀA1;d;Â`B  >£S¯A∫^<T˝Ù  ?S33@ºAâ=æw ?tºAI&È;Â`B  A=æw<o  Av…<Éo  @ﬁ5?=,1 ABj;Â`B  A6V;Â`B  AÌë<T˝Ù  @Œ∞!=æw A?ŒŸ;Â`B  A3tº<o  A ¡<T˝Ù  @≈x’=#◊
+ A>¿É;Â`B A2V<o A
+Èy<T˝Ù  @¿£◊=49X A>I∫;Â`B A1Ám<tº A	K«<e`B @æ{=LÃÕ A>1<o A1∫^<#◊
+ Aj<Éo @º ≈=ix’ A=ﬂ;<o A1∂F<49X AÛ∂<ãCñ @∫è\=Ö∏ A=∆®<tº A1∫^<Dõ¶ A≤-<õ•„ @πV=ìtº A>z·<ƒõ¶;ƒõ¶=ÎÖ   @Î-œoSˆ@Î'ôëkŒ@ÎOAÁõ€A1†<ºj;ƒõ¶?∆Èx‘˝Û∂   @Î-œoSˆ@Î'ôëkŒ@ÎOAÁõ€A{<ı¬è<o?æ˘€"–Â`   @Î-œoSˆ@Î'ôëkŒ@ÎOAÁõ€@Ω≤-=Álã<Ìëh?ﬁ˘€"–Â`   @Î-œoSˆ@Î'ôëkŒ@ÎOAÁõ€  ˇ˘     ?O\)A
+=?^∏R¬   AA`B;Â`B  A
+=?^∏R¬   A57L;Â`B  A
+=?^∏R¬   A/<T˝Ù  Av·H?u¬è¬   @— ¡=æw "U±As„T=ëhsAdÃÕ=ëhsAV¿É=ix’?/ë˝/ÑFÄ Ä                         @e{÷òN∑@O‹o_ÚOl¿  ¿  ¿  ¿                                            >($1237654342782812176 -  J    Aè≤ÍAçıaAåJuAä$'AàÌJ=A‚Û=ΩP<ë—T=eM‡<0Aé ÙAåÛ€Aâƒ±AÜ«ªAÖ{”<áke;⁄«œ<y√< ò<Êa   g¡àM-@J  -@J         ¿  Aå9ò¿  AÜ€,AÖZa<9£;;§‰b;§Œé;≠ª<IÕwAçÜÁAã„‡AâygAÜ¨AÖ8Ù                       ?® ÿ≥          ?@:Í<Ç|;m›;ôÉ{;ÿ¬»<˜aÃedgeon_def      Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=171.86993388888888&dec=63.72214888888888&scale=0.19806&width=512&height=512&opt=&query=  J112728.78+634319.7@e{÷ZHå@O‹o≈Â;Dõ¶;Dõ¶B¥  Aé{AçVAäZAáAâAÜtº<49X;£◊
+;£◊
+;£◊
+<49X-@@ T0000201090020010@üDIkπå~ˇˇˇ˛      	T=à h >(;£7ß≈¨  QSO                  QSO   STARBURST_BROADLINE   C+ﬁ¥B~„{-@@ ?qJ¿ì™'@e{÷5˜∞Ç@O‹qüef®U  À[ ˆ?4:Â5†,⁄ ?Æ mIîü@Wœ‰dôÕ@e{÷”ı∂@O‹o`‡ÎhJ112728.79+634319.7@e{÷Ã_øÉ@O‹oStÚ=ùÊõ=ûÉ‰;¥9X@a0}4=ı.@I{<¸‡êœ@aÙÓøe‹@Ju^Àgqˇ@ùƒFßÔù≤@¢\¸Ìëhs‘ó2â3ô1717p636_ab41-0207001717p636_ab41  P‹ARnò<ƒõ¶B2ff?ÒCïÅ$›AD<ƒõ¶B8ff?ÒI∫^5AV<›/B"ff?Ôa‰˜e˝ã@·≤-=ïÅAlÃÕ?Ò∂E° ¿É?›/üæw                     0000  1111AAAA           A•ﬂ;A¶oAó˝ÙAôbN                             @ã+¬Ä'ÿå@3ÄÉ#5è.A5?@/ù≤    @àÃè_‘{Ó@15¬~ï1UA ∂F@["—    @®9f_˙;õ@S€ü'x@ñkmëhr∞Aœ¨    @mËı¿v}5@0!$›/@z =p£◊
+A$ì?•∏AR{<tº  >Ö°ÀAC„T<Dõ¶  >£S¯A„T<ƒõ¶  ?S33@ﬁ–Â=Álã ?tºA\V<#◊
+  AP-<e`B  A*ìu<Ìëh  A –Â=˘€# AVAâ<tº  AH˝Ù<Dõ¶  A!á<ƒõ¶  @Ò?}=Álã ATb<#◊
+  AF5?<T˝Ù  A€#<ºj  @Ë1'=Û∂F AS;d<49X AEá<u¬è A–Â<ƒõ¶ @‰Z>\) AR‘˛<Dõ¶ ADãD<ãCñ A˘€<ÃÃÕ @‰ ≈>49X ARnò<T˝Ù AD-<õ•„ Aæw<›/ @‰ìu>bM” AQÛ∂<u¬è AC ¡<¨1 A»¥<Ìëh @Â∏>åI∫ AQp§<Éo ACp§<ƒõ¶ AÎÖ=o @Ê∏R>∞ ≈ ARnò<›/;ƒõ¶=∆ß   @ÎπP¶0V@ÎÍI˜E@Î—5ûAD=Dõ¶<#◊
+?…x‘˝Û∂F   @ÎπP¶0V@ÎÍI˜E@Î—5ûAV=∂E¢<£◊
+?‘j~˘€"—   @ÎπP¶0V@ÎÍI˜E@Î—M÷£@ﬂÔû>åÃÕ=Å%?Ú1&Èx‘˛   @ÎπP¶0V@ÎÍI˜E@Î—M÷£ ˇ‚    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä  rábA|ı√=©˚ÁAnff=ºjAbÒ™=ßÔû?<´)cß*®Ä Ä                         @gcÁˇX:S@&!L´6å¿  ¿  ¿  ¿                                            >+P±1237660615591723012 ≈-  ÷    AíÌ/Aí 8Aè‚ïAã˘µAãª°<¶ÍÇ<ÒÜ5<ª£ä<®∆£<”ñYAí pAêÄhAçÇAâgnAâ=÷<ËäŒ<Ä/<Ö5l<ÉB≤=c∆  åJ¿È˜-≈¿÷  -≈¿÷         ¿  Aêéf¿  AâÚÁAâóô<äã;€∏];Ÿ€;ﬂj0<ôÄ¬Aê{ÆAèéÂAåÍAâfcAâ3¯                      †8 æù          ?Dr]<KZG;q|Ü;§C&;’¥ä<˛{|yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=187.12206999999998&dec=11.065038055555554&scale=0.19806&width=512&height=512&opt=&query= J122829.29+110354.0@gcÁ·¸˙@&!J+ù<º;Éo;Dõ¶B¥  Aë∞!Aê7LAçóçAä"—Aä1<ãCñ;ƒõ¶;ƒõ¶;ƒõ¶<e`B-?¿( 1T0000201010021010@üMF?ˇˇˇ˚      <ë
+• h >*Ì8íÃ˜  QSO                  QSO   STARBURST_BROADLINE   C;@A1
+e-?¿( 1?X˝∂Ö∏ù@gcÁ„S©B@&!I¡/˘œ  ÕıD?Z~ïZLFŒ ?¡iÏ,‰dô@\®˘¡¯]t@gcÁˇX:T@&!L©%˛óJ122829.30+110354.0@gcËHæµ≥@&!JöX{=,ŸË=2ïÍª«‚Ç@q¥. ÉFq@RCy|√ü˝@f¬l}l<i@)ÚM¨[=@´qW
+=p§@©⁄üæv…	H¶⁄P’1876p106_ab41-0237711876p106_ab41  \€ARv…<‘˝ÙB'ôö?Ì≈Åo iAD(ˆ<ƒõ¶B6  ?‘˝Û∂E¢AçP=49XA≈ôö?Ô'ª/ÏW@Ì€#=“Ò™A(  ?ÓÊ1¯†ê.?Ô?|Ìëhs                     0000  1110AAAA a        AïÉAñ+An9XAÜá+                             @ãQﬂ¸Tz@4µ?|ÌëhAÇ5?@@£◊    @àñ     @1O\. ÔBL"—@Ç–Â=∞ ≈@úÇÃøÙw6@Rupü•LU@§Rú(ı¬èAÁæw?ŒŸ@eQ·√Ù@0ãCïÅ@ã<›/üæA,õ¶>∞ ≈AR5?<#◊
+  >Ö°ÀAD1<u¬è  >£S¯A?}=Yá  ?S33@Ò`B>?|Ó ?tºA\^5<49X  AP5?<Éo  A3˚Á=Ö∏  A	33>Dõ¶ AVbN<#◊
+  AI"—<u¬è  A*r∞=Yá  AÁm>?|Ó ATI∫<#◊
+ AFZ<Éo A%`B=PÂ`  @˙óç>H¥9 ASx’<Dõ¶ AE7L<ìtº A"ºj=]/ @ı∏>`Aâ AS"—<T˝Ù ADß<£◊
+ A!tº=y€# @Ò7L>|Ìë ARÌë<u¬è AD=q<ºj A Èy=çOﬂ @Ï˝Ù>ä¿É AR¿É<Éo AC€#<‘˝Ù A –Â=£◊
+ @Ëb>ëÎÖ ARìu<ìtº AC|Ó<Ìëh A ı√=æv… @‚Ÿ>ñá+ ARv…=æw<tº>ìu   @Î~†‹π™@ÎÍïC≤@Î§eéAC˚Á=Dõ¶<49X?œ\(ı¬è\   @Î~†‹π™@ÎÍïC≤@Î§eéAlã>v»¥=Éo?1&Èx’  @Î~†‹π™@ÎÊY/Kù@Îì§¡
+L@Ì€#>Ö°À=Å%?ÌÎÖ∏QÏ   @Î~†‹π™@ÎÊY/Kù@Îú¢úó—  #     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 3âÍMA~V=ﬂ;dAxè\>ôöAhºj=Ìëh?*6‚Â⁄ˆ>Ä Ä                         @d÷§ p∏œ@$ñä0ü√¿  ¿  ¿  ¿                                            >+”√1237660615046070305 ≈-  P !  Aí∞ÈAëRAå˚„Aä5≈Aâi<í˛î<Ø¨<Ü•ˇ<∏¸ƒ<x MAèõpAã˝[AáßAÑ+>AÇnŸ<ˆG+<"<5¯<2`<Ôƒr  57¢Ñ„-≈†P                  ¿  Aãá¿  AÉƒ!AÇcú<h>∂;¥g;•I;™¥%<83ËAç4Aä≥÷AÜëDAÉOÛAÇ=                       ˇˇˇˇˇˇˇˇ            ?>ƒÉ;˙‹∞;ÄΩ';ùÿ=;÷…&<ÆÜ¨yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=166.70753499999998&dec=10.294023055555554&scale=0.19806&width=512&height=512&opt=&query= J110649.80+101738.4@d÷£„üw)@$ñàXˇuó;£◊
+;£◊
+B¥  Aé/Aã/AÜ›/AÉ^5AÇ1<e`B;£◊
+;£◊
+;£◊
+<49X-≈†P "T0000001034000248@üK«À)_ˇˇˇ¯ ˇˇˇ˚ mJø h >+‡ﬂ8Q∑  QSO                  QSO   BROADLINE             C&µ!A$¥R-≈†P "?_ùÓ$ük@d÷£‡ﬁÁ@$ñàõK4|≈  Œµ?]•«ãÖÖ2 ?¡q¡{Í@%≥™X-æ@d÷§ p∏–@$ñä.¬ã*J110649.81+101738.6@d÷§/TÅb@$ñé˜'˛=π#£=º6º#◊
+@nHqIÉ◊ê@Næp∑ì@dx–‰ø1⁄@˜»≠Á.@Éjìtºj@ìuu¬è\)sJwõ**1661p106_ab41-0127781661p106_ab41  1ÍATj<‘˝ÙB%ôö?ÛçOﬂ;dZAG€#<›/B33?Z¨1'Ar∞=çPAË  ?ÚZ¨1'@‹ìu=æv…A;33?Ó:)«y¶µ?ÒK∆ßÔù≤                     0000  0033AAAA           Acp§Ad£◊Al»¥AkÛ∂                             @à=¬Ä'ÿå@2∑K∆ßÔûAàv…@Ahs    @É„\ @/ˆ»¥9XB#üæ@z·H>J¿É@®ô†ƒe@ZåÃ¿7ì@ßz%„S˜œA˚GÆA≤-@qTz‡;>ö@7≠”pÛà@è›`Aâ7LA:»¥@p1'ASÎÖ<Dõ¶  >Ö°ÀAGÔû<£◊
+  >£S¯AÔû=o  ?S33@ﬂ
+==˘€# ?tºA^z·<e`B  AT=q<¥9X  A*¥9=#◊
+  A $›>    AXì<Dõ¶  AM
+=<£◊
+  A!"—=o  @Òx’=˘€# AU∆®<T˝Ù AJI∫<¨1 AÛ∂<˝Û∂ @ÈGÆ>+ ATÂ`<u¬è AIGÆ<ƒõ¶ Ao=o @Â°À>∏R ATv…<ãCñ AHŸ<Â`B AçP=\) @‰ºj>CïÅ AT ≈<£◊
+ AHß=o AÃÕ=#◊
+ @ÂGÆ>tºj AS◊
+<¥9X AHìu=çP Aff=8QÏ @Âá>ì˜œ ASïÅ<ÃÃÕ AHìu=0 ≈ A=q=PÂ` @„Æ>©˚Á ATff=tº<#◊
+=˚Ám   @ÎKÉÀ[ﬁ@ÎkD/@Î[∑¬OAG€#=}Û∂<ãCñ?ÀdZ¨1   @ÎKÉÀ[ﬁ@ÎkD/@Î[∑¬OA◊
+>0 ≈=<j?È° ¿Éo  @ÎKÉÀ[ﬁ@ÎkD/@Î[∑¬O@◊˜œ>∫^5=∆ß@çOﬂ;dZ  @ÎKÉÀ[ﬁ@ÎkD/@Î[∑¬Oˇ˘  S     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 1¸XﬁAx›/=õ•„Al5?=›/Aaæw=° ¡?*6‚Â⁄ˆAÄ Ä                         @bæy_£¢@M€d·C¿  ¿  ¿  ¿                                            >,q1237651065735217239 -  W  Aë˜Aël˛AéËWAãAãio<™Û<ë‹ç<{O,<V	È<è2àAèá3Aå"4AàKAÖ$£AÑsØ<ﬂë_<WR<-Ä<ó£<›‘˝  jıõJ–-A                  ¿  AãO£¿  AÑs
+AÉæ›<qÙ≠;∂¢â;´èÉ;üÌ‘<Bß±Aç-≥Aä∆æAáñ AÑ'¡AÉâ|                       ˇˇˇˇˇˇˇˇ            ?Oå<'q;Ñ^†;≠F<	´=q›check_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=149.9523161111111&dec=59.7140161111111&scale=0.19806&width=512&height=512&opt=&query=    J095948.56+594250.4@bæy∆*\@M€dsGy;£◊
+;ÉoB¥  Aé%Aãá+Aà9XAÑÆAÑ1<u¬è;ƒõ¶;£◊
+;£◊
+<Dõ¶-A YT0000201010020010@ü@˙^5?}ˇˇˇ¸     5HÍ h >,ƒ8'≈¨  QSO                  QSO   STARBURST_BROADLINE   CÛÀBn€'-A Y?t±¬'É0ä@bæyD¥ú@M€g†7ı‡  Ã: ’?DÉŒ9B
+ ? ÇœRπ
+x@BÀqÛbbÃ@bæy_gn§@M€d‡TiJ095948.57+594250.6@bæyÒìU≥@M€f_∞i¿=üUõ=¢h
+ª‚e@c™∞¢¶@G!~∑ñ„@_Ã•sà@E„ÌÕŒU@úËr∞ ≈@≠P+I∫∆˙-È@--1497p590_ab41-0381251497p590_ab41  îÌAT£◊<ÃÃÕB0ÃÕ?ˆìtºjAHj<ƒõ¶B733?˜æv»¥9XAè\<ı¬èB  ?óçOﬂ;d@Í^5=ìtºAqôö?Ìv_ÿ≠´ü?Û7K∆ßÔû                     0000  1111AAAA   " " " " " "  "B
+‚NB
+BÃÕBaH                             @áÔ3?»lÏ@1Stºj~˙A$Èy@.∏R=ºj@ÉBÄu@*Ër∞ ƒúAÈ
+=@bM”>ìtº@û0ÃøÙw6@Jy˚ﬂ	s@ôU—ÎÖ∏AœÔû>mëh@gK÷ˇ¡ﬂ@(¶Èx‘˝Ù@}ºüæv»¥A"QÏ?dìASÎÖ<49X  >Ö°ÀAH-<e`B  >£S¯AZ=49X  ?S33@Í∞!=‘˝Ù ?tºA^á+<Dõ¶  ATß<Éo  A3+=aGÆ  AI∫=ﬂ;d AXì<49X  AMGÆ<e`B  A)çP=49X  @˝∏=‘˝Ù AUdZ<Dõ¶ AJ(ˆ<u¬è A$M”=,1 @Ù‘˛=Â`B ASS¯<T˝Ù AHQÏ<ãCñ A!S¯=49X @ìu>∏ APj<T˝Ù AFbN<ìtº Aù≤=Dõ¶ @ÌÅ>•„ ALnò<Dõ¶ ADJ<ìtº A¿É=]/ @Íè\>1&È AHÂ`<Dõ¶ AAÎÖ<õ•„ Av…=}Û∂ @Ër∞>K∆® AFÈy<Dõ¶ A@è\<£◊
+ Aá+=ëhs @Á+>kÖ ATüæ=49X<o>J¿É !  @ÎUúõA:@Î æ§Ï@Îç∂π≈¥AHõ¶=PÂ`<tº?ÀÖ∏QÎÖ    @ÎUúõA:@Î æ§Ï@Îç∂π≈¥AÉ=ı¬è<¨1?‡ ƒõ•„T !  @ÎUúõA:@Î æ§Ï@Îç∂π≈¥@ÍM”>Æ{=mëh?¸-Vì !  @ÎUúõA:@Î æ§Ï@Îç∂π≈¥ 1  #    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä =ÁôÁA}Oﬂ=ºjAp$›=¥9XAc∂F=y€#?=[ˇ=ﬂ˝Ä Ä                         @F˝&®9?ÛØë+›x¿  ¿  ¿  ¿                                            >4÷°1237645879575248932  ^- œ $  Aì›`AêAåL|Aà7Aáî"<ñü∫<êûé<^Ny<j£L<ÊTAì&˛AéÎAâÁ@AÖÒÎAÑÀñ<∏aG;⁄ta; ©G;—ˆÙ<°™ƒ  –Lìâ- ^¡œ  - ^¡œ #        ¿  Aéeç¿  AÖ∆˜AÑÌ<<}{O;¥√Û;ù∞ª;ù˝ø<A@ãAéÿÌAã›ÈAá›ìAÑb AÉ≥                       ˇˇˇˇˇˇˇˇ            ?L¢∏<2q;lﬁª;üR†;ŸõÅ=
+ŸÀcheck_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=44.19570888888888&dec=1.2303630555555554&scale=0.19806&width=512&height=512&opt=&query=  J025646.96+011349.2@F‹áTÛ?ÛØá≠g;Dõ¶;o    Aì†Aè¨AäK«AÜ`BAÖÆ<ãCñ;ƒõ¶;£◊
+;£◊
+<Â`B-%Bp xT0000201090000030@üc¬&Äùˇˇˇˇ     hÑGU h >4„Ω7ß≈¨  QSO                  QSO   STARBURST_BROADLINE   B0»h?ù|â-%Bp x?G±ô&êQ•@F˛£1Ä?ÛØÑ}N◊5ƒ  Àœ4?T2AænJπ ?∆Æédî’¿3∞≈˚¯3É@F˛D5?ÛØëÛUŒJ025646.96+011349.4@Fq˛J?ÛØ¡ƒ[D=ó¡æ=îØOªXD–@eÿ›;z)í¿HM≈Î1;‚@EÉ∫Ëü¿-ÿ⁄<˜@íÅnóçP@îa≠Vr˛Ö	10438p015_ab41-0124820438p015_ab41  0¬APÌë<ÃÃÕB.  ?¿ÉnóçAAëh<ºjB@ff?ÓF‹]càAV<ÃÃÕB-ôö?Ô‹∆?@»b=,1Aœ33?Ôπå~($?ÔµsÍ≥g°               :Éo  0000  1000AAAA —        A’ÌëA“r∞A¿¿ÉAŸ$›                             @ç°¬Ä'ÿå@5»ı¬è\)AÇ›/@>∏R=çP@åéÄu@3 ƒõ•„TBBËs@Ñ1'>'Ôû@ÆÅf_˙;õ@VÅX!)Et@•b∞ ƒõ¶AÏ"—?∫~˙@B∏_ç.Q@3GÆ%AÿË@ã†çOﬂ;dA.(ˆ?¨1APz·<tº >Ö°ÀAA|Ó<#◊
+ >£S¯Az·<˝Û∂  ?S33@∆v…=0 ≈ ?tºAZ¥9<#◊
+  AMù≤<49X  A'á=•„  @È/=<j ATß<tº AFóç<#◊
+ AÆ<˝Û∂  @ÿÂ`=0 ≈ AR^5<#◊
+ AC“Ú<#◊
+ A~˙<ı¬è @œCñ=0 ≈ AQdZ<49X AB£◊<49X AçP<˝Û∂ @ 5?=Dõ¶ APÌë<Dõ¶ AA˚Á<T˝Ù A◊
+=Cñ @«•„=aGÆ AP¥9<e`B AA|Ó<e`B A–Â=•„ @≈Û∂=Éo APá+<u¬è AA
+=<Éo A=q=,1 @ƒÉ=óçP APQÏ<ãCñ A@£◊<ãCñ A˜œ=Dõ¶ @√|Ó=Æ{ APÌë=T˝Ù<#◊
+>r∞!   @ÍˆwBå∑¥@ÎÃ£0¡ø@Î•≥ö¨iAAâ7=Cñ;Â`B?Õ≤-V   @ÍˆwBå∑¥@ÎÃ£0¡ø@Î•≥ö¨iAZ=ßÔû<ãCñ?”I∫^5   @ÍˆˆMˇÚÍ@ÎÃ£0¡ø@Îk7G⁄µ@…Oﬂ>333=Cñ?È&Èx‘˝Ù   @ÍˆwBå∑¥@ÎÃ£0¡ø@Î•≥ö¨i  ˇ˛ˇ˚      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä CÿFhAwX=çOﬂAjI∫=ôôöA`$›=â7L?=Mùú›ÂgÄ Ä                         @aF_Ä∂Î@<Ê’úgJ¡¿  ¿  ¿  ¿                                            >9ıZ1237664880485269542 ¶-  M &  Aî˝ÍAë&Aç üAâeAâú5=vö<¨âC<6<Üí∞<¬˜˘Aîè©AèÑ:Aä®AÜπ·AÜÁ<‡⁄6;˚;U;Ï˝#;⁄í”<Åˆ®  Ú“LÊ…-¶¿M                  ¿  AèOÜ¿  AÜªŒAÜyÄ<ûGâ;≈zy;™+;§ç4<+%EAíΩ∫AéÖOAä&‚AÜLòAÜ*ß                       ˇˇˇˇˇˇˇˇ            ?Xºö<daE;ÅKç;¨ï;·Î=Wûcheck_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=138.19915805555553&dec=28.901696944444442&scale=0.19806&width=512&height=512&opt=&query= J091247.79+285406.0@aF_Äôî@<Ê‘ıê:u;Dõ¶;Dõ¶B¥  Aî  Aè\)Aä ¡AÜ∆®AÜ°À<£◊
+;ƒõ¶;£◊
+;£◊
+<49X-¶¿M 'T0000901010021000@üPÿ≠´üV        @Õ h >:n7˚®Ç  QSO                  QSO   STARBURST_BROADLINE   C
+2¸AÁ6≠-¶¿M '?D4Ø_1π@aF_ÇçÑA@<Ê‘ÙÅ±/ê  –R ;?U™R6e	È ? R˙@Rc'k~‘@aF_Äôî@<Ê’ùUÊºJ091247.81+285406.1@aF`Ñ~@<Ê÷≤(‹ò=ü!-=ü!-ªÀ)_@h™˝Ã4@Eÿ!î•@`|wAµ¨ˆ@(f\ÆV¿@´…<j~˘€@¢¢»¥9XCü≤˚˛œ±1388p287_ab41-0203371388p287_ab41  OqAI/<ÃÃÕB*ÃÕ?ÍQÎÖ∏RA9+<¥9XBCôö?Ó˙¨ŸË>BA¨<ı¬èBôö?ÌŒ_o“@Ÿ„T=ôôöAiôö?Ûá+J?Ó„º”ZÖà                     0000  0011AAAA          
+ A>VA;"—A=ÁmA;˜œ                             @ó#3@à @AV$›/†At»¥@;•„=e`B@ó$ÃøÙw6@>NVìuBaH@oæw>! ¡@´ãÃøÙw6@XàAÄ”œˆ@•Ñ0 ƒõ¶AËE¢>Ö∏@r∏Ã¿7ì@4ñE° ¿É@å<+I∫A-ÎÖ?ì˜œAH˝Ù<o  >Ö°ÀA9•„<tº  >£S¯AÆ<˝Û∂  ?S33@€∂F>1' ?tºAS†<tº  AE◊
+<#◊
+  A(ff=•„  @˝â7>Oﬂ AM+<o  A>¿É<tº  A·H<˝Û∂  @Ó$›>1' AJ˘€<tº  A;Û∂<tº  AÖ<Ìëh  @Âëh>hs AIÁm<tº A:¿É<#◊
+ AQÏ<ı¬è @·p§>(ı√ AI7L<#◊
+ A:{<49X AV=o @ﬂÆ>K∆® AHºj<49X A9©¸<Dõ¶ A∏=Cñ @ﬁŸ>v»¥ AHff<Dõ¶ A9p§<e`B AZ=•„ @ﬂK«>òb AH-<T˝Ù A9S¯<u¬è A€#=,1 @·Oﬂ>¡â7 AIV<£◊
+;ƒõ¶>      @Î1òQ$·@ÎQYú‘b@ÎC< Ë-A9+=tº<49X?¡ÎÖ∏QÏ   @Î1òQ$·@ÎQYú‘b@ÎC< Ë-A$›=©˚Á<ƒõ¶?—ÎÖ∏QÏ   @Î1òQ$·@ÎQYú‘b@ÎC< Ë-@◊K«>Dõ¶=aGÆ?˛E° ¿É   @Î1òQ$·@ÎQYú‘b@ÎC< Ë-ˇ¯  $     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 	ÍïAz=ìtºAiÛ∂=Å%A[¬è=LÃÕ?1kôâπ}—Ä Ä                         @t)»Àí9¿92•G¿  ¿  ¿  ¿                                            ><ûÌ1237652600102584514 {-  t ¬   AïBPAíRìAèÒAå∂wAãâ<©_€<c“Í<,˝<T g<Œ“°AíıdAçâAàë
+AÖ"AÑmh=<,∑<3O<3∂<$ªO=ˆf  ëÕ¯÷-{Ät  -{Ät ¿
+UHÄ h ¿  Aç%+¿  AÖlﬁAÑa^<üU;…,;±TJ;¨ ?<m¶¨AèïÙAã€>Aà 'AÑ∑lAÉ‡∏                      áù ©Ñ          ?^ö¸<!ƒË;Ç∑°;¨eI;ﬂ°˛=.wÎcheck_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=322.61144999999993&dec=-7.05574111111111&scale=0.19806&width=512&height=512&opt=&query=  J213026.74-070320.6@t)»Å‰q.¿9±gÏx;Éo;Dõ¶    AëVAç$›AàÔûAÖlãAÑbN<õ•„;ƒõ¶;£◊
+;£◊
+<u¬è-{Ät ¬T0000201010000010@üB≤GE8Ô    ˇˇˇˇ 
+UHÄ h ><°å7˚®Ç  QSO                  QSO   BROADLINE             C°ND¿·»¢-{Ät ¬?"Ä∫]ÌÚ@t)»}Éπr¿9BÊÇ´Å  ÀÁ]?Pb∏hÇÖ‹ ?…˛!Ÿnõø¿=Æ>lL@t)»Àí:¿9+0/sJ213026.74-070320.4@t)»b⁄¿´¿9Enü=û	=úøºu@GﬁŒWà¿C0®mqÛ@t*k=∂CÙ@/˘Æ≠'@Z¡á+@™ç`Aâ7L,®®›zÖ)3218m076_ab41-0319773218m076_ab41  |ÈAGhs<ÃÃÕB.ÃÕ@¬è\(ı√A:-<ƒõ¶B6ff?Ï∏QÎÖ∏A
+¥9<›/B#33?ˆbM“Ò©¸@ƒz·=@ÉAπôö?ıK∆ßÔù≤?¸Ìëhr∞!                     0000 0011AAAA           A)&ÈA.VA.∞!A,Ìë                             @ôúÃøÙw6@B∆»ºú”·AÉ›/@@É    @ïÿf`…ä@>™~˘€"—B%{@ÇÒ™    @µô†ƒe@`è
+?âÇÀ@¶ËÖ∏QÏB Æ?u¬è@ÅSÖƒ¡f@7ÚÒô4ÔÃ@é&$›/A0v…?çPAF‘˛<#◊
+  >Ö°ÀA9°À<#◊
+  >£S¯A	◊
+<¥9X  ?S33@¡â7=y€# ?tºAQx’<49X  AF1<49X  A Â`<Â`B  @‰9X=Ö∏ AK<#◊
+  A>ºj<#◊
+  A
+=<¥9X  @”˜œ=y€# AH(ˆ<#◊
+  A;©¸<#◊
+  Aôö<¨1  @À†=Éo AFá+<49X A:$›<49X A~˙<¥9X @∆Ÿ=óçP AEâ7<Dõ¶ A9Cñ<Dõ¶ Aüæ<ƒõ¶ @ƒ¥9=≤- ADÌë<T˝Ù A8ºj<T˝Ù AïÅ<‘˝Ù @√"—=“Ò™ ADè\<u¬è A8r∞<u¬è Aá<Ìëh @¬-=˘€# ADV<Éo A8=q<Éo A
+Â`=+ @¡Å>nò AGﬂ;<ƒõ¶;Â`B>â∫^ 
+  @Î9.Ãº\@ÎXÔ	ﬂ@ÎIäªmA:¨<£◊
+;ƒõ¶?¬nóçOﬂ; 
+  @Î9.Ãº\@ÎXÔ	ﬂ@ÎIäªmA
+óç=¿É<Â`B?”I∫^5 
+  @Î9.Ãº\@ÎXÔ	ﬂ@ÎIäªm@ƒAâ>	7L=#◊
+?‹z·GÆ{ 
+  @Î9.Ãº\@ÎXÔ	ﬂ@ÎIäªm ˇÚ :     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¡(PA|E¢=“Ò™Alƒú=Æ{A^ì=è\)?:6‚‚µFmÄ Ä                         @!ò~˛Ñ.∂øÍKeËí$¿  ¿  ¿  ¿                                            >>\í1237659754447634570 ˝-  ¶ ä   Aù∑{Aôå;AíU}AçÁ Aã©°=N—T<–›<¶·ˆ<s÷„<”ˆRAöÿ™Aì©∫AãPﬂAá*5AÑ3˘=∏ÑE<†h›<u;4<lˆw<¯•N  &Mº-˝@¶  -˝@¶ â        ¿  AíËî¿  AÜn&AÉˆ="«K<!¢Ä;–ÄC;¬Œ<R∫›AóËOAí.\AäXèAÜºAÉ≠z                        ˇˇˇˇˇˇˇˇ            >≥†Ü<R)<;òx¢;¡˚¯<ùS=êøedgeon_def      Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=8.797843888888888&dec=-0.8216649999999999&scale=0.19806&width=512&height=512&opt=&query= J003511.48-004917.9@!ò~|·úøÍJ˜	∑8Á;Éo;ÉoB¥  AôOﬂAíVAäp§AÜ1'AÉp§=o<o;ƒõ¶;£◊
+<#◊
+-ß@Æ FT0000201010120214@üOä¶L/É          7 h >>œÍ8íÃ˜  QSO                  QSO   STARBURST_BROADLINE   A√¯øRX£-ß@Æ F?>Qªﬂ&@!ò~Ø\ƒËøÍK©∆Öò≤  Ã%*?%õ¡„ﬂñ ?¿vñ_RuÔ¿*+ﬂ∞’ @!ò>û°øÍKeËí%J003511.48-004917.8@!ò}Ô'ÔøÍJÀjÃ˝t=["—=Ufœº7Ä4@\uÓÑ≠y¿O≥Ù%◊*@ña÷¥≠¿˘ ú›Ò∏@•Æõ•„S¯@Æ+±&Èx’?ø˙ø0q0090m016_ab41-0292330090m016_ab41  r1AV˘€<‘˝ÙB$ff?ıŒŸá+AOÖ=oB33?Ì¨q≤ïÍA%x’=ìtºAp  ?ÒÔù≤-V@˘?}>333@∆ff?Ô0æÌ(ç?Òx‘˝Û∂F                     0000  111nAAAB W        AM
+=AKçPA?©¸A>J                             @ÑÎp†+Ñ@0FÈx‘˝ÙA≤∏R@GçP    @yîz‡;>ö@(>v»¥9XBÉ„◊@ê1>≤-@í     @SAÎÄÏ˙j@™F@ÉnòAÛÎÖ?Æ@^Yô°˝j@3ÉïÅ$›@ëlOﬂ;dZA.b    AUﬂ;<T˝Ù  >Ö°ÀAO7L=çP  >£S¯A%ﬂ;=–Â`  ?S33Ar∞>—ÎÖ ?tºA`üæ<e`B  A[ïÅ='Ôû  A<¥9>J  AÎÖ> =q AZJ<T˝Ù  ATQÏ=çP  A3o=–Â`  A©¸>—ÎÖ AWÅ<e`B  AQ∫^='Ôû  A.¨= ¿É  AÌë>ˆE¢ AVM”<u¬è APÒ™=Dõ¶ A+p§=◊
+= @ı7L¿    AUtº<ãCñ APƒú=ix’ A*=Ìëh @É¿    AT¨<õ•„ AP›/=ãCñ A)X>$› @Ì©¸¿    ASÛ∂<¨1 AQá=£◊
+ A)%>çP @Í¨¿    AS7L<ºj AQ7L=æv… A(õ¶>(ı√ @‰  ¿    AVÒ™=,1<Dõ¶>! ¡   @Î	Ì‘G3@Î
+¥Õ:õ\@Î
+öb\AAOtº=¿É<‘˝Ù?‘1&Èx’   @Î	Ì‘G3@Î
+¥Õ:õ\@Î
+öb\AA$~˙>QÎÖ=q©¸@ £◊
+=p§   @Î	Ì‘G3@Î
+îÄ‡ª@Î	˛ñ%´·@¯9X?Û∂>6E¢@$›/üæ 
+  @Î	Ì‘G3@Î
+îÄ‡ª@Î	˛ñ%´· C )ˇ€   ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä TAwX=è\)Alz·=£◊
+A`Èy=ìtº?:62Dc3ÈÄ Ä                         @f,Í_Ñ ’@J†ôA∑ê¿  ¿  ¿  ¿                                            >B√ 1237657630600986653 - Ü    AìWÖAí	ƒAêú§Aé<§Aé5Ë<∞∆<πñG<u‚Ê<g™<¡‰:Aë¸DAéÁAãƒRAâıAàä=™X<[¨u<ã<™<®@œ=* ≥  a¯M3-¡Ü  -¡Ü ƒg	@ h ¿  Aèwß¿  AäpAâ€≠<Öœ;»$Õ;≈Lj;”j›<ÉAAê{∆Aé’~AåtWAäÿAâúr                      –≥ 
++„          ?^¿6<R≥-;z9<;•ç‡;◊»w= 00yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=177.40361&dec=53.25467694444444&scale=0.19806&width=512&height=512&opt=&query=           J114936.86+531516.8@f,ÍUp@J†ôcÙœ;Éo;ÉoB¥  AëXAèv…AåÈyAäp§Aâ€#<Éo;ƒõ¶;ƒõ¶;ƒõ¶<Éo-¡Ü T0000201090021010@üG‡ﬁ“àŒ    ˇˇˇ˚ ƒg	@ h >C 8'≈¨  QSO                  QSO   STARBURST_BROADLINE   C1gSBU -¡Ü ?ttaÑJ∏˘@f,ÈÕÈb3@J†õúZ÷Fq  Ãêú?EÛWHª•l  ?ƒ{xFbª@BÿêhòoŒ@f,Í_Ñ ’@J†ôAÖéJ114936.87+531516.9@f,Íº◊åC@J†öbuç=∂Æ}=æv…<Cñ@aÕ‘üˇÂ(@Nº3g5ô?@b√TÑºí√@G5£j”≥q@°üE∏QÏ@•Å$›¢ú?‹¢"1775p530_ab41-0271061775p530_ab41  i‚AZÌë<‘˝ÙB$ÃÕ?ÌÉ{J#9¡AKëh<ÃÃÕB+ôö?Èx‘˝Û∂Ahs=çPAË  ?Ò"–Â`Aâ@Îtº=“Ò™A(  ?Ì [¿6„?Ôáì›óˆ+                     0000  0000AAAA           AN=qANÂ`AOhsAL5?                             @Äß
+@∫à@)÷á+JAù≤@&ß=8QÏ@ÄÎ‡ä@'ˆ»¥9XA–˜œ@`r∞=+@†!     @Q nüÀ∞@óÚ∫^5?}AÕÛ∂>ÊÈy@fï¬ÄÆI@15Å$›/@|.     A€#?ix’AZ=q<ãCñ  >Ö°ÀAKÅ<õ•„  >£S¯A∆®=Yá  ?S33@Ìx’>333 ?tºAdõ¶<õ•„  AW∆®<¨1  A2$›=Éo  A"—>7K« A^j<ãCñ  APõ¶<õ•„  A(˘€=Yá  @ˇÁm>333 A\J<õ•„  AM≤-<£◊
+  A${=PÂ`  @˜˜œ>Aâ7 AZ¨<¨1  AL5?<ºj  A!x’=aGÆ  @Ùj>aGÆ AX¨<ºj AJ∏R<ÃÃÕ A 5?=}Û∂ @Ùìu>ç“Ú ATV<¨1 AHI∫<ÃÃÕ AÆ=è\) @ˆ5?>µ¬è AMﬂ;<ãCñ AD¿É<ƒõ¶ AÅ=•„T @¯ìu>Í~˙ AGÁm<e`B AA/<ºj Atº=æv… @·Û∂¿    AZı√=<j<T˝Ù>$›/   @ÎX1/B8@Î+ﬂ’mÖ@Î}'ámÛAKâ7=LÃÕ<e`B?≈`Aâ7K«   @ÎX1/B8@Î+ﬂ’mÖ@Î}'ámÛAlã>tº=#◊
+?€•„S˜ŒŸ   @ÎX1/B8@Î+ﬂ’mÖ@Î}'ámÛ@Ï1>|Ìë=çOﬂ?Ëƒõ•„S¯   @ÎX1/B8@Î+ﬂ’mÖ@Î}'ámÛˇ‚ˇÒˇÏ      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 4◊eÅAÇlã>ìAw+=˝Û∂Anz·=Ò©¸?*6„$ÕctÄ Ä                         @`á ñ.@<g=‚—zÅ¿  ¿  ¿  ¿                                            >JÙÒ1237661124541153404 <-  ñ |   Aì˙“Aî^tAìLAè7AëF<·‘x<ÃŒ<¿].<ú…+<·€'Aì^äAí¶ÅAêF‘AåØ˛Aå›E<¬®Á<s:<°è<è\f='Å⁄  ˘èWh-<@ñ  -<@ñ {‘EKú h ¿  Aí®Â¿  Aå˙IAé)”<Å%K;Ï!1;˜ÇØ;Î_ë<¶• Aë˜Aë`∆Aè˝§AåE’Aç©·                      Dô` Ÿ¡          ?V¥ö<s`;nÒ¯;ü∂S;ﬂoÒ<˝pÈmeh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=132.22120694444442&dec=28.403288055555553&scale=0.19806&width=512&height=512&opt=&query= J084853.08+282411.8@`áPXﬁ@<g=—ÊÊ;£◊
+;£◊
+B¥  Aí–ÂAíßAêÎÖAå˘€Aé(ˆ<Éo;Â`B<o;Â`B<£◊
+-<@ñ |F0000001010000200@üLXD–©        ‘EKú h >J+8'≈¨  QSO                  QSO   AGN_BROADLINE         C8°A„9Ô-<@ñ |?=m†πA®-@`á{eæ@<g=»%(5  ŒÏ?QèMÈÔP !?¬a0ú˝Á@@≈lr"@`á ≥‘Æ@<g=·‚ﬁáJ084853.09+282411.9@`áU!öÑ@<g@ëGº=Œp;=—N<º+@hé∂r∏Ñ@@Bv;†ø˛à@_∫Å8Â#‹@$m$√.@òYá+@ê”]/üæR
+7DÆÇ1320p287_ab41-0118421320p287_ab41  .BAYÆ<‘˝ÙB'33?Ï6‚ÎC-AK+<ı¬èB33?Ìè≈Åo A)¬è=ÌëhAÃÕ?Í™d¬¯7µAôö>â7L@Ä  ?Ïá+I∫?Ï64ÍK                     0000  011nAABB ·        A£á+AG|Ó@¸jA/V                             @ÅËQﬂ¸Tz@+kI∫^A¥V@QGÆ=ı¬è@Äm¿//ò@,˙^5?|ÓB†•`@ú¥9?rÒ™@å>Qﬂ¸Tz@X=Oﬂ;dZ@ßØ¬I∫^A˝Aâ@¢-@TOŒ·z˚@4
+=p£◊@èóçOﬂ;A3â7?”˜œAY&È<e`B  >Ö°ÀAK©¸=,1  >£S¯A(ì>0 ≈  ?S33@˘7L¿    ?tºAcGÆ<u¬è  AWù≤=8QÏ  A>Ò™>\(ˆ  AÃÕ¿    A]S¯<e`B  APƒú=,1  A5K«>0 ≈  A“Ú¿    A[;d<u¬è ANj=@É A0j>,1 A z·¿    AZz·<ìtº AMŒŸ=e`B A.I∫><j @¯ìu¿    AZ ≈<£◊
+ AM ¡=â7L A-Ám>^5? @Ò7L¿    AY∫^<ºj AMÔû=° ¡ A.·H>ä¿É @È≤-¿    AYá<‘˝Ù AN=æv… A0·H>¥ºj @‚∏R¿    AX1'<Â`B AN  =Ÿá A3á>ÏãD @‹r∞¿    AY©¸=u¬è<T˝Ù>s∂F   @ÎQ.≤€_@ÎΩ&Õ°@ÎÜ¢Ùå.AKhs=üæw<ºj?”nóçOﬂ   @ÎQ.≤€_@ÎΩ&Õ°@Îá*hπ®A)33>ìtº=–Â`?ÒÆz·GÆ   @ÎUjàı]@ÎΩ&Õ°@Î:ÈúA I∫?L1>u¬è@∑K∆ßÔû   @ÎQ.≤€_@ÎΩ&Õ°@ÎÇ§ö(∂ˇıˇ±      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 	È&¥AÖ
+==Ôù≤A~›/>üæAm33=¿É?1t’/õ÷»Ä Ä                         @bâ4?¿ÄΩ@GÌC{ﬂD∂¿  ¿  ¿  ¿                                            >NV1237657589239316505 -  -   AñúCAîEáAêñAéøAAéâ<¡ÿK<ñÓö<©,◊<Ö]<¶ºAñÇ∏Aíx∆Aç¿îAãF%Aâ>8="ø<8k<%X¶<:—A<Îc•  Á)¿- -                  ¿  Aí,ˆ¿  AãÜˇAä@6<§~¬;Ô‡;Àﬁ+;”Ï<sÄAîﬁ¢Aë⁄≈AçàåAãYÀAä *                       ˇˇˇˇˇˇˇˇ            ?T6‡<
+⁄|;WΩ5;†VΩ;‹‰d= —‘edgeon_def      Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=148.28762805555553&dec=47.85362194444444&scale=0.19806&width=512&height=512&opt=&query=  J095309.03+475113.1@bâ4\˛ﬁò@GÌDéOπ;Éo;ÉoB¥  Aï^5Aí5?AçŒŸAããDAähs<£◊
+;Â`B;ƒõ¶;ƒõ¶<u¬è- - T0000201090021010@üG€öuˇˇˇ˛ ˇˇˇˇ ¥
+è h >NÇï8Q∑  QSO                  QSO   BROADLINE             CI¢B?j- - ?Uc›P@6@bâ4w}Ç@GÌCÈÖ,YÌ  Õﬂ h?]f)B u "?≈ë6…>£@I®
+ç!º@bâ4?¢≠?@GÌC|Ví¥J095309.04+475113.1@bâ4±Ó$5@GÌDqIx=Àí:=”˜œºÁ@e8*"A@H„4ÖB Ä@`ñÚ(¶Ë@@W∞C)J@¢ÈˆE° ¡@|s`Aâ7Lò¡âÔM1484p484_ab41-0030851484p484_ab41  A^ ≈<›/B"ff?˘€"–Â`AOÛ∂<ÌëhB  ?ÔÉ{J#9¡A*V=ëhsAtÃÕ?ÏœAÚ◊s@˝„T>+@–  ?Ó
+¶L/É{?Ó‰éäqﬁj                     0000  110nAAAB           A~ÌëAÜS¯AááAÖìu                             @{∏) >Í!@%”tºj~˙A1Oﬂ@9X=è\)@x£‡z(ª@%CnóçPAÙJ@fß>ôôö@ãPQﬂ¸Tz@L|AÌ·@ùö`Aâ7LA⁄&È>⁄¨@Zéñ@0NVìu@ÅÎóçOﬂ;A'˚Á?»bA]Cñ<Éo  >Ö°ÀAP$›<£◊
+  >£S¯A(¿É=≤-  ?S33A j>ãCñ ?tºAgçP<ìtº  A\Z<ºj  A?ŒŸ=Â`B  A∆®>ñá+ Aap§<Éo  AU?}<£◊
+  A5Û∂=≤-  A	°À>ãCñ A_S¯<ìtº  ARv…<¨1  A0(ˆ=•„T  A->ä¿É A^õ¶<£◊
+ AQ;d<ƒõ¶ A,Èy=©˚Á A ¿É>ìtº A^Aâ<ºj APãD<›/ A+†=∏QÏ @˚ïÅ>ú¨ A]ŒŸ<‘˝Ù AP$›<˝Û∂ A*(ˆ=–Â` @ˆ=q>§›/ A]†<Ìëh AOﬂ;=\) A)¬è=ÎÖ @Ú¿É>≥∂F A\$›<˝Û∂ AOïÅ=æw A)ôö>$› @Ò&È>ÃI∫ A^$›=á+<ãCñ>x‘˛   @ÎF·¿_ @Îjﬁ‚3;@ÎZ}÷pAO˜œ=Å%<Éo?À∆ßÔù≤-   @ÎF·¿_ @Îjﬁ‚3;@ÎZ}÷pA+
+=>>v…=Dõ¶?Ì€"–Â`B   @ÎF·¿_ @Îjﬁ‚3;@ÎZ}÷p@˚•„>ˇ|Ó>ì@  ¿Énò   @ÎF·¿_ @Îjﬁ‚3;@ÎZ}÷p  ˇˆ      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ÅµkAÉÂ`>∏RArÃÕ¿  Aoù≤>∏R?/ëø†ŒáÄ Ä                         @oˆ∫üsÊ	@@ﬁ5ΩQ.∆¿  ¿  ¿  ¿                                            >NV1237655375187869806 	-  m n  Aí5AêÍÖAç∞lAâ“ÃAâŸf<à®w<Yji<K‘p<{†™<û®íAê3ñAãK:AÖzAÅ˛AÄÑ≤<ÁØí<p‰<
+?Æ;˜ÍÌ<¢-ó  Hº˛-	†m  -	†m m        ¿  AälB¿  AÅå*AÄ@®<iD¸;ß'Ó;á≠à;äÔÕ<ÂÁAçÖÕAâÕlAÑ€=AÅ4–AÄπ                       ˇˇˇˇˇˇˇˇ            ?]q ;Ó0“;ÅÎ,;ûÁ^;⁄›Q<øTyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=255.71028111111107&dec=33.736014999999995&scale=0.19806&width=512&height=512&opt=&query= J170250.46+334409.6@oˆ∫õÅ$@@ﬁ5õ√?Ö;Dõ¶;Dõ¶B¥  Aé£◊AãVAÜbNAÇºjAÅá+<e`B;£◊
+;£◊
+;Éo<#◊
+-»@— ôT0000201010021010@üE)x‘˝Ùˇˇˇ˛ ˇˇˇ¸ 0âÉ h >Np;7˚®Ç  QSO                  QSO   BROADLINE             Cµ’BÒÆ-»@— ô?F˝üVÄo@oˆ∫≠N À@@ﬁ5huGÃ  ÃÃ l?VÀ¯àö— #?«.ÆSe@@Œ)ÆO3D@oˆ∫ü8?@@ﬁ5ΩQ.«J170250.47+334409.8@oˆ∫ÂØ‚@@ﬁ7Ãøa=üæw=û∏Rº49X@L3 &ñlæ@B◊YÓàﬂ@o◊{V@LÔÔÁÑ@ú633333@®éz·GÆ#u®3&>)M2555p333_ab41-0309892555p333_ab41  yAH»¥<ƒõ¶B4  @óçOﬂ;dA<¥9<ƒõ¶B8  ?ıçOﬂ;dZA¿É<›/B!ôö?Ú¥9XbN@ﬂ"—=ôôöAh  ?ÒS˜ŒŸá?˜∆ßÔù≤-                     dd00  1111AAAA          	 Ay∆®A}â7Al1An∞!                 	dh d      @ó´ôü‰6v@@”∂=>NA{@*¨    @í‰     @:Nó|àÁõAÿõ¶@_;d    @≠≈ÃøÙw6@WóÔ°„Í˜@ñá¡â7K«AÃZ>J@pè`Z≥´@1«Æ%AÿË@yB¨1'A"Ò™>ÏãDAH1'<tº  >Ö°ÀA<Z<Dõ¶  >£S¯A{<ı¬è  ?S33@ﬁŸ=Ÿá ?tºAR·H<#◊
+  AHŸ<T˝Ù  A&˘€=•„  A 1=·GÆ AL^5<tº  AAtº<Dõ¶  AGÆ<ı¬è  @ÒGÆ=Ÿá AI“Ú<#◊
+  A>z·<Dõ¶  A ≈<ı¬è  @ËZ=Â`B AHºj<49X  A=/<e`B  Alã=o  @„Ôû>o AH$›<Dõ¶ A<z·<u¬è A ≈=\) @·„T>üæ AG©¸<e`B A<  <ãCñ Aëh=#◊
+ @·GÆ>;dZ AG&È<u¬è A;ëh<õ•„ A\)=<j @·â7>dZ AFá+<Éo A;á<¨1 AS¯=T˝Ù @·`B>áÆ AH∞!<ºj;ƒõ¶>o   @Í˙©êrƒC@Í˙—À|ˆK@Í˙ºQ{]A<∞!=çP<#◊
+?¬-Vì   @Í˙©êrƒC@Í˙—À|ˆK@Í˙ºQ{]A∏R=“Ò™<Â`B?◊üæv»¥   @Í˙©êrƒC@Í˙—À|ˆK@Í˙ºÚR'ï@ﬁ˘€>j~˙=Éo?Íè\(ı¬è   @Í˙©êrƒC@Í˙—À|ˆK@Í˙ºÚR'ï .  =    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä –s<Aw&È=ãCñAi"—=ôôöA[Oﬂ=Dõ¶?5ÃŒ`tΩ Ä Ä                         @`˙öø3á@C]~€¨K¿  ¿  ¿  ¿                                            >RÛ1237658201275695338 ì-  c Í   AêµôAë£∏Aêß…Aç)YAé)î<É{<Ñƒ<ÉJ$<6Åü<§4Aé≠ÈAå|—Aà©!AÖœAÖª<ŒG˚<ì<–/<5ï=Oö  ˇK©+ö-ì†c  -ì†c È†ç
+ë h ¿  Açñ¿  AÜÊQAÜé_<`ÎÚ;¿;∫*(;√e<UHNAçﬂAåf∑Aâ›GAÜÜ%AÜJ/                      cMó .Ü          ?k3∂;˘B;Åh;û8@;÷y∞<Ø‡ﬂmeh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=135.83138999999997&dec=38.73040805555555&scale=0.19806&width=512&height=512&opt=&query=  J090319.53+384349.4@`˙ö«óÊ@C]~,U…`;Dõ¶;Dõ¶B¥  AéÃÕAçáAä\)AÜÂ`AÜè\<e`B;ƒõ¶;ƒõ¶;ƒõ¶<T˝Ù-ì†c ÍT0000001810020200@üHlãCïÅˇˇˇ˛ ˇˇˇ˚ †ç
+ë h >R87˚®Ç  QSO                  QSO   BROADLINE             C‘÷BÎ-ì†c Í?@∂´˝´@`˙ö≈∏F¶@C]~E
+°®  Õ·4?Z©›·Í1i $?–L ≥Ìÿ∂@9TéÔ¨.@`˙öø3á@C]~d^NJ090319.54+384349.6@`˙õí{@C]ÄCRe=üæw=õqv;ßÁ@f¸–ÒTkí@D≈§±•@_¥(∞˘1∞@4˜[Æ|≠@îÌΩp£◊
+@vátºj~˙ ﬁÖ›ó/1354p393_ab41-0017751354p393_ab41  ÔAG%<ÃÃÕB.ff?˘hr∞ ƒúA9„T<¥9XBB  ?I∫^5?}A¿É<ı¬èBÃÕ?ÒÁlãCïÅ@ﬁ¨=á+AÑ  ?›/üæw?Û333333                     hhh0  0011AAAA  ,        A¡hsAÃı√A†oA™É                 h  h h   @ö3ôü‰6v@C=^gîdA≈x’@^∏R    @ñ7ôü‰6v@=VE° ¿ÉBâ≤@ñ»¥>ÎÖ@ß™f_˙;õ@U8Â`Aâ7@£6u¬è\)AËo?ëh@pî) >Í!@0^Fté@áÁVìA%ﬂ;?û{AF^5<49X  >Ö°ÀA:è\<ı¬è  >£S¯A<ı¬è  ?S33@ÂOﬂ>'Ôû ?tºAPı√<49X  AFá+=o  A*Â`=•„  A¿É>'Ôû AJãD<49X  A?©¸<ı¬è  A!7L<ı¬è  @˜æw>'Ôû AGŒŸ<49X  A=;d=+  A∂F<Â`B  @Ò?}>@É AFE¢<Dõ¶ A<è\=#◊
+ Ar∞<Ìëh  @õ¶>v»¥ AEá<T˝Ù A<è\=Dõ¶ Ar∞<˝Û∂ @Ú∏R>¶ff AD  <u¬è A<·H=ix’ A†=Cñ @˜Cñ>ÎÖ ABÌë<Éo A=lã=çOﬂ A ≈=çP @‚üæ¿    AA◊
+<ãCñ A> ≈=ßÔû AOﬂ='Ôû @‚˘€¿    AGá=\);Â`B>wŒŸ   @ÎQ?c®F@Î∏˙˘e≤@ÎÑh&4rA9€#=çP;Â`B?¡&Èx‘˝Ù   @ÎQ?c®F@Î∏˙˘e≤@ÎÖ=TîÇA¿É=ßÔû<ìtº?‡õ•„S˜œ   @ÎQ?c®F@ÎÆd‹à≠@Î}≥˛™j@›/>ôôö=Ö∏@ ÉnóçP   @ÎQ?c®F@Î¥ø#Kµ@ÎÄS mé ˇˆˇ„     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 0®\ôAÅ¨=Ôù≤AtAâ>∏Af¨=©˚Á?*6‚¿K}Ä Ä                         @k,éıÉ§@Ff?;ÆÍ¿  ¿  ¿  ¿                                            >T`™1237661210971013163 P-  5 +  Aõ;Aï˜ﬂAëˇÿAè¶¸Aç^= ¢=ï†<.el<lÿÓ<∂ÔIAïSfAé®•Aà•ﬂAÖÖ”AÉL)=§<≥ ;‰ºÄ;ıÏ<´òª  ıõsr-P`5                  ¿  Aç"¿  AÑÉAÇœﬁ<ûÇü;∫Ó;õá;úÙ<<œ∂Aís#Aå•ÎAá1AÑGﬂAÇ•H                       ˇˇˇˇˇˇˇˇ            >ÙŸë<˜˘;fg;ùV…;Àä£=n®yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=217.39239499999996&dec=44.79691305555555&scale=0.19806&width=512&height=512&opt=&query=  J142934.17+444748.9@k,éuy(·@Ffƒ¸Û;Éo;Dõ¶B¥  Aì»¥Aç˜œAàE¢AÖïÅAÑQÏ<£◊
+;ƒõ¶;£◊
+;£◊
+<T˝Ù-P`5 -T0000201010021010@üLtÿD–    ˇˇˇ˙  ;
+´ h >Tüï8'≈¨  QSO                  QSO   STARBURST_BROADLINE   CYdtB30
+-P`5 -?Uu‘8‚í@k,éh°,Í@FfÍ∞ÿ5  Õ˚ Ï?5–Ä¶ıˆ; %?¿é≈*A*¿@p2ò@k,éıÉ•@Ff>ƒ`ÓJ142934.17+444749.0@k,érâäX@Ffj=ã|=êñº=è˘r;öu@TYıä∆óˇ@OŒ}GS{®@gÒ7ˆFB⁄@Koñ(À—$@ú≠˘€"–Â@w‡j~˘€#%ª·wÊ2172p454_ab41-0035412172p454_ab41  ’ALÃÕ<ƒõ¶B4  ?¯bM“Ò©¸A<·H<¥9XBA33?ÔrGE8Ô5A
+^5<¨1BPff?Ú5?|Ìëh@ÕOﬂ=8QÏA¬ff?ÒÔù≤-V?Û$›/†                     0000  0111AAAA           A∆bNA≈XA∑ßA∑á                             @í«3@à @:µ?|ÌëhA^5@+o<¥9X@í≤f`…ä@8»ı¬è\)A¿≤-@R–Â<ƒõ¶@µ≥?˙¡”@Ziô°˝j@î¯aGÆ{A…
+=>≥∂F@zﬂ3?»lÏ@1∑ç?Cƒ@xUæv»¥9AÉ?úI∫ALZ<tº  >Ö°ÀA=
+=<49X  >£S¯A	˚Á<T˝Ù  ?S33@Õhs=T˝Ù ?tºAVÒ™<#◊
+  AIdZ<Dõ¶  A ‘˛<Éo  @Ô\)=aGÆ APá+<tº  AB$›<49X  A/<T˝Ù  @ﬂ◊
+=T˝Ù AMÎÖ<#◊
+  A?K«<Dõ¶  AÁm<T˝Ù  @÷∏R=]/ ALè\<49X  A>ì<T˝Ù  AÈy<T˝Ù  @—€#=}Û∂ AK©¸<Dõ¶ A=Å<u¬è ACñ<e`B @œïÅ=ïÅ AK
+=<T˝Ù A=/<ãCñ Aff<Éo @Œ5?=≤- AJüæ<e`B A=V<õ•„ A˜œ<ãCñ @Õ7L=“Ò™ AJM”<Éo A=V<¥9X A∂F<£◊
+ @ÃQÏ=ı¬è ALÃÕ<ÃÃÕ;£◊
+=»¥9   @ÍÙmm?û@Î
+f}Ó@Î0FÉÛA<·H=tº;Â`B?ƒõ•„S˜œ   @ÍÙmm?û@Î
+f}Ó@Î0FÉÛA
+^5=ix’<Dõ¶?À•„S˜ŒŸ   @ÍÙmm?û@Î
+f}Ó@ÎòÀ…@Ãı√>tº<˝Û∂?·/üæv…   @ÍÙmm?û@Î
+f}Ó@ÎòÀ…  ˇ“ˇÿ    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä éàÿA}p§=∞ ≈Aq
+==◊
+=AcV=õ•„?*6‚ç∫æGÄ Ä                         @p*´‘Ì£¿"IŸ¯çÎ˛¿  ¿  ¿  ¿                                            >V°b1237672841210363942 ‰-  ~ &   Aåõ’AåMAãûAàR•AàˆO<m
+6<Æ˛+<gü™<v≤<ŒÎ≤Aå¿îAã¸ˇAä
+VAá$AÜ‹ª<R2;†»;ºOd;…`E<†‡]  !wy7-‰@~  -‰@~ %
+,Ö»] h ¿  Aã∆˘¿  AáS.Aá∏P<5í©;û‡ù;¢|&;§X˚<EåAä÷DAäüjAâ\`AÜ∞£AáE                      ûV“ S'=         ?L˙<?V;ÄÄ;ß-à;Âq'=L˝meh             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=2.4297688888888884&dec=-9.14424111111111&scale=0.19806&width=512&height=512&opt=&query=  J000943.14-090839.2@p.fDÿw¿"I⁄Y}Iÿ;Éo;Dõ¶    AåhsAã∆®Aä33AáS¯Aá∏R<49X;£◊
+;£◊
+;£◊
+<Dõ¶-‰@~ &T00000012B4021248@üZﬁöÄ   Ä Ä   Ä 
+,Ö»] h >V|Ø7˚®Ç  QSO                  QSO   AGN_BROADLINE         @ÅU¡N–-‰@~ &?6ÓÚïÒ@p-±ƒ»¿¿"I⁄!Øâã  À≠?LDº : &?œÊ>ç⁄H∂¿(î-Ig@p*∫æ≠O¿"IŸÙ”|J000943.14-090839.0@p#æÖ‚¿"I—ãË =≠´ü=¨1;Ô4◊@Wr5ßÅ∫¿Q_Äëˆ7)@vhÒ·>sŸ¿"≤ÊP+ë~@¨Œìtº@ù†•„S¯ jù[ÚÇ0030m091_ab41-0210580030m091_ab41  RBAMÅ<‘˝ÙB$ff?Ó¬¯7¥¢4A>1<ºjB<ÃÕ?Ì<64ÍA∏R=çPAÏ  ?»¥9Xb@ˆ^5>üæ@Êff?1&Èx‘˛?ÔN;Õ5®X                     0000  000nAAAB           AM&ÈANüæALÈyAN¨                             @í	ôü‰6v@<b=˙	AÜ1@Ax’    @ë3@à @7∏Q⁄æ'B)u@Çè\>«+@• f_˙;õ@VÊ˘ﬂTéŒ@®ßlãCñA›/    @`Æ˜<@2Où¬Ù˜@èÀbM“ÚA(^5>nóçAMGÆ<#◊
+  >Ö°ÀA>$›<49X  >£S¯Aff=#◊
+  ?S33@ıGÆ>{Ám ?tºAW©¸<49X  AJM”<Dõ¶  A-+=LÃÕ  A∂F>Ñì AQtº<#◊
+  AC?}<49X  A#ôö=#◊
+  A€#>{Ám AOo<49X A@üæ<49X Aj=•„ @¸r∞>wŒŸ AMÛ∂<Dõ¶ A?ù≤<T˝Ù Atº=#◊
+ @ıX>Éo AM;d<T˝Ù A?&È<e`B A|Ó=,1 @Ô◊
+>çOﬂ ALüæ<e`B A>Ÿ<Éo AÛ∂=8QÏ @Î+>òb ALJ<Éo A>è\<ìtº A∏R=H¥9 @Ër∞>©˚Á AKçP<ìtº A>QÏ<£◊
+ A∂F=T˝Ù @ÁdZ>≈∏ AMëh<49X;Dõ¶=Å% 
+  @Î“8◊ã@ÎÒ¯?ºŸ@Î·”∑A>1=8QÏ<e`B?√◊
+=p£◊ 
+  @Î“8◊ã@ÎÒ¯?ºŸ@Î·”∑A¿É=Ÿá=o?–£◊
+=p§ 
+  @Î“8◊ã@ÎÒ¯?ºŸ@Î·”∑@Ò°À>›≤->∏?ˇVìu 	  @Î“8◊ã@ÎÒ¯?ºŸ@Î·”∑ˇ‰ˇ˝ #      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ~-ÏAzß=ïÅAnƒú=Æ{A`z·=y€#?BkA¨zÿSÄ Ä                         @hUgˇX:S@Lõ˛o6 ¿  ¿  ¿  ¿                                            >V°b1237661416060420137 Ä-  } )  Aî´ﬁAíñAé}LAã;RAä≥8<¡“<µˇò<<4∫<«ﬁø<ûâ≠Aì•lAêkAãÅjAà+HAÜ•£?p{:?Q…∑?EŸ?;Z∂?WU  _ô•©-Ä }                  ¿  Aê$^¿  AàöAÜ¯…<Éºs;÷Mí;≤ÆM;Ø2<C%∞AíO#Aè´®Aã;®Aáœ7AÜ…∑                       ˇˇˇˇˇˇˇˇ            ?T‘ì<˛ë;\Ó1;•è1;‚5ì<˛èvyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=194.66894499999998&dec=56.05944805555555&scale=0.19806&width=512&height=512&opt=&query=  J125840.54+560333.9@hUhÌt@LõyŸ
+;Éo;ÉoB¥  AìE¢AêK«AãæwAà9XAá/<Éo;Â`B;£◊
+;£◊
+<Dõ¶-Ä } *T0000101010020200@üL¿Énòˇˇˇ˘ ˇˇˇ¸ ò<ä› h >V¶†7˚®Ç  QSO                  QSO   BROADLINE             CB´@B`<‡-Ä } *?vÊ¨Yp¶@hUhd„®h@LûÏÉ¥&  Œ- Ú?N#~ááe• '?“/ﬂ¡ú"@R.9ñ˙ÇË@hUgˇX:T@Lõ˝˜ËJ125840.57+560334.0@hUiuÕ@Lú√≈§=üä	=•zx;∑Ä4@^6z€hq@NÖ-öl˛@cÙ¯IRYi@Ki®?N h@ü„     @†É¨1"íkw3E1946p560_ab41-0192051946p560_ab41  KAPff<ÃÃÕB/33?˝° ¿ÉoACCñ<ƒõ¶B733?ıVìuA1'<ı¬èBôö?Ò◊
+=p£◊@Âôö=ìtºAp  ?ÔÌ(åÁ∞?ı7K∆ßÔû               ;o  0000  0110AAAA           AÀ˜œAÕ ¡A∆5?AƒÂ`                             @éàıøEx@6K˚Ç¬ΩA∏@'\)<49X@â‰·?––h@2Òô4ÔÃA∆ÃÕ@Tºj>S˜œ@°MÃøÙw6@N›”pÛà@ï‚2-VA ŒŸ>Ó{@j∫è`Z≥´@,l1&Èy@yaôôôôöA ·H>ù≤-APAâ<o  >Ö°ÀAC;d<49X  >£S¯A-=,1  ?S33@Á∆®=˜ŒŸ ?tºAZ¥9<tº  AOëh<Dõ¶  A0Ÿ=PÂ`  AÉ>    ATnò<o  AHV<49X  A'`B=,1  @˙5?=˜ŒŸ AR$›<tº  AEâ7<49X  A"M”='Ôû  @Ú¨>+ AQ;d<#◊
+ ADff<T˝Ù AÖ=0 ≈ @ÔS¯>#◊
+ AP¿É<49X AC¬è<e`B A  =@É @Ôﬂ;>S˜œ AP^5<Dõ¶ ACS¯<Éo A&È=Yá @õ¶>Üß AP  <T˝Ù ACV<ìtº Aƒú=u¬è @‘˛>•„T AOÆ<u¬è ABÈy<£◊
+ A¨=çOﬂ @Òx’> ¿É APff=æw<o> ƒú   @Î¿â3@Îı‰5t@Î◊Í|ÒACCñ=\);Â`B?¡hr∞ ƒú   @Î¿â3@Îı‰5t@Î◊Í|ÒA(ˆ=·GÆ<ºj?ﬁŸá+   @ÎƒUS¥]@Îı‰5t@ÎŸ6˛˙q@‰ ≈>üæw=Ö∏?˙∞ ƒõ•„   @Î¿â3@Îı‰5t@Îÿlr  ˇ˙     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä (\nA~£◊=ƒõ¶Arì=ﬂ;dAd=∆ß?*6‚ç∫Ω±Ä Ä                         @e£ü∏f@PNaî‘¿  ¿  ¿  ¿                                            >V1237651066277199948 - V L  Aî~pAó"`Aî”AêLﬂAê’<†ûò<ä€»<è˚ì<ôqÄ<…5äAêoìAç+˘AÜxAAÇV≈AÄM2=A
+w<`Ñ9<4Q<%ìA= ´j  d¿èQ)-aV                  ¿  AäPf¿  AÄ∏ÀA~Z+<¢Ä≠;Ê"£;∏≈Œ;∞ÜÅ<ä&©AãÒ2AâÍ{AÑ_.AÄÄæA~
+∞                       ˇˇˇˇˇˇˇˇ            ?Vlÿ<~û;~MX;£ÇN;⁄eæ=Xÿcheck_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=173.09760999999997&dec=64.33290888888888&scale=0.19806&width=512&height=512&opt=&query=  J113223.43+641958.4@e£ ›D@PNHboa;ƒõ¶;ƒõ¶B¥  Aç›/Aã•„AÜCñAÇ^5AÅâ7<£◊
+;Â`B;ƒõ¶;ƒõ¶<Éo-aV NT0000201010021010@ü@˙xl"h    ˇˇˇˇ 	T0» h >Våi7ß≈¨  GALAXY               QSO   BROADLINE             C-˝BÄ™s-aV N?p°ÌÚç¸@e£y’$@POyÿáúU  À[ √?Sw>ëŒ]z (?œíß7E@3∞À)^û@e£ü∏g@PNaå‚“J113223.43+641958.7@e£ »ü@POo©‹=ñªô=ôôöºo@a	íWÖ¯”@IX·£Ùfo@a˙ˇzü@J›Ü¶wŒn@Ä `Aâ7L@Æ˚wŒŸá‘ó2â3œÔ1717p636_ab41-0347351717p636_ab41  áØAM≤-<ƒõ¶B2ÃÕ@	7K∆ßA?∫^<ºjB>ÃÕ?˜VìuA¬è<ÃÃÕB133?ÚVìtº@ŸÛ∂=Ö∏AÑÃÕ?ƒõ•„S¯@x‘˝Û∂F                     0000 1100AAAA           Aûı√A°∂FAòÔûAú7L                             @ë÷ÃøÙw6@9Ö`Aâ7LA‘˛@+◊
+<ı¬è@è¿     @5Nó|àÁõA…ì@[∆®<‘˝Ù@ØÜÃøÙw6@V»r¿Áº<@ñ<° ¿ÉA÷bN@Z@r∞     @1˛v∑ÌA∑@y√?|ÌëhA#†?óÆAL(ˆ<tº  >Ö°ÀA>ÃÕ<tº  >£S¯Aè\<ìtº  ?S33@ÿ¨=Æ{ ?tºAW¬è<#◊
+  AKæw<49X  A%ëh<ºj  @˙Ò™=∏QÏ APV<tº  ACÁm<tº  A¬è<ìtº  @Î†=Æ{ ALÒ™<tº  A@j<tº  AZ<ãCñ  @·Û∂=∏QÏ AK"—<#◊
+ A>£◊<#◊
+ A?}<ìtº  @‹ãD=ÃÃÕ AJ<49X A=çP<49X AdZ<õ•„ @Ÿ`B=Ìëh AI/<Dõ¶ A<ƒú<Dõ¶ A1'<¨1 @◊;d>Cñ AHìu<T˝Ù A<(ˆ<T˝Ù Alã<ºj @’á>æw AH¨<e`B A;©¸<e`B AÈy<ÃÃÕ @”Ám>9X AM≤-=+;Â`B>
+=q   @ÎπQ±H7@ÎÍTÙN@ÎœqqôA?æw=0 ≈<#◊
+?¬-Vì   @ÎπQ±H7@ÎÍTÙN@ÎœqqôAÆ=e`B<T˝Ù?»¥9XbN   @ÎπQ±H7@ÎÍTÙN@ÎœE6˚Î@◊˜œ>hs=+?Îtºj~˘€   @ÎπQ±H7@ÎÍTÙN@ÎœE6˚Îˇﬁ ˇÍ     ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä  s2˘Ay≤-=° ¡Ao“Ú=˝Û∂A]V=ïÅ?:6„$ÕcòÄ Ä                         @[™∞‚,	Z@D»JAÑé?¿  ¿  ¿  ¿                                            >W
+=1237663788486885591 ®-    ◊   AèMéAé->Aåî–Aâ…1AâÙp<Ÿ?è<9øç<A«<É⁄–<äõAètõAç–YAãŸAà.HAá‡ì<ZQò;©4;∂†l;∫lÜ<ä  œ.¶?-®Ä   -®Ä  ÷ \ÃÒ h ¿  Aç}¿  AàXXAàUÂ<NH≤;©⁄ñ;¥Ña;Ø<I‘*AåA»Aãm∏AâƒÅAá6RAáàD                      dX T          ?jd£<)Hó;pÒ†;®øä;œI∞=R~yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=110.66704611111109&dec=41.564766111111105&scale=0.19806&width=512&height=512&opt=&query= J072240.09+413353.1@[™∞ˇÏ∑@D»J§á3;o;oB¥  AèVAç|ÓAãCñAàXAàV<T˝Ù;£◊
+;ƒõ¶;£◊
+<Dõ¶-®Ä  ◊T0000001010000200@üOã'ª0         \ÃÒ h >W!’7˚®Ç  QSO                  QSO   BROADLINE             B›UáB&BR-®Ä  ◊?%ıœ/05\@[™∞‹P2@D»J)V
+.H  –As?Y8„ÙÌ®q )?ìê…™@AØØÖî)@[™∞·¥ª^@D»J@ïÚEJ072240.09+413353.1@[™∞ÚÁ…@D»JfUüo=óˆ+=ô0æºjJå@fÿ%¸@7$Ò±à§@Zè¬∆N-ä@3H∑‰ﬁ;ä@°íT˝Û∂F@≠ÕÖ∏QÏ]Z±^P7$1107p408_ab41-0365801107p408_ab41  é‰AIÔû<ƒõ¶B6ff?ÊU2a|⁄A8üæ<ºjB<ff?VìtºAo<ƒõ¶B1ôö?Ì¢úwökQ@Õ&È=q©¸Aì33?Ó\ë—N;Õ?Ïç∏∫«À                     0000  0000AAAA          
+ A3©¸A7¬èA2ÉA5Oﬂ                             @ñ&f`…ä@?ìtºAk\)@;o    @ó„ôü‰6v@@=Oﬂ;dZBK«@j~˙=ƒõ¶@¥ß†ƒe@]«Æ! @£;BI∫^AËëh    @{ø®˜€@7Ö∏QÎÖ@à+I∫^5?A1Æ>¶ffAJ9X<#◊
+  >Ö°ÀA8¨<tº  >£S¯AK«<ƒõ¶  ?S33@ÀŒŸ=ôôö ?tºATZ<49X  ADÂ`<#◊
+  A!€#<Ìëh  @Ó{=£◊
+ ANff<#◊
+  A=∆®<tº  A~˙<ƒõ¶  @ﬁ=q=ôôö AL-<49X A:˘€<tº Ap§<ºj  @‘˝Ù=ù≤- AK<Dõ¶ A9Æ<#◊
+ A∞!<ÃÃÕ @– ≈=Æ{ AIÎÖ<T˝Ù A8»¥<49X ACñ<›/ @Õ„T= ¿É AHnò<e`B A7◊
+<Dõ¶ AÉ<˝Û∂ @ÃZ=ÎÖ AFI∫<e`B A6¥9<Dõ¶ A¨=\) @ÀCñ>1' ADJ<e`B A5çP<T˝Ù Aﬂ;=æw @ >üæ AIÔû<›/<o=∏QÏ 
+  @Í˛‚”ﬁV@Íˇï&ù§@Í˛Û/•Í∂A8üæ=PÂ`<Éo?√S˜ŒŸá 
+  @Í˛‚”ﬁV@Íˇï&ù§@Í˛Û/•Í∂AV<‘˝Ù<o?»‘˝Û∂E¢ 
+  @Í˛‚”ﬁV@Íˇï&ù§@Í˛Û/•Í∂@Ã¨>•„=<j?·˚ÁlãCñ 
+  @Í˛‚”ﬁV@Íˇï&ù§@Í˛Û/•Í∂ˇÂˇ˘ˇÏ      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä UŸ_A}Å=∫^5Ap  =≤-AaÛ∂=u¬è?@^±ˆ⁄{·Ä Ä                         @bGz Qé@JV}C»¿  ¿  ¿  ¿                                            >Zu1237658423547854976 «-  ◊ Ä  AôfÃAó WAìY˛Aê®´Aèz›= ;<Ö1<¶<ö
+$<˚‘CAñ∑»AìiÁAémRAäÓmAà<Â=5˚<_V¯<Fx≠<DtÒ=˝=  .àéwD-«`◊                  ¿  AíÏ’¿  Aã!ÜAâ\<¬'<Ò;„Ú‹;‹ﬂg<ëAîNïAë»ãAçsQAäÄ∆Aà¨c                       ˇˇˇˇˇˇˇˇ            ?QLÍ<m÷;qûÜ;†	-; HW=åyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=146.23364305555555&dec=5.778603888888888&scale=0.19806&width=512&height=512&opt=&query=  J094456.07+054642.9@bGyÂü+™@Iîûà;ƒõ¶;ƒõ¶B¥  Añ?}Aì1AéjAãE¢Aâ|Ó<ƒõ¶<o;Â`B;Â`B<ãCñ-«`◊ ÅT0000001294021048@üH≤{≤˛≈    ˇˇˇ˝ Ñ ñ h >Y’Â8'≈¨  QSO                  QSO   BROADLINE             C;–@∏ÍS-«`◊ Å?Có>◊G©b@bGyÚ£â¥@H\L“·  ÕÊ K?]<øïaWí *?ªUGZ1§æ@R{W´∏Ä@bGz ‚~@J]Ú#ûJ094456.08+054643.0@bGz=∞@L}á\=ø±[=∆‹]:∑Ä4@løÀV	˜—@Dl&…@bP«3/ÿ¿Rm©P«@éòºj~˘€@îñ•„S¯<;Æ»’˜u1458p060_ab41-0120851458p060_ab41  /5AWôö<‘˝ÙB)ôö?Ïµ'ª0AK+<ÌëhB33?ìtºjAQÏ=<jAΩôö?ìtºj@Ïz·=ÌëhAff?Òp£◊
+=q?Ô»K]ÃcÒ                     0000  0000AAAB           A/ÅA-˚ÁA.ßA//                             @Ñ+
+@∫à@.hı¬è\)AxE¢@Aá    @ÄnÃ¿7ì@+”tºj~˙B∆®@yX    @ûô3@à @T´bSó@•DíÒ©˚ÁAÔÅ    @eÏzﬂ.œ @2≠fÀ4@å$"–Â`BA.J    AWS¯<ãCñ  >Ö°ÀAK
+=<ºj  >£S¯A“Ú=ãCñ  ?S33@(ˆ>e`B ?tºAaÅ<ìtº  AWX<‘˝Ù  A2I∫=ßÔû  AI∫>hr∞ A[Å<ãCñ  AP$›<ºj  A)%=ãCñ  AK«>e`B AYhs<õ•„  AMK«<ÃÃÕ  A$V=â7L  @˙v…>tºj AX£◊<¥9X AL{<Ìëh A"-=ïÅ @ÙÌë>á+ AXV<‘˝Ù AKâ7=+ A!S¯=¨1 @ÒV>óçP AX-<Ìëh AK?}=•„ A ˝Ù=ƒõ¶ @Ô˜œ>≥∂F AX¨=Cñ AK%=49X A ƒú=„S¯ @ÒGÆ>·GÆ AX ≈=æw AJ¥9=H¥9 A ãD>    @⁄Ÿ¿    AWù≤=49X<T˝Ù>ôö 
+  @ÎÚC◊uù@Î"N_@Î©YÀMAK&È=ïÅ<¥9X?–‘˝Û∂E¢ 
+  @ÎÚC◊uù@Î"N_@Î©YÀMAÔû=Ôù≤=\)?·XbM“Ú 
+  @ÎÚC◊uù@Î"N_@Î©YÀM@ÎdZ>‰›/>
+=q?˛Èx‘˝Û∂ 
+ @ÎÚC◊uù@Î"N_@Î©YÀM          ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä .äñAÄj=◊
+=Axóç>
+=qAix’>o?=Gc´HØÍÄ Ä                         @ie}ü”o}@>ºù¬|∑¿  ¿  ¿  ¿                                            >a∞ä1237665430240362609 &-  B q  Aõ§AôàIAî£ËAêcPAè∫^=Uÿ<ãvh<†+›<Åxc<ÍkAòLzAîÍ∞Aé3ŒAäP%Aà›è=tBœ<åOó<ïú≥<^L¬=+]¸  ƒ¥~zÈ-&¿B                  ¿  Aì≠õ¿  AâZßAáÿ¿<˚|<€v;ﬂ®b;·4Ù<õ?¯AñÉXAìPöAç<fAâ'ÅAá¥|                       ˇˇˇˇˇˇˇˇ            ?`HB<lzY;Ñ’D;≤÷;Î = Ñedgeon_def      Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=203.17158499999996&dec=30.018503055555552&scale=0.19806&width=512&height=512&opt=&query= J133241.18+300106.5@ie}ôà“¢@>º8*˘;Éo;ÉoB¥  Aë»¥Aè›/Aå;dAâJAá˘€<ãCñ;ƒõ¶;ƒõ¶;ƒõ¶<T˝Ù-–¿+ T0000001010000000@üS”›óˆ+ˇˇˇ¸ ˇˇˇ˛  ¯
+Õã h >a†œ7˚®Ç  QSO                  QSO   BROADLINE             CK+ÌA%Â-–¿+ ?@8/é -@ie}ó¸4^@>º!81 >  –€ +?A„å%-I≥ +?¿‘V.	˛á@@√ˇ≈GùN@ie}ü”o~@>ºú”‡ΩJ133241.18+300106.7@ie}–∞á@>æúàac=¡â7=¬ZÓ<Cñ@Já^E/¥˘@T„ÏQÕ@gÉ·z˚]@B=Cπì4%@•pú(ı¬è@îÙ~˘€"—:Æ§›;∂2034p302_ab41-0090782034p302_ab41  #vAWtº<›/B#33?Ò◊
+=p£◊ALÈy<‘˝ÙB$ff?Ò"–Â`AâA$bN=]/A†ÃÕ?¥9XbN@Ù¨>ìAff?Òôôôôôö?ÒCïÅ$›               :Éo  0000  111nAAAB           AÜ ≈AÜÅAá≤-AÑ˝Ù                             @ÑYGüÏôÚ@/£◊
+=qA!˚Á@,Ìë<Dõ¶@}º     @'-ëhr∞!A€GÆ@`Â`=ãCñ@ì?ôü‰6v@N°hÉwe@öÔù≤-A—˝Ù    @aR=QÔ∑@0Ä     @å9XbNA"·H?¶ffAV–Â<49X  >Ö°ÀAMdZ<ƒõ¶  >£S¯A#ôö=Å%  ?S33@ˆÈy>wŒŸ ?tºAa"—<Dõ¶  AYhs<›/  A:1'=° ¡  AãD>Çè\ AZ˝Ù<49X  AR~˙<ƒõ¶  A0ÃÕ=Å%  A¨>wŒŸ AXºj<Dõ¶ AO˚Á<›/ A+∆®=y€# @˛»¥>{Ám AWŒŸ<T˝Ù AO/<˝Û∂ A(ı√=Éo @˘©¸>éŸ AWGÆ<e`B AO∏=çP A'33=è\) @˙óç>∫^5 AV›/<Éo AOS¯=49X A%“Ú=ôôö @˝?}>˙^5 AVnò<ìtº AOçP=T˝Ù A$¥9=ßÔû @‰Z¿    AUŒŸ<£◊
+ AOù≤=u¬è A$=∏QÏ @·∫^¿    AWx’=T˝Ù<T˝Ù>@É   @Î	ÅÏ‘™@Î	©8ƒQ‘@Î	îV√·lAL·H=Éo<ãCñ?œù≤-V   @Î	ÅÏ‘™@Î	©8ƒQ‘@Î	îV√·lA#ïÅ=üæw<¨1?‚∏QÎÖ∏   @Î	ÅÏ‘™@Î	§˝˙|]@Î	íÿËi`@ˆ^5? É>∏?˛r∞ ƒõ¶   @Î	ÅÏ‘™@Î	©8ƒQ‘@Î	îV√·lˇ⁄ˇ≈ˇ¸    ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä =çØÿAÄù≤=“Ò™AwGÆ>%Aj-=ºj?*6‚¿KÎÄ Ä                         @dâ˛ã,@‹Õ]ã$¿  ¿  ¿  ¿                                            >ezx1237658424091148319 «- 9    AñuÖAïÄÛAìå1AêF»Aè6Ó<¨Øº<ﬁﬂÜ<ôú+<√$=NÛAï›¡AíÈkAéíAãi⁄AäËU=<a<KØg<Fzp<2ß=0’˝  7®=D[-«Å9  -«Å9 †îJS h ¿  Aí‡Ä¿  Aå!(Aä˙ﬂ<ØOä;¯Ì;‰£ˇ;›
+$<ìô0AìªáAë¯Aéê_Aã°XAä†@                      
+uî ◊          ?c~2<"DB;n∏;•gØ; ;’=À[yep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=160.98548888888888&dec=7.21562611111111&scale=0.19806&width=512&height=512&opt=&query=   J104356.51+071256.2@dâ :2+@‹Ãâ∞ÓJ;Éo;ÉoB¥  Aî˜œAí·HAè9XAå ≈Aä˘€<¨1<o;Â`B;Â`B<ìtº-«Å9 F0000901010020000@üH≤ïÈ·±ˇˇˇ˛     †îJS h >e&ñ8{®Ç  QSO                  QSO   STARBURST_BROADLINE   C ¸I@ÊÊi-«Å9 ?%sñSæ@dâ%âëﬁ@‹ÃÌÅË  Õ£Q?>\’ÚÛ—Ç ,?¡áaà±
+@\Ñ∏ËÍ:@dâ :2+@‹ÕË´PJ104356.52+071256.1@dâij˝•@‹…nØ
+=µsÎ=πıZºÉ‰&@nÊäxîf@JÁ◊h1A¡@c˜(y0mÜøËr_òÏÀp@Æeüæv…@ëoGÆz·më5∫P{t1616p075_ab41-0069641616p075_ab41  4AV{<‘˝ÙB(ÃÕ?Ì»K]ÃdAH5?<‘˝ÙB*ff?ÓeîØOÑA∂F=8QÏA¡ôö?∞ ƒõ•„@Â7L=ŒŸA+33?¥9XbN?Ô^ûö                     0000  0110AAAA           AM©¸AL–ÂAEVAS“Ú                             @Ü∏`f@0∞ ƒõ•„Aã“Ú@=∏    @É|f`…ä@-LÃÃÃÃÕB*v…@Ç¨    @ü±3@à @T˝≤ yL@®gﬁ5?|ÓAËtº    @kÆ˜<@4 ƒõ•„T@êãE° ¿ÉA2V?4z·AU„T<ãCñ >Ö°ÀAH¨<õ•„ >£S¯Aß=çOﬂ  ?S33@ÔŒŸ>èﬂ; ?tºA`ì<ìtº  ATAâ<£◊
+  A37L=Æ{  Aâ7>ã∆® AZb<ãCñ AM7L<õ•„ A)€#=çOﬂ  A∏>èﬂ; AW“Ú<õ•„ AJnò<£◊
+ A$›/=ãCñ @˚Æ>£S¯ AV–Â<¥9X AICñ<ºj A"9X=ìtº @˘°À> =q AVI∫<ÃÃÕ AHÃÕ<‘˝Ù A »¥=° ¡ @˘©¸? É AU˚Á<Ìëh AHá+<ı¬è A {=∏QÏ @‡ı√¿    AUŒŸ=+ AHbN=\) A“Ú=“Ò™ @‡j¿    AU∂F=•„ AHbN=#◊
+ A ¡=Ôù≤ @ﬂﬂ;¿    AVb=•„<49X=˚Ám   @ÎÃzïí§@ÎvõÍ@Îﬁ∑‰øAH1'=49X<Dõ¶?√∂E° ¿É   @ÎÃzïí§@ÎvõÍ@Îﬁ∑‰øA“Ú>-V=@É?·/üæv…  @ÎÃzïí§@ÎvõÍ@Îﬁ∑‰ø@‰ı√>∞ ≈=¬è\?ı≤-V   @ÎÃzïí§@ÎvõÍ@Îﬁ∑‰øˇÚˇ‘      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä 3µjòAÄ»¥=ÃÃÕAvƒú=◊
+=Ad˘€=¥9X?BvèÑ}ÛLÄ Ä                         @l…ﬂ^ÌT“?ÙÃ_H5:¿  ¿  ¿  ¿                                            >gÁ1237651735778951545 ≤- ¿y   Aô˘wAôêBAñ-XAìAíñQ<€à<≤Å/<Rä<kmÿ= „ÎAósXAî•/AéïıAãC¸Aäª•=àƒø<¨<<ë∫ï<õ=í·   Dï¢π-≤B¿  -≤B¿x.$@ë– h ¿  AîA\¿  AãÕ4AäËÓ<Ÿ< s^<
+pT<Ô\<√`∆Aî›AíΩ‚AéHˇAä¯AäQÿ                      X≈ ,j          ?[†¬<+¿t;Éﬂ;¨+˝<ÿ¿=’fyep             Ä       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=230.30851694444442&dec=1.2519038888888887&scale=0.19806&width=512&height=512&opt=&query= J152114.03+011506.8@l…ﬂ5Ω@?Ù’Ì˛¯;£◊
+;£◊
+B¥  Añ&ÈAîAâAèbNAãÃÕAäÈy<‘˝Ù<#◊
+<o<o<ƒõ¶-≤B¿yT0000000010020000@üA\∆?ˇˇˇ¸     .$@ë– h >g\—7˚®Ç  QSO                  QSO   STARBURST_BROADLINE   CfN˚?†>c-≤B¿y?AûÆÜÊg @l…ﬂWD·P?Ù‘≤Ä4⁄9  …ŸD?^+QzN⁄~ -? —A¶ì} @EâëOH<∞@l…ﬂ_(R?ÙÃ}¥ëJ152114.05+011507.0@l…ﬂ≤LÓ∆?Ù¯Ú≈Ñ⁄=ØÏW=ØÉ{ºF?@KW∑v˙2@F‡É~•!ç@lpq&≥»@3¢ÁˆÙø@èı     @ïCdZ¨Ë¢\	≤H2299p015_ab41-0128082299p015_ab41  2AZff<ÃÃÕB-ôö?ÚE° ¿ÉAMlã<‘˝ÙB(ff?Ìzxl"h
+AOﬂ=tºAÓff?è\(ı¬è@„"—=Å%AàÃÕ?bM“Ò©¸?r∞ ƒõ¶                     0000  1100AAAA  ! " " " "    BÒ™BPÂBLÕBÀ«                             @Å*∏`f@)O\(ı¬èAÄ–Â@@ ≈    @|‹z‡;>ö@%ÌVìB^iy@à9X    @úÍ     @Nˇ;[ˆ†‹@£‡^∏QÎÖAÔ    @l∞ı¿v}5@*”tºj~˙@à{nóçOﬂA(‘˛?5ÅAYëh<ãCñ  >Ö°ÀAN9X<Â`B  >£S¯A¿É=Cñ  ?S33@ÁdZ= ¿É ?tºAc€#<ìtº  AZì<ı¬è  A3lã=,1  A≤-=»¥9 A]æw<ãCñ  ASS¯<Â`B  A)Û∂=Cñ  @˘“Ú= ¿É A[ù≤<õ•„  AQá=o  A$∞!=+  @Úóç=·GÆ AZ·H<ºj  APóç=•„  A!ôö=Cñ  @Ô|Ó>$› AZß<›/ APß=<j A≤-=tº  @Ì`B>æw AZ£◊<˝Û∂ AP–Â=]/ A^5=æw @Í∏R>7K« AZ£◊=tº APı√=Å% AGÆ=0 ≈ @Ëõ¶>QÎÖ AZõ¶='Ôû AQ=ïÅ AZ=<j @Êá+>lãD AZff=aGÆ<tº>cS¯ !  @Í˜˚≈¯ßÚ@Î∞‘ﬁ>@Î @*w£AMdZ=óçP<T˝Ù?”Ö∏QÎÖ !  @Í˜˚≈¯ßÚ@Î∞‘ﬁ>@Î @*w£AV>'Ôû<ı¬è?Ú1&Èx‘˛   @Í˜˚≈¯ßÚ@Î∞‘ﬁ>@Î(≤A¶i@‚üæ>≠ëh=}Û∂?˙ßÔù≤-   @Í˜˚≈¯ßÚ@Î∞‘ﬁ>@Î(≤A¶iˇ‡ˇˆ      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä :Ω]AÑì=Â`BA|r∞>hsAk ¡=∫^5?=N§O¯Ä Ä                         @iª¸Ä°Ú\@<Q†Ù`_¿  ¿  ¿  ¿                                            >i˘1237665441520025653 )-  î 5   Añ„-Añ]KAìºíAêLbAè¡<∂êﬁ<¢ΩÜ<_fg<m	3<ÓÃAìf|AèwAä~,AáíÒAáx=®◊û<«÷ç<`Í≠<°Ä¶=∫¶  ƒÛÙe‘-)`î  -)`î 4Ñ-í h ¿  Aéˆ¿  Aá_ÑAÜG<æE…;Ù¡Û;⁄Ñ“;ﬁÑ˝<®m£AëSAéëîAäfAá(AÜ∫                      i√ *∫ü          ?W˚,<$ÊD;Ä‘´;≠Î;ﬂ›_=-check_companionsÄ       http://skyservice.pha.jhu.edu/DR8/ImgCutout/getjpeg.aspx?ra=205.87457305555552&dec=28.055933055555553&scale=0.19806&width=512&height=512&opt=&query= J134329.89+280321.3@iª¸sÓÂ&@<Q†ƒe;ƒõ¶;ƒõ¶B¥  Aëõ¶Aéı√Aä∞!Aá`BAÜGÆ<ºj;Â`B;Â`B;Â`B<¨1-)`î 5T0000201010021010@üQë∑X‚ˇˇˇı     Ñ-í h >iﬁ7˚®Ç  QSO                  QSO   STARBURST_BROADLINE   CMﬂ‰A‡rç-)`î 5?'¬R˝4±‡@iª¸zFÅv@<Qæñ“I·  –‚ ¥?PN˘7·i .?ø·!ÓgQH@WƒT÷*(@iª¸ÄÑﬁ@<Q†ƒeJ134329.90+280321.3@iª¸“É≈Û@<Qm∞›É=ØÉ{=≥ú∫˘	l@DDgq(aH@SõΩìsÂ´@g˙màœF˚@A‰3‘B‚‘@ö:     @d„\(ı¬èåcßñªÂ2057p287_ab41-0032372057p287_ab41  •AVìu<‘˝ÙB'ôö?ˇS˜ŒŸáAI„T<ÃÃÕB0ff?Ûù≤-VAdZ='ÔûA‘ÃÕ?Ó©ì‡ﬁ”Aè\>2-@∆ff?ÃÃÃÃÃÕ?Ù¨1&Èy                     0000  011nAAAB           AÜ?}AÖp§AáI∫AÜlã                             @Öe3?»lÏ@0Rn®TGÄA%°À@"¿É    @Å∞=ÿ't@)Øù≤-VAﬂ†@^    @ô•ôü‰6v@NÕë`4P@ö1I∫^A—Z    @UîZ ›∆@+π€"–Â`@◊XbM”A›/?ñÈyATÌë<T˝Ù  >Ö°ÀAI`B<¨1  >£S¯Aôö=mëh  ?S33@ˇŒŸ>§›/ ?tºA`b<e`B  AUŒŸ<ºj  A6=ëhs  A9X>∫^5 AY†<T˝Ù  ANz·<¨1  A,ÃÕ=mëh  A	∏>§›/ AU∂F<T˝Ù  AKGÆ<¥9X  A(1=mëh  AÔû>ªÁm AS•„<e`B AI∂F<ÃÃÕ A%°À=}Û∂ A¿É?â7 ARI∫<u¬è AHı√<Ìëh A$óç=è\) @ÙÌë¿    AQK«<Éo AHóç=+ A$Aâ=•„T @ÛdZ¿    AP~˙<ìtº AH^5=•„ A$V=¬è\ @Ò?}¿    AOﬂ;<õ•„ AH5?=0 ≈ A$óç=„S¯ @Ô˜œ¿    AVìu=+<o>J   @ÍÙm1¢§€@Î
+Ü(æe@Î¡˚ê#˙AI„T=T˝Ù<T˝Ù?…x‘˝Û∂F   @ÍÙm1¢§€@Î
+Ü(æe@Î¡˚ê#˙AdZ=˘€#<Ìëh?Ÿx‘˝Û∂F   @ÍÙm1¢§€@Î
+Ü(æe@Î¡˚ê#˙A`B?.V>(ı√@	ïÅ$›/   @ÍÙm1¢§€@Î
+Ü(æe@Î¡˚ê#˙ 	 :      ¿  ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä ¿  ¿  ¿  ¿  ¿  Ä &˛#AÅƒú=Èx’A|É>á+Akù≤=Èx’?1{1[ıˆ                                                                                                                                                                                                                                                            

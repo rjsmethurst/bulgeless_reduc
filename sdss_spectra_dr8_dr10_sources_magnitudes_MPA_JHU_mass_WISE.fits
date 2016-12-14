@@ -1,0 +1,1349 @@
+SIMPLE  =                    T / Standard FITS format                           BITPIX  =                    8 / Character data                                 NAXIS   =                    1 / Text string                                    NAXIS1  =                25634 / Number of characters                           VOTMETA =                    T / Table metadata in VOTable format               EXTEND  =                    T / There are standard extensions                  COMMENT                                                                         COMMENT The data in this primary HDU consists of bytes which                    COMMENT comprise a VOTABLE document.                                            COMMENT The VOTable describes the metadata of the table contained               COMMENT in the following BINTABLE extension.                                    COMMENT Such a BINTABLE extension can be used on its own as a perfectly         COMMENT good table, but the information from this HDU may provide some          COMMENT useful additional metadata.                                             COMMENT There is one following BINTABLE.                                        NTABLE  =                    1 / Number of following BINTABLE HDUs              END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <?xml version='1.0' encoding='UTF-8'?>
+<VOTABLE version='1.1'>
+<!--
+ !  VOTable written by uk.ac.starlink.votable.FitsPlusTableWriter
+ !  Describes BINTABLE extensions in following HDUs
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="82">
+<PARAM arraysize="35" datatype="char" name="Match type" value="Pair match, best matched pairs only">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="69" datatype="char" name="Join Type" value="1 and 2 (An output row for each row represented in both input tables)">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="22" datatype="char" name="First input table" value="16: sdss_dr10_info.csv"/>
+<PARAM arraysize="20" datatype="char" name="Second input table" value="17: wgetlist_all.txt"/>
+<PARAM arraysize="35" datatype="char" name="Match type" value="Pair match, best matched pairs only">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="71" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1)">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="25" datatype="char" name="First input table" value="14: inproposal_matchtodr8"/>
+<PARAM arraysize="23" datatype="char" name="Second input table" value="18: sdss_dr10_info_wget"/>
+<PARAM arraysize="35" datatype="char" name="Match type" value="Pair match, best matched pairs only">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="69" datatype="char" name="Join Type" value="1 and 2 (An output row for each row represented in both input tables)">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="22" datatype="char" name="First input table" value="22: sdss_dr10_info.csv"/>
+<PARAM arraysize="20" datatype="char" name="Second input table" value="21: wgetlist_all.txt"/>
+<PARAM arraysize="35" datatype="char" name="Match type" value="Pair match, best matched pairs only">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="71" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1)">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="23" datatype="char" name="First input table" value="20: inproposal_dr8_dr10"/>
+<PARAM arraysize="23" datatype="char" name="Second input table" value="23: sdss_dr10_info_wget"/>
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="22" datatype="char" name="First input table" value="2: inproposal_dr8_dr10"/>
+<PARAM arraysize="36" datatype="char" name="Second input table" value="43: mag_sdss_spectra_rjsmethurst.fit"/>
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="44" datatype="char" name="First input table" value="44: sdss_spectra_dr8_dr10_sources_magnitudes"/>
+<PARAM arraysize="37" datatype="char" name="Second input table" value="45: sdss_MPA_JHU_mass_rjsmethurst.fit"/>
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="57" datatype="char" name="First input table" value="46: sdss_spectra_dr8_dr10_sources_magnitudes_MPA_JHU_mass"/>
+<PARAM arraysize="32" datatype="char" name="Second input table" value="60: sdss_bulgeless_WISE_data.txt"/>
+<FIELD arraysize="19" datatype="char" name="objID_dr8_1" ucd="ID_MAIN">
+<DESCRIPTION>Unique SDSS identifier composed from [skyVersion,rerun,run,camcol,field,obj].</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="19" datatype="char" name="name">
+<DESCRIPTION>(concat("J",replaceAll(RA_hms, " ", ""),replaceAll(Dec_dms, " ", "")))</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="11" datatype="char" name="RA_hms" unit="hms"/>
+<FIELD arraysize="11" datatype="char" name="Dec_dms" unit="dms"/>
+<FIELD datatype="double" name="RA_deg_1" unit="degrees">
+<DESCRIPTION>(radiansToDegrees(hmsToRadians(RA_hms)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Dec_deg_1" unit="degrees">
+<DESCRIPTION>(radiansToDegrees(dmsToRadians(Dec_dms)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMag_r_1" unit="mag">
+<DESCRIPTION>Petrosian magnitude</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="9" datatype="char" name="imag_str">
+<DESCRIPTION>(concat("i = ",formatDecimal(petroMag_i,2)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="petroMagErr_r_1" unit="mag">
+<DESCRIPTION>Petrosian magnitude error</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="9" datatype="char" name="spectrum_source">
+<DESCRIPTION>source of spectrum (length(wget) &gt; 0 ? "SDSS_good" : "INT")</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="published_BHmass" unit="log M_sun">
+<DESCRIPTION>previously published BH mass, if it exists (-99.99)</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="Survey"/>
+<FIELD datatype="short" name="PlateID">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="MJD">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="short" name="Fiber">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="RA_1"/>
+<FIELD datatype="double" name="Dec_1"/>
+<FIELD datatype="float" name="Redshift"/>
+<FIELD datatype="short" name="ZWARNING">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="SN"/>
+<FIELD arraysize="6" datatype="char" name="Class"/>
+<FIELD datatype="double" name="Halpha_sigma" unit="km/s">
+<DESCRIPTION>H_alpha dispersion from SDSS DR10 (-99.)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Halpha_flux" unit="1e-17 erg cm^-2 s-1">
+<DESCRIPTION>line flux in Halpha from SDSS DR10 (-99.)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Halpha_continuum" unit="1e-17 erg cm^-2 s^-1 A^-1">
+<DESCRIPTION>continuum at H_alpha from SDSS DR10 (-99.)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="D_L" unit="Mpc">
+<DESCRIPTION>(luminosityDistance(Redshift, 70, 0.3, 0.7))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Halpha_lum" unit="erg/s">
+<DESCRIPTION>luminosity calculated from redshift and flux (fluxToLuminosity(Halpha_flux*1.0e-17, 100.*MpcToM(D_L)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="log_MBH" unit="log M_sun">
+<DESCRIPTION>BH Mass from Xiao et al. 2011 (6.40 + (0.45*log10(Halpha_lum/1.0e42))+(2.06*log10(3.2*Halpha_sigma/1.0e3)))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="int" name="badSDSSfit">
+<DESCRIPTION>1 if fit okish, 0 if really bad (toInteger(1))</DESCRIPTION>
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="double" name="BHmass_print" unit="log_Msun">
+<DESCRIPTION>BH mass to print in a proposal (published_BHmass &gt; 0. ? -1.*published_BHmass : log_MBH)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="MBH_diff">
+<DESCRIPTION>difference between published and estimated mass (published_BHmass - log_MBH)</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="96" datatype="char" name="wget"/>
+<FIELD datatype="double" name="Separation_1" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="objID_dr8_2">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="float" name="ra_deg_2"/>
+<FIELD datatype="float" name="dec_deg_2"/>
+<FIELD datatype="long" name="objid_1">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="double" name="distance_1"/>
+<FIELD datatype="double" name="ra2_1"/>
+<FIELD datatype="double" name="dec2_1"/>
+<FIELD datatype="float" name="petroMag_u"/>
+<FIELD datatype="float" name="petroMagErr_u"/>
+<FIELD datatype="float" name="petroMag_r_2"/>
+<FIELD datatype="float" name="petroMagErr_r_2"/>
+<FIELD datatype="float" name="psfMag_u"/>
+<FIELD datatype="float" name="psfMagErr_u"/>
+<FIELD datatype="float" name="psfMag_r"/>
+<FIELD datatype="float" name="psfMagErr_r"/>
+<FIELD datatype="double" name="Separation_1a" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="objID_dr8">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="float" name="ra1"/>
+<FIELD datatype="float" name="dec1"/>
+<FIELD datatype="long" name="objid_2">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="double" name="distance_2"/>
+<FIELD datatype="double" name="ra2_2"/>
+<FIELD datatype="double" name="dec2_2"/>
+<FIELD datatype="float" name="lgm_tot_p16"/>
+<FIELD datatype="float" name="lgm_tot_p50"/>
+<FIELD datatype="float" name="lgm_tot_p84"/>
+<FIELD datatype="double" name="Separation_1b" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<FIELD datatype="short" name="cntr_01">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="dist_x"/>
+<FIELD datatype="double" name="pang_x"/>
+<FIELD datatype="double" name="ra_01"/>
+<FIELD datatype="double" name="dec_01"/>
+<FIELD arraysize="19" datatype="char" name="designation"/>
+<FIELD datatype="double" name="ra_2"/>
+<FIELD datatype="double" name="dec_2"/>
+<FIELD datatype="float" name="sigra"/>
+<FIELD datatype="float" name="sigdec"/>
+<FIELD datatype="float" name="sigradec"/>
+<FIELD datatype="double" name="glon"/>
+<FIELD datatype="double" name="glat"/>
+<FIELD datatype="double" name="elon"/>
+<FIELD datatype="double" name="elat"/>
+<FIELD datatype="double" name="wx"/>
+<FIELD datatype="double" name="wy"/>
+<FIELD datatype="long" name="cntr">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD arraysize="20" datatype="char" name="source_id"/>
+<FIELD arraysize="13" datatype="char" name="coadd_id"/>
+<FIELD datatype="int" name="src">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="w1mpro"/>
+<FIELD datatype="float" name="w1sigmpro"/>
+<FIELD datatype="float" name="w1snr"/>
+<FIELD datatype="double" name="w1rchi2"/>
+<FIELD datatype="float" name="w2mpro"/>
+<FIELD datatype="float" name="w2sigmpro"/>
+<FIELD datatype="float" name="w2snr"/>
+<FIELD datatype="double" name="w2rchi2"/>
+<FIELD datatype="float" name="w3mpro"/>
+<FIELD datatype="float" name="w3sigmpro"/>
+<FIELD datatype="float" name="w3snr"/>
+<FIELD datatype="double" name="w3rchi2"/>
+<FIELD datatype="float" name="w4mpro"/>
+<FIELD datatype="float" name="w4sigmpro"/>
+<FIELD datatype="float" name="w4snr"/>
+<FIELD datatype="double" name="w4rchi2"/>
+<FIELD datatype="double" name="rchi2"/>
+<FIELD datatype="short" name="nb">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="na">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1sat"/>
+<FIELD datatype="float" name="w2sat"/>
+<FIELD datatype="float" name="w3sat"/>
+<FIELD datatype="float" name="w4sat"/>
+<FIELD datatype="short" name="satnum">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="cc_flags"/>
+<FIELD datatype="short" name="ext_flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="var_flg"/>
+<FIELD arraysize="4" datatype="char" name="ph_qual"/>
+<FIELD datatype="short" name="det_bit">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="moon_lev">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1cov"/>
+<FIELD datatype="float" name="w2cov"/>
+<FIELD datatype="float" name="w3cov"/>
+<FIELD datatype="float" name="w4cov"/>
+<FIELD datatype="float" name="w1frtr"/>
+<FIELD datatype="float" name="w2frtr"/>
+<FIELD datatype="float" name="w3frtr"/>
+<FIELD datatype="float" name="w4frtr"/>
+<FIELD datatype="short" name="w1cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="2" datatype="char" name="w1cc_map_str"/>
+<FIELD datatype="short" name="w2cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="w2cc_map_str"/>
+<FIELD datatype="short" name="w3cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w3cc_map_str"/>
+<FIELD datatype="short" name="w4cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w4cc_map_str"/>
+<FIELD datatype="double" name="w1flux"/>
+<FIELD datatype="double" name="w1sigflux"/>
+<FIELD datatype="float" name="w1sky"/>
+<FIELD datatype="float" name="w1sigsk"/>
+<FIELD datatype="float" name="w1conf"/>
+<FIELD datatype="double" name="w2flux"/>
+<FIELD datatype="double" name="w2sigflux"/>
+<FIELD datatype="float" name="w2sky"/>
+<FIELD datatype="float" name="w2sigsk"/>
+<FIELD datatype="float" name="w2conf"/>
+<FIELD datatype="double" name="w3flux"/>
+<FIELD datatype="double" name="w3sigflux"/>
+<FIELD datatype="double" name="w3sky"/>
+<FIELD datatype="float" name="w3sigsk"/>
+<FIELD datatype="float" name="w3conf"/>
+<FIELD datatype="double" name="w4flux"/>
+<FIELD datatype="double" name="w4sigflux"/>
+<FIELD datatype="double" name="w4sky"/>
+<FIELD datatype="float" name="w4sigsk"/>
+<FIELD datatype="float" name="w4conf"/>
+<FIELD datatype="float" name="w1mag"/>
+<FIELD datatype="float" name="w1sigm"/>
+<FIELD datatype="short" name="w1flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mcor"/>
+<FIELD datatype="float" name="w2mag"/>
+<FIELD datatype="float" name="w2sigm"/>
+<FIELD datatype="short" name="w2flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mcor"/>
+<FIELD datatype="float" name="w3mag"/>
+<FIELD datatype="float" name="w3sigm"/>
+<FIELD datatype="short" name="w3flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mcor"/>
+<FIELD datatype="float" name="w4mag"/>
+<FIELD datatype="float" name="w4sigm"/>
+<FIELD datatype="short" name="w4flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mcor"/>
+<FIELD datatype="float" name="w1mag_1"/>
+<FIELD datatype="float" name="w1sigm_1"/>
+<FIELD datatype="short" name="w1flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_1"/>
+<FIELD datatype="float" name="w2sigm_1"/>
+<FIELD datatype="short" name="w2flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_1"/>
+<FIELD datatype="float" name="w3sigm_1"/>
+<FIELD datatype="short" name="w3flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_1"/>
+<FIELD datatype="float" name="w4sigm_1"/>
+<FIELD datatype="short" name="w4flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_2"/>
+<FIELD datatype="float" name="w1sigm_2"/>
+<FIELD datatype="short" name="w1flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_2"/>
+<FIELD datatype="float" name="w2sigm_2"/>
+<FIELD datatype="short" name="w2flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_2"/>
+<FIELD datatype="float" name="w3sigm_2"/>
+<FIELD datatype="short" name="w3flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_2"/>
+<FIELD datatype="float" name="w4sigm_2"/>
+<FIELD datatype="short" name="w4flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_3"/>
+<FIELD datatype="float" name="w1sigm_3"/>
+<FIELD datatype="short" name="w1flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_3"/>
+<FIELD datatype="float" name="w2sigm_3"/>
+<FIELD datatype="short" name="w2flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_3"/>
+<FIELD datatype="float" name="w3sigm_3"/>
+<FIELD datatype="short" name="w3flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_3"/>
+<FIELD datatype="float" name="w4sigm_3"/>
+<FIELD datatype="short" name="w4flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_4"/>
+<FIELD datatype="float" name="w1sigm_4"/>
+<FIELD datatype="short" name="w1flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_4"/>
+<FIELD datatype="float" name="w2sigm_4"/>
+<FIELD datatype="short" name="w2flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_4"/>
+<FIELD datatype="float" name="w3sigm_4"/>
+<FIELD datatype="short" name="w3flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_4"/>
+<FIELD datatype="float" name="w4sigm_4"/>
+<FIELD datatype="short" name="w4flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_5"/>
+<FIELD datatype="float" name="w1sigm_5"/>
+<FIELD datatype="short" name="w1flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_5"/>
+<FIELD datatype="float" name="w2sigm_5"/>
+<FIELD datatype="short" name="w2flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_5"/>
+<FIELD datatype="float" name="w3sigm_5"/>
+<FIELD datatype="short" name="w3flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_5"/>
+<FIELD datatype="float" name="w4sigm_5"/>
+<FIELD datatype="short" name="w4flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_6"/>
+<FIELD datatype="float" name="w1sigm_6"/>
+<FIELD datatype="short" name="w1flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_6"/>
+<FIELD datatype="float" name="w2sigm_6"/>
+<FIELD datatype="short" name="w2flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_6"/>
+<FIELD datatype="float" name="w3sigm_6"/>
+<FIELD datatype="short" name="w3flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_6"/>
+<FIELD datatype="float" name="w4sigm_6"/>
+<FIELD datatype="short" name="w4flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_7"/>
+<FIELD datatype="float" name="w1sigm_7"/>
+<FIELD datatype="short" name="w1flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_7"/>
+<FIELD datatype="float" name="w2sigm_7"/>
+<FIELD datatype="short" name="w2flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_7"/>
+<FIELD datatype="float" name="w3sigm_7"/>
+<FIELD datatype="short" name="w3flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_7"/>
+<FIELD datatype="float" name="w4sigm_7"/>
+<FIELD datatype="short" name="w4flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_8"/>
+<FIELD datatype="float" name="w1sigm_8"/>
+<FIELD datatype="short" name="w1flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_8"/>
+<FIELD datatype="float" name="w2sigm_8"/>
+<FIELD datatype="short" name="w2flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_8"/>
+<FIELD datatype="float" name="w3sigm_8"/>
+<FIELD datatype="short" name="w3flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_8"/>
+<FIELD datatype="float" name="w4sigm_8"/>
+<FIELD datatype="short" name="w4flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1magp"/>
+<FIELD datatype="float" name="w1sigp1"/>
+<FIELD datatype="float" name="w1sigp2"/>
+<FIELD datatype="float" name="w1dmag"/>
+<FIELD datatype="short" name="w1ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w1mjdmin"/>
+<FIELD datatype="double" name="w1mjdmax"/>
+<FIELD datatype="double" name="w1mjdmean"/>
+<FIELD datatype="float" name="w2magp"/>
+<FIELD datatype="float" name="w2sigp1"/>
+<FIELD datatype="float" name="w2sigp2"/>
+<FIELD datatype="double" name="w2dmag"/>
+<FIELD datatype="short" name="w2ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w2mjdmin"/>
+<FIELD datatype="double" name="w2mjdmax"/>
+<FIELD datatype="double" name="w2mjdmean"/>
+<FIELD datatype="float" name="w3magp"/>
+<FIELD datatype="float" name="w3sigp1"/>
+<FIELD datatype="float" name="w3sigp2"/>
+<FIELD datatype="double" name="w3dmag"/>
+<FIELD datatype="short" name="w3ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w3mjdmin"/>
+<FIELD datatype="double" name="w3mjdmax"/>
+<FIELD datatype="double" name="w3mjdmean"/>
+<FIELD datatype="float" name="w4magp"/>
+<FIELD datatype="float" name="w4sigp1"/>
+<FIELD datatype="float" name="w4sigp2"/>
+<FIELD datatype="double" name="w4dmag"/>
+<FIELD datatype="short" name="w4ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w4mjdmin"/>
+<FIELD datatype="double" name="w4mjdmax"/>
+<FIELD datatype="double" name="w4mjdmean"/>
+<FIELD datatype="short" name="rho12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="xscprox"/>
+<FIELD datatype="float" name="w1rsemi"/>
+<FIELD datatype="float" name="w1ba"/>
+<FIELD datatype="float" name="w1pa"/>
+<FIELD datatype="float" name="w1gmag"/>
+<FIELD datatype="float" name="w1gerr"/>
+<FIELD datatype="short" name="w1gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2rsemi"/>
+<FIELD datatype="float" name="w2ba"/>
+<FIELD datatype="float" name="w2pa"/>
+<FIELD datatype="float" name="w2gmag"/>
+<FIELD datatype="float" name="w2gerr"/>
+<FIELD datatype="short" name="w2gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3rsemi"/>
+<FIELD datatype="float" name="w3ba"/>
+<FIELD datatype="float" name="w3pa"/>
+<FIELD datatype="float" name="w3gmag"/>
+<FIELD datatype="float" name="w3gerr"/>
+<FIELD datatype="short" name="w3gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4rsemi"/>
+<FIELD datatype="float" name="w4ba"/>
+<FIELD datatype="float" name="w4pa"/>
+<FIELD datatype="float" name="w4gmag"/>
+<FIELD datatype="float" name="w4gerr"/>
+<FIELD datatype="short" name="w4gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="tmass_key">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="r_2mass"/>
+<FIELD datatype="float" name="pa_2mass"/>
+<FIELD datatype="short" name="n_2mass">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="j_m_2mass"/>
+<FIELD datatype="float" name="j_msig_2mass"/>
+<FIELD datatype="float" name="h_m_2mass"/>
+<FIELD datatype="float" name="h_msig_2mass"/>
+<FIELD datatype="float" name="k_m_2mass"/>
+<FIELD datatype="float" name="k_msig_2mass"/>
+<FIELD datatype="long" name="best_use_cntr">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="short" name="ngrp">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="x"/>
+<FIELD datatype="double" name="y"/>
+<FIELD datatype="double" name="z"/>
+<FIELD datatype="int" name="spt_ind">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="double" name="Separation" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<!-- Dummy VOTable - no DATA element -->
+</TABLE>
+</RESOURCE>
+</VOTABLE>                                                                                                                                                                                                                                                                                              XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional table                            NAXIS1  =                 1717 / width of table in bytes                        NAXIS2  =                   82 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group                                 TFIELDS =                  350 / number of columns                              EXTNAME = 'Joined  '           / table name                                     TTYPE1  = 'objID_dr8_1'        / label for column 1                             TFORM1  = '19A     '           / format for column 1                            TUCD1   = 'ID_MAIN '                                                            TTYPE2  = 'name    '           / label for column 2                             TFORM2  = '19A     '           / format for column 2                            TTYPE3  = 'RA_hms  '           / label for column 3                             TFORM3  = '11A     '           / format for column 3                            TUNIT3  = 'hms     '           / units for column 3                             TTYPE4  = 'Dec_dms '           / label for column 4                             TFORM4  = '11A     '           / format for column 4                            TUNIT4  = 'dms     '           / units for column 4                             TTYPE5  = 'RA_deg_1'           / label for column 5                             TFORM5  = 'D       '           / format for column 5                            TUNIT5  = 'degrees '           / units for column 5                             TCOMM5  = '(radiansToDegrees(hmsToRadians(RA_hms)))'                            TTYPE6  = 'Dec_deg_1'          / label for column 6                             TFORM6  = 'D       '           / format for column 6                            TUNIT6  = 'degrees '           / units for column 6                             TCOMM6  = '(radiansToDegrees(dmsToRadians(Dec_dms)))'                           TTYPE7  = 'petroMag_r_1'       / label for column 7                             TFORM7  = 'E       '           / format for column 7                            TUNIT7  = 'mag     '           / units for column 7                             TCOMM7  = 'Petrosian magnitude'                                                 TTYPE8  = 'imag_str'           / label for column 8                             TFORM8  = '9A      '           / format for column 8                            TCOMM8  = '(concat("i = ",formatDecimal(petroMag_i,2)))'                        TTYPE9  = 'petroMagErr_r_1'    / label for column 9                             TFORM9  = 'E       '           / format for column 9                            TUNIT9  = 'mag     '           / units for column 9                             TCOMM9  = 'Petrosian magnitude error'                                           TTYPE10 = 'spectrum_source'    / label for column 10                            TFORM10 = '9A      '           / format for column 10                           TCOMM10 = 'source of spectrum (length(wget) > 0 ? "SDSS_good" : "INT")'         TTYPE11 = 'published_BHmass'   / label for column 11                            TFORM11 = 'D       '           / format for column 11                           TUNIT11 = 'log M_sun'          / units for column 11                            TCOMM11 = 'previously published BH mass, if it exists (-99.99)'                 TTYPE12 = 'Survey  '           / label for column 12                            TFORM12 = '4A      '           / format for column 12                           TTYPE13 = 'PlateID '           / label for column 13                            TFORM13 = 'I       '           / format for column 13                           TNULL13 =               -32768 / blank value for column 13                      TTYPE14 = 'MJD     '           / label for column 14                            TFORM14 = 'J       '           / format for column 14                           TNULL14 =          -2147483648 / blank value for column 14                      TTYPE15 = 'Fiber   '           / label for column 15                            TFORM15 = 'I       '           / format for column 15                           TNULL15 =               -32768 / blank value for column 15                      TTYPE16 = 'RA_1    '           / label for column 16                            TFORM16 = 'D       '           / format for column 16                           TTYPE17 = 'Dec_1   '           / label for column 17                            TFORM17 = 'D       '           / format for column 17                           TTYPE18 = 'Redshift'           / label for column 18                            TFORM18 = 'E       '           / format for column 18                           TTYPE19 = 'ZWARNING'           / label for column 19                            TFORM19 = 'I       '           / format for column 19                           TNULL19 =               -32768 / blank value for column 19                      TTYPE20 = 'SN      '           / label for column 20                            TFORM20 = 'E       '           / format for column 20                           TTYPE21 = 'Class   '           / label for column 21                            TFORM21 = '6A      '           / format for column 21                           TTYPE22 = 'Halpha_sigma'       / label for column 22                            TFORM22 = 'D       '           / format for column 22                           TUNIT22 = 'km/s    '           / units for column 22                            TCOMM22 = 'H_alpha dispersion from SDSS DR10 (-99.)'                            TTYPE23 = 'Halpha_flux'        / label for column 23                            TFORM23 = 'D       '           / format for column 23                           TUNIT23 = '1e-17 erg cm^-2 s-1' / units for column 23                           TCOMM23 = 'line flux in Halpha from SDSS DR10 (-99.)'                           TTYPE24 = 'Halpha_continuum'   / label for column 24                            TFORM24 = 'D       '           / format for column 24                           TUNIT24 = '1e-17 erg cm^-2 s^-1 A^-1' / units for column 24                     TCOMM24 = 'continuum at H_alpha from SDSS DR10 (-99.)'                          TTYPE25 = 'D_L     '           / label for column 25                            TFORM25 = 'D       '           / format for column 25                           TUNIT25 = 'Mpc     '           / units for column 25                            TCOMM25 = '(luminosityDistance(Redshift, 70, 0.3, 0.7))'                        TTYPE26 = 'Halpha_lum'         / label for column 26                            TFORM26 = 'D       '           / format for column 26                           TUNIT26 = 'erg/s   '           / units for column 26                            TTYPE27 = 'log_MBH '           / label for column 27                            TFORM27 = 'D       '           / format for column 27                           TUNIT27 = 'log M_sun'          / units for column 27                            TTYPE28 = 'badSDSSfit'         / label for column 28                            TFORM28 = 'J       '           / format for column 28                           TNULL28 =          -2147483648 / blank value for column 28                      TCOMM28 = '1 if fit okish, 0 if really bad (toInteger(1))'                      TTYPE29 = 'BHmass_print'       / label for column 29                            TFORM29 = 'D       '           / format for column 29                           TUNIT29 = 'log_Msun'           / units for column 29                            TTYPE30 = 'MBH_diff'           / label for column 30                            TFORM30 = 'D       '           / format for column 30                           TTYPE31 = 'wget    '           / label for column 31                            TFORM31 = '96A     '           / format for column 31                           TTYPE32 = 'Separation_1'       / label for column 32                            TFORM32 = 'D       '           / format for column 32                           TUNIT32 = 'arcsec  '           / units for column 32                            TCOMM32 = 'Distance between matched objects along a great circle'               TUCD32  = 'pos.angDistance'                                                     TTYPE33 = 'objID_dr8_2'        / label for column 33                            TFORM33 = 'K       '           / format for column 33                           TNULL33 = -9223372036854775808 / blank value for column 33                      TTYPE34 = 'ra_deg_2'           / label for column 34                            TFORM34 = 'E       '           / format for column 34                           TTYPE35 = 'dec_deg_2'          / label for column 35                            TFORM35 = 'E       '           / format for column 35                           TTYPE36 = 'objid_1 '           / label for column 36                            TFORM36 = 'K       '           / format for column 36                           TNULL36 = -9223372036854775808 / blank value for column 36                      TTYPE37 = 'distance_1'         / label for column 37                            TFORM37 = 'D       '           / format for column 37                           TTYPE38 = 'ra2_1   '           / label for column 38                            TFORM38 = 'D       '           / format for column 38                           TTYPE39 = 'dec2_1  '           / label for column 39                            TFORM39 = 'D       '           / format for column 39                           TTYPE40 = 'petroMag_u'         / label for column 40                            TFORM40 = 'E       '           / format for column 40                           TTYPE41 = 'petroMagErr_u'      / label for column 41                            TFORM41 = 'E       '           / format for column 41                           TTYPE42 = 'petroMag_r_2'       / label for column 42                            TFORM42 = 'E       '           / format for column 42                           TTYPE43 = 'petroMagErr_r_2'    / label for column 43                            TFORM43 = 'E       '           / format for column 43                           TTYPE44 = 'psfMag_u'           / label for column 44                            TFORM44 = 'E       '           / format for column 44                           TTYPE45 = 'psfMagErr_u'        / label for column 45                            TFORM45 = 'E       '           / format for column 45                           TTYPE46 = 'psfMag_r'           / label for column 46                            TFORM46 = 'E       '           / format for column 46                           TTYPE47 = 'psfMagErr_r'        / label for column 47                            TFORM47 = 'E       '           / format for column 47                           TTYPE48 = 'Separation_1a'      / label for column 48                            TFORM48 = 'D       '           / format for column 48                           TUNIT48 = 'arcsec  '           / units for column 48                            TCOMM48 = 'Distance between matched objects along a great circle'               TUCD48  = 'pos.angDistance'                                                     TTYPE49 = 'objID_dr8'          / label for column 49                            TFORM49 = 'K       '           / format for column 49                           TNULL49 = -9223372036854775808 / blank value for column 49                      TTYPE50 = 'ra1     '           / label for column 50                            TFORM50 = 'E       '           / format for column 50                           TTYPE51 = 'dec1    '           / label for column 51                            TFORM51 = 'E       '           / format for column 51                           TTYPE52 = 'objid_2 '           / label for column 52                            TFORM52 = 'K       '           / format for column 52                           TNULL52 = -9223372036854775808 / blank value for column 52                      TTYPE53 = 'distance_2'         / label for column 53                            TFORM53 = 'D       '           / format for column 53                           TTYPE54 = 'ra2_2   '           / label for column 54                            TFORM54 = 'D       '           / format for column 54                           TTYPE55 = 'dec2_2  '           / label for column 55                            TFORM55 = 'D       '           / format for column 55                           TTYPE56 = 'lgm_tot_p16'        / label for column 56                            TFORM56 = 'E       '           / format for column 56                           TTYPE57 = 'lgm_tot_p50'        / label for column 57                            TFORM57 = 'E       '           / format for column 57                           TTYPE58 = 'lgm_tot_p84'        / label for column 58                            TFORM58 = 'E       '           / format for column 58                           TTYPE59 = 'Separation_1b'      / label for column 59                            TFORM59 = 'D       '           / format for column 59                           TUNIT59 = 'arcsec  '           / units for column 59                            TCOMM59 = 'Distance between matched objects along a great circle'               TUCD59  = 'pos.angDistance'                                                     TTYPE60 = 'cntr_01 '           / label for column 60                            TFORM60 = 'I       '           / format for column 60                           TTYPE61 = 'dist_x  '           / label for column 61                            TFORM61 = 'D       '           / format for column 61                           TTYPE62 = 'pang_x  '           / label for column 62                            TFORM62 = 'D       '           / format for column 62                           TTYPE63 = 'ra_01   '           / label for column 63                            TFORM63 = 'D       '           / format for column 63                           TTYPE64 = 'dec_01  '           / label for column 64                            TFORM64 = 'D       '           / format for column 64                           TTYPE65 = 'designation'        / label for column 65                            TFORM65 = '19A     '           / format for column 65                           TTYPE66 = 'ra_2    '           / label for column 66                            TFORM66 = 'D       '           / format for column 66                           TTYPE67 = 'dec_2   '           / label for column 67                            TFORM67 = 'D       '           / format for column 67                           TTYPE68 = 'sigra   '           / label for column 68                            TFORM68 = 'E       '           / format for column 68                           TTYPE69 = 'sigdec  '           / label for column 69                            TFORM69 = 'E       '           / format for column 69                           TTYPE70 = 'sigradec'           / label for column 70                            TFORM70 = 'E       '           / format for column 70                           TTYPE71 = 'glon    '           / label for column 71                            TFORM71 = 'D       '           / format for column 71                           TTYPE72 = 'glat    '           / label for column 72                            TFORM72 = 'D       '           / format for column 72                           TTYPE73 = 'elon    '           / label for column 73                            TFORM73 = 'D       '           / format for column 73                           TTYPE74 = 'elat    '           / label for column 74                            TFORM74 = 'D       '           / format for column 74                           TTYPE75 = 'wx      '           / label for column 75                            TFORM75 = 'D       '           / format for column 75                           TTYPE76 = 'wy      '           / label for column 76                            TFORM76 = 'D       '           / format for column 76                           TTYPE77 = 'cntr    '           / label for column 77                            TFORM77 = 'K       '           / format for column 77                           TTYPE78 = 'source_id'          / label for column 78                            TFORM78 = '20A     '           / format for column 78                           TTYPE79 = 'coadd_id'           / label for column 79                            TFORM79 = '13A     '           / format for column 79                           TTYPE80 = 'src     '           / label for column 80                            TFORM80 = 'J       '           / format for column 80                           TTYPE81 = 'w1mpro  '           / label for column 81                            TFORM81 = 'E       '           / format for column 81                           TTYPE82 = 'w1sigmpro'          / label for column 82                            TFORM82 = 'E       '           / format for column 82                           TTYPE83 = 'w1snr   '           / label for column 83                            TFORM83 = 'E       '           / format for column 83                           TTYPE84 = 'w1rchi2 '           / label for column 84                            TFORM84 = 'D       '           / format for column 84                           TTYPE85 = 'w2mpro  '           / label for column 85                            TFORM85 = 'E       '           / format for column 85                           TTYPE86 = 'w2sigmpro'          / label for column 86                            TFORM86 = 'E       '           / format for column 86                           TTYPE87 = 'w2snr   '           / label for column 87                            TFORM87 = 'E       '           / format for column 87                           TTYPE88 = 'w2rchi2 '           / label for column 88                            TFORM88 = 'D       '           / format for column 88                           TTYPE89 = 'w3mpro  '           / label for column 89                            TFORM89 = 'E       '           / format for column 89                           TTYPE90 = 'w3sigmpro'          / label for column 90                            TFORM90 = 'E       '           / format for column 90                           TTYPE91 = 'w3snr   '           / label for column 91                            TFORM91 = 'E       '           / format for column 91                           TTYPE92 = 'w3rchi2 '           / label for column 92                            TFORM92 = 'D       '           / format for column 92                           TTYPE93 = 'w4mpro  '           / label for column 93                            TFORM93 = 'E       '           / format for column 93                           TTYPE94 = 'w4sigmpro'          / label for column 94                            TFORM94 = 'E       '           / format for column 94                           TTYPE95 = 'w4snr   '           / label for column 95                            TFORM95 = 'E       '           / format for column 95                           TTYPE96 = 'w4rchi2 '           / label for column 96                            TFORM96 = 'D       '           / format for column 96                           TTYPE97 = 'rchi2   '           / label for column 97                            TFORM97 = 'D       '           / format for column 97                           TTYPE98 = 'nb      '           / label for column 98                            TFORM98 = 'I       '           / format for column 98                           TTYPE99 = 'na      '           / label for column 99                            TFORM99 = 'I       '           / format for column 99                           TTYPE100= 'w1sat   '           / label for column 100                           TFORM100= 'E       '           / format for column 100                          TTYPE101= 'w2sat   '           / label for column 101                           TFORM101= 'E       '           / format for column 101                          TTYPE102= 'w3sat   '           / label for column 102                           TFORM102= 'E       '           / format for column 102                          TTYPE103= 'w4sat   '           / label for column 103                           TFORM103= 'E       '           / format for column 103                          TTYPE104= 'satnum  '           / label for column 104                           TFORM104= 'I       '           / format for column 104                          TTYPE105= 'cc_flags'           / label for column 105                           TFORM105= '4A      '           / format for column 105                          TTYPE106= 'ext_flg '           / label for column 106                           TFORM106= 'I       '           / format for column 106                          TTYPE107= 'var_flg '           / label for column 107                           TFORM107= '4A      '           / format for column 107                          TTYPE108= 'ph_qual '           / label for column 108                           TFORM108= '4A      '           / format for column 108                          TTYPE109= 'det_bit '           / label for column 109                           TFORM109= 'I       '           / format for column 109                          TTYPE110= 'moon_lev'           / label for column 110                           TFORM110= 'I       '           / format for column 110                          TTYPE111= 'w1nm    '           / label for column 111                           TFORM111= 'I       '           / format for column 111                          TTYPE112= 'w1m     '           / label for column 112                           TFORM112= 'I       '           / format for column 112                          TTYPE113= 'w2nm    '           / label for column 113                           TFORM113= 'I       '           / format for column 113                          TTYPE114= 'w2m     '           / label for column 114                           TFORM114= 'I       '           / format for column 114                          TTYPE115= 'w3nm    '           / label for column 115                           TFORM115= 'I       '           / format for column 115                          TTYPE116= 'w3m     '           / label for column 116                           TFORM116= 'I       '           / format for column 116                          TTYPE117= 'w4nm    '           / label for column 117                           TFORM117= 'I       '           / format for column 117                          TTYPE118= 'w4m     '           / label for column 118                           TFORM118= 'I       '           / format for column 118                          TTYPE119= 'w1cov   '           / label for column 119                           TFORM119= 'E       '           / format for column 119                          TTYPE120= 'w2cov   '           / label for column 120                           TFORM120= 'E       '           / format for column 120                          TTYPE121= 'w3cov   '           / label for column 121                           TFORM121= 'E       '           / format for column 121                          TTYPE122= 'w4cov   '           / label for column 122                           TFORM122= 'E       '           / format for column 122                          TTYPE123= 'w1frtr  '           / label for column 123                           TFORM123= 'E       '           / format for column 123                          TTYPE124= 'w2frtr  '           / label for column 124                           TFORM124= 'E       '           / format for column 124                          TTYPE125= 'w3frtr  '           / label for column 125                           TFORM125= 'E       '           / format for column 125                          TTYPE126= 'w4frtr  '           / label for column 126                           TFORM126= 'E       '           / format for column 126                          TTYPE127= 'w1cc_map'           / label for column 127                           TFORM127= 'I       '           / format for column 127                          TTYPE128= 'w1cc_map_str'       / label for column 128                           TFORM128= '2A      '           / format for column 128                          TTYPE129= 'w2cc_map'           / label for column 129                           TFORM129= 'I       '           / format for column 129                          TTYPE130= 'w2cc_map_str'       / label for column 130                           TFORM130= '1A      '           / format for column 130                          TTYPE131= 'w3cc_map'           / label for column 131                           TFORM131= 'I       '           / format for column 131                          TTYPE132= 'w3cc_map_str'       / label for column 132                           TFORM132= 'L       '           / format for column 132                          TTYPE133= 'w4cc_map'           / label for column 133                           TFORM133= 'I       '           / format for column 133                          TTYPE134= 'w4cc_map_str'       / label for column 134                           TFORM134= 'L       '           / format for column 134                          TTYPE135= 'w1flux  '           / label for column 135                           TFORM135= 'D       '           / format for column 135                          TTYPE136= 'w1sigflux'          / label for column 136                           TFORM136= 'D       '           / format for column 136                          TTYPE137= 'w1sky   '           / label for column 137                           TFORM137= 'E       '           / format for column 137                          TTYPE138= 'w1sigsk '           / label for column 138                           TFORM138= 'E       '           / format for column 138                          TTYPE139= 'w1conf  '           / label for column 139                           TFORM139= 'E       '           / format for column 139                          TTYPE140= 'w2flux  '           / label for column 140                           TFORM140= 'D       '           / format for column 140                          TTYPE141= 'w2sigflux'          / label for column 141                           TFORM141= 'D       '           / format for column 141                          TTYPE142= 'w2sky   '           / label for column 142                           TFORM142= 'E       '           / format for column 142                          TTYPE143= 'w2sigsk '           / label for column 143                           TFORM143= 'E       '           / format for column 143                          TTYPE144= 'w2conf  '           / label for column 144                           TFORM144= 'E       '           / format for column 144                          TTYPE145= 'w3flux  '           / label for column 145                           TFORM145= 'D       '           / format for column 145                          TTYPE146= 'w3sigflux'          / label for column 146                           TFORM146= 'D       '           / format for column 146                          TTYPE147= 'w3sky   '           / label for column 147                           TFORM147= 'D       '           / format for column 147                          TTYPE148= 'w3sigsk '           / label for column 148                           TFORM148= 'E       '           / format for column 148                          TTYPE149= 'w3conf  '           / label for column 149                           TFORM149= 'E       '           / format for column 149                          TTYPE150= 'w4flux  '           / label for column 150                           TFORM150= 'D       '           / format for column 150                          TTYPE151= 'w4sigflux'          / label for column 151                           TFORM151= 'D       '           / format for column 151                          TTYPE152= 'w4sky   '           / label for column 152                           TFORM152= 'D       '           / format for column 152                          TTYPE153= 'w4sigsk '           / label for column 153                           TFORM153= 'E       '           / format for column 153                          TTYPE154= 'w4conf  '           / label for column 154                           TFORM154= 'E       '           / format for column 154                          TTYPE155= 'w1mag   '           / label for column 155                           TFORM155= 'E       '           / format for column 155                          TTYPE156= 'w1sigm  '           / label for column 156                           TFORM156= 'E       '           / format for column 156                          TTYPE157= 'w1flg   '           / label for column 157                           TFORM157= 'I       '           / format for column 157                          TTYPE158= 'w1mcor  '           / label for column 158                           TFORM158= 'E       '           / format for column 158                          TTYPE159= 'w2mag   '           / label for column 159                           TFORM159= 'E       '           / format for column 159                          TTYPE160= 'w2sigm  '           / label for column 160                           TFORM160= 'E       '           / format for column 160                          TTYPE161= 'w2flg   '           / label for column 161                           TFORM161= 'I       '           / format for column 161                          TTYPE162= 'w2mcor  '           / label for column 162                           TFORM162= 'E       '           / format for column 162                          TTYPE163= 'w3mag   '           / label for column 163                           TFORM163= 'E       '           / format for column 163                          TTYPE164= 'w3sigm  '           / label for column 164                           TFORM164= 'E       '           / format for column 164                          TTYPE165= 'w3flg   '           / label for column 165                           TFORM165= 'I       '           / format for column 165                          TTYPE166= 'w3mcor  '           / label for column 166                           TFORM166= 'E       '           / format for column 166                          TTYPE167= 'w4mag   '           / label for column 167                           TFORM167= 'E       '           / format for column 167                          TTYPE168= 'w4sigm  '           / label for column 168                           TFORM168= 'E       '           / format for column 168                          TTYPE169= 'w4flg   '           / label for column 169                           TFORM169= 'I       '           / format for column 169                          TTYPE170= 'w4mcor  '           / label for column 170                           TFORM170= 'E       '           / format for column 170                          TTYPE171= 'w1mag_1 '           / label for column 171                           TFORM171= 'E       '           / format for column 171                          TTYPE172= 'w1sigm_1'           / label for column 172                           TFORM172= 'E       '           / format for column 172                          TTYPE173= 'w1flg_1 '           / label for column 173                           TFORM173= 'I       '           / format for column 173                          TTYPE174= 'w2mag_1 '           / label for column 174                           TFORM174= 'E       '           / format for column 174                          TTYPE175= 'w2sigm_1'           / label for column 175                           TFORM175= 'E       '           / format for column 175                          TTYPE176= 'w2flg_1 '           / label for column 176                           TFORM176= 'I       '           / format for column 176                          TTYPE177= 'w3mag_1 '           / label for column 177                           TFORM177= 'E       '           / format for column 177                          TTYPE178= 'w3sigm_1'           / label for column 178                           TFORM178= 'E       '           / format for column 178                          TTYPE179= 'w3flg_1 '           / label for column 179                           TFORM179= 'I       '           / format for column 179                          TTYPE180= 'w4mag_1 '           / label for column 180                           TFORM180= 'E       '           / format for column 180                          TTYPE181= 'w4sigm_1'           / label for column 181                           TFORM181= 'E       '           / format for column 181                          TTYPE182= 'w4flg_1 '           / label for column 182                           TFORM182= 'I       '           / format for column 182                          TTYPE183= 'w1mag_2 '           / label for column 183                           TFORM183= 'E       '           / format for column 183                          TTYPE184= 'w1sigm_2'           / label for column 184                           TFORM184= 'E       '           / format for column 184                          TTYPE185= 'w1flg_2 '           / label for column 185                           TFORM185= 'I       '           / format for column 185                          TTYPE186= 'w2mag_2 '           / label for column 186                           TFORM186= 'E       '           / format for column 186                          TTYPE187= 'w2sigm_2'           / label for column 187                           TFORM187= 'E       '           / format for column 187                          TTYPE188= 'w2flg_2 '           / label for column 188                           TFORM188= 'I       '           / format for column 188                          TTYPE189= 'w3mag_2 '           / label for column 189                           TFORM189= 'E       '           / format for column 189                          TTYPE190= 'w3sigm_2'           / label for column 190                           TFORM190= 'E       '           / format for column 190                          TTYPE191= 'w3flg_2 '           / label for column 191                           TFORM191= 'I       '           / format for column 191                          TTYPE192= 'w4mag_2 '           / label for column 192                           TFORM192= 'E       '           / format for column 192                          TTYPE193= 'w4sigm_2'           / label for column 193                           TFORM193= 'E       '           / format for column 193                          TTYPE194= 'w4flg_2 '           / label for column 194                           TFORM194= 'I       '           / format for column 194                          TTYPE195= 'w1mag_3 '           / label for column 195                           TFORM195= 'E       '           / format for column 195                          TTYPE196= 'w1sigm_3'           / label for column 196                           TFORM196= 'E       '           / format for column 196                          TTYPE197= 'w1flg_3 '           / label for column 197                           TFORM197= 'I       '           / format for column 197                          TTYPE198= 'w2mag_3 '           / label for column 198                           TFORM198= 'E       '           / format for column 198                          TTYPE199= 'w2sigm_3'           / label for column 199                           TFORM199= 'E       '           / format for column 199                          TTYPE200= 'w2flg_3 '           / label for column 200                           TFORM200= 'I       '           / format for column 200                          TTYPE201= 'w3mag_3 '           / label for column 201                           TFORM201= 'E       '           / format for column 201                          TTYPE202= 'w3sigm_3'           / label for column 202                           TFORM202= 'E       '           / format for column 202                          TTYPE203= 'w3flg_3 '           / label for column 203                           TFORM203= 'I       '           / format for column 203                          TTYPE204= 'w4mag_3 '           / label for column 204                           TFORM204= 'E       '           / format for column 204                          TTYPE205= 'w4sigm_3'           / label for column 205                           TFORM205= 'E       '           / format for column 205                          TTYPE206= 'w4flg_3 '           / label for column 206                           TFORM206= 'I       '           / format for column 206                          TTYPE207= 'w1mag_4 '           / label for column 207                           TFORM207= 'E       '           / format for column 207                          TTYPE208= 'w1sigm_4'           / label for column 208                           TFORM208= 'E       '           / format for column 208                          TTYPE209= 'w1flg_4 '           / label for column 209                           TFORM209= 'I       '           / format for column 209                          TTYPE210= 'w2mag_4 '           / label for column 210                           TFORM210= 'E       '           / format for column 210                          TTYPE211= 'w2sigm_4'           / label for column 211                           TFORM211= 'E       '           / format for column 211                          TTYPE212= 'w2flg_4 '           / label for column 212                           TFORM212= 'I       '           / format for column 212                          TTYPE213= 'w3mag_4 '           / label for column 213                           TFORM213= 'E       '           / format for column 213                          TTYPE214= 'w3sigm_4'           / label for column 214                           TFORM214= 'E       '           / format for column 214                          TTYPE215= 'w3flg_4 '           / label for column 215                           TFORM215= 'I       '           / format for column 215                          TTYPE216= 'w4mag_4 '           / label for column 216                           TFORM216= 'E       '           / format for column 216                          TTYPE217= 'w4sigm_4'           / label for column 217                           TFORM217= 'E       '           / format for column 217                          TTYPE218= 'w4flg_4 '           / label for column 218                           TFORM218= 'I       '           / format for column 218                          TTYPE219= 'w1mag_5 '           / label for column 219                           TFORM219= 'E       '           / format for column 219                          TTYPE220= 'w1sigm_5'           / label for column 220                           TFORM220= 'E       '           / format for column 220                          TTYPE221= 'w1flg_5 '           / label for column 221                           TFORM221= 'I       '           / format for column 221                          TTYPE222= 'w2mag_5 '           / label for column 222                           TFORM222= 'E       '           / format for column 222                          TTYPE223= 'w2sigm_5'           / label for column 223                           TFORM223= 'E       '           / format for column 223                          TTYPE224= 'w2flg_5 '           / label for column 224                           TFORM224= 'I       '           / format for column 224                          TTYPE225= 'w3mag_5 '           / label for column 225                           TFORM225= 'E       '           / format for column 225                          TTYPE226= 'w3sigm_5'           / label for column 226                           TFORM226= 'E       '           / format for column 226                          TTYPE227= 'w3flg_5 '           / label for column 227                           TFORM227= 'I       '           / format for column 227                          TTYPE228= 'w4mag_5 '           / label for column 228                           TFORM228= 'E       '           / format for column 228                          TTYPE229= 'w4sigm_5'           / label for column 229                           TFORM229= 'E       '           / format for column 229                          TTYPE230= 'w4flg_5 '           / label for column 230                           TFORM230= 'I       '           / format for column 230                          TTYPE231= 'w1mag_6 '           / label for column 231                           TFORM231= 'E       '           / format for column 231                          TTYPE232= 'w1sigm_6'           / label for column 232                           TFORM232= 'E       '           / format for column 232                          TTYPE233= 'w1flg_6 '           / label for column 233                           TFORM233= 'I       '           / format for column 233                          TTYPE234= 'w2mag_6 '           / label for column 234                           TFORM234= 'E       '           / format for column 234                          TTYPE235= 'w2sigm_6'           / label for column 235                           TFORM235= 'E       '           / format for column 235                          TTYPE236= 'w2flg_6 '           / label for column 236                           TFORM236= 'I       '           / format for column 236                          TTYPE237= 'w3mag_6 '           / label for column 237                           TFORM237= 'E       '           / format for column 237                          TTYPE238= 'w3sigm_6'           / label for column 238                           TFORM238= 'E       '           / format for column 238                          TTYPE239= 'w3flg_6 '           / label for column 239                           TFORM239= 'I       '           / format for column 239                          TTYPE240= 'w4mag_6 '           / label for column 240                           TFORM240= 'E       '           / format for column 240                          TTYPE241= 'w4sigm_6'           / label for column 241                           TFORM241= 'E       '           / format for column 241                          TTYPE242= 'w4flg_6 '           / label for column 242                           TFORM242= 'I       '           / format for column 242                          TTYPE243= 'w1mag_7 '           / label for column 243                           TFORM243= 'E       '           / format for column 243                          TTYPE244= 'w1sigm_7'           / label for column 244                           TFORM244= 'E       '           / format for column 244                          TTYPE245= 'w1flg_7 '           / label for column 245                           TFORM245= 'I       '           / format for column 245                          TTYPE246= 'w2mag_7 '           / label for column 246                           TFORM246= 'E       '           / format for column 246                          TTYPE247= 'w2sigm_7'           / label for column 247                           TFORM247= 'E       '           / format for column 247                          TTYPE248= 'w2flg_7 '           / label for column 248                           TFORM248= 'I       '           / format for column 248                          TTYPE249= 'w3mag_7 '           / label for column 249                           TFORM249= 'E       '           / format for column 249                          TTYPE250= 'w3sigm_7'           / label for column 250                           TFORM250= 'E       '           / format for column 250                          TTYPE251= 'w3flg_7 '           / label for column 251                           TFORM251= 'I       '           / format for column 251                          TTYPE252= 'w4mag_7 '           / label for column 252                           TFORM252= 'E       '           / format for column 252                          TTYPE253= 'w4sigm_7'           / label for column 253                           TFORM253= 'E       '           / format for column 253                          TTYPE254= 'w4flg_7 '           / label for column 254                           TFORM254= 'I       '           / format for column 254                          TTYPE255= 'w1mag_8 '           / label for column 255                           TFORM255= 'E       '           / format for column 255                          TTYPE256= 'w1sigm_8'           / label for column 256                           TFORM256= 'E       '           / format for column 256                          TTYPE257= 'w1flg_8 '           / label for column 257                           TFORM257= 'I       '           / format for column 257                          TTYPE258= 'w2mag_8 '           / label for column 258                           TFORM258= 'E       '           / format for column 258                          TTYPE259= 'w2sigm_8'           / label for column 259                           TFORM259= 'E       '           / format for column 259                          TTYPE260= 'w2flg_8 '           / label for column 260                           TFORM260= 'I       '           / format for column 260                          TTYPE261= 'w3mag_8 '           / label for column 261                           TFORM261= 'E       '           / format for column 261                          TTYPE262= 'w3sigm_8'           / label for column 262                           TFORM262= 'E       '           / format for column 262                          TTYPE263= 'w3flg_8 '           / label for column 263                           TFORM263= 'I       '           / format for column 263                          TTYPE264= 'w4mag_8 '           / label for column 264                           TFORM264= 'E       '           / format for column 264                          TTYPE265= 'w4sigm_8'           / label for column 265                           TFORM265= 'E       '           / format for column 265                          TTYPE266= 'w4flg_8 '           / label for column 266                           TFORM266= 'I       '           / format for column 266                          TTYPE267= 'w1magp  '           / label for column 267                           TFORM267= 'E       '           / format for column 267                          TTYPE268= 'w1sigp1 '           / label for column 268                           TFORM268= 'E       '           / format for column 268                          TTYPE269= 'w1sigp2 '           / label for column 269                           TFORM269= 'E       '           / format for column 269                          TTYPE270= 'w1dmag  '           / label for column 270                           TFORM270= 'E       '           / format for column 270                          TTYPE271= 'w1ndf   '           / label for column 271                           TFORM271= 'I       '           / format for column 271                          TTYPE272= 'w1mlq   '           / label for column 272                           TFORM272= 'I       '           / format for column 272                          TTYPE273= 'w1mjdmin'           / label for column 273                           TFORM273= 'D       '           / format for column 273                          TTYPE274= 'w1mjdmax'           / label for column 274                           TFORM274= 'D       '           / format for column 274                          TTYPE275= 'w1mjdmean'          / label for column 275                           TFORM275= 'D       '           / format for column 275                          TTYPE276= 'w2magp  '           / label for column 276                           TFORM276= 'E       '           / format for column 276                          TTYPE277= 'w2sigp1 '           / label for column 277                           TFORM277= 'E       '           / format for column 277                          TTYPE278= 'w2sigp2 '           / label for column 278                           TFORM278= 'E       '           / format for column 278                          TTYPE279= 'w2dmag  '           / label for column 279                           TFORM279= 'D       '           / format for column 279                          TTYPE280= 'w2ndf   '           / label for column 280                           TFORM280= 'I       '           / format for column 280                          TTYPE281= 'w2mlq   '           / label for column 281                           TFORM281= 'I       '           / format for column 281                          TTYPE282= 'w2mjdmin'           / label for column 282                           TFORM282= 'D       '           / format for column 282                          TTYPE283= 'w2mjdmax'           / label for column 283                           TFORM283= 'D       '           / format for column 283                          TTYPE284= 'w2mjdmean'          / label for column 284                           TFORM284= 'D       '           / format for column 284                          TTYPE285= 'w3magp  '           / label for column 285                           TFORM285= 'E       '           / format for column 285                          TTYPE286= 'w3sigp1 '           / label for column 286                           TFORM286= 'E       '           / format for column 286                          TTYPE287= 'w3sigp2 '           / label for column 287                           TFORM287= 'E       '           / format for column 287                          TTYPE288= 'w3dmag  '           / label for column 288                           TFORM288= 'D       '           / format for column 288                          TTYPE289= 'w3ndf   '           / label for column 289                           TFORM289= 'I       '           / format for column 289                          TTYPE290= 'w3mlq   '           / label for column 290                           TFORM290= 'I       '           / format for column 290                          TTYPE291= 'w3mjdmin'           / label for column 291                           TFORM291= 'D       '           / format for column 291                          TTYPE292= 'w3mjdmax'           / label for column 292                           TFORM292= 'D       '           / format for column 292                          TTYPE293= 'w3mjdmean'          / label for column 293                           TFORM293= 'D       '           / format for column 293                          TTYPE294= 'w4magp  '           / label for column 294                           TFORM294= 'E       '           / format for column 294                          TTYPE295= 'w4sigp1 '           / label for column 295                           TFORM295= 'E       '           / format for column 295                          TTYPE296= 'w4sigp2 '           / label for column 296                           TFORM296= 'E       '           / format for column 296                          TTYPE297= 'w4dmag  '           / label for column 297                           TFORM297= 'D       '           / format for column 297                          TTYPE298= 'w4ndf   '           / label for column 298                           TFORM298= 'I       '           / format for column 298                          TTYPE299= 'w4mlq   '           / label for column 299                           TFORM299= 'I       '           / format for column 299                          TTYPE300= 'w4mjdmin'           / label for column 300                           TFORM300= 'D       '           / format for column 300                          TTYPE301= 'w4mjdmax'           / label for column 301                           TFORM301= 'D       '           / format for column 301                          TTYPE302= 'w4mjdmean'          / label for column 302                           TFORM302= 'D       '           / format for column 302                          TTYPE303= 'rho12   '           / label for column 303                           TFORM303= 'I       '           / format for column 303                          TTYPE304= 'rho23   '           / label for column 304                           TFORM304= 'I       '           / format for column 304                          TTYPE305= 'rho34   '           / label for column 305                           TFORM305= 'I       '           / format for column 305                          TTYPE306= 'q12     '           / label for column 306                           TFORM306= 'I       '           / format for column 306                          TTYPE307= 'q23     '           / label for column 307                           TFORM307= 'I       '           / format for column 307                          TTYPE308= 'q34     '           / label for column 308                           TFORM308= 'I       '           / format for column 308                          TTYPE309= 'xscprox '           / label for column 309                           TFORM309= 'E       '           / format for column 309                          TTYPE310= 'w1rsemi '           / label for column 310                           TFORM310= 'E       '           / format for column 310                          TTYPE311= 'w1ba    '           / label for column 311                           TFORM311= 'E       '           / format for column 311                          TTYPE312= 'w1pa    '           / label for column 312                           TFORM312= 'E       '           / format for column 312                          TTYPE313= 'w1gmag  '           / label for column 313                           TFORM313= 'E       '           / format for column 313                          TTYPE314= 'w1gerr  '           / label for column 314                           TFORM314= 'E       '           / format for column 314                          TTYPE315= 'w1gflg  '           / label for column 315                           TFORM315= 'I       '           / format for column 315                          TNULL315=               -32768 / blank value for column 315                     TTYPE316= 'w2rsemi '           / label for column 316                           TFORM316= 'E       '           / format for column 316                          TTYPE317= 'w2ba    '           / label for column 317                           TFORM317= 'E       '           / format for column 317                          TTYPE318= 'w2pa    '           / label for column 318                           TFORM318= 'E       '           / format for column 318                          TTYPE319= 'w2gmag  '           / label for column 319                           TFORM319= 'E       '           / format for column 319                          TTYPE320= 'w2gerr  '           / label for column 320                           TFORM320= 'E       '           / format for column 320                          TTYPE321= 'w2gflg  '           / label for column 321                           TFORM321= 'I       '           / format for column 321                          TNULL321=               -32768 / blank value for column 321                     TTYPE322= 'w3rsemi '           / label for column 322                           TFORM322= 'E       '           / format for column 322                          TTYPE323= 'w3ba    '           / label for column 323                           TFORM323= 'E       '           / format for column 323                          TTYPE324= 'w3pa    '           / label for column 324                           TFORM324= 'E       '           / format for column 324                          TTYPE325= 'w3gmag  '           / label for column 325                           TFORM325= 'E       '           / format for column 325                          TTYPE326= 'w3gerr  '           / label for column 326                           TFORM326= 'E       '           / format for column 326                          TTYPE327= 'w3gflg  '           / label for column 327                           TFORM327= 'I       '           / format for column 327                          TNULL327=               -32768 / blank value for column 327                     TTYPE328= 'w4rsemi '           / label for column 328                           TFORM328= 'E       '           / format for column 328                          TTYPE329= 'w4ba    '           / label for column 329                           TFORM329= 'E       '           / format for column 329                          TTYPE330= 'w4pa    '           / label for column 330                           TFORM330= 'E       '           / format for column 330                          TTYPE331= 'w4gmag  '           / label for column 331                           TFORM331= 'E       '           / format for column 331                          TTYPE332= 'w4gerr  '           / label for column 332                           TFORM332= 'E       '           / format for column 332                          TTYPE333= 'w4gflg  '           / label for column 333                           TFORM333= 'I       '           / format for column 333                          TNULL333=               -32768 / blank value for column 333                     TTYPE334= 'tmass_key'          / label for column 334                           TFORM334= 'J       '           / format for column 334                          TTYPE335= 'r_2mass '           / label for column 335                           TFORM335= 'E       '           / format for column 335                          TTYPE336= 'pa_2mass'           / label for column 336                           TFORM336= 'E       '           / format for column 336                          TTYPE337= 'n_2mass '           / label for column 337                           TFORM337= 'I       '           / format for column 337                          TTYPE338= 'j_m_2mass'          / label for column 338                           TFORM338= 'E       '           / format for column 338                          TTYPE339= 'j_msig_2mass'       / label for column 339                           TFORM339= 'E       '           / format for column 339                          TTYPE340= 'h_m_2mass'          / label for column 340                           TFORM340= 'E       '           / format for column 340                          TTYPE341= 'h_msig_2mass'       / label for column 341                           TFORM341= 'E       '           / format for column 341                          TTYPE342= 'k_m_2mass'          / label for column 342                           TFORM342= 'E       '           / format for column 342                          TTYPE343= 'k_msig_2mass'       / label for column 343                           TFORM343= 'E       '           / format for column 343                          TTYPE344= 'best_use_cntr'      / label for column 344                           TFORM344= 'K       '           / format for column 344                          TTYPE345= 'ngrp    '           / label for column 345                           TFORM345= 'I       '           / format for column 345                          TTYPE346= 'x       '           / label for column 346                           TFORM346= 'D       '           / format for column 346                          TTYPE347= 'y       '           / label for column 347                           TFORM347= 'D       '           / format for column 347                          TTYPE348= 'z       '           / label for column 348                           TFORM348= 'D       '           / format for column 348                          TTYPE349= 'spt_ind '           / label for column 349                           TFORM349= 'J       '           / format for column 349                          TTYPE350= 'Separation'         / label for column 350                           TFORM350= 'D       '           / format for column 350                          TUNIT350= 'arcsec  '           / units for column 350                           TCOMM350= 'Distance between matched objects along a great circle'               TUCD350 = 'pos.angDistance'                                                     DATE-HDU= '2016-01-27T16:57:28' / Date of HDU creation (UTC)                    STILVERS= '3.0-11  '           / Version of STIL software                       STILCLAS= 'uk.ac.starlink.votable.FitsPlusTableWriter' / Author class in STIL soEND                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             1237650797292486896J093322.82+010120.709 33 22.82+01 01 20.7@aë
+ì3áö?ğ[Ñ”#©A‰G5i = 16.68<°’SDSS_good@!»dZ¬SDSSÛ  Êı @aë$ p¹?ğ\	€²B>#¼Ó  ArffGALAXY@oê—Oß;@`‡KÆ§ï@5\Ùè>B[@‡çq¼È(ÆHq ³ªã%@Aß2Dí    À!»dZ¬@åª&Fhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0475/spec-0475-51965-0008.fits     ?ËyÖqÂüÕ-×À™ ğCXW?‚Ş-×À™ ñ?ar,ÓîÙI@aë##WÓ?ğ[áµIÏùA—ìY=Qf$A‰~Œ<“¨9AšÍz<ÜÅ3AîV<‚å?•r{ìÎt¼-×À™ ğCXW?‚Ş-×À™ ñ?ar,ÓîÙI@aë##WÓ?ğ[áµIÏùA4†A5]A89¸?•r{ìÎt¼ ?Õhn~bÜn@FëPes!`@aë
+ë€ìú?ğ[Ñíı¬J093322.83+010120.9@aëxFÜ?ğ\tÜJï=ÚQ=âMÓ<z¬Ú@m$í·şßo@Aî¸?wT@b*£c|§À)Šéki¦@§7n—Oß@‡À|í‘hsî´âà1436p015_ab41-0048281436p015_ab41  ÜAX(ö<å`BB  ?øbMÒñªAP<ıó¶Bff?ò Ä›¥ãTA)Û#=¸QìA@  ?íÆ§ï²-A"Ñ>—
+=@lÌÍ?ïFÜ]cˆf?ò“t¼j                     0000  110nAAAB            A6Ÿ¾A>ƒA:IºA6“u                             @ƒ‡\ @0ï²-Af5?@9%    @xÛ3?Èlì@&ª~ùÛ"ÑBhs@q7L> Äœ@Œ
+@ºˆ@R¨“Q¤8@¢í]²-VAêçm@=¡Ë@P•pŸ¥LU@2	7:ÿ°O@ˆ=Ğå`A‰A&9X?ì(öAVáH<‹C– >…¡ËAOt¼<ÌÌÍ >£SøA'¾w=Ù‡  ?S33@ùÂÀ    ?t¼Aa¾w<›¥ã  A\(ö<í‘h  A>~ú>$İ  AOßÀ    A[V<‹C– AT\<ÌÌÍ A4ñª=Ù‡  A“À    AX-<“t¼ AQ7L<İ/ A0=Ôıô A`BÀ    AVIº<£×
+ AO33<í‘h A-¥ã=å`B @şvÉÀ    ATb<¬1 AMG®<ıó¶ A,›¦>J @ıÀ    AQSø<¬1 AKOß=+ A,1>zá @úVÀ    ANñª<¬1 AI¶F=\) A+p¤>&éy @ól‹À    AM<´9X AH§ğ=¥ã A*vÉ>5?} @íVÀ    AX-=¥ã<49X=éxÕ 
+  @ëÌ ú:@ëëâC×p@ëÜ|Â©AO÷Ï=Oß<¬1?Ìj~ùÛ"Ñ 
+  @ëÌ ú:@ëëâC×p@ëÜ|Â©A(¬>t¼j=“t¼?ú-V“ 
+  @ëÌ ú:@ëëâC×p@ëÜ|Â©A33?`A‰>‡+@hr° Äœ   @ëÌ ú:@ëëâC×p@ëÜ|Â© /       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 0Ã=¾vÉÃ™š Ayp¤=¡ÊÁAm•=—PAdñª=¬1î´âà ¿éªôœ	ªG?ãÊ(|?’Eâ×ï `?[Íg:ôlD1237661435392491734J143400.86+431042.514 34 00.86+43 10 42.5@kPZËoG@E–Ø-‚Ø.A‹åi = 17.03<û°SDSS_goodÀXÿ\(õÂSDSSt  ÏxI@kP}¿H€@E–Ù‡+>Ë)  A{
+=QSO   @q!hr° Å@‹9›¥ãSø@0,<ìÀ@„å`´»±H•eø³6F„@ˆ¥^Óo   @ˆ¥^ÓoÀZ‡æy{¯Æhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1396/spec-1396-53112-0329.fits     ?»ñs
+’2ı-„ Å ÖCZ€ëB,¶Á-„ Å ×?x˜%T/»@kP1˜ğ@E–ÛJQÆ¨A™¾ø=L©ÙA‹¯O<9!¤AÖ%=Ó:A”[k<O†?İ"q³³-„ Å ÖCZ€ëB,¶Á-„ Å ×?x˜%T/»@kP1˜ğ@E–ÛJQÆ¨A,A-–jA.äE?İ"q³³ ?´“BgƒœØ@:ƒ@N¤¨Á@kPZzJ@E–Ø+¥ 8J143400.86+431042.5@kPwt«¤@E–ØÕË©=¬Ùè=®{<o @SVNò++@Oã¨1†@hF5å)ºä@Jø?VW$ª@ŸÂ›¥ãSø@[d“t¼jO£N[ÎMû2184p439_ab41-0035152184p439_ab41  »A[çm<ÌÌÍB-™š?ğ9XbMÓAQ÷Ï<ÌÌÍB,  ?íp£×
+=qA›¦<ıó¶BÌÍ?ñ‡+J@óÎÙ=İ/A!™š?íş\‘ÑN<?ïjçÕfÏB                     0000  001nAAAA    ! ! ! !     B—B#×AÿÒòAıÀƒ                             @€õÀv}5@'<í‘hr°A	²-@,›¦=‰7L@v8QßüTz@ ‹)^	AÆ¶F@X1'=—P@3@ˆÊ@K\Ì¼Õ,@•ƒyÛ"ĞåAÍõÃ?Qhs@a¿®÷<@,*~ùÛ"Ñ@xÔí‘hr°A'‘h@^5AZŸ¾<49X  >…¡ËAQ•<ÌÌÍ  >£SøA$İ<í‘h  ?S33@ïdZ=í‘h ?t¼Ae/<D›¦  A]÷Ï<İ/  A2ñª=P  A	33>J A^ÌÍ<49X  AV°!<ÌÌÍ  A)X<í‘h  A éy=í‘h A\=q<D›¦  ASÎÙ<İ/  A$J<å`B  @÷¥ã=ñ©ü A[<Tıô AR£×<ıó¶ A!V<í‘h  @ñ™š>o AZA‰<uÂ AR¬=t¼ A\)=o @í¡Ë>t¼ AYÂ<‹C– AQ×
+=,1 AV=\) @éX>¾w AY`B<›¥ã AQ²-=D›¦ Aº^=¾w @är°>'ï AY
+=<¬1 AQ™š=aG® A`B=49X @àÄœ>49X A[çm=8Qì<o>@ƒ    @êôŠ»È-+@ë
+gÕ/qŞ@ëÃ'y }AQß;=‰7L<D›¦?ÙÊÀƒn˜    @êôŠ»È-+@ë
+gÕ/qŞ@ëÃ'y }A£×=ãSø<¬1?ÚŸ¾vÈ´9   @êôŠ»È-+@ë
+gÕ/qŞ@ëN‹X¹@ô´9>¯ =}ó¶@İ/Ÿ¾w   @êôŠ»È-+@ë
+gÕ/qŞ@ëZ	Ãö ÿı      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € {Ğ>‰7Â‘ff A|^5=´9XAs²-=Ù‡Ad{=Ÿ¾wO£N[ÎMû ¿âBìb˜«¿İ)M•?åå‘\ f¶ßP?Slò³7¥1237666661313544194J011929.06-000839.501 19 29.06-00 08 39.5@3ŞÿQ<Áà¿Âxš¼ß#A‰>«i = 16.70;ø'SDSS_goodÀXÿ\(õÂSDSS  ÊM @3ŞÿÁße¿Âzcslß&=¸†Y  A³33QSO   @q–ıó¶E¢@ ’³3333@6×ï²-@y½¼tt5BH“Å
+¬İqx@‘
+ØöO   @‘
+ØöOÀZˆlÖvAôhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0398/spec-0398-51789-0142.fits     ?ÉFYã-Eağ A÷û¾ÄÖ-úaç ;?sÈ}eZÖb@3ßÊŒˆ¿ÂzPj],A“ŸŞ<Ö£A‰Y<&$A”B<ß[ÌAˆ]<ik?ió0$ƒÄ¿-Eağ A÷û¾ÄÖ-úaç ;?sÈ}eZÖb@3ßÊŒˆ¿ÂzPj],A$ÔQA'+ÅA(¦’?ió0$ƒÄ¿ ?ºÄÅ—Ne¿@ZjÈ!laR@3ŞÿK¥ ¿ÂxwNëöJ011929.06-000839.5@3ß&p­¿ÂxÜŠ¯ñË=˜Çã=škQ¼o @aC'|×ÀOúö«Ãh@2Ja}ÉY{ÀåzB¼=@—†_;dZ@šĞå`A‰¸¯é‚l§0196p000_ab41-0161910196p000_ab41  ??AR‹D<ÌÌÍB0ÌÍ?ò“t¼jAC&é<Ä›¦B8ff?ğå`A‰7LA
+å`<ÌÌÍB.ÌÍ?í£n.±Ä3@¿t¼='ïAÔ  ?ñp£×
+=q?ğ¸Që…¸                     0000  1100AAAA           Ao
+=Al1'Ai?}AmÂ                             @Šÿ\ @3ˆrÀç¼<Aˆ“@=¡Ë<¼j@ŠëàŠğ@2?|í‘hB.Ù@v‡+    @´İLÀ>-@^‘G¡A)@¨OixÔıôAï¬?v‡+@„\ @8+û‚Â½@·KÆ§ğA3ÊÁ?€ƒAR^5<#×
+  >…¡ËAC©ü<uÂ  >£SøA+<´9X  ?S33@À´9=…¸ ?t¼A\ƒ<49X  AO¾w<‹C–  A!ãT<Ôıô  @â¬=‰7L AV‹D<#×
+  AHÄœ<uÂ  A^5<´9X  @Ó"Ñ=…¸ ATvÉ<49X  AF Å<‹C–  A33<¬1  @Ê§ğ=\) AS¥ã<D›¦ AE <›¥ã AbN<´9X @ÆÈ´=©ûç AS&é<Tıô AD“u<´9X AÙ<Ä›¦ @Åº^=Ğå` ARŸ¾<uÂ AD(ö<ÌÌÍ A  <İ/ @Å‡=ıó¶ AR1<‹C– ACÆ¨<å`B A|î<õÂ @Ãï>‡+ AQ…<“t¼ AC…=o A =C– @ÂÈ´>.{ AR\=]/<e`B>A‰7   @êôeñİx@ëŸÆo‹(@ëó¾·°ÜAC/=%<‹C–?ÍV“u   @êôeñİx@ëŸÆo‹(@ëó¾·°ÜA+=,1<49X?Î5?|í‘h   @êôeñİx@ëŸÆo‹(@ëó¾·°Ü@À(ö=¾vÉ<ÌÌÍ?â=p£×
+=   @êôeñİx@ëŸÆo‹(@ëó¾·°Üÿâÿç      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € h÷´=m‘hÃ³3 A{Û#=§ïAoçm=¸QìAe"Ñ=¥ãT¸¯é‚l§ ?î8ˆ‹'j?ÕÀş 	7¿d¢/BÓ¯œö/*?`bL˜Ùå1237662195054673929J103438.59+393828.210 34 38.59+39 38 28.2@cÕ%4¹¯@CÒ¿ÔO/Afsèi = 13.97>ÄŞSDSS_goodÀXÿ\(õÂSDSS–  Ï
+å@cÕ%oü^@CÒƒBÙ=0‰   B¸RQSO   @t&‹C•@·½uÂ\)@Qî¶®}Vm@gÓ]ü-HˆBàÂ$´N@«Ï„[~{   @«Ï„[~{ÀZŠ!;zwhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1430/spec-1430-53002-0485.fits     ?½pÁßsv]-5€* 	C©*B-?€… 2?Zöè†Gl@cÕ%q€z›@CÒlRá¼Aƒû<3L¿Aq	b;MÆAŒÍZ<VÀiA†7©<7#c?ôâ8vs‰-5€* 	C©*B-?€… 2?Zöè†Gl@cÕ%q€z›@CÒlRá¼A&bA(0EA*ri?ôâ8vs‰ ?Àˆzd×ñ@FPÁ­§n@cÕ%5C®«@CÒÂ #!J103438.59+393828.2@cÕ%y6LÃ@CÒ–¹£=Y‡=dŠ»kíú@fˆæéu4@MˆGs\/@bG[×—@<I,n@ È›¥ãT@¥oV“¦Éˆr¸1587p393_ab41-0252081587p393_ab41  bxA0Äœ<¼jB@ff@	ıó¶E¡ËA™š<¬1BO™š?ö^5?|í‘@Ô£×<e`BB—ff?ö° Ä›¥ã@1<¼jB?33?îVÕÏªÍŸ?ü1&éxÕ                     0000 0011AAAA           AP ÅAU`BAië…Adj                             @·•f_ú;›@__\ ’F¿A8bN@:\>dZ@¼I™ Äe@at) >ê!Aú@ië…>ß;@á     @|ÁëàŠğ@Ÿt’n—PAİ     @£œ     @J;Cäõ@ƒb(õÂ\Aİ/?+A1V;Ä›¦  >…¡ËA1;Ä›¦  >£Sø@Ôj;Ä›¦  ?S33@Sø<e`B ?t¼A;©ü;Ä›¦  A*j;Ä›¦  A¸;Ä›¦  @±‘h<uÂ A5;d;Ä›¦  A#"Ñ;Ä›¦  @îĞå;Ä›¦  @¡Â<e`B A2¸R;Ä›¦  A E¢;Ä›¦  @ä9X;Ä›¦  @˜£×<uÂ A1¥ã;Ä›¦  A ;Ä›¦  @ŞMÓ;Ä›¦  @”b<‹C– A1¸;Ä›¦ A‹D;Ä›¦ @Ûo;Ä›¦  @’E¢<£×
+ A0ÌÍ;Ä›¦ A9X;Ä›¦ @ÙG®;Ä›¦ @‘¡Ë<¼j A0\;Ä›¦ A;Ä›¦ @ØA‰;å`B @‘‘h<å`B A0^5;å`B AÛ#;Ä›¦ @×®;å`B @‘²-=C– A0Äœ<¬1;Ä›¦=…¸   @ë²÷‚7Ó@ëÖô¢8ú@ëÄê©­A²<å`B<o?º^5?|í‘   @ë²÷‚7Ó@ëÖô¢8ú@ëÄê©­@Ô£×<Ä›¦;å`B?³÷ÎÙ‡+   @ë²÷‚7Ó@ëÖô¢8ú@ëÄê©­@  =¥ã<#×
+?»¥ãS÷ÎÙ   @ë²÷‚7Ó@ëÖô¢8ú@ëÄê©­   5     ?ÌÍAG®?uÂA   A4r°;Ä›¦  AG®?uÂA   A"9X;Ä›¦  AG®?uÂA   @ëÎÙ;Ä›¦  A`(ö?xQìA   @¨A‰<e`B \>5?}Cš AbA‰=¥ãAVõÃ=@ƒAJ§ğ=\)¦Éˆr¸ ¿æóÏ 541?Ñï 
+ûÀ?äjP_C½ÍN<÷?XĞˆš½'1237660613445222462J123748.50+092323.212 37 48.50+09 23 23.2@g®wwwww@"Çóğ†¶Aˆù¾i = 16.77<¾SDSS_goodÀXÿ\(õÂSDSSÑ  Íş ¹@g®wpyåŸ@"Ç‘>E=ÿ—$  A±®QSO   @sÿº^5?}@™<Â\(ö@:¦šÔ,<Ÿ@‚>´ã²ÇH?Â<‰¯@[¾š9Zd   @[¾š9ZdÀZ•™X5http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1233/spec-1233-52734-0185.fits     ?Ce/“#--Å@å >C=s¼A<ˆ-?@7 }?Wpòz„G–@g®w˜‘;§@"ÇD#ŸA Ú<œ×Aˆíˆ;ë1VA¨'<¿-¿AŒ“}<zš×?·h)1kA-Å@å >C=s¼A<ˆ-?@7 }?Wpòz„G–@g®w˜‘;§@"ÇD#ŸA(=A)‡.A+iÔ?·h)1kA ?Ã£"¯Wq @J°<§P;‚@g®wvÄ‚{@"ÇûefŒJ123748.50+092323.2@g®wÀ*ıÛ@"Ç”H÷À–=¾B[=Á‰7<F?@r@(ß½jY@Qş3¶{Q°@gg(-E³@(ºÑÿ+Å@ª1´9Xb@¦5¥ãSøZı“ ·ÌR1899p090_ab41-0215221899p090_ab41  TAU<İ/B™š?ğ=p£×
+=AIÊÁ<ÔıôB%™š?ïÛô‡ü¹$AP=49XAÆff?ğÈ´9Xb@ãß;=´9XADÌÍ?ñ×
+=p£×?ğ›¥ãS÷Ï                     0000  1102AAAA b       	 AmÆ¨AoÊÁALƒA^´9                             @†ÅGŸì™ò@2FfffffA„Ôş@<(ö=ÌÌÍ@ÉGŸì™ò@+†$İ/ BSs¶@…xÕ>&éy@Ÿû3@ˆÊ@T¬(ş&-@¥t¼j~úAî\)@Ÿ¾@lQáÃô@26‡;©@ŒR(õÂ\A)²-?/ATéy<49X  >…¡ËAIº^<“t¼  >£SøA&é=ixÕ  ?S33@à¬>zá ?t¼A_Oß<Tıô  AUó¶<£×
+  A1Û#=\)  AĞå>(õÃ AY‡<49X  ANÔş<“t¼  A(Z=ixÕ  @ó >zá AV¬<D›¦ ALJ<£×
+ A"õÃ=]/ @çdZ>hs AU…<Tıô AJÄœ<´9X A¶F=aG® @àzá>¥ã AT£×<uÂ AIÊÁ<ÌÌÍ A•=q©ü @ÜA‰>/  ASº^<ƒo AHÔş<å`B A1'=ƒo @Ùûç>KÆ¨ AR¬<‹C– AGãT<õÂ ASø=‘hs @Ù`B>t¼j AQ<“t¼ AG
+==+ AÀƒ=¡ÊÁ @Úff>—
+= AU=o<o=áG®   @ëÊÓÀF‚@ë	Cz`S@ë	,2~AIÎÙ=²-<£×
+?Ñë…¸Qì   @ëÊÓÀF‚@ë	Cz`S@ë	,2~AdZ>=#×
+?ãC•$İ   @ëÊÓÀF‚@ë	Cz`S@ë	-Òê@ãKÇ?   >	7L@\(õÂ  @ëÊÓÀF‚@ë	Cz`S@ë	,Ìß·` &ÿïÿü     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 3øó>#×
+Â   A{V=Ÿ¾wAs…=¾vÉAf$İ=¶E¢Zı“ ·ÌR ¿ï$½Fß¿Ä½*¼ÈK·?Äâ˜³rô£S}?Wi¼•ö1237654879118557355J130803.04+035114.613 08 03.04+03 51 14.6@h gÃìâ¤@Õ@ 2A‚.i = 15.87<"u®SDSS_goodÀXÿ\(õÂSDSSR  Ìr õ@h gÊêt~@Õ*™0¾=bN  Aè\QSO   @y¨MÒñ©ü@³Ë^¸Që…@F“n.±Ä3@sŞ¦û¤´ÏHœ#iuEÀ-@1‡EØ¿   @1‡EØ¿ÀZ¢t ê http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0850/spec-0850-52338-0245.fits     ?—ŞŠÇ÷Œ- d «CE>@v¨Ù- d ­?ºCÓKÀ¿@h gÁF¶’@Õ38˜AŒê¦<–ÌA‚çn<*äA§¹<ñŠA‰ª»<gˆ9?{‘\ ˜É- d «CE>@v¨Ù- d ­?ºCÓKÀ¿@h gÁF¶’@Õ38˜A'¬	A(ª`A+´?{‘\ ˜É ?Â_Ø­«ŸV@Kßomv% @h gÄŸ×¡@ÕOçàJ130803.04+035114.6@h h	3…i@Õ&Ø±İ]=Š=q=†$İ¼]/@s•7ä³²@P˜õ<Âşî@hEÑX¸'ú@${dÒèoÁ@©KÌIº^5@nz° Ä›¦em•©øAÎ1974p045_ab41-0044941974p045_ab41  A<‹D<¼jB;™š@ S÷ÎÙ‡A.ff<´9XBI™š?ô^5?|í‘A7L<¬1BPÌÍ?ğZ¬1'@½Òò=#×
+AÛ33?íï²-V?õdZ¬1               :ƒo  0000  9911AAAA b        A½×
+AºõÃAŸ÷ÏA®G®                             @§ïf_ú;›@PVÈÀÎ‘ÉA‡@C…=º^5@¥„f_ú;›@KXõÂ\)BG-@ˆıô?V@¼îÌÀ>-@a¾–@¦\I7KÆ¨Aõ~ú?«C–@„şá?ĞĞh@8€Ä›¥ãT@È&éxÔşA2å`?ŒjA<~ú;å`B  >…¡ËA.ff;Ä›¦  >£SøA%<Tıô  ?S33@½&é=¾w ?t¼AFå`;å`B  A:£×;å`B  AÂ<ƒo  @ßt¼=,1 A@¬;å`B  A3;Ä›¦  A9X<Tıô  @Ï•=¾w A>Qì;å`B A0°!;Ä›¦ A<D›¦  @Æff='ï A=X;å`B A/;å`B A
+¬<Tıô @Á‘h=@ƒ A<Ğå<o A.İ/;å`B Azá<e`B @¿dZ=e`B A<j<t¼ A.ff;å`B A…<uÂ @¾~ú=‹C– A<b<t¼ A.  ;å`B Aí‘<ƒo @¾J=§ï A;Â<#×
+ A-²<o Aƒ<“t¼ @½Òò=È´9 A<‹D=áG®<¼j>/   @êôŠüt/R@ë
+_Í‹@êşûb¹ÓÌA.^5=¬1<‹C–?Î¸Që…¸   @êôŠüt/R@ë
+_Í‹@êşûb¹ÓÌA33=D›¦<49X?Çï²-V   @êô“u-3j@ë
+_Í‹@ë,ovö,@½ë…=‡+<e`B?İ‘hr° Å   @êô9V=N@ë
+_Í‹@êÿù1¨ ^   	  À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 8MÀ,>JÀƒÂ‹™š ApMÓ=‘hsAd-=° ÅAUÆ¨=@ƒem•©øAÎ ¿î‡Í@³ë¥¿Ò®Ù…gš§?±57$ú£¥?`^äM=ø×1237661852549709862J134426.43+441620.013 44 26.43+44 16 20.0@iÃ†$İ/@F"Ø-‚Ø.AtGœi = 14.95;HUùSDSS_goodÀXÿ\(õÂSDSSA  ÎNo@iÃ…±…Hª@F"ØÂ¤TŞ=^Ò‰  Aé®QSO   @pÔıó¶F@´?nzáH@IãàŞÒ‰@nQ	ş‘cHÀUI·]V@ƒôk|--   @ƒôk|--ÀZ§›o­…bhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1345/spec-1345-52814-0367.fits     ?Ãéüz1Ô-åÁG &CN1B1Á-åÁG (?cnŒåùhi@iÃ…®L°@F"ØcI 1AƒÇ‡<r1ïAtÃ;J^³Aˆ}Ò<€±$A†P<’~Œ?ŠÔyƒ-åÁG &CN1B1Á-åÁG (?cnŒåùhi@iÃ…®L°@F"ØcI 1A&ÿMA)%ßA+š`?ŠÔyƒ ?¶V«Ş?»Ø@C @¿ä@iÃ†$İ/@F"Ø+¥ 8J134426.43+441620.0@iÃ†)å¬˜@F"ØøT:=„M=‡ÈK»·€4@W¡­c™Ñ@QtZXTU@f ¡Ñáß„@Hı`"†É@Òñ©ûç@§:ŠÀƒo—ö‹¨­¦2060p439_ab41-0280062060p439_ab41  mfA>Ÿ¾<¼jB<ff@àA‰7KÇA3V<´9XBFff?ùãS÷ÎÙA‹D<›¥ãBjff?û`A‰7KÇ@Å‰7=¥ãAå™š?ïw1Å@ÎÙ‡+                     0000 0011AAAA           A£“A§ÎÙA¢=qA                                @¥<     @LŞ—|ˆç›A\@"ñª    @ s™ Äe@E:á?J˜«AÇ¬@RÀƒ=Ÿ¾w@¾f_ú;›@`lzß.Ï @–b½p£×
+AÑÀƒ?MÒò@€Ñ\ @2ÄİS¨@zH¬1&éA{?w
+=A>E¢;Ä›¦  >…¡ËA2å`;å`B  >£SøA|î<#×
+  ?S33@Å‰7=LÌÍ ?t¼AI®;å`B  A?…<o  A°!<Tıô  @ç|î=Y‡ ABr°;Ä›¦  A8  ;å`B  A°!<#×
+  @×÷Ï=LÌÍ A?\);Ä›¦  A4ñª<o  A7L<#×
+  @Ï =]/ A=÷Ï;Ä›¦ A3¶F<o A$İ<#×
+  @Ê^5=yÛ# A=Oß;Ä›¦ A333<t¼ Ar°<49X @È9X=• A<õÃ;å`B A2ùÛ<t¼ AP<D›¦ @ÇC–=´9X A<¼j;å`B A2İ/<#×
+ Ao<Tıô @ÆĞå=Ù‡ A<\;å`B A2Ğå<49X AÈ´<uÂ @Æn˜>% A>\<£×
+;ƒo>MÒò   @ëX½¦Hÿ@ëÙÜùOã@ësŸÕMOA3o<Ôıô;Ä›¦?¸“t¼j~ú   @ëX½¦Hÿ@ëÙÜùOã@ësŸÕMOA\<í‘h;å`B?º^5?|í‘   @ëX½¦Hÿ@ëÙÜùOã@ës³ÊGa@Å/>=C–?Ş$İ/Ÿ¾   @ëX½¦Hÿ@ëÙÜùOã@ës³ÊGaÿö  *     ?&ffAHõÃ?\(öÀ   A>å`;Ä›¦  AHõÃ?\(öÀ   A4‹D<o  AHõÃ?\(öÀ   A
+V<#×
+  A…33?n{À   @Øİ/=LÌÍ $ù›$>¸RÂøff Ar1'=´9XAcp¤=¼jA[‡=‡+—ö‹¨­¦ ¿ä“ Šü®¤¿Ô*üª@A?æV“ÏW¨%²¡?J6âòqÖ¦1237659149386973357J150752.51+515111.015 07 52.51+51 51 11.0@l_ WaŸ@Ií0ì¨d A„Uai = 16.10<óú-SDSS_goodÀXÿ\(õÂSDSS  Íß¨@l_ æ¯Ìâ@Ií1eÓ™p=˜Çã  A–{QSO   @€ŸÔıó¶F@¦Oğ£×
+=@9¡£n.±Ä@uV³›ÂñH‘ÜŸ•R@Äc}a   @Äc}aÀZ«œ'ªehttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1165/spec-1165-52703-0424.fits     ?ÄïtK-p`9 ­CbøBOi‡-p`9 ®?rü6è¸W@l_ ïàÛ•@Ií2ıÎlÖA“z©= A„hÂ=+µA™°z<í3mA¼ <Ÿ¯µ?…ÅÅ|o%-p`9 ­CbøBOi‡-p`9 ®?rü6è¸W@l_ ïàÛ•@Ií2ıÎlÖA*ŞóA,#	A-Ua?…ÅÅ|o% ?¡ :2*õw@T£è_Ğ@l_ X”@Ií0ğbÔJ150752.51+515111.0@l_ v}4ß@Ií0ùp=…S&=ƒ¯¸¼Np;@U–kR^q¥@K;{ËRyJ@h0úŠ&_@P³Ò•cª@“÷¥ãSø@§lI7KÆ¨ká´¬»|2264p514_ab41-0335962264p514_ab41  ƒ<AJ Å<¼jB<ff@ß;dZ¬A>  <¬1BS33?òõÂ\(öA®<£×
+BY33?ğ§ï²-@Ï×
+=¥ãAä  ?îHè§æ›?ù`A‰7KÇ                     0000 1111AAAA    . . . . + + ! +B5µ?B5{çB+í‘B+öÉ                             @•æÌ¿ôw6@=Éûçl‹DA¬@(õÃ=H´9@‘†Ì¿ôw6@5?¾‡«ÚA¼vÉ@X1'=‰7L@¯­Ì¿ôw6@R­/Ñ|_@“ñ¥ãS÷ÏAÍ¬>æéy@xÿÖÿÁß@,Æ§ï²@v~ùÛ"ÑA33?¬jAI¶F;å`B  >…¡ËA=Û#<o  >£SøAo<Tıô  ?S33@Ït¼=#×
+ ?t¼ATƒ;å`B  AJA‰<o  A%÷Ï<uÂ  @ñp¤=,1 AMãT;å`B  ABõÃ<o  AE¢<Tıô  @áãT=#×
+ AK?};å`B  A@{<o  Aí‘<D›¦  @ÙV='ï AJ{;å`B  A>éy<t¼  Aß;<Tıô  @Ô£×=@ƒ AIxÕ<o A>V<#×
+ A¬<Tıô @Òéy=aG® AI‡<t¼ A=÷Ï<#×
+ Ao<uÂ @Òff=‡+ AHÄœ<t¼ A=©ü<D›¦ Aj<ƒo @Òéy=¥ãT AHr°<#×
+ A=dZ<Tıô Aó¶<“t¼ @Ó¥ã=Æ§ğ AJ¬<ıó¶;£×
+>Që… -  @êôyº°€@ë
+[1UC@ë¾µ°UôA>1=t¼;£×
+?Ê^5?|í‘ -  @êôyº°€@ë
+[1UC@ë¾µ°UôA©ü=Tıô<o?ÎÙ‡+ *  @êôyº°€@ë
+[1UC@ë§‘—l™@ĞIº>¸R<Ä›¦?êE¡ÊÀƒ *  @êôyº°€@ë
+[1UC@ë§‘—l™ 'ÿ÷     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € (Àú='ïÂ€ÌÍ At\=—PAg+=¡ÊÁA_¸=§ïká´¬»| ¿ÚùçSª<¿Üå˜£:²?é*mš=İÿ¶ÚG?\ä>Ú2¡1237653438691934356J230417.31-081646.023 04 17.31-08 16 46.0@u¡'l‹C–À W›à$A‰ˆi = 16.61<2dSDSS_goodÀXÿ\(õÂSDSSÕ  Ì"D@u¡'†Â&À >Õ'å=¤İ/  A•…QSO   @ƒPC•%@œìÌÌÌÌÍ@5ö
+¦L/ƒ@vÚm›²fÂH‹2BLã@Í`!n   @Í`!nÀZ°Èşö´¦http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0725/spec-0725-52258-0580.fits     ?ÒQBË£-Õ->ÀF ”C­	;Áx›-Ÿ Ğ ?tåÕå‰H@u¡'‘ôE–À ¦——Aœm> B&A‰K<IœâA£Ìó=ÔêAÖ;<˜˜]?¥Ó6ŸRu…->ÀF ”C­	;Áx›-Ÿ Ğ ?tåÕå‰H@u¡'‘ôE–À ¦——A)¢™A+@¯A,çŠ?¥Ó6ŸRu… 	?ºÖ#£Â@dL£ôfnÊ@u¡'l‹C–À H² yJ230417.31-081646.0@u¡'uàVíÀ úîHH=“©*=Œ~(¼uÂ@P#°¦%™ÀM5û_‡O@u¥Â.äÀ"LƒfQn@¤fffff@h‡S÷ÎÙ0…’!¬
+3462m076_ab41-0037863462m076_ab41  ÊAA…<Ä›¦B4  ?íl‹C•A/<İ/B  ?ì*™0¾í@ñãT<´9XBBÌÍ?ñhr° Äœ@šMÓ<İ/B"ff?îdÂø7´¢?îu%F
+¦                     0000  0nnnAAAA -        Azá@LZ@‘ÊÁ@¾~ú                             @¡úf_ú;›@IŠá?J˜«AÀvÉ@N>¥ã@¤Éf_ú;›@PÖÈÀÎ‘ÉBlNÙ@š¸R?Œ1@ÍQ     @sEÂ¡ Ï@ª–xQë…Aü®@h  @*     @FøÔıó¶F@‘ÙÙ‡+A*¬    AA¡Ë<o  >…¡ËA/\)<D›¦  >£Sø@óKÇ<e`B  ?S33@\=,1 ?t¼AKÂ<o  A;33<Tıô  A—<‹C–  @ÀIº=0 Å AEÎÙ<o  A4vÉ<D›¦  AÙ<e`B  @°ıô=,1 ACÂ<o A2<D›¦ A<e`B @¨zá=49X AC<t¼ A1 <Tıô @üıô<e`B @¤9X=På` AB¼j<#×
+ A0§ğ<uÂ @ù‰7<uÂ @¢—=}ó¶ AB›¦<49X A0Z<ƒo @÷…<ƒo @¢=›¥ã AB—<D›¦ A0$İ<“t¼ @öMÓ<“t¼ @¢=q=¾vÉ AB“u<Tıô A0<¬1 @õp¤<£×
+ @¢éy=éxÕ AA…<Ä›¦;Ä›¦=§ï   @ëÅ7DÜ@ë1,Áª@ë1«“íA/<‹C–<#×
+?¡hr° Äœ   @ë(µiS@ë1,Áª@ë,ğìŒ[@ñÛ#=\)<ƒo?·Oß;dZ   @ë&–§Vœ@ë1,Áª@ë*fŸÜª@š$İ=C–<e`B?²ñ©ûçl‹   @ë$yBq?@ë1,Áª@ë)iºôˆ  @ [     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € @¢4t>ƒoÃ)™š Au‡=‰7LAd^5=ƒoAV´9=49X0…’!¬
+ ?î¼G±C2¿Î}kİ–Û¿Ân¥†áávŞU1?Z6âê“ˆ‰1237657630600986653J114936.86+531516.811 49 36.86+53 15 16.8@f,ê'˜<@J ˜êÖ[{A‹ÄRi = 17.13<‹<ªSDSS_good@ŒIº^5?SDSSq  Ìœ@f,ênëp@J ™®’O">Bø8  A‚ffQSO   @|Åß;dZ@”Æfffff@+ôã¼ÓZ†@Œı<æ’~›H¯nH*ÂK¤@;`™®j$   ÀŒIº^5??â‡I~XØhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0881/spec-0881-52368-0412.fits     ?ÂöÛÙBH-Á† C1gQBUÇ-Á† ?uO^åÚCÔ@f,éÍéb3@J ›œZÖFA‘üD=ªXA‹ÄR<‹<ªA“W…<°ÆAœ¤<uâæ?‚™D2…-Á† C1gQBUÇ-Á† ?uO^åÚCÔ@f,éÍéb3@J ›œZÖFA*í7A,›ÍA0?‚™D2… 
+?Ìu¸dà@EÊÔ4 ½@f,ê&åG@J ˜í¢/jJ114936.87+531516.9@f,ê¼×ŒC@J šbu=¶®}=¾vÉ<C–@aÍÔŸÿå(@N¼3g5™?@bÃT„¼’Ã@G5£jÓ³q@¡ŸE¸Qì@¥$İ¢œ?Üğ¢"1775p530_ab41-0271061775p530_ab41  iâAZí‘<ÔıôB$ÌÍ?íƒ{J#9ÁAK‘h<ÌÌÍB+™š?ğéxÔıó¶Ahs=PAè  ?ñ"Ğå`A‰@ët¼=ÒñªA(  ?í [À6ã?ï‡“İ—ö+                     0000  0000AAAA           AN=qANå`AOhsAL5?                             @€§
+@ºˆ@)Ö‡+JA²@&§ğ=8Qì@€ëàŠğ@'öÈ´9XAĞ÷Ï@`r°=+@ !     @QÊnŸğË°@—òº^5?}AÍó¶>æéy@f•Â€®I@15$İ/@|.     AÛ#?ixÕAZ=q<‹C–  >…¡ËAK<›¥ã  >£SøAÆ¨=Y‡  ?S33@íxÕ>333 ?t¼Ad›¦<›¥ã  AWÆ¨<¬1  A2$İ=ƒo  A"Ñ>7KÇ A^j<‹C–  AP›¦<›¥ã  A(ùÛ=Y‡  @ÿçm>333 A\J<›¥ã  AM²-<£×
+  A${=På`  @÷÷Ï>A‰7 AZ¬<¬1  AL5?<¼j  A!xÕ=aG®  @ôj>aG® AX¬<¼j AJ¸R<ÌÌÍ A 5?=}ó¶ @ô“u>Òò ATV<¬1 AHIº<ÌÌÍ A®=\) @ö5?>µÂ AMß;<‹C– ADÀƒ<Ä›¦ A=¥ãT @ø“u>ê~ú AGçm<e`B AA/<¼j At¼=¾vÉ @áó¶À    AZõÃ=<j<Tıô>$İ/   @ëX1/B8@ë+ßÕm…@ë}'‡móAK‰7=LÌÍ<e`B?Å`A‰7KÇ   @ëX1/B8@ë+ßÕm…@ë}'‡móAl‹>t¼=#×
+?Û¥ãS÷ÎÙ   @ëX1/B8@ë+ßÕm…@ë}'‡mó@ì1>|í‘=Oß?èÄ›¥ãSø   @ëX1/B8@ë+ßÕm…@ë}'‡móÿâÿñÿì      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 4×e=0 ÅÃ!š A‚l‹>“Aw+=ıó¶Anzá=ñ©ü¢œ?Üğ¢" ¿ãç„‘æ?›ÀH=ñR?é¤F5¼õV/C´?Vé "}•1237668584359854150J112255.19+160040.611 22 55.19+16 00 40.6@eW[Ñ”#€@0ã¶º#A…<i = 16.26;ØLËSDSS_goodÀXÿ\(õÂSDSS	¾  Ó -@eW\ı@0äŠqŞ=ï i  AöáHQSO   @~”Ä›¥ãT@±Î\(ö@EÌêJŒM@€ø³şœŠtH²wñ7¢@“zŠğ'ñ   @“zŠğ'ñÀZ¸“Ñ¤Åhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2494/spec-2494-54174-0045.fits     ?Á]¾–Ç‚8- n FC*ºßA€- n F?D¯3dRä@eW[é¯Ô@0ãÀAø}A‹Œ°<J9ZA…<;ØLËAŒÙy=	äA‰8+<‡–|?˜gİ¡Xa‰- n FC*ºßA€- n F?D¯3dRä@eW[é¯Ô@0ãÀAø}A*„ÍA,€LA/»?˜gİ¡Xa‰ ?ÄÂÎFIm@M|ª:Ñ&@eW[Ğá.„@0ãq*J112255.19+160040.6@eW\%Ğt!@0äŸQi=ˆe•=ˆÎp»7€4@mšëäøê@Pª¯ ›¾@d¤ZFgÃ^@&é4â_Ü@¬Fô9Xb@v/®záHÆ6xëËmæ1713p166_ab41-0055421713p166_ab41  ¦A?+<Ä›¦B6ff?ğ¬1&éA09X<´9XBH  ?ìŞÒˆÎp;AãT<¬1BPÌÍ?ïüPHğ@½X=#×
+AÚff?ò° Ä›¥ã?ğ Ä›¥ãT                     0000  0000AAAA           AO?}AMp¤AMÛ#AM×
+                             @¤“Ì¿ôw6@Lß;[ö ÜAv‡+@@Ôş>“u@£]f_ú;›@HÎƒDÃ~BJ@s÷Ï>®{@¿9™ Äe@c(õÀv}5@¥1(õÂAìKÇ    @…J     @8ì‹C•@Œ`33333A)Û#?CSøA?;å`B  >…¡ËA0V<o  >£SøAff<›¥ã  ?S33@»ï=<j ?t¼AI ;å`B  A<V<o  Aéy<´9X  @ŞE¢=LÌÍ AC/;å`B  A5p¤<o  A™š<›¥ã  @Î^5=<j AAo;å`B  A2Ôş<o  A›¦<“t¼  @Ä¼j=@ƒ A@9X;å`B  A1×
+<o  A	ãT<›¥ã  @¿×
+=Y‡ A?Æ¨;å`B A1`B<t¼ Ar°<¬1 @½ûç=% A?p¤;å`B A1‡<#×
+ A²-<¼j @½™š=›¥ã A? <o A0İ/<49X ASø<Ôıô @½ÊÁ=¼j A>°!<o A0£×<D›¦ A+<õÂ @½²-=ß;d A?/<İ/<o=®{   @ëuä@û@ë•¤È¼@ëƒhâ·A0$İ<£×
+;Ä›¦?·ÎÙ‡+   @ëuä@û@ë•¤È¼@ëƒhâ·Aº^=\)<#×
+?Å?|í‘hs   @ëuä@û@ë•¤È¼@ëƒhâ·@½=Ÿ¾w<´9X?Û¶E¡ÊÀƒ   @ëuä@û@ë•¤È¼@ëƒhâ· ÿÿÿş      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € >%‡µ=Ÿ¾wÂğ™š ArZ=D›¦Ad Å=\)AU‘h=¾wÆ6xëËmæ ¿î[_ç±ı?ÃÑ¼-®â¤?Ñ§&ï<!Ùş?Vÿ¦Ÿ\d1237659326553391154J140604.81+580041.214 06 04.81+58 00 41.2@jp¤.kÜ@MwõNA‡|/i = 16.51<ò­SDSS_goodÀXÿ\(õÂSDSS‡  Í½@jp¤*í”@Mx-8Go>:“  A\QSO   @éxÔıô@¤a¸Qì@.<64@‚wF"OnÆH©>R˜@«¢#©²   @«¢#©²ÀZºãı*http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1159/spec-1159-52669-0526.fits     ?Àc˜ÒÃ™-™ * 2CS…!Bh¸-™ * 2?‚y¥z–L@jp¤‹E @M{<€iA[û=,ÊA‡|/<ò­A“õ¤<ıÚIA“'<¸p?ŠûŞèEW-™ * 2CS…!Bh¸-™ * 2?‚y¥z–L@jp¤‹E @M{<€iA.¢ÁA/»A0İë?ŠûŞèEW ?´–#ú±@2¸EZ}$@jp¤/Ñ|@Mvÿ:Ş"J140604.81+580041.2@jp¤JÍƒ¬@Mw´lƒ·=“@O=—P<IR@ZD‚¶ÿ@L9ö¥k#@e1¤Ï"£@OUFE^¯@‚éxÔıô@©&ffff3x\òw2104p575_ab41-0343592104p575_ab41  †7ANƒ<Ä›¦B4ÌÍ?ù•$İ/A@n˜<´9XBA33?ğŸ¾vÈ´9A  <ÌÌÍB/™š?ğffffff@âV=OßA|ÌÍ?ïw1Å?ò›¥ãS÷Ï                     0000  0000AAAA           Aİ›¦AÜl‹AÖıôAØ°!                             @‘3@ˆÊ@8ñ™4ïÌAdZ@'ÎÙ<e`B@}® «†@47?CÄA½@Y&é<İ/@¨´™ Äe@RG¡A)@”šŸ¾vÉAÍÊÁ=Û"Ñ@mZá?J˜«@-Â\(õÃ@w—Oß;A!V>ë…AMÛ#<o  >…¡ËA@Z<t¼  >£SøAdZ<£×
+  ?S33@ßÎÙ=£×
+ ?t¼AXn˜<t¼  AL›¦<#×
+  A*(ö<Ä›¦  AV=®{ AR1<o  AEt¼<t¼  A —<£×
+  @ò=q=£×
+ AO®<t¼  AB´9<#×
+  Ap¤<›¥ã  @èİ/=§ï ANÄœ<t¼  AA¡Ë<49X  A‹D<£×
+  @ãdZ=¸Qì ANIº<#×
+ AA <D›¦ AÙ<¬1 @àÔş=Ôıô AMãT<49X A@¸R<e`B AÒò<Ä›¦ @ßl‹=ùÛ# AMp¤<Tıô A@bN<uÂ A/<Ôıô @İhs>Oß ALéy<e`B A@J<‹C– A¸R<í‘h @Û33>²- ANƒ<Ôıô;£×
+=İ/   @ëì¼ß@ë*MZ@ë	åÕİBA@n˜=På`<#×
+?Ê¬1&é   @ëì¼ß@ë*MZ@ë
+‡÷
+8Aûç=%<Tıô?ÎùÛ"Ğå`   @ëì¼ß@ë*MZ@ë
+2ñïÇ@á©ü>r°!=@ƒ?ó333333   @ëì¼ß@ë*MZ@ë	Ù‡pÿìÿ÷       >”záAõÃ?:áHÂ4  AR<o  AõÃ?:áHÂ4  AE<t¼  AõÃ?:áHÂ4  A ƒ<›¥ã  A€(ö?c×
+Â4  @õG®=£×
+ M8z=m‘hÂª33 A~Z=¬1Ao"Ñ=Æ§ğA_t¼=m‘h3x\òw ¿ÜæÔÔq»¿Ñ¹’£9?ë$„£•Tû?\5*²1237658422485843971J113246.67+062624.511 32 46.67+06 26 24.5@e¦9 ®Ã=@Â³ÄÕæ÷A†gi = 16.42;ê0ÙSDSS_goodÀXÿ\(õÂSDSSS  Ï\ õ@e¦8ÅCk@Â®Ñ9C=«ŸV  A¡™šQSO   @„¯÷ÎÙ‡@®ıŠ=p£×@4¥ãS÷Ï@w×3<P„HŸµæÉ²tü@ÿ3é6y   @ÿ3é6yÀZ¿Og‰*(http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1619/spec-1619-53084-0245.fits     ?¿>éji 
+-Ç!Š C-1È@Î-Ç!Š ?d`R Şå@e¦8¹'ï¢@Â­ Ø¼AŸ<îÔA† 5;êŒíA“=n<á	7A÷ğ<N<Ê?S‹å¢ìF‚-Ç!Š C-1È@Î-Ç!Š ?d`R Şå@e¦8¹'ï¢@Â­ Ø¼A õMA(tŞA-±•?S‹å¢ìF‚ ?³g­C$@4ÂKaş"@e¦8ÿûÎB@Â³ÌJÆÎJ113246.67+062624.5@e¦9!¶3@Â¸ÔÈCÑ=ÿ—=“á»šu@ptj»_½@O~ö€$~@ef’•™YÙ@	¶âWxŒÚ@Ïgl‹C–@§ÒIº^5?¼€„¨œ1731p060_ab41-0246681731p060_ab41  `\AH-<ÔıôB(  ?òj~ùÛ"ÑA9‰7<¼jB=™š?ñ7KÆ§ïA$İ<¬1BK™š?ò° Ä›¥ã@¸(ö='ïAÔ  ?ó•$İ/?ò^5?|í‘                     0000  0011AAAA           Aeó¶Am®AgOßAlZ                             @˜‚f`ÉŠ@B¨õÂ\)A‡KÇ@8õÃ    @–¬     @>¤›¥ãSøBğ¤@wÎÙ=©ûç@»oÌÀ>-@a;… Ñ0à@§“’ñ©ûçAß§ğ?=/@ˆ²á?ĞĞh@=Üj~ùÛ#@"e`A‰7A £×?V‡+AH=q<o  >…¡ËA9©ü<t¼  >£SøA-<ƒo  ?S33@ºŸ¾=0 Å ?t¼ARzá<o  AE¶F<#×
+  AÙ<›¥ã  @ÜZ=8Qì ALj<o  A>Äœ<t¼  A`B<ƒo  @ÍV=0 Å AJ9X<o A<$İ<#×
+ A1'<uÂ  @Ä9X=8Qì AI\)<o A; <#×
+ A?}<ƒo @¿²=LÌÍ AHéy<t¼ A:“u<D›¦ A	<‹C– @½¡Ë=uÂ AH‹D<#×
+ A:9X<Tıô Aff<“t¼ @¼Iº=\) AH¬<49X A9ó¶<uÂ A©ü<£×
+ @º¸R=¥ãT AG¡Ë<49X A9¶F<ƒo A <´9X @¸ıô=º^5 AH-=#×
+<49X>      @ë0 YQ@ëOßÙi“@ë@> A9…=C–<t¼?½/Ÿ¾vÉ   @ë0 YQ@ëOßÙi“@ë@> A Å=H´9<e`B?Å`A‰7KÇ   @ë0 YQ@ëOßÙi“@ë@> @¸(ö>J=\)?İ/Ÿ¾vÉ   @ë0 YQ@ëOßÙi“@ë@>  ÿë 5     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 3zŞh>0 ÅÃ*ÌÍ A|“u=¼jApA‰=Ä›¦Ab›¦=Oß¼€„¨œ ¿ï’òßÉùv?¾% FåÖ??¼¶ß¡ä<lp	?T›L–B51237651192434327633J090954.61+564235.309 09 54.61+56 42 35.3@a/Hvğ@LZÚèĞªAˆ›i = 16.60<x÷SDSS_goodÀXÿ\(õÂSDSSÂ  ÊÄ?@a/H@áqŸ@LZÚfƒ=ã¼Ó  B0£×QSO   @‚méxÔıô@°º‚\(ö@?fÈ´9X@€”¨ñ H¯EUÓ’ê@=\ºr   @=\ºrÀZÁ/ú6http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0450/spec-0450-51908-0575.fits     ?´E†§ÛsÒ-3Àã QC	z@BbÖ×-3Àã Q?iÎ÷`©Ò@a/H"Å»@LZÜ–fAŒƒ<wdªAˆ›<x÷A1é<›ûA‹àY<›¸(?yæöyß-3Àã QC	z@BbÖ×-3Àã Q?iÎ÷`©Ò@a/H"Å»@LZÜ–fA'«A)‹A*¥¸?yæöyß ? Çâ‚@·€@7’ª´cI@a/H)í@LZÚìJ@–J090954.61+564235.3@a/H_XU@LZÛ._„=©“=®±Ä¼Šr@cúiºälı@D™u…¾‚@^@íõ¦àª@C"xæ›ªì@­TJÀƒo@­í¾vÈ´9<‰ù?„(1386p560_ab41-0399121386p560_ab41  ›èASß;<ÌÌÍB+™š?ê'RT`ªeAEC–<ÔıôB(ÌÍ?íŠÚ¹õY´AbN<í‘hB™š?é›=ÈK^@Şñª=²-Ac33?ğ      ?ì7´¢3œ                     0000  0011AAAA           AlvÉAl=qAnMÓAnE¢                             @ˆşõ¿ğEx@2£•$İA1¾w@/²<o@‡ÌÀ7“@1|í¢/jQAè¾w@e    @¨(™ Äe@T_l~®[È@›&	7KÆ¨AÕ;d>Ó÷Ï@p.f`ÉŠ@2KC¦GıÆ@€.“t¼A'&é?s33AS\)<49X >…¡ËAE\)<ƒo >£SøAn˜=P  ?S33@Şn˜>V ?t¼A]ÊÁ<D›¦  AQ‘h<‹C–  A+o=<j  A 9X> AW‰7<49X AJvÉ<ƒo A!¡Ë=P  @ğİ/>V AU+<D›¦ AG©ü<‹C– Azá=t¼ @çC–>zá ATJ<Tıô AFvÉ<›¥ã A²=P @á¡Ë>%ãT AS;d<uÂ AE¾w<¬1 A-='ï @ß²>F§ğ AR—<ƒo AE <Ä›¦ A|î=@ƒ @à1'>záH ARJ<“t¼ AD~ú<İ/ A&é=Y‡ @áë…> Äœ AQ‰7<£×
+ AC÷Ï<õÂ A%=yÛ# @äb>ÍOß ASãT=¾w<#×
+>Oß   @ë Ÿ….m|@ë‚
+Ëˆ@ë ¿j—®2AEG®=8Qì<D›¦?ÄzáG®{   @ë Ÿ….m|@ë‚
+Ëˆ@ë ¿j—®2An˜=›¥ã<£×
+?Ï|í‘hr°   @ë Ÿ….m|@ë‚
+Ëˆ@ë ¿j—®2@İ©ü>På`=Y‡?çŸ¾vÈ´   @ë Ÿ….m|@ë‚
+Ëˆ@ë ¿j—®2 
+  /     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 0zî>MÒòÂFff A}G®=®{Aq…=Æ§ğAa?}=‡+<‰ù?„( ¿ÙãÖÇ“­R?×¾8bu)?ê¿´Dª¿0Å*?\YE)aÓJ1237667911140835354J140621.90+222346.614 06 21.90+22 23 46.6@jrë…¸S@6eruß¯èA€PXi = 15.68;YÉ÷SDSS_goodÀXÿ\(õÂSDSS
+à  Õ 
+@jrëF4—·@6eqKœ¶…=ÉQƒ B7QìQSO   @€mV“@Ëú¦ffff@R]Vlô!@|>Ğ¼ïhHÄ¿åÀm @p¸ù—`   @p¸ù—`ÀZÆg¸8http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2784/spec-2784-54529-0010.fits     ?¾\ÉĞÚ'{-has CS—\A³+”-has ?_†ùïu ©@jrëB’*+@6eq_É0.A‚L ;³pÜA€PX;YÉ÷A‚<îµA€É<Š?:^PĞ¥-has CS—\A³+”-has ?_†ùïu ©@jrëB’*+@6eq_É0.Ax´A#İA'­–?:^PĞ¥ ?±c4‚¾‹Á@xà †7½@jrë…¸R@6eryšÑJ140621.90+222346.6@jrëˆVÛ@6es±¨„=‚u%=%»ÿ—$@5zT~İV@R_f—ä@i§6Ë@@jõ.æA@£Lğ£×
+=@’åÜ(õÂa‡á9bÊ2117p227_ab41-0107042117p227_ab41  )ĞA<éy<¼jB?™š?øí‘hr°!A-Û#<¬1BPÌÍ?îHè§æ›Azá<‹C–BxÌÍ?ïIº^5@ÁÂ='ïAÔ  ?ğzáG®?ñó¶E¡ÊÁ                     0000  0000AAAA           AÉ…AÉáHA¸1A¸¸R                             @§s3@ˆÊ@OP£ßm¹AA/‘h@2áH=¥ã@¦3™ Äe@K8´A»Œ3Aò~ú@b~ú    @Àíf`Ÿ@ah£ßm¹A@œ{şùÛ"ÑA×X    @‚¿Â€'ØŒ@6›dZ¬@5;dZ¬A"n˜?ùÛA=
+=;Ä›¦  >…¡ËA-Â;Ä›¦  >£SøAQì<#×
+  ?S33@Áó¶=¾w ?t¼AGOß;Ä›¦  A9ï;å`B  A%<D›¦  @ã÷Ï='ï AA7L;Ä›¦  A2İ/;Ä›¦  A…<#×
+  @ÔbN=¾w A?;Ä›¦  A0-;Ä›¦  A
+bN<#×
+  @Ë;d='ï A>“;Ä›¦  A/¸;Ä›¦  A‰7<#×
+  @ÆŸ¾=<j A=©ü;Ä›¦  A.›¦;å`B  Aûç<49X  @Ä›¦=aG® A=dZ;Ä›¦ A.Qì;å`B A¸<D›¦ @Ão=…¸ A=/;å`B A.¬;å`B AŸ¾<Tıô @Áº^=›¥ã A<ùÛ;å`B A-ë…<o AV<e`B @ÀÄœ=´9X A<ùÛ<›¥ã;ƒo>Z¬   @êõ'‹—™@ë!úRÌ¬@ëÏmA-Û#<¬1;ƒo?±&éxÔıô   @êõ'‹—™@ë!úRÌ¬@ëÏmA~ú=+;å`B?¾vÈ´9X   @êõ'‹—™@ë!úRÌ¬@ë(F€B@Á©ü=İ/<¼j?Ö—Oß;d   @êõ'‹—™@ë!úRÌ¬@ë(F€B ÿı       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ì‰!>‡+Ã33 AlĞå=49XA`—=8QìAQÆ¨<í‘ha‡á9bÊ ¿é3¨	=£¿Şÿt‰1Ò;?ØbzY ªr³õM?J6âßà1237667911140704304J140528.44+222333.514 05 28.44+22 23 33.5@jkÊÀƒn@6dƒûrêbAŠ¶ùi = 17.00<W°SDSS_goodÀXÿ\(õÂSDSS
+á  Õ	?@jkÊ–‘§]@6dw¯d>oÒ  AÀ(öQSO   @„…İ/Ÿ¾@ç33333@6ÖâëC-@‡6 (pAZH­WTÔ¥@pÉL	{5   @pÉL	{5ÀZÆh½¶ZBhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2785/spec-2785-54537-0319.fits     ?ĞoEŞ-haq 0CS^VA³$ -haq 2?sYğúÔ­@jkÊxËóî@6dDyÛœA’8ê<»ÆAŠ¹Ğ<?BQA“lö<§@˜Aq<à{?TĞ¨@	b-haq 0CS^VA³$ -haq 2?sYğúÔ­@jkÊxËóî@6dDyÛœA*A*îBA-á¸?TĞ¨@	b ?Á]íñà‚Œ@SŒhEZ}@jkÊÀƒo@6dƒıP"WJ140528.44+222333.5@jkË08­@6d„|Ñâ¶=©Çz=ª0U¼XDĞ@5<û’²õ‹@R#¸ñMµ•@i‰‘®é@@_äßI¯@§ƒ5Â\)@’ÃÉº^5?a‡á9bÊ(2117p227_ab41-0107282117p227_ab41  )èAZ1<ÌÌÍB0ÌÍ?úzáG®AL^5<ÌÌÍB.ff?ğ¸Që…¸A&é=oBff?ñ©ûçl‹D@ä¼j=‰7LA‚ff?î›¥ãS÷Ï?òñ©ûçl‹                     0000  1111AAAA           AÜIºAÜVA×
+=AØ\)                             @ˆ¸`f@)féxÔıôA1t¼@-‘h<Ä›¦@~¬õÀv}5@&‰º^5?}Aõ+@f¸R<›¥ã@*f`ÉŠ@KÎvÀP½ˆ@œØ’n—PAİ9X>Æ$İ@keÂ€®I@*ì1&éy@``A‰7LA"1?}²-AXĞå<#×
+  >…¡ËAKÛ#<uÂ  >£SøAõÃ=0 Å  ?S33@æ\=ãSø ?t¼AcÆ¨<49X  AXbN<ƒo  A3¥ã=Tıô  A÷Ï=ë… A\ıô<#×
+  APõÃ<uÂ  A*(ö=0 Å  @øıô=ãSø AZ1'<#×
+ AN  <ƒo A$ñª='ï @ğ1'=ñ©ü AXáH<49X ALĞå<“t¼ A!÷Ï=0 Å @ë¥ã>C– AX¬<D›¦ ALZ<£×
+ A E¢=@ƒ @êMÓ>)ûç AWxÕ<Tıô AL$İ<¼j ASø=Tıô @é`B>MÒò AVİ/<uÂ AL  <İ/ AÈ´=q©ü @çß;>p£× AVMÓ<ƒo AKçm<õÂ Aff=‡+ @æ=q>‰º^ AZ  =LÌÍ<#×
+>@ƒ   @êõİ­›@ë¾}Ä|@êÿµoLÄTALV=8Qì<t¼?Å`A‰7KÇ   @êõİ­›@ë¾}Ä|@êÿµoLÄTAl‹>™š<í‘h?ç
+=p£×
+   @êõİ­›@ë¾}Ä|@ë %©@ãÎÙ>“÷Ï=ixÕ?÷/Ÿ¾vÉ   @êõİ­›@ë¾}Ä|@ë %©    %    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ì=Ó>‘ë…Ã(™š Aó¶=OßAt‡+=²-Ag²=“t¼a‡á9bÊ( ¿éC35CŒV¿ŞÍrRĞa?ØaƒM‹30³õM?:6âåÚóù1237664668437905427J105017.16+374135.610 50 17.16+37 41 35.6@dRIº^5?@BØ»z§AŠ`›i = 16.84;¡”¬SDSS_goodÀXÿ\(õÂSDSS×  Ğâ Í@dRIÏVêÈ@BØ»ó¡M=ûJ#  AÕG®QSO   @‚@ùÛ"Ğå@µ{\(ö@; hÛ‹¬q@ê¾nGH¸Ò6P¨q@põ”¶—   @põ”¶—ÀZÆk‚A, http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2007/spec-2007-53474-0205.fits     ?ªÖUßyk-uaK C"’NBÅÜ-uaK ?UÚ½®H»@dRI´9œl@BØºÉEOAO¡<)~AŠ`›;¡”¬Ao<S»æA‹éû<mÌâ?qhAèài-uaK C"’NBÅÜ-uaK ?UÚ½®H»@dRI´9œl@BØºÉEOA#ŠßA'ˆ,A)0?qhAèài ?»·„f+®@V9ŒXhvâ@dRIº^5?@BØ»oJ105017.16+374135.6@dRJ
+M{@BØ»†Sk¸=›qv=œ¬¼ü¹@fÖM/(¸@O>ÄS‡@b“ù·ç@;Ò™«7Q@¦„“t¼@™(+J›Ü2İ!›?1629p378_ab41-0089591629p378_ab41  "ÿAL£×<ÌÌÍB,ÌÍ?éˆe”¯OA<¼j<¼jB>  ?èFs×ÛõAZ<ÔıôB%™š?ğ1&éxÔş@Ó+=e`BAšff?ñ¡ÊÀƒo?í6z–¼                     0000  1101AAAA          Am¥ãAn$İAoSøAmÊÁ                             @’öf`ÉŠ@<t¼j~úA=hs@-Â    @’Û™Ÿä6v@9iûçl‹DBß;@l(ö>>vÉ@®x™ Äe@W‹¶ApØ@ŸÒt¼jAÔÌÍ?ß;@v¸     @2ÍfË4@ƒµn—PA#…?•¡ËAL—<#×
+ >…¡ËA<Ÿ¾<#×
+ >£SøAÙ<Ôıô  ?S33@Ù/>% ?t¼AV¸R<49X  AHĞå<49X  A'`B=o  @ù‰7>% APÄœ<#×
+ AAº^<#×
+ AJ<Ôıô  @ë²>% ANŸ¾<49X A>ıô<#×
+ A
+=<ÌÌÍ @ä¼j>hs AM©ü<D›¦ A=Û#<49X AE¢<Ôıô @â\>2- AMo<Tıô A=C–<Tıô AÄœ<í‘h @ã33>gl‹ ALŸ¾<uÂ A<í‘<e`B Aï=o @ã×
+>’n˜ AL9X<ƒo A<¼j<ƒo Ap¤=t¼ @ä9X>´9X AKÊÁ<“t¼ A<ƒ<“t¼ A"Ñ='ï @ævÉ>æff ALƒ=o<o>¥ã   @ë-¾¾¡ç@ë'ˆà¹¿@ë_#"3ÜA<¸R<õÂ<o?º¬1&é   @ë-¾¾¡ç@ë'ˆà¹¿@ë_#"3ÜAbN=Ä›¦<ÌÌÍ?ÓS÷ÎÙ‡   @ë-¾¾¡ç@ë'ˆà¹¿@ë_#"3Ü@Ñó¶>‘ë…=—P?ñ®záG®  @ë-¾¾¡ç@ë'ˆà¹¿@ë_#"3Ü *       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ;–Œ=¥ãBéÌÍ A}\)=‹C–Apí‘=Ÿ¾wAadZ=LÌÍ›Ü2İ!›? ¿è(´JÛ ?ÎV,gÖq?ãÜà!4N<6?J6âÿ¹Ç1237663531870191740J081324.01+542236.808 13 24.01+54 22 36.8@^Ög)¤†@K0=å& uAváUi = 15.00;VSDSS_goodÀXÿ\(õÂSDSSO  Ğˆ B@^ÖgŒ Sã@K0=š•B=.}V  Aé™šQSO   @Œ]hr° Å@Ã#3333@C!£n.±Ä@gŠ¡\v~¢H“í^ÙºT@ºÕ	Î\   @ºÕ	Î\ÀZË	yö_uhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1871/spec-1871-53384-0066.fits     ?±F^9?&-lÀ” |Bö³9BYï-Æ m ~?i¾\åŸª@^Öf™®â@K0?z…ÇäAŒ±é=,yAvå;¶AA”»¢<éª^A‹÷<‡|Ô?w÷?ù*Ò-lÀ” |Bö³9BYï-Æ m ~?i¾\åŸª@^Öf™®â@K0?z…ÇäA*^±A+ìA-F¥?w÷?ù*Ò ?¤5ŠüGä›@Eè¶¶^Ì@^Ög~@K0=æœoJ081324.01+542236.8@^ÖgKÔé@K0>'‚ûÈ=‡ÈK=†$İ¼+@dy¼ıKğ™@@Á§Û@\%“9˜¨@@ÂÏ°¬Û–@Šß;dZ@š@Ñë…¸ Ÿ‡q¿1225p545_ab41-0183031225p545_ab41  GA9×
+<´9XBDff@Ã•$İA.A‰<´9XBFff?÷dZ¬1Ap¤<£×
+B]™š?ñ‡+J@È‹D=<jA½™š?ïO„M;@hr° Äœ                     0000 1100AAAA           A_¸AW¸A^ffAZr°                             @«öÌ¿ôw6@R7K¾DsÍA:°!@)ÊÁ    @¥±f_ú;›@Kù7Cc,Aø²-@a%    @¼‘³?úÁÓ@`®÷<@†-VAÙ    @~ÔÌÀ7“@4Õ?|í‘h@Ÿ\(õÂAÔş?F§ğA9;d;Ä›¦  >…¡ËA-ï;å`B  >£SøAÔş<uÂ  ?S33@Ì“=‡+ ?t¼ADff;å`B  A:r°<o  A¾w<›¥ã  @ìİ/=‹C– A=hs;Ä›¦  A3
+=;å`B  A1<uÂ  @Ş‡+=‡+ A:j;Ä›¦  A0  ;å`B  A´9<uÂ  @Õûç=\) A9;Ä›¦  A.¬;å`B  A	Â<uÂ  @Ñ‡=Ÿ¾w A8Iº;Ä›¦  A.1<o  A(ö<‹C–  @Î$İ=¸Qì A7ÊÁ;Ä›¦ A-¡Ë<o AX<›¥ã  @Ë|î=Ğå` A7KÇ;å`B A-C–<t¼ Aí‘<¬1 @É=í‘h A6r°;å`B A,¬<t¼ A§ğ<¼j @ÈÌÍ>
+=q A9Û#<ƒo;£×
+=e`B   @êÿ¡rƒ«@êÿÅo¢	€@êÿ²ß1^A.E¢<í‘h<o?¶‡+Iº   @êÿ¡rƒ«@êÿÅo¢	€@êÿ²ß1^Al‹=@ƒ<Tıô?Â° Ä›¥ã   @êÿ¡rƒ«@êÿÅo¢	€@êÿ²ß1^@É%=ûçm=C–?ä“t¼j   @êÿ¡rƒ«@êÿÅo¢	€@êÿ²ß1^ÿÅ  	     ?(öA<(ö?B\Áğ  A:ıô;Ä›¦  A<(ö?B\Áğ  A0Ÿ¾;å`B  A<(ö?B\Áğ  Aï<uÂ  A‚ff?aG®Áğ  @àıô=…¸ °¨v>˜“uÃ33 Alİ/=‘hsA_V=OßARzá=LÌÍ Ÿ‡q¿ ¿Ô~8­¸Lh?ß#l†¢Ø5?êÿ}ãÿ-ß¸?JcfğÜ61237651249866867161J074416.00+355840.307 44 16.00+35 58 40.3@]DDDDE@Aı*Š PAŒšji = 17.04<H¤SDSS_goodÀXÿ\(õÂSDSS  Ël@]Cªy»®@Aı)Ür\>>1'  A§p¤QSO   @BÎÙ‡+@‹ºXbMÓ@0-jOv@ƒ‹Ò |‹H“FëK;»@õáTbWº   @õáTbWºÀZÎº>;èhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0542/spec-0542-51993-0364.fits     ?ÀÇÍÁ©i -A "ÙBè""BéT- H?gˆG[°ß)@]CXüú@Aı)ñ8€XA¦=¢>~¡KAŒ*M<YºA«óÙ=¶w—A•?<†°Æ?z·ÑÒ¤P-A "ÙBè""BéT- H?gˆG[°ß)@]CXüú@Aı)ñ8€XA/íA1"¥A2¦ ?z·ÑÒ¤P ?¸¤~Ïé·¿@2ô´(‘Â@]DEª.<@Aı*Œ›„UJ074416.00+355840.3@]DqIx@Aı+a­š=„M=ùr¼XDĞ@fú‘\~†@9Ÿ2%9ş@[âëÏO^@,ï¡òYN@’På`A‰@ñ³3333k×+gå1156p363_ab41-0124531156p363_ab41  0¥AC¡Ë<¼jB:ÌÍ?û$İ/A2J<¼jB:ÌÍ?ôÌÌÌÌÌÍAº^<¬1BO33?ôA‰7KÆ¨@¼  =¾wAÜÌÍ?ñl‹C•?õ`A‰7KÇ                     0000  0111AAAA           A1G®A4—A//A3ÊÁ                             @ŸÛ3@ˆÊ@EÔİS¨Avzá@?     @¡q3@ˆÊ@Gãt¼j~úBğ¤@n$İ    @¿ƒ     @cv¸`™Ë@¤Í\(öAõ?}?å¸@†£ßóğş@9ªÀƒn˜@ŠÎõÂ\)A+¶F?e¡ËACÛ#<o  >…¡ËA2E¢<#×
+  >£SøA™š<ƒo  ?S33@½7L=‰7L ?t¼AN¬<o  A>vÉ<49X  AA‰<›¥ã  @ŞáH=Oß AH1<o  A7`B<#×
+  AÌÍ<ƒo  @Ï¥ã=‰7L AE×
+<o A4°!<49X A©ü<uÂ @Ç"Ñ=“t¼ ADıô<t¼ A3¥ã<D›¦ AÔş<ƒo @ÃdZ=¬1 AD‡+<t¼ A3+<e`B AC–<‹C– @ÂĞå=×
+= AD Å<#×
+ A2Ù<uÂ AZ<›¥ã @Ã33>+ AC¥ã<49X A2—<‹C– AÂ<¬1 @Ä“>)ûç AC
+=<D›¦ A2V<›¥ã AG®<¼j @Å™š>Tıô AC¡Ë<å`B<o=›¥ã 
+  @êÿƒ²v4e@êÿ£s¾Î²@êÿ“öÌ{A2b=0 Å<Tıô?À Ä›¥ãT 
+  @êÿƒ²v4e@êÿ£s¾Î²@êÿ“öÌ{A•=+<#×
+?ÆE¡ÊÀƒ 
+  @êÿƒ²v4e@êÿ£s¾Î²@êÿ“öÌ{@»ß;=‹C–<¬1?Ò¬1&é 
+  @êÿƒ²v4e@êÿ£s¾Î²@êÿ“öÌ{  2ÿØ    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € &7=‹C–Ãæf A}t¼=¥ãTAkÎÙ=‡+A\¼j=H´9k×+gå ¿ÖÂèTmö?çC†hç?âÌ”w=oJá(?Q5o5¶1237661967971385403J131451.53+421819.313 14 51.53+42 18 19.3@hÖŞä»@E'¨Ø¢AMUi = 15.75<`¯SDSS_goodÀXÿ\(õÂSDSS´  Ï’á@hÖŞ½ç@E']9–û=–O  Aò  QSO   @‡„Iº^@ÅÀÌÌÌÍ@Mœ,<ìÀ@t³DövH°ÇTÌ¯-@
+£Ÿ
+:   @
+£Ÿ
+:ÀZĞbædhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1460/spec-1460-53138-0481.fits     ?­âàóyE-  ò ;CF¶÷B)8±-  ò ;?Mrâ’‹p@hÖŞ¸-Yî@E'K±(­AŠA<ˆV½AMU<`¯AŒ÷=*¯œA‡¤Å<’Xn?aò<•-  ò ;CF¶÷B)8±-  ò ;?Mrâ’‹p@hÖŞ¸-Yî@E'K±(­A*82A,WkA.¤?aò<• ?²mÚÎî@ITÍ·®X@hÖŞãOÆ@E'º<§J131451.53+421819.3@hÖß¹ g@E'|CG}=x7µ=‚@¸»Ë)_@Z½Ir¥9
+@R…­å˜î@eıIÄ¤à@F²5y^¯@ˆÍÒñ©ü@›şZ¬1ü5ğR1982p424_ab41-0184501982p424_ab41  HA;÷Ï<Ä›¦B6ÌÍ@bMÒñªA.~ú<£×
+BXÌÍ?ô=p£×
+=A ‹D<“t¼BpÌÍ?÷KÆ§ï²@·çm=t¼Ağ  ?íÙb¶®}?øƒn—P                     hh00  0011AAAA           A•VA–ß;A—ÀƒA—¾w                 h  h      @¨ÂÌ¿ôw6@QUã`’A•@r°    @¥h3@ˆÊ@IHrÀç¼<AÏ¬@O+    @Âí¦`Ÿ@d#… Ñ0à@—Š=p£×AÍhs?ør°@ˆæQßüTz@:Ópóˆ@|-VA!KÇ?µÂA;çm;Ä›¦  >…¡ËA.‹D;å`B  >£SøA ff<D›¦  ?S33@·¥ã=+ ?t¼AFV;å`B  A:È´;å`B  A&é<e`B  @ÙÒò=\) A@{;Ä›¦  A3¥ã;å`B  A™š<D›¦  @Ê{=+ A=¥ã;Ä›¦  A0Ôş;å`B  Aff<D›¦  @Á‡=\) A<“u;å`B A/®;å`B AP<D›¦ @¼bN=#×
+ A<1;å`B A/‡;å`B A  <Tıô @º=q=D›¦ A;©ü;å`B A.¸R<o A/<e`B @¹hs=m‘h A;Sø<o A.j<o A´9<ƒo @¹hs=‘hs A:ùÛ<o A.$İ<t¼ AZ<“t¼ @¹?}=¬1 A;ó¶<›¥ã;£×
+=yÛ#   @ë¼¨ô€@ëÏ@œÃ@ëßÓF©]A.zá<İ/;Ä›¦?µ?|í‘hs   @ë¼¨ô€@ëÏ@œÃ@ëßÓF©]A ‡+=#×
+<t¼?Áë…¸Qì   @ë¼¨ô€@ëÏ@œÃ@ëßÓF©]@·¶F=™™š<“t¼?Ót¼j~ùÛ   @ë¼¨ô€@ëÏ@œÃ@ëßÓF©]  ÿã     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € <dH´>„“C3ÌÍ Al£×=Y‡AaÆ¨=}ó¶AUC–=]/ü5ğR ¿æj6m­´¶¿Î_°+ÆÊZ?å‰ã>›à²
+?Oåø¯³¹X1237657628987162633J110423.64+503404.511 04 23.64+50 34 04.5@dÃ&éxÔı@IH±~KæAŒD0i = 17.01=ƒ|SDSS_goodÀXÿ\(õÂSDSSm  Ì ´@dÃ&éxÔş@IH¯¢ğZq> 4n  AÂQSO   @‡AŸ¾vÉ@°!G®{@0şi­BÃÊ@‚NÛ"“Ö½H³iû]÷& @˜ ×Ù”   @˜ ×Ù”ÀZÑ5³@(http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0877/spec-0877-52353-0180.fits     ?Ê¬DÀ<-aU 	C&7BJEŒ-aU 	?bêæ0û†@dÃ'
+&î)@IH²°”°æA˜:=!Â‹AŒD0=ƒ|A™·<¶8xA‘s<‰‚Ú?…4<àÈê¾-aU 	C&7BJEŒ-aU 	?bêæ0û†@dÃ'
+&î)@IH²°”°æA,ëÛA-Š0A.Ig?…4<àÈê¾ ?¸Äüó0@E‡YnL@dÃ&éxÔş@IH±ëÕJ110423.64+503404.5@dÃ'$17°@IH²ôİ=¦L0=¨$¼*dÃ@c”FJœÜD@M|¬Û•½l@bd.Hè@D1}ÔA5T@®¢G®zá@¬4G®zá4«yÊ­4¿1672p499_ab41-0380151672p499_ab41  ”APb<Ä›¦B3™š?öŸ¾vÈ´9AB¸R<Ä›¦B6ÌÍ?í©ûçl‹DAn˜=C–B ÌÍ?òj~ùÛ"Ñ@å‘h=©ûçAQ™š?ò‹C•%?ò‡+Iº                     0000  0000AAAA          	 Am¥ãAjİ/AjÈ´Am                             @#ÖÿÁß@62° Ä›¦A 1'@3dZ    @Šºzà;>š@2¶E¡ÊÀƒAŞ›¦@a‡>}ó¶@£$f_ú;›@S “Q¤8@™úÊÀƒoAÖ©ü?KÆ¨@j¿®÷<@0e`A‰7L@~óOß;dA"£×?j=qAOÛ#<D›¦  >…¡ËAB¬<D›¦  >£SøAA‰=@ƒ  ?S33@åó¶>1' ?t¼AZA‰<Tıô  ANÔş<Tıô  A.å`=m‘h  A?}>	7L AT1<D›¦  AGÆ¨<D›¦  A%t¼=@ƒ  @øbN>1' AQº^<Tıô  AE+<D›¦  A Z=8Qì  @ğ9X>n˜ APÙ<e`B ADA‰<e`B A™š=D›¦ @ëçm>'ï APr°<ƒo ACß;<ƒo A5?=Y‡ @éÊÁ>G® AP-<›¥ã AC²<“t¼ A‘h=yÛ# @çÎÙ>gl‹ AOï<¬1 AC`B<£×
+ ASø=\) @åãT>„›¦ AO¶F<Ä›¦ AC33<¼j ASø=£×
+ @ä£×>˜“u APb<å`B;å`B=ÊÀƒ   @ë¢ñh8@ëÊRÜ`¿@ë¶6æÜmAB¸R<ıó¶<o?¼¬1&éy   @ë¢ñh8@ëÊRÜ`¿@ë¶6æÜmAn˜=ñ©ü=o?Û÷ÎÙ‡+   @ë¢ñh8@ëÊRÜ`¿@ë¶6æÜm@å¸>ˆ1'=‘hs?õ&éxÔıô   @ë¢ñh8@ëÊRÜ`¿@ë¶6æÜmÿí        À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ƒ>bMÓÃæf A}‰7=“t¼AnE¢=¸QìAadZ=}ó¶4«yÊ­4¿ ¿ãºÚ8w˜“?Ãˆc§j5?è·R‘ÉÌ/FÈ?S©*)>}·1237667911661649935J112603.62+243314.311 26 03.62+24 33 14.3@ep{
+ì3@8Ñ¡V>A‡b‡i = 16.39<±J“SDSS_goodÀXÿ\(õÂSDSS	Å  ÓDf@ep{ñèæ@8Î[BEö=!–  Aå\)QSO   @‹áG®{@º¬‡®zá@>>ÒˆÎp;@s‹h],ñH¢Wë`¿A@#ßÖèp   @#ßÖèpÀZÑ¦ó1http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2501/spec-2501-54084-0358.fits     ?Ë–‘×5-h€~ C+ƒİAÄn‰-h€~ ?g„¢ûX‹Š@ep{Ó²ÄÀ@8ÎZÙ‡~A‘6<¶mA‡<Ÿ$]A’0‡<1şA‹›<¡µú?™ƒyœ}J4-h€~ C+ƒİAÄn‰-h€~ ?g„¢ûX‹Š@ep{Ó²ÄÀ@8ÎZÙ‡~A)BA+byA,Ê„?™ƒyœ}J4 ?³ë‚4"F@PoõŒ·_@ep{W÷8@8ÑææTJ112603.62+243314.3@ep{½{ 2@8Ñ´“$=“á=•L˜¼¥ã@jøò0Ÿ=@Q©…cS@dG&Ò1œ@3#ĞõPy•@¤=æffff@¦›“÷ÎÙÔs]2–î1717p242_ab41-0242381717p242_ab41  ^®AEdZ<¼jB9™š?ğ§ï²-A8Ÿ¾<´9XBH  ?ò(õÂ\)AvÉ<ÔıôB(ff?ïS&Á¾@Ğİ/=%A‰™š?ín—Oß?ğ Ä›¥ãT                     0000  0000AAAA           A=A<Ÿ¾A?KÇA=ÊÁ                             @œÉ™Ÿä6v@CÙûß	sAX Å@<¼j=ùÛ#@—â     @>‘W«¸€B=q@m¸    @°ıæ_ú;›@YÛ…¸Qì@¢|í‘hAå|î>‘ë…@xEG rÑ¯@6˜bMÒò@‡º|í‘hsA0İ/@C–AE²<o  >…¡ËA8“u<#×
+  >£SøA—=o  ?S33@ĞIº=®{ ?t¼AOÛ#<t¼  AD´9<49X  A%¸=¾w  @ò‡+=¸Qì AIÊÁ<o  A=®<#×
+  AÊÁ=o  @â¸R=®{ AG™š<o  A;‡<#×
+  Aå`<ıó¶  @Ù‡=´9X AF´9<t¼  A:{<49X  Ar°=C–  @Ó =Æ§ğ AFMÓ<#×
+ A9²<D›¦ AdZ=¥ã @ÎÙ=ß;d AF“<49X A9dZ<e`B A‡=49X @Ë33=ùÛ# AF  <D›¦ A9;d<uÂ A+=På` @È  >
+=q AEó¶<Tıô A9 <‹C– A`B=uÂ @Å/>™š AE<¼j;å`B=Ù‡   @ëÌ¿¼@ë<ÈÎ°¨@ë*ÊÇ>mA8Ÿ¾=P<49X?Á$İ/    @ëÌ¿¼@ë<ÈÎ°¨@ë*ÊÇ>mAvÉ=Y‡<uÂ?Å`A‰7KÇ   @ëÌ¿¼@ë<ÈÎ°¨@ë*ÊÇ>m@Ñ?}>¸=P?ÛS÷ÎÙ‡   @ëÌ¿¼@ë<ÈÎ°¨@ë*ÊÇ>m ÿô       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € :Sy=m‘hÃ33 Aop¤=På`A_²-=]/ASûç=#×
+Ôs]2–î ¿ìÉ¤Ö¾Cİ?Á-¨kÄğ~?Ú˜`šÑ©âÌ
+?V,ÌMÃ1237667782293979150J114116.17+215621.711 41 16.17+21 56 21.7@eê'ï²,@5ğyøC[@Axg3i = 15.12;O×SDSS_goodÀXÿ\(õÂSDSS	È  Ó£@eê'¦76Î@5ğ{Üğ0=£n B)õÃQSO   @†1Oß;d@×%ù™™™š@\9&éxÔş@qÀ²TÁÌHºD„ˆS@/TƒÛàr   @/TƒÛàrÀZÒQq3€–http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2504/spec-2504-54179-0639.fits     ?Äw®7-Ja” C/Q?A¯ƒĞ-Ja” ?c46” çn@eê'ŒOİÄ@5ğzÑÈÿåA‚hü<zAAxg3;O×A‰Ú<€ëA†‘<qhk?™„ÍF›é-Ja” C/Q?A¯ƒĞ-Ja” ?c46” çn@eê'ŒOİÄ@5ğzÑÈÿåA •9A#Ï<A'ï	?™„ÍF›é ? X¼Y¸:@4Ô¶bıü@eê'ï²-@5ğyöf#KJ114116.17+215621.7@eê'ö¿@5ğzƒSÜ÷=múD=poi¼/O@ldbaôç@RO;Ó€E5@d×;¸Bê@28l"h	Õ@¬H6E¡ÊÁ@¯NÙ‡+i§iŒÔ’1759p212_ab41-0354211759p212_ab41  Š]A6°!<Ä›¦B2ÌÍ?ù‘hr° ÅA&—<¬1BO™š?ğ“t¼j~ú@åX<ƒoB…™š?ğ¬1&é@õÃ<Ä›¦B5™š?ëqu!–S?ñçl‹C•                     hh00  1100AAAA           A\ƒA^ƒA[
+=A]®                 h  h      @°Ä€    @WÿÎázûAV°!@,›¦    @°Ü€    @TÏ\ ’F¿BLÍ@eV    @Õ	À    @t$ÌÀ7“@¢¡yXbNAÜ?}    @£Ì¿ôw6@JïÂô÷@ˆ"p£×
+=A*?å?}A6n˜;Ä›¦  >…¡ËA&r°;Ä›¦  >£Sø@å`B;å`B  ?S33@õÃ<›¥ã ?t¼AA%;å`B  A2Ğå;å`B  A	t¼<o  @³
+=<£×
+  A:›¦;Ä›¦  A+P;Ä›¦  @ÿÆ¨;å`B  @£dZ<›¥ã A8  ;å`B  A(Ÿ¾;Ä›¦  @õ`B;å`B  @š5?<£×
+ A6°!;å`B  A'Oß;Ä›¦  @ï…;å`B  @•Oß<¼j A5ÎÙ;å`B  A&‡+;Ä›¦  @ì9X;å`B  @“+<İ/ A5o<o  A%÷Ï;Ä›¦  @ê^5<o  @’-=+ A4Z<o A%xÕ;å`B @éOß<o  @‘ÊÁ=¾w A3²<t¼ A%%;å`B @è£×<t¼ @‘=@ƒ A6Ÿ¾<Tıô;ƒo=Oß   @ë¤€?§@ëÈ}5æ@ëµcî’A&vÉ<¼j;Ä›¦?Á$İ/    @ë¤€?§@ëÈ}5æ@ëµcî’@åX<¼j;Ä›¦?¶‡+Iº   @ë¤€?§@ëÈ}5æ@ëµcî’@å`=¥ã<49X?À         @ë¤€?§@ëÈ}5æ@ëµcî’ = ÿğ     ?™šA\)?hõÃBp  A9ï;Ä›¦  A\)?hõÃBp  A*Äœ;Ä›¦  A\)?hõÃBp  @ı7L;å`B  Ah  ?uÂBp  @¨å`<›¥ã fK=ixÕÂÔ   Agß;=#×
+A]V=<jAO7L='ïi§iŒÔ’ ¿í•^Ãéâx?³b§“>8İ?×éyĞ(v!Ñz?:6âåÚõí1237651252578287712J141611.95+631128.014 16 11.95+63 11 28.0@jÁ—ä±~L@O˜vT2íA‹h¯i = 17.02<²›ÓSDSS_goodÀXÿ\(õÂSDSS^  Ì@jÁ—á2µ_@O˜wFˆz=²-  A—\)QSO   @”ë…¸R@”•G®zá@2±:’£S@uÍÒÎšÉHáW@®¬@_Z>E   @_Z>EÀZÕQÉY«“http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0606/spec-0606-52365-0515.fits     ?º¢qh-AÁ¿ `CV¿B|Ã³-AÁ¿ a?pùq7vu¯@jÁ˜B_@O˜xŸ
+®A¢²©>-AŒÚ½<kA¥7Œ=wIA‘%<wµ?y‰0eê”-AÁ¿ `CV¿B|Ã³-AÁ¿ a?pùq7vu¯@jÁ˜B_@O˜xŸ
+®A$;7A%ÇÊA'Rı?y‰0eê” ?¨­%g˜•@I™Š2ôI@jÁ—ådsG@O˜vSCsóJ141611.95+631128.0@jÁ˜5k@O˜vš‘^=—P=šŸ¾<49X@Zò¿Ô–Åª@I¯Îï¼»Ş@d7‡o*ZG@P´æšŠZ@¥Ø'ï²-@Û"Ğå`È´l©×ñß2146p636_ab41-0106552146p636_ab41  )ŸAZÔş<ÌÌÍB-™š?í¶E¡ÊÀƒAHÄœ<Ä›¦B8ff?íœàuöı"A
+=<´9XBBff?ğ›¥ãS÷Ï@Ú=q=D›¦A´ÌÍ?ñ¶E¡ÊÀƒ?ïâ‚@·€4               ;D›¦  0000  1111AAAA               Aûí‘Aı‡+A÷ÀƒA÷?}                             @€ÂQßüTz@(ºáG®{A¬@.V=@ƒ@‚İ\ @*3¶E¡ÊÁA¹Ù@So=° Å@ª™ Äe@Q.ÈÀÎ‘É@“ú«IºAÉV>Éº^@r‡ÖÿÁß@*3¶E¡ÊÁ@vËÛ"Ğå`AZ?–È´AZ$İ<#×
+ >…¡ËAH´9<#×
+ >£SøAİ/<£×
+ ?S33@İ%=¶E¢ ?t¼AdvÉ<49X ATéy<49X A)™š<ÌÌÍ  @ıûç=¸Qì A^Qì<#×
+ AMÎÙ<#×
+ A b<£×
+ @ït¼=¶E¢ A[ë…<49X AJıô<49X AÙ<›¥ã @ç®=Æ§ğ AZ‹D<D›¦ AI¥ã<D›¦ Açm<£×
+ @ä Å=ë… AY?}<Tıô AH°!<Tıô A9X<´9X @ân˜>V AWó¶<e`B AGÛ#<e`B AKÇ<Ä›¦ @áë…>.{ AVÈ´<uÂ AG‡<uÂ AÀƒ<İ/ @âáH>Z¬ AUÆ¨<ƒo AFQì<ƒo Aff<ıó¶ @ä“u>‰º^ AZÀƒ=¥ã;å`B>Xb   @ë÷5q@ë=É€@ë„G"AHÄœ=På`<t¼?ÎvÈ´9X   @ë÷5q@ë=É€@ë„G"A‡=}ó¶<49X?Ï¾vÈ´9X   @ë÷5q@ë=É€@ë°22@Ú=q>?|î=C–?ç|í‘hr°   @ë÷5q@ë=É€@ë°22 ÿŞ    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € %YU=›¥ãÂVÌÍ A~Ğå=‡+Apb=›¥ãAd›¦=}ó¶È´l©×ñß ¿×êˆ.ÌçO¿Ğ)sõı¤?ì}'Eá˜6‡?FwAUD¹1237658423547854976J094456.07+054642.909 44 56.07+05 46 42.9@bGyÛ"Ğå@Dó‚eAmRi = 17.37<Fx­SDSS_good@\(õÂSDSSá  Íæ K@bGyú—á3@IQ‚©“>YÎ  AHQìQSO   @ˆvOß;d@–ë…¸R@'NóMj@g†±®ÏEHµi'ægÚ—@_œÌï   À\(õÂ?ÒûõÎ/http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0993/spec-0993-52710-0075.fits     ?´*µxÓÚ-Ç`× €C;Ï@¸ê(-Ç`× ?NœÃ_ì§q@bGyò£‰´@H\LÒA˜³=OhAŠ<E>ƒA™QJ<ò´"A“\<¦!,?›Ïnn-Ç`× €C;Ï@¸ê(-Ç`× ?NœÃ_ì§q@bGyò£‰´@H\LÒA/Ù—A0®öA3?›Ïnn ?É.jv–_R@MR÷ô˜Ä@bGyÛ"Ğå@DÜ¨âãJ094456.08+054643.0@bGz=°@L}‡\=¿±[=ÆÜ]:·€4@l¿ËV	÷Ñ@Dl&É@bPÇ3/ØÀRm©PÇ@˜¼j~ùÛ@”–¥ãSø<;®ÈÕ÷u1458p060_ab41-0120851458p060_ab41  /5AW™š<ÔıôB)™š?ìµ'»0AK+<í‘hB33?ğ“t¼jAQì=<jA½™š?ğ“t¼j@ìzá=í‘hAff?ñp£×
+=q?ïÈK]Ìcñ                     0000  0000AAAB           A/A-ûçA.§ğA//                             @„+
+@ºˆ@.hõÂ\)AxE¢@A‡    @€nÌÀ7“@+Ót¼j~úBÆ¨@yX    @™3@ˆÊ@T«bS—@¥D’ñ©ûçAï    @eìzß.Ï @2­fË4@Œ$"Ğå`BA.J    AWSø<‹C–  >…¡ËAK
+=<¼j  >£SøAÒò=‹C–  ?S33@ğ(ö>e`B ?t¼Aa<“t¼  AWX<Ôıô  A2Iº=§ï  AIº>hr° A[<‹C–  AP$İ<¼j  A)%=‹C–  AKÇ>e`B AYhs<›¥ã  AMKÇ<ÌÌÍ  A$V=‰7L  @úvÉ>t¼j AX£×<´9X AL{<í‘h A"-=• @ôí‘>‡+ AXV<Ôıô AK‰7=+ A!Sø=¬1 @ñV>—P AX-<í‘h AK?}=¥ã A ıô=Ä›¦ @ï÷Ï>³¶F AX¬=C– AK%=49X A Äœ=ãSø @ñG®>áG® AX Å=¾w AJ´9=H´9 A ‹D>    @ÚÙÀ    AW²=49X<Tıô>™š 
+  @ëòC×u@ë"N_@ë©YËMAK&é=•<´9X?ĞÔıó¶E¢ 
+  @ëòC×u@ë"N_@ë©YËMAï=ï²=\)?áXbMÒò 
+  @ëòC×u@ë"N_@ë©YËM@ëdZ>äİ/>
+=q?şéxÔıó¶ 
+ @ëòC×u@ë"N_@ë©YËM          À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € .Š–>™‡ÂâÌÍ A€j=×
+=Ax—>
+=qAixÕ>o<;®ÈÕ÷u ¿êw~Ì€!?á²ãˆÀÛ?¹Æ|€2ü° z
+?S©*1Ë´1237660583908278460J101711.56+083303.710 17 11.56+08 33 03.7@cIŠ”ÒBç@! P|yA‡Qi = 16.55=ê›ãSDSS_goodÀXÿ\(õÂSDSSÕ  Î M@cIŠ\å´$@!!ê5“`=ÕfÏ  AIë…QSO   @‹˜‹C•@±rŒÌÌÌÍ@/lq²•ê@~Š\¹SH¬`c°Y¶Y@{¨´şÆ   @{¨´şÆÀZ×´E£Ëhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1237/spec-1237-52762-0077.fits     ?ºÉHìMV-¾`[ ¼CLUAÑ-¾`[ ¾?c­8:<Ãe@cIŠKe-¶@! Ïno	Ašİ=NZÂAŠb<xXåA†š=oA’xÀ<ÿµ˜?“‚ŠÊt›-¾`[ ¼CLUAÑ-¾`[ ¾?c­8:<Ãe@cIŠKe-¶@! Ïno	A)GA+·×A-Ö|?“‚ŠÊt› ?®®¬Ÿ/Ü@8²ö”Fs‚@cIŠ•…7ã@! W\OJ101711.56+083303.7@cIŠ£’@à@!"K„bÑ=˜*™=˜Çã¼o @mQ)@HAÿ~ĞÀ@c"D²·wÑ¿ÿUP^½$¹@¨™$İ/ @„2‹C•xopÇ‡Ú1547p090_ab41-0039941547p090_ab41  šABff<ÌÌÍB.  ?ê¡aä÷eşA3+<¼jB@  ?ìIº^5?A	
+=<Ä›¦B4  ?ïC,¥zx@Èj=ixÕA™™š?î@·€4mÆ?ìÓZ…‡“Ş                     0000  0011AAAA W 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A#`BA,£×A-;dA&áH                             @¡f_ú;›@I)xİao‡A„zá@@bN=uÂ@ \     @EÏßCÇÕíB ŒJ@r\    @·8ÌÀ>-@`€õÀv}5@¦ğÓt¼jAæ
+=?®5?@~ô£àz(»@9ÖE¡ÊÀƒ@ğŸ¾vÈ´A/;d?éÛ#ABáH<t¼  >…¡ËA3¸<t¼  >£SøA	o<¼j  ?S33@Èå`=™™š ?t¼AM%<t¼  A?+<#×
+  AÂ<í‘h  @êñª=¡ÊÁ AGV<t¼  A89X<t¼  AE¢<¼j  @ÛSø=™™š ADå`<t¼ A5¡Ë<#×
+ Ao<´9X @Ñë…=›¥ã ACçm<#×
+ A4›¦<49X A5?<¼j @Ì“u=¬1 AC33<49X A4b<D›¦ A¬<Ôıô @Éó¶=Æ§ğ ABzá<D›¦ A3¥ã<Tıô Aß;<í‘h @Èr°=çl‹ AAÎÙ<D›¦ A3Sø<uÂ AP=+ @ÆáH>“ AAOß<e`B A3"Ñ<ƒo AxÕ=P @Å¸>zá ABff=o<#×
+=Ù‡ 	  @ë¹HY»]@ëÙ–çã@ëÉ(x„A3+<¬1;å`B?³t¼j~ùÛ 	  @ë¹HY»]@ëÙ–çã@ëÉ(x„AÔş=,1<Tıô?ËÆ§ï²- 	  @ë¹HY»]@ëÙ–çã@ëÉ(x„@ÇÎÙ>Oß=49X?ÚIº^5? 	  @ë¹HY»]@ëÙ–çã@ëÉ(x„ÿç # 6     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 1òœ^=OßÂY™š A|{=¬1Alƒ=‰7LAZñª=m‘hxopÇ‡Ú ¿ìƒt …?Ûré¼/?ÃIÂ012 (‚?Wr£{|™1237662224065888376J120049.17+390450.612 00 49.17+39 04 50.6@f†V“@CŠU@ AGXi = 17.28<&ØıSDSS_goodÀXÿ\(õÂSDSSë  Ğ¹[@f†´cI{@CŠU\Rç.=ô¼j  A”¸RQSO   @‹#ß;dZ@®³LÌÌÌÍ@18bMÒò@i…TÁ`,H°ÁÀw–ñ3@³ qÑË   @³ qÑËÀZØ7büß¬http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2027/spec-2027-53433-0603.fits     ?À}œ¬th-<A^ xC44sBR©-<A^ x?Z‰‰Şµ@@f†¥Í¹Ä@CŠUa‹f¹A™Y¼=Mî7AGX<&ØıA™‰g<ÒöA’ã<‰B?‹–zV„)-<A^ xC44sBR©-<A^ x?Z‰‰Şµ@@f†¥Í¹Ä@CŠUa‹f¹A%Ü+A'à9A+0D?‹–zV„) ?¹>Nğ(¨@KìEşw@f†V“@CŠU7«J120049.17+390450.6@f†“@º@CŠUœÇ]=œàv=Ov»“t¼@d%åé”«@Rƒ®sEqú@dHJ›.Å@Aµ(ƒ¼@™…:^5?}@“òixÔıôûa(,°Á‰1800p393_ab41-0126171800p393_ab41  1IAP°!<ÌÌÍB*ff?ï²-VAA¶F<¼jB@ÌÍ?óxÔıó¶FA¶F<İ/B"ÌÍ?íŠ	Ş@Ò-=m‘hA”ÌÍ?ëRT`ªdÃ?ï$İ/                     0000  0000AAAA           A‰-A~¸RAˆ“AÛ#                             @=Ø't@6”ş}=CA(ıô@'P=8Qì@ŒQÂ€'ØŒ@2Ê~ùÛ"ÑAç“u@aX=e`B@¬-Ì¿ôw6@V)~Ç†<@›”D›¥ãTAÖ ?Féy@w_\…×E@4^Ft@€·Ğå`A‰A&{?ï APÌÍ<#×
+  >…¡ËAAó¶<Tıô  >£SøA<Ä›¦  ?S33@ÏSø=% ?t¼AZéy<49X  ANJ<e`B  A(-<í‘h  @ñãT=‹C– ATùÛ<#×
+  AGV<Tıô  A´9<Ä›¦  @áÂ=% ARÄœ<49X AD^5<e`B A‰7<¼j @Ø›¦=‡+ AQ¶F<D›¦ AC7L<uÂ A“u<Ä›¦ @Ó×
+=—P APıô<e`B ABƒ<‹C– AáH<Ôıô @Ñ?}=®{ APzá<uÂ AAë…<£×
+ AãT<í‘h @ÎÙ=Æ§ğ AP{<‹C– AAp¤<´9X A;d=o @Ì£×=áG® AOº^<›¥ã AAo<Ä›¦ A¼j=t¼ @Ë
+==ıó¶ AP°!=P<t¼>C–   @ëä½ÚA@ëA¢Ë@ë.¹Zi®AA®=C–<o?ÀA‰7KÆ¨   @ëä½ÚA@ëA¢Ë@ë.¹Zi®Aº^=ƒo<ƒo?Í/Ÿ¾vÉ   @ëä½ÚA@ëA¢Ë@ë.¹Zi®@ÑOß>fff=e`B?ç333333   @ëä½ÚA@ëA¢Ë@ë.¹Zi®ÿìÿù       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 7¨>‘hsÃ   A=q=§ïAvb=ÒñªAgçm=‰7Lûa(,°Á‰ ¿è×mz=¿f½â0$®*?ä,[ÎÛ<¥îğ?J6âåÚóT1237654669204979736J105706.95-004145.110 57 06.95-00 41 45.1@dˆí:Ó¡¿æD~…XùfA†ari = 16.39<%å|SDSS_goodÀXÿ\(õÂSDSS  ÊÅ &@dˆìé¢Æi¿æD»ó¡M>@hÜ  Aã33QSO   @†Öj~ùÛ#@ª„³3333@5 ªdÂø8@ŒûnÒSHÃz¡g4û@˜i¾F    @˜i¾F ÀZØâÄ×vùhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0276/spec-0276-51909-0038.fits     ?Æ)¬³	-]@‘ C$Gj¿2#ô-‰@ ?GÙ‰nê@dˆí*6¿æDŠ¤–OAö=XEA†¸×<UÓZA·¶<œÅoA¿®<ªE?„ÿ¢èGä­-]@‘ C$Gj¿2#ô-‰@ ?GÙ‰nê@dˆí*6¿æDŠ¤–OA1A5ºòA8º/?„ÿ¢èGä­ ?¹HìØÛÎÈ@cDi	®Õ@dˆí9SŞ¤¿æD~I±ú¹J105706.95-004145.1@dˆíSaÅ¿æD²L‡=‘4=–¼¼c¼Ó@o³ª{ÜÏ@Iróö‚@d¹BQHÇğÀQZe§#Æ@¬.vÈ´9X@lCC•%ß:8J~:1648p000_ab41-0056261648p000_ab41  úAG©ü<¼jB@ff?úĞå`A‰7A8\<¬1BM33?ò\(õÂA+<å`BBff?ò´9XbN@×Sø=\)Ay™š?ë«ŸU›=?óhr° Äœ                     0000  0000AAAA           A>$İA:éyA?A>1                             @™A3@ˆÊ@@Éxİao‡Ay²-@7¾w    @—ü     @=ëC¦GıÆB¤İ@sC–=Ÿ¾w@°R Äe@Z¾¸^€¾×@¥ğİ/Ÿ¾Aíí‘?y‡@t'…ÄÁf@4³3Cú*Ô@6~ùÛ"ÑA*5?>şvÉAG¸<t¼  >…¡ËA8E¢<t¼  >£SøAõÃ<õÂ  ?S33@Ø  =Ù‡ ?t¼AQ²<#×
+  AD›¦<#×
+  A%¥ã=t¼  @ùÊÁ=çl‹ AKKÇ<t¼  A=`B<t¼  A(ö<õÂ  @ên˜=Ù‡ AHñª<#×
+  A:zá<t¼  Aıô<å`B  @á=ß;d AHJ<#×
+  A9Oß<#×
+  A$İ<õÂ  @İhs=ıó¶ AG¥ã<D›¦  A8¼j<49X  AŸ¾=+  @Û¶F> AGt¼<Tıô A8j<D›¦ Aß;=P @Úff>.{ AG\)<uÂ A85?<Tıô A™š=,1 @ØõÃ>F§ğ AGOß<ƒo A81<uÂ A™š=H´9 @Ö°!>["Ñ AG©ü<‹C–;£×
+=‡+   @ë†¸ÄØ@ëª´Ó±Ã@ë˜¶Ì?‰A8ff<¼j;å`B?½²-V   @ë†¸ÄØ@ëª´Ó±Ã@ë˜¶Ì?‰A&é=C–<#×
+?½p£×
+=q   @ë†¸ÄØ@ëª´Ó±Ã@ë˜¶Ì?‰@×o>‡+=,1?à‹C•%   @ë†¸ÄØ@ëª´Ó±Ã@ë˜¶Ì?‰ ÿë       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € G5R>“uÂÌÍ A{=ÌÌÍAn°!=ÔıôA[ß;=m‘hß:8J~: ¿îÌùšŞµ°?ÑVúª%É¿ˆß•
+¢]¬­+G?T¹ìsç81237667735599972363J150747.63+172624.415 07 47.63+17 26 24.4@l^YÅJi"@1p«,ÔAt i = 17.27<(2¦SDSS_goodÀXÿ\(õÂSDSS
+Û  Õ,@l^YİÁç–@1p«ˆ¤>Ï«  AŒáHQSO   @‡«‘hr°!@³¡¦ffff@0ÊÔ,<í@…®ö9„¼HÀíá J¾@™j|^èÛ   @™j|^èÛÀZØòĞ»±http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2779/spec-2779-54540-0556.fits     ?¤ü*Ö-?‚f CbòÎA‹…Y-?‚f ?7UyMM1F@l^Y¹çÊ@1pªÉ(ã‰A“±"<¯s0AŒV<&,XA“ä<ÈÅUAÂ¤<G¨Ê?¿©»P-?‚f CbòÎA‹…Y-?‚f ?7UyMM1F@l^Y¹çÊ@1pªÉ(ã‰A%ÊA(=ˆA*Lı?¿©»P ?½N wlœ@F‹7 G@l^YÄ—t%@1p«Oœ J150747.63+172624.4@l^Yö¶«"@1p¬˜yŞé=–O=•+¼(ÁU@7…š¶@LÆôE·š@kTpÜ.@@ÃJ H@™›¼j~ùÛ@`áG®{vkæÀS÷A2267p181_ab41-0017932267p181_ab41  AQ×
+<Ä›¦B8  ?íµsê³g¡AD^5<¼jB?™š?ğbMÒñªAxÕ<ÌÌÍB0  ?ğ1&éxÕ@ÕãT=Y‡A£33?ï!–R½<?ïFÜ]cˆf               ;£×
+  0000  2100AAAA           Añ“Aô%AòĞåAïj                             @Œ) >ê!@3‘&Ø±İ]A3ÎÙ@.§ğ    @ˆNf`ÉŠ@0:^FtA÷í‘@kC–=—P@¦³     @PƒT 2Tç@œ}(õÂ\AÖÂ    @upŸ¥LU@0{¥ãS÷Ï@€õÙ‡+A(Z>Ñë…AQ²<t¼  >…¡ËADMÓ<49X  >£SøA²-<å`B  ?S33@Õp¤=‡+ ?t¼A[®<t¼  APvÉ<D›¦  A,A‰=C–  @÷"Ñ=‹C– AUÊÁ<t¼  AIhs<49X  A"å`<å`B  @çß;=‡+ ASº^<t¼  AF´9<D›¦  A×
+<İ/  @Şéy=\) ARéy<#×
+  AE™š<Tıô  A‡<í‘h  @ÙãT=¡ÊÁ ARƒ<49X  AE<uÂ  AÂ=o  @×C–=¾vÉ ARE¢<D›¦  AD—<‹C–  A33=t¼  @ÕÊÁ=ãSø ARJ<e`B AD9X<›¥ã AõÃ='ï @Ô´9>$İ AQÎÙ<uÂ ACãT<¬1 AÙ=@ƒ @Ó¶F>¬ AQÛ#=LÌÍ<t¼>6E¢   @êöıšI!²@ë¡:œñ@ëLÅïX=ADvÉ=49X<o?ÍOß;dZ   @êöıšI!²@ë¡:œñ@ë·_Õ]jA™š=m‘h<49X?Ó÷ÎÙ‡+   @êöıšI!²@ë¡:œñ@ë·_Õ]j@ÔÌÍ>,1=o?êzáG®   @êöıšI!²@ë¡:œñ@ëLÅïX= 4 ÿñ     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € "X{=‹C–Â33 AáH=²-Aq=²-Ad“u=e`BvkæÀS÷A ¿ä×={íã¿æO
+e|Å?Ó.o3Vz?´'J?SŞsL`_81237660669817061494J101238.53+101719.310 12 38.53+10 17 19.3@c%#(FÿR@$“ÏÂÚ Aséæi = 15.61=OdSDSS_goodÀXÿ\(õÂSDSS=  Ï ã@c%"Ğå`B@$“ÍİnÀ=Šr  AôQìQSO   @“t¼@ÂÁG®{@Fk˜Çâ‚A@sšˆ"JøuH¨òİ°Yj@ç•¬w   @ç•¬wÀZÙJš?Vhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1597/spec-1597-52999-0227.fits     ?ÄÛV¦8-Ò`ë vC)A$~-Ò`ë w?i Ã~Ô7@c%"·^F§@$“ÍraÕÆA‹D0<—©1A€¸;¡'}A‹÷=A‰Q1<h2?Œ¢ÄÖÙy~-Ò`ë vC)A$~-Ò`ë w?i Ã~Ô7@c%"·^F§@$“ÍraÕÆA(‡•A*jA+ğk?Œ¢ÄÖÙy~ ?˜)ŒÁD@IãG®zá@c%#(ùôM@$“Ï³1TJ101238.53+101719.3@c%#3@Ÿ-@$“ĞJ/Îû=€hÜ=„M»e`B@l®m'JÈ@H…yI—ù†@bìİoFß¸¿çˆÌ!¬"2@­Ë‰º^5?@“?öÈ´9XXwqL;“*1538p106_ab41-0068901538p106_ab41  êAAï<¼jB:ff?øÙ‡+A3l‹<¼jB<ff?îN¤¨ÁTÊ@ö$İ<‹C–B{™š?ïĞ|„µÜÆ@ñª<õÂB  ?ì—Oß;d?ñp£×
+=q                     0000  0110AAAA    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Aß;A(‡+A'ë…A#ß;                             @¡Ì¿ôw6@H"Mã¸¡A‡
+=@7KÇ    @ 3@ˆÊ@Eë¥ãS÷ÏB!B@t¼j    @Éî     @jc… Ñ0à@§‹²-VAâp¤    @™†     @Fc¶=>Nğ@…¸QìA"Äœ>7KÇAA•;å`B  >…¡ËA3™š<t¼  >£Sø@öE¢<49X  ?S33@¢5?=aG® ?t¼AL{<o  A?Û#<#×
+  AÒò<e`B  @Ãl‹=e`B AEÂ;å`B  A8´9<t¼  AV<49X  @´£×=aG® ACt¼;å`B A61<t¼ A/<49X  @¬j=q©ü AB‹D<o A5o<#×
+ A Iº<D›¦ @¨¼j=\) AB¬<o A4´9<49X @ı<D›¦ @¨b=²- AA×
+<t¼ A4›¦<D›¦ @û÷Ï<e`B @¨¼j=áG® AA©ü<t¼ A4›¦<e`B @ûKÇ<uÂ @ª5?>\) AA‰7<#×
+ A4§ğ<ƒo @û <‹C– @¬bN>7KÇ AAï<¼j;å`B=—P 	  @ë†|m^}@ë¦<©ny@ë–\‹aA3l‹=,1<Tıô?Ã•$İ/ 	  @ë†|m^}@ë¦<©ny@ë–\‹a@ö-<Ôıô<o?´záG®{ 	  @ë†|m^}@ë¦<©ny@ë–\‹a@§ğ<Ä›¦<o?Áhr° Äœ 	  @ë†|m^}@ë¦<©ny@ë–\‹a ÿÄÿş     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 4“dÌ>]/Ãff Al¼j=ƒoA^å`=q©üAQP=LÌÍXwqL;“* ¿ìû¤ÜJ?ÜnLŞ¢aå?ÆÜ¡°69 q†?`J&ep—Â1237664295294337070J130711.54+394533.413 07 11.54+39 45 33.4@h™‰æÈ@Cá0¤KA€ái = 15.71;€¡hSDSS_goodÀXÿ\(õÂSDSS(  Ğõ
+@h™‰a=1º@Cá0j+=•éâ  A¿ÂQSO   @Q÷ÎÙ‡@Â%å¸Qì@A@bMÒò@t«¨YT#H«ëWl`æN@¯ï$|™n   @¯ï$|™nÀZÚ[=Œ&http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2088/spec-2088-53493-0266.fits     ?Ç!‡Õ…ô-€4 .CDÌOB	€-€4 /?iUvìş÷@h™‰U3n&@Cá0E#MñA‹?<_A€È€;‚ğåA¸E<…ÆAa§<°pë?€¯2]0-€4 .CDÌOB	€-€4 /?iUvìş÷@h™‰U3n&@Cá0E#MñA)P'A+aA-êœ?€¯2]0 ?´°[|şX`@&`×¾˜V£@h™‰å\Ë@Cá0IAJ130711.54+394533.4@h™‰ññI„@Cá0¼`mÿ=’¼=”ã½;ªdÃ@[YùjO)3@S<ôÄü@f5îşP@E;º$Sœ_@©ÈŠ=p£×@§âIº^e<+›ñC1974p393_ab41-0248351974p393_ab41  aAJÔş<Ä›¦B4ff@§ï²-A?\)<¼jB>ff?ï@N¤¨ÁUA<´9XBI33?ñ|í‘hr°@Õ%=aG®AœÌÍ?ğ=p£×
+=?÷™™™™™š                     0000  1100AAAA           A™;dA—t¼Aš…A1                             @•	3@ˆÊ@=×ÎÙ‡+Aó¶@#dZ=q©ü@73@ˆÊ@5ÌÌ¼Õ,AÒ@Vff=Æ§ğ@±ò³?úÁÓ@VØQŞïå @˜q‡+AÓ
+=?‡l‹@u†¸_.Q@1‰º^5?}@}5çl‹C–A\?¾wAJ“;å`B  >…¡ËA?&é<#×
+  >£SøASø<£×
+  ?S33@Ôj=‹C– ?t¼AU<o  AK¥ã<49X  A$b<ÌÌÍ  @öÀƒ=•  ANE¢;å`B  ADA‰<#×
+  A‡+<£×
+  @æÙ=‹C– AK¶F<o  AAX<49X  A<£×
+  @İ&é=‹C– AJ¼j<o  A@1'<D›¦  AáH<¬1  @Øb=™™š AJZ<t¼  A?²-<Tıô  A‘h<¼j  @ÕÛ#=²- AJ(ö<t¼  A?<uÂ  Aıô<Ôıô  @Ôí‘=Ğå` AJ1<#×
+ A?p¤<‹C– A¼j<õÂ @Ô‹D=ó¶F AIûç<49X A?t¼<›¥ã A¬=C– @Ô“>Oß AJ¼j<D›¦;D›¦=¶E¢   @ëÀJFûg@ëÏ<p¤@ëäÕ\_A?\)<Ä›¦;Ä›¦?¶‡+Iº   @ëÀJFûg@ëÏ<p¤@ëäÕ\_A¡Ë=q©ü<e`B?ĞõÂ\(ö   @ëÀJFûg@ëÏ<p¤@ëäÕ\_@ÔÌÍ>]/=LÌÍ?ël‹C•   @ëÀJFûg@ëÏ<p¤@ëäÕ\_ 5 ÿê     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 7—˜ì>Z¬ÂÙ   Arn˜=§ïAgp¤=´9XAZõÃ=m‘he<+›ñC ¿çŒÈ9“ò¿Ìoè¯Ôà?äwNxÃ[ô²?T|–ÖÁ1237667734516793424J133753.36+204644.213 37 53.36+20 46 44.2@iZËoF@4Çhç2J0A‡SÆi = 16.49<5‘ÓSDSS_goodÀXÿ\(õÂSDSS
+^  Ó×@iã¼Ó@4ÇiDg8=áä÷  A¤{QSO   @ép£×
+=@¨”záG®@6/—$tS@ñ~ôŠeH¦éÄ·@@Îú9ÅkV   @Îú9ÅkVÀZÜKÌ’Dhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2654/spec-2654-54231-0275.fits     ?½,´ª0--?AÖ PCLxëA¦;G-?AÖ Q?f½Â"÷ˆ@iø8¤€@4ÇhÜøì“A‘YÌ<ß™ˆA‡m9<?«³A“Ëª<Ö[2A‘<b	<?fF¤ÿGU-?AÖ PCLxëA¦;G-?AÖ Q?f½Â"÷ˆ@iø8¤€@4ÇhÜøì“A+íA-qA.F7?fF¤ÿGU  ?¶£7¨ùä@3~`ú@iZzJ@4Çhß½jYJ133753.36+204644.2@im. Ä@4Çjk®¤Ä=™0¾=šu¼2•ê@6eÛ@Si&ùÔlÔ@hD/.Á´k@<§ùİ§¤@ªˆ\(õÃ@q©ûçl‹s~^Úw§02050p212_ab41-0079202050p212_ab41  ğAOçm<Ä›¦B533?ùÂ\(õÃACX<´9XBF  ?ïb¶®}VmA<í‘hBÌÍ?îÙ‡+@ÙxÕ=ƒoAˆ  ?î´9XbN?ò^5?|í‘                     0000  1110AAAA          AÁ(öAÀPA–|îA–7L                             @o3?Èlì@66‡;©AB¬@7®=ixÕ@‰Æ¸`f@0¬Iº^5?B}ô@nvÉ=éxÕ@¦¨f_ú;›@S8^	@½33333AÛ`B?w
+=@rô     @1ËÆ§ï²@‚Úl‹C•A(í‘?Ì¬ANÔş<o  >…¡ËAC%<ƒo  >£SøA+<å`B  ?S33@Ùº^=º^5 ?t¼AYp¤<t¼  AO\)<“t¼  A+ï=\)  @û¥ã=Â\  AS<o  AH Å<ƒo  A"^5<å`B  @ì(ö=º^5 AP‹D<o  AEOß<‹C–  A¸<İ/  @âÈ´=Ä›¦ AOp¤<t¼  AD¬<£×
+  A-<å`B  @İhs=İ/ ANÔş<t¼  ACp¤<¼j  A“u<ıó¶  @ÚùÛ>o ANj<#×
+  ABùÛ<Ôıô  A®=\)  @Ùë…>²- ANJ<49X  ABŸ¾<í‘h  A33=¾w  @Ù7L><j AM‘h<D›¦ ABIº=+ AùÛ=8Qì  @ØQì>\(ö AOãT=Tıô<49X>333   @êô†¥}Ş'@ë
+_6ìÖƒ@êÿë8İFACdZ=}ó¶<Tıô?ËdZ¬1   @êô†¥}Ş'@ë
+_6ìÖƒ@êÿë8İFA=Ù‡<ÌÌÍ?Õ?|í‘hs   @êô•wsÏ†@ë
+_6ìÖƒ@ëéˆ­@Ø£×>/ =#×
+?ğ\(õÂ   @êô•wsÏ†@ë
+_6ìÖƒ@ëéˆ­  6ÿê     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € &¨jk>XbÃ   Ax‹D=›¥ãAm33=ÔıôAb  =‘hss~^Úw§0 ¿ë;>ı¿ØÉ¬|Pd?Ö´s#IV§qÆ?`/Gv1237668496330719291J133826.70+170436.013 38 26.70+17 04 36.0@i“\(õÃ@1 m:ÔAŠÎWi = 17.06?AããSDSS_goodÀXÿ\(õÂSDSS
+/  Ó¨İ@i“óMj@1¢œwšk>U›=  Ağ(öQSO   @‡ì¬1'@«ÄQë…¸@6#t¼j~ú@Õ¾Â³HÉÁ/´ê ¯@úĞ§OïR   @úĞ§OïRÀZß	3jÁ„http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2607/spec-2607-54184-0477.fits     ?ÊÙóx1¯Â-ğ¡| ;CLœ{Aˆ-Î   $?q»¡aÕ¯‚@i“ßy_›@1£"´¥A7¼<yëˆA‰ğP<TlAÙQ<mqAŒUp<pëì?|NLŒ–-ğ¡| ;CLœ{Aˆ-Î   $?q»¡aÕ¯‚@i“ßy_›@1£"´¥A)eA,”SA.¨?|NLŒ– !?¼á?J˜ª†@>¬KMl@i“\(õÃ@1 rÑ®´J133826.70+170436.0@i“~¤™@1¢4rÎT=˜“u=™e,<+@v	SéõÒ@RÌ»Ê`â@h~ƒÖ¥é@9S(İo@–y’n—P@¨Œ{çl‹DZ›¹S¬Ç÷2043p166_ab41-0285992043p166_ab41  o·APÀƒ<ÔıôB)33?ğA‰7KÆ¨A@n˜<¼jB933?íÏªÍƒäA <¼jB<ff?ğ“t¼j@ĞQì=e`BAœ  ?ğ Ä›¥ãT?ïÅo                      0000  0000AAAA          A`BAšXAŸ£×AŸ%                             @îõ¿ğEx@6¸b²|¿AA;d@+…    @y® «†@5©ûçl‹BKÇ@dıô=²-@°^f_ú;›@V?K¾DsÍ@ 2° ÄœAÜ/    @x©™Ÿä6v@42n¨TG€@„İ/Ÿ¾A(Ù?¹™šAP^5<t¼ >…¡ËA@§ğ<49X >£SøA;d<¼j  ?S33@ÎŸ¾=yÛ# ?t¼AZ§ğ<#×
+  ALĞå<D›¦  A%¾w<å`B  @ñ/=…¸ AT‹D<t¼ AEÂ<49X An˜<¼j  @áV=yÛ# ARA‰<t¼ AC¸<D›¦ A|î<´9X @×\)=}ó¶ AQ7L<#×
+ AB$İ<Tıô AÙ<Ä›¦ @Ò^5=\) AP—<49X AA¶F<uÂ A|î<Ôıô @ĞÌÍ=¬1 APb<D›¦ AA|î<‹C– AÀƒ<õÂ @ĞQì=Ğå` AO‘h<e`B AAX<›¥ã An˜=C– @ÏÎÙ=÷ÎÙ AO<uÂ AA&é<¬1 A^5=¾w @ÏdZ>n˜ APÀƒ=0 Å<#×
+>8Qì   @êôÆ0{bÍ@ë
+šwZÅH@ëÏGãoA@bN=Tıô<D›¦?Ó¥ãS÷ÎÙ   @êôÆ0{bÍ@ë
+šwZÅH@ëÏGãoAV=ƒo<uÂ?ÍÒñ©ûçm   @êôÆ0{bÍ@ë
+šwZÅH@ëÏGão@Ï¾w>6E¢='ï?â¬1&é   @êôÆ0{bÍ@ë
+šwZÅH@ëÏGão  ÿî      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ¡?>OßÂ•ff A€^5=©ûçAtŸ¾=° ÅAeÊÁ=‘hsZ›¹S¬Ç÷ ¿ëÏoóm­¿Ùzsî|kã?ÒË/¶‘*|§y3?S©*/‰ïM1237659324953460779J160806.68+424057.916 08 06.68+42 40 57.9@n@ä»ù@EWdZ¬A|¾Ÿi = 15.40<0,œSDSS_goodÀXÿ\(õÂSDSS’  Î ¢@n@ä¶0©@EWc^t)=¬Ùè  AÄ  QSO   @{33333@Ãé³3333@A±^š@xOÛò&H´¯GyºX@¥HPU   @¥HPUÀZß–}zÇàhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1170/spec-1170-52756-0162.fits     ?¼µ9;A-™@Í +Cr B*»#-™@Í +?3ÿ¢Íç@n@ä/Iè@EWd5z”¯Aˆ¦ª<·JA|¾Ÿ<0,œAÂM<•iŸAŒ&˜<–?q€ŸİpU,-™@Í +Cr B*»#-™@Í +?3ÿ¢Íç@n@ä/Iè@EWd5z”¯A-|ãA/&A1?„?q€ŸİpU, "?·»ƒÏ,ù]@C…½Q.Æ½@n@äü@EWdZ¬J160806.68+424057.9@n@ä1 ‹@EWeâXO=ƒä&=o ¼%zx@Pä0¨¤Ï@G»ëèñÆ@kì3ímV@NÖQa¤@ª{dZ¬@¥»•$İ!«c¨à|2426p424_ab41-0283642426p424_ab41  nÌAHéy<¼jB<ÌÍ@V“t¼A>Ÿ¾<¬1BNÌÍ?ôõÂ\(öA
+ Å<“t¼BnÌÍ?ñÛ"Ğå`B@ÏP=¥ãAã33?ï$İ/ @ ‡+Iº                     0000 1100AAAA    , , , , + + ! +B8bB7@ƒB5ıôB9`B                             @—~     @?á$İ/AC–@&éy    @ë3@ˆÊ@4íÓpóˆA¼7L@WÎÙ    @µĞ™ Äe@Wa™¡ıj@“Å•$İAÉ    @y2f`ÉŠ@,ffffff@vXĞå`A‰Aıô?[¥ãAH“;Ä›¦  >…¡ËA>(ö<o  >£SøA	Òò<49X  ?S33@Î°!=¥ã ?t¼AS…;å`B  AJñª<t¼  A Ÿ¾<Tıô  @ğ¬=#×
+ ALE¢;Ä›¦  ACC–<o  A%<49X  @á¸=¥ã AI;d;Ä›¦ A@<o AÛ#<49X @Øj=#×
+ AGÆ¨;å`B A>ƒ<t¼ A
+=<49X @Ó÷Ï=8Qì AFå`;å`B A=©ü<#×
+ A‰7<D›¦ @Ñ²-=]/ AF-;å`B A=‡<49X A¼j<e`B @Ğ Å=% AE‰7<o A<Ÿ¾<D›¦ AIº<uÂ @ÎáH=• ADñª<o A<5?<Tıô A  <‹C– @Í²-=®{ AHéy<õÂ;£×
+>™š +  @ê÷||q$@ë>
+`@ëä;^hA>Ÿ¾=¾w;Ä›¦?ÅãS÷ÎÙ +  @ê÷||q$@ë>
+`@ëä;^hA
+“=ƒo<#×
+?Ñ$İ/  *  @ê÷||q$@ë>
+`@ë§¤$¢w@ÏÆ¨>Iº<¬1?êéxÔıó¶ *  @ê÷||q$@ë>
+`@ë§¤$¢w        ?   A=q?uÂÂ\  AJí‘;Ä›¦ A=q?uÂÂ\  AA×
+<o A=q?uÂÂ\  Aéy<49X  AjáH?}p¤Â\  @å=¥ã '}.0>§l‹C%³3 Ao¥ã=ƒoAb~ú=‘hsAV¸R=yÛ#!«c¨à| ¿Ö:Ü×’¿äÆ{òdÊ?å±¬]Mş]µ¢?Lçòƒª?Ô1237655370364420154J131129.96+621510.813 11 29.96+62 15 10.8@h»ş¢yƒÁ@O bMÒñªAŠOíi = 16.83;÷SDSS_goodÀXÿ\(õÂSDSS  Ìe,@h»ş›{ñé@O aùğ†>®  A¡p¤QSO   @m=p£×
+@¤Ñ”záG®@1OoÒòå@ƒwbóà²4H¬g©hÌä@Ÿä©   @Ÿä©ÀZáD
+Šhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0783/spec-0783-52325-0556.fits     ?¢§‘h-	 €í :CEßõBy-	 €í ;?oÏ/Ğü^@h»ş”i@O d	¼ó*A‘ê<µ,¡AŠv—;ş3	A“º<ˆ_àAƒÄ<Qå¨?y^è!•ß-	 €í :CEßõBy-	 €í ;?oÏ/Ğü^@h»ş”i@O d	¼ó*A+ûºA,ÌA.ú?y^è!•ß #?¼­yJn¹@@şç‰çtï@h»ş¡ÆÅ@O bMÒñªJ131129.96+621510.8@h»şğÖ—Q@O c&@ª=–O=™e,;ªdÃ@]¹	&o=@K[ÛJ(B@c/÷¯.VU@N)Fñ‚@ª5ò-V@£_¥ãS÷ÏšìM­1}1989p620_ab41-0269411989p620_ab41  i=AR-<Ä›¦B2ÌÍ?ô      ADŸ¾<Ä›¦B6ff?ù÷ÎÙ‡+A²<ÌÌÍB*ÌÍ?ğ´9XbN@ÉOß=49XAÃ33?î©*0U2?óOß;dZ                     0000  0011AAAA           AµPA°XAŸl‹A²                             @‹“GŸì™ò@3¾ùÛ"ĞåA@-²-    @‡ğ) >ê!@0Çï²-AÁZ@Sçm>1&é@©A™ Äe@RîE¡ÊÀƒ@”ò“t¼jAÌİ/>º^5@~'\…×E@3¿¾‡«Ú@x(Ÿ¾vÈ´A!¶F?XÔşAQÎÙ<#×
+  >…¡ËADí‘<#×
+  >£SøA7L<¼j  ?S33@Æéy=8Qì ?t¼A\1<49X  AQ‡<D›¦  A*  <å`B  @é©ü=H´9 AUûç<#×
+  AJ1<#×
+  A j<¼j  @ÙX=8Qì ASß;<49X  AGhs<49X  A33<¬1  @Ï…=<j AS <Tıô AFj<D›¦ A1'<´9X  @Ê=LÌÍ AR¼j<e`B AEï<Tıô AQì<Ä›¦ @ÆÀƒ=ixÕ AR^5<ƒo AE‰7<uÂ A¸<Ôıô @Är°=ƒo AQÒò<“t¼ AE
+=<ƒo AA‰<å`B @ÂÈ´=• AQ <›¥ã ADn˜<“t¼ A•<ıó¶ @ÁX=©ûç AR1'=#×
+<o>0 Å   @ë¹¥1ñ@ë:Æ£7¨@ëæÖ<<œADõÃ=yÛ#<Tıô?Ï|í‘hr°   @ë¹¥1ñ@ë:Æ£7¨@ëæÖ<<œA×
+=¡ÊÁ<“t¼?×;dZ¬   @ë¹¥1ñ@ë:Æ£7¨@ëãtV®ã@É‡>J<å`B?ÚÀƒn—   @ë¹¥1ñ@ë:Æ£7¨@ëãtV®ã 	       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € !ìs>   Ã33 A}33=¬1AmKÇ=´9XA`§ğ=}ó¶šìM­1} ¿Ü[¨¬yF¿ÂJ”›Ïø$?ìR(À‹ •xˆ?BNq1237658491747172396J124341.77+091707.312 43 41.77+09 17 07.3@gİ‘¿ÔO0@"’Ùÿ‹~A†ëpi = 16.52<¶SDSS_goodÀXÿ\(õÂSDSSı  Óó ¾@gİ‘ÑN;Í@"’v‰Ê>E  Aô\QSO   @‡0Ôıó¶F@·TzáG®@<©è>BZî@Ty0)HÑØwÕR%~@¨ñ>‘W   @¨ñ>‘WÀZáV¸	«¤http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1789/spec-1789-54259-0190.fits     ?ÃQÀ-Jœ-×AÖ ,C>ìA×-×AÖ -?dï5Ù7î@gİ‘È\üL@"’PıãvA‰Øê<ÏkA‡D;ã¡úAŠZ<ŞexAˆêN< §K?G!"Œ«V¶-×AÖ ,C>ìA×-×AÖ -?dï5Ù7î@gİ‘È\üL@"’PıãvA+»kA/‰A1”:?G!"Œ«V¶ $?»•Ä"`@Sè/#:G@gİ‘À‡D,@"’ÖE“J124341.77+091707.3@gİ‘şdõM@"’Ñ¿{=¾à=Å»ŞÒ‰@r‹²‚«@Rš¡×V@gJgD§È@)´+ˆy@«h_¾vÈ´@¤¾vÈ´9GşÈYOÃ1914p090_ab41-0224031914p090_ab41  WƒADn˜<Ä›¦B3™š?íÁ½¥œàA3‡<´9XBBff?ìû~ÿ—$Aıô<´9XBBÌÍ?ñ|í‘hr°@¿•=,1AÍ™š?ñÎÙ‡+?ğzáG®                     0000  1112AAAA W        A|ÙAzİ/A€1A}                              @l     @E¯¾,0
+A}%@D“    @ lf_ú;›@Eœ«ÿÍ«B-aH@y7L=´9X@½PÌÀ>-@cF–@¥%Oß;Aë×
+    @ƒò_Ô{î@8Ë…¸Qì@‹‘áG®{A#Æ¨?9™šADff;å`B  >…¡ËA3KÇ<t¼  >£SøAÈ´<‹C–  ?S33@À1=@ƒ ?t¼ANŸ¾<o  A?\)<#×
+  A|î<£×
+  @â=H´9 AH“u;å`B  A8ff<t¼  Aûç<‹C–  @ÒvÉ=@ƒ AFbN;å`B  A5Òò<t¼  AÙ<ƒo  @É‰7=H´9 AEl‹<o A4áH<#×
+ A	÷Ï<‹C– @Ä¼j=aG® ADÔş<o A4zá<49X An˜<“t¼ @ÂMÓ=…¸ ADZ<t¼ A4MÓ<Tıô A™š<£×
+ @À›¦=›¥ã ACãT<t¼ A4A‰<e`B A&é<¼j @¿C–=¶E¢ ACp¤<#×
+ A4A‰<ƒo Aå`<Ôıô @¾MÓ=Òñª ADj<£×
+;£×
+=“t¼   @ë	IÔ¥3V@ë	mÑ¾S@ë	[Ó1»dA3‡<ıó¶<o?¼¬1&éy   @ë	IÔ¥3V@ë	mÑ¾S@ë	[Ó1»dAıô=%<‹C–?Èr° Ä›¦   @ë	IÔ¥3V@ë	mÑ¾S@ë	[Ó1»d@¾§ğ>B\=På`?á²-V  @ë	IÔ¥3V@ë	mÑ¾S@ë	[Ó1»d  ÿß )   À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € K	‚4>B\ÃÌÍ Az\=²-Am=£×
+A\Ù=yÛ#GşÈYOÃ ¿ï(Ã_ÎÆ¿ÇğnK»›?Ä§,¾o@^£RD?TzåÅr}1237655129307742214J170534.95+334011.917 05 34.95+33 40 11.9@pTzáG¯@@ÕÁ¦WÖ!Aƒ=‚i = 16.02;‚@÷SDSS_goodÀXÿ\(õÂSDSSÌ  ÌÓ (@pTu£L@@Õ¿ğEwÙ> 7  Aô£×QSO   @‰Â\(ö@ÆßŒÌÌÌÍ@EìğØDĞ@‚JÑS„î%HËŸ%P¾½@CñB=   @CñB=ÀZãè	ãchttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0972/spec-0972-52435-0040.fits     ?È#éÛÔ…-È`Ô C€2¤B®-È`Ó?fq­I@pTSË"@@ÕÀ¦55A‹Hb<U»GAƒ:é;‚ÎsAU)<ƒ9µAŠO<a/?yŸD]åÃ-È`Ô C€2¤B®-È`Ó?fq­I@pTSË"@@ÕÀ¦55A,Ä`A.AèA0@”?yŸD]åÃ %?˜:–ÔÃ;T@PŸ˜·@pTzáG®@@ÕÁ¤z,J170534.95+334011.9@pT‚S+÷@@ÕÁ¾{Ñ2=†$İ=…¸»ºÇ@L:0äÅ@AÓ›O|?@o-½-RH¢@L(V`^å@s‚$İ/ @§AvÈ´9X#u¨3&>7q2555p333_ab41-0346092555p333_ab41  ‡1AAë…<Ä›¦B6ff?öZ¬1'A41<´9XBI33?ğå`A‰7LAbN<“t¼Bk33?ón—Oß@Áp¤=¾wAŞff?ñ‘hr° Å?òéxÔıó¶                     0000  1111AAAA           A¦/A¦^5A§ãTA¨1'                             @¡‘3@ˆÊ@H£×ÙôÓA‰7@/l‹=éxÕ@ŸÌ¿ôw6@CÌ(ş&-AØ|î@dzá>På`@¾[LÀ>-@`‚á?J˜«@–zbMÒñªAĞP?ff@‚èá?ĞĞh@5¼j~ùÛ#@y6´9XbA!?™™šAA×
+;Ä›¦  >…¡ËA45?;å`B  >£SøAIº<D›¦  ?S33@ÁX=0 Å ?t¼AL{;å`B  A@j<o  Aıô<e`B  @ã\)=8Qì AF;Ä›¦  A9Oß;å`B  A|î<D›¦  @ÓÆ¨=0 Å ACÛ#;Ä›¦  A6›¦<o  Aj<D›¦  @ÊùÛ=8Qì ABõÃ;å`B A5‰7<o A	¡Ë<D›¦ @Æ°!=Tıô ABff;å`B A4ùÛ<t¼ A(ö<Tıô @ÄÄœ=% AAÊÁ;å`B A4‹D<t¼ A`B<uÂ @Ã•=™™š AA¸<o A4$İ<#×
+ AùÛ<ƒo @Âéy=¸Qì A@—<o A3ÊÁ<49X AÌÍ<“t¼ @ÂV=Ù‡ AAë…<¼j;£×
+=™™š   @êúÇ5a
+İ@êûÏÜşÎ}@êúõ&Á_ÜA4J<Ä›¦;£×
+?¸bMÒñª   @êúÇ5a
+İ@êûÏÜşÎ}@êúõ&Á_ÜA^5=¥ã<o?Ã•$İ/   @êúÇ5a
+İ@êûÏÜşÎ}@êúõ&Á_Ü@ÁX=¶E¢<£×
+?Õ/Ÿ¾vÉ   @êúÇ5a
+İ@êûÏÜşÎ}@êúõ&Á_Üÿáÿù     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ÑM€=ûçmC1LÍ Aqp¤=På`Ac\)=]/AVzá=t¼#u¨3&>7q ¿É”–rç½¿éâvÉ‡ìe?á½¶¤°•€†\+?J6âåÚóÙ1237651736294195257J120332.94+022934.612 03 32.94+02 29 34.6@fœdZ¬@ñŒÛ]úAsi = 14.82;£7ÎSDSS_goodÀXÿ\(õÂSDSS  Ë8h@fœd„@ñ•1ã¨=	  B<\QSO   @së…¸R@É©Y™™™š@QÕ‡“İ—ö@uİ&€ŠH¶€½Íá´@L®ÄS’   @L®ÄS’ÀZäóâÈhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0517/spec-0517-52024-0360.fits     ?·VGKÅ_ô-²av 9C4ã#@Œg-²av ;?VıŞ©õN7@fœdr•ú@ñ†u‘çAƒGL<ÍMCAtS;ÜZ^A†aS<»ŒA„P<Ht%?„®–k*-²av 9C4ã#@Œg-²av ;?VıŞ©õN7@fœdr•ú@ñ†u‘çA0W©A0”òA3pL?„®–k* &?Â1jWWÖ@Ng¡ Ï@fœdZ¬@ñŒŸ¶MJ120332.94+022934.6@fœd¢v·í@ñ–óÌëÖ=v+k={µ¼C–@q?¿¶n@Oiùæ
+‹t@fzKºµå@ÕP)@@¬Ën—Oß@„*ÌÌÌÌÍ0Š·/Ÿ1815p030_ab41-0059831815p030_ab41  _A8~ú<¼jB?™š@ÎÙ‡+A,~ú<¬1BO™š?ñçl‹C•@û¥ã<“t¼Bs33?ø$İ/Ÿ¾@¦¸R=oBÌÍ?ódZ¬1?û¸Që…                     0000 0110AAAA W        AMÒòAM‡AN“uALb                             @®8     @T/ß?–A…ãT@AxÕ=—P@¨f_ú;›@MOß;dZB;d@}`B>²-@Æ"     @gK… Ñ0à@§D§ï²-AÛX?“×
+@”g™Ÿä6v@CıüÁr@Àƒn˜A(9X>ê~úA85?;å`B  >…¡ËA,1';å`B  >£Sø@ú—<49X  ?S33@¦éy<Ôıô ?t¼ABí‘;å`B  A8›¦<o  AZ<Tıô  @Èå`<å`B A<bN;å`B  A1KÇ;å`B  A
+~ú<49X  @¹X<Ôıô A9²;å`B  A.Qì;å`B  Aí‘<#×
+  @°Iº<å`B A8E¢;å`B A-%;å`B A©ü<49X @«|î<ıó¶ A7‘h;å`B A,^5<o @ÿ…<49X @©Oß=t¼ A7/<o A+ûç<o @ıX<D›¦ @¨9X=0 Å A6õÃ<o A+¶F<t¼ @üb<Tıô @§×
+=På` A6Ğå<t¼ A+…<t¼ @ûKÇ<uÂ @§Æ¨=yÛ# A8ƒ<¬1;Ä›¦=£×
+   @ë:Ôíİé@ëZ•(K#@ëJ# µA,ff<£×
+;Ä›¦?½²-V   @ë:Ôíİé@ëZ•(K#@ëJ# µ@ûß;=o<t¼?ÄZ¬1'   @ë:Ôíİé@ëZ•(K#@ëJ# µ@¦È´=ƒo<“t¼?É™™™™™š   @ë:Ôíİé@ëZ•(K#@ëJ# µ ÿ¿      >¸AB=q?O\)Bp  A9Æ¨;å`B  AB=q?O\)Bp  A.vÉ;å`B  AB=q?O\)Bp  A&é<#×
+  A’{?k…Bp  @·Sø<Ôıô 2òŸN=C–Cff Af—=yÛ#AX=q=\)AKP=D›¦0Š·/Ÿ ¿ï÷Cønû¿¯"RÃƒ?¦E2ûĞƒ¢Ş9?Z6âë\ö½1237662530064154785J135820.45+134346.013 58 20.45+13 43 46.0@j2ºÓ m@+uy¾FŒA‹Áïi = 16.93<¶USDSS_goodÀXÿ\(õÂSDSSò  Ò{ w@j2º
+RiY@+uwÙUqL>“  A=qQSO   @¡Òñ©ûç@¶ğ.záH@2o4Ö¡aå@‚èÉ9êìÕH½ˆå3··@O“Ë–   @O“Ë–ÀZäUe§ğhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1778/spec-1778-53883-0119.fits     ?ªÊlü‘@£-ƒ€I ¡CQ•ĞA[«Î-ƒ€I ¢?Qˆ?0ì1@j2¹ñAz.@+uw¦ÃğA˜Ûp=…°€A‹ó“<İútA›áº<ö^¹A“;e<j£?‡Qıîºb-ƒ€I ¡CQ•ĞA[«Î-ƒ€I ¢?Qˆ?0ì1@j2¹ñAz.@+uw¦ÃğA,É>A.ãEA/r?‡Qıîºb '?¯ÃqÚ7ï[@G¸b#á†˜@j2º «q@+uy¯†àJ135820.45+134346.0@j2º":½k@+u{E¼D=™0¾=•µt¼[‹¬@v:{Òß6@Q[šû™i@iH	£L Ã@8Ó<R–¦@›ô±&éxÕ@¢ë…¸RÉ9©HúÌ2094p136_ab41-0211322094p136_ab41  RŒAL§ğ<Ä›¦B2  ?òùÛ"Ğå`A?Òò<´9XBE33?ôIº^5?A~ú<å`BB™š?ïÉã¼Ó@Õ%=D›¦A´  ?ïıŠÚ¹õZ?ñ¶E¡ÊÀƒ                     0000  9910AAAA           Aår°Aä$İAßG®AŞ¼j                             @’òf`ÉŠ@;BĞå`A‰AHbN@3çm    @“3?Èlì@4{ç[ÄKõB\@jñª=+@¥f3@ˆÊ@Q×Îázû@ ì2-VAâë…    @uŠ=€^_1@.§ï²-@„ôçl‹C–A*1?AG®ALA‰;å`B  >…¡ËA?ï<Tıô  >£SøAãT<Ä›¦  ?S33@ÖV=ÊÀƒ ?t¼AVr°<o  AK÷Ï<e`B  A,‹D<õÂ  @÷×
+=Òñª APn˜;å`B  AE
+=<Tıô  A#‡<Ä›¦  @èÄœ=ÊÀƒ ANA‰;å`B  ABzá<e`B  Aë…<¼j  @àZ=Û"Ñ AMdZ<o AA²<‹C– A
+=<Ä›¦ @Ü´9>% ALıô<o AAX<›¥ã Ahs<Ôıô @Ûß;> Äœ AL¼j<t¼ AAOß<´9X AQì<í‘h @ÜõÃ>MÒò AL“u<#×
+ AAp¤<Ôıô At¼<ıó¶ @ß\)>†§ğ ALff<49X AA©ü<õÂ AŸ¾=C– @áãT>­‘h AL§ğ=•<e`B>xÔş   @êõV-zıL@ë]2kœ@ë ¹tE,A?×
+=Òñª<›¥ã?Ö‡+Iº   @êõV-zıL@ë]2kœ@ë ¹tE,AZ=¡ÊÁ<uÂ?à Ä›¥ãT   @êõV-zıL@ë]2kœ@ë!Ft@ÔbN><j=\)?ï×
+=p£×   @êõV-zıL@ë]2kœ@ë!Ft F      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € :HH(>µÂÂ£ÌÍ A|¸R=§ïArÙ=Æ§ğAbùÛ=‰7LÉ9©HúÌ ¿ëe#:ÂY¿Ş±ñ’(?Îa
+;GQ¤–‡?`7%†{U1237665226767597642J120932.94+322429.412 09 32.94+32 24 29.4@fÌdZ¬@@4>Î*SIA‹%íi = 16.89<l6SDSS_goodÀXÿ\(õÂSDSSÔ  Ñé©@fÌd0+@ö@@4>BZîc>¡Ë  Ağ=qQSO   @ŒŸ¾vÈ´@¼×Ü(õÂ@@ bMÒñª@ƒ%Íí/æ!HÃ	­æf­@Q¬0‰   @Q¬0‰ÀZävëşÂØhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2004/spec-2004-53737-0425.fits     ?µİvAÑ‰‡-÷`V JC6c#B¡ö-÷`V K?b©wq40¡@fÌd­ºF@@4>G¦ËHA˜Ÿ=níA‹P´;çª=Aš¢=NAšñ<KF?…uóƒˆ-÷`V JC6c#B¡ö-÷`V K?b©wq40¡@fÌd­ºF@@4>G¦ËHA,®=A-‚&A/‚Ì?…uóƒˆ (?£LŠÅÁ@@M^BAÃï®@fÌdZ¬@@4>Ğö'9J120932.94+322429.4@fÌdpW€ğ@@4>û¾Qà=’:*=—Á¾;XDĞ@fˆ6·L@Sß»‰C
+A@dü«±å@>`åí/Bä@…\(õÂ@¬füí‘hs7¿¾ã	‘x1817p318_ab41-0310321817p318_ab41  y8AJA‰<Ä›¦B4ff?ñ?|í‘hsA9ûç<¼jB@ÌÍ?ñV“uA²-<ÌÌÍB.  ?îÙè>BZî@ÚŸ¾=‡+Aƒ33?ğ^5?|í‘?ğr° Ä›¦                     0000  0000AAAA           AŒ"ÑAŠÆ¨A©üAß;                             @•½3@ˆÊ@>ÖE¡ÊÀƒA3ë…@)ûç    @–     @=R,ıxAğÔş@[×
+<õÂ@¯¥3@ˆÊ@WEpŸ¥LU@ Ä›¥ãAÕ5??°!@rRf`ÉŠ@1ä›¥ãSø@‚GOß;dA$¸R?•`BAJ Å<t¼  >…¡ËA9Û#<o  >£SøAçm<Ä›¦  ?S33@Ş=q>$İ/ ?t¼AT-<#×
+  AEï<t¼  A&bN<í‘h  @ş§ğ>#×
+ ANMÓ<t¼  A>õÃ<o  A <Ä›¦  @ğ¬>$İ/ ALA‰<#×
+ A<E¢<o A¬<¼j @è›¦>333 AKl‹<49X A;+<t¼ AKÇ<Ä›¦ @å?}>Tıô AJí‘<D›¦ A:“u<#×
+ A²-<İ/ @æ->‹C– AJn˜<e`B A: Å<49X AÀƒ<õÂ @èÌÍ>º^5 AIó¶<uÂ A9Â<D›¦ A$İ=+ @ëÎÙ>øQì AI|î<‹C– A9t¼<Tıô A¾w=¥ã @ÓÎÙÀ    AJE¢<´9X;Ä›¦=Oß   @ëÆqŒ¯Ñ@ëî©kÿX@ëÚWA9÷Ï=o<o?¼í‘hr°!   @ëÆqŒ¯Ñ@ëî©kÿX@ëÚWA®=ƒo<ƒo?Æffffff   @ëÆqŒ¯Ñ@ëî©kÿX@ëÚW@ÚÈ´>hr°=q©ü?è Ä›¥ãT   @ëÆqŒ¯Ñ@ëî©kÿX@ëÚWÿ÷ÿî       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 
+y‚,>S÷ÏÂ…   AxMÓ=ixÕAk²=%Aa=]/7¿¾ã	‘x ¿êş¼?É¿¢H;d–á?á&zÆiŸ£¦gL?S©*/‰ïM1237663655882064127J073126.67+452217.407 31 26.67+45 22 17.4@\7¬1&@F¯Oß;dA‡¸Şi = 16.38<3SDSS_goodÀXÿ\(õÂSDSSJ  ĞB“@\7æšÔ,@F¯K‡½Ï=½È  AÔ{QSO   @ù     @º\(ö@AŒ¹#¢œx@zhİ¯ÀH°Y±;“I@UÁŞYÜ   @UÁŞYÜÀZä¸FÕØ-http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1866/spec-1866-53314-0403.fits     ?Ëğ<W¯Ñš-‰ C ÿBá¸åB5|j-Æ #­?pWòt=ô@\7èMyÑ@F¯f6òØA—¢¾=3\Aˆ-Ô<,ñFA›<î+×Asy<ˆ³‰?„afL(X-‰ C ÿBá¸åB5|j-Æ #­?pWòt=ô@\7èMyÑ@F¯f6òØA, YA.”öA0Ym?„afL(X )?µÇïzp	@‰I-Â±@\7¬1'@F¯Oß;dJ073126.67+452217.4@\7³”íb@F¯×Øš=Œ~(=Œ~(<YK@e¢!˜¡L@9ªéë@ZÒQ¦»Á@7KoPğ³\@ Œ¥ãS÷Ï@xÊÀƒo§úCçö%1128p454_ab41-0196711128p454_ab41  L×A>“u<ÌÌÍB0ff?ê4êJŒA1Â<¬1BPff?ğ^5?|í‘A	\)<¼jB@  ?êĞå`A‰7@Í¡Ë=På`Aªff?ğ Ä›¥ãT?íOß;dZ                     0000  2211AAAA           A_‡A\ZA_‘hAgçm                             @¥Kf_ú;›@Nìj~ùÛ#A[‰7@;•>‡+@¡¼3@ˆÊ@EÆÈ¼œÓáB<j@nvÉ>ß;@¶Ì     @^já?J˜«@¡ÔXbMÓAår°?ºŸ¾@z¤     @3úŸ¾vÈ´@…ó§ï²-A(A‰?VA>zá;å`B  >…¡ËA1²;å`B  >£SøA	¸<›¥ã  ?S33@Ë|î=ƒo ?t¼AH§ğ;å`B  A=º^<o  AÎÙ<¼j  @îff=‘hs AB§ğ;å`B  A6¸R;å`B  AQì<›¥ã  @İë…=ƒo A@‹D;å`B  A4J;å`B  A;d<“t¼  @Óß;=…¸ A?¾w;å`B A2ùÛ<o Azá<›¥ã @Î—=‘hs A?`B<o A2n˜<o A‡<¬1 @Ìr°=§ï A?¸<o A21<t¼ AvÉ<Ä›¦ @Ë;d=Ä›¦ A>éy<t¼ A1¶F<#×
+ AA‰<İ/ @ÉÂ=áG® A>Àƒ<#×
+ A1l‹<#×
+ A5?<ıó¶ @È1'=ûçm A>“u<õÂ<o=¼j   @êÿ |øsÅ@êÿ${!¤@@êÿ|¤A1Æ¨=P<#×
+?¹‡+J   @êÿ |øsÅ@êÿ${!¤@@êÿ|¤A	t¼=P<#×
+?Ã÷ÎÙ‡+   @êÿ |øsÅ@êÿ${!¤@@êÿ|¤@ÍxÕ>%=C–?×ß;dZ¬   @êÿ |øsÅ@êÿ${!¤@@êÿ|¤ Iÿâ !   À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € J¬À=®{BÔff Aqçm=LÌÍAcÆ¨=På`AW©ü=49X§úCçö% ¿Ñw’ƒ×K?ä¶ášæd?æÆÎícK/´=Á°3ş¼ıÂ1237668350296588542J162106.77+092929.316 21 06.77+09 29 29.3@n¨ç)¤‡@"û¢?B¬}A‹—i = 16.87<³Ÿ0SDSS_goodÀXÿ\(õÂSDSS	ã  Õ, ú@n¨çB™Ø„@"ûäz=ß;d  A“p¤QSO   @’ÈÂ\(ö@§=záG®@4,1&éy@Š*J¡f H¤ÏH˜mÕ@X6‚'(   @X6‚'(ÀZäß‘3Rhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2531/spec-2531-54572-0250.fits     ?ÁÑ¤2-Î¡, şCuG9Aİ-Å@” k?aw€bwÚ@n¨çUuS†@"ûõP£@Aœ“¿=¥ÈãA‹ÙÎ<è8zAŸHñ=*_eA‘Ó5<n?’Êi™¿-Î¡, şCuG9Aİ-Å@” k?aw€bwÚ@n¨çUuS†@"ûõP£@A-™õA/noA1›‘?’Êi™¿ *?ªX³ö<1ß@Tœá~4¹E@n¨çv¯Š@"û¢7ÍÌ§J162106.77+092929.3@n¨ç3J°'@"û¢~D©}=ªÍŸ=§»0¼‹C–@7ªKZS3@BĞ”~ea@n,¢)ÀÃª@>‚3Ğ$ë@™Éº^5?@¨Gß¾vÈ´"¦l»óº2451p090_ab41-0316102451p090_ab41  {zAKûç<ÔıôB)™š?ôùÛ"Ğå`A>ùÛ<Ä›¦B5™š?ğ‡+IºAõÃ=\)Aõ™š?ğ1&éxÔş@Ûo=\)Ax  ?ñKÆ§ï²?ñ¶E¡ÊÀƒ               ;D›¦  0000  0011AAAA          	 Amó¶Aml‹A^“A_¾w                             @“²     @=ÃS÷ÎÙAKÂ@4Z    @’f`ÉŠ@7YX!)EtBÂ@iX>@¢’f_ú;›@S\Aíá@ &\(õÃAß‰7?¢\@r`Z³«@2­‘W«¸€@ƒ|í‘hsA!hs?ÈõÃAK`B<49X  >…¡ËA>Ÿ¾<#×
+  >£SøAff=¾w  ?S33@Ût¼=Ğå` ?t¼AUß;<D›¦  AJõÃ<49X  A/"Ñ=D›¦  @ı?}=İ/ AOP<49X  ACº^<#×
+  A%™š=¾w  @íãT=Ğå` ALáH<D›¦  A@´9<#×
+  A r°=P  @ä“=Òñª AJ§ğ<Tıô A>È´<49X A¥ã=¾w @Ş=q=å`B AF\<D›¦ A<9X<49X Aë…=0 Å @Û>% A?ûç<#×
+ A8j<#×
+ A¬=@ƒ @ØQì>hs A9¶F<t¼ A4j<#×
+ A¡Ë=På` @Õ‰7> Äœ A5©ü<o A1p¤<#×
+ A¼j=aG® @Òñª>0 Å AKûç<í‘h;å`B=´9X   @êùŞt‹Ñ@êùş7êB@êùïe4§ıA?=49X<49X?ÀÄ›¥ãSø   @êùŞt‹Ñ@êùş7êB@êùïe4§ıAí‘=¬1<¼j?Ô¼j~ùÛ#   @êùŞt‹Ñ@êùş7êB@êùğMyÛc@Ú‡+>—P=¡ÊÁ?ìÌÌÌÌÌÍ  @êùŞt‹Ñ@êùş7êB@êùğMyÛcÿëÿş @     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € =s¶> ÄœC%33 AxIº=ƒoAl9X=‘hsA_²-=ƒo"¦l»óº ¿Úf0@ÀÎ¿ì«TÉÂ?Åx6à‡Ï?WgçİJ1237658424091148319J104356.51+071256.210 43 56.51+07 12 56.2@dˆßê'™@ÜÉ(»{A’i = 17.43<FzpSDSS_good@ŒIº^5?SDSSè  Í£Q@d‰7KÆ¨@ÜË}At?>e+Ô  AQG®QSO   @€ãS÷ÎÙ@™\(õÃ@%HõÂ\)@‘^æO¸)H».-e¨8å@Y†¼°óò   ÀŒIº^5??©a~Ö ¦€http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1000/spec-1000-52643-0593.fits     ?Ã{½´ıß‡-Ç9 C üG@ææI-Ç9 ?a«n™X¥®@d‰%‰‘Ş@ÜÌíA•İÁ=<aA’<FzpA–u…<¬¯¼A“Œ1<™œ+?@YÏÈµi-Ç9 C üG@ææI-Ç9 ?a«n™X¥®@d‰%‰‘Ş@ÜÌíA-.A0ÒøA4-1?@YÏÈµi +?Íù‹q¸ª @VœÏå†6@dˆß72œ@ÜÉ!F¡¥J104356.52+071256.1@d‰ijı¥@ÜÉn¯
+=µsë=¹õZ¼ƒä&@næŠx”f@Jç×h1AÁ@c÷(y0m†¿èr_˜ìËp@®eŸ¾vÉ@‘oG®zám‘5ºP{t1616p075_ab41-0069641616p075_ab41  4AV{<ÔıôB(ÌÍ?íÈK]ÌdAH5?<ÔıôB*ff?îe”¯O„A¶F=8QìAÁ™š?ğ° Ä›¥ã@å7L=ÎÙA+33?ğ´9XbN?ï^š                     0000  0110AAAA           AM©üALĞåAEVASÒò                             @†¸`f@0° Ä›¥ãA‹Òò@=¸    @ƒ|f`ÉŠ@-LÌÌÌÌÍB*vÉ@‚¬    @Ÿ±3@ˆÊ@Tı² yL@¨gŞ5?|îAèt¼    @k®÷<@4 Ä›¥ãT@‹E¡ÊÀƒA2V?4záAUãT<‹C– >…¡ËAH¬<›¥ã >£SøA§ğ=Oß  ?S33@ïÎÙ>ß; ?t¼A`“<“t¼  ATA‰<£×
+  A37L=®{  A‰7>‹Æ¨ AZb<‹C– AM7L<›¥ã A)Û#=Oß  A¸>ß; AWÒò<›¥ã AJn˜<£×
+ A$İ/=‹C– @û®>£Sø AVĞå<´9X AIC–<¼j A"9X=“t¼ @ù¡Ë>Ê=q AVIº<ÌÌÍ AHÌÍ<Ôıô A È´=¡ÊÁ @ù©ü? ƒ AUûç<í‘h AH‡+<õÂ A {=¸Qì @àõÃÀ    AUÎÙ=+ AHbN=\) AÒò=Òñª @àjÀ    AU¶F=¥ã AHbN=#×
+ AÊÁ=ï² @ßß;À    AVb=¥ã<49X=ûçm   @ëÌz•’¤@ëğv›ê@ëŞ·ä¿AH1'=49X<D›¦?Ã¶E¡ÊÀƒ   @ëÌz•’¤@ëğv›ê@ëŞ·ä¿AÒò>-V=@ƒ?á/Ÿ¾vÉ  @ëÌz•’¤@ëğv›ê@ëŞ·ä¿@äõÃ>° Å=Â\?õ²-V   @ëÌz•’¤@ëğv›ê@ëŞ·ä¿ÿòÿÔ      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 3µj˜>¸ÂÅÌÍ A€È´=ÌÌÍAvÄœ=×
+=AdùÛ=´9Xm‘5ºP{t ¿î­u}?Ô¯¿‚^:œ?ÀÆÕxxå!¶†?T“Ÿfho*1237662500012949661J165103.14+261747.216 51 03.14+26 17 47.2@o˜k-½B@:KãÈyøCAlÂi = 15.69;É®ySDSS_goodÀXÿ\(õÂSDSSœ  Ğá@o˜jüÎX@:Kã}é9ë=¢3œ  A£G®QSO   @“¸Që…@·}p£×
+@8ÃÉîËû@vv°uàu•H¤õÁ8–ğ`@eDÈv‚¨   @eDÈv‚¨ÀZå°u}*ºhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1692/spec-1692-53473-0398.fits     ?³µ~@³á
+-| C|ÃYAÒ_-| ?RñÏA'e¿@o˜jøÊMÌ@:Kä_Š`A‹Û‘<î7üAlÂ;É®yA|‚<´güA‹ãb<ËŠ?•»şñØÑ-| C|ÃYAÒ_-| ?RñÏA'e¿@o˜jøÊMÌ@:Kä_Š`A."A/ª^A1Bµ?•»şñØÑ ,?³Z·Üz¿º@CÛ Å!İ @o˜k-
+$F@:KãÁnJ165103.14+261747.2@o˜kM DC@:Kä×…s=-à=ÿ—;kíú@GR°D 
+@B‚¿O5È9@nÎ=­àx{@H+ ˆ»ûÄ@ª{F§ï²@«J€    #'xgyâsƒ2533p257_ab41-0417952533p257_ab41  £CAJr°<Ä›¦B4ÌÍ@¬1&éyA=\)<´9XBD  ?ôbMÒñªA	"Ñ<´9XBE™š?ó$İ/ @Äj=<jA¼  ?ë*™0¾?ÿ¥ãS÷ÎÙ                     0000 1100AAAA           A|¼jA|-A^ùÛA]ë…                             @•ƒ™Ÿä6v@>oß;dZA(¼j@4ÌÍ    @’/™Ÿä6v@7ÄİS¨Aèo@b-=q©ü@·€    @]ì(ş&-@˜¸²-VA×|î    @]p +„@7¡GMƒA@{ó$İ/A!X=ÀƒAIOß<o  >…¡ËA<Ôş<49X  >£SøA§ğ<‹C–  ?S33@ÂV=D›¦ ?t¼ATƒ<t¼  AIxÕ<D›¦  Ahs<¬1  @äÔş=Tıô AM|î<o  AAï<49X  AÛ#<‹C–  @ÔÄœ=D›¦ AJ‡+<o  A>È´<49X  A°!<‹C–  @Ë"Ñ=H´9 AI¸<t¼ A=X<D›¦ AãT<‹C– @Å¡Ë=Tıô AHQì<t¼ A<‹D<Tıô An˜<›¥ã @Â‡+=q©ü AGº^<#×
+ A;ûç<uÂ Aº^<¬1 @ÀbN=‡+ AG33<49X A;…<ƒo AdZ<Ä›¦ @¾~ú=—P AF´9<D›¦ A;‡<“t¼ A"Ñ<İ/ @¼´9=§ï AJn˜=C–<o=Ôıô   @êúrZH@êú–$»¡@êúƒ<R±A=`B<í‘h;å`B?º^5?|í‘   @êúrZH@êú–$»¡@êúƒ<R±A	¸=¾w<#×
+?Ãn—Oß   @êúvË×D@êú–$»¡@êú„hV…ô@Är°=¸Qì<Ä›¦?å¸Që…   @êúvË×D@êú–$»¡@êú„hV…ô  ÿö      >ÌÌÍA{?LÌÍÁğ  ALå`<o  A{?LÌÍÁğ  AASø<49X  A{?LÌÍÁğ  Aıô<‹C–  Az=q?k…Áğ  @ØbN=H´9 )Ö¤<=¾vÉÃ#33 AtùÛ=²-Ai|î=²-A\áH=Oß#'xgyâsƒ ¿Ñ ‰ã(ê]¿ëfdõX”¯?ÜZ^ü>l9†
+ô?_–Õ<ÕZÓ1237661210971013163J142934.17+444748.814 29 34.17+44 47 48.8@k,V”@Ff t‚)kAˆ¥ßi = 16.69;ä¼€SDSS_good@ 
+Àƒn˜SDSS  Íû ì@k,ŠqŞj@Ff%™í|>T•  A~\QSO   @åG®zá@›İÂ\(ö@1EF
+¦L0@í”ÇëiH¹‘û[œ†0@v0ÅIOò   À 
+Àƒn˜?Ùõ¸Óàhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1288/spec-1288-52731-0236.fits     ?¹iÑféL–-P`5 +CYdsB30-P`5 -?eLÁ8=t•@k,h¡,ê@Ffê°Ø5A•Ô‰=B—A‰/Ş;â¿A›Z<üRA’¶</„]?ŠàVš-6-P`5 +CYdsB30-P`5 -?eLÁ8=t•@k,h¡,ê@Ffê°Ø5A0ÎõA2p³A4N9?ŠàVš-6 -?ËêİY
+Ğ@"Tæ:\a@k,V“@Ff upÅeJ142934.17+444749.0@k,r‰ŠX@Ffj=‹|=–¼=ùr;šu@TYõŠÆ—ÿ@OÎ}GS{¨@gñ7öFBÚ@Ko–(ËÑ$@œ­ùÛ"Ğå@wàj~ùÛ#%»áwæ2172p454_ab41-0035412172p454_ab41  ÕALÌÍ<Ä›¦B4  ?øbMÒñ©üA<áH<´9XBA33?ïrGE8ï5A
+^5<¬1BPff?ò5?|í‘h@ÍOß=8QìAÂff?ñï²-V?ó$İ/                      0000  0111AAAA           AÆbNAÅXA·§ğA·‡                             @’Ç3@ˆÊ@:µ?|í‘hA^5@+o<´9X@’²f`ÉŠ@8ÈõÂ\)AÀ²-@RĞå<Ä›¦@µ³?úÁÓ@Zi™¡ıj@”øaG®{AÉ
+=>³¶F@zß3?Èlì@1·?CÄ@xU¾vÈ´9Aƒ?œIºALZ<t¼  >…¡ËA=
+=<49X  >£SøA	ûç<Tıô  ?S33@Íhs=Tıô ?t¼AVñª<#×
+  AIdZ<D›¦  A Ôş<ƒo  @ï\)=aG® AP‡+<t¼  AB$İ<49X  A/<Tıô  @ß×
+=Tıô AMë…<#×
+  A?KÇ<D›¦  Açm<Tıô  @Ö¸R=]/ AL\<49X  A>“<Tıô  Aéy<Tıô  @ÑÛ#=}ó¶ AK©ü<D›¦ A=<uÂ AC–<e`B @Ï•=• AK
+=<Tıô A=/<‹C– Aff<ƒo @Î5?=²- AJŸ¾<e`B A=V<›¥ã A÷Ï<‹C– @Í7L=Òñª AJMÓ<ƒo A=V<´9X A¶F<£×
+ @ÌQì=õÂ ALÌÍ<ÌÌÍ;£×
+=È´9   @êômm?@ë
+f}î@ë0FƒóA<áH=t¼;å`B?Ä›¥ãS÷Ï   @êômm?@ë
+f}î@ë0FƒóA
+^5=ixÕ<D›¦?Ë¥ãS÷ÎÙ   @êômm?@ë
+f}î@ë˜ËÉ@ÌõÃ>t¼<ıó¶?á/Ÿ¾vÉ   @êômm?@ë
+f}î@ë˜ËÉ  ÿÒÿØ    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ˆØ>+Â0ÌÍ A}p¤=° ÅAq
+==×
+=AcV=›¥ã%»áwæ ¿â
+}@|e¿Û”BZUU˜?æŒÊÏÁD¶Şì?:6âÙD|1237665128012382217J131823.78+334737.413 18 23.78+33 47 37.4@hó+°Ï‡Û@@å˜°•FÆAˆ(îi = 16.51<E¯VSDSS_goodÀXÿ\(õÂSDSS-  Ò:j@hó+àŠğ@@å—ö+jè=õöı  Aı\)QSO   @ø     @À/ï\(õÃ@C¡è>BZî@¹Ş³Ê¦HÁÜï‚F@»8B*ùh   @»8B*ùhÀZë­r&http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2093/spec-2093-53818-0618.fits     ?».I
+Å‡o-àb 	CG™^B,Æ-àb ?g2]E¬@hó+`.Ã÷@@å—ØIúšAŒ–ø<XãªAˆ4Õ<9{"A^ˆ<rŞÅAŒÀ<9^?—3?#„ñ-àb 	CG™^B,Æ-àb ?g2]E¬@hó+`.Ã÷@@å—ØIúšA(æñA,½6A0I&?—3?#„ñ .?³p\‰n@TWôÏJV@hó+°’Ş@@å˜®¸ĞJ131823.78+334737.4@hó+å–È.@@å˜Ë=€”=V=-à¼†YK@Tá^ß‰gó@TJqïœ®@fĞÇ';®,@C3 ‹ü"%@£f§ï²-@©½$İ·>'ı“K1997p333_ab41-0397591997p333_ab41  ›OAJÙ<¼jB933?ù÷ÎÙ‡+A;Û#<´9XBG33?ğŸ¾vÈ´9AV<´9XBE™š?ïZ…‡“İ˜@Óï=På`A©™š?ë¦µ'»?ñ÷ÎÙ‡+                     0000  0000AAAA          AÂ“uAÄ~úAÇ^5AÆ+                             @•f`ÉŠ@=—|ˆç›A#•@,›¦    @“Öf`ÉŠ@9‰H¾IAâ @cdZ=º^5@°j™ Äe@UD(ş&-@™¶Z¬1AĞáH?“@v5¿¨÷Û@0Ã•$İ@r° ÄœA#º^?™º^AJE¢<o  >…¡ËA;²-<t¼  >£SøAV<“t¼  ?S33@×C–=£×
+ ?t¼ATÀƒ<o  AGë…<t¼  A%®<´9X  @÷÷Ï=£×
+ ANr°<o  A@ÌÍ<t¼  AA‰<“t¼  @é²-=£×
+ ALJ<o  A><t¼  A+<‹C–  @á¡Ë=²- AK
+=<o  A<í‘<#×
+  AbN<“t¼  @İ™š=ÎÙ AJƒ<t¼  A<n˜<49X  AùÛ<£×
+  @Ü¼j>    AJ1'<#×
+ A< Å<D›¦ AQì<¼j @İ>"Ğå AI÷Ï<49X A;ß;<Tıô A  <Ôıô @Ş\>KÆ¨ AIÒò<D›¦ A;²<uÂ AÛ#<í‘h @à Å>€   AJÌÍ<¼j;£×
+=çl‹   @ë‡>ã’@ë÷nU“@ë½„
+A;ß;=0 Å<t¼?Ã×
+=p£×   @ë‡>ã’@ë÷nU“@ë½„
+AV=§ï<ƒo?×ÎÙ‡+   @ë‡>ã’@ë÷nU“@ë½„
+@Ó|î>#×
+=o?í`A‰7KÇ   @ë‡>ã’@ë÷nU“@ë½„
+   ÿı      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  €  »Ş=å`BÂ›ff Aw®=e`BAk²=‡+A]ûç=Y‡·>'ı“K ¿é}ªİŠî¿Ñ×BnÊ¨?áÌm›€e;²Oa?TòWÈ(y\1237662662680051805J155818.76+255124.915 58 18.76+25 51 24.9@mò€WaŸ@9Û^ä»Aºöi = 15.73;ÃNSDSS_goodÀXÿ\(õÂSDSSw  Ñ —@mòõƒ¥<@9Û^t)ˆ=‘4  B…QSO   @¯(õÂ\@Ô‚Fffff@M± 'RTa@süöe.º¦H½€ ”P@¼,~ná   @¼,~náÀZëéM©}http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1655/spec-1655-53523-0151.fits     ?Ã—íÃo\ª-¢`Ï ]Co”AÎÚ÷-¢`Ï _?d³|ú@¼@mò€/İk@9Û]YÀ"°AˆD_<`ÏAÈŠ;×\zA‰®Î<³ŞáA‡/—<Ac?‹RÍ˜5?U-¢`Ï ]Co”AÎÚ÷-¢`Ï _?d³|ú@¼@mò€/İk@9Û]YÀ"°A"W^A)¶™A.é?‹RÍ˜5?U /?§+õQPU@+èõäKj@mò€X”@9Û^éšbíJ155818.76+255124.9@mò€^”àÍ@9Û_´›}Ÿ=gl‹=r×¼o @EÆôE·š@H4Å
+`¬@l¸^G~CÓ@F‘«»Û@§É»çl‹D@¢J\(õÂ!Nõ›ŞÁ¥2400p257_ab41-0217002400p257_ab41  TÄA7xÕ<¼jB:ÌÍ?ñ‰7KÆ§ğA%G®<£×
+BTÌÍ?î¬1&éy@åûç<ƒoB…33?ï-w1Å@š-<ÔıôB$  ?î³g ù	l?ïÒòäŠ                     0000  0011AAAA           A—VA—‡A”›¦A“ñª                             @°æ_ú;›@UùX!)EtA-²-@&$İ    @²1 Äe@Uäj~ùÛ#AóA‰@a™š=t¼@Ô¦@    @sØ£àz(»@™â—Oß;AÏ©ü?*~ú@K™Ÿä6v@FÖE¡ÊÀƒ@}` Ä›¥ãA °!?0£×A7©ü;Ä›¦  >…¡ËA%…;Ä›¦  >£Sø@æ^5;å`B  ?S33@™²-<‹C– ?t¼AA¾w;Ä›¦  A1P;å`B  A	çm<o  @»¥ã<“t¼  A;×
+;Ä›¦  A*Ÿ¾;Ä›¦  A bN;å`B  @¬ Å<‹C– A9²-;Ä›¦  A(  ;Ä›¦  @ö^5;å`B  @£"Ñ<“t¼ A8Ğå;Ä›¦  A&õÃ;Ä›¦  @ğ›¦;å`B  @Ÿ¾<£×
+ A8^5;Ä›¦  A&zá;å`B  @í<o  @œ¼j<Ä›¦ A8“;Ä›¦  A&9X;å`B  @ëÎÙ<o  @›ÎÙ<í‘h A7ï;å`B  A&b<o  @êáH<t¼  @›dZ=\) A7×
+;å`B A%÷Ï<o @ê^5<#×
+ @›"Ñ='ï A7xÕ<‹C–;ƒo=‘hs   @êøCD¨¦@êø«\x‘a@êøŠ`	ëfA%X<D›¦;D›¦?²° Ä›¥ã   @êøCD¨¦@êø«\x‘a@êøŠ`	ëf@åûç<“t¼;ƒo?±hr° Äœ   @êøCD¨¦@êø«\x‘a@êøŠÇ®X@š5?=#×
+<t¼?Â° Ä›¥ã   @êøCD¨¦@êø«\x‘a@êøŠÇ®Xÿê  !     >Ñë…A…?^¸RAp  A;²-;Ä›¦  A…?^¸RAp  A*r°;Ä›¦  A…?^¸RAp  A {;å`B  AeÂ?p£×Ap  @²5?<‹C–  )Õ›ç=•Ãff Aj£×=49XA]33=<jAOûç=0 Å!Nõ›ŞÁ¥ ¿İ)«}$Ÿ¿èÔé¦Ş?Ûéz®İó7¶´W?Zs9…1237664290999238736J115226.30+151727.611 52 26.30+15 17 27.6@fC´èP@.”ıó¶E¢AˆÁÂi = 16.58?"!SDSS_goodÀXÿ\(õÂSDSSâ  Ğ§ğ@fCÂã>ÿ@.”ü¤*í=ç8  AŸ®QSO   @’òáG®{@µ|¨õÂ\@3½¥œà@€`hŒ—òH´¿³›„ô@êT£DØ   @êT£DØÀZîs*http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1762/spec-1762-53415-0496.fits     ?¥êËüoH-€2 PC2At§ğ-€2 R?TŞ‰4™š@fC¦Ñª @.”û«A@=ç9A‰Ó=ˆEÑA‘J<°‡ÿAK‚<Ò›.?’Û©å>¸+-€2 PC2At§ğ-€2 R?TŞ‰4™š@fC¦Ñª @.”û«A+è£A.vWA.¬ª?’Û©å>¸+ 0?Äl¡3ß@KÀÂã>ÿ@fC´5&R@.”ıó¶E¢J115226.30+151727.6@fC‚QX@.•=í¡Y=ªÍŸ=®}V¼ü¹@oXƒÑ@QøÂ©@e‚šH¶R7@*ƒ=§ˆ@¦i¡ÊÀƒ@£ Å¸QìÂs;_áŒ	1784p151_ab41-0194011784p151_ab41  KÉARƒ<ÌÌÍB0ÌÍ?ó\(õÂ\AFJ<ÌÌÍB.ff?ì¦L/ƒ{JA—=PAé™š?ëv_Ø­«Ÿ@İ?}=§ïATÌÍ?ïè>BZîc?ï“àŞÒ‰                     0000  0111AAAA          
+ A>{A<ÔşA>ƒA=²                             @‹zà;>š@3˜“…ƒb Aj§ğ@3÷Ï    @†® «†@0-ÓpóˆB˜“@qG®=‰7L@¢øf_ú;›@TË…¸Qì@¤.Oß;dZAê\    @püzà;>š@4kÆ§ï²@Š²?|í‘hA.1?¬IºAQãT<D›¦  >…¡ËAEë…<ƒo  >£SøAÆ¨=0 Å  ?S33@Û\)>.{ ?t¼A\zá<Tıô  ARb<‹C–  A.ƒ=Y‡  @ş^5>:^5 AVb<D›¦  AK%<ƒo  A$ùÛ=0 Å  @íÊÁ>.{ AS‰7<D›¦ AHff<‹C– A²-='ï @ã¾w>333 ARQì<e`B AGhs<›¥ã AŸ¾=,1 @Ş->G® AQhs<uÂ AFÔş<´9X A¼j=<j @Û®>l‹D AP^5<‹C– AF1'<Ä›¦ Al‹=LÌÍ @Ú=q>Oß AO7L<“t¼ AEp¤<İ/ AbN=]/ @Ø¬>¤İ/ AN  <›¥ã AD§ğ<í‘h A•=q©ü @ØQì>Ã• AR‡+=\)<#×
+=ë…   @ëI•9ÃE@ëm‘Gö@ë[“@Ú;AFb=q©ü<‹C–?ÊáG®zá   @ëI•9ÃE@ëm‘Gö@ë[“@Ú;A“u=¬1<Ä›¦?Ò=p£×
+=   @ëI•9ÃE@ëm‘Gö@ë[“@Ú;@Ş‡+>¤İ/=¾vÉ?õ×
+=p£×  @ëI•9ÃE@ëm‘Gö@ë[“@Ú; ÿÑÿß    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € }8¼>ÒòÃ ³3 AzV=uÂApvÉ=•AgÒò=…¸Âs;_áŒ	 ¿îÙ±?0ªê? J§Bğ?ĞàÒäËn"A?RöüS™{1237654952137195588J171601.93+311213.817 16 01.93+31 12 13.8@p0 ğLul@?4.kÜ€VAyYzi = 15.04;îÈSDSS_goodÀXÿ\(õÂSDSSÒ  ÌÙ@p0!…Æ~@?40+@öj=áä÷  B/áHQSO   @Š ‹C•@á™™™š@YÑhr° Å@ñ~ôŠeHß>Z’{‹{@üõß0”   @üõß0”ÀZï+†çu˜http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0978/spec-0978-52441-0524.fits     ?¼‚š—b5-Ÿ ¤ DCAù¡s-	€k ,?\Z‰%ƒS?@p0 ûæ»Ü@?40@£óA€lp;J%A{O;¡ŸA€Š1<q-åA~h²<_~ˆ?§¤(°c-Ÿ ¤ DCAù¡s-	€k ,?\Z‰%ƒS?@p0 ûæ»Ü@?40@£óA/¦#A1Ò*A4R,?§¤(°c 1?ÁFäÀßXÁ@EäØ]ú‡@p0 ğ¥ïé@?4.fDØwJ171601.93+311213.8@p0! 7@?401öó=jJŒ=m‘h¼K)_@K~ØÕ@@zçd'ÇÅ@o¼%eµf@KÎ—,Ø@§Ä“t¼@~&éxÔş$ 5!ƒ­Ş2594p318_ab41-0055342594p318_ab41  A.¸R<¼jB=33?ñë…¸QìA 5?<¬1BPff?î Ä›¥ãT@èr°<ƒoB‰ÌÍ?ò£×
+=p¤@–ñª<¼jB9™š?ñ…¸Që…?ñ333333                     0000  0011AAAA          A§²-A¨;dA˜‡AOß                             @º‡f_ú;›@aô) >ê!A -@)Û#    @¸W³?úÁÓ@]ç
+A¢a¿Aá9X@YÛ#    @Ó;@    @qÛ…ÄÁf@—ùÛ"ĞåAÓå`?mV@ Ì¿ôw6@F'+Iº@yàùÛ"ĞåA!‰7?Ï²A.Ôş;Ä›¦  >…¡ËA V;Ä›¦  >£Sø@èí‘<o  ?S33@–n˜<Tıô ?t¼A9;Ä›¦  A,\;Ä›¦  A?}<t¼  @¸zá<Tıô A3;Ä›¦  A%p¤;Ä›¦  A©ü<o  @¨İ/<Tıô A0Ù;Ä›¦ A"¸R;Ä›¦ @ùV<o @Ÿ®<Tıô A/ó¶;Ä›¦ A!¡Ë;Ä›¦ @ól‹<o @š¸R<e`B A/|î;Ä›¦ A!‡;Ä›¦ @ğr°<t¼ @˜9X<uÂ A/+;Ä›¦ A Àƒ;Ä›¦ @îáH<t¼ @–áH<“t¼ A.í‘;Ä›¦ A ‡+;Ä›¦ @î¬<#×
+ @–5?<£×
+ A.Àƒ;Ä›¦ A ^5;Ä›¦ @í²-<49X @•²-<¼j A.¸R<“t¼;ƒo=‹C–   @êûBïãş@êûÚv;UÁ@êûeÏÓA 5?<£×
+;ƒo?´záG®{   @êûBïãş@êûÚv;UÁ@êûeÏÓ@èj<İ/;Ä›¦?¸Që…¸R   @êûBïãş@êûÚv;UÁ@êûfømå@— =¥ã<t¼?Ç+Iº^   @êûBïãş@êûÚv;UÁ@êûfømå         À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € Rá<e`BCÌÍ A_dZ=oAPQì<ıó¶A@Ÿ¾<Ä›¦$ 5!ƒ­Ş ¿Äà—0/&¿êŞO†Ë{`?à”&<Í?Ó†`‚?Yß"CÅz1237661151920652349J141424.91+465348.514 14 24.91+46 53 48.5@j³RBæ½Ç@GrÊ†AıºAŒi = 17.02;ÂG@SDSS_goodÀXÿ\(õÂSDSS  ÍõV@j³Rv‰Ê@GrÊ«Š\æ>0¾  A©p¤QSO   @Æhr° Å@Ãšs3333@5?4Ö¡aå@†7Ñ¿PÄWHÑkày¬—@µoqZ   @µoqZÀZñ=$L¹¥http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1286/spec-1286-52725-0598.fits     ?¬}ïçe-B ˆ =CUš’B;–T-B ˆ ??Kñ'
+& @j³R‚ƒ²@GrÊ¤È)AA’$[<y‹8AŒ#0;Â’A’Xé<ÃO#Aã<‘Æ+?qÁÎ £y<-B ˆ =CUš’B;–T-B ˆ ??Kñ'
+& @j³R‚ƒ²@GrÊ¤È)AA).‘A+aA-?qÁÎ £y< 2?›A|¢@80°«.@j³RC™²Ä@GrÊ‰üm¤J141424.91+465348.5@j³RL2Şz@GrÊ¾Õ“E=”zá=”Ft;ªdÃ@V9¼œh€ó@Pú¨¨*V@g5‘:…7@KÈbÚÀ«@£‹Æ§ï@ì}ó¶E¢¬9G>À2138p469_ab41-0204412138p469_ab41  OÙAO\)<ÌÌÍB,ÌÍ?îŞÒˆÎp;A@{<¼jB>  ?ğ¬1&éA“<Ä›¦B6  ?ñS÷ÎÙ‡@ÇdZ=¾wAÜÌÍ?ğr° Ä›¦?ğA‰7KÆ¨                     0000  0011AAAA          A·IºAµ÷ÏA­&éA¯Òò                             @5™Ÿä6v@8rÀç¼<A~ú@*°!>%@Â€'ØŒ@4ö‡;©AÄ¸R@VE¢>¥ã@®ì     @U½^g”d@•$™™™šAÎıô?k…@İG rÑ¯@2yÛ"Ğå`@xŠõÂ\)Aë…?«Æ¨AOp¤<D›¦  >…¡ËA?Òò<t¼  >£SøAMÓ<¼j  ?S33@Æ$İ=0 Å ?t¼AY‰7<Tıô  AL  <#×
+  A&Ù<İ/  @è£×=<j AS²<D›¦  ADí‘<t¼  A<¼j  @Ø“u=0 Å AQt¼<e`B  AB“<t¼  An˜<´9X  @ÎŸ¾=0 Å AP‹D<ƒo A@Ğå<#×
+ A¡Ë<¼j @È¼j=@ƒ AP{<“t¼ A@1<49X AJ<ÌÌÍ @ÅV=Y‡ AO×
+<£×
+ A?hs<49X Ao<å`B @Â^5=q©ü AO¥ã<¼j A>Ğå<Tıô A^5<ıó¶ @Àj=‰7L AO\)<Ôıô A>$İ<e`B A²-=C– @¾Ù=›¥ã AOKÇ<í‘h;Ä›¦>
+=q   @ë	,r~GY@ë	a\ÕŞÄ@ë	FNŒDòA@{=0 Å<t¼?Á©ûçl‹D   @ë	,r~GY@ë	a\ÕŞÄ@ë	FNŒDòA¬=e`B<D›¦?Ê=p£×
+=   @ë	,r~GY@ë	a\ÕŞÄ@ë	EÀô7@ÇKÇ=ıó¶<Ôıô?áG®záH   @ë	,r~GY@ë	a\ÕŞÄ@ë	EÀô7 ÿø      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € İWÃ>\)Â„ff A~1'=…¸Aqß;=° ÅAgo=—P¬9G>À ¿â6?aÀ‘ ¿Ø4ÿÌ>ê?ç]-î°{²u?]tØyçu1237651735778951545J152114.04+011506.815 21 14.04+01 15 06.8@lÉß;dZ?ô¼¤ÀA•õi = 17.41<‘º•SDSS_good@¬1&éySDSS‰  Õ @lÉßP]¦?ôÒÇ¸Ö>gRT  AE™šQSO   @‘J\(õÃ@¢ØŠ=p£×@$‘[W>«6@‘Ø­ÛrëHÄèÕáá*@"ºä­À   À¬1&éy?Á)©;· http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2953/spec-2953-54560-0258.fits     ?µ‡\+O5-²BÀyCfNú? =å-²BÀy?Ys½¨8@lÉßWDáP?ôÔ²€4ÚA—sX=ˆÄ¿A•õ<‘º•A™ùw<ÛˆA–-X<RŠ?€2X;&h÷-²BÀyCfNú? =å-²BÀy?Ys½¨8@lÉßWDáP?ôÔ²€4ÚA0}­A1KOA3t™?€2X;&h÷ 3?Òšñˆmø+@FK
+™¶õË@lÉß;dZ?ô¼Â“çJ152114.05+011507.0@lÉß²LîÆ?ôøòÅ„Ú=¯ìW=¯ƒ{¼F?@KW·vú2@Fàƒ~¥!@lpq&³Èğ@3¢çöô¿@õ     @•CdZ¬è¢\	²H2299p015_ab41-0128082299p015_ab41  2AZff<ÌÌÍB-™š?òE¡ÊÀƒAMl‹<ÔıôB(ff?ízxl"h
+AOß=t¼Aîff?ğ\(õÂ@ã"Ñ=%AˆÌÍ?ğbMÒñ©ü?ğr° Ä›¦                     0000  1100AAAA  ! " " " "    BñªBPåBLÍBËÇ                             @*¸`f@)O\(õÂA€Ğå@@ Å    @|Üzà;>š@%íV“B^iy@ˆ9X    @œê     @Nÿ;[ö Ü@£à^¸Që…Aï    @l°õÀv}5@*Ót¼j~ú@ˆ{n—OßA(Ôş?5AY‘h<‹C–  >…¡ËAN9X<å`B  >£SøAÀƒ=C–  ?S33@çdZ=ÊÀƒ ?t¼AcÛ#<“t¼  AZ“<õÂ  A3l‹=,1  A²-=È´9 A]¾w<‹C–  ASSø<å`B  A)ó¶=C–  @ùÒò=ÊÀƒ A[²<›¥ã  AQ‡=o  A$°!=+  @ò—=áG® AZáH<¼j  AP—=¥ã  A!™š=C–  @ï|î>$İ AZ§ğ<İ/ AP§ğ=<j A²-=t¼  @í`B>¾w AZ£×<ıó¶ APĞå=]/ A^5=¾w @ê¸R>7KÇ AZ£×=t¼ APõÃ=% AG®=0 Å @è›¦>Që… AZ›¦='ï AQ=• AZ=<j @æ‡+>l‹D AZff=aG®<t¼>cSø !  @ê÷ûÅø§ò@ë°ÔŞ>@ë @*w£AMdZ=—P<Tıô?Ó…¸Që… !  @ê÷ûÅø§ò@ë°ÔŞ>@ë @*w£AV>'ï<õÂ?ò1&éxÔş   @ê÷ûÅø§ò@ë°ÔŞ>@ë(²A¦i@âŸ¾>­‘h=}ó¶?ú§ï²-   @ê÷ûÅø§ò@ë°ÔŞ>@ë(²A¦iÿàÿö      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € :½]>VÂœÌÍ A„“=å`BA|r°>hsAkÊÁ=º^5è¢\	²H ¿än˜…^¿è2¡5´?–_‹lIÒ‡f%?:6âì&dğ1237666076640870510J221542.29-003609.622 15 42.29-00 36 09.6@tŞÑ¿ÔO0¿ãIš÷ A„üæi = 16.00=>ÆSDSS_goodÀXÿ\(õÂSDSSv  ÊO @tŞÑáÃô¿ãI{t¤Ó=Êôñ  AÉë…QSO   @’Ø(õÂ\@Åæffff@Bèò{²şÅ@|}Õj–H¿‚Û,vó@8äf#H8   @8äf#H8ÀZòêoW÷http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0374/spec-0374-51791-0142.fits     ?Ì”ÆßK"å-½@» nC¦ö¿H]-o@Å i?V1.šZt@tŞÑÒiT¿ãI)aÅ<BA’Ïy=\ò÷A…!=N¨A•Ğ.<Ò$§AÃ<i­Í?C;´´-½@» nC¦ö¿H]-o@Å i?V1.šZt@tŞÑÒiT¿ãI)aÅ<BA.&³A0§@A1T´?C;´´ 4?·Lô¥Xê}@ZÆF¶¶_@tŞÑ¿zÔ²¿ãIMìJ221542.29-003609.6@tŞÑÙ+á¿ãI1´­ò=’n˜=”zá»ï4×@NÜv^+.‚ÀF†¾Ë‚J@tùœhlÑ@#Â‘	¨@§`ì1&é@}b“t¼j.a†>qÍyà3342p000_ab41-0045123342p000_ab41   AHZ<Ä›¦B1™š@ ¡ÊÀƒoA9™š<´9XBD  ?íŠÚ¹õY´AõÃ<¼jB=™š?ğıó¶E¡Ë@¾°!='ïAÑ™š?íğoiDg8?ôbMÒñª               ;å`B  0000  0000AAAA W     
+ 
+ 
+ 
+A8ÙA=•A#"ÑA(\                             @˜C3@ˆÊ@A€     Aƒ@:¬=ï²@––Ì¿ôw6@=y™™™™šB#=q@i‡    @º+ Äe@a¬zß.Ï @¦Uß;dZAë7L@áH@„{GŸì™ò@9ÊÀƒo@Œÿ‹C•A)hs>k…AG®<o  >…¡ËA9l‹<#×
+  >£SøAKÇ<å`B  ?S33@À1'=m‘h ?t¼ARn˜<t¼  AEÊÁ<49X  A$İ=\)  @á©ü=uÂ AKÛ#<o  A>‡+<#×
+  A~ú<å`B  @ÒŸ¾=m‘h AI/<o  A;²-<#×
+  AX<İ/  @Éó¶=yÛ# AGãT<t¼ A:‡+<49X A›¦<í‘h @Æ-=‘hs AG¸<t¼ A9ï<D›¦ AOß=o @Å‰7=´9X AFr°<#×
+ A9P<Tıô A
+Ğå=t¼ @Æ{=áG® AE©ü<49X A97L<uÂ A
+¼j=,1 @Çl‹>Oß ADĞå<49X A8áH<‹C– A
+Ôş=D›¦ @ÈÔş>/  AH^5=C–<#×
+=ÎÙ 
+  @ëÂæ"nj@ëâ§h‰×@ëÓAéîA9P<¬1;Ä›¦?¹XbMÒò 
+  @ëÂæ"nj@ëâ§h‰×@ëÓAéîA=,1<Tıô?½p£×
+=q 	  @ëÂæ"nj@ëâ§h‰×@ëÓ3'Š3@¾vÉ=í‘h=P?Ú\(õÂ 	  @ëÂæ"nj@ëâ§h‰×@ëÓ3'Š3         À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € LèªÚ>¢ĞåÃ.€  Anff=m‘hAat¼=™™šASãT=0 Å.a†>qÍyà ?ì½âV¿¿Ü ÓíÜØ¿…Š³Q'ÿßş;?[ÍÆÅ v1237665129637150884J154212.91+250503.115 42 12.91+25 05 03.1@mq¸©M$.@9ÄadĞAŠgi = 16.82<yÇgSDSS_goodÀXÿ\(õÂSDSS9  ÒV Ü@mq¸ºÇË@9!–R½>?—$  Aˆ(öQSO   @ÍG®zá@·¡«…¸R@/© 'RTa@Œnlâ!?HÑ1ßıtœM@9‚˜Å   @9‚˜ÅÀZòôRv“Ûhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1849/spec-1849-53846-0220.fits     ?¡F(a-àÂé ¤CkÅAÈ¬n-ª@— Ó?T5Š6Š_ã@mq¸Êz‚Ş@9$Vˆ¬A™4ç=‰v¨A‹Bz<!„äAœÎß<ÿ‹üA‘ò<Wõ$?­¬ú5¤E-àÂé ¤CkÅAÈ¬n-ª@— Ó?T5Š6Š_ã@mq¸Êz‚Ş@9$Vˆ¬A0.A1½øA32û?­¬ú5¤E 5?¦Ø
+°ö­@RÏøH{™Ô@mq¸ª *@9¼ì„ùJ154212.91+250503.1@mq¸Å»ª@9ùRfÕ=‰kº=‡ü¹¼/O@CäáF×U@Iå?·¥ô@l'¶	8ÿ@E¨Ñ~ã4î@‡Iº^5?@só²-V Rß¯üPU2350p257_ab41-0000212350p257_ab41   AJ1<¼jB>  ?ğV“t¼A9¡Ë<¬1BN  ?ìö”FsØAo<¬1BQ33?ğ° Ä›¥ã@Úéy=På`A©™š?ğÄ›¥ãSø?ğIº^5?                     0000  0000AAAA   ! ! ! ! ! !  !B•B-BãTBÔş                             @–Ì¿ôw6@=³¶E¡ÊÁA.5?@2^5=\)@–‹™Ÿä6v@;şv·íA·Aÿ¡Ë@jJ>gl‹@°hLÀ>-@Tÿ´€¦@˜ø?|í‘hA×J?Q&é@r+\…×E@+uÂ\(ö@|a¡ÊÀƒA"ıô?Ÿ|îAI¶F;å`B  >…¡ËA9`B;å`B  >£SøAéy<“t¼  ?S33@İ7L=¬1 ?t¼ASï;å`B  AE‰7<o  A%‘h<¬1  @ş$İ=®{ AMãT;å`B  A>zá;å`B  A¬<“t¼  @ï¥ã=¬1 AK²-;å`B A;ÎÙ<o A%<‹C– @ç|î=º^5 AJÌÍ;å`B A:¼j<o A9X<“t¼ @äA‰=ß;d AJE¢<o A:-<t¼ A£×<£×
+ @ãï>Iº AIÎÙ<o A9Òò<#×
+ Aº^<´9X @äí‘>333 AIOß<t¼ A9‰7<49X A33<Ä›¦ @æáH>fff AHİ/<#×
+ A9Oß<D›¦ AáH<İ/ @éX>”zá AIï=\);Ä›¦>9X    @ê÷·ßúÑî@ëp¹İò9@ëlÒ­ÜóA9¥ã<İ/;£×
+?È1&éxÔş    @ê÷·ßúÑî@ëp¹İò9@ëlÒ­ÜóAõÃ=0 Å<o?ÒŸ¾vÈ´9    @ê÷·ßúÑî@ëp¹İò9@ëlÒ­Üó@Ú^5>Xb=P?èzáG®{    @ê÷·ßúÑî@ëp¹İò9@ëlÒ­Üóÿÿ        À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € )À	Y>/ Bİ   A}ß;=§ïAoo=ÎÙA]+=uÂ Rß¯üPU ¿àd£TáÕ%¿çærxÄ¬3?Û!ı³#”¶³ë?_°®Ó131237665548886081560J134356.75+253847.713 43 56.75+25 38 47.7@i¿‘@9¥†|>Î*A|!i = 15.33=‡-SDSS_goodÀXÿ\(õÂSDSSÆ  Ò B@i¿ÿ—$t@9¥†DR?h=°ò|  B-33QSO   @“ŠáG®{@ÏX™™™š@S¤}¿H€@xŸ\n$ßHÁùaÜ¦@jªã*AÓ   @jªã*AÓÀZö×(f¬http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2246/spec-2246-53767-0066.fits     ?LçÇû-B` CMü‰AÍ,4-B` ?]Ró5Áğw@i¿Ú·.ø@9¥†œ0wÂAlë<VŞfA|×=2úRA‚~<¢™A‚¼]<gX´?—­¡ÛÄZ-B` CMü‰AÍ,4-B` ?]Ró5Áğw@i¿Ú·.ø@9¥†œ0wÂA+È”A/šÂA0Òf?—­¡ÛÄZ 6?³Ù#dº•@P¶pÅdù@i¿‘^@9¥†v§&JJ134356.75+253847.7@i¿‘?"T¿@9¥‡
+JÜ=v”F=vı"¼e`B@<µŠ#Û@S‰Ğì>0@h&ÃZÈ£r@@ÔGé£@¬öÈ´9X@œ/Ÿ¾w¬Z`ãÆ©ª2066p257_ab41-0228902066p257_ab41  YjA9;d<´9XBDÌÍ?ÿë…¸QìA+•<£×
+BVÌÍ?òƒn—PA ‡+<“t¼Btff?ñ$İ/ @´¬=oBÌÍ?ğŸ¾vÈ´9?ôùÛ"Ğå`                     0000  1100AAAA          A¿Æ¨A½¼jAÁ—AÅV                             @¬öf_ú;›@RØ´A»Œ3A+º^@4(ö    @©MÌ¿ôw6@N$¼b~AñÌÍ@fff=ÊÀƒ@Âò     @cÔzß.Ï @œ.ì‹C•AØV@Gï@‹R=Ø't@9øQÚ¾'@n—OßA$Qì?MVA9‰7;Ä›¦  >…¡ËA+²-;Ä›¦  >£SøA —<t¼  ?S33@³ß;<ÌÌÍ ?t¼AD  ;Ä›¦  A8  ;å`B  AKÇ<49X  @Ö{<İ/ A=¶F;Ä›¦  A0ÌÍ;Ä›¦  AÊÁ<t¼  @ÆMÓ<ÌÌÍ A;`B;Ä›¦  A.;Ä›¦  A£×<t¼  @½¸<Ôıô A:j;Ä›¦ A,å`;Ä›¦ AÆ¨<t¼ @¸Qì<í‘h A:  ;Ä›¦ A,^5;å`B AA‰<#×
+ @¶=C– A9¶F;Ä›¦ A,1;å`B Ap¤<49X @´å`='ï A9p¤;å`B A+¾w;å`B Aıô<D›¦ @´Z=D›¦ A9o;å`B A+hs<o A´9<Tıô @³¶F=e`B A97L<¼j;£×
+>o   @êôqpçi@ë
+EØO’9@ë´ºÙ…BA+™š<å`B;Ä›¦?»dZ¬1   @êôqpçi@ë
+EØO’9@ë´ºÙ…BA “u=¾w<o?ÈQë…¸R   @êôqpçi@ë
+EØO’9@ë´ºÙ…B@´j=´9X<“t¼?×ï²-V   @êôqpçi@ë
+EØO’9@ë´ºÙ…B -       >…¸Azá?G®ÁÈ  A=Æ¨;Ä›¦  Azá?G®ÁÈ  A0í‘;Ä›¦  Azá?G®ÁÈ  Aûç<t¼  AtÌÍ?hõÃÁÈ  @ÊĞå<ÌÌÍ &!å>6E¢ÂÃÌÍ AlIº=]/A^n˜=aG®AQ=¥ã¬Z`ãÆ©ª ¿éîKÂ¶;ç¿ÙGŒˆ4s½?Û³NJ ²FR?Zxk_†È°1237668333645529153J154547.56+122201.815 45 47.56+12 22 01.8@mWaŸ´@(»ıDó‚AŠ/şi = 16.78=BypSDSS_goodÀXÿ\(õÂSDSS	Ô  Óák@mW)²€ñ@(»ûµsë>;²ÿ  AÍ¸QSO   @•šÂ\(ö@¤uŠ=p£×@1˜üPHğ@‹ÊÏu‰DÍH¼s‚O~X@¡©'­ìF   @¡©'­ìFÀZùv»p¡Shttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2516/spec-2516-54241-0619.fits     ?¼ËE|W:-ÊÀ± AClr»AEßê-Å`W v?b_Æ2@mW(§²D@(»ùÔÏîHA‘–]=*¶tA‰O‚<™¶DA’ï<µÓôAx"<M
+ñ?f±iŸW-ÊÀ± AClr»AEßê-Å`W v?b_Æ2@mW(§²D@(»ùÔÏîHA-:A4Î[A5?f±iŸW 7?§ÛLÂPr@SçLUC(t@mWbR°@(»ıP"WCJ154547.56+122201.8@mW|ôGe@(»ı“>5Æ=‹¬q=Œ²–¼F?@5×Îg À@GTØé:Á@lÙ>ó%&*@?Zi®ğBô@ŞOß;@¥%”ıó¶F Ëuïåù±2363p121_ab41-0269932363p121_ab41  iqAIë…<¼jB=™š?ó+Iº^A9ë…<´9XBI33?ğùÛ"Ğå`A×
+<´9XBHff?ò° Ä›¥ã@Â\=49XAÅ™š?ğMÒñ©ûç?ñ¶E¡ÊÀƒ                     0000  0000AAAA          A^  A]&éAKSøAM33                             @–,Ì¿ôw6@=ê=jÎ«AK•@3Æ¨    @–*Ì¿ôw6@<33Cú*ÔB&é@qG®    @¸à™ Äe@_Áë€ìúj@ 1¾vÈ´9AŞ5?    @‚Rõ¿ğEx@7³¶E¡ÊÁ@ƒ"Ğå`BA È´?L‹DAI?}<o  >…¡ËA9ë…<Tıô  >£SøA™š<‹C–  ?S33@Â§ğ=‘hs ?t¼AS²-<t¼  AF$İ<uÂ  A~ú<¬1  @äzá=—P AMl‹<o  A?%<Tıô  AÌÍ<‹C–  @Õ‡=‘hs AJõÃ<t¼  A<V<e`B  A…<ƒo  @ÌZ=›¥ã AIÆ¨<t¼ A;KÇ<ƒo A—<‹C–  @Èıô=¸Qì AI‡<#×
+ A:áH<›¥ã A
+ùÛ<“t¼ @É7L=í‘h AH‡+<49X A:°!<´9X A
+b<¬1 @ÊÀƒ>™š AHJ<D›¦ A:›¦<ÌÌÍ A	™š<¼j @Ìí‘>G® AG¡Ë<Tıô A:“u<å`B A	X<Ôıô @ÎáH>|í‘ AIë…<Ôıô;å`B=Àƒ   @êø“÷™)@êøÉ:I}@êø«—´ò»A9ë…<õÂ<o?»¥ãS÷ÎÙ   @êø“÷™)@êøÉ:I}@êø«—´ò»AÎÙ=LÌÍ<e`B?Â° Ä›¥ã   @êø“÷™)@êøÉ:I}@êøªóê'Ò@ÂÈ´=ûçm=C–?×Oß;dZ   @êø“÷™)@êøÉ:I}@êøªóê'Ò         À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € †Ö¹>%Â­ff A}+=•AnõÃ=›¥ãA_º^=ixÕ Ëuïåù± ¿áF”À#gB¿ê­ÁŒ$—?Ëj’JÖÃ‡·Ò?[{ŞqÍ¼{1237651190281797746J082549.54+471027.908 25 49.54+47 10 27.9@_5î@+²@G–SIšöA€Qªi = 15.52;ğd©SDSS_goodÀXÿ\(õÂSDSS¹  ÊœB@_6z—@G–RiY_î>y§  Aİ…QSO   @—ß33333@«¹…¸Qì@=zôğØDĞ@ƒo7—­pH²ÚIüØ@ª»S’R   @ª»S’RÀZúŞ.ç¯http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0441/spec-0441-51868-0578.fits     ?Àşñ¾-3@– rBüé¯B<²š-3@– t?tp\§fe@_6µqØD@G–UºnØnA‹Ÿ·=EÑA€G¼;ûvA•<€óAŒÙ<Y?‚Êèê`i—-3@– rBüé¯B<²š-3@– t?tp\§fe@_6µqØD@G–UºnØnA3osA7wA7Wé?‚Êèê`i— 8?¼XÍi@N”ùôMDV@_5ï¦©@G–SK×nçJ082549.54+471027.9@_6”|#g@G–SÅyò4=ˆ1'=ˆe•¼t¼@e“’Š±ŸJ@A›-–;@H@]>ØWDŠt@;™¡ıj@¡@5?|î@¤£\(õÃ´gU(Y!1265p469_ab41-0268491265p469_ab41  háA?Oß<Ä›¦B6ff@²-VA0j<¬1BNff?øzáG®Aß;<£×
+B[™š?öQë…¸R@¾—=0 ÅAÈÌÍ?ñ²-V?ş° Ä›¥ã                     0000 0000AAAA           A^È´A^r°A^ÔşA\´9                             @¤k3@ˆÊ@L¡hƒweAHb@;t¼    @£)Ì¿ôw6@G¿Ÿ¾vÉB[#@lí‘    @¿B³?úÁÓ@b9GŸfb5@ SºáG®Aã÷Ï?‘h@„‡À//˜@:+Æ§ï²@„=p£×
+A(õÃ>‡+A>ƒ;å`B  >…¡ËA09X;å`B  >£SøA&é<Tıô  ?S33@¾J=<j ?t¼AIxÕ;å`B  A<°!<o  A1<uÂ  @àb=D›¦ AB°!;å`B  A5Sø;å`B  AZ<Tıô  @Ğzá=<j A?×
+;Ä›¦  A2Z;å`B  A
+=<D›¦  @Ç®=D›¦ A>ƒ;å`B  A1‡;å`B  A  <D›¦  @ÃdZ=aG® A=×
+;å`B A0zá<o AE¢<Tıô @Áº^=‰7L A=t¼;å`B A0 Å<o AC–<uÂ @Á7L=¥ãT A=+;å`B A/×
+<t¼ AŸ¾<ƒo @Á&é=È´9 A<áH<o A/‘h<t¼ A(ö<“t¼ @Á/=ï² A?Oß<í‘h<o=¼j   @ë $«,¹œ@ë H¨KÙG@ë 7DkŠA0j<ÌÌÍ;å`B?µ?|í‘hs   @ë $«,¹œ@ë H¨KÙG@ë 7DkŠAß;<í‘h<o?·Oß;dZ   @ë $«,¹œ@ë H¨KÙG@ë 7DkŠ@¾Ù=¬1<¼j?Ó…¸Që…   @ë $«,¹œ@ë H¨KÙG@ë 7DkŠÿÿ ÿç      >Ñë…A#33?aG®Âp  AA
+=;Ä›¦  A#33?aG®Âp  A3²;å`B  A#33?aG®Âp  AxÕ<D›¦  Aw33?uÂÂp  @Ó|î=8Qì äf‰>cSøÃæf ApvÉ=På`Ab{=Y‡AS‡='ï´gU(Y! ¿ÙÙî‚õo³?á~ìğËL?çx;Ç"K?WÅğM…J1237667541218623519J101743.60+212007.210 17 43.60+21 20 07.2@cMĞ6i@5UØgÃìãA„³Fi = 16.07=”lšSDSS_goodÀXÿ\(õÂSDSS	=  Ñë •@cMĞR“JË@5UÖàL’>yÀì  A“™šQSO   @ˆ\(õÃ@·ŞY™™™š@+QÎ_p@“$ù	—²¹Hßym#vz@ªá°x
+   @ªá°x
+ÀZú
+Cıºhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2365/spec-2365-53739-0149.fits     ?¸\DG6|[-@^ Cn‚Aª®Ã-@ ~?T# ¡R~@cMĞDÉâ@5U×
+%zuAà€<İMÿAŠ%R<ÎA’(C<†’™A‘D<~‹?í`§‘ä%-@^ Cn‚Aª®Ã-@ ~?T# ¡R~@cMĞDÉâ@5U×
+%zuA0´tA0çÓA3Gb?í`§‘ä% 9?½‘îªm&t@IüI©—=Ÿ@cMĞ7Oøf@5UØb,EJ101743.60+212007.2@cMĞo„Z@5UÙ³eº=¤İ/=©“;´9X@jº:É)ª@KORkß@b’#×àı@$RŸÊ5@ªi(õÂ\@¢½Àƒn˜•†aÿVL1549p212_ab41-0199801549p212_ab41  NAS®<Ä›¦B3™š?ôr° Ä›¦AE7L<ÌÌÍB,ÌÍ?ì‡ü¹#¢œA•<õÂBff?îŒL˜_@Şñª=›¥ãAfff?îÉ…ğoiD?ğMÒñ©ûç                     0000  1100AAAA W        AMë…AJjAN°!ALIº                             @‰JÌÀ7“@2+IºAƒ°!@4¼j    @‡&f`ÉŠ@1#•$İB5	7@~È´    @©KÌ¿ôw6@Vf§ŞÖºŒ@¥ïñ©ûçAîí‘?‰X@p0zà;>š@2	xåÄëW@4hr° ÅA.(ö?É™šARıô<Tıô  >…¡ËADÈ´<£×
+  >£SøA?}='ï  ?S33@Ûl‹=õÂ ?t¼A]p¤<e`B  AQ‡<´9X  A)çm=På`  @ş‡+>¸ AW+<Tıô  AIãT<£×
+  A r°='ï  @íÛ#=õÂ ATÙ<e`B  AGo<´9X  ASø=#×
+  @ä1>    ASß;<ƒo AEë…<ÌÌÍ Aƒ=,1 @Ş->Oß AS33<“t¼ AEKÇ<í‘h A%=@ƒ @Ú^5>!ÊÁ ARQì<£×
+ AD´9=o AbN=Y‡ @×\)>8Qì APİ/<¬1 ACçm=t¼ A=q=yÛ# @Ô£×>Oß; ANå`<¬1 ABĞå=¥ã AE¢=\) @Òéy>m‘h AS•<›¥ã;£×
+=ÌÌÍ   @ë-£Ÿg@ë'mÁil@ëQv´\“AEo=¥ã<#×
+?Å?|í‘hs   @ë-£Ÿg@ë'mÁil@ëQv´\“AG®=•<£×
+?×®záG®   @ë-£Ÿg@ë'mÁil@ëQv´\“@ŞvÉ>³¶F=Æ§ğ?ñXbMÒò  @ë-£Ÿg@ë'mÁil@ëQv´\“ÿÊ       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 	jĞ>På`Ã    AP=\)Aq&é=•Aco=ixÕ•†aÿVL ¿êãSC5Í?ÙºƒPğ/ ?×Hí\&´!„ ?ZŞcq ø1237664294757400620J130623.01+391710.113 06 23.01+39 17 10.1@h“hr°"@C¤ 2øòA‹¿ßi = 17.01<ÒSDSS_goodÀXÿ\(õÂSDSSå  Ğã @h“4êK@C¤ <K	ê>\)  A
+=QSO   @–Që…¸@³[áG®{@28§æšÔ@„«tlFÈH½È–ÿA¨@¼Mãˆ'   @¼Mãˆ'ÀZû úcûhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2021/spec-2021-53475-0027.fits     ?±Ü¸nª-`3 ,CD˜‹B%-`3 .?Qœ7uïp@h“/Áî@C¤ P†}±A“ˆÛ<…¦A‹ÑŒ<)MA“âÇ<¬‚ÈA‡c<¨…?‰®mŞê -`3 ,CD˜‹B%-`3 .?Qœ7uïp@h“/Áî@C¤ P†}±A)^rA,%TA-+Â?‰®mŞê  :?´—•³[¿@BÈY–tK+@h“hr°!@C¤ 3çJ130623.01+391710.1@h“[¶@C¤ Ç‹Dl=¹X=ÂZî<SZ†@[` N¿€´@S\Í“0ÉÌ@fò§òø±@Dı†9j„Ù@­Òñ©ü@œv-Ve<+›ê1974p393_ab41-0231051974p393_ab41  ZAAZZ<İ/B$  ?îå`A‰7LANMÓ<ÔıôB$ff?îÎp:û~‘A!V=,1AĞ  ?ïw1Å@òÈ´=Ğå`A)™š?ğIº^5??ï333333                     0000  0110AAAA           AJAPAšÔşAÀƒ                             @8á?ĞĞh@*éxÔıó¶A&é@+÷Ï='ï@{n¸_.Q@%U$İ/AÓ§ğ@ZJ=‰7L@—N     @L¨bMÒò@˜–Ñë…¸AÏº^    @bI™Ÿä6v@+†$İ/ @}aó¶E¡ËA÷Ï?·ÎÙAY|î<D›¦ >…¡ËANvÉ<´9X >£SøA áH=q©ü ?S33@ğÌÍ> Äœ ?t¼Acó¶<Tıô AZ—<Ä›¦ A7™š=™™š A	™š>+ A]©ü<D›¦ AS‘h<´9X A.{=q©ü A²> Äœ AZñª<Tıô AP´9<Ä›¦ A(Àƒ=e`B @ú>'ï AY;d<e`B AO;d<İ/ A%‘h=m‘h @òñª>1&é AWÒò<uÂ AN5?<õÂ A#‰7=}ó¶ @ì´9>:^5 AV\<ƒo AMl‹=C– A!ï=‰7L @è“u>KÆ¨ AUC–<‹C– AL›¦=P A ff=‘hs @å¡Ë>bMÓ ASÎÙ<“t¼ AK²-='ï Aí‘=›¥ã @ãÆ¨>€   AZZ='ï<#×
+>zá   @ëÈÁòˆô@ëÏ;eŒ!@ëèE«ANQì=D›¦<49X?Äİ/Ÿ¾w   @ëÈÁòˆô@ëÏ;eŒ!@ëèE«A!‡>¥ã=t¼?â¸Që…¸   @ëÈÁòˆô@ëÏ;eŒ!@ëèE«@ñV>Ş¸R=Ğå`@ •$İ/   @ëÈÁòˆô@ëÏ;eŒ!@ëèE«  6ÿé     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € :{w¾=‘hsÃ™š A}¶F=¥ãTAsP=Ù‡Ai7L=¬1e<+›ê ¿ç¼l¥[^¿ÌKò)K!™?äCÑıé‡²v?:6âòq× 1237654342782812176J112728.79+634319.711 27 28.79+63 43 19.7@e{Ö²ÛÑ“@OÜoyJA‰Ä±i = 16.85<yÃSDSS_good@½p£×
+=SDSSU  Ë[ ö@e{Öwpyæ@OÜp¸Ï¿Æ>(>B  A¼QìQSO   @”d     @µZÏ\(õÃ@5×ï²-@ˆ >cÒ½ÂHÇPs½†Æ@Ïk'ŞÓ   À½p£×
+=¿’ÇPÔ– http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0597/spec-0597-52059-0246.fits     ?È@<Ö Of-@J C+Ş¶B~ãx-@@ ?tîÒÈÛy@e{Ö5÷°‚@OÜqŸef¨AÂ©<C“aAŠŸ;ïWAT<‚ÀuAŒÛá<U†ß?‡	’v/—Z-@J C+Ş¶B~ãx-@@ ?tîÒÈÛy@e{Ö5÷°‚@OÜqŸef¨A+¦˜A/×A0ƒ?‡	’v/—Z ;?¢ÍB=’2@@*ÎÄÒ@e{Ö²(Ü˜@OÜoşDJ112728.79+634319.7@e{ÖÌ_¿ƒ@OÜoStò=æ›=ƒä;´9X@a0}4=õ.@I{<üàÏ@aôî¿eÜ@Ju^Ëgqÿ@ÄF§ï²@¢\üí‘hsÔ—2‰3™1717p636_ab41-0207001717p636_ab41  PÜARn˜<Ä›¦B2ff?ñC•$İAD<Ä›¦B8ff?ñIº^5AV<İ/B"ff?ïaä÷eı‹@á²-=•AlÌÍ?ñ¶E¡ÊÀƒ?ğİ/Ÿ¾w                     0000  1111AAAA           A¥ß;A¦oA—ıôA™bN                             @‹+Â€'ØŒ@3€ƒ#5.A5?@/²    @ˆÌ_Ô{î@15Â~•1UAÊ¶F@["Ñ    @¨9f_ú;›@SÛŸ'x@–km‘hr°AÏ¬    @mèõÀv}5@0!$İ/@z =p£×
+A$“?¥¸AR{<t¼  >…¡ËACãT<D›¦  >£SøAãT<Ä›¦  ?S33@ŞĞå=çl‹ ?t¼A\V<#×
+  AP-<e`B  A*“u<í‘h  A Ğå=ùÛ# AVA‰<t¼  AHıô<D›¦  A!‡<Ä›¦  @ñ?}=çl‹ ATb<#×
+  AF5?<Tıô  AÛ#<¼j  @è1'=ó¶F AS;d<49X AE‡<uÂ AĞå<Ä›¦ @äZ>\) ARÔş<D›¦ AD‹D<‹C– AùÛ<ÌÌÍ @ä Å>49X ARn˜<Tıô AD-<›¥ã A¾w<İ/ @ä“u>bMÓ AQó¶<uÂ ACÊÁ<¬1 AÈ´<í‘h @å¸>ŒIº AQp¤<ƒo ACp¤<Ä›¦ Aë…=o @æ¸R>° Å ARn˜<İ/;Ä›¦=Æ§ğ   @ë¹P¦0V@ëêI÷E@ëÑ5AD=D›¦<#×
+?ÉxÔıó¶F   @ë¹P¦0V@ëêI÷E@ëÑ5AV=¶E¢<£×
+?Ôj~ùÛ"Ñ   @ë¹P¦0V@ëêI÷E@ëÑMÖ£@ßï>ŒÌÍ=%?ò1&éxÔş   @ë¹P¦0V@ëêI÷E@ëÑMÖ£ ÿâ    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  €  r‡b>gl‹Ãš A|õÃ=©ûçAnff=¼jAbñª=§ïÔ—2‰3™ ¿Ü²ÿ‘ ?°8-†A‚?ì±kW¼aÉ/rt?EÊá~º1237661435394850823J145926.07+404538.414 59 26.07+40 45 38.4@lyÛ"Ğå@Da]†|>ÎAˆVûi = 16.67;º¬!SDSS_goodÀXÿ\(õÂSDSSv  Ïšu@lyåŸ+ª@Da]öU\S>¹õ  A‰33QSO   @“2£×
+=q@ÀøUÂ\)@4´o hÜ@†vA¯xù¬HÎÔ
+LæÄ@Ğ>×ÉÌ`   @Ğ>×ÉÌ`ÀZü`r_Uhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1398/spec-1398-53146-0373.fits     ?©ŒTF*Ä-„ é C`ÛÏB#
+ì-„ é 	?g*ı’Ó]ˆ@lyÏÛ˜@Da_	²TAD~<Aˆmi;»QaA’6 <`AJ2<rJW?|MS½é@ş-„ é C`ÛÏB#
+ì-„ é 	?g*ı’Ó]ˆ@lyÏÛ˜@Da_	²TA,cLA.ö®A/iû?|MS½é@ş <?½GàiaÃi@=’ò	1@lyÛ"Ğå@Da]‰H¾J145926.07+404538.4@lzŒ<@Da^nJ`v=’n˜=”ã½¼5ÜÆ@Q&õ2F¤)@N1Ë×ÚG	@igk€'@K¤¬S@©ŞbMÒò@šÈ8Që…HQ£¯ŒÔ2254p408_ab41-0257482254p408_ab41  d”ARıô<Ä›¦B8ff?ôbMÒñ©üADr°<´9XBBff?ğ-V“A²-<¼jB<ÌÍ?ñ`A‰7KÇ@ŞvÉ=ixÕA˜ÌÍ?ïü¹#¢œx?ñ$İ/                     0000  2200AAAA    # # # #      B“uBéyAú©üAıQì                             @ŠM…ÄÁf@2E¸Që…A
+Ôş@+¶F    @ˆ3™Ÿä6v@/Ü(õÂ\AÄİ/@[Sø    @©%™ Äe@QA€ÓÏö@•G’n—PAÅ`B    @pg\…×E@+ŒIº^5?@x”záG®Aå`?‚ĞåAR^5<t¼  >…¡ËAD$İ<49X  >£SøAQì<¼j  ?S33@Ü9X=£×
+ ?t¼A\õÃ<#×
+  APr°<D›¦  A*éy<í‘h  @şÙ=° Å AV‹D<t¼  AI?}<49X  A!…<¼j  @î§ğ=£×
+ ASãT<t¼ AFZ<D›¦ Aj<´9X  @äıô=©ûç ARn˜<#×
+ AEV<Tıô A‘h<¼j @àA‰=Â\ AQ\)<49X ADA‰<uÂ Aûç<ÌÌÍ @ŞV=éxÕ APZ<D›¦ AC™š<ƒo A <å`B @ÜõÃ>C– AOOß<D›¦ AC%<“t¼ A§ğ=o @Ü“>%ãT ANQì<Tıô AB\<£×
+ Aƒ=t¼ @Û\)>C• ARùÛ=0 Å;å`B>¥ã "  @êõk,Ş_Ç@ë<ã:¢@ëBÔó<MADƒ=49X;å`B?Ë…¸Që… "  @êõk,Ş_Ç@ë<ã:¢@ëBÔó<MA²-=©ûç<uÂ?ÒÀƒn—   @êõk,Ş_Ç@ë<ã:¢@ë€XÍ@İhs>?|î=C–?ñŸ¾vÈ´   @êõk,Ş_Ç@ë<ã:¢@ëëç>È¾ 6ÿúÿô     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 6m=ÌÌÍÂ­   AvÔş=m‘hAkß;=‹C–A`E¢=‰7LHQ£¯ŒÔ ¿á.cùQsğ¿á½Êª?ääï
+ ¶åè?S©*/‰ïM1237658424619696216J092721.42+060957.909 27 21.42+06 09 57.9@aºÛ"Ğåa@ª¿ÔO1A8i = 15.69<¾Ê¢SDSS_goodÀXÿ\(õÂSDSSß  Íã[@aºÚøßzN@ªcÇOµ= ù	  AîQìQSO   @•<Që…¸@ØŸù™™™š@H£²şÅm]@vH’3± /HÆ]Sò$À@éD]„CĞ   @éD]„CĞÀZığnÎÌhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0991/spec-0991-52707-0603.fits     ?ÅøJKĞÍ{-Ç º XCÖÙ@ÅP-Ç º Z?iÃqèIÁÅ@aºÚŞ&6@@ª¶`´ Ag‚<á¡A2ˆ<¿°WAè<•Æ‹A‡§1<Ğä+?s¯|™´Æ-Ç º XCÖÙ@ÅP-Ç º Z?iÃqèIÁÅ@aºÚŞ&6@@ª¶`´ A,”A-‘mA0X?s¯|™´Æ =?’çöô¾ƒ^@!×Ö”î9@aºÛ"Ğå`@ª©u¯°J092721.42+060957.9@aºÛ$~dŠ@ªØúØ=€4n=}ó¶»šu@lVÚª:Ñ@B¢©¬6TP@aÆvX¡UÀ Ä¡îÒ±@eÔıó¶F@¢8À    ˜Îí-+å1412p060_ab41-0152691412p060_ab41  ;¥A>J<¼jB;33?ıxÔıó¶FA/ûç<¬1BPÌÍ?ğ—Oß;d@ùÛ#<›¥ãBe33?ğıó¶E¡Ë@­X<ıó¶B
+ÌÍ?ğzáG®?ó¡ÊÀƒo                     0000  1111AAAA           A{A~›¦A„ A©ü                             @¥÷3@ˆÊ@N5?|í‘AzÈ´@4í‘    @£¤™ Äe@H^=¢ø¾Bå`@o+=‡+@ÇO     @j–@¤üµÂ\)AäMÓ?=/@İ3@ˆÊ@?‡+@‹¡~ùÛ"ÑA$=q>Æ§ğA>=q;å`B  >…¡ËA0;å`B  >£Sø@ùxÕ<49X  ?S33@¬Ôş<İ/ ?t¼AH¼j;å`B  A<^5<o  At¼<Tıô  @Îéy<í‘h ABj;å`B  A5¸;å`B  A	ï<49X  @¿C–<İ/ A?÷Ï;å`B  A29X;å`B  A°!<#×
+  @¶5?<í‘h A>áH;å`B A0ıô<o Aº^<49X  @±™š=o A>V<o A0Z<o A {<49X @¯t¼=¥ã A><o A/ó¶<t¼ @şMÓ<D›¦ @®$İ=<j A=ÊÁ<t¼ A/¥ã<t¼ @ıG®<e`B @­G®=]/ A=²<t¼ A/hs<#×
+ @ü£×<uÂ @¬bN=% A>J=¥ã<t¼>¸R   @ëjÇ‚@ëÄ#«@ë{úª£A0  <¬1;£×
+?Ã•$İ/   @ëjÇ‚@ëÄ#«@ë{úª£@ùÛ#<Ôıô;Ä›¦?¹XbMÒò   @ëjÇ‚@ëÄ#«@ë{úª£@­‰7=‹C–<‹C–?Ï|í‘hr°   @ëjÇ‚@ëÄ#«@ë{úª£  ÿË   À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 8nj'>VÃ33 AlÄœ=‰7LAa33=—PARùÛ=D›¦˜Îí-+å ¿éñÄ.^R?ã¨N²Ç“Q?»H^Õn ~?S©*1ËÄ1237665356688392316J161658.70+230755.516 16 58.70+23 07 55.5@n‡Ó m:	@7!Ğ6iA‚CÊi = 15.76;È¯”SDSS_goodÀXÿ\(õÂSDSSy  Ñ @n‡Ó™o¨/@7!Î_oÒ=Í;  B¸QSO   @’ záG®@àmÙ™™™š@B–ÿ—$t@|Ì¦«â5HØˆ:…©@òO¶-¤7   @òO¶-¤7ÀZş$XœÒhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1657/spec-1657-53520-0144.fits     ?¾Ù€ÃäÍa- 8 |Ct>A¹‚- 8 ~?`ĞÕ0ë%@n‡Ói¿àD@7!ÎÉ¯g>A‰ÄÎ<“AÊ—;Ì}ùAŒÈ<ó‹AŠM3<ª+°?aeê*éQR- 8 |Ct>A¹‚- 8 ~?`ĞÕ0ë%@n‡Ói¿àD@7!ÎÉ¯g>A&TAA. A3T¬?aeê*éQR >?º[SíNM@QüM/]¼@n‡ÓŸºE@7!Ğ1[ŠJ161658.70+230755.5@n‡ÓŞnµÀ@7!ĞË_ƒ=‹àß=‰ ';Œç@CôkÎ…3±@EÏ²Œ¯¦K@màs¨nI@EÏã7r]@¡än—P@¨|í‘h!ç·'*ğ2443p227_ab41-0280802443p227_ab41  m°ADÀƒ<Ä›¦B5™š?şñ©ûçl‹A6Iº<´9XBH  ?ì6âëCA¶F<´9XBE™š?îœwškP±@²^5=C–B™š?ñ?|í‘hs?óOß;dZ                     0000  0000AAAA        
+ 
+ 
+ 
+A>A‰ADÀƒAE¢AÎÙ                             @ØÌ¿ôw6@E	Û"Ğå`A3C–@-Òò    @›Q™Ÿä6v@A~Ùê¦ÒAôOß@k×
+>%@¿Š     @dmpŸ¥LU@šbn—PAŞÀƒ@‡+@3Â€'ØŒ@<Üí¢/jQ@}üĞå`A‰A!ûç@r°ADn˜<o  >…¡ËA6vÉ<#×
+  >£SøA×
+<‹C–  ?S33@³•=¾w ?t¼AOo<t¼  AB¸R<49X  A~ú<¬1  @Õ%='ï AH›¦<o  A;‘h<#×
+  A
+=<‹C–  @Æ=¾w AF{<o A8Ôş<49X Aë…<ƒo  @½`B='ï ADñª<o A7Â<D›¦ A	‡<‹C– @¹Oß=D›¦ ADQì<t¼ A7C–<Tıô A|î<›¥ã @¸“=m‘h ACçm<t¼ A6ùÛ<uÂ A›¦<¬1 @·Æ¨=‘hs AC•<#×
+ A6Ğå<‹C– A$İ<¼j @·¾w=²- ACG®<49X A6´9<›¥ã Aó¶<Ôıô @·t¼=Òñª ADÀƒ<´9X;Ä›¦=\)   @êùR¢ğŠ@êùrfPx@êù^uÑÙ&A65?<ƒo;£×
+?¸“t¼j~ú   @êùR¢ğŠ@êùrfPx@êù^uÑÙ&A¶F=¥ã<D›¦?¿|í‘hr° 	  @êùVßÑÔ@êùrfPx@êù`Ó„@±ãT=Ù‡=+?×KÆ§ï² 	  @êùVßÑÔ@êùrfPx@êù`Ó„         À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € îàH>JÀƒÃæf At“=…¸Ai?}=\)A\È´=ixÕ!ç·'*ğ ¿Ù’ôƒjÑ¿ê€ı³R‘?Ù$}Ï0Ñrˆì€?ZµÒÂæÏZ1237661416060420137J125840.54+560334.012 58 40.54+56 03 34.0@hUgÃìâ¤@L›à$h­A‹ji = 17.02?EÙSDSS_good@ gï²-SDSS&  Î- ò@hUh	Ô•@Lœ¾ß¤>V¡b  A†QìQSO   @”nG®zá@®@×
+=p¤@3ÄÂø7´¢@"ç¯ PHÌ\÷Kÿ£@ø—ƒm÷    À gï²-?ÊèöşÌc€http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1318/spec-1318-52781-0242.fits     ?±æ\oİL•-€ } )CB«>B`<ß-€ } *?yH«ánw)@hUhdã¨h@Lìƒ´A”XË<Â"9A‹¸;ğÇøA”° <»lA—<<E?nÒò/w-€ } )CB«>B`<ß-€ } *?yH«ánw)@hUhdã¨h@Lìƒ´A/°1A1ÕQA3J?nÒò/w ??Õê–oŸË@R^køvÃ@hUgÄŸ×¡@L›ÜiøÂJ125840.57+560334.0@hUiuÍ@LœÃÅ¤=ŸŠ	=¥zx;·€4@^6zÛhq@N…-šlş@côøIRYi@Ki¨?NÊh@Ÿã     @ ƒ¬1"’kw3E1946p560_ab41-0192051946p560_ab41  KAPff<ÌÌÍB/33?ı¡ÊÀƒoACC–<Ä›¦B733?õV“uA1'<õÂB™š?ñ×
+=p£×@å™š=“t¼Ap  ?ïí(Œç°?õ7KÆ§ï               ;o  0000  0110AAAA           AË÷ÏAÍÊÁAÆ5?AÄå`                             @ˆõ¿ğEx@6Kû‚Â½A¸@'\)<49X@‰äá?ĞĞh@2ñ™4ïÌAÆÌÍ@T¼j>S÷Ï@¡MÌ¿ôw6@NİÓpóˆ@•â2-VAÊÎÙ>î{@jº`Z³«@,l1&éy@ya™™™™šA áH>²-APA‰<o  >…¡ËAC;d<49X  >£SøA-=,1  ?S33@çÆ¨=÷ÎÙ ?t¼AZ´9<t¼  AO‘h<D›¦  A0Ù=På`  Aƒ>    ATn˜<o  AHV<49X  A'`B=,1  @ú5?=÷ÎÙ AR$İ<t¼  AE‰7<49X  A"MÓ='ï  @ò¬>+ AQ;d<#×
+ ADff<Tıô A…=0 Å @ïSø>#×
+ APÀƒ<49X ACÂ<e`B A  =@ƒ @ïß;>S÷Ï AP^5<D›¦ ACSø<ƒo A&é=Y‡ @ğ›¦>†§ğ AP  <Tıô ACV<“t¼ AÄœ=uÂ @ğÔş>¥ãT AO®<uÂ ABéy<£×
+ A¬=Oß @ñxÕ>ÊÀƒ APff=¾w<o> Äœ   @ëÀ‰3@ëõä5t@ë×ê|ñACC–=\);å`B?Áhr° Äœ   @ëÀ‰3@ëõä5t@ë×ê|ñA(ö=áG®<¼j?ŞÙ‡+   @ëÄUS´]@ëõä5t@ëÙ6şúq@ä Å>Ÿ¾w=…¸?ú° Ä›¥ã   @ëÀ‰3@ëõä5t@ëØlr  ÿú     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € (\n=éxÕB3™š A~£×=Ä›¦Ar“=ß;dAd=Æ§ğ"’kw3E ¿áHÅ 'It¿Â/tŠ?êŒ:–}º•¢U?\kƒœW…1237667915422629955J124223.36+194720.912 42 23.36+19 47 20.9@gÓZËoE@3Ê—Ç‘A…vi = 16.35;ÿËäSDSS_goodÀXÿ\(õÂSDSS
+6  ÔÑ@gÓhÆ’÷@3Ê;÷'>$%¯  AĞQìQSO   @–záG®@µc×
+=q@<£a@N¥@‡ø:ŒáÍEHÅË¦fÕKq@ qşã#   @ qşã#ÀZÿêhÒ$óhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2614/spec-2614-54481-0279.fits     ?—|ì<(,-i`ª CC>˜ëAP(-i`ª C?V –÷­Ì@gÓ\ŞÑĞ@3Ê~‹ı3Aˆå«<FA…v;ÿËäA‰;<¥u¥A‰P¬<qƒÙ?;Ç¬Mæ -i`ª CC>˜ëAP(-i`ª C?V –÷­Ì@gÓ\ŞÑĞ@3Ê~‹ı3A/—ŸA/ÓoA2oÙ?;Ç¬Mæ  @?´d#–=â@Kğ••şÚf@gÓZzJ@3Êtÿ†J124223.36+194720.9@gÓƒ…’@3ÊÑÑŒ= 'R=¡ÊÁ;ØDĞ@qêáÇë¼|@T—ëA,:@f¯ÀÑK·@6LÌ% †@˜jÔıó¶F@¢bMÒñªlÊ°YÔJ51904p196_ab41-0168851904p196_ab41  AõAP Å<ÌÌÍB-™š?ñ+Iº^ABff<¼jB:  ?èÿ—$tSA  <å`BB  ?ğ Ä›¥ãT@Øİ/=ƒoA†ff?ìºÇË)_?íöı!ÿ.I                     0000  0110AAAA          A_?}A`1AháHAmÎÙ                             @f`ÉŠ@6Ú›A9†AJİ/@2n˜    @‹:QßüTz@2ÀAxpT&Bƒ@j=q>:^5@«µf_ú;›@VºŸr÷n@ ìdZ¬Aá|î    @sGÖÿÁß@2Oß;dZ@…„1&éyA$9X>æéyAO<#×
+  >…¡ËABƒ<uÂ  >£SøA×
+=+  ?S33@Ø¼j=ÌÌÍ ?t¼AYó¶<49X  AN°!<‹C–  A(E¢=#×
+  @ûl‹=Û"Ñ AS®<#×
+  AG²<uÂ  A
+==+  @ë+=ÌÌÍ AQ?}<49X  ADÌÍ<ƒo  AJ=o  @áG®=Òñª AP“<D›¦  AC•<“t¼  AG®=C–  @Ü(ö=í‘h AOhs<Tıô  ABéy<¬1  Aß;=¥ã  @ÚJ>V ANå`<uÂ ABr°<Ä›¦ A7L=0 Å @Ù‡>,1 ANIº<ƒo AB  <İ/ Ao=H´9 @Øİ/>På` AMOß<‹C– AA`B<í‘h A;d=ixÕ @Ù™š>€   AP$İ<¼j;Ä›¦=¼j   @ëiƒBIü@ëÙ³?gÊ@ë‚œ°oŸABbN<´9X;Ä›¦?²-V“   @ëiƒBIü@ëÙ³?gÊ@ë‚œ°oŸA1=aG®<uÂ?Äİ/Ÿ¾w   @ëiƒBIü@ëÙ³?gÊ@ë‚œ°oŸ@Ør°>.{=<j?á‘hr° Å   @ëiƒBIü@ëÙ³?gÊ@ë‚œ°oŸ ÿáÿõ     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 4>+>C•Ã!™š AvA‰=q©üAnbN=²-A_o=e`BlÊ°YÔJ5 ¿í˜¿yÏ¸¿Æ&YŸ-À£?Õªö‘çtí§ ?S Q×˜„1237662685216636999J135347.01+354326.513 53 47.01+35 43 26.5@jD›¥ãT@AÜ¬ñ5y¾Aˆ5ói = 16.64<Äá]SDSS_goodÀXÿ\(õÂSDSSñ  Ğä 9@jD|0Ó@AÜ­«ŸU›>Aò  A33QSO   @•Y£×
+=q@´¤&ffff@0‘×Ûô‡ı@ŒÑã%qÅHÎİW™ËùQ@ êK>1³   @ êK>1³À[yr]ˆÅhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2033/spec-2033-53476-0057.fits     ?·Zz¶;uÖ-§  GCPr%Båh-§  H?U&»úÍIŞ@jDkò€²@AÜ­?HQúAjQ<‡‚œAˆY­<à[Au‰<¢OmAŒèÈ<¢$Ì?úèÑMƒï-§  GCPr%Båh-§  H?U&»úÍIŞ@jDkò€²@AÜ­?HQúA.ƒNA0tA3ÒÏ?úèÑMƒï A?³VSÉ«°@RÓ—³Œe@jD›¥ãT@AÜ¬ó±³J135347.01+354326.5@jDĞ©*@AÜ­ÚÜZ= Äœ=¤¨Á¼h§@Qm¦ûëş@RŒ†¥¡Ù@g·³s_s-@EËĞÌ5Î@§¹âĞå`B@zCûçl‹Dşe²×ó«2089p363_ab41-0049712089p363_ab41  kAUhs<ÌÌÍB.  ?ñ‰7KÆ§ğAF\<¼jB933?ïl‹C•AQì<í‘hB  ?ğ¸Që…¸@ÛC–=uÂA  ?ïŞ Ñ·?ğMÒñ©ûç                     0000  0000AAAA           A†ß;A†$İA‡A‰A†|î                             @†áp +„@0Òn¨TG€AÂ@)hs=ixÕ@…nQßüTz@-šŸ¾vÈ´AÏ"Ñ@`b    @¥      @R8´A»Œ3@—•H´9XAÒãT?mOß@qÿ…ÄÁf@0	7:ÿ°O@|ûçl‹DAçm>éûçATÙ<49X >…¡ËAF5?<D›¦ >£SøAë…=o  ?S33@ŞÀƒ>¸R ?t¼A_`B<D›¦  AR“u<e`B  A,—=#×
+  @ÿ+>¾w AY%<49X AKOß<D›¦ A#¸=o  @ñ/>¸R AV£×<D›¦ AHn˜<Tıô A<ıó¶ @éë…>1&é AU¥ã<Tıô AG/<e`B A33=+ @ç¶F>Z¬ AUo<uÂ AF‡+<ƒo Aº^=t¼ @ê->”zá AT‹D<ƒo AF“<“t¼ AV='ï @ğå`>ß¾w ASß;<“t¼ AE¶F<£×
+ AÀƒ=@ƒ @Ş°!À    ARİ/<›¥ã AE+<´9X A§ğ=]/ @àZÀ    AUhs<İ/;å`B>^5?   @êôhéGw@ë	Ü1 	@ë„#®¦AF\=+<o?ÂĞå`A‰7   @êôhéGw@ë	Ü1 	@ë„#®¦A^5=È´9<Ä›¦?Ôj~ùÛ"Ñ   @êôhéGw@ë	Ü1 	@ë„#®¦@Ú°!>,1='ï?ççl‹C•   @êôhéGw@ë	Ü1 	@ë„#®¦  	ÿü      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 
+~=Ş>8QìÂ˜™š AyG®=•Aq"Ñ=ÒñªAa‰7=‰7Lşe²×ó« ¿æ×£µÚ§!¿Ø¿º.²·?â¯(ßzım²Ke?J6âåÚóT1237658611444154406J111915.84+475055.311 19 15.84+47 50 55.3@e:¬1(@Gì¢—ÉA€V?i = 15.48;°»ÿSDSS_good@ Ÿ;dZ¬SDSSÅ  ÌÖ Ë@e:;:i@Gì¡‹Öbx>&1ù  AÉ\)QSO   @—QzáG®@´k…¸R@>Xy=Ù@ˆLB_¶HÅE?Œ_áp@ íä¬3   À Ÿ;dZ¬?Ğe®Î® http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0965/spec-0965-52438-0203.fits     ?Æ¥›ujg±-ó U &C)ĞåB?e-ó U (?l7bÜ±İ@e:í —(@Gì¡àNšAä"=ˆ¤AƒC=UÇA’İ)<$[A‹=2•?Œ¹â§‘¿Ç-ó U &C)ĞåB?e-ó U (?l7bÜ±İ@e:í —(@Gì¡àNšA4÷¦A6`=A8ò_?Œ¹â§‘¿Ç B?¸S\f‡ô@UT4„E@e:¬1'@Gì¢G'İJ111915.84+475055.3@e:ş=ˆ!@Gì¢œú=†YK=‰kº»å`B@c¶Î&gs@OJZ“ÊLÀ@b’İ¢x@C¢Ë†«€@eà Ä›¥ã@|l¬1'iôˆ3VˆI1687p484_ab41-0000091687p484_ab41   	A>n˜<¼jB;™š@E¡ÊÀƒA1X<´9XBB  ?õÎÙ‡+A“<£×
+BZ  ?òIº^5?}@½hs=PAìÌÍ?ñ®záG®@-V“                     0000 1100AAAA           Aq²Ay%AxùÛAtff                             @¥z™ Äe@MQ&áY.A ùÛ@)º^    @¢*     @GòĞÜüÅ¹Aß=q@\9X>%@»ƒ€    @`'®÷<@šPNÙ‡+AØãT>Ğå`@…<_Ô{î@6ú^Ft@„^5?|îA%&é?Ã•A>=q;å`B  >…¡ËA1;d;å`B  >£SøAº^<Tıô  ?S33@¼A‰=¾w ?t¼AI&é;å`B  A=¾w<o  AvÉ<ƒo  @Ş5?=,1 ABj;å`B  A6V;å`B  Aí‘<Tıô  @Î°!=¾w A?ÎÙ;å`B  A3t¼<o  AÊÁ<Tıô  @ÅxÕ=#×
+ A>Àƒ;å`B A2V<o A
+éy<Tıô  @À£×=49X A>Iº;å`B A1çm<t¼ A	KÇ<e`B @¾{=LÌÍ A>1<o A1º^<#×
+ Aj<ƒo @¼ Å=ixÕ A=ß;<o A1¶F<49X Aó¶<‹C– @º\=…¸ A=Æ¨<t¼ A1º^<D›¦ A²-<›¥ã @¹V=“t¼ A>zá<Ä›¦;Ä›¦=ë…   @ë-ÏoSö@ë'™‘kÎ@ëOAç›ÛA1 <¼j;Ä›¦?ÆéxÔıó¶   @ë-ÏoSö@ë'™‘kÎ@ëOAç›ÛA{<õÂ<o?¾ùÛ"Ğå`   @ë-ÏoSö@ë'™‘kÎ@ëOAç›Û@½²-=çl‹<í‘h?ŞùÛ"Ğå`   @ë-ÏoSö@ë'™‘kÎ@ëOAç›Û  ÿù     ?O\)A
+=?^¸RÂ   AA`B;å`B  A
+=?^¸RÂ   A57L;å`B  A
+=?^¸RÂ   A/<Tıô  AváH?uÂÂ   @ÑÊÁ=¾w "U±>Ä›¦Âï   AsãT=‘hsAdÌÍ=‘hsAVÀƒ=ixÕiôˆ3VˆI ¿å"ö2Xc ?¾`-
+ıVF?ç¹X5šeMÏƒ?Z6âòqÖ’1237664293686739025J134105.53+371451.813 41 05.53+37 14 51.8@i¨¼Áà˜ê@BŸµ\wìA‹@æi = 17.11<´ŞSDSS_goodÀXÿ\(õÂSDSS5  Òbğ@i¨¼¾aÏÿ@BŸ´ör2>wÎÙ  A¡G®QSO   @—ë…¸R@£ ™™™™š@)#•$İ@’ùÖrûçQHÈÌƒä7Íõ@ %kĞ¦”·   @ %kĞ¦”·À[	£
+•&http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2101/spec-2101-53858-0496.fits     ?¦©¢±1S- b QCMEæBı«- b R?M$ÒV,¥@i¨¼ ¦×î@BŸµØgıA‘şF<·zA‹`<† A“Ô—<°ámA‘d¸<‡‚a?h&ƒto‘Ì- b QCMEæBı«- b R?M$ÒV,¥@i¨¼ ¦×î@BŸµØgıA/)A0™A2…^?h&ƒto‘Ì C?¦”î9.@NÖ}¡ìNr@i¨¼Â“ç@BŸµZÀ?÷J134105.53+371451.8@i¨¼İ¡0g@BŸµŒ>gD=¯O=²a|»XDĞ@TqkÆÒ@RÜ²2í“@g4`"†É@EÕ½aõ¾^@†N/Ÿ¾w@{êQë…¸eW}Dwøa2046p378_ab41-0000332046p378_ab41   !AY/<ÌÌÍB0  ?õV“uAKOß<ÌÌÍB/™š?ğA‰7KÆ¨A‡+=¾wAß33?ñ¸Që…@ìzá=È´9A1™š?ï¼ÓZ…‡”?ñ‰7KÆ§ğ                     0000  0000AAAA          A‡\A†²A A†¾w                             @‚j£ßóğş@*É7KÆ§ğA%@1‰7=q©ü@€L¸`f@'Ä“t¼jAìJ@c•=Â\@šöf`ÉŠ@NèrÀç¼<@—ì©ûçl‹AÎ?ºŸ¾@eî–@/Oß;dZ@|o¸Që…A!¶F?‰xÕAXr°<ƒo  >…¡ËAJùÛ<ƒo  >£SøAo=]/  ?S33@èõÃ>Iº ?t¼Ac‡<‹C–  AWOß<“t¼  A5|î=‡+  A{>“u A\Ÿ¾<ƒo  AP{<ƒo  A,E¢=]/  @ûdZ>Iº AZ$İ<‹C–  AM?}<‹C–  A'C–=Y‡  @ò§ğ> AY‡<›¥ã  AL Å<›¥ã  A$ff=e`B  @ğ“>6E¢ AX“u<´9X  AK¡Ë<´9X  A"¸R=yÛ#  @ğzá>ixÕ AXE¢<ÌÌÍ AKdZ<ÌÌÍ A!¶F=‹C– @ó
+=>œ(ö AXb<í‘h AK33<å`B A!33=›¥ã @ø Å>Ü(ö AWº^=o AJéy=o A!%=²- @â§ğÀ    AY+=@ƒ<49X>0 Å   @ëÍ ‹]@ë	]Où’@ë	?­›n±AK\)=™™š<“t¼?Ót¼j~ùÛ   @ëÍ ‹]@ë	]Où’@ë	?­›n±AĞå=¥ãT<£×
+?ØõÂ\(ö   @ëÍ ‹]@ë	]Où’@ë	@«¬—@ìZ>¢MÓ=²-?ô$İ/Ÿ¾   @ëÍ ‹]@ë	]Où’@ë	?­›n±ÿõ ÿö      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € İ¢w=q©üBˆff A„vÉ=Ğå`Azj=ÎÙAmP=©ûçeW}Dwøa ¿çßz'9ô¿ÕÀ/Ç?ã^OLjÓ²J?Tj&"Èî1237660615591723012J122829.29+110354.112 28 29.29+11 03 54.1@gcçÃìâ¦@&!KR%Æ3A‚i = 17.18<…5lSDSS_good@ záG®{SDSSÏ  ÍõD@gcçê_„Ë@&!JM++ş>*çÕ  A†QìQSO   @š…
+=p£×@«¢#×
+=q@-:’£S@‰ş§~ù¨H¿:…«@ 8HT   À záG®{?Àµ™ƒ	Àhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1231/spec-1231-52725-0580.fits     ?²›·$+&-ÅÀÖ C;>A1
+[-?À( 1?S}‡KpIª@gcçãS©B@&!IğÁ/ùA’(À<³T_Ad6<Y=A’­´=®A«Ã<gá?{Ã5å•"¶-ÅÀÖ C;>A1
+[-?À( 1?S}‡KpIª@gcçãS©B@&!IğÁ/ùA)«^A*Ø¹A.ú-?{Ã5å•"¶ D?ÌÀ¤ ]Øù@WÂTëß±@gcçÄŸ×¡@&!KYš¦	J122829.30+110354.0@gcèH¾µ³@&!JšX{=,Ùè=2•ê»Çâ‚@q´.ÊƒFq@RCy|ÃŸı@fÂl}l<i@)òM¬[=@«qW
+=p¤@©ÚŸ¾vÉ	H¦ÚPÕ1876p106_ab41-0237711876p106_ab41  \ÛARvÉ<ÔıôB'™š?íÅo iAD(ö<Ä›¦B6  ?ğÔıó¶E¢AP=49XAÅ™š?ï'»/ìW@íÛ#=ÒñªA(  ?îæ1ø .?ï?|í‘hs                     0000  1110AAAA a        A•ƒA–+An9XA†‡+                             @‹QßüTz@4µ?|í‘hA‚5?@@£×    @ˆ–     @1O\.ÊïBL"Ñ@‚Ğå=° Å@œ‚Ì¿ôw6@RupŸ¥LU@¤Rœ(õÂAç¾w?ÎÙ@eQáÃô@0‹C•@‹<İ/Ÿ¾A,›¦>° ÅAR5?<#×
+  >…¡ËAD1<uÂ  >£SøA?}=Y‡  ?S33@ñ`B>?|î ?t¼A\^5<49X  AP5?<ƒo  A3ûç=…¸  A	33>D›¦ AVbN<#×
+  AI"Ñ<uÂ  A*r°=Y‡  Açm>?|î ATIº<#×
+ AFZ<ƒo A%`B=På`  @ú—>H´9 ASxÕ<D›¦ AE7L<“t¼ A"¼j=]/ @õ¸>`A‰ AS"Ñ<Tıô AD§ğ<£×
+ A!t¼=yÛ# @ñ7L>|í‘ ARí‘<uÂ AD=q<¼j A éy=Oß @ìıô>ŠÀƒ ARÀƒ<ƒo ACÛ#<Ôıô A Ğå=£×
+ @èb>‘ë… AR“u<“t¼ AC|î<í‘h A õÃ=¾vÉ @âÙ>–‡+ ARvÉ=¾w<t¼>“u   @ë~ Ü¹ª@ëê•C²@ë¤eACûç=D›¦<49X?Ï\(õÂ\   @ë~ Ü¹ª@ëê•C²@ë¤eAl‹>vÈ´=ƒo?ğ1&éxÕ  @ë~ Ü¹ª@ëæY/K@ë“¤Á
+L@íÛ#>…¡Ë=%?íë…¸Qì   @ë~ Ü¹ª@ëæY/K@ëœ¢œ—Ñ  #     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 3‰êM>cSøÂşff A~V=ß;dAx\>™šAh¼j=í‘h	H¦ÚPÕ ¿ï)­†‡z¿¿&b\éºÄ?ÈíÃÕ?ş£R–?WS{üƒù1237651250439913597J160732.85+484620.016 07 32.85+48 46 20.0@n<aG®{@HbØ-‚Ø.A†IÎi = 16.19<L‹ÙSDSS_good@å`A‰7LSDSSn  ËV Ò@n<aä÷eş@Hb×süP>µt  AÇ
+=QSO   @šzáG®@À#×
+=q@@Z)Çy¦µ@…ªÓKßP4HË#£%«“m@ f·)Â   Àå`A‰7L¿Íß#‡ http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0622/spec-0622-52054-0210.fits     ?Èùº¨-ABJ }Cqã
+BCÁ-ABJ ~?n/Za·òl@n<a¼ãWÃ@HbÙ¬926A•£´=#ßÎA†sd<MüæA˜Ãm<ªãSA <šNa?…d˜µ÷š-ABJ }Cqã
+BCÁ-ABJ ~?n/Za·òl@n<a¼ãWÃ@HbÙ¬926A2ş.A4xA5±(?…d˜µ÷š E?Ë‚ºZ•@IÍ¼w¯d@n<aG®{@HbØ+¥ 8J160732.86+484620.1@n<aÜ“ê-@HbÙdŠÄ=†YK=ƒä&¼I…ğ@SŸá²7@GW&ƒ!ˆ@k ‹;Óå@PÇbV6m@¯ ã×
+=q@¦se`A‰7!¶™Ê­ùV2429p484_ab41-0289502429p484_ab41  qA@MÓ<¼jB>  ?ıß;dZ¬A2£×<¬1BN  ?ò“t¼j~úA
+=q<¬1BPff?óÒñ©ûçm@Ã®=¥ãAæff?íŞi­BÃÊ?ôå`A‰7L                     0000  5300AAAA    1 1 1 1 . . $ .BI‡+BFşúB=øÕB=b                             @£I™ Äe@Iù7Cc,AÈ´@&ùÛ<‹C–@ Û™ Äe@Dî5?|í‘Aµ
+=@OP=ixÕ@µªf_ú;›@Z–@’ãC•%AĞıô@·dZ@¾QßüTz@3¼j~ùÛ#@uRzáG®A#®?ëC–A@n˜;Ä›¦  >…¡ËA2È´;Ä›¦  >£SøA
+  <49X  ?S33@Ãl‹<å`B ?t¼AJĞå;Ä›¦  A?%;Ä›¦  A Äœ<Tıô  @äõÃ<í‘h AD›¦;Ä›¦  A7ãT;Ä›¦  A33<49X  @ÕÛ#<å`B ABV;Ä›¦  A5&é;Ä›¦  Ab<49X  @Í‡<õÂ AAl‹;Ä›¦ A4b;Ä›¦ AC–<49X @ÈÔş=\) A@ıô;å`B A3…;å`B Aº^<D›¦ @ÇC–=,1 A@´9;å`B A333;å`B Aí‘<e`B @ÆvÉ=LÌÍ A@zá;å`B A2í‘;å`B A‹D<uÂ @Åº^=uÂ A@A‰<o A2°!<o A^5<‹C– @Å%=‘hs A@Iº=8Qì;Ä›¦>,1 0  @êöÊ—
+ùX@ë{S:Ê¬@ëæÉÎA2£×=#×
+;Ä›¦?Ç+Iº^ 0  @êöÊ—
+ùX@ë{S:Ê¬@ëæÉÎA
+=q=yÛ#<t¼?Ôj~ùÛ"Ñ -  @êöÊ—
+ùX@ë{S:Ê¬@ë&äËœ@Ã…=ó¶F<“t¼?àzáG®{ -  @êöÊ—
+ùX@ë{S:Ê¬@ë&äËœ 7       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € :Jj=áG®Ãš At=ƒoAeP=•AT“=¾w!¶™Ê­ùV ¿Óà <E÷œ¿â™ş¶u&’?è+nªjµ\=?J6âòqÖ1237657589239316505J095309.03+475113.009 53 09.03+47 51 13.0@b‰49Xb@GíC şÜºAÀ”i = 17.41<%X¦SDSS_good@!s¶E¡ÊÁSDSSí  Íß h@b‰4.Ûµ@GíC¿rq7>NŠr  Ayë…QSO   @œâ     @¥B¸Që…@+ûµsê³@ê¾îóÆHÂJøœAo!@ nş,¨UÓ   À!s¶E¡ÊÁ?àK—Nàhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1005/spec-1005-52703-0104.fits     ?±®4,»ü- - CI¢B?j- - ?]]ŠğL@b‰4w}‚@GíCé…,YA– O=}tAÑJ<#¸çA–›{<ÂfA–p<©M?sê(éQ†- - CI¢B?j- - ?]]ŠğL@b‰4w}‚@GíCé…,YA*o²A+êFA-ÈÑ?sê(éQ† F?É£˜ Õú@Eó»¾‡¬@b‰49Xb@GíC @ÀJ095309.04+475113.1@b‰4±î$5@GíDqIx=Ë’:=Ó÷Ï¼ç@e8*"A@Hã4…BÊ€@`–ò(¦è@@W°C)J@¢éöE¡ÊÁ@|s`A‰7L˜Á‰ïM1484p484_ab41-0030851484p484_ab41  A^ Å<İ/B"ff?ğùÛ"Ğå`AOó¶<í‘hB  ?ïƒ{J#9ÁA*V=‘hsAtÌÍ?ìÏAò×s@ıãT>+@Ğ  ?î
+¦L/ƒ{?îäŠqŞj                     0000  110nAAAB           A~í‘A†SøA‡‡A…“u                             @{¸) >ê!@%Ót¼j~úA1Oß@9X=\)@xğ£àz(»@%Cn—PAôJ@f§ğ>™™š@‹PQßüTz@L|Aíá@š`A‰7LAÚ&é>Ú¬@Z–@0NV“u@ë—Oß;A'ûç?ÈbA]C–<ƒo  >…¡ËAP$İ<£×
+  >£SøA(Àƒ=²-  ?S33A j>‹C– ?t¼AgP<“t¼  A\Z<¼j  A?ÎÙ=å`B  AÆ¨>–‡+ Aap¤<ƒo  AU?}<£×
+  A5ó¶=²-  A	¡Ë>‹C– A_Sø<“t¼  ARvÉ<¬1  A0(ö=¥ãT  A->ŠÀƒ A^›¦<£×
+ AQ;d<Ä›¦ A,éy=©ûç A Àƒ>“t¼ A^A‰<¼j AP‹D<İ/ A+ =¸Qì @û•>œ¬ A]ÎÙ<Ôıô AP$İ<ıó¶ A*(ö=Ğå` @ö=q>¤İ/ A] <í‘h AOß;=\) A)Â=ë… @òÀƒ>³¶F A\$İ<ıó¶ AO•=¾w A)™š>$İ @ñ&é>ÌIº A^$İ=‡+<‹C–>xÔş   @ëFáÀ_ @ëjŞâ3;@ëZ}ÖpAO÷Ï=%<ƒo?ËÆ§ï²-   @ëFáÀ_ @ëjŞâ3;@ëZ}ÖpA+
+=>>vÉ=D›¦?íÛ"Ğå`B   @ëFáÀ_ @ëjŞâ3;@ëZ}Öp@û¥ã>ÿ|î>“@ ÊÀƒn˜   @ëFáÀ_ @ëjŞâ3;@ëZ}Öp  ÿö      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € µk>£×
+ÂBff Aƒå`>¸RArÌÍÀ  Ao²>¸R˜Á‰ïM ¿âDTƒ´?Ö“BMQ?ç¹Ò@Ï•FMõŞ?:6âÙD1237660343925997873J080559.94+260602.408 05 59.94+26 06 02.4@^_ûçl‹D@:ÅJi!sAƒµi = 15.97;Ÿ‰OSDSS_good@ 2° Ä›¦SDSSµ  Í¾í@^_ü;Oag@:ÄÚï>
+Úº  B®QSO   @™S¸Që…@Òs3333ÀW’óMj@ƒöYIîÈHÙî¯E$@ ›
+_!¹¡   À 2° Ä›¦¿Ê—G~Àhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1205/spec-1205-52670-0493.fits     ?±§åÉT)-†€L1BòÿßAĞÎ*-†€L1?PëÉr^2@^_ü0?Si@:ÅQ} æA…:n;ËE×Aƒµ;Ÿ‰OA…7<Yh_A…qI<}_½?y)=3;æ£-†€L1BòÿßAĞÎ*-†€L1?PëÉr^2@^_ü0?Si@:ÅQ} æA+ÄïA/ÀA1¢E?y)=3;æ£ G?¿á `xÜ@RãÙ©T"@^_ûçl‹D@:ÅP ÉTJ080559.94+260602.4@^_üƒß1@:ÅÛAÖ=‘ÑN=‹C–<ìÀ@h|Í¿pÃ·@;".Íû¡@]ˆ[,v@¾'?ßéà@£Ç®zá@§D1&éyà‹áÈ±µ«1216p257_ab41-0259631216p257_ab41  ekA=Â<ÌÌÍB*ÌÍ@¸Që…¸A01<£×
+BU™š?òA‰7KÆ¨A\)<¼jB<ff?ï„M:“@Æ^5=H´9A±™š?ñdZ¬1?õ‰7KÆ§ğ                     0000  0110AAAA           A]7LA^ffA^AXZ                             @¦RÌ¿ôw6@P½óGA„ÎÙ@A%    @£–3@ˆÊ@Gt9`sŞB#`B@{dZ=ƒo@¼°f_ú;›@c}pŸ¥LU@§\ì‹C•Aï“@J@€hÌÀ7“@7œj~ùÛ#@*5?|í‘A*^5?TzáA=;Ä›¦  >…¡ËA0b;å`B  >£SøA<ƒo  ?S33@Äí‘=yÛ# ?t¼AH$İ;å`B  A<vÉ<o  AÊÁ<£×
+  @çSø=…¸ AA®;Ä›¦  A5+;å`B  A5?<ƒo  @×\)=yÛ# A? ;Ä›¦  A2=q;å`B  Aí‘<uÂ  @Íó¶=ƒo A=ï;å`B  A1<o  A	ó¶<ƒo  @ÈõÃ=• A=Oß;å`B  A0^5<o  AIº<‹C–  @ÇC–=´9X A<áH;å`B A/ó¶<t¼ ASø<›¥ã @ÇSø=ß;d A<‹D;å`B A/¥ã<t¼ AÈ´<¬1 @È‹D>Iº A<E¢<o A/dZ<#×
+ A~ú<Ä›¦ @Ê^5>2- A=×
+<e`B;ƒo=—P   @ë J¥Z¨@ë jg°H2@ë Z†……A0 Å<¼j;å`B?ÃS÷ÎÙ‡   @ë J¥Z¨@ë jg°H2@ë Z†……ASø=H´9<e`B?ÁÊÀƒn˜   @ë J¥Z¨@ë jg°H2@ë Z†……@Æ~ú>‡+=0 Å?áãS÷ÎÙ   @ë J¥Z¨@ë jg°H2@ë Z†……  -ÿö     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 	t×·<´9XÁ ÌÍ Amó¶=,1Ab¬=@ƒATıô=C–à‹áÈ±µ« ¿Ş”&÷¤Ô?è€‹á|V8?Ü(#ëCÛO™?S©*2¯¨1237665430240362609J133241.18+300106.613 32 41.18+30 01 06.6@ie}œT¦“@>¼j~ùÛA3Îi = 17.29<•œ³SDSS_good@ ÷KÆ§ïSDSS>  ĞÛ +@ie}ªOÊC@>¼j~ùÛ>a–S  A\záQSO   @—r
+=p£×@ØÔ³3333@+Ûqu!–@‘ô=ş]Hú
+2°Dk‚@!Ün    À ÷KÆ§ï¿—!OğLä http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/2110/spec-2110-53467-0043.fits     ?•G‹rg‰6-&ÀB qCK+íAğ%ã-ĞÀ+ ?3¤m¶æ3Â@ie}—ü4^@>¼!81ÊA“,º<Îö^AŒ]y<‹OÚA’òÂ<Å´ÁAÈö<ı+J?x+HÚ]Qz-&ÀB qCK+íAğ%ã-ĞÀ+ ?3¤m¶æ3Â@ie}—ü4^@>¼!81ÊA46A5·A64¾?x+HÚ]Qz H?Â_0çÿX:@@jÌ‰°îJ@ie}›¡±–@>¼j~ùÛJ133241.18+300106.7@ie}Ğ°‡@>¾œˆac=Á‰7=ÂZî<C–@J‡^E/´ù@TãìQÍ@gƒázû]@B=C¹“4%@¥pœ(õÂ@”ô~ùÛ"Ñ:®¤İ;¶2034p302_ab41-0090782034p302_ab41  #vAWt¼<İ/B#33?ñ×
+=p£×ALéy<ÔıôB$ff?ñ"Ğå`A‰A$bN=]/A ÌÍ?ğ´9XbN@ô¬>“Aff?ñ™™™™™š?ñC•$İ               :ƒo  0000  111nAAAB           A† ÅA†A‡²-A„ıô                             @„YGŸì™ò@/ğ£×
+=qA!ûç@,í‘<D›¦@}¼     @'-‘hr°!AÛG®@`å`=‹C–@“?™Ÿä6v@N¡hƒwe@šï²-AÑıô    @aR=Qï·@0€     @Œ9XbNA"áH?¦ffAVĞå<49X  >…¡ËAMdZ<Ä›¦  >£SøA#™š=%  ?S33@öéy>wÎÙ ?t¼Aa"Ñ<D›¦  AYhs<İ/  A:1'=¡ÊÁ  A‹D>‚\ AZıô<49X  AR~ú<Ä›¦  A0ÌÍ=%  A¬>wÎÙ AX¼j<D›¦ AOûç<İ/ A+Æ¨=yÛ# @şÈ´>{çm AWÎÙ<Tıô AO/<ıó¶ A(õÃ=ƒo @ù©ü>Ù AWG®<e`B AO¸=P A'33=\) @ú—>º^5 AVİ/<ƒo AOSø=49X A%Òò=™™š @ı?}>ú^5 AVn˜<“t¼ AOP=Tıô A$´9=§ï @äZÀ    AUÎÙ<£×
+ AO²=uÂ A$=¸Qì @áº^À    AWxÕ=Tıô<Tıô>@ƒ   @ë	ìÔª@ë	©8ÄQÔ@ë	”VÃálALáH=ƒo<‹C–?Ï²-V   @ë	ìÔª@ë	©8ÄQÔ@ë	”VÃálA#•=Ÿ¾w<¬1?â¸Që…¸   @ë	ìÔª@ë	¤ıú|]@ë	’Øèi`@ö^5? ƒ>¸?şr° Ä›¦   @ë	ìÔª@ë	©8ÄQÔ@ë	”VÃálÿÚÿÅÿü    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € =¯Ø>PÃš A€²=ÒñªAwG®>%Aj-=¼j:®¤İ;¶ ¿éxóıŞ´¯¿ÕÎ´ßG_?àKmÉJ»²G7?Q	8¬³°1237659754447634570J003511.48-004917.900 35 11.48-00 49 17.9@!˜}œT¦’¿êJİ£œÉ(A‹Pßi = 16.90<u;4SDSS_good@!.—Oß;BOSS  ×è@!˜~|áœ¿êK	éÍ³>>vÉ  A÷™šQSO   @¯®#×
+=q@…j~ùÛ#@-ìô!-w@Œ>÷íÆôÓH+¿ğjŞ@!8Ö*ı	‚   À!.—Oß;¿”};ZT http://data.sdss3.org/sas/dr10/boss/spectro/redux/v5_5_12/spectra/3588/spec-3588-55184-0488.fits?´g",ó -ı@¦ ŠAÃí¿RVí-§@® F?Só€]w,÷@!˜~¯\Äè¿êK©Æ…˜Aœ¯¼=¸à`AŠ·L<ÒFA«(=3`A“±í<¿K™?9Ø`À-ı@¦ ŠAÃí¿RVí-§@® F?Só€]w,÷@!˜~¯\Äè¿êK©Æ…˜A5‡ÆA5º5A7Pü?9Ø`À I? ¥ïé1‡b@/±®-¥T¹@!˜}‘%VÒ¿êJİßCÇÖJ003511.48-004917.8@!˜}ï'ï¿êJËjÌıt=["Ñ=UfÏ¼7€4@\uî„­yÀO³ô%×*@–aÖ´­Àù œİñ¸@¥®›¥ãSø@®+±&éxÕ?¿ú¿0q0090m016_ab41-0292330090m016_ab41  r1AVùÛ<ÔıôB$ff?õÎÙ‡+AO…=oB33?í¬q²•êA%xÕ=“t¼Ap  ?ñï²-V@ù?}>333@Æff?ï0¾í(?ñxÔıó¶F                     0000  111nAAAB W        AM
+=AKPA?©üA>J                             @„ëp +„@0FéxÔıôA²¸R@GP    @y”zà;>š@(>vÈ´9XBƒã×@1>²-@’     @SAë€ìúj@ªF@ƒn˜Aóë…?®@^Y™¡ıj@3ƒ•$İ@‘lOß;dZA.b    AUß;<Tıô  >…¡ËAO7L=P  >£SøA%ß;=Ğå`  ?S33Ar°>Ñë… ?t¼A`Ÿ¾<e`B  A[•='ï  A<´9>J  Aë…>Ê=q AZJ<Tıô  ATQì=P  A3o=Ğå`  A©ü>Ñë… AW<e`B  AQº^='ï  A.¬=ÊÀƒ  Aí‘>öE¢ AVMÓ<uÂ APñª=D›¦ A+p¤=×
+= @õ7LÀ    AUt¼<‹C– APÄœ=ixÕ A*=í‘h @ğƒÀ    AT¬<›¥ã APİ/=‹C– A)X>$İ @í©üÀ    ASó¶<¬1 AQ‡=£×
+ A)%>P @ê¬À    AS7L<¼j AQ7L=¾vÉ A(›¦>(õÃ @ä  À    AVñª=,1<D›¦>!ÊÁ   @ë	íÔG3@ë
+´Í:›\@ë
+šb\AAOt¼=Àƒ<Ôıô?Ô1&éxÕ   @ë	íÔG3@ë
+´Í:›\@ë
+šb\AA$~ú>Që…=q©ü@ £×
+=p¤   @ë	íÔG3@ë
+”€à»@ë	ş–%«á@ø9X?ó¶>6E¢@$İ/Ÿ¾ 
+  @ë	íÔG3@ë
+”€à»@ë	ş–%«á C )ÿÛ   À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € T>Y‡Bî™š AwX=\)Alzá=£×
+A`éy=“t¼?¿ú¿0q ?ïÈ'Öè+?Ã“M(aq¿^Ââ‘jõèÛ?T¸î9ö‰+1237662473157345548J161159.55+311041.516 11 59.55+31 10 41.5@n_ğ£×
+=@?-&¯7ÀAŠâòi = 16.76< SDSS_goodÀXÿ\(õÂSDSSŒ  Ïš[@n_ğ™Z¯y@?-Ÿ+©Ñö>"œx  A ffQSO   @Ÿ¿33333@ÖÕ€    @6ƒ÷ÎÙ‡@‡¹ÃB¼ŒHç"WÄ]û @!<‚Ÿ%gk    @!<‚Ÿ%gkÀ[&ì|Úo|http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1420/spec-1420-53146-0347.fits     ?­¼…Ğ~c-v@`Crÿ…Aùlñ-VÀo]?/šÄû\'ê@n_ğ—íÙÅ@?-ùXAše=<eA‹‹T<XCÑAœT=uìAÄŞ<Vv’?wÕåËß®-v@`Crÿ…Aùlñ-VÀo]?/šÄû\'ê@n_ğ—íÙÅ@?-ùXA1œêA3T¶A4ìÅ?wÕåËß® J?»·¼]éÀ@IŞ‹;2@n_ğ£×
+=@?-:WëJ161159.55+311041.5@n_ğÜvü@?-Ÿi½2ü=¾à=Oß¼u@I\4ó&Ó©@G2aİj©Â@lùQ‘M›@IŒ`!¨Ç4@©QTıó¶F@yä‹C•!ËSxª:+–2435p318_ab41-0049502435p318_ab41  VAK…<Ä›¦B533?òÀƒn—A:İ/<´9XBI33?ò9XbMÓAİ/<¬1BNÌÍ?ò£×
+=p¤@ÆŸ¾=49XAÇ33?ñ+Iº^?ò Ä›¥ãT                     0000  0000AAAA           AŒ¥ãAŠ´9A‡A…Òò                             @”9™Ÿä6v@<ß;dZA²@,“<›¥ã@”şÌ¿ôw6@:¼j~ùÛ#Aá/@a%=®{@·s3?úÁÓ@]
+á?J˜«@—Çå`A‰7AÎãT?{@€KÖÿÁß@4ô9XbN@zÖ     AxÕ?{AK\)<t¼ >…¡ËA:ÌÍ<t¼ >£SøAõÃ<“t¼ ?S33@Å‰7=H´9 ?t¼AU‰7<#×
+ AFõÃ<#×
+ A²<¬1  @èb=Tıô AO‰7<t¼ A?çm<t¼ A(ö<“t¼ @×÷Ï=H´9 AMhs<#×
+ A=?}<t¼ A¸<‹C– @Î\=På` ALƒ<49X A<1'<#×
+ Aj<“t¼ @Éº^=ixÕ AL  <D›¦ A;®<49X AùÛ<£×
+ @Ç¥ã=‹C– AK©ü<e`B A;`B<D›¦ A9X<¼j @ÆĞå=¥ãT AKt¼<ƒo A;+<e`B A×
+<ÌÌÍ @ÆÀƒ=È´9 AKG®<‹C– A:ıô<uÂ A®<í‘h @ÆáH=ï² AKl‹<ÌÌÍ;Ä›¦>‡+   @êø¾aèr›@êøêØÊÒ!@êøÔ­¶úA:İ/=o<o?¼¬1&éy   @êø¾aèr›@êøêØÊÒ!@êøÔ­¶úAÈ´=+<o?Å?|í‘hs   @êø¾aèr›@êøêØÊÒ!@êøÕŠW\]@Æff>¸R=¾w?ä“t¼j   @êø¾aèr›@êøêØÊÒ!@êøÕŠW\] ÿîÿô      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € ›Œ.>+Ánff Aw
+==}ó¶Aip¤=aG®AX´9=¥ã!ËSxª:+– ¿ØÜ8ŞDP¿èd¾æµ7Ë?à‘5\mµ{}?Z6âåÚóT1237664092905275393J093545.07+320159.109 35 45.07+32 01 59.1@aşc«Yn@@<ZËA€ùi = 15.78;¥d3SDSS_goodÀXÿ\(õÂSDSS•  ĞŠx@aşK3Úù@@<K	é=Ïv`  Aï¸QSO   @:záG®@ùT     @C=¿HË’@}*¢àYú½Hóe‰ûì(@!J`IWÈo   @!J`IWÈoÀ[(¨2 »http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1941/spec-1941-53386-0632.fits     ?¥üõšb³-ï`à CğB !á-ï`à ?QB®[íÆU@aş4‘Ñ³@@<­¡ÊAŠ6q<¼«–A ã;ÈÔ_AÉ<œşA‹	­<‹­?|‡Æ C-ï`à CğB !á-ï`à ?QB®[íÆU@aş4‘Ñ³@@<­¡ÊA.M‡A/DáA2’?|‡Æ C K?±®³İ¾n@*½*bªD@aşd^Nj@@<Q†ÛJ093545.07+320159.1@aşn¤ùI@@<¯³·R=œ¬=¢3œ»­«Ÿ@hBêD¬Ø;@GÃ¸´çÓ¹@`öGÊÏœ‹@0¿u6@­TŸ¾vÈ´@¤¿JÀƒo>´¼$y1447p318_ab41-0247981447p318_ab41  `ŞAKSø<ÌÌÍB0ff?û²-VA>ff<Ä›¦B6ÌÍ?êJŒL˜_A <ÔıôB$ff?ğQë…¸R@Ï¶F=ƒoAˆ  ?ğ‡+Iº?òV“t¼               ;å`B  0000  0011AAAA          
+ A=º^A<ÔşA<í‘A8‹D                             @”rf`ÉŠ@=§lz|àAeV@;•;D›¦@‘!™Ÿä6v@7üí¢/jQB¯@}?}>™™š@°^³?úÁÓ@Yxõ¾]A@£°BIº^Aç¼j?®@ypŸ¥LU@7¢Ğå`A‰@‰oZ¬1A1C–?å?}AJ¬<#×
+  >…¡ËA>Qì<Tıô  >£SøAQì<ÌÌÍ  ?S33@ÒE¢=ó¶F ?t¼AUX<49X  AJ¼j<uÂ  A%o<ıó¶  @ò§ğ=ó¶F ANÙ<#×
+  ACl‹<Tıô  A…<ÌÌÍ  @ä´9=ó¶F AL^5<49X  A@\<e`B  Aj<Ä›¦  @ŞvÉ>Iº AKl‹<D›¦  A?l‹<uÂ  A²<ÌÌÍ  @Üí‘>/  AK<e`B  A>İ/<‹C–  Ab<å`B  @Ş^5>gl‹ AJ¼j<uÂ  A>ƒ<£×
+  A7L<ıó¶  @àİ/>š¬ AJ~ú<‹C–  A>5?<´9X  AÄœ=C–  @ã¥ã>ËÆ¨ AJMÓ<›¥ã A=ó¶<ÌÌÍ A“u=¾w  @å?% AKSø<´9X;Ä›¦=™™š   @ë£ï8ÍQ@ëÇìZ–Ï@ëµíÉ·oA>ff=¾w<49X?À Ä›¥ãT   @ë£ï8ÍQ@ëÇìZ–Ï@ëµíÉ·oA&é=‰7L<›¥ã?Ï¾vÈ´9X   @ë£ï8ÍQ@ëÇìZ–Ï@ëµíÉ·o@Ğ“>wÎÙ=\)?ì›¥ãS÷Ï   @ë£ï8ÍQ@ëÇìZ–Ï@ëµíÉ·o   !     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € EkÊ=í‘hÂ¬ÌÍ Aql‹=LÌÍAgOß=aG®AY¾w=D›¦>´¼$y ¿åíò1¬ík?ßğ.1s¬?àùòÌ¥OUo?YÆ_Ğ¶Ù+1237660615046070305J110649.80+101738.411 06 49.80+10 17 38.4@dÖ£×
+=q@$–‡+JA‡§i = 16.52<5øSDSS_good@!E¸Që…SDSSÅ  Îµ@dÖ£ìòú@$–…Ûv³¼>+ÓÃ  A°ffQSO   @"
+=p£×@ğÈY™™™š@5$9XbN@‰4¸<€ƒI1*0º=k@!œ¢®Š    À!E¸Që…¿ÅàÕ—A@http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1221/spec-1221-52751-0437.fits     ?©Û›Û›\7-Å P !C&µA$´9-Å P "?F=ÚÕmJ@dÖ£àŞç@$–ˆ›K4|A9[<ó7ÛA†¢I<@A’«`<’ÎÚAŒôØ<†–ö?S/1æ-Å P !C&µA$´9-Å P "?F=ÚÕmJ@dÖ£àŞç@$–ˆ›K4|A2‹êA4A4Î5?S/1æ L?Ğ´$_ZÙj@Al›A9†@dÖ£×
+=q@$–‡+JJ110649.81+101738.6@dÖ¤/Tb@$–÷'ş=¹#£=¼6¼#×
+@nHqIƒ×@N¾p·“@dxĞä¿1Ú@÷È­ç.@ƒj“t¼j@“uuÂ\)sJw›**1661p106_ab41-0127781661p106_ab41  1êATj<ÔıôB%™š?óOß;dZAGÛ#<İ/B33?ğZ¬1'Ar°=PAè  ?òZ¬1'@Ü“u=¾vÉA;33?î:)Çy¦µ?ñKÆ§ï²                     0000  0033AAAA           Acp¤Ad£×AlÈ´Akó¶                             @ˆ=Â€'ØŒ@2·KÆ§ïAˆvÉ@Ahs    @ƒã\ @/öÈ´9XB#Ÿ¾@záH>JÀƒ@¨™ Äe@ZŒÌÀ7“@§z%ãS÷ÏAûG®A²-@qTzà;>š@7­Ópóˆ@İ`A‰7LA:È´@p1'ASë…<D›¦  >…¡ËAGï<£×
+  >£SøAï=o  ?S33@ß
+==ùÛ# ?t¼A^zá<e`B  AT=q<´9X  A*´9=#×
+  A $İ>    AX“<D›¦  AM
+=<£×
+  A!"Ñ=o  @ñxÕ=ùÛ# AUÆ¨<Tıô AJIº<¬1 Aó¶<ıó¶ @éG®>+ ATå`<uÂ AIG®<Ä›¦ Ao=o @å¡Ë>¸R ATvÉ<‹C– AHÙ<å`B AP=\) @ä¼j>C• AT Å<£×
+ AH§ğ=o AÌÍ=#×
+ @åG®>t¼j AS×
+<´9X AH“u=P Aff=8Qì @å‡>“÷Ï AS•<ÌÌÍ AH“u=0 Å A=q=På` @ã®>©ûç ATff=t¼<#×
+=ûçm   @ëKƒË[Ş@ëkD/@ë[·ÂOAGÛ#=}ó¶<‹C–?ËdZ¬1   @ëKƒË[Ş@ëkD/@ë[·ÂOA×
+>0 Å=<j?é¡ÊÀƒo  @ëKƒË[Ş@ëkD/@ë[·ÂO@×÷Ï>º^5=Æ§ğ@Oß;dZ  @ëKƒË[Ş@ëkD/@ë[·ÂOÿù  S     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 1üXŞ>På`Ã€  Axİ/=›¥ãAl5?=İ/Aa¾w=¡ÊÁsJw›** ¿î¤38W@6?ÌôÌå¦“?Æß¥ô¸‡‡!­÷        1237655375187869806J170250.46+334409.617 02 50.46+33 44 09.6@oöº^5?~@@Ş5?|í‘A…zi = 16.25<
+?®SDSS_good@!Y‡+SDSSÌ  ÌÓ v@oöº² @@Ş5çB™Ù>Np;  A›G®QSO   @ŸS®záH@æ`ffff@4Ö4êK@æ`’qI;è;M½@!®¡ÆIuh   À!Y‡+¿ÅbÏÇœ× http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0972/spec-0972-52435-0118.fits     ?Áâ¨-¥-	 m nCµÓBñª-È@Ñ ™?^U¸År@oöº­N Ë@@Ş5huGAœq<ácjA†\x<>éhA’%(<õUAâN</?eš÷ÒD¡-	 m nCµÓBñª-È@Ñ ™?^U¸År@oöº­N Ë@@Ş5huGA5íãA7ö®A:2Œ?eš÷ÒD¡ M?Ò•övêB@E­Wÿ›V2@oöº^5?}@@Ş5?|í‘J170250.47+334409.8@oöºå¯â@@Ş7Ì¿a=Ÿ¾w=¸R¼49X@L3 &–l¾@B×Yîˆß@o×{V@Lïïç„@œ633333@¨záG®#u¨3&>)M2555p333_ab41-0309892555p333_ab41  yAHÈ´<Ä›¦B4  @—Oß;dA<´9<Ä›¦B8  ?õOß;dZAÀƒ<İ/B!™š?ò´9XbN@ß"Ñ=™™šAh  ?ñS÷ÎÙ‡?÷Æ§ï²-                     dd00  1111AAAA          	 AyÆ¨A}‰7Al1An°!                 	dh d      @—«™Ÿä6v@@Ó¶=>NğA{@*¬    @’ä     @:N—|ˆç›AØ›¦@_;d    @­ÅÌ¿ôw6@W—ï¡ãê÷@–‡Á‰7KÇAÌZ>J@p`Z³«@1Ç®%AØè@yB¬1'A"ñª>ì‹DAH1'<t¼  >…¡ËA<Z<D›¦  >£SøA{<õÂ  ?S33@ŞÙ=Ù‡ ?t¼ARáH<#×
+  AHÙ<Tıô  A&ùÛ=¥ã  A 1=áG® AL^5<t¼  AAt¼<D›¦  AG®<õÂ  @ñG®=Ù‡ AIÒò<#×
+  A>zá<D›¦  A Å<õÂ  @èZ=å`B AH¼j<49X  A=/<e`B  Al‹=o  @ãï>o AH$İ<D›¦ A<zá<uÂ A Å=\) @áãT>Ÿ¾ AG©ü<e`B A<  <‹C– A‘h=#×
+ @áG®>;dZ AG&é<uÂ A;‘h<›¥ã A\)=<j @á‰7>dZ AF‡+<ƒo A;‡<¬1 ASø=Tıô @á`B>‡® AH°!<¼j;Ä›¦>o   @êú©rÄC@êúÑË|öK@êú¼Q{]A<°!=P<#×
+?Â-V“   @êú©rÄC@êúÑË|öK@êú¼Q{]A¸R=Òñª<å`B?×Ÿ¾vÈ´   @êú©rÄC@êúÑË|öK@êú¼òR'•@ŞùÛ>j~ú=ƒo?ê\(õÂ   @êú©rÄC@êúÑË|öK@êú¼òR'• .  =    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € Ğs<=•ÂôÌÍ Aw&é=‹C–Ai"Ñ=™™šA[Oß=D›¦#u¨3&>)M ¿ÊEùÄ±J‚¿éÉºŒ?‰?áÅ’Ú/_†\,=äğWP€Ã1237648722292506672J101044.51+004331.310 10 44.51+00 43 31.3@cïFPÿ?ç6(@eòA€c&i = 15.72?Há²SDSS_goodÀXÿ\(õÂSDSS  ÊÅ@cïIÏVë?ç6;%oü>5¨X  B#QìQSO   @¤C¨õÂ\@ÚJs3333@Mß—$tS@ŠÍÃÚ«Hñ R˜™9w@!Òé§ò^   @!Òé§ò^À[9¹LJÀÛhttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0270/spec-0270-51909-0537.fits     ? «b/ 9-ô ö 0C¯z?9±D-ô ö 6?EíoBà²@cï)Ö„?ç6/ûl¸YA€\±;Œ½A€g_;~FA€>õ<m@‘A€Úû<zÓR?†2¿¸­^-ô ö 0C¯z?9±D-ô ö 6?EíoBà²@cï)Ö„?ç6/ûl¸YA+ê&A1tÍA6}†?†2¿¸­^ N?¸EZ}$@P7•[Fw´@cïE™?ç6(E™gEJ101044.51+004331.3@cïxÉ?z?ç6@-íy=yrG=z¬Ú¼'ç@nÆ!‚0Ç@E¥²§‡˜æ@cL7­€×+À#®)¢ÿt@¡ÍÇ®zá@®Ö9Û"Ğå1Y\6xTú1527p000_ab41-0278341527p000_ab41  lºA8—<Ä›¦B4ÌÍ?òbMÒñªA'®<¬1BL  ?í¬q²•ê@òÙ<‹C–B|ff?ğ$İ/Ÿ¾@¥/<å`BB33?êçÕfÏAò?ïKÆ§ï²                     0000  0022AAAA Ö        A¤×
+AÆ¨A‡"ÑAŒ®                             @®™ Äe@UE?OQA’§ğ@C¶F    @¯¯™ Äe@SÜíı¬iB-ıô@w     @Ì„€    @líÂ€®I@¤Oß;Aßó¶?ixÕ@•V     @A[çd'ÇÅ@‹fffffA-Oß?ÖA8r°;Ä›¦  >…¡ËA'®;Ä›¦  >£Sø@òáH<t¼  ?S33@¤  <¼j ?t¼AB›¦;Ä›¦  A3Â;å`B  A<#×
+  @ÆJ<Ä›¦ A<Ÿ¾;Ä›¦  A,È´;Ä›¦  A£×<t¼  @¶n˜<¼j A:r°;Ä›¦  A*$İ;Ä›¦  A‰7<o  @­?}<Ä›¦ A9‘h;Ä›¦ A)¸;Ä›¦ @ıhs<t¼ @¨¼j<å`B A9 ;Ä›¦ A(§ğ;å`B @úMÓ<t¼ @§
+==+ A8Äœ;Ä›¦ A(bN;å`B @ø›¦<#×
+ @¦ff=#×
+ A8r°;Ä›¦ A(-;å`B @÷®<49X @¦n˜=H´9 A8¬;å`B A(  <o @÷o<D›¦ @¦°!=q©ü A8\<ƒo;ƒo>      @ëßVXKñ@ëKL,v@ëûú£A'®<£×
+;£×
+?±ë…¸Qì   @ëßVXKñ@ëÿŸ~‹@ëí¨Æ­Ï@òÙ<ÌÌÍ;Ä›¦?¶E¡ÊÀƒ   @ëßVXKñ@ëÿŸ~‹@ëíSÓè@¤õÃ=m‘h<e`B?ÉXbMÒò   @ëßVXKñ@ëÿŸ~‹@ëí¨Æ­Ïÿø 
+ F     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € O“µŠ=¾wÃ   Am²=Y‡A`n˜=D›¦APáH=t¼1Y\6xTú ¿ìnNæ5¢?İ]™¼î|r?‰íaqwÆø $?T¹	îv/1237658311332331530J125258.72+591832.812 52 58.72+59 18 32.8@h'ÔO0x'@M§óğ†¶A„i = 16.10;½eZSDSS_goodÀXÿ\(õÂSDSS½  Ì® ©@h'ÔA5Tv@M§–»˜È=ıVm  A¾  QSO   @¡æffffA	†À    @;h_ö”F@‚YŠÅµI-«¸Q@"jÃŞÜÂ   @"jÃŞÜÂÀ[?‰q'http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/0957/spec-0957-52398-0169.fits     ?¥k95¼Æ8-­@F 
+CA>¢Bm<ˆ-­@F 
+?qŸV¿¼@h'Ô§’ô@M§“Ï\GA‹á <º¹•A„;½eZAS!<’-×A‹¬r<‚d•?>eQú-­@F 
+CA>¢Bm<ˆ-­@F 
+?qŸV¿¼@h'Ô§’ô@M§“Ï\GA12óA3»hA3ê?>eQú O?ªXpÚ]¯@E°iµ¦?š@h'ÔOãm"@M§óê¼J125258.72+591832.8@h'Ôw†I[@M§‘K~È=—Á¾=škQ¼ .@^¤Ú`3@Lè·Ş(>ã@cV¢w è@LUZ†^Sr@š«Iº@¥¬‹C•Å¿ãø81929p590_ab41-0309131929p590_ab41  xÁAT—<Ä›¦B4ÌÍ@`A‰7KÇAI&é<¼jB>  ?ñOß;dZAP<ÔıôB&ff?ò“t¼j@æÀƒ=yÛ#A33?ğ¬1&é?÷;dZ¬                     0000  0011AAAA    0 0 0 0 , -  -B<Š=B>hB3VB3«                             @‡ıp +„@0ú^FtAûç@(Qì=0 Å@‚tQßüTz@(×
+=p£×AÈÂ@X Å=e`B@¡ğÌ¿ôw6@K“¶=>Nğ@•¹§ï²-AÏ?}?­‘h@iÚ=Qï·@'÷ÎÙ‡@yÒñ©ûçA °!?Å¸AS7L<o  >…¡ËAH\<D›¦  >£SøA¸R<ÌÌÍ  ?S33@çÆ¨=´9X ?t¼A^Qì<t¼  AU&é<Tıô  A/™š<õÂ  AŸ¾=º^5 AWdZ<o  AM©ü<D›¦  A%ë…<ÌÌÍ  @ú5?=´9X AT§ğ<o AJ°!<Tıô A —<Ä›¦  @ñÒò=Àƒ ASP<t¼ AI<e`B A²<ÌÌÍ @î5?=ãSø AS
+=<#×
+ AHí‘<ƒo A<İ/ @íÒò>\) AR¬<49X AH‹D<›¥ã A&é<õÂ @îŸ¾>6E¢ AR=q<D›¦ AH9X<¬1 A—=C– @ï>`A‰ AQÆ¨<Tıô AGûç<Ä›¦ A-=¥ã @îE¢>ƒ• ATŸ¾=+;£×
+>,1 /  @ëßº{×<@ë\ŸDİ@ëq:Õ¿AI+=e`B<o?ÊáG®zá /  @ëßº{×<@ë\ŸDİ@ëq:Õ¿AdZ=Û"Ñ<ƒo?ãl‹C• ,  @ëßº{×<@ë\ŸDİ@ëÊc;@æñª>˜“u=49X@È´9Xb ,  @ëßº{×<@ë\ŸDİ@ëÊc;        À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € "}%Ÿ=ÀƒÁ333 Az1=—PAn=²-Ad¬=²-Å¿ãø8 ¿ßÌä¯H¦¿½ï¹ãL¶6?ë„“Wb5	•£?Gø‹€tK1237665025985609740J133506.52+341234.513 35 06.52+34 12 34.5@ixŞŒ¡ş@AÓ m:Aˆ©Fi = 16.60;×*zSDSS_warnÀXÿ\(õÂSDSSÉ  Ò @ixŞ“­Ö@AÑáÃô>aÿ. @AÓ33QSO   @¢§×
+=p¤@ıP    @>l64ê@‘×Ğ/ÈŞI‚É¦*Ó@"r˜Yä—    @"r˜Yä—À[M¯42Uohttp://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1993/spec-1993-53762-0142.fits     ?È›Ú¯ßLr-È Ì CKÆôBÖ-È Ì ?`¡8¾¼¼@ixŞoO\@AÒ‰Å
+õAúL<‚è¿Aˆ©F;×*zAéz<¤¨Aïé<½?h?’\,Ñ‰---È Ì CKÆôBÖ-È Ì ?`¡8¾¼¼@ixŞoO\@AÒ‰Å
+õA4ƒúA5|²A7aş?’\,Ñ‰-- P?µı6÷ãÑÌ@Q[J©q~@ixŞTù@AÓ¡fJ133506.52+341234.5@ixŞÄç%>@AÓé÷ÿ=šu=•L˜¼‡ü¹@R)ZH¶R7@S1º/@gFŠoÅŠ¹@D6soce*@¯>ùÛ"Ñ@z§‘hr°!eTÂÆˆá”2046p348_ab41-0064842046p348_ab41  TAH Å<¼jB<  ?ï$İ/ A8í‘<´9XBG™š?ğéxÔıó¶A(ö<İ/B"ÌÍ?ğMÒñ©ûç@ß…=OßA|ÌÍ?ïHË’:*?ğ1&éxÕ                     0000  0011AAAA          A†PA†ß;A†l‹A…X                             @˜–Ì¿ôw6@@½Oß;dZA “@3C–>P@—zf`ÉŠ@>#]Ğ•¯Aã²-@f‡+>+@«y™ Äe@UšMß†ã´@˜äIº^5?AÏ&é>º^5@oÖ¸`™Ë@0!ÊÀƒo@}Ç²-VA!?}?…ÂAH Å<o >…¡ËA9?}<#×
+ >£SøA1<ÌÌÍ ?S33@à´9=ùÛ# ?t¼ARV<o  AE\)<49X  A(¸R<ıó¶  A/>J ALMÓ<o A>Z<#×
+ A;d<ÌÌÍ @ó"Ñ=ùÛ# AJ1'<o A;º^<#×
+ A¬<Ä›¦ @ê->¸ AIhs<t¼ A:Àƒ<D›¦ AOß<ÌÌÍ @åó¶>™š AI
+=<#×
+ A:^5<Tıô AÂ<å`B @ã×
+>7KÇ AHÄœ<49X A:1'<uÂ AáH<ıó¶ @âvÉ>["Ñ AHvÉ<D›¦ A:{<‹C– A^5=\) @áX>% AH“<Tıô A:<›¥ã A Å=¾w @àzá>—P AH Å<¼j;Ä›¦=²-   @ë	EÂŠ$@ë	múm9>@ë	XoøòA8áH<¬1;£×
+?ÁÊÀƒn˜   @ë	EÂŠ$@ë	múm9>@ë	Xñ}üZA-=aG®<e`B?É‡+J   @ë	EÂŠ$@ë	múm9>@ë	Xñ}üZ@ß¾w>k…=e`B?îV“t¼   @ë	EÂŠ$@ë	múm9>@ë	Xoøòÿı ÿå     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 4êµ>B\Â•ff Ax¬=OßAl£×=º^5Aa÷Ï=“t¼eTÂÆˆá” ¿è7£ïÑŞÜ¿ÕV× ®Î˜?áı¸¤Æ>L²R?YƒNÌôßĞ1237663788486885591J072240.09+413353.107 22 40.09+41 33 53.1@[ª°Ï‡ÙÆ@DÈIº^5?A‹Ùi = 17.02;¶ lSDSS_good@!BIº^5SDSSH  ĞAs@[ª°ÈŠGí@DÈJb#á‡>W$t  AŞ¸RQSO   @¡›™™™™šAáX    @5¯v_Ø­¬@-óç½µìI$Ÿƒâ{z@"uğûÁºï   À!BIº^5¿ã>K uË http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1864/spec-1864-53313-0371.fits     ?²wÁL«”-¨€  ×BİU†B&BN-¨€  ×?J“EÓuÈ@[ª°ÜP2@DÈJ)V
+.At›<ZQ˜A‹Ù;¶ lAM<Ù?AŒ”Ğ<AÇ?…ksİæ¾-¨€  ×BİU†B&BN-¨€  ×?J“EÓuÈ@[ª°ÜP2@DÈJ)V
+.A+ A.6A0±è?…ksİæ¾ Q?³Ä~I±ú¹@1¹'ÔZ`@[ª°ĞíÃ½@DÈIº^5?J072240.09+413353.1@[ª°òçÉ@DÈJfUŸo=—ö+=™0¾¼jJŒ@fØ%ü@7$ñ±ˆ¤@ZÂÆN-Š@3H·äŞ;Š@¡’Tıó¶F@­Í…¸Qì]Z±^P7$1107p408_ab41-0365801107p408_ab41  äAIï<Ä›¦B6ff?æU2a|ÚA8Ÿ¾<¼jB<ff?ğV“t¼Ao<Ä›¦B1™š?í¢œwškQ@Í&é=q©üA“33?î\‘ÑN;Í?ì¸ºÇË                     0000  0000AAAA          
+ A3©üA7ÂA2ƒA5Oß                             @–&f`ÉŠ@?“t¼Ak\)@;o    @—ã™Ÿä6v@@=Oß;dZBKÇ@j~ú=Ä›¦@´§ Äe@]Ç®! @£;BIº^Aè‘h    @{¿¨÷Û@7…¸Që…@ˆ+Iº^5?A1®>¦ffAJ9X<#×
+  >…¡ËA8¬<t¼  >£SøAKÇ<Ä›¦  ?S33@ËÎÙ=™™š ?t¼ATZ<49X  ADå`<#×
+  A!Û#<í‘h  @î{=£×
+ ANff<#×
+  A=Æ¨<t¼  A~ú<Ä›¦  @Ş=q=™™š AL-<49X A:ùÛ<t¼ Ap¤<¼j  @Ôıô=²- AK<D›¦ A9®<#×
+ A°!<ÌÌÍ @Ğ Å=®{ AIë…<Tıô A8È´<49X AC–<İ/ @ÍãT=ÊÀƒ AHn˜<e`B A7×
+<D›¦ Aƒ<ıó¶ @ÌZ=ë… AFIº<e`B A6´9<D›¦ A¬=\) @ËC–>1' ADJ<e`B A5P<Tıô Aß;=¾w @Ê>Ÿ¾ AIï<İ/<o=¸Qì 
+  @êşâÓŞV@êÿ•&¤@êşó/¥ê¶A8Ÿ¾=På`<ƒo?ÃS÷ÎÙ‡ 
+  @êşâÓŞV@êÿ•&¤@êşó/¥ê¶AV<Ôıô<o?ÈÔıó¶E¢ 
+  @êşâÓŞV@êÿ•&¤@êşó/¥ê¶@Ì¬>¥ã=<j?áûçl‹C– 
+  @êşâÓŞV@êÿ•&¤@êşó/¥ê¶ÿåÿùÿì      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € UÙ_>$İÃ&ÌÍ A}=º^5Ap  =²-Aaó¶=uÂ]Z±^P7$ ¿ĞæƒÑy?æfİåÈ2ÿ?å;§#a…K6²?Mk±"¹’1237654786243821606J123707.44+074024.812 37 07.44+07 40 24.8@g¨ıó¶E¡@±¸Œ,™ÔA„³i = 15.97=&USDSS_goodÀXÿ\(õÂSDSS\  ĞâÑ@g¨ıó¶E¢@±±Ù+á>Ë Aı×
+QSO   @§‰B\(öA¯(    @D.È´9X@ƒ^â‰Í1IñÓu¿LË@"². ß    @"². ßÀ[Q-ß;†«http://data.sdss3.org/sas/dr10/sdss/spectro/redux/26/spectra/1628/spec-1628-53474-0465.fits     ?·Oß;KÓ-x€  &C=Gğ@õÄ-€£ ?^¡@è?'@g¨ıè:@B@±°á³í¢A’í=bFJA„7È=cæA•@<Ä•HA‹“[<}@@?•jÁo è-x€  &C=Gğ@õÄ-€£ ?^¡@è?'@g¨ıè:@B@±°á³í¢A'MA0iÄA6c ?•jÁo è R?´¨*Vß‹@R0bÜn*€@g¨ıó¶E¢@±¸ª *J123707.44+074024.8@g¨ş!¯@±ºJI‰=‹àß=Œ~(¼t¼@rF"æÏ­R@Qõ	+ù@g.ËŠ­mŒ@%rüUP”m@šÊn—Oß@¢Ã•%>@»Œ1891p075_ab41-0137711891p075_ab41  5ËAC²-<Ä›¦B7™š@n—OßA4Ù<¬1BK™š?õ?|í‘hsAï<¼jB>  ?÷Ÿ¾vÈ´@»ï='ïAÕ™š?ïıŠÚ¹õZ?øV“t¼                     0000  1110AAAA m        A]÷ÏA^1AN ÅAKX                             @Ÿ¸Ì¿ôw6@F#]Ğ•¯Aˆ
+=@Cçm=×
+=@®Ì¿ôw6@B©º^5?}BD²@‰%    @»¿3?úÁÓ@b³… Ñ0à@¦¸QìAìE¢?¡Ë@†)ÖÿÁß@:‰7:ÿ°O@7KÆ§ğA,›¦?BMÓAC\);å`B  >…¡ËA4°!<t¼  >£SøA®<ƒo  ?S33@»¶F=H´9  ?t¼AMó¶<o  AA
+=<#×
+  A^5<›¥ã  @İ‘h=På`  AG‰7;å`B  A9ÊÁ<t¼  AáH<ƒo  @Î$İ=H´9  AEV;å`B  A6í‘<t¼  A¶F<uÂ  @Åë…=Y‡ AC÷Ï<o  A5¶F<#×
+  A
+Ğå<ƒo  @ÂV=% AC`B<o  A5 <49X  A	&é<‹C–  @ÀÔş=›¥ã ABıô<t¼  A4°!<D›¦  A-<“t¼  @¿ÎÙ=¼j AB´9<#×
+  A4Z<Tıô  A•<£×
+  @¿¶F=å`B ABƒ<#×
+  A4{<uÂ  AC–<¼j  @ÀA‰>Iº AC¡Ë<¬1;Ä›¦>t¼   @ëÌïAç@ë	TgO6@ë	:?j¹‡A4Ù<å`B;å`B?·ÎÙ‡+   @ëÌïAç@ë	TgO6@ë	:?j¹‡Aë…=‰7L<›¥ã?È“t¼j~ú   @ë	0kA@ë	TgO6@ë	B¨Hr@» =Æ§ğ<İ/?àj~ùÛ"Ñ   @ë	0kA@ë	TgO6@ë	B¨Hr 3       À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € 3øÁû>|í‘C$™š Aqhs=²-AeKÇ=¥ãTAY=‘hs>@»Œ ¿ïL\CşVX¿Äue¸­ã?Áy¥Jœ
+£^Y?Z6âê“ˆ–                                                                                                                                                                                                                                                                                                                                      

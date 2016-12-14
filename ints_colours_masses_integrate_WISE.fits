@@ -1,0 +1,547 @@
+SIMPLE  =                    T / Standard FITS format                           BITPIX  =                    8 / Character data                                 NAXIS   =                    1 / Text string                                    NAXIS1  =                16817 / Number of characters                           VOTMETA =                    T / Table metadata in VOTable format               EXTEND  =                    T / There are standard extensions                  COMMENT                                                                         COMMENT The data in this primary HDU consists of bytes which                    COMMENT comprise a VOTABLE document.                                            COMMENT The VOTable describes the metadata of the table contained               COMMENT in the following BINTABLE extension.                                    COMMENT Such a BINTABLE extension can be used on its own as a perfectly         COMMENT good table, but the information from this HDU may provide some          COMMENT useful additional metadata.                                             COMMENT There is one following BINTABLE.                                        NTABLE  =                    1 / Number of following BINTABLE HDUs              END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <?xml version='1.0' encoding='UTF-8'?>
+<VOTABLE version='1.1'>
+<!--
+ !  VOTable written by uk.ac.starlink.votable.FitsPlusTableWriter
+ !  Describes BINTABLE extensions in following HDUs
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="5">
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="37" datatype="char" name="First input table" value="64: ints_colours_masses_integrate.csv"/>
+<PARAM arraysize="26" datatype="char" name="Second input table" value="63: INT_bulgeless_WISE.txt"/>
+<FIELD datatype="float" name="col1"/>
+<FIELD datatype="double" name="col2"/>
+<FIELD datatype="double" name="col3"/>
+<FIELD datatype="double" name="col4"/>
+<FIELD datatype="double" name="col5"/>
+<FIELD datatype="double" name="col6"/>
+<FIELD datatype="double" name="col7"/>
+<FIELD datatype="double" name="col8"/>
+<FIELD datatype="double" name="col9"/>
+<FIELD datatype="double" name="col10"/>
+<FIELD datatype="double" name="col11"/>
+<FIELD datatype="double" name="col12"/>
+<FIELD datatype="double" name="col13"/>
+<FIELD datatype="double" name="col14"/>
+<FIELD datatype="double" name="col15"/>
+<FIELD datatype="double" name="col16"/>
+<FIELD datatype="double" name="col17"/>
+<FIELD datatype="double" name="col18"/>
+<FIELD datatype="double" name="col19"/>
+<FIELD datatype="double" name="col20"/>
+<FIELD datatype="double" name="col21"/>
+<FIELD datatype="double" name="col22"/>
+<FIELD datatype="double" name="col23"/>
+<FIELD datatype="double" name="col24"/>
+<FIELD datatype="double" name="col25"/>
+<FIELD datatype="double" name="col26"/>
+<FIELD datatype="short" name="cntr_01">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="dist_x"/>
+<FIELD datatype="double" name="pang_x"/>
+<FIELD datatype="double" name="ra_01"/>
+<FIELD datatype="double" name="dec_01"/>
+<FIELD arraysize="19" datatype="char" name="designation"/>
+<FIELD datatype="double" name="ra"/>
+<FIELD datatype="double" name="dec"/>
+<FIELD datatype="float" name="sigra"/>
+<FIELD datatype="float" name="sigdec"/>
+<FIELD datatype="float" name="sigradec"/>
+<FIELD datatype="double" name="glon"/>
+<FIELD datatype="double" name="glat"/>
+<FIELD datatype="double" name="elon"/>
+<FIELD datatype="double" name="elat"/>
+<FIELD datatype="double" name="wx"/>
+<FIELD datatype="double" name="wy"/>
+<FIELD datatype="long" name="cntr">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD arraysize="20" datatype="char" name="source_id"/>
+<FIELD arraysize="13" datatype="char" name="coadd_id"/>
+<FIELD datatype="int" name="src">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="w1mpro"/>
+<FIELD datatype="float" name="w1sigmpro"/>
+<FIELD datatype="float" name="w1snr"/>
+<FIELD datatype="double" name="w1rchi2"/>
+<FIELD datatype="float" name="w2mpro"/>
+<FIELD datatype="float" name="w2sigmpro"/>
+<FIELD datatype="float" name="w2snr"/>
+<FIELD datatype="double" name="w2rchi2"/>
+<FIELD datatype="float" name="w3mpro"/>
+<FIELD datatype="float" name="w3sigmpro"/>
+<FIELD datatype="float" name="w3snr"/>
+<FIELD datatype="double" name="w3rchi2"/>
+<FIELD datatype="float" name="w4mpro"/>
+<FIELD datatype="float" name="w4sigmpro"/>
+<FIELD datatype="float" name="w4snr"/>
+<FIELD datatype="double" name="w4rchi2"/>
+<FIELD datatype="double" name="rchi2"/>
+<FIELD datatype="short" name="nb">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="na">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1sat"/>
+<FIELD datatype="float" name="w2sat"/>
+<FIELD datatype="float" name="w3sat"/>
+<FIELD datatype="float" name="w4sat"/>
+<FIELD datatype="short" name="satnum">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="cc_flags">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="ext_flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="var_flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD arraysize="4" datatype="char" name="ph_qual"/>
+<FIELD datatype="short" name="det_bit">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="moon_lev">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4nm">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4m">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1cov"/>
+<FIELD datatype="float" name="w2cov"/>
+<FIELD datatype="float" name="w3cov"/>
+<FIELD datatype="float" name="w4cov"/>
+<FIELD datatype="float" name="w1frtr"/>
+<FIELD datatype="float" name="w2frtr"/>
+<FIELD datatype="float" name="w3frtr"/>
+<FIELD datatype="float" name="w4frtr"/>
+<FIELD datatype="short" name="w1cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w1cc_map_str"/>
+<FIELD datatype="short" name="w2cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w2cc_map_str"/>
+<FIELD datatype="short" name="w3cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w3cc_map_str"/>
+<FIELD datatype="short" name="w4cc_map">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="boolean" name="w4cc_map_str"/>
+<FIELD datatype="double" name="w1flux"/>
+<FIELD datatype="double" name="w1sigflux"/>
+<FIELD datatype="float" name="w1sky"/>
+<FIELD datatype="float" name="w1sigsk"/>
+<FIELD datatype="float" name="w1conf"/>
+<FIELD datatype="double" name="w2flux"/>
+<FIELD datatype="double" name="w2sigflux"/>
+<FIELD datatype="float" name="w2sky"/>
+<FIELD datatype="float" name="w2sigsk"/>
+<FIELD datatype="float" name="w2conf"/>
+<FIELD datatype="double" name="w3flux"/>
+<FIELD datatype="double" name="w3sigflux"/>
+<FIELD datatype="double" name="w3sky"/>
+<FIELD datatype="float" name="w3sigsk"/>
+<FIELD datatype="float" name="w3conf"/>
+<FIELD datatype="double" name="w4flux"/>
+<FIELD datatype="double" name="w4sigflux"/>
+<FIELD datatype="float" name="w4sky"/>
+<FIELD datatype="float" name="w4sigsk"/>
+<FIELD datatype="float" name="w4conf"/>
+<FIELD datatype="float" name="w1mag"/>
+<FIELD datatype="float" name="w1sigm"/>
+<FIELD datatype="short" name="w1flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mcor"/>
+<FIELD datatype="float" name="w2mag"/>
+<FIELD datatype="float" name="w2sigm"/>
+<FIELD datatype="short" name="w2flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mcor"/>
+<FIELD datatype="float" name="w3mag"/>
+<FIELD datatype="float" name="w3sigm"/>
+<FIELD datatype="short" name="w3flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mcor"/>
+<FIELD datatype="float" name="w4mag"/>
+<FIELD datatype="float" name="w4sigm"/>
+<FIELD datatype="short" name="w4flg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mcor"/>
+<FIELD datatype="float" name="w1mag_1"/>
+<FIELD datatype="float" name="w1sigm_1"/>
+<FIELD datatype="short" name="w1flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_1"/>
+<FIELD datatype="float" name="w2sigm_1"/>
+<FIELD datatype="short" name="w2flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_1"/>
+<FIELD datatype="float" name="w3sigm_1"/>
+<FIELD datatype="short" name="w3flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_1"/>
+<FIELD datatype="float" name="w4sigm_1"/>
+<FIELD datatype="short" name="w4flg_1">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_2"/>
+<FIELD datatype="float" name="w1sigm_2"/>
+<FIELD datatype="short" name="w1flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_2"/>
+<FIELD datatype="float" name="w2sigm_2"/>
+<FIELD datatype="short" name="w2flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_2"/>
+<FIELD datatype="float" name="w3sigm_2"/>
+<FIELD datatype="short" name="w3flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_2"/>
+<FIELD datatype="float" name="w4sigm_2"/>
+<FIELD datatype="short" name="w4flg_2">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_3"/>
+<FIELD datatype="float" name="w1sigm_3"/>
+<FIELD datatype="short" name="w1flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_3"/>
+<FIELD datatype="float" name="w2sigm_3"/>
+<FIELD datatype="short" name="w2flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_3"/>
+<FIELD datatype="float" name="w3sigm_3"/>
+<FIELD datatype="short" name="w3flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_3"/>
+<FIELD datatype="float" name="w4sigm_3"/>
+<FIELD datatype="short" name="w4flg_3">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_4"/>
+<FIELD datatype="float" name="w1sigm_4"/>
+<FIELD datatype="short" name="w1flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_4"/>
+<FIELD datatype="float" name="w2sigm_4"/>
+<FIELD datatype="short" name="w2flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_4"/>
+<FIELD datatype="float" name="w3sigm_4"/>
+<FIELD datatype="short" name="w3flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_4"/>
+<FIELD datatype="float" name="w4sigm_4"/>
+<FIELD datatype="short" name="w4flg_4">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_5"/>
+<FIELD datatype="float" name="w1sigm_5"/>
+<FIELD datatype="short" name="w1flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_5"/>
+<FIELD datatype="float" name="w2sigm_5"/>
+<FIELD datatype="short" name="w2flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_5"/>
+<FIELD datatype="float" name="w3sigm_5"/>
+<FIELD datatype="short" name="w3flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_5"/>
+<FIELD datatype="float" name="w4sigm_5"/>
+<FIELD datatype="short" name="w4flg_5">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_6"/>
+<FIELD datatype="float" name="w1sigm_6"/>
+<FIELD datatype="short" name="w1flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_6"/>
+<FIELD datatype="float" name="w2sigm_6"/>
+<FIELD datatype="short" name="w2flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_6"/>
+<FIELD datatype="float" name="w3sigm_6"/>
+<FIELD datatype="short" name="w3flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_6"/>
+<FIELD datatype="float" name="w4sigm_6"/>
+<FIELD datatype="short" name="w4flg_6">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_7"/>
+<FIELD datatype="float" name="w1sigm_7"/>
+<FIELD datatype="short" name="w1flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_7"/>
+<FIELD datatype="float" name="w2sigm_7"/>
+<FIELD datatype="short" name="w2flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_7"/>
+<FIELD datatype="float" name="w3sigm_7"/>
+<FIELD datatype="short" name="w3flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_7"/>
+<FIELD datatype="float" name="w4sigm_7"/>
+<FIELD datatype="short" name="w4flg_7">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1mag_8"/>
+<FIELD datatype="float" name="w1sigm_8"/>
+<FIELD datatype="short" name="w1flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2mag_8"/>
+<FIELD datatype="float" name="w2sigm_8"/>
+<FIELD datatype="short" name="w2flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3mag_8"/>
+<FIELD datatype="float" name="w3sigm_8"/>
+<FIELD datatype="short" name="w3flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4mag_8"/>
+<FIELD datatype="float" name="w4sigm_8"/>
+<FIELD datatype="short" name="w4flg_8">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w1magp"/>
+<FIELD datatype="float" name="w1sigp1"/>
+<FIELD datatype="float" name="w1sigp2"/>
+<FIELD datatype="float" name="w1dmag"/>
+<FIELD datatype="short" name="w1ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w1mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w1mjdmin"/>
+<FIELD datatype="double" name="w1mjdmax"/>
+<FIELD datatype="double" name="w1mjdmean"/>
+<FIELD datatype="float" name="w2magp"/>
+<FIELD datatype="float" name="w2sigp1"/>
+<FIELD datatype="float" name="w2sigp2"/>
+<FIELD datatype="double" name="w2dmag"/>
+<FIELD datatype="short" name="w2ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w2mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w2mjdmin"/>
+<FIELD datatype="double" name="w2mjdmax"/>
+<FIELD datatype="double" name="w2mjdmean"/>
+<FIELD datatype="float" name="w3magp"/>
+<FIELD datatype="float" name="w3sigp1"/>
+<FIELD datatype="float" name="w3sigp2"/>
+<FIELD datatype="double" name="w3dmag"/>
+<FIELD datatype="short" name="w3ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w3mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w3mjdmin"/>
+<FIELD datatype="double" name="w3mjdmax"/>
+<FIELD datatype="double" name="w3mjdmean"/>
+<FIELD datatype="float" name="w4magp"/>
+<FIELD datatype="float" name="w4sigp1"/>
+<FIELD datatype="float" name="w4sigp2"/>
+<FIELD datatype="double" name="w4dmag"/>
+<FIELD datatype="short" name="w4ndf">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="w4mlq">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="w4mjdmin"/>
+<FIELD datatype="double" name="w4mjdmax"/>
+<FIELD datatype="double" name="w4mjdmean"/>
+<FIELD datatype="short" name="rho12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="rho34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q12">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q23">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="short" name="q34">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="xscprox"/>
+<FIELD datatype="float" name="w1rsemi"/>
+<FIELD datatype="float" name="w1ba"/>
+<FIELD datatype="float" name="w1pa"/>
+<FIELD datatype="float" name="w1gmag"/>
+<FIELD datatype="float" name="w1gerr"/>
+<FIELD datatype="short" name="w1gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w2rsemi"/>
+<FIELD datatype="float" name="w2ba"/>
+<FIELD datatype="float" name="w2pa"/>
+<FIELD datatype="float" name="w2gmag"/>
+<FIELD datatype="float" name="w2gerr"/>
+<FIELD datatype="short" name="w2gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w3rsemi"/>
+<FIELD datatype="float" name="w3ba"/>
+<FIELD datatype="float" name="w3pa"/>
+<FIELD datatype="float" name="w3gmag"/>
+<FIELD datatype="float" name="w3gerr"/>
+<FIELD datatype="short" name="w3gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="w4rsemi"/>
+<FIELD datatype="float" name="w4ba"/>
+<FIELD datatype="float" name="w4pa"/>
+<FIELD datatype="float" name="w4gmag"/>
+<FIELD datatype="float" name="w4gerr"/>
+<FIELD datatype="short" name="w4gflg">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="int" name="tmass_key">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="float" name="r_2mass"/>
+<FIELD datatype="float" name="pa_2mass"/>
+<FIELD datatype="short" name="n_2mass">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="float" name="j_m_2mass"/>
+<FIELD datatype="float" name="j_msig_2mass"/>
+<FIELD datatype="float" name="h_m_2mass"/>
+<FIELD datatype="float" name="h_msig_2mass"/>
+<FIELD datatype="float" name="k_m_2mass"/>
+<FIELD datatype="float" name="k_msig_2mass"/>
+<FIELD datatype="long" name="best_use_cntr">
+<VALUES null='-9223372036854775808'/>
+</FIELD>
+<FIELD datatype="short" name="ngrp">
+<VALUES null='-32768'/>
+</FIELD>
+<FIELD datatype="double" name="x"/>
+<FIELD datatype="double" name="y"/>
+<FIELD datatype="double" name="z"/>
+<FIELD datatype="int" name="spt_ind">
+<VALUES null='-2147483648'/>
+</FIELD>
+<FIELD datatype="double" name="Separation" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<!-- Dummy VOTable - no DATA element -->
+</TABLE>
+</RESOURCE>
+</VOTABLE>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional table                            NAXIS1  =                 1430 / width of table in bytes                        NAXIS2  =                    5 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group                                 TFIELDS =                  317 / number of columns                              EXTNAME = 'Joined  '           / table name                                     TTYPE1  = 'col1    '           / label for column 1                             TFORM1  = 'E       '           / format for column 1                            TTYPE2  = 'col2    '           / label for column 2                             TFORM2  = 'D       '           / format for column 2                            TTYPE3  = 'col3    '           / label for column 3                             TFORM3  = 'D       '           / format for column 3                            TTYPE4  = 'col4    '           / label for column 4                             TFORM4  = 'D       '           / format for column 4                            TTYPE5  = 'col5    '           / label for column 5                             TFORM5  = 'D       '           / format for column 5                            TTYPE6  = 'col6    '           / label for column 6                             TFORM6  = 'D       '           / format for column 6                            TTYPE7  = 'col7    '           / label for column 7                             TFORM7  = 'D       '           / format for column 7                            TTYPE8  = 'col8    '           / label for column 8                             TFORM8  = 'D       '           / format for column 8                            TTYPE9  = 'col9    '           / label for column 9                             TFORM9  = 'D       '           / format for column 9                            TTYPE10 = 'col10   '           / label for column 10                            TFORM10 = 'D       '           / format for column 10                           TTYPE11 = 'col11   '           / label for column 11                            TFORM11 = 'D       '           / format for column 11                           TTYPE12 = 'col12   '           / label for column 12                            TFORM12 = 'D       '           / format for column 12                           TTYPE13 = 'col13   '           / label for column 13                            TFORM13 = 'D       '           / format for column 13                           TTYPE14 = 'col14   '           / label for column 14                            TFORM14 = 'D       '           / format for column 14                           TTYPE15 = 'col15   '           / label for column 15                            TFORM15 = 'D       '           / format for column 15                           TTYPE16 = 'col16   '           / label for column 16                            TFORM16 = 'D       '           / format for column 16                           TTYPE17 = 'col17   '           / label for column 17                            TFORM17 = 'D       '           / format for column 17                           TTYPE18 = 'col18   '           / label for column 18                            TFORM18 = 'D       '           / format for column 18                           TTYPE19 = 'col19   '           / label for column 19                            TFORM19 = 'D       '           / format for column 19                           TTYPE20 = 'col20   '           / label for column 20                            TFORM20 = 'D       '           / format for column 20                           TTYPE21 = 'col21   '           / label for column 21                            TFORM21 = 'D       '           / format for column 21                           TTYPE22 = 'col22   '           / label for column 22                            TFORM22 = 'D       '           / format for column 22                           TTYPE23 = 'col23   '           / label for column 23                            TFORM23 = 'D       '           / format for column 23                           TTYPE24 = 'col24   '           / label for column 24                            TFORM24 = 'D       '           / format for column 24                           TTYPE25 = 'col25   '           / label for column 25                            TFORM25 = 'D       '           / format for column 25                           TTYPE26 = 'col26   '           / label for column 26                            TFORM26 = 'D       '           / format for column 26                           TTYPE27 = 'cntr_01 '           / label for column 27                            TFORM27 = 'I       '           / format for column 27                           TTYPE28 = 'dist_x  '           / label for column 28                            TFORM28 = 'D       '           / format for column 28                           TTYPE29 = 'pang_x  '           / label for column 29                            TFORM29 = 'D       '           / format for column 29                           TTYPE30 = 'ra_01   '           / label for column 30                            TFORM30 = 'D       '           / format for column 30                           TTYPE31 = 'dec_01  '           / label for column 31                            TFORM31 = 'D       '           / format for column 31                           TTYPE32 = 'designation'        / label for column 32                            TFORM32 = '19A     '           / format for column 32                           TTYPE33 = 'ra      '           / label for column 33                            TFORM33 = 'D       '           / format for column 33                           TTYPE34 = 'dec     '           / label for column 34                            TFORM34 = 'D       '           / format for column 34                           TTYPE35 = 'sigra   '           / label for column 35                            TFORM35 = 'E       '           / format for column 35                           TTYPE36 = 'sigdec  '           / label for column 36                            TFORM36 = 'E       '           / format for column 36                           TTYPE37 = 'sigradec'           / label for column 37                            TFORM37 = 'E       '           / format for column 37                           TTYPE38 = 'glon    '           / label for column 38                            TFORM38 = 'D       '           / format for column 38                           TTYPE39 = 'glat    '           / label for column 39                            TFORM39 = 'D       '           / format for column 39                           TTYPE40 = 'elon    '           / label for column 40                            TFORM40 = 'D       '           / format for column 40                           TTYPE41 = 'elat    '           / label for column 41                            TFORM41 = 'D       '           / format for column 41                           TTYPE42 = 'wx      '           / label for column 42                            TFORM42 = 'D       '           / format for column 42                           TTYPE43 = 'wy      '           / label for column 43                            TFORM43 = 'D       '           / format for column 43                           TTYPE44 = 'cntr    '           / label for column 44                            TFORM44 = 'K       '           / format for column 44                           TTYPE45 = 'source_id'          / label for column 45                            TFORM45 = '20A     '           / format for column 45                           TTYPE46 = 'coadd_id'           / label for column 46                            TFORM46 = '13A     '           / format for column 46                           TTYPE47 = 'src     '           / label for column 47                            TFORM47 = 'J       '           / format for column 47                           TTYPE48 = 'w1mpro  '           / label for column 48                            TFORM48 = 'E       '           / format for column 48                           TTYPE49 = 'w1sigmpro'          / label for column 49                            TFORM49 = 'E       '           / format for column 49                           TTYPE50 = 'w1snr   '           / label for column 50                            TFORM50 = 'E       '           / format for column 50                           TTYPE51 = 'w1rchi2 '           / label for column 51                            TFORM51 = 'D       '           / format for column 51                           TTYPE52 = 'w2mpro  '           / label for column 52                            TFORM52 = 'E       '           / format for column 52                           TTYPE53 = 'w2sigmpro'          / label for column 53                            TFORM53 = 'E       '           / format for column 53                           TTYPE54 = 'w2snr   '           / label for column 54                            TFORM54 = 'E       '           / format for column 54                           TTYPE55 = 'w2rchi2 '           / label for column 55                            TFORM55 = 'D       '           / format for column 55                           TTYPE56 = 'w3mpro  '           / label for column 56                            TFORM56 = 'E       '           / format for column 56                           TTYPE57 = 'w3sigmpro'          / label for column 57                            TFORM57 = 'E       '           / format for column 57                           TTYPE58 = 'w3snr   '           / label for column 58                            TFORM58 = 'E       '           / format for column 58                           TTYPE59 = 'w3rchi2 '           / label for column 59                            TFORM59 = 'D       '           / format for column 59                           TTYPE60 = 'w4mpro  '           / label for column 60                            TFORM60 = 'E       '           / format for column 60                           TTYPE61 = 'w4sigmpro'          / label for column 61                            TFORM61 = 'E       '           / format for column 61                           TTYPE62 = 'w4snr   '           / label for column 62                            TFORM62 = 'E       '           / format for column 62                           TTYPE63 = 'w4rchi2 '           / label for column 63                            TFORM63 = 'D       '           / format for column 63                           TTYPE64 = 'rchi2   '           / label for column 64                            TFORM64 = 'D       '           / format for column 64                           TTYPE65 = 'nb      '           / label for column 65                            TFORM65 = 'I       '           / format for column 65                           TTYPE66 = 'na      '           / label for column 66                            TFORM66 = 'I       '           / format for column 66                           TTYPE67 = 'w1sat   '           / label for column 67                            TFORM67 = 'E       '           / format for column 67                           TTYPE68 = 'w2sat   '           / label for column 68                            TFORM68 = 'E       '           / format for column 68                           TTYPE69 = 'w3sat   '           / label for column 69                            TFORM69 = 'E       '           / format for column 69                           TTYPE70 = 'w4sat   '           / label for column 70                            TFORM70 = 'E       '           / format for column 70                           TTYPE71 = 'satnum  '           / label for column 71                            TFORM71 = 'I       '           / format for column 71                           TTYPE72 = 'cc_flags'           / label for column 72                            TFORM72 = 'I       '           / format for column 72                           TTYPE73 = 'ext_flg '           / label for column 73                            TFORM73 = 'I       '           / format for column 73                           TTYPE74 = 'var_flg '           / label for column 74                            TFORM74 = 'I       '           / format for column 74                           TTYPE75 = 'ph_qual '           / label for column 75                            TFORM75 = '4A      '           / format for column 75                           TTYPE76 = 'det_bit '           / label for column 76                            TFORM76 = 'I       '           / format for column 76                           TTYPE77 = 'moon_lev'           / label for column 77                            TFORM77 = 'I       '           / format for column 77                           TTYPE78 = 'w1nm    '           / label for column 78                            TFORM78 = 'I       '           / format for column 78                           TTYPE79 = 'w1m     '           / label for column 79                            TFORM79 = 'I       '           / format for column 79                           TTYPE80 = 'w2nm    '           / label for column 80                            TFORM80 = 'I       '           / format for column 80                           TTYPE81 = 'w2m     '           / label for column 81                            TFORM81 = 'I       '           / format for column 81                           TTYPE82 = 'w3nm    '           / label for column 82                            TFORM82 = 'I       '           / format for column 82                           TTYPE83 = 'w3m     '           / label for column 83                            TFORM83 = 'I       '           / format for column 83                           TTYPE84 = 'w4nm    '           / label for column 84                            TFORM84 = 'I       '           / format for column 84                           TTYPE85 = 'w4m     '           / label for column 85                            TFORM85 = 'I       '           / format for column 85                           TTYPE86 = 'w1cov   '           / label for column 86                            TFORM86 = 'E       '           / format for column 86                           TTYPE87 = 'w2cov   '           / label for column 87                            TFORM87 = 'E       '           / format for column 87                           TTYPE88 = 'w3cov   '           / label for column 88                            TFORM88 = 'E       '           / format for column 88                           TTYPE89 = 'w4cov   '           / label for column 89                            TFORM89 = 'E       '           / format for column 89                           TTYPE90 = 'w1frtr  '           / label for column 90                            TFORM90 = 'E       '           / format for column 90                           TTYPE91 = 'w2frtr  '           / label for column 91                            TFORM91 = 'E       '           / format for column 91                           TTYPE92 = 'w3frtr  '           / label for column 92                            TFORM92 = 'E       '           / format for column 92                           TTYPE93 = 'w4frtr  '           / label for column 93                            TFORM93 = 'E       '           / format for column 93                           TTYPE94 = 'w1cc_map'           / label for column 94                            TFORM94 = 'I       '           / format for column 94                           TTYPE95 = 'w1cc_map_str'       / label for column 95                            TFORM95 = 'L       '           / format for column 95                           TTYPE96 = 'w2cc_map'           / label for column 96                            TFORM96 = 'I       '           / format for column 96                           TTYPE97 = 'w2cc_map_str'       / label for column 97                            TFORM97 = 'L       '           / format for column 97                           TTYPE98 = 'w3cc_map'           / label for column 98                            TFORM98 = 'I       '           / format for column 98                           TTYPE99 = 'w3cc_map_str'       / label for column 99                            TFORM99 = 'L       '           / format for column 99                           TTYPE100= 'w4cc_map'           / label for column 100                           TFORM100= 'I       '           / format for column 100                          TTYPE101= 'w4cc_map_str'       / label for column 101                           TFORM101= 'L       '           / format for column 101                          TTYPE102= 'w1flux  '           / label for column 102                           TFORM102= 'D       '           / format for column 102                          TTYPE103= 'w1sigflux'          / label for column 103                           TFORM103= 'D       '           / format for column 103                          TTYPE104= 'w1sky   '           / label for column 104                           TFORM104= 'E       '           / format for column 104                          TTYPE105= 'w1sigsk '           / label for column 105                           TFORM105= 'E       '           / format for column 105                          TTYPE106= 'w1conf  '           / label for column 106                           TFORM106= 'E       '           / format for column 106                          TTYPE107= 'w2flux  '           / label for column 107                           TFORM107= 'D       '           / format for column 107                          TTYPE108= 'w2sigflux'          / label for column 108                           TFORM108= 'D       '           / format for column 108                          TTYPE109= 'w2sky   '           / label for column 109                           TFORM109= 'E       '           / format for column 109                          TTYPE110= 'w2sigsk '           / label for column 110                           TFORM110= 'E       '           / format for column 110                          TTYPE111= 'w2conf  '           / label for column 111                           TFORM111= 'E       '           / format for column 111                          TTYPE112= 'w3flux  '           / label for column 112                           TFORM112= 'D       '           / format for column 112                          TTYPE113= 'w3sigflux'          / label for column 113                           TFORM113= 'D       '           / format for column 113                          TTYPE114= 'w3sky   '           / label for column 114                           TFORM114= 'D       '           / format for column 114                          TTYPE115= 'w3sigsk '           / label for column 115                           TFORM115= 'E       '           / format for column 115                          TTYPE116= 'w3conf  '           / label for column 116                           TFORM116= 'E       '           / format for column 116                          TTYPE117= 'w4flux  '           / label for column 117                           TFORM117= 'D       '           / format for column 117                          TTYPE118= 'w4sigflux'          / label for column 118                           TFORM118= 'D       '           / format for column 118                          TTYPE119= 'w4sky   '           / label for column 119                           TFORM119= 'E       '           / format for column 119                          TTYPE120= 'w4sigsk '           / label for column 120                           TFORM120= 'E       '           / format for column 120                          TTYPE121= 'w4conf  '           / label for column 121                           TFORM121= 'E       '           / format for column 121                          TTYPE122= 'w1mag   '           / label for column 122                           TFORM122= 'E       '           / format for column 122                          TTYPE123= 'w1sigm  '           / label for column 123                           TFORM123= 'E       '           / format for column 123                          TTYPE124= 'w1flg   '           / label for column 124                           TFORM124= 'I       '           / format for column 124                          TTYPE125= 'w1mcor  '           / label for column 125                           TFORM125= 'E       '           / format for column 125                          TTYPE126= 'w2mag   '           / label for column 126                           TFORM126= 'E       '           / format for column 126                          TTYPE127= 'w2sigm  '           / label for column 127                           TFORM127= 'E       '           / format for column 127                          TTYPE128= 'w2flg   '           / label for column 128                           TFORM128= 'I       '           / format for column 128                          TTYPE129= 'w2mcor  '           / label for column 129                           TFORM129= 'E       '           / format for column 129                          TTYPE130= 'w3mag   '           / label for column 130                           TFORM130= 'E       '           / format for column 130                          TTYPE131= 'w3sigm  '           / label for column 131                           TFORM131= 'E       '           / format for column 131                          TTYPE132= 'w3flg   '           / label for column 132                           TFORM132= 'I       '           / format for column 132                          TTYPE133= 'w3mcor  '           / label for column 133                           TFORM133= 'E       '           / format for column 133                          TTYPE134= 'w4mag   '           / label for column 134                           TFORM134= 'E       '           / format for column 134                          TTYPE135= 'w4sigm  '           / label for column 135                           TFORM135= 'E       '           / format for column 135                          TTYPE136= 'w4flg   '           / label for column 136                           TFORM136= 'I       '           / format for column 136                          TTYPE137= 'w4mcor  '           / label for column 137                           TFORM137= 'E       '           / format for column 137                          TTYPE138= 'w1mag_1 '           / label for column 138                           TFORM138= 'E       '           / format for column 138                          TTYPE139= 'w1sigm_1'           / label for column 139                           TFORM139= 'E       '           / format for column 139                          TTYPE140= 'w1flg_1 '           / label for column 140                           TFORM140= 'I       '           / format for column 140                          TTYPE141= 'w2mag_1 '           / label for column 141                           TFORM141= 'E       '           / format for column 141                          TTYPE142= 'w2sigm_1'           / label for column 142                           TFORM142= 'E       '           / format for column 142                          TTYPE143= 'w2flg_1 '           / label for column 143                           TFORM143= 'I       '           / format for column 143                          TTYPE144= 'w3mag_1 '           / label for column 144                           TFORM144= 'E       '           / format for column 144                          TTYPE145= 'w3sigm_1'           / label for column 145                           TFORM145= 'E       '           / format for column 145                          TTYPE146= 'w3flg_1 '           / label for column 146                           TFORM146= 'I       '           / format for column 146                          TTYPE147= 'w4mag_1 '           / label for column 147                           TFORM147= 'E       '           / format for column 147                          TTYPE148= 'w4sigm_1'           / label for column 148                           TFORM148= 'E       '           / format for column 148                          TTYPE149= 'w4flg_1 '           / label for column 149                           TFORM149= 'I       '           / format for column 149                          TTYPE150= 'w1mag_2 '           / label for column 150                           TFORM150= 'E       '           / format for column 150                          TTYPE151= 'w1sigm_2'           / label for column 151                           TFORM151= 'E       '           / format for column 151                          TTYPE152= 'w1flg_2 '           / label for column 152                           TFORM152= 'I       '           / format for column 152                          TTYPE153= 'w2mag_2 '           / label for column 153                           TFORM153= 'E       '           / format for column 153                          TTYPE154= 'w2sigm_2'           / label for column 154                           TFORM154= 'E       '           / format for column 154                          TTYPE155= 'w2flg_2 '           / label for column 155                           TFORM155= 'I       '           / format for column 155                          TTYPE156= 'w3mag_2 '           / label for column 156                           TFORM156= 'E       '           / format for column 156                          TTYPE157= 'w3sigm_2'           / label for column 157                           TFORM157= 'E       '           / format for column 157                          TTYPE158= 'w3flg_2 '           / label for column 158                           TFORM158= 'I       '           / format for column 158                          TTYPE159= 'w4mag_2 '           / label for column 159                           TFORM159= 'E       '           / format for column 159                          TTYPE160= 'w4sigm_2'           / label for column 160                           TFORM160= 'E       '           / format for column 160                          TTYPE161= 'w4flg_2 '           / label for column 161                           TFORM161= 'I       '           / format for column 161                          TTYPE162= 'w1mag_3 '           / label for column 162                           TFORM162= 'E       '           / format for column 162                          TTYPE163= 'w1sigm_3'           / label for column 163                           TFORM163= 'E       '           / format for column 163                          TTYPE164= 'w1flg_3 '           / label for column 164                           TFORM164= 'I       '           / format for column 164                          TTYPE165= 'w2mag_3 '           / label for column 165                           TFORM165= 'E       '           / format for column 165                          TTYPE166= 'w2sigm_3'           / label for column 166                           TFORM166= 'E       '           / format for column 166                          TTYPE167= 'w2flg_3 '           / label for column 167                           TFORM167= 'I       '           / format for column 167                          TTYPE168= 'w3mag_3 '           / label for column 168                           TFORM168= 'E       '           / format for column 168                          TTYPE169= 'w3sigm_3'           / label for column 169                           TFORM169= 'E       '           / format for column 169                          TTYPE170= 'w3flg_3 '           / label for column 170                           TFORM170= 'I       '           / format for column 170                          TTYPE171= 'w4mag_3 '           / label for column 171                           TFORM171= 'E       '           / format for column 171                          TTYPE172= 'w4sigm_3'           / label for column 172                           TFORM172= 'E       '           / format for column 172                          TTYPE173= 'w4flg_3 '           / label for column 173                           TFORM173= 'I       '           / format for column 173                          TTYPE174= 'w1mag_4 '           / label for column 174                           TFORM174= 'E       '           / format for column 174                          TTYPE175= 'w1sigm_4'           / label for column 175                           TFORM175= 'E       '           / format for column 175                          TTYPE176= 'w1flg_4 '           / label for column 176                           TFORM176= 'I       '           / format for column 176                          TTYPE177= 'w2mag_4 '           / label for column 177                           TFORM177= 'E       '           / format for column 177                          TTYPE178= 'w2sigm_4'           / label for column 178                           TFORM178= 'E       '           / format for column 178                          TTYPE179= 'w2flg_4 '           / label for column 179                           TFORM179= 'I       '           / format for column 179                          TTYPE180= 'w3mag_4 '           / label for column 180                           TFORM180= 'E       '           / format for column 180                          TTYPE181= 'w3sigm_4'           / label for column 181                           TFORM181= 'E       '           / format for column 181                          TTYPE182= 'w3flg_4 '           / label for column 182                           TFORM182= 'I       '           / format for column 182                          TTYPE183= 'w4mag_4 '           / label for column 183                           TFORM183= 'E       '           / format for column 183                          TTYPE184= 'w4sigm_4'           / label for column 184                           TFORM184= 'E       '           / format for column 184                          TTYPE185= 'w4flg_4 '           / label for column 185                           TFORM185= 'I       '           / format for column 185                          TTYPE186= 'w1mag_5 '           / label for column 186                           TFORM186= 'E       '           / format for column 186                          TTYPE187= 'w1sigm_5'           / label for column 187                           TFORM187= 'E       '           / format for column 187                          TTYPE188= 'w1flg_5 '           / label for column 188                           TFORM188= 'I       '           / format for column 188                          TTYPE189= 'w2mag_5 '           / label for column 189                           TFORM189= 'E       '           / format for column 189                          TTYPE190= 'w2sigm_5'           / label for column 190                           TFORM190= 'E       '           / format for column 190                          TTYPE191= 'w2flg_5 '           / label for column 191                           TFORM191= 'I       '           / format for column 191                          TTYPE192= 'w3mag_5 '           / label for column 192                           TFORM192= 'E       '           / format for column 192                          TTYPE193= 'w3sigm_5'           / label for column 193                           TFORM193= 'E       '           / format for column 193                          TTYPE194= 'w3flg_5 '           / label for column 194                           TFORM194= 'I       '           / format for column 194                          TTYPE195= 'w4mag_5 '           / label for column 195                           TFORM195= 'E       '           / format for column 195                          TTYPE196= 'w4sigm_5'           / label for column 196                           TFORM196= 'E       '           / format for column 196                          TTYPE197= 'w4flg_5 '           / label for column 197                           TFORM197= 'I       '           / format for column 197                          TTYPE198= 'w1mag_6 '           / label for column 198                           TFORM198= 'E       '           / format for column 198                          TTYPE199= 'w1sigm_6'           / label for column 199                           TFORM199= 'E       '           / format for column 199                          TTYPE200= 'w1flg_6 '           / label for column 200                           TFORM200= 'I       '           / format for column 200                          TTYPE201= 'w2mag_6 '           / label for column 201                           TFORM201= 'E       '           / format for column 201                          TTYPE202= 'w2sigm_6'           / label for column 202                           TFORM202= 'E       '           / format for column 202                          TTYPE203= 'w2flg_6 '           / label for column 203                           TFORM203= 'I       '           / format for column 203                          TTYPE204= 'w3mag_6 '           / label for column 204                           TFORM204= 'E       '           / format for column 204                          TTYPE205= 'w3sigm_6'           / label for column 205                           TFORM205= 'E       '           / format for column 205                          TTYPE206= 'w3flg_6 '           / label for column 206                           TFORM206= 'I       '           / format for column 206                          TTYPE207= 'w4mag_6 '           / label for column 207                           TFORM207= 'E       '           / format for column 207                          TTYPE208= 'w4sigm_6'           / label for column 208                           TFORM208= 'E       '           / format for column 208                          TTYPE209= 'w4flg_6 '           / label for column 209                           TFORM209= 'I       '           / format for column 209                          TTYPE210= 'w1mag_7 '           / label for column 210                           TFORM210= 'E       '           / format for column 210                          TTYPE211= 'w1sigm_7'           / label for column 211                           TFORM211= 'E       '           / format for column 211                          TTYPE212= 'w1flg_7 '           / label for column 212                           TFORM212= 'I       '           / format for column 212                          TTYPE213= 'w2mag_7 '           / label for column 213                           TFORM213= 'E       '           / format for column 213                          TTYPE214= 'w2sigm_7'           / label for column 214                           TFORM214= 'E       '           / format for column 214                          TTYPE215= 'w2flg_7 '           / label for column 215                           TFORM215= 'I       '           / format for column 215                          TTYPE216= 'w3mag_7 '           / label for column 216                           TFORM216= 'E       '           / format for column 216                          TTYPE217= 'w3sigm_7'           / label for column 217                           TFORM217= 'E       '           / format for column 217                          TTYPE218= 'w3flg_7 '           / label for column 218                           TFORM218= 'I       '           / format for column 218                          TTYPE219= 'w4mag_7 '           / label for column 219                           TFORM219= 'E       '           / format for column 219                          TTYPE220= 'w4sigm_7'           / label for column 220                           TFORM220= 'E       '           / format for column 220                          TTYPE221= 'w4flg_7 '           / label for column 221                           TFORM221= 'I       '           / format for column 221                          TTYPE222= 'w1mag_8 '           / label for column 222                           TFORM222= 'E       '           / format for column 222                          TTYPE223= 'w1sigm_8'           / label for column 223                           TFORM223= 'E       '           / format for column 223                          TTYPE224= 'w1flg_8 '           / label for column 224                           TFORM224= 'I       '           / format for column 224                          TTYPE225= 'w2mag_8 '           / label for column 225                           TFORM225= 'E       '           / format for column 225                          TTYPE226= 'w2sigm_8'           / label for column 226                           TFORM226= 'E       '           / format for column 226                          TTYPE227= 'w2flg_8 '           / label for column 227                           TFORM227= 'I       '           / format for column 227                          TTYPE228= 'w3mag_8 '           / label for column 228                           TFORM228= 'E       '           / format for column 228                          TTYPE229= 'w3sigm_8'           / label for column 229                           TFORM229= 'E       '           / format for column 229                          TTYPE230= 'w3flg_8 '           / label for column 230                           TFORM230= 'I       '           / format for column 230                          TTYPE231= 'w4mag_8 '           / label for column 231                           TFORM231= 'E       '           / format for column 231                          TTYPE232= 'w4sigm_8'           / label for column 232                           TFORM232= 'E       '           / format for column 232                          TTYPE233= 'w4flg_8 '           / label for column 233                           TFORM233= 'I       '           / format for column 233                          TTYPE234= 'w1magp  '           / label for column 234                           TFORM234= 'E       '           / format for column 234                          TTYPE235= 'w1sigp1 '           / label for column 235                           TFORM235= 'E       '           / format for column 235                          TTYPE236= 'w1sigp2 '           / label for column 236                           TFORM236= 'E       '           / format for column 236                          TTYPE237= 'w1dmag  '           / label for column 237                           TFORM237= 'E       '           / format for column 237                          TTYPE238= 'w1ndf   '           / label for column 238                           TFORM238= 'I       '           / format for column 238                          TTYPE239= 'w1mlq   '           / label for column 239                           TFORM239= 'I       '           / format for column 239                          TTYPE240= 'w1mjdmin'           / label for column 240                           TFORM240= 'D       '           / format for column 240                          TTYPE241= 'w1mjdmax'           / label for column 241                           TFORM241= 'D       '           / format for column 241                          TTYPE242= 'w1mjdmean'          / label for column 242                           TFORM242= 'D       '           / format for column 242                          TTYPE243= 'w2magp  '           / label for column 243                           TFORM243= 'E       '           / format for column 243                          TTYPE244= 'w2sigp1 '           / label for column 244                           TFORM244= 'E       '           / format for column 244                          TTYPE245= 'w2sigp2 '           / label for column 245                           TFORM245= 'E       '           / format for column 245                          TTYPE246= 'w2dmag  '           / label for column 246                           TFORM246= 'D       '           / format for column 246                          TTYPE247= 'w2ndf   '           / label for column 247                           TFORM247= 'I       '           / format for column 247                          TTYPE248= 'w2mlq   '           / label for column 248                           TFORM248= 'I       '           / format for column 248                          TTYPE249= 'w2mjdmin'           / label for column 249                           TFORM249= 'D       '           / format for column 249                          TTYPE250= 'w2mjdmax'           / label for column 250                           TFORM250= 'D       '           / format for column 250                          TTYPE251= 'w2mjdmean'          / label for column 251                           TFORM251= 'D       '           / format for column 251                          TTYPE252= 'w3magp  '           / label for column 252                           TFORM252= 'E       '           / format for column 252                          TTYPE253= 'w3sigp1 '           / label for column 253                           TFORM253= 'E       '           / format for column 253                          TTYPE254= 'w3sigp2 '           / label for column 254                           TFORM254= 'E       '           / format for column 254                          TTYPE255= 'w3dmag  '           / label for column 255                           TFORM255= 'D       '           / format for column 255                          TTYPE256= 'w3ndf   '           / label for column 256                           TFORM256= 'I       '           / format for column 256                          TTYPE257= 'w3mlq   '           / label for column 257                           TFORM257= 'I       '           / format for column 257                          TTYPE258= 'w3mjdmin'           / label for column 258                           TFORM258= 'D       '           / format for column 258                          TTYPE259= 'w3mjdmax'           / label for column 259                           TFORM259= 'D       '           / format for column 259                          TTYPE260= 'w3mjdmean'          / label for column 260                           TFORM260= 'D       '           / format for column 260                          TTYPE261= 'w4magp  '           / label for column 261                           TFORM261= 'E       '           / format for column 261                          TTYPE262= 'w4sigp1 '           / label for column 262                           TFORM262= 'E       '           / format for column 262                          TTYPE263= 'w4sigp2 '           / label for column 263                           TFORM263= 'E       '           / format for column 263                          TTYPE264= 'w4dmag  '           / label for column 264                           TFORM264= 'D       '           / format for column 264                          TTYPE265= 'w4ndf   '           / label for column 265                           TFORM265= 'I       '           / format for column 265                          TTYPE266= 'w4mlq   '           / label for column 266                           TFORM266= 'I       '           / format for column 266                          TTYPE267= 'w4mjdmin'           / label for column 267                           TFORM267= 'D       '           / format for column 267                          TTYPE268= 'w4mjdmax'           / label for column 268                           TFORM268= 'D       '           / format for column 268                          TTYPE269= 'w4mjdmean'          / label for column 269                           TFORM269= 'D       '           / format for column 269                          TTYPE270= 'rho12   '           / label for column 270                           TFORM270= 'I       '           / format for column 270                          TTYPE271= 'rho23   '           / label for column 271                           TFORM271= 'I       '           / format for column 271                          TTYPE272= 'rho34   '           / label for column 272                           TFORM272= 'I       '           / format for column 272                          TTYPE273= 'q12     '           / label for column 273                           TFORM273= 'I       '           / format for column 273                          TTYPE274= 'q23     '           / label for column 274                           TFORM274= 'I       '           / format for column 274                          TTYPE275= 'q34     '           / label for column 275                           TFORM275= 'I       '           / format for column 275                          TTYPE276= 'xscprox '           / label for column 276                           TFORM276= 'E       '           / format for column 276                          TTYPE277= 'w1rsemi '           / label for column 277                           TFORM277= 'E       '           / format for column 277                          TTYPE278= 'w1ba    '           / label for column 278                           TFORM278= 'E       '           / format for column 278                          TTYPE279= 'w1pa    '           / label for column 279                           TFORM279= 'E       '           / format for column 279                          TTYPE280= 'w1gmag  '           / label for column 280                           TFORM280= 'E       '           / format for column 280                          TTYPE281= 'w1gerr  '           / label for column 281                           TFORM281= 'E       '           / format for column 281                          TTYPE282= 'w1gflg  '           / label for column 282                           TFORM282= 'I       '           / format for column 282                          TNULL282=               -32768 / blank value for column 282                     TTYPE283= 'w2rsemi '           / label for column 283                           TFORM283= 'E       '           / format for column 283                          TTYPE284= 'w2ba    '           / label for column 284                           TFORM284= 'E       '           / format for column 284                          TTYPE285= 'w2pa    '           / label for column 285                           TFORM285= 'E       '           / format for column 285                          TTYPE286= 'w2gmag  '           / label for column 286                           TFORM286= 'E       '           / format for column 286                          TTYPE287= 'w2gerr  '           / label for column 287                           TFORM287= 'E       '           / format for column 287                          TTYPE288= 'w2gflg  '           / label for column 288                           TFORM288= 'I       '           / format for column 288                          TNULL288=               -32768 / blank value for column 288                     TTYPE289= 'w3rsemi '           / label for column 289                           TFORM289= 'E       '           / format for column 289                          TTYPE290= 'w3ba    '           / label for column 290                           TFORM290= 'E       '           / format for column 290                          TTYPE291= 'w3pa    '           / label for column 291                           TFORM291= 'E       '           / format for column 291                          TTYPE292= 'w3gmag  '           / label for column 292                           TFORM292= 'E       '           / format for column 292                          TTYPE293= 'w3gerr  '           / label for column 293                           TFORM293= 'E       '           / format for column 293                          TTYPE294= 'w3gflg  '           / label for column 294                           TFORM294= 'I       '           / format for column 294                          TNULL294=               -32768 / blank value for column 294                     TTYPE295= 'w4rsemi '           / label for column 295                           TFORM295= 'E       '           / format for column 295                          TTYPE296= 'w4ba    '           / label for column 296                           TFORM296= 'E       '           / format for column 296                          TTYPE297= 'w4pa    '           / label for column 297                           TFORM297= 'E       '           / format for column 297                          TTYPE298= 'w4gmag  '           / label for column 298                           TFORM298= 'E       '           / format for column 298                          TTYPE299= 'w4gerr  '           / label for column 299                           TFORM299= 'E       '           / format for column 299                          TTYPE300= 'w4gflg  '           / label for column 300                           TFORM300= 'I       '           / format for column 300                          TNULL300=               -32768 / blank value for column 300                     TTYPE301= 'tmass_key'          / label for column 301                           TFORM301= 'J       '           / format for column 301                          TTYPE302= 'r_2mass '           / label for column 302                           TFORM302= 'E       '           / format for column 302                          TTYPE303= 'pa_2mass'           / label for column 303                           TFORM303= 'E       '           / format for column 303                          TTYPE304= 'n_2mass '           / label for column 304                           TFORM304= 'I       '           / format for column 304                          TTYPE305= 'j_m_2mass'          / label for column 305                           TFORM305= 'E       '           / format for column 305                          TTYPE306= 'j_msig_2mass'       / label for column 306                           TFORM306= 'E       '           / format for column 306                          TTYPE307= 'h_m_2mass'          / label for column 307                           TFORM307= 'E       '           / format for column 307                          TTYPE308= 'h_msig_2mass'       / label for column 308                           TFORM308= 'E       '           / format for column 308                          TTYPE309= 'k_m_2mass'          / label for column 309                           TFORM309= 'E       '           / format for column 309                          TTYPE310= 'k_msig_2mass'       / label for column 310                           TFORM310= 'E       '           / format for column 310                          TTYPE311= 'best_use_cntr'      / label for column 311                           TFORM311= 'K       '           / format for column 311                          TTYPE312= 'ngrp    '           / label for column 312                           TFORM312= 'I       '           / format for column 312                          TTYPE313= 'x       '           / label for column 313                           TFORM313= 'D       '           / format for column 313                          TTYPE314= 'y       '           / label for column 314                           TFORM314= 'D       '           / format for column 314                          TTYPE315= 'z       '           / label for column 315                           TFORM315= 'D       '           / format for column 315                          TTYPE316= 'spt_ind '           / label for column 316                           TFORM316= 'J       '           / format for column 316                          TTYPE317= 'Separation'         / label for column 317                           TFORM317= 'D       '           / format for column 317                          TUNIT317= 'arcsec  '           / units for column 317                           TCOMM317= 'Distance between matched objects along a great circle'               TUCD317 = 'pos.angDistance'                                                     DATE-HDU= '2016-01-27T17:00:30' / Date of HDU creation (UTC)                    STILVERS= '3.0-11  '           / Version of STIL software                       STILCLAS= 'uk.ac.starlink.votable.FitsPlusTableWriter' / Author class in STIL soEND                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             À  C±-èÀC±-ÖÁZ @uOKÒ¼P@0…)ÌØ
+n@0ÛqûÅŞœ?”öYÏ[@0ì„aùğ?‘d„ø@0Â7G”ê?Š®òÇ2Y@0¶…ì>?Š<÷S½@1.¾¾P¤?Š?Å£ôÎ@1¥q"?pIDcÿ{B?¾T´:æ†@–·m
+nˆ?ÓßF¨Ñ@0¶Ğ4Hoé@%ìûPM„@\:êC`ÀA‰°0Èì]@Ô¹•ë_À?ş	zH, ?ÍKÆ§ï²@0Efœí1@uOKaş"@0…)Ë«dJ223019.65+163112.8@uO_ND1@0…-ÌÁå=×Ü=„o;ŞÒ‰@T,Ç`cÀADdzÓÛµ@uª«Š\æ@7ùcpè h@¨¤Z¬@šX²-V.å¥?˜¬#3379p166_ab41-0214753379p166_ab41  SãA6ñª<Ä›¦B133@ÊÀƒn˜A)hs<¬1BO33?ôñ©ûçl‹@ú—<“t¼Blff?õ¶E¡ÊÀƒ@¯¶F=+BÌÍ?î-àq?÷\(õÂ\                         WAAAA  o        A_ó¶A`9XA^¸RAk©ü                            @°…³?úÁÓ@WÛ•$İAJ  @/P<ÌÌÍ@¬¬f_ú;›@Q´9`sŞBdZ@n—=%@ÆÑ     @hµÂ€®I@Ÿ#,1&éAÚ&é    @‚f`ÉŠ@>\)‰†ıD´A)¶F?Ú¬A6¸R;Ä›¦  >…¡ËA)V;Ä›¦  >£Sø@ú5?<#×
+  ?S33@­¡Ë=¾w ?t¼AAX;å`B  A5X;å`B  AãT<D›¦  @Ï¾w='ï A:å`;Ä›¦  A.(ö;Ä›¦  A
+MÓ<#×
+  @Àb=¾w A8;Ä›¦ A+&é;Ä›¦ A‡<#×
+  @·33=,1 A5¶F;å`B A)`B;å`B A$İ<#×
+ @²áH=D›¦ A25?;Ä›¦ A'KÇ;å`B A j<49X @±?}=m‘h A-‡;Ä›¦ A$j;å`B @ş§ğ<D›¦ @°›¦=‘hs A((ö;Ä›¦ A!p¤;å`B @ı&é<Tıô @°£×=²- A%¸;Ä›¦ A\);å`B @ü Å<e`B @±G®=Ù‡ A6ñª<¼j;Ä›¦=º^5   @ëLŠŒ»»@ëp†›ğ·@ë]Ì±´nA)l‹<İ/<o?¶‡+Iº   @ëLŠŒ»»@ëp†›ğ·@ë]Ì±´n@ú‡+=#×
+<49X?ÀA‰7KÆ¨   @ëLŠŒ»»@ëp†›ğ·@ë]Ì±´n@¯•=q©ü<ƒo?Ë"Ğå`A‰   @ëLŠŒ»»@ëp†›ğ·@ë]Ì±´nÿà  -    ?¸RAÌÍ?c×
+Á   A:vÉ;Ä›¦  AÌÍ?c×
+Á   A-©ü;Ä›¦  AÌÍ?c×
+Á   A	…<#×
+  AlõÃ?uÂÁ   @Ä“u=¾w I@Ô>9XC.€  Ak`B=49XA\vÉ=8QìAL›¦=o.å¥?˜¬# ?ì\GœÏ}¿×fPü\á‰?Ò2Ú‘ÊÃğ[?X/€s‡¦À  C±-ä€%C±-ä€%@sJîÍş{@-#Çæ2)@1ïø‡eºo?’Ê‹¨?O@1™$|·
+Ä?.#(ùôM@1ÇŒÚnuÿ?“‰.èJ×•@0¸$Ä§/?z”ıcÔ¡ê@2:·g	úU?Š¯ÿ6¬dw@1«»@³Nw?qÜ“`¼Ğ£?½UhÆ’÷@¼¸½õŠ?Ìİ`¦Ö@1[Ö58Q@%OS…@H–àm›€A¥ Š™–V{@Êû»€ñ~@3Ù5J*ô ?É)¶²¯À
+8nÁ~ºñ@sJîşOı@-#ÇÕíÿJ203439.25+143411.7@sJëm¡Ä@-#Ïoº=Œç=Œç<7€4@M9ëı¼uÀ.+'’ì o@s¸²€@@çDñ¢@“{%ãS÷Ï@‹C•*ÉlÙ{ÈX3083p151_ab41-0020723083p151_ab41  ADQì<¼jB:ÌÍ?õ
+=p£×
+A6MÓ<¬1BLff?ïAò×sA	&é<´9XBDff?ğA‰7KÆ¨@Ì“=<jA¼ÌÍ?ïÇy¦µ?ñl‹C•                          nAAAA  7        AÑAÓXA€OßA‹Oß                            @˜f`ÉŠ@Dø1…ıAwl‹@[?^ùÛ@›K™Ÿä6v@A‡"yBJb@Œ‹D>5?}@·     @^Â~•1U@V“uAß²-@¡Ë@{×3?Èlì@2äZ¬1D
+t‹A#C–?|îAD{<o >…¡ËA6 Å<49X >£SøA	G®<Ä›¦ ?S33@É‡=]/ ?t¼ANn˜<o  ABMÓ<D›¦  Aë…<í‘h  @ëÎÙ=q©ü AHA‰<o A;;d<49X Azá<Ä›¦ @Û…=]/ AEÎÙ<t¼ A8zá<D›¦ At¼<¼j @ÒJ=aG® ADbN<t¼ A7C–<e`B AÄœ<ÌÌÍ @ÍG®=yÛ# AC7L<#×
+ A6ƒ<uÂ AdZ<İ/ @Ë33=‘hs AB=q<49X A5ï<‹C– A´9<ıó¶ @Éó¶=©ûç AA`B<D›¦ A5xÕ<›¥ã Ar°=\) @É¸=Ä›¦ A@Ÿ¾<D›¦ A5¸<´9X Aff=#×
+ @ÈA‰=áG® ADV<Ôıô;£×
+=ÊÀƒ   @ë«Å§@ë€İò©Ö@ëJ¹_1¿A6Z<å`B;Ä›¦?ÀÄ›¥ãSø   @ë«Å§@ë€İò©Ö@ëJ¹_1¿A	&é=yÛ#<uÂ?Í/Ÿ¾vÉ   @ë,19ÉO@ë€İò©Ö@ë_ì“œU@Ì  =å`B<İ/?İÒñ©ûçm   @ë#¹Å¦@ë€İò©Ö@ë\b¾$ ÿâ      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € pŒ¸<ıó¶B‰™š Ar¬=LÌÍAf9X=e`BAZ£×=<j*ÉlÙ{ÈX ?ãYU™³@z¿è.Öb;4?Ğ•ÒÄËˆ?^Za5ÅÅÀ  C±- O	C±- R@pc;ˆµ??éŒLi†@4Ğ›„Ud¶?¸E#öM¾@2~mzVŞ3?£#ú±¦@3İ„V!u?ÆØä2Dë@1œ)¿*å?’iß—ª¬@53‘`4P?ºÊ¼QT†j@2¾.ä¬?éJs|á?Â`€sWæ@¥Iš²È?Ø!$
+yOg@2>Ø_Ÿ„=@$ç’¬“øÊ@GOñmÈN A‡Â{]Z¢@š“¸@&BßÇ×Ğ ?µ¥Ò .ÀbìšR&=@pc;ˆ êâ?éŒKÓ=)VJ172848.48+004754.0@pc;|]H°?éŒ!vrM$=«6z=¥zx»ŞÒ‰@7ê™:Ïç@2®D=é@pWX¼>à@8º:ùÑ@…m¾vÈ´9@e«×
+=p¤$NBteÖ Â2616p015_ab41-0001302616p015_ab41   ‚ANbN<ÌÌÍB/33?õl‹C•A>å`<ÔıôB)33?ğ~ùÛ"ĞåAdZ<å`BB33?í ù	k¹Œ@Éë…=]/A¢ff?ñ‘hr° Å?ñ‘hr° Å                          oAAAA           A]/A\å`A/PA/¸                            @‘'™Ÿä6v@9bMÒòA‚Oß@^$İ>"Ğå@¦     @91©ûçl‹B¼j@€zá=e`B@°     @ZäzáG®@¢)xÔıôAï“@ÜÄœ@} £àz(»@7`AxpT&D-dA'¥ã@›¦AM®<49X  >…¡ËA>¬<D›¦  >£SøA7L<õÂ  ?S33@Ç²=‡+ ?t¼AX$İ<D›¦  AJå`<e`B  A%Û#=P  @ê—=“t¼ AQÛ#<49X  ACÆ¨<D›¦  Aj<õÂ  @ÚJ=‡+ AOP<D›¦ AA‡<Tıô ASø<í‘h @Ğ(ö=‰7L AN›¦<e`B A@J<uÂ A‡+<ıó¶ @ÊvÉ=• AN1<ƒo A?‰7<‹C– Añª=C– @ÆáH=¥ãT AMP<‹C– A?33<›¥ã AJ=¥ã @Ä Å=º^5 AM¸<›¥ã A>ıô<´9X A=,1 @Â$İ=Òñª AL´9<´9X A>éy<ÌÌÍ Ao=@ƒ @À›¦=ë… ANzá<İ/;å`B>
+=q   @êüsaáò@êü—‹@êü…PœA>éy=LÌÍ<e`B?Å¸Që…   @êüsaáò@êü—‹@êü…PœAX=yÛ#<“t¼?ÇKÆ§ï² 
+  @êüwO7u¸@êü—‹@êü…¾ˆÇ@Ê$İ>333=Y‡?â=p£×
+= 
+  @êüwO7u¸@êü—‹@êü…¾ˆÇ 
+ . %    À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € CíqÅ>	7LÃ   AzvÉ=§ïAkÊÁ=¼jA^ùÛ=‹C–$NBteÖ Â ¿Á]ŒÏÄ'¿ï³u)«ÔH?Œ‰(ù”P„a“?Qó¨ÈÆÀ  C±-ì€ÛC±-"€
+@r+bYâtÀˆK:æÛÂ@34[TŠœ?¤m‚ºZ‚@1Ã›™N??… @3'D^Ô¡­?©TdÜ"«&@1{QÕQ×?…W¹ËhI@3~qÿ÷œ„?œÚô­¼fM@1ønÁ~ºñ?y4íP-?ÇÜHjÒÜ±@PÚAÒqĞ?öíS$Ğ>@3 JO¡Ã@%'H'-Ù|@S^#œÆ AªÑuYÖhø@œÅHÁº@!ÈóÎ)ŒÂ ?Ï—³Œdş@< 'RT`ª@r+b¯È°ÀˆK°…nJ192250.75-055258.9@r+bAùŸ”Àˆ;tJT¸=”zá=—Xâ¼ç@?;66ó²À#NZ5Ö{¢@r7‡¼<[Ñ@0›I@€{õÂ\)@£‘TzáG®(Bq­Ë¶¤Û2901m061_ab41-0462352901m061_ab41  ´›AIÊÁ<ÔıôB(  ?í©*0U2aA8^5<¼jB@  ?íó¶E¡ÊÁA5?<´9XBG™š?ğ1&éxÕ@³33=#×
+AØÌÍ?íÀ6âë?î2ÊW§†Â                          AAAA           ACG®ABå`AIt¼AK²                            @–Vf`ÉŠ@AMã¸¡A³²-@rMÓ?´9@˜?™Ÿä6v@@+æ>B*üî@ˆ¬? Å@¾§æ_ú;›@c¨     @¤`LIº^5Aõ ?°A‰@Œ€€u@@Î—|ˆç›DJ bA1ï?£×AI|î<£×
+  >…¡ËA8—<uÂ  >£SøA¶F<e`B  ?S33@³¥ã='ï ?t¼AS©ü<¬1  AD¸R<ƒo  Aƒ<‹C–  @Õp¤=0 Å AM©ü<£×
+  A=²-<uÂ  Aéy<e`B  @Æ{='ï AKp¤<¼j A;‡<ƒo A²-<e`B @½?}=49X AJbN<Ôıô A:“<“t¼ AÈ´<e`B @¹V=På` AI<õÂ A9‘h<¬1 A"Ñ<uÂ @·¥ã=}ó¶ AH Å=+ A8õÃ<Ä›¦ A(ö<ƒo @¶éy=™™š AEÂ=+ A7ë…<Ôıô A•<“t¼ @¶=q=¶E¢ AB1'<ıó¶ A6-<İ/ A33<£×
+ @µº^=×
+= AIÊÁ<ÌÌÍ;å`B=¼j   @ë <ÂK.}@ë \ƒ”iÚ@ë LĞP?^A8^5=o<t¼?¸Që…¸R   @ë <ÂK.}@ë \ƒ”iÚ@ë LĞP?^A“=LÌÍ<uÂ?Ç+Iº^   @ë <ÂK.}@ë \ƒ”iÚ@ë LĞP?^@²¸R=D›¦<e`B?ÎV“t¼   @ë <ÂK.}@ë \ƒ”iÚ@ë LĞP?^   4     À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € Õ’–>bNÃ	33 A|(ö=Æ§ğAoãT=¾vÉA_¾w=•(Bq­Ë¶¤Û ?Öƒã—}`¿íÆ8/¶°d¿º=PrT^*Ä`L?`üPVÿ´À  C±-×Àw C±-×Àw @fMe;îï@R7[ª€qª@2*+¾Ê«Š?”|ú&¢+9@1Œ}=B€®?’Ò4ëšn@1·ş~À? J×”¦ë’@0¢OÛ	¦r?}z06˜\G@2x¹f¾zú?á÷×<’X@1½bs’Ÿ?p„Ğ×ñ¡?¾àL’8?úxııf2°?Åå[A&r@1>Û:¨O.@$Õì{(W‚@Pn*o‚>€AÇêv¯ÃvÊ@l‹Õ²@8ôçrĞÊ ?ª®d,@V–}9ÂÆ@fMe+ÓÃ@R7[«!ZJ115338.25+725153.8@fMŸC&Æ@R7[ªJÁÅ=í)=“@O»´9X@`J‚¥aN@EÍ<‘€Æd@_Î‡mG+8@No+ä<U@©t¼j~ú@££{dZ¬ûqo\À1800p726_ab41-0267171800p726_ab41  h]AOÎÙ<¼jB:ff?÷G®záHACÊÁ<´9XBE33?ù"Ğå`A‰Aï<Ä›¦B6  ?ïƒä%®æ@Û×
+=Y‡A¤  ?ïxÔıó¶F?ô(õÂ\)               :ƒo        AAAA    - - - - ) )  )B6ÂB5å`B)49B*<j                            @™™Ÿä6v@5¶“t¼A@&éy=Oß@‰!ÖÿÁß@0L‹C•AÈ²@c¶F=Æ§ğ@¦™ Äe@O¼b~@•\(õÂAÏ¡Ë?“@q±Â¡ Ï@+‘hr° ÅCÀAHA vÉ?‹çmAOp¤<t¼  >…¡ËAC…<t¼  >£SøA<“t¼  ?S33@ÚÙ=ixÕ ?t¼AZ<t¼  AO÷Ï<#×
+  A+ûç<´9X  @ı‘h=uÂ AS²<t¼  AHŸ¾<t¼  A"5?<“t¼  @íG®=ixÕ AQ33<t¼  AE¥ã<#×
+  AáH<‹C–  @ãt¼=q©ü AP-<#×
+ ADZ<#×
+ A×
+<“t¼ @İÛ#=…¸ AO™š<49X AC¡Ë<D›¦ A“<›¥ã @ÛC–=²- AO;d<D›¦ AC¸<Tıô A
+=<¬1 @Ùë…=¼j ANñª<e`B ABŸ¾<e`B AZ<Ä›¦ @Ù‡=ß;d AN¬<uÂ AB Å<ƒo AÛ#<Ôıô @Ø¬>¸ AOÎÙ=t¼;£×
+>¸R ,  @ëM?kD@ëÒsşÕ@ëÙ1	ADb=49X;å`B?ÈÔıó¶E¢ +  @ëM?kD@ëÒsşÕ@ëÙ1	AÛ#=¥ãT<Tıô?ÛdZ¬1 (  @ëM?kD@ëÎaßy@ëk×å@ÚùÛ>E¡Ë<õÂ?ë²-V (  @ëM?kD@ëÎaßy@ëk×åÿøÿ÷ÿó      À  À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € À  À  À  À  À  € >½€<<Ä›¦ÂÌÍ A{=§ïAnõÃ=Æ§ğAb°!=Oßûqo\À ¿ÒÙE¼x?€¿»_íÉ?î”aØ(§ÿ,Ä?A¹´¸æe                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
