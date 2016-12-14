@@ -10,9 +10,10 @@ import os
 from astropy.cosmology import FlatLambdaCDM
 
 from astropy import units as un
-from astropy.table import Table, vstack
+from astropy.table import Table, vstack, Column
 
 import math
+import linmix
 
 os.environ['PATH'] = os.environ['PATH'] + ':/usr/texbin'
 
@@ -85,10 +86,10 @@ def calc_fwhm(wave, emission):
     fwhm = wave[sidx] - wave[fidx]
     return fwhm
 
-def gauss(a, u, s, a1, u1, s1, wave):N.
+def gauss(a, u, s, a1, u1, s1, wave):
     return a * N.exp(- (((wave - u)**2) /(s**2))) + a1 * N.exp(- (((wave - u1)**2) /(s1**2)))
 
-def gauss(a, u, s, wave):
+def gaussbroad(a, u, s, wave):
     return a * N.exp(- (((wave - u)**2) /(s**2)))
 
 ints = Table.read('ints_colours_masses_integrate_WISE.fits', format='fits')
@@ -117,6 +118,8 @@ ur = N.zeros(len(ints))
 Err_ur = N.zeros(len(ints))
 gal_r = N.zeros(len(ints))
 Err_gal_r = N.zeros(len(ints))
+gal_Mr = N.zeros(len(ints))
+Err_gal_Mr = N.zeros(len(ints))
 
 for n in range(len(z)):
     s = F.open('/Users/becky/Projects/observing/lapalma/data_may14/int_reduced_spectra/'+sourceList[n]+'_extract_agn.fit')
@@ -149,10 +152,10 @@ for n in range(len(sourceList)):
         log_m_l_err = (0.18*Err_ur[n])**2
     ld = cosmo.luminosity_distance(z[n])
     Err_ld = N.mean([(cosmo.luminosity_distance(z[n]+0.001*z[n])-ld).value, (ld-cosmo.luminosity_distance(z[n]+0.001*z[n])).value])
-    Mr = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
-    Err_Mr = (Err_gal_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
-    int_mtot[n] = ((4.62 - Mr)/2.5) + log_m_l
-    Err_int_mtot[n] = ((Err_Mr/2.5)**2 + (log_m_l_err)**2)**(0.5)
+    gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+    Err_gal_Mr[n] = (Err_gal_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+    int_mtot[n] = ((4.62 - gal_Mr[n])/2.5) + log_m_l
+    Err_int_mtot[n] = ((Err_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
     print int_mtot[n] 
     bf = F.open('/Users/becky/Projects/observing/lapalma/data_may14/int_gandalf_results/'+sourceList[n]+'_extract_agn_deredshift_rebin_header_units_GANDALF_fits.fits')
     hdr = bf[0].header
@@ -202,6 +205,8 @@ sdss_z = N.zeros(len(sdss))
 Err_sdss_z = N.zeros(len(sdss))
 sdss_ur = N.zeros(len(sdss))
 Err_sdss_ur = N.zeros(len(sdss))
+sdss_gal_Mr = N.zeros(len(sdss))
+Err_sdss_gal_Mr = N.zeros(len(sdss))
 for n in range(len(sdss)):
     if n !=73 and n!=35:
         a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
@@ -223,10 +228,10 @@ for n in range(len(sdss)):
             Err_sdss_z[n] = hdr['Z_ERR']
             ld = cosmo.luminosity_distance(hdr['Z'])
             Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
-            Mr = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
-            Err_Mr = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
-            sdss_mtot[n] = ((4.62 - Mr)/2.5) + log_m_l
-            Err_sdss_mtot[n] = ((Err_Mr/2.5)**2 + (log_m_l_err)**2)**(0.5)
+            sdss_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+            Err_sdss_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+            sdss_mtot[n] = ((4.62 - sdss_gal_Mr[n])/2.5) + log_m_l
+            Err_sdss_mtot[n] = ((Err_sdss_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
             #sdss_mtot[n] = sdss['lgm_tot_p50'][n]
             sdss_flux_h_alpha[n] = N.max(spec[2500:])
             broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
@@ -266,7 +271,11 @@ qso_z = N.zeros(len(qso))
 Err_qso_z = N.zeros(len(qso))
 qso_ur = N.zeros(len(qso))
 Err_qso_ur = N.zeros(len(qso))
+qso_gal_Mr = N.zeros(len(qso))
+Err_qso_gal_Mr = N.zeros(len(qso))
 qso_names = N.zeros(len(qso)).astype(str)
+
+
 for n in range(len(qso)):
     qso_names[n] = 'qso'+str(n)
     a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
@@ -288,10 +297,10 @@ for n in range(len(qso)):
         Err_qso_z[n] = hdr['Z_ERR']
         ld = cosmo.luminosity_distance(hdr['Z'])
         Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
-        Mr = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
-        Err_Mr = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
-        qso_mtot[n] = ((4.62 - Mr)/2.5) + log_m_l
-        Err_qso_mtot[n] = ((Err_Mr/2.5)**2 + (log_m_l_err)**2)**(0.5)
+        qso_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+        Err_qso_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+        qso_mtot[n] = ((4.62 - qso_gal_Mr[n])/2.5) + log_m_l
+        Err_qso_mtot[n] = ((Err_qso_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
         #qso_mtot[n] = qso['lgm_tot_p50'][n]
         qso_flux_h_alpha[n] = N.max(spec[2500:])
         broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
@@ -322,6 +331,145 @@ results = results[N.where(results['MBH'] > 0)]
 results = results[N.isnan(results['ur gal']) == False]
 print len(results)
 #results.write('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits', format='fits')
+
+def calc_z(obs, rest):
+    return round((obs/rest) -1, 2)
+
+k=0
+j = N.random.randint(9, len(sdss), 5)
+fig = P.figure(figsize=(10,13), frameon=False, edgecolor='None')
+for n in j:
+    if n ==73 or n==35:
+        n+=1
+    else:
+        pass
+    a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+    if len(a) > 0:
+        fit = F.open(a[0])
+        bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        spec = fit[0].data
+        hdr = fit[0].header
+        lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+        rest_wave = (10**lam)/(1+hdr['Z'])
+        obs_wave = 10**lam
+    
+        ax = fig.add_subplot(5,1,k+1)
+        ax.plot(rest_wave, spec, color='k')
+        ax.minorticks_on()
+        ax.tick_params(axis='y', which='minor', left='off', right='off')
+        ax.set_xlim(5900, 7600)
+        ax.text(0.925, 0.85, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
+        ax.text(0.025, 0.85, sdss['name'][n], ha='left', transform=ax.transAxes)
+        if k == 4:
+            ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
+        else:
+            pass
+        if k == 2:
+            ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
+        else:
+            pass
+        ax12 = ax.twiny()
+        ax12.set_xlim(5900, 7600)
+        if k == 0:
+            ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
+        else:
+            pass
+        rest_labels = ax.get_xticks()
+        ax12.set_xticks(rest_labels[1:-1])
+        ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
+        ax12.set_xlim(5900, 7600)
+        ax12.minorticks_on()
+        k+=1
+fig.subplots_adjust(hspace=0.5)
+#fig.tight_layout()
+fig.savefig('sample_sdss_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+
+k=0
+j = N.random.randint(0, len(qso), 5)
+fig = P.figure(figsize=(5,13), frameon=False, edgecolor='None')
+for n in j:
+    a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    while len(a) <=0:
+        n +=1
+        a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    fit = F.open(a[0])
+    bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+    spec = fit[0].data
+    hdr = fit[0].header
+    lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+    rest_wave = (10**lam)/(1+hdr['Z'])
+    obs_wave = 10**lam
+
+    ax = fig.add_subplot(5,1,k+1)
+    ax.plot(rest_wave, spec, color='k')
+    ax.minorticks_on()
+    ax.tick_params(axis='y', which='minor', left='off', right='off')
+    ax.set_xlim(6350, 6850)
+    ax.text(0.925, 0.9, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
+    if k == 4:
+        ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
+    else:
+        pass
+    if k == 2:
+        ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
+    else:
+        pass
+    ax12 = ax.twiny()
+    ax12.set_xlim(6350, 6850)
+    if k == 0:
+        ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
+    else:
+        pass
+    rest_labels = ax.get_xticks()
+    ax12.set_xticks(rest_labels[1:-1])
+    ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
+    ax12.set_xlim(6350, 6850)
+    ax12.minorticks_on()
+    k+=1
+fig.subplots_adjust(hspace=0.5)
+#fig.tight_layout()
+fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+#Lsol = 3.846E33*un.g*un.cm**2/un.s**3
+results['L bol'].unit = un.erg/un.s
+#mdot = (results['L bol']/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+
+# brooke_mdot = (brooke_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# qsor_mdot = ((10**qsor['LOGLBOL'].data.data)*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# sdss_mdot = (sdss_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# qso_mdot = (qso_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+
+
+# mbh_edd = results['MBH']/((results['L bol']/Lsol)/3E4)
+
+
+
+# mseed=1E5
+# t = 1E6
+# time_seed = N.zeros(len(results))
+
+# for n in range(len(results)):
+#     current_mbh = results['MBH'][n]
+#     tstep=0
+#     while current_mbh > mbh_edd[n].value:
+#         current_mbh -= mdot[n].value*t
+#         tstep+=1
+#         if current_mbh <= mseed:
+#             time_seed[n] = t*tstep
+#         else:
+#             pass
+#     while current_mbh > mseed:
+#         print 'assuming eddingtonI like '
+#         current_mdot = ((3E4*(current_mbh)*Lsol)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+#         current_mbh -= current_mdot*t
+#         tstep+=1
+#     time_seed[n] = t*tstep
+
+
+
 
 # fig = P.figure(figsize=(5,5))
 # ax = fig.add_subplot(1,1,1)
@@ -433,18 +581,25 @@ bestreshr = shr[0.5*len(shr), 0] * N.log10(mtot) + shr[0.5*len(shr), 1]/N.cos(N.
 plusreshr = shr[0.84*len(shr), 0] * N.log10(mtot) + shr[0.16*len(shr), 1]/N.cos(N.arctan(shr[0.84*len(shr), 0]))
 minusreshr = shr[0.16*len(shr), 0] * N.log10(mtot) + shr[0.84*len(shr), 1]/N.cos(N.arctan(shr[0.16*len(shr), 0]))
 
-bt = Table.read('all_galaxies_z_ur_mtot_mbh_lbol_etc_with_Btot_from_Simard_et_al.fits', format='fits')
+#Load all SDSS galaxies, some of which have Simard bulge to total ratio fits. The [5:] is to disregard the INT galaxies at the top
+bt = Table.read('all_101_galaxies_z_ur_mtot_mbh_lbol_etc_with_Btot_from_Simard_et_al.fits', format='fits')[5:]
+# Set those which don't have Simard B/T to have a B/T=1 as an upper limit
+bt['(B/T)r'][N.isnan(bt['(B/T)r'])] = 1
+bt['e_(B/T)r'][N.isnan(bt['e_(B/T)r'])] = N.mean(bt['e_(B/T)r'][N.isfinite(bt['e_(B/T)r'])])
+#Calculate bulgemass upper limits of SDSS galaxies
 bulgemass = N.log10(bt['(B/T)r']*10**bt['stellar mass'])
 err_bulgemass = N.sqrt((bt['e_(B/T)r']/bt['(B/T)r'])**2 + (bt['Err stellar mass']/bt['stellar mass'])**2)
 
-int_bt = N.array([0.4, 0.55, 0.47, -999, 0.3])
+int_bt = N.array([1, 1, 0.47, 1, 0.3])
 int_bulgemass = N.log10(int_bt*10**int_mtot)
 err_int_bulgemass = N.sqrt( (0.2)**2 + (Err_int_mtot/int_mtot)**2 )
 
 brooke_mtot = N.array([10.05, 10.03])
+err_brooke_mtot = N.array([0.1, 0.1])
 brooke_mbh = N.array([7.1, 6.6])
 err_brooke_mbh = N.array([0.13, 0.14])
 brooke_lbol = N.array([44.1, 43.4])
+err_brooke_lbol=N.array([0.3, 0.3])
 brooke_BT = N.array([0.011, 0.022])
 brooke_bulgemass = N.log10(brooke_BT*10**brooke_mtot)
 err_brooke_bulgemass = N.sqrt( (N.array([0.15, 0.2]))**2 + (N.array([0.15,0.12]))**2 )
@@ -455,7 +610,9 @@ err_bt_mbhs = N.append(err_brooke_mbh, N.append(bt['Err MBH'], Err_int_mbh[N.whe
 bt_bulgemass = N.append(brooke_bulgemass, N.append(bulgemass, int_bulgemass[N.where(int_bt > 0)]))
 err_bt_bulgemass = N.append(err_brooke_bulgemass, N.append(err_bulgemass, err_int_bulgemass[N.where(int_bt > 0)]))
 
-delta = N.append(N.ones(len(brooke_mtot)), N.append(N.zeros(len(bt)), N.ones(len(int_bt[N.where(int_bt > 0)]))))
+#Set delta for linmix array which says what are upper limits. 1 is a measured value. 0 is an upper limit.
+#Brooke's galaxies have measured B/T, SDSS are all upper limits and INT values have 2 measured, 3 upper limits (set to a B/T =1) 
+delta = N.append(N.ones(len(brooke_mtot)), N.append(N.zeros(len(bt)), N.array([0,0,1,0,1])))
 
 P.figure(figsize=(6,3))
 P.hist(N.append(brooke_BT, N.append(bt['(B/T)r'], int_bt)), range=(0,1), bins=15, histtype='step', color='k')
@@ -464,7 +621,7 @@ P.ylabel(r'$\rm{number}$')
 P.ylim(0,15)
 P.minorticks_on()
 P.tight_layout()
-P.savefig('bulge_to_total_g_ratio_hist_with_INT_simmons13.pdf', frameon=False, transparent=True)
+P.savefig('bulge_to_total_r_ratio_hist_with_INT_simmons13.pdf', frameon=False, transparent=True)
 
 
 # print 'emceeing...'
@@ -497,24 +654,29 @@ P.savefig('bulge_to_total_g_ratio_hist_with_INT_simmons13.pdf', frameon=False, t
 # minusreshbt = shbt[0.16*len(shbt), 0] * N.log10(mtot) + shbt[0.84*len(shbt), 1]
 xs = N.linspace(0, 15, 100)
 
+
+#Use linmix to fit to haring and rix x and ys
 lmhr  = linmix.LinMix(xhr, yhr, xhrerr, yhrerr, K=2)
 lmhr.run_mcmc(silent=False)
 hrysb = lmhr.chain['alpha'].mean() + xs * lmhr.chain['beta'].mean()
 hrysp = (lmhr.chain['alpha'].mean()+3*lmhr.chain['alpha'].std()) + xs * (lmhr.chain['beta'].mean()-3*lmhr.chain['beta'].std())  
 hrysm = (lmhr.chain['alpha'].mean()-3*lmhr.chain['alpha'].std()) + xs * (lmhr.chain['beta'].mean()+3*lmhr.chain['beta'].std())
 
+#Use linmix to fit to stellar mass and MBH relation from DISKDOM sample
 lmr  = linmix.LinMix(results['stellar mass'], results['MBH'], results['Err stellar mass'], results['Err MBH'], K=2)
 lmr.run_mcmc(silent=False)
 rysb = lmr.chain['alpha'].mean() + xs * lmr.chain['beta'].mean()
 rysp = (lmr.chain['alpha'].mean()+3*lmr.chain['alpha'].std()) + xs * (lmr.chain['beta'].mean()-3*lmr.chain['beta'].std())  
 rysm = (lmr.chain['alpha'].mean()-3*lmr.chain['alpha'].std()) + xs * (lmr.chain['beta'].mean()+3*lmr.chain['beta'].std())
 
+#Use linmix to fit to upper limits on bulgemass from DISKDOM sample (inlcuding those with no measurement from Simard set to B/T = 1)
 lmupl  = linmix.LinMix(bt_mbhs, bt_bulgemass, err_bt_mbhs, err_bt_bulgemass, delta=delta, K=2)
 lmupl.run_mcmc(silent=False) 
 uplysb = lmupl.chain['alpha'].mean() + xs * lmupl.chain['beta'].mean()
 uplysp = (lmupl.chain['alpha'].mean()+3*lmupl.chain['alpha'].std()) + xs * (lmupl.chain['beta'].mean()-3*lmupl.chain['beta'].std())
 uplysm = (lmupl.chain['alpha'].mean()-3*lmupl.chain['alpha'].std()) + xs * (lmupl.chain['beta'].mean()+3*lmupl.chain['beta'].std())
 
+#Use linmix to fit to bulgemass from DISKDOM sample assuming no measurement is an upper limit
 lmnupl  = linmix.LinMix(bt_mbhs, bt_bulgemass, err_bt_mbhs, err_bt_bulgemass, K=2)
 lmnupl.run_mcmc(silent=False) 
 nuplysb = lmnupl.chain['alpha'].mean() + xs * lmnupl.chain['beta'].mean()
@@ -528,26 +690,27 @@ nuplysm = (lmnupl.chain['alpha'].mean()-3*lmnupl.chain['alpha'].std()) + xs * (l
 # nuplysp = (lmnupl.chain['alpha'].mean()+3*lmnupl.chain['alpha'].std()) + xs * (lmnupl.chain['beta'].mean()-3*lmnupl.chain['beta'].std())
 # nuplysm = (lmnupl.chain['alpha'].mean()-3*lmnupl.chain['alpha'].std()) + xs * (lmnupl.chain['beta'].mean()+3*lmnupl.chain['beta'].std())
 
-lmjupl  = linmix.LinMix(bt['MBH'], bulgemass, bt['Err MBH'], err_bulgemass ,delta=N.zeros(len(bulgemass)), K=2)
-lmjupl.run_mcmc(silent=False) 
-juplysb = lmjupl.chain['alpha'].mean() + xs * lmjupl.chain['beta'].mean()
-juplysp = (lmjupl.chain['alpha'].mean()+3*lmjupl.chain['alpha'].std()) + xs * (lmjupl.chain['beta'].mean()-3*lmjupl.chain['beta'].std())
-juplysm = (lmjupl.chain['alpha'].mean()-3*lmjupl.chain['alpha'].std()) + xs * (lmjupl.chain['beta'].mean()+3*lmjupl.chain['beta'].std())
+# lmjupl  = linmix.LinMix(bt['MBH'], bulgemass, bt['Err MBH'], err_bulgemass ,delta=N.zeros(len(bulgemass)), K=2)
+# lmjupl.run_mcmc(silent=False) 
+# juplysb = lmjupl.chain['alpha'].mean() + xs * lmjupl.chain['beta'].mean()
+# juplysp = (lmjupl.chain['alpha'].mean()+3*lmjupl.chain['alpha'].std()) + xs * (lmjupl.chain['beta'].mean()-3*lmjupl.chain['beta'].std())
+# juplysm = (lmjupl.chain['alpha'].mean()-3*lmjupl.chain['alpha'].std()) + xs * (lmjupl.chain['beta'].mean()+3*lmjupl.chain['beta'].std())
 
-lmhrupl  = linmix.LinMix(N.append(bt_mbhs, yhr), N.append(bt_bulgemass, xhr), N.append(err_bt_mbhs, yhrerr), N.append(N.ones(len(bt_mbhs)), N.ones(len(xhr))), K=10)
-lmhrupl.run_mcmc(silent=False) 
-uplhrysb = lmhrupl.chain['alpha'].mean() + xs * lmhrupl.chain['beta'].mean()
-uplhrysp = (lmhrupl.chain['alpha'].mean()+3*lmhrupl.chain['alpha'].std()) + xs * (lmhrupl.chain['beta'].mean()-3*lmhrupl.chain['beta'].std())
-uplhrysm = (lmhrupl.chain['alpha'].mean()-3*lmhrupl.chain['alpha'].std()) + xs * (lmhrupl.chain['beta'].mean()+3*lmhrupl.chain['beta'].std())
-
-
+# lmhrupl  = linmix.LinMix(N.append(bt_mbhs, yhr), N.append(bt_bulgemass, xhr), N.append(err_bt_mbhs, yhrerr), N.append(N.ones(len(bt_mbhs)), N.ones(len(xhr))), K=10)
+# lmhrupl.run_mcmc(silent=False) 
+# uplhrysb = lmhrupl.chain['alpha'].mean() + xs * lmhrupl.chain['beta'].mean()
+# uplhrysp = (lmhrupl.chain['alpha'].mean()+3*lmhrupl.chain['alpha'].std()) + xs * (lmhrupl.chain['beta'].mean()-3*lmhrupl.chain['beta'].std())
+# uplhrysm = (lmhrupl.chain['alpha'].mean()-3*lmhrupl.chain['alpha'].std()) + xs * (lmhrupl.chain['beta'].mean()+3*lmhrupl.chain['beta'].std())
 
 
-fig = P.figure(figsize=(10,5))
-ax = fig.add_subplot(1,2,1)
+
+
+fig = P.figure(figsize=(5,5))
+ax = fig.add_subplot(1,1,1)
 ax.plot(xs, rysb, color='k', linestyle='solid')
 ax.fill_between(xs, y1=rysp, y2=rysm, color='k', alpha=0.1)
 ax.scatter(brooke_mtot, brooke_mbh, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+ax.errorbar(brooke_mtot, brooke_mbh, xerr = err_brooke_mtot, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
 ax.errorbar(int_mtot, int_mbh, xerr=Err_int_mtot, yerr=Err_int_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
 ax.scatter(int_mtot, int_mbh, marker='s', c='b', edgecolor ='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
 ax.errorbar(sdss_mtot, sdss_mbh, xerr=Err_sdss_mtot, yerr=Err_sdss_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
@@ -559,13 +722,18 @@ ax.fill_between(xs, y1=hrysp, y2=hrysm, color='r', alpha=0.1)
 # ax.plot(N.log10(mtot), bestreshr, linestyle='dashed', c='k', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{2004}$')
 # ax.plot(N.log10(mtot), plusreshr, linestyle='-.', c='k')
 # ax.plot(N.log10(mtot), minusreshr, linestyle='-.', c='k')
-ax.set_xlabel(r'$log_{10}(M_{total}/M_{\odot})$')
-ax.set_ylabel(r'$log_{10}(M_{BH}/M_{\odot})$')
+ax.set_xlabel(r'$\log_{10}(M_{*}/\rm{M}_{\odot})$')
+ax.set_ylabel(r'$\log_{10}(M_{BH}/\rm{M}_{\odot})$')
 ax.minorticks_on()
 ax.set_xlim(9.4, 11.6)
 ax.set_ylim(5.5, 10.5)
 ax.legend(frameon=False, loc=2, fontsize=12)
-ax = fig.add_subplot(1,2,2)
+P.tight_layout()
+P.subplots_adjust(wspace=0.0)
+P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_total_mass_fit_linmix_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+fig = P.figure(figsize=(5,5))
+ax = fig.add_subplot(1,1,1)
 ax.plot(uplysb, xs, color='k')
 ax.fill_betweenx(xs, x1=uplysp, x2=uplysm, color='k', alpha=0.1)
 ax.plot(nuplysb, xs, color='k', linestyle='dashed')
@@ -578,136 +746,191 @@ ax.errorbar(bulgemass, bt['MBH'], xerr = 0.2, xuplims=True, ecolor='k', alpha=0.
 ax.errorbar(11.9, 10, xerr = N.mean(err_bt_bulgemass), yerr=N.mean(err_bt_mbhs), ecolor='k', fmt='None', alpha=0.5)
 ax.errorbar(int_bulgemass, int_mbh, xerr = err_int_bulgemass, yerr=Err_int_mbh, ecolor='k', alpha=0.5, capthick=1, fmt='None', fill_style='None')
 ax.scatter(int_bulgemass, int_mbh, marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-ax.errorbar(brooke_bulgemass, brooke_mbh, xerr = err_brooke_bulgemass, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None')
+ax.errorbar(brooke_bulgemass, brooke_mbh, xerr = err_brooke_mbh, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
 ax.scatter(brooke_bulgemass, brooke_mbh, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
 ax.scatter(xhr, yhr, marker='o', c='None', edgecolor='r', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{(2004)}$')
 ax.errorbar(xhr, yhr, xerr=xhrerr, yerr=yhrerr, marker='o', color='None', ecolor='k', alpha=0.3)
 ax.plot(xs, hrysb, color='r', linestyle='dashed', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{(2004)}$ $\rm{fit}$')
 ax.fill_between(xs, y1=hrysp, y2=hrysm, color='r', alpha=0.1)
-ax.set_xlabel(r'$log_{10}(M_{bulge}/M_{\odot})$')
+ax.set_xlabel(r'$\log_{10}(M_{bulge}/\rm{M}_{\odot})$')
 ax.minorticks_on()
 ax.set_xlim(7.9, 12.1)
 ax.set_ylim(5.5, 10.5)
-ax.tick_params('y', labelleft='off')
+ax.set_ylabel(r'$\log_{10}(M_{BH}/\rm{M}_{\odot})$')
 ax.legend(frameon=False, loc=2, fontsize=12)
 P.tight_layout()
 P.subplots_adjust(wspace=0.0)
-P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_total_mass_fit_with_bulge_limits_INT_simmons13_measurements_linmix_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_bt_set_to_1.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
-qsor = Table.read('shen_2011_matched_redshif.fits', format='fits')
+# qsor = Table.read('shen_2011_matched_redshif.fits', format='fits')
 
-fig = P.figure(figsize=(5,5))
-ax = fig.add_subplot(1,1,1)
-ax.errorbar(qsor['LOGBH'], qsor['LOGLBOL'], xerr=qsor['LOGLBOL_ERR'], yerr=qsor['LOGBH_ERR'], marker='None', fmt='None', ecolor='k', alpha=0.1)
-ax.scatter(qsor['LOGBH'], qsor['LOGLBOL'], marker='o', c='None', edgecolor='r', s=20, label=r'$\rm{Shen}$ $\rm{et }$ $\rm{al. }$ $\rm{(2011)}$', alpha=0.8)
-ax.errorbar(int_mbh, N.log10(int_lbol), xerr=Err_int_mbh, yerr=Err_int_lbol/(int_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(int_mbh, N.log10(int_lbol), marker='s', c='k', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-ax.errorbar(sdss_mbh, N.log10(sdss_lbol), xerr=Err_sdss_mbh, yerr=Err_sdss_lbol/(sdss_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(sdss_mbh, N.log10(sdss_lbol), marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
-ax.errorbar(qso_mbh, N.log10(qso_lbol), xerr=Err_qso_mbh, yerr=Err_qso_lbol/(qso_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(qso_mbh, N.log10(qso_lbol), marker='x', c='k', s=30)
-ax.scatter(brooke_mbh, brooke_lbol, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
-line1 = ax.plot(mbh, N.log10(0.01*1.26E38*(10**mbh)), linestyle=':', c='0.3')
-line2 = ax.plot(mbh, N.log10(0.1*1.26E38*(10**mbh)), linestyle='-.', c='0.3')
-line3 = ax.plot(mbh, N.log10(1.26E38*(10**mbh)), linestyle='dashed', c='0.3')
-ax.text(9.25, 45.7, r'$\lambda_{Edd}=0.01$', rotation=0, color='0.3')
-ax.text(8.5, 46, r'$\lambda_{Edd}=0.1$', rotation=0, color='0.3')
-ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=0, color='0.3')
-ax.set_xlabel(r'$log_{10}(M_{BH}/M_{\odot})$')
-ax.set_ylabel(r'$log_{10}(L_{bol}$ $[\rm{erg}$ $\rm{s}^{-1}])$')
-ax.minorticks_on()
-ax.set_xlim(5.5, 10.5)
-ax.set_ylim(43, 46.5)
-ax.legend(frameon=False, loc=4, fontsize=12)
-#P.tight_layout()
-P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# sdss_mdot*(Err_sdss_lbol/sdss_lbol)/(sdss_mdot*N.log(10))
+
+# fig = P.figure(figsize=(5,5))
+# ax = fig.add_subplot(1,1,1)
+# ax.errorbar(qsor['LOGBH'], qsor['LOGLBOL'], xerr=qsor['LOGBH_ERR'], yerr=qsor['LOGLBOL_ERR'], marker='None', fmt='None', ecolor='k', alpha=0.1)
+# ax.scatter(qsor['LOGBH'], qsor['LOGLBOL'], marker='^', c='None', edgecolor='g', s=20, label=r'$\rm{Shen}$ $\rm{et }$ $\rm{al. }$ $\rm{(2011)}$', alpha=0.8)
+# ax.errorbar(int_mbh, N.log10(int_lbol), xerr=Err_int_mbh, yerr=Err_int_lbol/(int_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(int_mbh, N.log10(int_lbol), marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
+# ax.errorbar(sdss_mbh, N.log10(sdss_lbol), xerr=Err_sdss_mbh, yerr=Err_sdss_lbol/(sdss_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(sdss_mbh, N.log10(sdss_lbol), marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+# ax.errorbar(qso_mbh, N.log10(qso_lbol), xerr=Err_qso_mbh, yerr=Err_qso_lbol/(qso_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(qso_mbh, N.log10(qso_lbol), marker='x', c='k', s=30)
+# ax.scatter(brooke_mbh, brooke_lbol, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+# ax.errorbar(brooke_mbh, brooke_lbol, xerr = err_brooke_mbh, yerr=err_brooke_lbol, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
+# line1 = ax.plot(mbh, N.log10(0.01*1.26E38*(10**mbh)), linestyle=':', c='0.3')
+# line2 = ax.plot(mbh, N.log10(0.1*1.26E38*(10**mbh)), linestyle='-.', c='0.3')
+# line3 = ax.plot(mbh, N.log10(1.26E38*(10**mbh)), linestyle='dashed', c='0.3')
+# ax.text(9.25, 45.7, r'$\lambda_{Edd}=0.01$', rotation=0, color='0.3')
+# ax.text(8.5, 46, r'$\lambda_{Edd}=0.1$', rotation=0, color='0.3')
+# ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=0, color='0.3')
+# ax.set_xlabel(r'$log_{10}(M_{BH}/M_{\odot})$')
+# ax.set_ylabel(r'$log_{10}(L_{bol}$ $[\rm{erg}$ $\rm{s}^{-1}])$')
+# ax.minorticks_on()
+# ax.set_xlim(5.5, 10.5)
+# ax.set_ylim(43, 46.5)
+# ax.legend(frameon=False, loc=4, fontsize=12)
+# #P.tight_layout()
+# P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+# fig = P.figure(figsize=(5,5))
+# ax = fig.add_subplot(1,1,1)
+# ax.errorbar(qsor['LOGBH'], N.log10(qsor_mdot.value), xerr=qsor['LOGBH_ERR'], yerr=qsor_mdot*(qsor['LOGLBOL_ERR']/qsor['LOGLBOL'])/(qsor_mdot*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.1)
+# ax.scatter(qsor['LOGBH'], N.log10(qsor_mdot.value), marker='^', c='None', edgecolor='g', s=20, label=r'$\rm{Shen}$ $\rm{et }$ $\rm{al. }$ $\rm{(2011)}$', alpha=0.8)
+# ax.errorbar(int_mbh, N.log10(int_mdot.value), xerr=Err_int_mbh, yerr=int_mdot*(Err_int_lbol/int_lbol)/(int_mdot*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(int_mbh, N.log10(int_mdot.value), marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
+# ax.errorbar(sdss_mbh, N.log10(sdss_mdot.value), xerr=Err_sdss_mbh, yerr=sdss_mdot*(Err_sdss_lbol/sdss_lbol)/(sdss_mdot*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(sdss_mbh, N.log10(sdss_mdot.value), marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+# ax.errorbar(qso_mbh, N.log10(qso_mdot.value), xerr=Err_qso_mbh, yerr=qso_mdot*(Err_qso_lbol/qso_lbol)/(qso_mdot*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(qso_mbh, N.log10(qso_mdot.value), marker='x', c='k', s=30)
+# ax.scatter(brooke_mbh, N.log10(brooke_mdot.value), marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+# ax.errorbar(brooke_mbh, N.log10(brooke_mdot.value), xerr = err_brooke_bulgemass, yerr=brooke_mdot*(err_brooke_lbol/brooke_lbol)/(brooke_mdot*N.log(10)), ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
+# line1 = ax.plot(mbh, N.log10((0.01*1.26E38*(10**mbh)*un.erg/un.s/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr).value), linestyle=':', c='0.3')
+# line2 = ax.plot(mbh, N.log10((0.1*1.26E38*(10**mbh)*un.erg/un.s/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr).value), linestyle='-.', c='0.3')
+# line3 = ax.plot(mbh, N.log10((1*1.26E38*(10**mbh)*un.erg/un.s/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr).value), linestyle='dashed', c='0.3')
+# ax.text(9.25, -0.22, r'$\lambda_{Edd}=0.01$', rotation=0, color='0.3')
+# ax.text(8.5, 0.07, r'$\lambda_{Edd}=0.1$', rotation=0, color='0.3')
+# ax.text(7.75, 0.32, r'$\lambda_{Edd}=1$', rotation=0, color='0.3')
+# ax.set_xlabel(r'$\log_{10}(M_{BH}/M_{\odot})$')
+# ax.set_ylabel(r'$\log_{10}(\dot{m}/\rm{M}_{\odot}~\rm{yr}^{-1})$')
+# ax.minorticks_on()
+# ax.set_xlim(5.5, 10.5)
+# ax.set_ylim(-3, 0.5)
+# ax.legend(frameon=False, loc=4, fontsize=12)
+# #P.tight_layout()
+# P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_mdot_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
-# P.figure(figsize=(8,8))
-# P.scatter(ints[:,-8], target_fwhm, marker='s', c='k', s=20, label='INT observations')
-# #P.scatter(brooke_mtot, brooke_mbh, marker='x', c='k', s=16, label='Simmons et al. 2013')
-# #P.plot(N.log10(mtot), mbh, linestyle='dashed', c='k', label = 'Haring & Rix 2004')
-# P.xlabel(r'$u-r$ colour')
-# P.ylabel(r'FWHM $[\AA]$')
-# #P.xlim(9.5, 11.5)
-# #P.ylim(6.0, 9.0)
+# # P.figure(figsize=(8,8))
+# # P.scatter(ints[:,-8], target_fwhm, marker='s', c='k', s=20, label='INT observations')
+# # #P.scatter(brooke_mtot, brooke_mbh, marker='x', c='k', s=16, label='Simmons et al. 2013')
+# # #P.plot(N.log10(mtot), mbh, linestyle='dashed', c='k', label = 'Haring & Rix 2004')
+# # P.xlabel(r'$u-r$ colour')
+# # P.ylabel(r'FWHM $[\AA]$')
+# # #P.xlim(9.5, 11.5)
+# # #P.ylim(6.0, 9.0)
+# # #P.legend(frameon=False, loc=4)
+# # P.savefig('colour_fwhm.pdf')
+
+# # P.figure(figsize=(8,8))
+# # P.scatter(ints[:,-8], (ints[:,-6] - 5 * (N.log10(cosmo.luminosity_distance(ints[n,17]) * 1E6) - 1)), marker='s', c='k', s=20, label='INT observations')
+# # #P.scatter(brooke_mtot, brooke_mbh, marker='x', c='k', s=16, label='Simmons et al. 2013')
+# # #P.plot(N.log10(mtot), mbh, linestyle='dashed', c='k', label = 'Haring & Rix 2004')
+# # P.xlabel(r'$u-r$ colour')
+# # P.ylabel(r'$M_{r}$')
+# # #P.xlim(9.5, 11.5)
+# # #P.ylim(6.0, 9.0)
+# # #P.legend(frameon=False, loc=4)
+# # P.savefig('colour_r_magnitude.pdf')
+
+
+# b = F.open('/Users/becky/Projects/int_reduc/bulgeless_Simmons13')
+# bd = b[1].data
+# bd_mbh_lim = bd["mbh_lim"]
+# bd_mbh_lims = bd["mbh_lim"][N.where(bd_mbh_lim!=-1)]
+# bd_mbh = bd['Mbh_BL'][N.where(bd_mbh_lim==-1)]
+# bd_mtot = bd['LOGMSTAR_BALDRY06'][N.where(bd_mbh_lim==-1)]
+# bd_mtot_lim = bd['LOGMSTAR_BALDRY06'][N.where(bd_mbh_lim!=-1)]
+# bd_bollum = (bd['L_bol_use'])[N.where(bd_mbh_lim!=-1)]
+
+# iedd = int_lbol/(10**int_mbh*1.26E38)
+# Err_iedd = iedd * ( (Err_int_lbol/int_lbol)**2 + (N.log(10)*Err_int_mbh)**2)**0.5
+# sedd = sdss_lbol/(10**sdss_mbh*1.26E38)
+# Err_sedd = sedd * ( (Err_sdss_lbol/sdss_lbol)**2 + (N.log(10)*Err_sdss_mbh)**2)**0.5
+# qedd = qso_lbol/(10**qso_mbh*1.26E38)
+# Err_qedd = qedd * ( (Err_qso_lbol/qso_lbol)**2 + (N.log(10)*Err_qso_mbh)**2)**0.5
+
+
+# fig = P.figure(figsize=(5,5))
+# ax = fig.add_subplot(1,1,1)
+# ax.errorbar(ints['col18'], iedd, yerr=Err_iedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(ints['col18'], iedd, marker='s', c='k', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
+# ax.errorbar(sdss['Redshift'], sedd, yerr=Err_sedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(sdss['Redshift'], sedd, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+# ax.errorbar(qso['z'], qedd, yerr=Err_qedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(qso['z'], qedd, marker='x', c='k', s=30)
+# ax.set_ylim(-0.25, 3)
+# ax.set_xlabel(r'$z$')
+# ax.set_ylabel(r'$\lambda_{Edd}$')
+# ax.minorticks_on()
+# ax.legend(frameon=False, loc=3  , fontsize=12)
+# #P.tight_layout()
+# P.savefig('/Users/becky/Projects/int_reduc/desktop/redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+
+
+# isedd = N.append(iedd, sedd)
+# avedd = N.mean(N.append(isedd, qedd))
+
+# rs_bd_mbh_lim = N.log10(bd_bollum/(1.26E38*avedd))
+
+# fig = P.figure(figsize=(6, 6))
+# ax = fig.add_subplot(1,1,1)
+# #P.figure(figsize=(8,8))
+# ax.scatter(bd_mtot, bd_mbh, marker='o', c='None', edgecolor='k', s=50, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$')
+# ax.scatter(bd_mtot_lim, rs_bd_mbh_lim, marker='^', c='None', edgecolor='k', s=50, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$ $\rm{limits}$')
+# #P.scatter(bd_mtot_lim, bd_mbh_lims, marker='x', c='cyan', s=60, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$ $\rm{limits}$')
+# ax.errorbar(int_mtot, int_mbh, xerr=Err_int_mtot, yerr=Err_int_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(int_mtot, int_mbh, marker='s', c='k', s=50, label=r'$\rm{This}$ $\rm{work}$')
+# ax.errorbar(sdss_mtot, sdss_mbh, xerr=Err_sdss_mtot, yerr=Err_sdss_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(sdss_mtot, sdss_mbh, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+# ax.errorbar(qso_mtot, qso_mbh, xerr=Err_qso_mtot, yerr=Err_qso_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
+# ax.scatter(qso_mtot, qso_mbh, marker='x', c='k', s=30)
+# ax.plot(N.log10(mtot), mbh, linestyle='dashed', linewidth=2, c='k', label = r'$\rm{Haring}$ $\rm{\&}$ $\rm{Rix}$ $\rm{(2004)}$')
+# ax.set_xlabel(r'$log_{10}$ $\rm{(M_{*}/M_{\odot})}$')
+# ax.set_ylabel(r'$log_{10}$ $\rm{(M_{BH}/M_{\odot})}$')
+# ax.minorticks_on()
+# ax.tick_params('both', which='major', length=10, width=1)
+# ax.tick_params('both', which='minor', length=5, width=0.5)
+# ax.set_xlim(9.5, 11.5)
+# ax.set_ylim(5.5, 10.5)
+# P.legend(frameon=False, loc=2)
 # #P.legend(frameon=False, loc=4)
-# P.savefig('colour_fwhm.pdf')
+# P.savefig('mass_bh_total_mass_sdss_qso_with_simmons_limits_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
-# P.figure(figsize=(8,8))
-# P.scatter(ints[:,-8], (ints[:,-6] - 5 * (N.log10(cosmo.luminosity_distance(ints[n,17]) * 1E6) - 1)), marker='s', c='k', s=20, label='INT observations')
-# #P.scatter(brooke_mtot, brooke_mbh, marker='x', c='k', s=16, label='Simmons et al. 2013')
-# #P.plot(N.log10(mtot), mbh, linestyle='dashed', c='k', label = 'Haring & Rix 2004')
-# P.xlabel(r'$u-r$ colour')
-# P.ylabel(r'$M_{r}$')
-# #P.xlim(9.5, 11.5)
-# #P.ylim(6.0, 9.0)
-# #P.legend(frameon=False, loc=4)
-# P.savefig('colour_r_magnitude.pdf')
+# Mrs = N.linspace(-24.5, -17, 200)
+# C_dash = 2.06 - 0.244*N.tanh((Mrs + 20.07)/1.09)
+# upper = C_dash + 0.128
+# lower = C_dash - 0.128
 
+# Z = N.genfromtxt('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_mag_diag/baldry_hist_data.txt')
+# X = N.genfromtxt('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_mag_diag/baldry_x_hist.txt')
+# Y = N.genfromtxt('/Users/becky/Projects/Green-Valley-Project/bayesian/find_t_tau/colour_mag_diag/baldry_y_hist.txt')
 
-b = F.open('/Users/becky/Projects/int_reduc/bulgeless_Simmons13')
-bd = b[1].data
-bd_mbh_lim = bd["mbh_lim"]
-bd_mbh_lims = bd["mbh_lim"][N.where(bd_mbh_lim!=-1)]
-bd_mbh = bd['Mbh_BL'][N.where(bd_mbh_lim==-1)]
-bd_mtot = bd['LOGMSTAR_BALDRY06'][N.where(bd_mbh_lim==-1)]
-bd_mtot_lim = bd['LOGMSTAR_BALDRY06'][N.where(bd_mbh_lim!=-1)]
-bd_bollum = (bd['L_bol_use'])[N.where(bd_mbh_lim!=-1)]
-
-iedd = int_lbol/(10**int_mbh*1.26E38)
-Err_iedd = iedd * ( (Err_int_lbol/int_lbol)**2 + (N.log(10)*Err_int_mbh)**2)**0.5
-sedd = sdss_lbol/(10**sdss_mbh*1.26E38)
-Err_sedd = sedd * ( (Err_sdss_lbol/sdss_lbol)**2 + (N.log(10)*Err_sdss_mbh)**2)**0.5
-qedd = qso_lbol/(10**qso_mbh*1.26E38)
-Err_qedd = qedd * ( (Err_qso_lbol/qso_lbol)**2 + (N.log(10)*Err_qso_mbh)**2)**0.5
-
-
-fig = P.figure(figsize=(5,5))
-ax = fig.add_subplot(1,1,1)
-ax.errorbar(ints['col18'], iedd, yerr=Err_iedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(ints['col18'], iedd, marker='s', c='k', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-ax.errorbar(sdss['Redshift'], sedd, yerr=Err_sedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(sdss['Redshift'], sedd, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
-ax.errorbar(qso['z'], qedd, yerr=Err_qedd, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(qso['z'], qedd, marker='x', c='k', s=30)
-ax.set_ylim(-0.25, 3)
-ax.set_xlabel(r'$z$')
-ax.set_ylabel(r'$\lambda_{Edd}$')
-ax.minorticks_on()
-ax.legend(frameon=False, loc=3  , fontsize=12)
-#P.tight_layout()
-P.savefig('/Users/becky/Projects/int_reduc/desktop/redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
-
-
-
-isedd = N.append(iedd, sedd)
-avedd = N.mean(N.append(isedd, qedd))
-
-rs_bd_mbh_lim = N.log10(bd_bollum/(1.26E38*avedd))
-
-fig = P.figure(figsize=(6, 6))
-ax = fig.add_subplot(1,1,1)
-#P.figure(figsize=(8,8))
-ax.scatter(bd_mtot, bd_mbh, marker='o', c='None', edgecolor='k', s=50, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$')
-ax.scatter(bd_mtot_lim, rs_bd_mbh_lim, marker='^', c='None', edgecolor='k', s=50, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$ $\rm{limits}$')
-#P.scatter(bd_mtot_lim, bd_mbh_lims, marker='x', c='cyan', s=60, label=r'$\rm{Simmons}$ $\rm{et}$ $\rm{al.}$ $\rm{(2013)}$ $\rm{limits}$')
-ax.errorbar(int_mtot, int_mbh, xerr=Err_int_mtot, yerr=Err_int_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(int_mtot, int_mbh, marker='s', c='k', s=50, label=r'$\rm{This}$ $\rm{work}$')
-ax.errorbar(sdss_mtot, sdss_mbh, xerr=Err_sdss_mtot, yerr=Err_sdss_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(sdss_mtot, sdss_mbh, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
-ax.errorbar(qso_mtot, qso_mbh, xerr=Err_qso_mtot, yerr=Err_qso_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(qso_mtot, qso_mbh, marker='x', c='k', s=30)
-ax.plot(N.log10(mtot), mbh, linestyle='dashed', linewidth=2, c='k', label = r'$\rm{Haring}$ $\rm{\&}$ $\rm{Rix}$ $\rm{(2004)}$')
-ax.set_xlabel(r'$log_{10}$ $\rm{(M_{*}/M_{\odot})}$')
-ax.set_ylabel(r'$log_{10}$ $\rm{(M_{BH}/M_{\odot})}$')
-ax.minorticks_on()
-ax.tick_params('both', which='major', length=10, width=1)
-ax.tick_params('both', which='minor', length=5, width=0.5)
-ax.set_xlim(9.5, 11.5)
-ax.set_ylim(5.5, 10.5)
-P.legend(frameon=False, loc=2)
-#P.legend(frameon=False, loc=4)
-P.savefig('mass_bh_total_mass_sdss_qso_with_simmons_limits_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
-
+# P.figure(figsize=(6,5))
+# ax1 = P.subplot(111)
+# plothist2d(Z.T, X, Y, ax=ax1, plot_contours=True, alpha=0.5, plot_datapoints=False, levels=[80, 160, 320, 640, 1280, 1920, 2560, 5120])
+# ax1.plot(Mrs, C_dash, color='k', linewidth=2)
+# ax1.plot(Mrs, upper, color='k', linestyle='dashed', linewidth=2)
+# ax1.plot(Mrs, lower, color='k', linestyle='dashed', linewidth=2)
+# im =ax1.scatter(gal_Mr, ur, c=int_mdot, marker='o', cmap=P.cm.Reds, vmin = 0.0107, vmax=0.59)
+# im =ax1.scatter(sdss_gal_Mr, sdss_ur, c=sdss_mdot, marker='o', cmap=P.cm.Reds, vmin = 0.0107, vmax=0.59)
+# im =ax1.scatter(qso_gal_Mr, qso_ur, c=qso_mdot, marker='o', cmap=P.cm.Reds, vmin = 0.0107, vmax=0.59)
+# ax1.set_ylabel(r'$u-r$ $\rm{colour}$', fontsize=14)
+# ax1.set_xlabel(r'$M_r$', fontsize=14)
+# ax1.set_ylim(0, 3.5)
+# ax1.set_xlim(-18.5, -23.5)
+# cb = P.colorbar(im)
+# cb.set_label(r'$\dot{m}$ $[\rm{M}_{\odot}\rm{yr}^{-1}]$', labelpad=10, fontsize=15)
+# P.savefig('CMD_DISCDOM_coloured_accretion_rate.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
