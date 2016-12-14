@@ -162,7 +162,7 @@ for n in range(len(sourceList)):
     emission = bf[2].data
     lam = hdr['crval1'] + hdr['cd1_1']*(N.arange(hdr['naxis1'] - hdr['crpix1']))
     wave = 10**lam
-    bestfit = N.load('best_fit_'+sourceList[n]+'.npy')
+    bestfit = N.load('./int_gandalf_results/best_fit_'+sourceList[n]+'.npy')
     broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
     broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
     broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
@@ -538,28 +538,28 @@ xs = N.linspace(0, 15, 100)
 
 #Use linmix to fit to haring and rix x and ys
 lmhr  = linmix.LinMix(xhr, yhr, xhrerr, yhrerr, K=2)
-lmhr.run_mcmc(silent=False)
+lmhr.run_mcmc(silent=False, miniter=5000, maxiter=10000)
 hrysb = lmhr.chain['alpha'].mean() + xs * lmhr.chain['beta'].mean()
 hrysp = (lmhr.chain['alpha'].mean()+3*lmhr.chain['alpha'].std()) + xs * (lmhr.chain['beta'].mean()-3*lmhr.chain['beta'].std())  
 hrysm = (lmhr.chain['alpha'].mean()-3*lmhr.chain['alpha'].std()) + xs * (lmhr.chain['beta'].mean()+3*lmhr.chain['beta'].std())
 
 #Use linmix to fit to stellar mass and MBH relation from DISKDOM sample
 lmr  = linmix.LinMix(results['stellar mass'], results['MBH'], results['Err stellar mass'], results['Err MBH'], K=2)
-lmr.run_mcmc(silent=False)
+lmr.run_mcmc(silent=False, miniter=5000, maxiter=10000)
 rysb = lmr.chain['alpha'].mean() + xs * lmr.chain['beta'].mean()
 rysp = (lmr.chain['alpha'].mean()+3*lmr.chain['alpha'].std()) + xs * (lmr.chain['beta'].mean()-3*lmr.chain['beta'].std())  
 rysm = (lmr.chain['alpha'].mean()-3*lmr.chain['alpha'].std()) + xs * (lmr.chain['beta'].mean()+3*lmr.chain['beta'].std())
 
 #Use linmix to fit to upper limits on bulgemass from DISKDOM sample (inlcuding those with no measurement from Simard set to B/T = 1)
 lmupl  = linmix.LinMix(bt_mbhs, bt_bulgemass, err_bt_mbhs, err_bt_bulgemass, delta=delta, K=2)
-lmupl.run_mcmc(silent=False) 
+lmupl.run_mcmc(silent=False, miniter=5000, maxiter=10000) 
 uplysb = lmupl.chain['alpha'].mean() + xs * lmupl.chain['beta'].mean()
 uplysp = (lmupl.chain['alpha'].mean()+3*lmupl.chain['alpha'].std()) + xs * (lmupl.chain['beta'].mean()-3*lmupl.chain['beta'].std())
 uplysm = (lmupl.chain['alpha'].mean()-3*lmupl.chain['alpha'].std()) + xs * (lmupl.chain['beta'].mean()+3*lmupl.chain['beta'].std())
 
 #Use linmix to fit to bulgemass from DISKDOM sample assuming no measurement is an upper limit
 lmnupl  = linmix.LinMix(bt_mbhs, bt_bulgemass, err_bt_mbhs, err_bt_bulgemass, K=2)
-lmnupl.run_mcmc(silent=False) 
+lmnupl.run_mcmc(silent=False, miniter=5000, maxiter=10000) 
 nuplysb = lmnupl.chain['alpha'].mean() + xs * lmnupl.chain['beta'].mean()
 nuplysp = (lmnupl.chain['alpha'].mean()+3*lmnupl.chain['alpha'].std()) + xs * (lmnupl.chain['beta'].mean()-3*lmnupl.chain['beta'].std())
 nuplysm = (lmnupl.chain['alpha'].mean()-3*lmnupl.chain['alpha'].std()) + xs * (lmnupl.chain['beta'].mean()+3*lmnupl.chain['beta'].std())
