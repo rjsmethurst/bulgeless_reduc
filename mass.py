@@ -122,7 +122,7 @@ gal_Mr = N.zeros(len(ints))
 Err_gal_Mr = N.zeros(len(ints))
 
 for n in range(len(z)):
-    s = F.open('/Users/becky/Projects/observing/lapalma/data_may14/int_reduced_spectra/'+sourceList[n]+'_extract_agn.fit')
+    s = F.open('~/int_reduced_spectra/'+sourceList[n]+'_extract_agn.fit')
     d = s[0].data
     h = s[0].header
     #l = s[0].header['crval1'] + s[0].header['cd1_1']*(N.arange(s[0].header['naxis1']))
@@ -157,12 +157,12 @@ for n in range(len(sourceList)):
     int_mtot[n] = ((4.62 - gal_Mr[n])/2.5) + log_m_l
     Err_int_mtot[n] = ((Err_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
     print int_mtot[n] 
-    bf = F.open('/Users/becky/Projects/observing/lapalma/data_may14/int_gandalf_results/'+sourceList[n]+'_extract_agn_deredshift_rebin_header_units_GANDALF_fits.fits')
+    bf = F.open('~/int_gandalf_results/'+sourceList[n]+'_extract_agn_deredshift_rebin_header_units_GANDALF_fits.fits')
     hdr = bf[0].header
     emission = bf[2].data
     lam = hdr['crval1'] + hdr['cd1_1']*(N.arange(hdr['naxis1'] - hdr['crpix1']))
     wave = 10**lam
-    bestfit = N.load('/Users/becky/Projects/int_reduc/desktop/best_fit_'+sourceList[n]+'.npy')
+    bestfit = N.load('best_fit_'+sourceList[n]+'.npy')
     broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
     broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
     broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
@@ -209,10 +209,10 @@ sdss_gal_Mr = N.zeros(len(sdss))
 Err_sdss_gal_Mr = N.zeros(len(sdss))
 for n in range(len(sdss)):
     if n !=73 and n!=35:
-        a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+        a = glob.glob('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
         if len(a) > 0:
             fit = F.open(a[0])
-            bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+            bestfit = N.load('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
             spec = fit[1].data
             hdr = fit[0].header
             lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -278,10 +278,10 @@ qso_names = N.zeros(len(qso)).astype(str)
 
 for n in range(len(qso)):
     qso_names[n] = 'qso'+str(n)
-    a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     if len(a) > 0:
         fit = F.open(a[0])
-        bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        bestfit = N.load('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
         spec = fit[1].data
         hdr = fit[0].header
         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -343,10 +343,10 @@ for n in j:
         n+=1
     else:
         pass
-    a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
     if len(a) > 0:
         fit = F.open(a[0])
-        bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        bestfit = N.load('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
         spec = fit[0].data
         hdr = fit[0].header
         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -389,12 +389,12 @@ k=0
 j = N.random.randint(0, len(qso), 5)
 fig = P.figure(figsize=(5,13), frameon=False, edgecolor='None')
 for n in j:
-    a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     while len(a) <=0:
         n +=1
-        a = glob.glob('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+        a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     fit = F.open(a[0])
-    bestfit = N.load('/Users/becky/Projects/int_reduc/GANDALF_RESULTS_SDSS/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+    bestfit = N.load('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
     spec = fit[0].data
     hdr = fit[0].header
     lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -431,46 +431,6 @@ fig.subplots_adjust(hspace=0.5)
 #fig.tight_layout()
 fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
-#Lsol = 3.846E33*un.g*un.cm**2/un.s**3
-results['L bol'].unit = un.erg/un.s
-#mdot = (results['L bol']/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-
-# brooke_mdot = (brooke_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-# qsor_mdot = ((10**qsor['LOGLBOL'].data.data)*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-# sdss_mdot = (sdss_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-# qso_mdot = (qso_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-
-
-# mbh_edd = results['MBH']/((results['L bol']/Lsol)/3E4)
-
-
-
-# mseed=1E5
-# t = 1E6
-# time_seed = N.zeros(len(results))
-
-# for n in range(len(results)):
-#     current_mbh = results['MBH'][n]
-#     tstep=0
-#     while current_mbh > mbh_edd[n].value:
-#         current_mbh -= mdot[n].value*t
-#         tstep+=1
-#         if current_mbh <= mseed:
-#             time_seed[n] = t*tstep
-#         else:
-#             pass
-#     while current_mbh > mseed:
-#         print 'assuming eddingtonI like '
-#         current_mdot = ((3E4*(current_mbh)*Lsol)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
-#         current_mbh -= current_mdot*t
-#         tstep+=1
-#     time_seed[n] = t*tstep
-
-
-
-
 # fig = P.figure(figsize=(5,5))
 # ax = fig.add_subplot(1,1,1)
 # ax.scatter(sdss['published_BHmass'], sdss_mbh, marker='x', c='None', edgecolor='k', s=30, label=r'$\rm{SDSS }$ $\rm{spectra }$')
@@ -482,7 +442,7 @@ results['L bol'].unit = un.erg/un.s
 # ax.set_ylim(7.0, 9.5)
 # ax.legend(frameon=False, loc=2, fontsize=12)
 # #P.tight_layout()
-# P.savefig('/Users/becky/Projects/int_reduc/desktop/published_vs_calculated_BH_mass_sdss_integrated_narrow_broad.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('~/published_vs_calculated_BH_mass_sdss_integrated_narrow_broad.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 results = Table.read('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits', format='fits')
 
@@ -501,86 +461,7 @@ yerr = results['Err MBH']
 x = results['stellar mass']
 xerr = results['Err stellar mass']
 
-def lnlike3(theta, x, y, xerr, yerr):
-    m, b = theta 
-    model = m*x + b
-    return -0.5*N.sum( ((y-model)**2) / (yerr**2 + ((b**2) * xerr**2 )) ) 
-
-def lnlike2(theta, x, y, xerr, yerr):
-    m, b = theta
-    likelihood=0
-    for i in range(len(x)):
-        #phi = N.arctan2(x[i], m*x[i] + b)
-        #v = N.matrix([[-N.sin(phi)],[N.cos(phi)]])
-        v = (1/N.sqrt(1+m**2))*N.matrix([[-1*m],[1]])
-        Zi = N.matrix([[x[i]],[y[i]]])
-        Si = N.matrix([[xerr[i]**2, 0],[0, yerr[i]**2]])
-        Deli = v.T*Zi - b*(1/N.sqrt(1+m**2))
-        Sigi2 = v.T * Si * v
-        #likelihood *= (N.log(Deli**2) - N.log(2*Sigi2))
-        likelihood -= Deli**2 / (2*Sigi2)
-    return likelihood
-
-def lnlike(theta, x, y, yerr):
-    m, b, lnf = theta
-    model = m * x + b
-    inv_sigma2 = 1.0/(yerr**2 + model**2*N.exp(2*lnf))
-    return -0.5*(N.sum((y-model)**2*inv_sigma2 - N.log(inv_sigma2)))
-
-def lnprior(theta):
-    m, b, lnf = theta
-    if -5 < m < 5 and -10 < b < 10.0 and -10 < lnf < 1:
-        return 0.0
-    return -N.inf
-
-def lnprob(theta, x, y, xerr, yerr):
-    lp = lnprior(theta)
-    if not N.isfinite(lp):
-        return -N.inf
-    return lp + lnlike(theta, x, y, yerr)
-
-# print 'emceeing...'
-# start = [1.12, -3, 0.7]
-# ndim, nwalkers, burnin, nsteps = 3, 50, 1000, 100
-# p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
-# import emcee
-# sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(results['stellar mass'], results['MBH'], results['Err stellar mass'], results['Err MBH']))
-# pos, prob, state = sampler.run_mcmc(p0, burnin)
-# samples = sampler.chain[:,:,:].reshape((-1,ndim))
-# N.save('mtot_mbh_fit_yerr_line_samples_burn_in.npy', samples)
-# #walker_plot(samples, nwalkers, burnin)
-# sampler.reset()
-# print 'RESET', pos
-# # main sampler run 
-# sampler.run_mcmc(pos, nsteps)
-# samples = sampler.chain[:,:,:].reshape((-1,ndim))
-# N.save('mtot_mbh_fit_yerr_line_samples.npy', samples)
-# #walker_plot(samples, nwalkers, nsteps)
-# import triangle
-# #fig = triangle.corner(samples, labels=[r'$m$', r'$b$'])
-# #fig.savefig('mbh_mtot_fit_line_triangle.pdf')
-# bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [34,50,66],axis=0)))
-# N.save('mtot_mbh_best_fit_yerr_line.npy', bf)
-
-
-samples = N.load('mtot_mbh_fit_line_samples.npy')
-bf = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [1,50,99],axis=0)))
-s = N.sort(samples, axis=0)
-# bestres = s[0.5*len(s), 0] * N.log10(mtot) + s[0.5*len(s), 1]/N.cos(N.arctan(s[0.5*len(s), 0])/2)
-# plusres = s[0.84*len(s), 0] * N.log10(mtot) + s[0.16 *len(s), 1]/N.cos(N.arctan(s[0.84*len(s), 0])/2)
-# minusres = s[0.16*len(s), 0] * N.log10(mtot) + s[0.84*len(s), 1]/N.cos(N.arctan(s[0.16*len(s), 0])/2)
-bestres = s[0.5*len(s), 0] * N.log10(mtot) + s[0.5*len(s), 1]
-plusres = s[0.99*len(s), 0] * N.log10(mtot) + s[0.01 *len(s), 1]
-minusres = s[0.01*len(s), 0] * N.log10(mtot) + s[0.99*len(s), 1]
-
-
-sampleshr = N.load('mtot_mbh_fit_haring_rix_samples.npy')
-bfhr = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(sampleshr, [1,50,99],axis=0)))
-shr = N.sort(sampleshr, axis=0)
-bestreshr = shr[0.5*len(shr), 0] * N.log10(mtot) + shr[0.5*len(shr), 1]/N.cos(N.arctan(shr[0.5*len(shr), 0]))
-plusreshr = shr[0.84*len(shr), 0] * N.log10(mtot) + shr[0.16*len(shr), 1]/N.cos(N.arctan(shr[0.84*len(shr), 0]))
-minusreshr = shr[0.16*len(shr), 0] * N.log10(mtot) + shr[0.84*len(shr), 1]/N.cos(N.arctan(shr[0.16*len(shr), 0]))
-
+ 
 #Load all SDSS galaxies, some of which have Simard bulge to total ratio fits. The [5:] is to disregard the INT galaxies at the top
 bt = Table.read('all_101_galaxies_z_ur_mtot_mbh_lbol_etc_with_Btot_from_Simard_et_al.fits', format='fits')[5:]
 # Set those which don't have Simard B/T to have a B/T=1 as an upper limit
@@ -730,7 +611,7 @@ ax.set_ylim(5.5, 10.5)
 ax.legend(frameon=False, loc=2, fontsize=12)
 P.tight_layout()
 P.subplots_adjust(wspace=0.0)
-P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_total_mass_fit_linmix_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+P.savefig('mass_bh_total_mass_fit_linmix_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 fig = P.figure(figsize=(5,5))
 ax = fig.add_subplot(1,1,1)
@@ -760,7 +641,7 @@ ax.set_ylabel(r'$\log_{10}(M_{BH}/\rm{M}_{\odot})$')
 ax.legend(frameon=False, loc=2, fontsize=12)
 P.tight_layout()
 P.subplots_adjust(wspace=0.0)
-P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_bt_set_to_1.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+P.savefig('mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_bt_set_to_1.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 # qsor = Table.read('shen_2011_matched_redshif.fits', format='fits')
@@ -792,7 +673,47 @@ P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bulge_limits_INT_simm
 # ax.set_ylim(43, 46.5)
 # ax.legend(frameon=False, loc=4, fontsize=12)
 # #P.tight_layout()
-# P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('~/mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+
+
+
+#Lsol = 3.846E33*un.g*un.cm**2/un.s**3
+#results['L bol'].unit = un.erg/un.s
+#mdot = (results['L bol']/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+
+# brooke_mdot = (brooke_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# qsor_mdot = ((10**qsor['LOGLBOL'].data.data)*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# sdss_mdot = (sdss_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# int_mdot = (int_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+# qso_mdot = (qso_lbol*(un.erg/un.s)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+
+
+# mbh_edd = results['MBH']/((results['L bol']/Lsol)/3E4)
+
+# mseed=1E5
+# t = 1E6
+# time_seed = N.zeros(len(results))
+
+# for n in range(len(results)):
+#     current_mbh = results['MBH'][n]
+#     tstep=0
+#     while current_mbh > mbh_edd[n].value:
+#         current_mbh -= mdot[n].value*t
+#         tstep+=1
+#         if current_mbh <= mseed:
+#             time_seed[n] = t*tstep
+#         else:
+#             pass
+#     while current_mbh > mseed:
+#         print 'assuming eddingtonI like '
+#         current_mdot = ((3E4*(current_mbh)*Lsol)/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr)
+#         current_mbh -= current_mdot*t
+#         tstep+=1
+#     time_seed[n] = t*tstep
+
+
+
 
 # fig = P.figure(figsize=(5,5))
 # ax = fig.add_subplot(1,1,1)
@@ -819,7 +740,7 @@ P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bulge_limits_INT_simm
 # ax.set_ylim(-3, 0.5)
 # ax.legend(frameon=False, loc=4, fontsize=12)
 # #P.tight_layout()
-# P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_mdot_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('~/mass_bh_mdot_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 # # P.figure(figsize=(8,8))
@@ -876,7 +797,7 @@ P.savefig('/Users/becky/Projects/int_reduc/desktop/mass_bh_bulge_limits_INT_simm
 # ax.minorticks_on()
 # ax.legend(frameon=False, loc=3  , fontsize=12)
 # #P.tight_layout()
-# P.savefig('/Users/becky/Projects/int_reduc/desktop/redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('~/redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 
