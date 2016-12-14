@@ -3,7 +3,7 @@
 import numpy as N
 import matplotlib.pyplot as P
 import pyfits as F
-from prefig import Prefig
+#from prefig import Prefig
 
 import os
 
