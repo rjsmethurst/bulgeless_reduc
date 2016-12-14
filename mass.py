@@ -122,7 +122,7 @@ gal_Mr = N.zeros(len(ints))
 Err_gal_Mr = N.zeros(len(ints))
 
 for n in range(len(z)):
-    s = F.open('~/int_reduced_spectra/'+sourceList[n]+'_extract_agn.fit')
+    s = F.open('./int_reduced_spectra/'+sourceList[n]+'_extract_agn.fit')
     d = s[0].data
     h = s[0].header
     #l = s[0].header['crval1'] + s[0].header['cd1_1']*(N.arange(s[0].header['naxis1']))
@@ -157,7 +157,7 @@ for n in range(len(sourceList)):
     int_mtot[n] = ((4.62 - gal_Mr[n])/2.5) + log_m_l
     Err_int_mtot[n] = ((Err_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
     print int_mtot[n] 
-    bf = F.open('~/int_gandalf_results/'+sourceList[n]+'_extract_agn_deredshift_rebin_header_units_GANDALF_fits.fits')
+    bf = F.open('./int_gandalf_results/'+sourceList[n]+'_extract_agn_deredshift_rebin_header_units_GANDALF_fits.fits')
     hdr = bf[0].header
     emission = bf[2].data
     lam = hdr['crval1'] + hdr['cd1_1']*(N.arange(hdr['naxis1'] - hdr['crpix1']))
@@ -209,10 +209,10 @@ sdss_gal_Mr = N.zeros(len(sdss))
 Err_sdss_gal_Mr = N.zeros(len(sdss))
 for n in range(len(sdss)):
     if n !=73 and n!=35:
-        a = glob.glob('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+        a = glob.glob('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
         if len(a) > 0:
             fit = F.open(a[0])
-            bestfit = N.load('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+            bestfit = N.load('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
             spec = fit[1].data
             hdr = fit[0].header
             lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -278,10 +278,10 @@ qso_names = N.zeros(len(qso)).astype(str)
 
 for n in range(len(qso)):
     qso_names[n] = 'qso'+str(n)
-    a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     if len(a) > 0:
         fit = F.open(a[0])
-        bestfit = N.load('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        bestfit = N.load('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
         spec = fit[1].data
         hdr = fit[0].header
         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -343,10 +343,10 @@ for n in j:
         n+=1
     else:
         pass
-    a = glob.glob('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
     if len(a) > 0:
         fit = F.open(a[0])
-        bestfit = N.load('~/SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        bestfit = N.load('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
         spec = fit[0].data
         hdr = fit[0].header
         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -389,12 +389,12 @@ k=0
 j = N.random.randint(0, len(qso), 5)
 fig = P.figure(figsize=(5,13), frameon=False, edgecolor='None')
 for n in j:
-    a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     while len(a) <=0:
         n +=1
-        a = glob.glob('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+        a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
     fit = F.open(a[0])
-    bestfit = N.load('~/QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+    bestfit = N.load('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
     spec = fit[0].data
     hdr = fit[0].header
     lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
@@ -442,7 +442,7 @@ fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_in
 # ax.set_ylim(7.0, 9.5)
 # ax.legend(frameon=False, loc=2, fontsize=12)
 # #P.tight_layout()
-# P.savefig('~/published_vs_calculated_BH_mass_sdss_integrated_narrow_broad.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('./published_vs_calculated_BH_mass_sdss_integrated_narrow_broad.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 results = Table.read('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits', format='fits')
 
@@ -673,7 +673,7 @@ P.savefig('mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_
 # ax.set_ylim(43, 46.5)
 # ax.legend(frameon=False, loc=4, fontsize=12)
 # #P.tight_layout()
-# P.savefig('~/mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('./mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 
@@ -740,7 +740,7 @@ P.savefig('mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_
 # ax.set_ylim(-3, 0.5)
 # ax.legend(frameon=False, loc=4, fontsize=12)
 # #P.tight_layout()
-# P.savefig('~/mass_bh_mdot_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('./mass_bh_mdot_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 # # P.figure(figsize=(8,8))
@@ -797,7 +797,7 @@ P.savefig('mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_
 # ax.minorticks_on()
 # ax.legend(frameon=False, loc=3  , fontsize=12)
 # #P.tight_layout()
-# P.savefig('~/redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+# P.savefig('./redshift_eddington_ratio_with_all_errors.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 
