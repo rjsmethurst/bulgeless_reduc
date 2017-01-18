@@ -8,24 +8,20 @@ import glob
 import time
 
 def walker_plot(samples, nwalkers, limit):
-        s = samples.reshape(nwalkers, -1, 7)
+        s = samples.reshape(nwalkers, -1, 5)
         s = s[:,:limit, :]
         fig = P.figure(figsize=(8,14))
-        ax1 = P.subplot(9,1,1)
-        ax2 = P.subplot(9,1,2)
-        ax3 = P.subplot(9,1,3)
-        ax4 = P.subplot(9,1,4)
-        ax5 = P.subplot(9,1,5)
-        ax6 = P.subplot(9,1,6)
-        ax7 = P.subplot(9,1,7)
+        ax1 = P.subplot(5,1,1)
+        ax2 = P.subplot(5,1,2)
+        ax3 = P.subplot(5,1,3)
+        ax4 = P.subplot(5,1,4)
+        ax5 = P.subplot(5,1,5)
         for n in range(len(s)):
             ax1.plot(s[n,:,0], 'k')
             ax2.plot(s[n,:,1], 'k')
             ax3.plot(s[n,:,2], 'k')
             ax4.plot(s[n,:,3], 'k')
             ax5.plot(s[n,:,4], 'k')
-            ax6.plot(s[n,:,5], 'k')
-            ax7.plot(s[n,:,6], 'k')
         ax1.tick_params(axis='x', labelbottom='off')
         ax1.set_ylabel(r'amplitude narrow $H\alpha$')
         ax2.tick_params(axis='x', labelbottom='off')
@@ -34,11 +30,7 @@ def walker_plot(samples, nwalkers, limit):
         ax3.set_ylabel(r'amplitude broad $H\alpha$')
         ax4.tick_params(axis='x', labelbottom='off')
         ax4.set_ylabel(r'stdev broad $H\alpha$')
-        ax5.tick_params(axis='x', labelbottom='off')
-        ax5.set_ylabel(r'stdev narrow [NII] 6547')
-        ax6.tick_params(axis='x', labelbottom='off')
         ax5.set_ylabel(r'amplitude narrow [NII] 6583')
-        ax7.set_ylabel(r'stdev narrow [NII] 6583')
         P.subplots_adjust(hspace=0.1)
         P.tight_layout()
         save_fig = './walkers_steps_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
@@ -50,11 +42,12 @@ def model(theta, wave):
     # 12 theta values are 3 to describe narrow Halpha, 3 for broad Halpha, 3 for [NII] at 6547 and 3 for [NII] at 6583
     # a, u, s, a1, u1, s1, an1, un1, sn1, an2, un2, sn2 = theta
     # but some of these are set, so really we only have 7 variables
-    a, s, a1, s1, sn1, an2, sn2  = theta
+    a, s, a1, s1, an2  = theta
     u = u1 = 6562.8
     un1 = 6547.96
     un2 = 6583.34
     an1 = 0.34*an2
+    sn1 = sn2 = s
     return a * N.exp(- (((wave - u)**2) /(s**2))) + a1 * N.exp(- (((wave - u1)**2) /(s1**2))) + an1 * N.exp(- (((wave - un1)**2) /(sn1**2))) + an2 * N.exp(- (((wave - un2)**2) /(sn2**2))) 
 
 
@@ -67,8 +60,8 @@ def lnlike(theta, wave, flux, fluxerr):
     return N.sum(chi)
 
 def lnprior(theta, wave, flux):
-    a, s, a1, s1, sn1, an2, sn2  = theta
-    if a > 0 and a1 > 0 and an2 > 0 and 0 < s < 1000 and 0 < s1 < 1000 and 0 < sn1 < 1000 and 0 < sn2 < 1000 and s < s1:
+    a, s, a1, s1, an2  = theta
+    if a > 0 and a1 > 0 and an2 > 0 and 0 < s < 1000 and 0 < s1 < 1000 and s < s1:
     	return 0.0
     else:
     	return -N.inf
@@ -84,12 +77,12 @@ def lnprob(theta, wave, flux, fluxerr):
 def gauss(a, u, s, wave):
     return a * N.exp(- (((wave - u)**2) /(s**2)))
 
-ndim = 7
-nwalkers = 200
+ndim = 5
+nwalkers = 100
 nsteps = 500
-burnin = 2000
-# guess some reasonable start values for a, s, a1, s1, sn1, an2, sn2
-start = [2, 20, 1, 40, 20, 2, 20]
+burnin = 1000
+# guess some reasonable start values for a, s, a1, s1, an2
+start = [2, 20, 1, 40, 2]
 
 source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54184-2607-477_bluecutoff_fits.fits',
@@ -217,8 +210,8 @@ for n in range(len(source)):
     #walker_plot(samples, nwalkers, nsteps)
     best = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
     N.save(dir2+source[n]+'_best_fit.npy', best)
-    results = model([best[0][0], best[1][0], best[2][0], best[3][0], best[4][0], best[5][0], best[6][0]], wave)
-    broad_only = gauss(best[0][0], 6562.8, best[1][0], wave)
+    results = model([best[0][0], best[1][0], best[2][0], best[3][0], best[4][0]], wave)
+    broad_only = gauss(best[2][0], 6562.8, best[3][0], wave)
     print best
     lim1 = N.searchsorted(wave, 6450)
     lim2 =N.searchsorted(wave, 6650)
