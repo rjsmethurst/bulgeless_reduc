@@ -5,11 +5,12 @@ import pylab as P
 import pyfits as F
 import emcee 
 import glob
+import time
 
 def walker_plot(samples, nwalkers, limit):
         s = samples.reshape(nwalkers, -1, 7)
         s = s[:,:limit, :]
-        fig = P.figure(figsize=(8,7))
+        fig = P.figure(figsize=(8,14))
         ax1 = P.subplot(9,1,1)
         ax2 = P.subplot(9,1,2)
         ax3 = P.subplot(9,1,3)
@@ -26,12 +27,20 @@ def walker_plot(samples, nwalkers, limit):
             ax6.plot(s[n,:,5], 'k')
             ax7.plot(s[n,:,6], 'k')
         ax1.tick_params(axis='x', labelbottom='off')
+        ax1.set_ylabel(r'amplitude narrow $H\alpha$')
         ax2.tick_params(axis='x', labelbottom='off')
+        ax2.set_ylabel(r'stdev narrow $H\alpha$')
         ax3.tick_params(axis='x', labelbottom='off')
+        ax3.set_ylabel(r'amplitude broad $H\alpha$')
         ax4.tick_params(axis='x', labelbottom='off')
+        ax4.set_ylabel(r'stdev broad $H\alpha$')
         ax5.tick_params(axis='x', labelbottom='off')
+        ax5.set_ylabel(r'stdev narrow [NII] 6547')
         ax6.tick_params(axis='x', labelbottom='off')
+        ax5.set_ylabel(r'amplitude narrow [NII] 6583')
+        ax7.set_ylabel(r'stdev narrow [NII] 6583')
         P.subplots_adjust(hspace=0.1)
+        P.tight_layout()
         save_fig = './walkers_steps_'+str(time.strftime('%H_%M_%d_%m_%y'))+'.pdf'
         fig.savefig(save_fig)
         return fig
@@ -76,7 +85,7 @@ def gauss(a, u, s, wave):
     return a * N.exp(- (((wave - u)**2) /(s**2)))
 
 ndim = 7
-nwalkers = 150
+nwalkers = 200
 nsteps = 500
 burnin = 2000
 # guess some reasonable start values for a, s, a1, s1, sn1, an2, sn2
@@ -180,7 +189,7 @@ source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54572-2531-250_fits.fits'])
 
 dir1 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/'
-dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits/'
+dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components /'
 
 for n in range(len(source)):
     bf = F.open(dir1+source[n])
