@@ -3,7 +3,7 @@
 import numpy as N
 import matplotlib.pyplot as P
 import pyfits as F
-from prefig import Prefig
+#from prefig import Prefig
 
 import os
 
@@ -185,13 +185,17 @@ for n in range(len(sourceList)):
 # hdulist=F.HDUList([prihdu])
 # hdulist.writeto('/Users/becky/Projects/int_reduc/ints_colours_masses_int_results.fits')
 
-qint = Table([sourceList, sourceID, ints['col4'], ints['col5'], z, 0.1*z, ur, Err_ur, int_mtot, Err_int_mtot, int_fwhm, Err_int_fwhm, int_lum, Err_int_lum, int_mbh, Err_int_mbh, int_lbol, Err_int_lbol], names=('name', 'ID', 'RA', 'Dec', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol'))
+qint = Table([sourceList, sourceID, ints['col4'], ints['col5'], N.zeros(len(ints)), N.zeros(len(ints)), N.zeros(len(ints)), z, 0.1*z, ur, Err_ur, int_mtot, Err_int_mtot, int_fwhm, Err_int_fwhm, int_lum, Err_int_lum, int_mbh, Err_int_mbh, int_lbol, Err_int_lbol, N.nan*N.zeros(len(ints)), N.nan*N.zeros(len(ints))], names=('name', 'ID', 'RA', 'Dec', 'mjd', 'plate', 'fibre', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol', '(B/T)r', 'e_(B/T)r'))
 
+dir1 = '../bdmass_fits_gandalf_bds/combined_sdss_spectra/'
+dir2 = '../bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits/'
 
 import glob
-sdss = Table.read('sdss_spectra_dr8_dr10_sources_magnitudes_MPA_JHU_mass_WISE.fits', format='fits')
-sdss_mtot = N.zeros(len(sdss))
-Err_sdss_mtot = N.zeros(len(sdss))
+#sdss = Table.read('sdss_73_actual_spectra_dr8_dr10_sources_magnitudes_MPA_JHU_mass_WISE.fits', format='fits')
+### Only load the first 96 and not the 5 INT at the end of this file
+sdss = Table.read('../bdmass_fits_gandalf_bds/sdss_int_results_table_101_sources_withebv_and_WISE.fits', format='fits')[:-5]
+# sdss_mtot = N.zeros(len(sdss))
+# Err_sdss_mtot = N.zeros(len(sdss))
 sdss_fwhm = N.zeros(len(sdss))
 Err_sdss_fwhm = N.zeros(len(sdss))
 sdss_mbh = N.zeros(len(sdss))
@@ -201,235 +205,303 @@ Err_sdss_lum = N.zeros(len(sdss))
 sdss_flux_h_alpha = N.zeros(len(sdss))
 sdss_lbol = N.zeros(len(sdss))
 Err_sdss_lbol = N.zeros(len(sdss))
-sdss_z = N.zeros(len(sdss))
-Err_sdss_z = N.zeros(len(sdss))
-sdss_ur = N.zeros(len(sdss))
-Err_sdss_ur = N.zeros(len(sdss))
-sdss_gal_Mr = N.zeros(len(sdss))
-Err_sdss_gal_Mr = N.zeros(len(sdss))
+# sdss_z = N.zeros(len(sdss))
+# Err_sdss_z = N.zeros(len(sdss))
+# sdss_ur = N.zeros(len(sdss))
+# Err_sdss_ur = N.zeros(len(sdss))
+# sdss_gal_Mr = N.zeros(len(sdss))
+# Err_sdss_gal_Mr = N.zeros(len(sdss))
+
 for n in range(len(sdss)):
-    if n !=73 and n!=35:
-        a = glob.glob('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
-        if len(a) > 0:
-            fit = F.open(a[0])
-            bestfit = N.load('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
-            spec = fit[1].data
-            hdr = fit[0].header
-            lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
-            wave = (10**lam)/(1+hdr['Z'])
-            sdss_ur[n], Err_sdss_ur[n], gal_r, Err_r = calc_ur(sdss['psfMag_u'][n], sdss['psfMagErr_u'][n], sdss['psfMag_r'][n], sdss['psfMagErr_r'][n], sdss['petroMag_u'][n], sdss['petroMagErr_u'][n], sdss['petroMag_r_2'][n], sdss['petroMagErr_r_2'][n])
-            if sdss_ur[n] <= 2.1:
-                log_m_l = -0.95 + 0.56 * sdss_ur[n]
-                log_m_l_err = (0.56*Err_sdss_ur[n])**2
-            else:
-                log_m_l = -0.16 + 0.18 * sdss_ur[n]
-                log_m_l_err = (0.18*Err_sdss_ur[n])**2
-            sdss_z[n] = hdr['Z']
-            Err_sdss_z[n] = hdr['Z_ERR']
-            ld = cosmo.luminosity_distance(hdr['Z'])
-            Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
-            sdss_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
-            Err_sdss_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
-            sdss_mtot[n] = ((4.62 - sdss_gal_Mr[n])/2.5) + log_m_l
-            Err_sdss_mtot[n] = ((Err_sdss_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
-            #sdss_mtot[n] = sdss['lgm_tot_p50'][n]
-            sdss_flux_h_alpha[n] = N.max(spec[2500:])
-            broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
-            broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
-            broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
-            fit = gauss(bestfit[0][0], bestfit[1][0], bestfit[2][0],bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
-            fitp = gauss(bestfit[0][0]+bestfit[0][1], bestfit[1][0]+bestfit[1][1], bestfit[2][0]+bestfit[2][1],bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
-            fitm = gauss(bestfit[0][0]-bestfit[0][2], bestfit[1][0]-bestfit[1][2], bestfit[2][0]-bestfit[2][2],bestfit[3][2]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
-            sdss_fwhm[n] = calc_fwhm(wave, broad)
-            fwhmp = calc_fwhm(wave, broadp)
-            fwhmm = calc_fwhm(wave, broadm)
-            Err_sdss_fwhm[n] = N.mean([N.abs(fwhmp-sdss_fwhm[n]), N.abs(sdss_fwhm[n]-fwhmm)]) 
-            sdss_lum[n], Err_sdss_lum[n], sdss_mbh[n], Err_sdss_mbh[n] = bhmass(ld, Err_ld, sdss_fwhm[n], Err_sdss_fwhm[n], wave, fit, fitp, fitm)
-            sdss_lbol[n] = 8 * (4*N.pi*(ld.to(un.cm).value)**2) * 1E-23 * (299792458/12E-6) * 31.674 * 10**(-sdss['w3mag'][n]/2.5)
-            Err_sdss_lbol[n] = sdss_lbol[n] * ( (8*4*N.pi*Err_ld/ld.value)**2 + ( ((1E-23 * (299792458/12E-6) * 31.674)/-2.5) * N.log(10) * sdss['w3sigm'][n] )**2 )**(0.5)
-        else:
-            pass
-    else:
-        pass
-
-qsdss = Table([sdss['name'], sdss['objID_dr8_1'], sdss['RA_1'], sdss['Dec_1'], sdss_z, Err_sdss_z, sdss_ur, Err_sdss_ur, sdss_mtot, Err_sdss_mtot, sdss_fwhm, Err_sdss_fwhm, sdss_lum, Err_sdss_lum, sdss_mbh, Err_sdss_mbh, sdss_lbol, Err_sdss_lbol], names=('name', 'ID', 'RA', 'Dec', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol'))
-
-
-qso = Table.read('qsos_dontneedhst_comparebhmasses_spec_info_WISE.fits', format='fits')
-qso_mtot = N.zeros(len(qso))
-Err_qso_mtot = N.zeros(len(qso))
-qso_fwhm = N.zeros(len(qso))
-Err_qso_fwhm = N.zeros(len(qso))
-qso_mbh = N.zeros(len(qso))
-Err_qso_mbh = N.zeros(len(qso))
-qso_lum = N.zeros(len(qso))
-Err_qso_lum = N.zeros(len(qso))
-qso_flux_h_alpha = N.zeros(len(qso))
-qso_lbol = N.zeros(len(qso))
-Err_qso_lbol = N.zeros(len(qso))
-qso_z = N.zeros(len(qso))
-Err_qso_z = N.zeros(len(qso))
-qso_ur = N.zeros(len(qso))
-Err_qso_ur = N.zeros(len(qso))
-qso_gal_Mr = N.zeros(len(qso))
-Err_qso_gal_Mr = N.zeros(len(qso))
-qso_names = N.zeros(len(qso)).astype(str)
-
-
-for n in range(len(qso)):
-    qso_names[n] = 'qso'+str(n)
-    a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+    a = glob.glob(dir1+'spSpec-'+str(int(sdss['mjd'][n])).zfill(5)+'-'+str(int(sdss['plate'][n])).zfill(4)+'-'+str(int(sdss['fiberID'][n])).zfill(3)+'*_fits.fits')
     if len(a) > 0:
         fit = F.open(a[0])
-        bestfit = N.load('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+        #bestfit = N.load(dir2+'spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'*_fits.fits_best_fit.npy')
+        bestfit = N.abs(N.load(dir2+a[0].split('/')[-1]+'_best_fit.npy'))
         spec = fit[1].data
         hdr = fit[0].header
         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
         wave = (10**lam)/(1+hdr['Z'])
-        qso_ur[n], Err_qso_ur[n], gal_r, Err_r = calc_ur(qso['psfMag_u'][n], qso['psfMagErr_u'][n], qso['psfMag_r'][n], qso['psfMagErr_r'][n], qso['petroMag_u'][n], qso['petroMagErr_u'][n], qso['petroMag_r'][n], qso['petroMagErr_r'][n])
-        if qso_ur[n] <= 2.1:
-            log_m_l = -0.95 + 0.56 * qso_ur[n]
-            log_m_l_err = (0.56*Err_qso_ur[n])**2
-        else:
-            log_m_l = -0.16 + 0.18 * qso_ur[n]
-            log_m_l_err = (0.18*Err_qso_ur[n])**2
-        qso_z[n]= hdr['Z']
-        Err_qso_z[n] = hdr['Z_ERR']
+        # sdss_ur[n], Err_sdss_ur[n], gal_r, Err_r = calc_ur(sdss['psfMag_u'][n], sdss['psfMagErr_u'][n], sdss['psfMag_r'][n], sdss['psfMagErr_r'][n], sdss['petroMag_u'][n], sdss['petroMagErr_u'][n], sdss['petroMag_r_2'][n], sdss['petroMagErr_r_2'][n])
+        # if sdss_ur[n] <= 2.1:
+        #     log_m_l = -0.95 + 0.56 * sdss_ur[n]
+        #     log_m_l_err = (0.56*Err_sdss_ur[n])**2
+        # else:
+        #     log_m_l = -0.16 + 0.18 * sdss_ur[n]
+        #     log_m_l_err = (0.18*Err_sdss_ur[n])**2
+        #sdss_z[n] = hdr['Z']
+        #Err_sdss_z[n] = hdr['Z_ERR']
         ld = cosmo.luminosity_distance(hdr['Z'])
         Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
-        qso_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
-        Err_qso_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
-        qso_mtot[n] = ((4.62 - qso_gal_Mr[n])/2.5) + log_m_l
-        Err_qso_mtot[n] = ((Err_qso_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
-        #qso_mtot[n] = qso['lgm_tot_p50'][n]
-        qso_flux_h_alpha[n] = N.max(spec[2500:])
+        # sdss_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+        # Err_sdss_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+        # sdss_mtot[n] = ((4.62 - sdss_gal_Mr[n])/2.5) + log_m_l
+        # Err_sdss_mtot[n] = ((Err_sdss_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
+        #sdss_mtot[n] = sdss['lgm_tot_p50'][n]
+        sdss_flux_h_alpha[n] = N.max(spec[2500:])
         broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
         broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
-        broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)      
+        broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
         fit = gauss(bestfit[0][0], bestfit[1][0], bestfit[2][0],bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
         fitp = gauss(bestfit[0][0]+bestfit[0][1], bestfit[1][0]+bestfit[1][1], bestfit[2][0]+bestfit[2][1],bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
-        fitm = gauss(bestfit[0][0]-bestfit[0][2], bestfit[1][0]-bestfit[1][2], bestfit[2][0]-bestfit[2][2],bestfit[3][2]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)    
-        qso_fwhm[n] = calc_fwhm(wave, broad)
+        fitm = gauss(bestfit[0][0]-bestfit[0][2], bestfit[1][0]-bestfit[1][2], bestfit[2][0]-bestfit[2][2],bestfit[3][2]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
+        sdss_fwhm[n] = calc_fwhm(wave, broad)
         fwhmp = calc_fwhm(wave, broadp)
         fwhmm = calc_fwhm(wave, broadm)
-        Err_qso_fwhm[n] = N.mean([N.abs(fwhmp-qso_fwhm[n]), N.abs(qso_fwhm[n]-fwhmm)])
-        qso_lum[n], Err_qso_lum[n], qso_mbh[n], Err_qso_mbh[n] = bhmass(ld, Err_ld, qso_fwhm[n], Err_qso_fwhm[n], wave, fit, fitp, fitm)
-        qso_lbol[n] = 8 * (4*N.pi*(ld.to(un.cm).value)**2) * 1E-23 * (299792458/12E-6) * 31.674 * 10**(-qso['w3mag'][n]/2.5)
-        Err_qso_lbol[n] = qso_lbol[n] * ( (8*4*N.pi*Err_ld/ld.value)**2 + ( ((1E-23 * (299792458/12E-6) * 31.674)/-2.5) * N.log(10) * qso['w3sigm'][n] )**2 )**(0.5)
+        Err_sdss_fwhm[n] = N.mean([N.abs(fwhmp-sdss_fwhm[n]), N.abs(sdss_fwhm[n]-fwhmm)]) 
+        sdss_lum[n], Err_sdss_lum[n], sdss_mbh[n], Err_sdss_mbh[n] = bhmass(ld, Err_ld, sdss_fwhm[n], Err_sdss_fwhm[n], wave, fit, fitp, fitm)
+        sdss_lbol[n] = 8 * (4*N.pi*(ld.to(un.cm).value)**2) * 1E-23 * (299792458/12E-6) * 31.674 * 10**(-sdss['w3mag'][n]/2.5)
+        Err_sdss_lbol[n] = sdss_lbol[n] * ( (8*4*N.pi*Err_ld/ld.value)**2 + ( ((1E-23 * (299792458/12E-6) * 31.674)/-2.5) * N.log(10) * sdss['w3sigm'][n] )**2 )**(0.5)
     else:
         pass
 
+qsdss = Table([sdss['name_1'], sdss['ID'].astype(str), sdss['RA'], sdss['Dec'], sdss['mjd'], sdss['plate'], sdss['fiberID'],  sdss['z'], sdss['Err z'], sdss['ur gal'], sdss['Err ur gal'], sdss['stellar mass'], sdss['Err stellar mass'], sdss_fwhm, Err_sdss_fwhm, sdss_lum, Err_sdss_lum, sdss_mbh, Err_sdss_mbh, sdss_lbol, Err_sdss_lbol, sdss['(B/T)r'], sdss['e_(B/T)r']], names=('name', 'ID', 'RA', 'Dec', 'mjd', 'plate', 'fibre', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol', '(B/T)r', 'e_(B/T)r'))
 
 
-qqso = Table([qso_names, qso['objID_1'], qso['RA_deg'], qso['Dec_deg'], qso_z, Err_qso_z, qso_ur, Err_qso_ur, qso_mtot, Err_qso_mtot, qso_fwhm, Err_qso_fwhm, qso_lum, Err_qso_lum, qso_mbh, Err_qso_mbh, qso_lbol, Err_qso_lbol], names=('name', 'ID', 'RA', 'Dec', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol'))
+# sdss = Table.read('sdss_spectra_dr8_dr10_sources_magnitudes_MPA_JHU_mass_WISE.fits', format='fits')
+# sdss_mtot = N.zeros(len(sdss))
+# Err_sdss_mtot = N.zeros(len(sdss))
+# sdss_fwhm = N.zeros(len(sdss))
+# Err_sdss_fwhm = N.zeros(len(sdss))
+# sdss_mbh = N.zeros(len(sdss))
+# Err_sdss_mbh = N.zeros(len(sdss))
+# sdss_lum = N.zeros(len(sdss))
+# Err_sdss_lum = N.zeros(len(sdss))
+# sdss_flux_h_alpha = N.zeros(len(sdss))
+# sdss_lbol = N.zeros(len(sdss))
+# Err_sdss_lbol = N.zeros(len(sdss))
+# sdss_z = N.zeros(len(sdss))
+# Err_sdss_z = N.zeros(len(sdss))
+# sdss_ur = N.zeros(len(sdss))
+# Err_sdss_ur = N.zeros(len(sdss))
+# sdss_gal_Mr = N.zeros(len(sdss))
+# Err_sdss_gal_Mr = N.zeros(len(sdss))
+
+# for n in range(len(sdss)):
+#     a = glob.glob(dir1+'spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'*_fits.fits')
+#     if len(a) > 0:
+#         fit = F.open(a[0])
+#         #bestfit = N.load(dir2+'spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'*_fits.fits_best_fit.npy')
+#         bestfit = N.abs(N.load(dir2+a[0].split('/')[-1]+'_best_fit.npy'))
+#         spec = fit[1].data
+#         hdr = fit[0].header
+#         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+#         wave = (10**lam)/(1+hdr['Z'])
+#         sdss_ur[n], Err_sdss_ur[n], gal_r, Err_r = calc_ur(sdss['psfMag_u'][n], sdss['psfMagErr_u'][n], sdss['psfMag_r'][n], sdss['psfMagErr_r'][n], sdss['petroMag_u'][n], sdss['petroMagErr_u'][n], sdss['petroMag_r_2'][n], sdss['petroMagErr_r_2'][n])
+#         if sdss_ur[n] <= 2.1:
+#             log_m_l = -0.95 + 0.56 * sdss_ur[n]
+#             log_m_l_err = (0.56*Err_sdss_ur[n])**2
+#         else:
+#             log_m_l = -0.16 + 0.18 * sdss_ur[n]
+#             log_m_l_err = (0.18*Err_sdss_ur[n])**2
+#         sdss_z[n] = hdr['Z']
+#         Err_sdss_z[n] = hdr['Z_ERR']
+#         ld = cosmo.luminosity_distance(hdr['Z'])
+#         Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
+#         sdss_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+#         Err_sdss_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+#         sdss_mtot[n] = ((4.62 - sdss_gal_Mr[n])/2.5) + log_m_l
+#         Err_sdss_mtot[n] = ((Err_sdss_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
+#         #sdss_mtot[n] = sdss['lgm_tot_p50'][n]
+#         sdss_flux_h_alpha[n] = N.max(spec[2500:])
+#         broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
+#         broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
+#         broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
+#         fit = gauss(bestfit[0][0], bestfit[1][0], bestfit[2][0],bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
+#         fitp = gauss(bestfit[0][0]+bestfit[0][1], bestfit[1][0]+bestfit[1][1], bestfit[2][0]+bestfit[2][1],bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
+#         fitm = gauss(bestfit[0][0]-bestfit[0][2], bestfit[1][0]-bestfit[1][2], bestfit[2][0]-bestfit[2][2],bestfit[3][2]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)
+#         sdss_fwhm[n] = calc_fwhm(wave, broad)
+#         fwhmp = calc_fwhm(wave, broadp)
+#         fwhmm = calc_fwhm(wave, broadm)
+#         Err_sdss_fwhm[n] = N.mean([N.abs(fwhmp-sdss_fwhm[n]), N.abs(sdss_fwhm[n]-fwhmm)]) 
+#         sdss_lum[n], Err_sdss_lum[n], sdss_mbh[n], Err_sdss_mbh[n] = bhmass(ld, Err_ld, sdss_fwhm[n], Err_sdss_fwhm[n], wave, fit, fitp, fitm)
+#         sdss_lbol[n] = 8 * (4*N.pi*(ld.to(un.cm).value)**2) * 1E-23 * (299792458/12E-6) * 31.674 * 10**(-sdss['w3mag'][n]/2.5)
+#         Err_sdss_lbol[n] = sdss_lbol[n] * ( (8*4*N.pi*Err_ld/ld.value)**2 + ( ((1E-23 * (299792458/12E-6) * 31.674)/-2.5) * N.log(10) * sdss['w3sigm'][n] )**2 )**(0.5)
+#     else:
+#         pass
+
+# qsdss = Table([sdss['name'], sdss['objID_dr8_1'], sdss['RA_1'], sdss['Dec_1'], sdss['MJD'], sdss['PlateID'], sdss['Fiber'],  sdss_z, Err_sdss_z, sdss_ur, Err_sdss_ur, sdss_mtot, Err_sdss_mtot, sdss_fwhm, Err_sdss_fwhm, sdss_lum, Err_sdss_lum, sdss_mbh, Err_sdss_mbh, sdss_lbol, Err_sdss_lbol], names=('name', 'ID', 'RA', 'Dec', 'mjd', 'plate', 'fibre', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol'))
+
+# #qso = Table.read('qsos_23_actual_spectra_dontneedhst_comparebhmasses_spec_info_WISE.fits', format='fits')
+# qso = Table.read('qsos_dontneedhst_comparebhmasses_spec_info_WISE.fits', format='fits')
+# qso_mtot = N.zeros(len(qso))
+# Err_qso_mtot = N.zeros(len(qso))
+# qso_fwhm = N.zeros(len(qso))
+# Err_qso_fwhm = N.zeros(len(qso))
+# qso_mbh = N.zeros(len(qso))
+# Err_qso_mbh = N.zeros(len(qso))
+# qso_lum = N.zeros(len(qso))
+# Err_qso_lum = N.zeros(len(qso))
+# qso_flux_h_alpha = N.zeros(len(qso))
+# qso_lbol = N.zeros(len(qso))
+# Err_qso_lbol = N.zeros(len(qso))
+# qso_z = N.zeros(len(qso))
+# Err_qso_z = N.zeros(len(qso))
+# qso_ur = N.zeros(len(qso))
+# Err_qso_ur = N.zeros(len(qso))
+# qso_gal_Mr = N.zeros(len(qso))
+# Err_qso_gal_Mr = N.zeros(len(qso))
+# qso_names = N.zeros(len(qso)).astype(str)
+
+# dir1 = './QSO_RESULTS/'
+# dir2 = './QSO_RESULTS/'
 
 
-results = vstack([qint, qsdss, qqso])
-#results.write('all_galaxies_z_ur_mtot_mbh_lbol_lHa_some_zero_measurements.fits', format='fits')
+# for n in range(len(qso)):
+#     qso_names[n] = 'qso'+str(n)
+#     a = glob.glob(dir1+'spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'*_fits.fits')
+#     if len(a) > 0:
+#         print 'spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'*_fits.fits'
+#         fit = F.open(a[0])
+#         #bestfit = N.load(dir2+'spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'*_fits.fits_best_fit.npy')
+#         bestfit = N.abs(N.load(dir2+a[0].split('/')[-1]+'_best_fit.npy'))
+#         print qso_names[n]
+#         print bestfit
+#         spec = fit[1].data
+#         hdr = fit[0].header
+#         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+#         wave = (10**lam)/(1+hdr['Z'])
+#         qso_ur[n], Err_qso_ur[n], gal_r, Err_r = calc_ur(qso['psfMag_u'][n], qso['psfMagErr_u'][n], qso['psfMag_r'][n], qso['psfMagErr_r'][n], qso['petroMag_u'][n], qso['petroMagErr_u'][n], qso['petroMag_r'][n], qso['petroMagErr_r'][n])
+#         if qso_ur[n] <= 2.1:
+#             log_m_l = -0.95 + 0.56 * qso_ur[n]
+#             log_m_l_err = (0.56*Err_qso_ur[n])**2
+#         else:
+#             log_m_l = -0.16 + 0.18 * qso_ur[n]
+#             log_m_l_err = (0.18*Err_qso_ur[n])**2
+#         qso_z[n]= hdr['Z']
+#         Err_qso_z[n] = hdr['Z_ERR']
+#         ld = cosmo.luminosity_distance(hdr['Z'])
+#         Err_ld = N.mean([(cosmo.luminosity_distance(hdr['Z']+hdr['Z_ERR'])-ld).value, (ld-cosmo.luminosity_distance(hdr['Z']-hdr['Z_ERR'])).value])
+#         qso_gal_Mr[n] = gal_r - 5 * (N.log10(ld.value * 1E6) - 1)
+#         Err_qso_gal_Mr[n] = (Err_r**2 + ((5*Err_ld)/(ld.value*N.log(10)))**2)**(0.5)
+#         qso_mtot[n] = ((4.62 - qso_gal_Mr[n])/2.5) + log_m_l
+#         Err_qso_mtot[n] = ((Err_qso_gal_Mr[n]/2.5)**2 + (log_m_l_err)**2)**(0.5)
+#         #qso_mtot[n] = qso['lgm_tot_p50'][n]
+#         qso_flux_h_alpha[n] = N.max(spec[2500:])
+#         broad = gaussbroad(bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
+#         broadp = gaussbroad(bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
+#         broadm = gaussbroad(bestfit[3][0]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)      
+#         fit = gauss(bestfit[0][0], bestfit[1][0], bestfit[2][0],bestfit[3][0], bestfit[4][0], bestfit[5][0], wave)
+#         fitp = gauss(bestfit[0][0]+bestfit[0][1], bestfit[1][0]+bestfit[1][1], bestfit[2][0]+bestfit[2][1],bestfit[3][0]+bestfit[3][1], bestfit[4][0]+bestfit[4][1], bestfit[5][0]+bestfit[5][1], wave)
+#         fitm = gauss(bestfit[0][0]-bestfit[0][2], bestfit[1][0]-bestfit[1][2], bestfit[2][0]-bestfit[2][2],bestfit[3][2]-bestfit[3][2], bestfit[4][0]-bestfit[4][2], bestfit[5][0]-bestfit[5][2], wave)    
+#         qso_fwhm[n] = calc_fwhm(wave, broad)
+#         fwhmp = calc_fwhm(wave, broadp)
+#         fwhmm = calc_fwhm(wave, broadm)
+#         Err_qso_fwhm[n] = N.mean([N.abs(fwhmp-qso_fwhm[n]), N.abs(qso_fwhm[n]-fwhmm)])
+#         qso_lum[n], Err_qso_lum[n], qso_mbh[n], Err_qso_mbh[n] = bhmass(ld, Err_ld, qso_fwhm[n], Err_qso_fwhm[n], wave, fit, fitp, fitm)
+#         qso_lbol[n] = 8 * (4*N.pi*(ld.to(un.cm).value)**2) * 1E-23 * (299792458/12E-6) * 31.674 * 10**(-qso['w3mag'][n]/2.5)
+#         Err_qso_lbol[n] = qso_lbol[n] * ( (8*4*N.pi*Err_ld/ld.value)**2 + ( ((1E-23 * (299792458/12E-6) * 31.674)/-2.5) * N.log(10) * qso['w3sigm'][n] )**2 )**(0.5)
+#     else:
+#         pass
+
+# qqso = Table([qso_names, qso['objID_1'], qso['RA_deg'], qso['Dec_deg'], qso['mjd'], qso['plate'], qso['fiberID'], qso_z, Err_qso_z, qso_ur, Err_qso_ur, qso_mtot, Err_qso_mtot, qso_fwhm, Err_qso_fwhm, qso_lum, Err_qso_lum, qso_mbh, Err_qso_mbh, qso_lbol, Err_qso_lbol], names=('name', 'ID', 'RA', 'Dec',  'mjd', 'plate', 'fibre', 'z', 'Err z', 'ur gal', 'Err ur gal', 'stellar mass', 'Err stellar mass', 'FWHM', 'Err FWHM', 'Ha lum', 'Err Ha lum', 'MBH', 'Err MBH', 'L bol', 'Err L bol'))
+
+
+results = vstack([qint, qsdss])
 
 results = results[N.where(results['MBH'] > 0)]
-results = results[N.isnan(results['ur gal']) == False]
+results = results[N.isnan(results['stellar mass']) == False]
 print len(results)
-#results.write('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits', format='fits')
+results.write('all_brooke_101_galaxies_z_ur_mtot_mbh_lbol_lHa_some_zero_measurements.fits', format='fits', overwrite=True)
 
 def calc_z(obs, rest):
     return round((obs/rest) -1, 2)
 
-k=0
-j = N.random.randint(9, len(sdss), 5)
-fig = P.figure(figsize=(10,13), frameon=False, edgecolor='None')
-for n in j:
-    if n ==73 or n==35:
-        n+=1
-    else:
-        pass
-    a = glob.glob('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
-    if len(a) > 0:
-        fit = F.open(a[0])
-        bestfit = N.load('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
-        spec = fit[0].data
-        hdr = fit[0].header
-        lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
-        rest_wave = (10**lam)/(1+hdr['Z'])
-        obs_wave = 10**lam
+# k=0
+# j = N.random.randint(9, len(sdss), 5)
+# fig = P.figure(figsize=(10,13), frameon=False, edgecolor='None')
+# for n in j:
+#     if n ==73 or n==35:
+#         n+=1
+#     else:
+#         pass
+#     a = glob.glob('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits')
+#     if len(a) > 0:
+#         fit = F.open(a[0])
+#         bestfit = N.load('./SDSS_RESULTS/spSpec-'+str(sdss['MJD'][n]).zfill(5)+'-'+str(sdss['PlateID'][n]).zfill(4)+'-'+str(sdss['Fiber'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+#         spec = fit[0].data
+#         hdr = fit[0].header
+#         lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+#         rest_wave = (10**lam)/(1+hdr['Z'])
+#         obs_wave = 10**lam
     
-        ax = fig.add_subplot(5,1,k+1)
-        ax.plot(rest_wave, spec, color='k')
-        ax.minorticks_on()
-        ax.tick_params(axis='y', which='minor', left='off', right='off')
-        ax.set_xlim(5900, 7600)
-        ax.text(0.925, 0.85, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
-        ax.text(0.025, 0.85, sdss['name'][n], ha='left', transform=ax.transAxes)
-        if k == 4:
-            ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
-        else:
-            pass
-        if k == 2:
-            ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
-        else:
-            pass
-        ax12 = ax.twiny()
-        ax12.set_xlim(5900, 7600)
-        if k == 0:
-            ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
-        else:
-            pass
-        rest_labels = ax.get_xticks()
-        ax12.set_xticks(rest_labels[1:-1])
-        ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
-        ax12.set_xlim(5900, 7600)
-        ax12.minorticks_on()
-        k+=1
-fig.subplots_adjust(hspace=0.5)
-#fig.tight_layout()
-fig.savefig('sample_sdss_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+#         ax = fig.add_subplot(5,1,k+1)
+#         ax.plot(rest_wave, spec, color='k')
+#         ax.minorticks_on()
+#         ax.tick_params(axis='y', which='minor', left='off', right='off')
+#         ax.set_xlim(5900, 7600)
+#         ax.text(0.925, 0.85, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
+#         ax.text(0.025, 0.85, sdss['name'][n], ha='left', transform=ax.transAxes)
+#         if k == 4:
+#             ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
+#         else:
+#             pass
+#         if k == 2:
+#             ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
+#         else:
+#             pass
+#         ax12 = ax.twiny()
+#         ax12.set_xlim(5900, 7600)
+#         if k == 0:
+#             ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
+#         else:
+#             pass
+#         rest_labels = ax.get_xticks()
+#         ax12.set_xticks(rest_labels[1:-1])
+#         ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
+#         ax12.set_xlim(5900, 7600)
+#         ax12.minorticks_on()
+#         k+=1
+# fig.subplots_adjust(hspace=0.5)
+# #fig.tight_layout()
+# fig.savefig('sample_sdss_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
-k=0
-j = N.random.randint(0, len(qso), 5)
-fig = P.figure(figsize=(5,13), frameon=False, edgecolor='None')
-for n in j:
-    a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
-    while len(a) <=0:
-        n +=1
-        a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
-    fit = F.open(a[0])
-    bestfit = N.load('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
-    spec = fit[0].data
-    hdr = fit[0].header
-    lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
-    rest_wave = (10**lam)/(1+hdr['Z'])
-    obs_wave = 10**lam
+# k=0
+# j = N.random.randint(0, len(qso), 5)
+# fig = P.figure(figsize=(5,13), frameon=False, edgecolor='None')
+# for n in j:
+#     a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+#     while len(a) <=0:
+#         n +=1
+#         a = glob.glob('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits')
+#     fit = F.open(a[0])
+#     bestfit = N.load('./QSO_RESULTS/spSpec-'+str(qso['mjd'][n]).zfill(5)+'-'+str(qso['plate'][n]).zfill(4)+'-'+str(qso['fiberID'][n]).zfill(3)+'_fits.fits_best_fit.npy')
+#     spec = fit[0].data
+#     hdr = fit[0].header
+#     lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
+#     rest_wave = (10**lam)/(1+hdr['Z'])
+#     obs_wave = 10**lam
 
-    ax = fig.add_subplot(5,1,k+1)
-    ax.plot(rest_wave, spec, color='k')
-    ax.minorticks_on()
-    ax.tick_params(axis='y', which='minor', left='off', right='off')
-    ax.set_xlim(6350, 6850)
-    ax.text(0.925, 0.9, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
-    if k == 4:
-        ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
-    else:
-        pass
-    if k == 2:
-        ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
-    else:
-        pass
-    ax12 = ax.twiny()
-    ax12.set_xlim(6350, 6850)
-    if k == 0:
-        ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
-    else:
-        pass
-    rest_labels = ax.get_xticks()
-    ax12.set_xticks(rest_labels[1:-1])
-    ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
-    ax12.set_xlim(6350, 6850)
-    ax12.minorticks_on()
-    k+=1
-fig.subplots_adjust(hspace=0.5)
-#fig.tight_layout()
-fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+#     ax = fig.add_subplot(5,1,k+1)
+#     ax.plot(rest_wave, spec, color='k')
+#     ax.minorticks_on()
+#     ax.tick_params(axis='y', which='minor', left='off', right='off')
+#     ax.set_xlim(6350, 6850)
+#     ax.text(0.925, 0.9, 'z = '+str(calc_z(obs_wave[0], rest_wave[0])), ha='right', transform=ax.transAxes)
+#     if k == 4:
+#         ax.set_xlabel(r'$\rm{Rest}$-$\rm{frame }$ $\rm{Wavelength}$,  $\lambda_{e} [\AA]$')
+#     else:
+#         pass
+#     if k == 2:
+#         ax.set_ylabel(r'$\rm{Flux }$ $[10^{-17} \rm{erg}$ $\rm{cm}^{-2}$ $\rm{s}^{-1}$ $\AA^{-1}]$')
+#     else:
+#         pass
+#     ax12 = ax.twiny()
+#     ax12.set_xlim(6350, 6850)
+#     if k == 0:
+#         ax12.set_xlabel(r'$\rm{Observed }$ $\rm{Wavelength }$, $\lambda_{o} [\AA]$')
+#     else:
+#         pass
+#     rest_labels = ax.get_xticks()
+#     ax12.set_xticks(rest_labels[1:-1])
+#     ax12.set_xticklabels((N.interp(rest_labels[:-1], rest_wave, obs_wave).astype(int)))
+#     ax12.set_xlim(6350, 6850)
+#     ax12.minorticks_on()
+#     k+=1
+# fig.subplots_adjust(hspace=0.5)
+# #fig.tight_layout()
+# fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 # fig = P.figure(figsize=(5,5))
 # ax = fig.add_subplot(1,1,1)
@@ -444,7 +516,7 @@ fig.savefig('sample_qso_spectra.pdf', frameon=False, bbox_inches='tight', pad_in
 # #P.tight_layout()
 # P.savefig('./published_vs_calculated_BH_mass_sdss_integrated_narrow_broad.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
-results = Table.read('all_galaxies_z_ur_mtot_mbh_lbol_lHa_with_measurements.fits', format='fits')
+results = Table.read('all_brooke_101_galaxies_z_ur_mtot_mbh_lbol_lHa_some_zero_measurements.fits', format='fits')
 
 mtot = N.linspace(10**8, 10**13, 20)
 mbh = 8.2 + 1.12 * N.log10(mtot/1E11)
@@ -461,9 +533,10 @@ yerr = results['Err MBH']
 x = results['stellar mass']
 xerr = results['Err stellar mass']
 
- 
 #Load all SDSS galaxies, some of which have Simard bulge to total ratio fits. The [5:] is to disregard the INT galaxies at the top
-bt = Table.read('all_101_galaxies_z_ur_mtot_mbh_lbol_etc_with_Btot_from_Simard_et_al.fits', format='fits')[5:]
+#bt = Table.read('all_101_galaxies_z_ur_mtot_mbh_lbol_etc_with_Btot_from_Simard_et_al.fits', format='fits')[5:]
+### Previously, I cross matched the results file to SImard and then reloaded the file but with the collated file I don't need to do that as it already contains the B/T ratio! 
+bt = results
 # Set those which don't have Simard B/T to have a B/T=1 as an upper limit
 bt['(B/T)r'][N.isnan(bt['(B/T)r'])] = 1
 bt['e_(B/T)r'][N.isnan(bt['e_(B/T)r'])] = N.mean(bt['e_(B/T)r'][N.isfinite(bt['e_(B/T)r'])])
@@ -584,8 +657,6 @@ nuplysm = (lmnupl.chain['alpha'].mean()-3*lmnupl.chain['alpha'].std()) + xs * (l
 # uplhrysm = (lmhrupl.chain['alpha'].mean()-3*lmhrupl.chain['alpha'].std()) + xs * (lmhrupl.chain['beta'].mean()+3*lmhrupl.chain['beta'].std())
 
 
-
-
 fig = P.figure(figsize=(5,5))
 ax = fig.add_subplot(1,1,1)
 ax.plot(xs, rysb, color='k', linestyle='solid')
@@ -594,24 +665,24 @@ ax.scatter(brooke_mtot, brooke_mbh, marker='o', c='None', edgecolor='k', s=30, l
 ax.errorbar(brooke_mtot, brooke_mbh, xerr = err_brooke_mtot, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
 ax.errorbar(int_mtot, int_mbh, xerr=Err_int_mtot, yerr=Err_int_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
 ax.scatter(int_mtot, int_mbh, marker='s', c='b', edgecolor ='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-ax.errorbar(sdss_mtot, sdss_mbh, xerr=Err_sdss_mtot, yerr=Err_sdss_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(sdss_mtot, sdss_mbh, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
-ax.errorbar(qso_mtot, qso_mbh, xerr=Err_qso_mtot, yerr=Err_qso_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
-ax.scatter(qso_mtot, qso_mbh, marker='x', c='k', s=30)
+ax.errorbar(qsdss['stellar mass'], sdss_mbh, xerr=sdss['Err stellar mass'], yerr=Err_sdss_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
+ax.scatter(qsdss['stellar mass'], sdss_mbh, marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+#ax.errorbar(qso_mtot, qso_mbh, xerr=Err_qso_mtot, yerr=Err_qso_mbh, marker='None', fmt='None', ecolor='k', alpha=0.4)
+#ax.scatter(qso_mtot, qso_mbh, marker='x', c='k', s=30)
 ax.plot(xs, hrysb, color='r', linestyle='dashed', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{(2004)}$ $\rm{fit}$')
 ax.fill_between(xs, y1=hrysp, y2=hrysm, color='r', alpha=0.1)
 # ax.plot(N.log10(mtot), bestreshr, linestyle='dashed', c='k', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{2004}$')
 # ax.plot(N.log10(mtot), plusreshr, linestyle='-.', c='k')
 # ax.plot(N.log10(mtot), minusreshr, linestyle='-.', c='k')
 ax.set_xlabel(r'$\log_{10}(M_{*}/\rm{M}_{\odot})$')
-ax.set_ylabel(r'$\log_{10}(M_{BH}/\rm{M}_{\odot})$')
+ax.set_ylabel(r'$\log_{10}(M_{\rm{BH}}/\rm{M}_{\odot})$')
 ax.minorticks_on()
 ax.set_xlim(9.4, 11.6)
 ax.set_ylim(5.5, 10.5)
 ax.legend(frameon=False, loc=2, fontsize=12)
 P.tight_layout()
 P.subplots_adjust(wspace=0.0)
-P.savefig('mass_bh_total_mass_fit_linmix_fit.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+P.savefig('mass_bh_total_mass_fit_linmix_fit_101_brooke.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 fig = P.figure(figsize=(5,5))
 ax = fig.add_subplot(1,1,1)
@@ -623,57 +694,67 @@ ax.plot(nuplysb, xs, color='k', linestyle='dashed')
 #ax.fill_betweenx(xs, x1=juplysp, x2=juplysm, color='k', alpha=0.1, hatch='.')
 #ax.plot(uplhrysb, xs, color='k', linestyle='dashdot', label='Fit to all our data, no limits + HR04 data')
 #ax.fill_betweenx(xs, x1=uplhrysp, x2=uplhrysm, color='k', alpha=0.1, hatch='/')
-ax.errorbar(bulgemass, bt['MBH'], xerr = 0.2, xuplims=True, ecolor='k', alpha=0.5, capthick=1, fmt='None', fill_style='None', label=r'$\rm{SDSS}$ $\rm{limits}$')
-ax.errorbar(11.9, 10, xerr = N.mean(err_bt_bulgemass), yerr=N.mean(err_bt_mbhs), ecolor='k', fmt='None', alpha=0.5)
-ax.errorbar(int_bulgemass, int_mbh, xerr = err_int_bulgemass, yerr=Err_int_mbh, ecolor='k', alpha=0.5, capthick=1, fmt='None', fill_style='None')
-ax.scatter(int_bulgemass, int_mbh, marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-ax.errorbar(brooke_bulgemass, brooke_mbh, xerr = err_brooke_mbh, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
-ax.scatter(brooke_bulgemass, brooke_mbh, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+
 ax.scatter(xhr, yhr, marker='o', c='None', edgecolor='r', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{(2004)}$')
 ax.errorbar(xhr, yhr, xerr=xhrerr, yerr=yhrerr, marker='o', color='None', ecolor='k', alpha=0.3)
+ax.errorbar(brooke_bulgemass, brooke_mbh, xerr = err_brooke_mbh, yerr=err_brooke_mbh, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
+ax.scatter(brooke_bulgemass, brooke_mbh, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+ax.errorbar(int_bulgemass, int_mbh, xerr = err_int_bulgemass, yerr=Err_int_mbh, ecolor='k', alpha=0.5, capthick=1, fmt='None', fill_style='None')
+ax.scatter(int_bulgemass, int_mbh, marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
+ax.errorbar(bulgemass, bt['MBH'], xerr = 0.2, xuplims=True, ecolor='k', alpha=0.5, capthick=1, fmt='None', fill_style='None', label=r'$\rm{SDSS}$ $\rm{limits}$')
+ax.errorbar(11.9, 10, xerr = N.mean(err_bt_bulgemass), yerr=N.mean(err_bt_mbhs), ecolor='k', fmt='None', alpha=0.5)
 ax.plot(xs, hrysb, color='r', linestyle='dashed', label = r'$\rm{Haring }$ $\rm{\& }$  $\rm{Rix }$ $\rm{(2004)}$ $\rm{fit}$')
 ax.fill_between(xs, y1=hrysp, y2=hrysm, color='r', alpha=0.1)
-ax.set_xlabel(r'$\log_{10}(M_{bulge}/\rm{M}_{\odot})$')
+ax.set_xlabel(r'$\log_{10}(M_{\rm{bulge}}/\rm{M}_{\odot})$')
 ax.minorticks_on()
 ax.set_xlim(7.9, 12.1)
 ax.set_ylim(5.5, 10.5)
-ax.set_ylabel(r'$\log_{10}(M_{BH}/\rm{M}_{\odot})$')
-ax.legend(frameon=False, loc=2, fontsize=12)
+ax.set_ylabel(r'$\log_{10}(M_{\rm{BH}}/\rm{M}_{\odot})$')
+ax.legend(frameon=False, loc=2, fontsize=11)
 P.tight_layout()
 P.subplots_adjust(wspace=0.0)
 P.savefig('mass_bh_bulge_limits_INT_simmons13_measurements_linmix_fit_no_simard_bt_set_to_1.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
-# qsor = Table.read('shen_2011_matched_redshif.fits', format='fits')
+qsor = Table.read('shen_2011_matched_redshif.fits', format='fits')
 
 # sdss_mdot*(Err_sdss_lbol/sdss_lbol)/(sdss_mdot*N.log(10))
 
-# fig = P.figure(figsize=(5,5))
-# ax = fig.add_subplot(1,1,1)
-# ax.errorbar(qsor['LOGBH'], qsor['LOGLBOL'], xerr=qsor['LOGBH_ERR'], yerr=qsor['LOGLBOL_ERR'], marker='None', fmt='None', ecolor='k', alpha=0.1)
-# ax.scatter(qsor['LOGBH'], qsor['LOGLBOL'], marker='^', c='None', edgecolor='g', s=20, label=r'$\rm{Shen}$ $\rm{et }$ $\rm{al. }$ $\rm{(2011)}$', alpha=0.8)
-# ax.errorbar(int_mbh, N.log10(int_lbol), xerr=Err_int_mbh, yerr=Err_int_lbol/(int_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-# ax.scatter(int_mbh, N.log10(int_lbol), marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
-# ax.errorbar(sdss_mbh, N.log10(sdss_lbol), xerr=Err_sdss_mbh, yerr=Err_sdss_lbol/(sdss_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-# ax.scatter(sdss_mbh, N.log10(sdss_lbol), marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
-# ax.errorbar(qso_mbh, N.log10(qso_lbol), xerr=Err_qso_mbh, yerr=Err_qso_lbol/(qso_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
-# ax.scatter(qso_mbh, N.log10(qso_lbol), marker='x', c='k', s=30)
-# ax.scatter(brooke_mbh, brooke_lbol, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
-# ax.errorbar(brooke_mbh, brooke_lbol, xerr = err_brooke_mbh, yerr=err_brooke_lbol, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
-# line1 = ax.plot(mbh, N.log10(0.01*1.26E38*(10**mbh)), linestyle=':', c='0.3')
-# line2 = ax.plot(mbh, N.log10(0.1*1.26E38*(10**mbh)), linestyle='-.', c='0.3')
-# line3 = ax.plot(mbh, N.log10(1.26E38*(10**mbh)), linestyle='dashed', c='0.3')
-# ax.text(9.25, 45.7, r'$\lambda_{Edd}=0.01$', rotation=0, color='0.3')
-# ax.text(8.5, 46, r'$\lambda_{Edd}=0.1$', rotation=0, color='0.3')
-# ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=0, color='0.3')
-# ax.set_xlabel(r'$log_{10}(M_{BH}/M_{\odot})$')
-# ax.set_ylabel(r'$log_{10}(L_{bol}$ $[\rm{erg}$ $\rm{s}^{-1}])$')
-# ax.minorticks_on()
-# ax.set_xlim(5.5, 10.5)
-# ax.set_ylim(43, 46.5)
-# ax.legend(frameon=False, loc=4, fontsize=12)
-# #P.tight_layout()
-# P.savefig('./mass_bh_bol_luminosity_with_all_errors_shen_11.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
+fig = P.figure(figsize=(7,6))
+ax = fig.add_subplot(1,1,1)
+ax.errorbar(qsor['LOGBH'], qsor['LOGLBOL'], xerr=qsor['LOGBH_ERR'], yerr=qsor['LOGLBOL_ERR'], marker='None', fmt='None', ecolor='k', alpha=0.1)
+ax.scatter(qsor['LOGBH'], qsor['LOGLBOL'], marker='^', c='None', edgecolor='g', s=20, label=r'$\rm{Shen}$ $\rm{et }$ $\rm{al. }$ $\rm{(2011)}$', alpha=0.8)
+ax.scatter(brooke_mbh, brooke_lbol, marker='o', c='None', edgecolor='k', s=30, label=r'$\rm{Simmons }$ $\rm{et }$ $\rm{al. }$ $\rm{(2013)}$')
+ax.errorbar(brooke_mbh, brooke_lbol, xerr = err_brooke_mbh, yerr=err_brooke_lbol, ecolor='k', capthick=1, fmt='None', fill_style='None', alpha=0.5)
+ax.errorbar(int_mbh, N.log10(int_lbol), xerr=Err_int_mbh, yerr=Err_int_lbol/(int_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+ax.scatter(int_mbh, N.log10(int_lbol), marker='s', c='b', edgecolor='b', s=30, label=r'$\rm{INT }$ $\rm{spectra}$')
+ax.errorbar(sdss_mbh, N.log10(sdss_lbol), xerr=Err_sdss_mbh, yerr=Err_sdss_lbol/(sdss_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+ax.scatter(sdss_mbh, N.log10(sdss_lbol), marker='x', c='k', s=30, label=r'$\rm{SDSS}$ $\rm{spectra}$')
+#ax.errorbar(qso_mbh, N.log10(qso_lbol), xerr=Err_qso_mbh, yerr=Err_qso_lbol/(qso_lbol*N.log(10)), marker='None', fmt='None', ecolor='k', alpha=0.4)
+#ax.scatter(qso_mbh, N.log10(qso_lbol), marker='x', c='k', s=30)
+line1 = ax.plot(mbh, N.log10(0.01*1.26E38*(10**mbh)), linestyle=':', c='0.3')
+line2 = ax.plot(mbh, N.log10(0.1*1.26E38*(10**mbh)), linestyle='-.', c='0.3')
+line3 = ax.plot(mbh, N.log10(1.26E38*(10**mbh)), linestyle='dashed', c='0.3')
+ax.text(9.25, 45.7, r'$\lambda_{Edd}=0.01$', rotation=0, color='0.3', fontsize=12)
+ax.text(8.5, 46, r'$\lambda_{Edd}=0.1$', rotation=0, color='0.3', fontsize=12)
+ax.text(7.75, 46.3, r'$\lambda_{Edd}=1$', rotation=0, color='0.3', fontsize=12)
+ax.set_xlabel(r'$\rm{log}(M_{\rm{BH}}/\rm{M}_{\odot})$')
+ax.set_ylabel(r'$\rm{log}(L_{\rm{bol}}$ $[\rm{erg}$ $\rm{s}^{-1}])$')
+ax.minorticks_on()
+ax.set_xlim(5.5, 10.5)
+ax.set_ylim(43, 46.5)
+ax.legend(frameon=False, loc=4, fontsize=12)
+ax2 = ax.twinx()
+ax2.minorticks_on()
+ax2.set_ylim(43, 46.5)
+ys = ax.get_yticks()
+fs = N.log10(((10**ys*(un.erg/un.s))/(0.15*(c.to(un.cm/un.s))**2)).to(un.solMass/un.yr).value)
+new_ys = N.interp([-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5], fs, ys)
+ax2.set_yticks(new_ys)
+ax2.set_yticklabels([r'$-3$', r'$-2.5$', r'$-2$', r'$-1.5$', r'$-1$', r'$-0.5$', r' $    0.0$', r' $    0.5$'])
+ax2.set_ylabel(r'$\log(\dot{m}/\rm{M}_{\odot}$ $\rm{yr}^{-1})$')
+#P.tight_layout()
+P.savefig('./mass_bh_bol_luminosity_with_all_errors_shen_11_brooke_101.pdf', frameon=False, bbox_inches='tight', pad_inches=0.1, transparent=True)
 
 
 
