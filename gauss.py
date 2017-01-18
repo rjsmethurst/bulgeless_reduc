@@ -214,7 +214,7 @@ for n in range(len(source)):
     broad_only = gauss(best[2][0], 6562.8, best[3][0], wave)
     narrow_only = gauss(best[0][0], 6562.8, best[1][0], wave)
     narrow_NII_1 = gauss(0.34*best[4][0], 6547.96, best[1][0], wave)
-    narrow_NII_1 = gauss(best[4][0], 6583.34, best[1][0], wave)
+    narrow_NII_2 = gauss(best[4][0], 6583.34, best[1][0], wave)
     print best
     lim1 = N.searchsorted(wave, 6400)
     lim2 =N.searchsorted(wave, 6700)
