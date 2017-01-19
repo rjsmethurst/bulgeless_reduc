@@ -245,10 +245,10 @@ for n in range(len(source)):
     nll = lambda *args: -lnproboii(*args)
     result = minimize(nll, start, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
     oiii_width = result['x'][2]
-
+    # Now fit the Halpha area with the new limits on the narrow line widths from OIII
     lim1 = N.searchsorted(wave, 6400)
     lim2 =N.searchsorted(wave, 6675)
-    start = [100, 6562, oiii_width, 2000, 6562, 2*oiii_width, 100, oiii_width, 100, oiii_width]
+    start = [1000, 6562, oiii_width, 2000, 6562, 2*oiii_width, 100, oiii_width, 300, oiii_width]
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
     sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2], oiii_width))
     ### burn in run 
