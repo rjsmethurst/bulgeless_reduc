@@ -246,6 +246,13 @@ for n in range(len(source)):
     nll = lambda *args: -lnproboiii(*args)
     result = minimize(nll, [1, 5004, 2], args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
     oiii_width = result['x'][2]
+    results = gauss(result['x'][0], result['x'][1], result['x'][2], wave)
+    P.figure()
+    ax1 =P.subplot(111)
+    ax1.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
+    ax1.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
+    ax1.text(0.1, 0.9, r'[OIII] $\sigma$ = %3.2f' % oiii_width, transform=ax1.transAxes)
+    P.savefig(dir2+source[n]+'_oiii_model_fit.png')    
     # Now fit the Halpha area with the new limits on the narrow line widths from OIII
     lim1 = N.searchsorted(wave, 6400)
     lim2 =N.searchsorted(wave, 6675)
