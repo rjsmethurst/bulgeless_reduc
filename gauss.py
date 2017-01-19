@@ -212,7 +212,7 @@ source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
 dir1 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/'
 dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components/'
 
-for n in range(1):
+for n in range(len(source)):
     bf = F.open(dir1+source[n])
     hdr = bf[0].header
     flux = bf[2].data
