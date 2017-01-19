@@ -6,6 +6,7 @@ import pyfits as F
 import emcee 
 import glob
 import time
+from scipy.optimize import minimize
 
 def walker_plot(samples, nwalkers, limit, ndim, source, dir):
         s = samples.reshape(nwalkers, -1, ndim)
@@ -73,10 +74,10 @@ def lnprioroiii(theta, wave, flux):
 def lnproboiii(theta, wave, flux, fluxerr):
     lp = lnprioroiii(theta, wave, flux)
         #print lp
-        if not N.isfinite(lp):
-            return -N.inf
-        #print lp + lnlike(theta, wave, flux, fluxerr)
-        return lp + lnlikeoiii(theta, wave, flux, fluxerr)
+    if not N.isfinite(lp):
+        return -N.inf
+    #print lp + lnlike(theta, wave, flux, fluxerr)
+    return lp + lnlikeoiii(theta, wave, flux, fluxerr)
 
 def model(theta, wave):
     # 12 theta values are 3 to describe narrow Halpha, 3 for broad Halpha, 3 for [NII] at 6547 and 3 for [NII] at 6583
@@ -242,8 +243,8 @@ for n in range(len(source)):
     # First fit to the oiii narrow component to get a limit on the width of the narrow component and a good guess for start point. 
     lim1 = N.searchsorted(wave, 4980)
     lim2 = N.searchsorted(wave, 5050)
-    nll = lambda *args: -lnproboii(*args)
-    result = minimize(nll, start, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
+    nll = lambda *args: -lnproboiii(*args)
+    result = minimize(nll, [1, 5004, 2], args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
     oiii_width = result['x'][2]
     # Now fit the Halpha area with the new limits on the narrow line widths from OIII
     lim1 = N.searchsorted(wave, 6400)
