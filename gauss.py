@@ -76,7 +76,7 @@ def lnlike(theta, wave, flux, fluxerr):
 
 def lnprior(theta, wave, flux):
     a, u, s, a1, u1, s1, an1, sn1, an2, sn2 = theta
-    if a > 0 and a < 1000 and a1 > 0 and an1 > 0 and an1 < 1000 and an2 > 0 and an2 < 1000 and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<10 and s > 0 and s < 15 and sn1 > 0 and sn1 <15 and sn2 > 0 and sn2 < 15 and N.abs(s-sn2) < 2 and N.abs(s-sn1) < 2 and s1 > 0 and s1 < 2000 and s < s1:
+    if a > 0 and a1 > 0 and an1 > 0  and an2 > 0 and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<10 and s > 0 and s < 15 and sn1 > 0 and sn1 <15 and sn2 > 0 and sn2 < 15 and N.abs(s-sn2) < 2 and N.abs(s-sn1) < 2 and s1 > 0 and s1 < 2000 and s < s1:
     	return 0.0
     else:
     	return -N.inf
@@ -212,6 +212,7 @@ source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
 dir1 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/'
 dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components/'
 
+rerun_list=[]
 for n in range(len(source)):
     bf = F.open(dir1+source[n])
     hdr = bf[0].header
@@ -238,6 +239,12 @@ for n in range(len(source)):
     N.save(dir2+source[n]+'_samples.npy', samples)
     ### Same again - uncomment the next line if you want to see the walker plot for the main sampler run
     walker_plot(samples, nwalkers, nsteps, ndim, source[n], dir2)
+    print "Mean acceptance fraction: {0:.3f}".format(np.mean(sampler.acceptance_fraction))
+    if np.mean(sampler.acceptance_fraction) > 0.5 or np.mean(sampler.acceptance_fraction) < 0.25:
+        rerun_list.append(source[n])
+        print 'Acceptance fractions out of optimal range!'
+    else:
+        pass
     best = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
     N.save(dir2+source[n]+'_best_fit.npy', best)
     results = model([best[0][0], best[1][0], best[2][0], best[3][0], best[4][0], best[5][0], best[6][0], best[7][0], best[8][0], best[9][0]], wave)
@@ -248,11 +255,14 @@ for n in range(len(source)):
     print best
     print 'FWHM calc', calc_fwhm(wave, broad_only)
     P.figure()
-    P.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
-    P.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
-    P.plot(wave[lim1:lim2], broad_only[lim1:lim2], c='b')
-    P.plot(wave[lim1:lim2], narrow_only[lim1:lim2], c='m')
-    P.plot(wave[lim1:lim2], narrow_NII_1[lim1:lim2], c='g')
-    P.plot(wave[lim1:lim2], narrow_NII_2[lim1:lim2], c='g')
-    P.text(0.1, 0.9, r'FWHM = %3.2f' % calc_fwhm(wave, broad_only))
+    ax1 =P.subplot(111)
+    ax1.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
+    ax1.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
+    ax1.plot(wave[lim1:lim2], broad_only[lim1:lim2], c='b')
+    ax1.plot(wave[lim1:lim2], narrow_only[lim1:lim2], c='m')
+    ax1.plot(wave[lim1:lim2], narrow_NII_1[lim1:lim2], c='g')
+    ax1.plot(wave[lim1:lim2], narrow_NII_2[lim1:lim2], c='g')
+    ax1.text(0.1, 0.9, r'FWHM = %3.2f' % calc_fwhm(wave, broad_only), transform=ax1.transAxes)
     P.savefig(dir2+source[n]+'_model_fit.png')
+
+print "Here's the list of spectra that need running because the acceptance fractions were out of optimal range: ", rerun_list
