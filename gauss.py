@@ -50,11 +50,33 @@ def walker_plot(samples, nwalkers, limit, ndim, source, dir):
         ax9.tick_params(axis='x', labelbottom='off')
         ax9.set_ylabel(r'amplitude narrow [NII] 6583')
         ax10.set_ylabel(r'stdev [NII] 6583')
-        P.subplots_adjust(hspace=0.1)
-        P.tight_layout()
+        P.subplots_adjust(hspace=0.05)
+        #P.tight_layout()
         fig.savefig(dir+'./walkers_steps_'+source+'.pdf')
         return fig
 
+def lnlikeoiii(theta, wave, flux, fluxerr):
+    a, u, s = theta
+    pred_f = gauss(a, u, s, wave)
+    #print pred_f
+    chi =  -0.5*N.log(2*N.pi*fluxerr**2)-0.5*((flux-pred_f)**2/fluxerr**2)
+    #print N.sum(chi)
+    return N.sum(chi)
+
+def lnprioroiii(theta, wave, flux):
+    a, u, s = theta
+    if a > 0 and s > 0:
+        return 0.0
+    else:
+        return -N.inf
+
+def lnproboiii(theta, wave, flux, fluxerr):
+    lp = lnprioroiii(theta, wave, flux)
+        #print lp
+        if not N.isfinite(lp):
+            return -N.inf
+        #print lp + lnlike(theta, wave, flux, fluxerr)
+        return lp + lnlikeoiii(theta, wave, flux, fluxerr)
 
 def model(theta, wave):
     # 12 theta values are 3 to describe narrow Halpha, 3 for broad Halpha, 3 for [NII] at 6547 and 3 for [NII] at 6583
@@ -66,7 +88,6 @@ def model(theta, wave):
     return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2))) + a1 *(1/(s1*N.sqrt(2*N.pi))) * N.exp(- (((wave - u1)**2) /(s1**2))) + an1 * (1/(sn1*N.sqrt(2*N.pi))) * N.exp(- (((wave - un1)**2) /(sn1**2))) + an2 * (1/(sn2*N.sqrt(2*N.pi))) * N.exp(- (((wave - un2)**2) /(sn2**2))) 
 
 
-
 def lnlike(theta, wave, flux, fluxerr):
     pred_f = model(theta, wave)
     #print pred_f
@@ -74,15 +95,16 @@ def lnlike(theta, wave, flux, fluxerr):
     #print N.sum(chi)
     return N.sum(chi)
 
-def lnprior(theta, wave, flux):
+
+def lnprior(theta, wave, flux, oiii_width):
     a, u, s, a1, u1, s1, an1, sn1, an2, sn2 = theta
-    if a > 0 and a1 > 0 and an1 > 0  and an2 > 0 and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<10 and s > 0 and s < 15 and sn1 > 0 and sn1 <15 and sn2 > 0 and sn2 < 15 and N.abs(s-sn2) < 2 and N.abs(s-sn1) < 2 and s1 > 0 and s1 < 2000 and s < s1:
+    if a > 0 and a1 > 0 and an1 > 0  and an2 > 0 and a > an1 and a > an2 and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<10 and s > 0 and s < 1.1*oiii_width and sn1 > 0 and sn2 > 0 and N.abs(s-sn2) < 0.1*oiii_width and N.abs(s-sn1) < 0.1*oiii_width and s1 > 0 and s1 < 2000 and s < s1:
     	return 0.0
     else:
     	return -N.inf
 
-def lnprob(theta, wave, flux, fluxerr):
-	lp = lnprior(theta, wave, flux)
+def lnprob(theta, wave, flux, fluxerr, oiii_width):
+	lp = lnprior(theta, wave, flux, oiii_width)
         #print lp
     	if not N.isfinite(lp):
         	return -N.inf
@@ -90,9 +112,6 @@ def lnprob(theta, wave, flux, fluxerr):
     	return lp + lnlike(theta, wave, flux, fluxerr)
 
 def gauss(a, u, s, wave):
-    return a * N.exp(- (((wave - u)**2) /(s**2)))
-
-def gauss2(a, u, s, wave):
     return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2)))
 
 def calc_fwhm(wave, emission):
@@ -110,7 +129,6 @@ nwalkers = 200
 nsteps = 500
 burnin = 2000
 # guess some reasonable start values for a, u, s, a1, u1, s1, an1, sn1, an2, sn2
-start = [100, 6562, 0.5, 200, 6562, 2, 100, 0.5, 100, 0.5]
 
 source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54184-2607-477_bluecutoff_fits.fits',
@@ -210,7 +228,7 @@ source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54572-2531-250_fits.fits'])
 
 dir1 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/'
-dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components/'
+dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components_oiii_width/'
 
 rerun_list=[]
 for n in range(len(source)):
@@ -221,10 +239,18 @@ for n in range(len(source)):
     lam = hdr['CRVAL1'] + hdr['CD1_1']*(N.arange(hdr['NAXIS1'] -  hdr['CRPIX1'] + 1))
     wave = (10**lam)/(1+hdr['Z'])
     print source[n]
+    # First fit to the oiii narrow component to get a limit on the width of the narrow component and a good guess for start point. 
+    lim1 = N.searchsorted(wave, 4980)
+    lim2 = N.searchsorted(wave, 5050)
+    nll = lambda *args: -lnproboii(*args)
+    result = minimize(nll, start, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
+    oiii_width = result['x'][2]
+
     lim1 = N.searchsorted(wave, 6400)
     lim2 =N.searchsorted(wave, 6675)
+    start = [100, 6562, oiii_width, 2000, 6562, 2*oiii_width, 100, oiii_width, 100, oiii_width]
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2], oiii_width))
     ### burn in run 
     pos, prob, state = sampler.run_mcmc(p0, burnin)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
@@ -239,8 +265,8 @@ for n in range(len(source)):
     N.save(dir2+source[n]+'_samples.npy', samples)
     ### Same again - uncomment the next line if you want to see the walker plot for the main sampler run
     walker_plot(samples, nwalkers, nsteps, ndim, source[n], dir2)
-    print "Mean acceptance fraction: {0:.3f}".format(np.mean(sampler.acceptance_fraction))
-    if np.mean(sampler.acceptance_fraction) > 0.5 or np.mean(sampler.acceptance_fraction) < 0.25:
+    print "Mean acceptance fraction: {0:.3f}".format(N.mean(sampler.acceptance_fraction))
+    if N.mean(sampler.acceptance_fraction) > 0.5 or N.mean(sampler.acceptance_fraction) < 0.25:
         rerun_list.append(source[n])
         print 'Acceptance fractions out of optimal range!'
     else:
@@ -248,10 +274,10 @@ for n in range(len(source)):
     best = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]), zip(*N.percentile(samples, [16,50,84],axis=0)))
     N.save(dir2+source[n]+'_best_fit.npy', best)
     results = model([best[0][0], best[1][0], best[2][0], best[3][0], best[4][0], best[5][0], best[6][0], best[7][0], best[8][0], best[9][0]], wave)
-    broad_only = gauss2(best[3][0], best[4][0], best[5][0], wave)
-    narrow_only = gauss2(best[0][0], best[1][0], best[2][0], wave)
-    narrow_NII_1 = gauss2(best[6][0], best[1][0]-(6562.8 - 6547.96), best[7][0], wave)
-    narrow_NII_2 = gauss2(best[8][0], best[1][0]+ (6583.34 - 6562.8), best[9][0], wave)
+    broad_only = gauss(best[3][0], best[4][0], best[5][0], wave)
+    narrow_only = gauss(best[0][0], best[1][0], best[2][0], wave)
+    narrow_NII_1 = gauss(best[6][0], best[1][0]-(6562.8 - 6547.96), best[7][0], wave)
+    narrow_NII_2 = gauss(best[8][0], best[1][0]+ (6583.34 - 6562.8), best[9][0], wave)
     print best
     print 'FWHM calc', calc_fwhm(wave, broad_only)
     P.figure()
