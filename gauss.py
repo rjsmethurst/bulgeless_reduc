@@ -7,6 +7,7 @@ import emcee
 import glob
 import time
 from scipy.optimize import minimize
+from astropy.table import Table
 
 def walker_plot(samples, nwalkers, limit, ndim, source, dir):
         s = samples.reshape(nwalkers, -1, ndim)
@@ -22,39 +23,38 @@ def walker_plot(samples, nwalkers, limit, ndim, source, dir):
         ax8 = P.subplot(ndim,1,8)
         ax9 = P.subplot(ndim,1,9)
         ax10 = P.subplot(ndim,1,10)
-        ax1.plot(s[:,:,0].T, 'k')
-        ax2.plot(s[:,:,1].T, 'k')
-        ax3.plot(s[:,:,2].T, 'k')
-        ax4.plot(s[:,:,3].T, 'k')
-        ax5.plot(s[:,:,4].T, 'k')
-        ax6.plot(s[:,:,5].T, 'k')
-        ax7.plot(s[:,:,6].T, 'k')
-        ax8.plot(s[:,:,7].T, 'k')
-        ax9.plot(s[:,:,8].T, 'k')
-        ax10.plot(s[:,:,9].T, 'k')
+        ax1.plot(s[:,:,0].T, 'k', rasterized=True)
+        ax2.plot(s[:,:,1].T, 'k', rasterized=True)
+        ax3.plot(s[:,:,2].T, 'k', rasterized=True)
+        ax4.plot(s[:,:,3].T, 'k', rasterized=True)
+        ax5.plot(s[:,:,4].T, 'k', rasterized=True)
+        ax6.plot(s[:,:,5].T, 'k', rasterized=True)
+        ax7.plot(s[:,:,6].T, 'k', rasterized=True)
+        ax8.plot(s[:,:,7].T, 'k', rasterized=True)
+        ax9.plot(s[:,:,8].T, 'k', rasterized=True)
+        ax10.plot(s[:,:,9].T, 'k', rasterized=True)
         ax1.tick_params(axis='x', labelbottom='off')
-        ax1.set_ylabel(r'amplitude narrow $H\alpha$')
+        ax1.set_ylabel(r'amp N $H\alpha$')
         ax2.tick_params(axis='x', labelbottom='off')
-        ax2.set_ylabel(r'wavelength $H\alpha$')
+        ax2.set_ylabel(r'wave $H\alpha$')
         ax3.tick_params(axis='x', labelbottom='off')
-        ax3.set_ylabel(r'stdev narrow $H\alpha$')
+        ax3.set_ylabel(r'stdev N $H\alpha$')
         ax4.tick_params(axis='x', labelbottom='off')
-        ax4.set_ylabel(r'amplitude broad $H\alpha$')
+        ax4.set_ylabel(r'amp B $H\alpha$')
         ax5.tick_params(axis='x', labelbottom='off')
-        ax5.set_ylabel(r'wavelength broad $H\alpha$')
+        ax5.set_ylabel(r'wave B $H\alpha$')
         ax6.tick_params(axis='x', labelbottom='off')
-        ax6.set_ylabel(r'stdev broad $H\alpha$')
+        ax6.set_ylabel(r'stdev B $H\alpha$')
         ax7.tick_params(axis='x', labelbottom='off')
-        ax7.set_ylabel(r'amplitude narrow [NII] 6547')
+        ax7.set_ylabel(r'amp N [NII] 6547')
         ax8.tick_params(axis='x', labelbottom='off')
-        ax8.set_ylabel(r'stdev [NII] 6547')
+        ax8.set_ylabel(r'stdev N [NII] 6547')
         ax9.tick_params(axis='x', labelbottom='off')
-        ax9.set_ylabel(r'amplitude narrow [NII] 6583')
-        ax10.set_ylabel(r'stdev [NII] 6583')
+        ax9.set_ylabel(r'amp N [NII] 6583')
+        ax10.set_ylabel(r'stdev N [NII] 6583')
         P.subplots_adjust(hspace=0.05)
         #P.tight_layout()
-        fig.savefig(dir+'./walkers_steps_'+source+'.pdf')
-        return fig
+        fig.savefig(dir+'./walkers_steps_'+source+'.png')
 
 def lnlikeoiii(theta, wave, flux, fluxerr):
     a, u, s = theta
@@ -84,10 +84,10 @@ def model(theta, wave):
     # a, u, s, a1, u1, s1, an1, un1, sn1, an2, un2, sn2 = theta
     # but some of these are set, so really we only have 7 variables
     a, u, s, a1, u1, s1, an1, sn1, an2, sn2  = theta
-    un1 = u - (wave[N.searchsorted(wave, 6562.8)] - wave[N.searchsorted(wave, 6547.96)])
-    un2 = u + (wave[N.searchsorted(wave, 6583.34)] - wave[N.searchsorted(wave, 6562.8)])
-    return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2))) + a1 *(1/(s1*N.sqrt(2*N.pi))) * N.exp(- (((wave - u1)**2) /(s1**2))) + an1 * (1/(sn1*N.sqrt(2*N.pi))) * N.exp(- (((wave - un1)**2) /(sn1**2))) + an2 * (1/(sn2*N.sqrt(2*N.pi))) * N.exp(- (((wave - un2)**2) /(sn2**2))) 
-
+    un1 = u - (6562.8 - 6547.96)
+    un2 = u + (6583.34 - 6562.8)
+    #return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2))) + a1 *(1/(s1*N.sqrt(2*N.pi))) * N.exp(- (((wave - u1)**2) /(s1**2))) + an1 * (1/(sn1*N.sqrt(2*N.pi))) * N.exp(- (((wave - un1)**2) /(sn1**2))) + an2 * (1/(sn2*N.sqrt(2*N.pi))) * N.exp(- (((wave - un2)**2) /(sn2**2))) 
+    return a * N.exp(- (((wave - u)**2) /(s**2))) + a1 * N.exp(- (((wave - u1)**2) /(s1**2))) + an1 * N.exp(- (((wave - un1)**2) /(sn1**2))) + an2 * N.exp(- (((wave - un2)**2) /(sn2**2))) 
 
 def lnlike(theta, wave, flux, fluxerr):
     pred_f = model(theta, wave)
@@ -99,7 +99,7 @@ def lnlike(theta, wave, flux, fluxerr):
 
 def lnprior(theta, wave, flux, oiii_width):
     a, u, s, a1, u1, s1, an1, sn1, an2, sn2 = theta
-    if a > 0 and a1 > 0 and an1 > 0  and an2 > 0 and a > an1 and a > an2 and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<10 and s > 0 and s < 1.1*oiii_width and sn1 > 0 and sn2 > 0 and N.abs(s-sn2) < 0.1*oiii_width and N.abs(s-sn1) < 0.1*oiii_width and s1 > 0 and s1 < 2000 and s < s1:
+    if a > 0 and a1 > 0 and an1 >= 0  and an2 >= 0 and an1 <= 0.34*an2 and an2 <= a and u > 6555 and u < 6580 and u1 > 6555 and u1 < 6580 and N.abs(u-u1)<3 and s > 0 and s < 3*6562.8*oiii_width and sn1 >= 0 and sn2 >= 0 and sn2 < 3*6583.34*oiii_width and sn1 < 3*6547.96*oiii_width and s1 > 0 and s1 < 2000 and s < s1:
     	return 0.0
     else:
     	return -N.inf
@@ -113,7 +113,8 @@ def lnprob(theta, wave, flux, fluxerr, oiii_width):
     	return lp + lnlike(theta, wave, flux, fluxerr)
 
 def gauss(a, u, s, wave):
-    return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2)))
+    #return a * (1/(s*N.sqrt(2*N.pi))) * N.exp(- (((wave - u)**2) /(s**2)))
+    return a * N.exp(- (((wave - u)**2) /(s**2)))
 
 def calc_fwhm(wave, emission):
     max = N.max(emission)
@@ -129,7 +130,6 @@ ndim = 10
 nwalkers = 200
 nsteps = 500
 burnin = 2000
-# guess some reasonable start values for a, u, s, a1, u1, s1, an1, sn1, an2, sn2
 
 source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54184-2607-477_bluecutoff_fits.fits',
@@ -229,7 +229,8 @@ source = list(['spSpec-54241-2516-619_bluecutoff_fits.fits',
                 'spSpec-54572-2531-250_fits.fits'])
 
 dir1 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/'
-dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components_oiii_width/'
+dir2 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/emcee_gauss_fits_4_components_Brooke_oiii_width/'
+dir3 = '/Users/becky/Projects/int_reduc/bdmass_fits_gandalf_bds/combined_sdss_spectra/oiii_line_components_profiles_tables/'
 
 rerun_list=[]
 for n in range(len(source)):
@@ -241,24 +242,33 @@ for n in range(len(source)):
     wave = (10**lam)/(1+hdr['Z'])
     print source[n]
     # First fit to the oiii narrow component to get a limit on the width of the narrow component and a good guess for start point. 
-    lim1 = N.searchsorted(wave, 4980)
-    lim2 = N.searchsorted(wave, 5050)
-    nll = lambda *args: -lnproboiii(*args)
-    result = minimize(nll, [1, 5004, 2], args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
-    oiii_width = result['x'][2]
-    results = gauss(result['x'][0], result['x'][1], result['x'][2], wave)
-    P.figure()
-    ax1 =P.subplot(111)
-    ax1.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
-    ax1.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
-    ax1.text(0.1, 0.9, r'[OIII] $\sigma$ = %3.2f' % oiii_width, transform=ax1.transAxes)
-    P.savefig(dir2+source[n]+'_oiii_model_fit.png')    
+    # lim1 = N.searchsorted(wave, 4980)
+    # lim2 = N.searchsorted(wave, 5050)
+    # nll = lambda *args: -lnproboiii(*args)
+    # result = minimize(nll, [1, 5004, 2], args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2]))
+    # oiii_width = result['x'][2]
+    # oiii_amp = result['x'][0]
+    # results = gauss(result['x'][0], result['x'][1], result['x'][2], wave)
+    # P.figure()
+    # ax1 =P.subplot(111)
+    # ax1.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
+    # ax1.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
+    # ax1.text(0.1, 0.9, r'[OIII] $\sigma$ = %3.2f' % oiii_width, transform=ax1.transAxes)
+    # P.savefig(dir2+source[n]+'_oiii_model_fit.png') 
+
+    # First load up the width of the narrow [OIII] component output by Brooke from GANDALF
+    oiiip = Table.read(dir3+source[n].split('_fits.fits')[0]+'_oiii_narrow_components.dat', format='ascii')
+    oiii_width = oiiip['sigma_Ang'][0]
+    oiii_amp = oiiip['observed_A'][0]
+    oiii_wave = oiiip['lambda_fit'][0]
     # Now fit the Halpha area with the new limits on the narrow line widths from OIII
     lim1 = N.searchsorted(wave, 6400)
-    lim2 =N.searchsorted(wave, 6675)
-    start = [1000, 6562, oiii_width, 2000, 6562, 2*oiii_width, 100, oiii_width, 300, oiii_width]
+    lim2 =N.searchsorted(wave, 6700)
+    # Give emcee some appropriate starting points based on the OIII fits. 
+    # guess some reasonable start values for a, u, s, a1, u1, s1, an1, sn1, an2, sn2, anw1, snw1, anw2, snw2
+    start = [oiii_amp, 6562, (6562.8/oiii_wave)*oiii_width, 0.5*oiii_amp, 6562, 10*(6562.8/oiii_wave)*oiii_width, 0.34*oiii_amp, (6548/oiii_wave)*oiii_width, oiii_amp, (6583/oiii_wave)*oiii_width]
     p0 = [start + 1e-4*N.random.randn(ndim) for i in range(nwalkers)]
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2], oiii_width))
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(wave[lim1:lim2], flux[lim1:lim2], fluxerr[lim1:lim2], oiii_width/oiii_wave))
     ### burn in run 
     pos, prob, state = sampler.run_mcmc(p0, burnin)
     samples = sampler.chain[:,:,:].reshape((-1,ndim))
@@ -285,12 +295,13 @@ for n in range(len(source)):
     broad_only = gauss(best[3][0], best[4][0], best[5][0], wave)
     narrow_only = gauss(best[0][0], best[1][0], best[2][0], wave)
     narrow_NII_1 = gauss(best[6][0], best[1][0]-(6562.8 - 6547.96), best[7][0], wave)
-    narrow_NII_2 = gauss(best[8][0], best[1][0]+ (6583.34 - 6562.8), best[9][0], wave)
+    narrow_NII_2 = gauss(best[8][0], best[1][0]+(6583.34 - 6562.8), best[9][0], wave)
     print best
     print 'FWHM calc', calc_fwhm(wave, broad_only)
     P.figure()
     ax1 =P.subplot(111)
     ax1.plot(wave[lim1:lim2], flux[lim1:lim2], c='k', linewidth=2)
+    ax1.plot(wave[lim1:lim2], bf[0].data[lim1:lim2]-bf[0].data[lim1:lim2][0], c='k', alpha=0.3, linewidth=2)
     ax1.plot(wave[lim1:lim2], results[lim1:lim2], c='r', linestyle='dashed')
     ax1.plot(wave[lim1:lim2], broad_only[lim1:lim2], c='b')
     ax1.plot(wave[lim1:lim2], narrow_only[lim1:lim2], c='m')
