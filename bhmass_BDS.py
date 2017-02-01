@@ -112,7 +112,7 @@ def Halpha_MBH(lum, Err_lum, fwhm_v, Err_fwhm_v):
     return 10.**lmbh, Err_mbh
 
 
-
+#
 
 # gonna do a little bootstrappin'
 # with asymmetric error bars 'cause that's how I roll

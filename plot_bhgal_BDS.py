@@ -25,18 +25,29 @@ except:
 
 
 
-datatable = '/Users/vrooje/Documents/Astro/bbcint_paper/data/spectra/sdss_int_results_table_101_sources_new_bhmasses.fits'
+datatable = '/Users/vrooje/Documents/Astro/bbcint_paper/data/spectra/sdss_int_results_table_101_sources_new_bhmasses_newcolnames.fits'
 # this is quite an all-inclusive table and it includes results from stuff we've done in other scripts,
 # like computing BH masses, galaxy masses, and also external stuff like Simard et al.
 # bulge-to-total ratios.
-# The relevant columns here are:
+#
+# The relevant columns here are (but see below):
 # name, ID, RA, Dec, spectrum_source, z, Err z, stellar mass, Err stellar mass, L bol, Err L bol, (B/T)r, e_(B/T)r, MBH_best, dMBH_hi_best, dMBH_lo_best
-cols_keep = ['name', 'ID', 'RA', 'Dec', 'spectrum_source', 'z', 'Err z', 'stellar mass', 'Err stellar mass', 'L bol', 'Err L bol', '(B/T)r', 'e_(B/T)r', 'MBH_best', 'dMBH_hi_best', 'dMBH_lo_best']
+#
+# turns out some of these columns names break the attempt to read them in for newer package versions
+#cols_keep = ['name', 'ID', 'RA', 'Dec', 'spectrum_source', 'z', 'Err z', 'stellar mass', 'Err stellar mass', 'L bol', 'Err L bol', '(B/T)r', 'e_(B/T)r', 'MBH_best', 'dMBH_hi_best', 'dMBH_lo_best']
+#
+# hence the "newcolnames" bit in datatable above
+cols_keep = ['name', 'ID', 'RA', 'Dec', 'spectrum_source', 'z', 'Err_z', 'stellar_mass', 'Err_stellar_mass', 'L_bol', 'Err_L_bol', 'BT_r', 'e_BT_r', 'MBH_best', 'dMBH_hi_best', 'dMBH_lo_best']
 
-mbhcol  = 'MBH_best'
-dmbhcol = 'dMBH_best'
+mbhcol    = 'MBH_best'
+dmbhcol   = 'dMBH_best'
 
-intcolor = '#228dcc'
+mstarcol  = 'stellar_mass'
+dmstarcol = 'Err_stellar_mass'
+BTcol     = 'BT_r'
+dBTcol    = 'e_BT_r'
+
+intcolor = "#228dcc"
 
 
 
@@ -285,8 +296,8 @@ xhrerr = Column(data=0.18*N.log10(xhr.data), name='Haring and Rix Err bulge mass
 
 y = results[mbhcol]
 yerr = results[dmbhcol]
-x = results['stellar mass']
-xerr = results['Err stellar mass']
+x = results[mstarcol]
+xerr = results[dmstarcol]
 
 # I think this is a legacy step that makes copy-pasting easier
 bt = results
@@ -296,36 +307,36 @@ is_sdss = bt['spectrum_source'] == 'SDSS'
 is_int  = N.array([q.rstrip() == 'INT' for q in bt['spectrum_source']])
 
 # Set those which don't have Simard B/T to have a B/T=1 as an upper limit
-bt['(B/T)r'][N.isnan(bt['(B/T)r'])] = 1
-bt['e_(B/T)r'][N.isnan(bt['e_(B/T)r'])] = N.mean(bt['e_(B/T)r'][N.isfinite(bt['e_(B/T)r'])])
+bt[BTcol][N.isnan(bt[BTcol])] = 1
+bt[dBTcol][N.isnan(bt[dBTcol])] = N.mean(bt[dBTcol][N.isfinite(bt[dBTcol])])
 
 
 #Calculate bulgemass upper limits of SDSS galaxies
-bulgemass = N.log10(bt['(B/T)r'][is_sdss]) + bt['stellar mass'][is_sdss]
-# in the second term of this I don't think you need the #/bt['stellar mass'][is_sdss]
+bulgemass = N.log10(bt[BTcol][is_sdss]) + bt[mstarcol][is_sdss]
+# in the second term of this I don't think you need the #/bt[mstarcol][is_sdss]
 # because the error in log space already is a ratio
-err_bulgemass = N.sqrt((bt['e_(B/T)r'][is_sdss]/bt['(B/T)r'][is_sdss])**2 + (bt['Err stellar mass'][is_sdss])**2)
+err_bulgemass = N.sqrt((bt[dBTcol][is_sdss]/bt[BTcol][is_sdss])**2 + (bt[dmstarcol][is_sdss])**2)
 
 
 
-int_bt = bt['(B/T)r'][is_int]
-int_bulgemass = N.log10(bt['(B/T)r'][is_int]) + bt['stellar mass'][is_int]
-# in the second term of this I don't think you need the #/bt['stellar mass'][is_int]
+int_bt = bt[BTcol][is_int]
+int_bulgemass = N.log10(bt[BTcol][is_int]) + bt[mstarcol][is_int]
+# in the second term of this I don't think you need the #/bt[mstarcol][is_int]
 # because the error in log space already is a ratio
-err_int_bulgemass = N.sqrt( (0.2)**2 + (bt['Err stellar mass'][is_int])**2 )
+err_int_bulgemass = N.sqrt( (0.2)**2 + (bt[dmstarcol][is_int])**2 )
 #B/T == 1 means it's an upper limit, not actually measured
 int_is_meas = int_bt < 1.
 int_delta = N.zeros(len(int_bt))
 int_delta[int_is_meas] += 1
 
 # going to define some other things for plotting purposes
-int_mtot      = bt['stellar mass'][is_int]
-Err_int_mtot  = bt['Err stellar mass'][is_int]
+int_mtot      = bt[mstarcol][is_int]
+Err_int_mtot  = bt[dmstarcol][is_int]
 int_mbh       = bt[mbhcol][is_int]
 Err_int_mbh   = bt[dmbhcol][is_int]
 
-sdss_mtot     = bt['stellar mass'][is_sdss]
-Err_sdss_mtot = bt['Err stellar mass'][is_sdss]
+sdss_mtot     = bt[mstarcol][is_sdss]
+Err_sdss_mtot = bt[dmstarcol][is_sdss]
 sdss_mbh      = bt[mbhcol][is_sdss]
 Err_sdss_mbh  = bt[dmbhcol][is_sdss]
 
@@ -352,9 +363,10 @@ err_bt_bulgemass = N.append(err_brooke_bulgemass, N.append(N.array(err_bulgemass
 #Brooke's galaxies have measured B/T, SDSS are all upper limits and INT values have 2 measured, 3 upper limits (set to a B/T =1)
 delta = N.append(N.ones(len(brooke_mtot)), N.append(N.zeros(len(bt[is_sdss])), int_delta))
 
+
 # plot a histogram of B/T ratios, just a check (as almost all, but not all, are upper limits)
 P.figure(figsize=(6,3))
-P.hist(N.append(brooke_BT, N.array(bt['(B/T)r'])), range=(-0.05,1.05), bins=15, histtype='step', color='k')
+P.hist(N.append(brooke_BT, N.array(bt[BTcol])), range=(-0.05,1.05), bins=15, histtype='step', color='k')
 P.xlabel(r'$[\rm{B}/\rm{T}]_r$')
 P.ylabel(r'$\rm{number}$')
 P.ylim(0,20)
@@ -365,8 +377,9 @@ P.savefig('bulge_to_total_r_ratio_hist_with_INT_simmons13.pdf', frameon=False, t
 
 
 
-
-xs = N.linspace(0, 15, 100)
+# the x values we'll be using for all the linmix fits
+# (finely sampled so they don't look jagged)
+xs = N.linspace(0, 15, 500)
 
 
 # Now either load the linmix parameters from a file or re-fit the data
@@ -401,7 +414,7 @@ else:
 
 
     #Use linmix to fit to stellar mass and MBH relation from DISKDOM sample
-    lmr  = linmix.LinMix(results['stellar mass'], results[mbhcol], results['Err stellar mass'], results[dmbhcol], K=2)
+    lmr  = linmix.LinMix(results[mstarcol], results[mbhcol], results[dmstarcol], results[dmbhcol], K=2)
     lmr.run_mcmc(silent=False, maxiter=5000)
     lmr_alpha = lmr.chain['alpha']
     lmr_beta  = lmr.chain['beta']
@@ -412,6 +425,7 @@ else:
 
     #Use linmix to fit to upper limits on bulgemass from DISKDOM sample (inlcuding those with no measurement from Simard set to B/T = 1)
     # this one is pretty much all upper limits so sometimes it requires some extra iterations to converge
+    # also sometimes it seems to never actually converge, so keep an eye on this one (the parameter space is nearly unconstrained)
     lmupl  = linmix.LinMix(bt_mbhs, bt_bulgemass, err_bt_mbhs, err_bt_bulgemass, delta=delta, K=2)
     lmupl.run_mcmc(silent=False, maxiter=40000)
     lmupl_alpha = lmupl.chain['alpha']
@@ -431,9 +445,9 @@ else:
 
 
 
-# Now whether we've read in or re-fit, compute the shaded regions
+# Now whether we've read in or re-fit, compute the shaded regions, 2 ways
 
-# we're going to be using these a lot so don't keep recalculating them
+# we may these a lot so don't keep recalculating them
 lmhr_amed   = N.median(lmhr_alpha)
 lmhr_bmed   = N.median(lmhr_beta)
 lmhr_astd   = lmhr_alpha.std()
@@ -454,6 +468,7 @@ lmnupl_bmed = N.median(lmnupl_beta)
 lmnupl_astd = lmnupl_alpha.std()
 lmnupl_bstd = lmnupl_beta.std()
 
+# these are akin to the kind of error shadings a standard linfit would produce
 #hrysb = lmhr_alpha.mean() + xs * lmhr_beta.mean()
 #hrysp = (lmhr_alpha.mean()+3*lmhr_alpha.std()) + xs * (lmhr_beta.mean()-3*lmhr_beta.std())
 #hrysm = (lmhr_alpha.mean()-3*lmhr_alpha.std()) + xs * (lmhr_beta.mean()+3*lmhr_beta.std())
@@ -477,20 +492,18 @@ nuplysp = (lmnupl_amed+3*lmnupl_astd) + xs * (lmnupl_bmed-3*lmnupl_bstd)
 nuplysm = (lmnupl_amed-3*lmnupl_astd) + xs * (lmnupl_bmed+3*lmnupl_bstd)
 
 
+# Error regions using the mcmc walkers (after an assumed burn-in)
+# (not entirely clear to me what burn-in is a good idea but this seems safe)
+burnin = 1000
 
-nsamp = 10000
+# 3 sigma
+pctiles = [1, 99]
+# 2 sigma
+#pctiles = [5, 95]
+# 1 sigma
+#pctiles = [16, 84]
 
-# only one delta array for each fit type because alpha, beta for each come as a pair
-d_hra    = N.random.randn(nsamp)
-d_ra     = N.random.randn(nsamp)
-d_upla   = N.random.randn(nsamp)
-d_nupla  = N.random.randn(nsamp)
-
-ll_hr    = N.zeros([nsamp, len(xs)])
-ll_r     = N.zeros([nsamp, len(xs)])
-ll_upl   = N.zeros([nsamp, len(xs)])
-ll_nupl  = N.zeros([nsamp, len(xs)])
-
+# q doesn't stand for anything, it's just what I use sometimes
 qhrysp   = N.zeros(len(xs))
 qhrysm   = N.zeros(len(xs))
 qrysp    = N.zeros(len(xs))
@@ -500,31 +513,70 @@ quplysm  = N.zeros(len(xs))
 qnuplysp = N.zeros(len(xs))
 qnuplysm = N.zeros(len(xs))
 
-for i in range(nsamp):
-    ll_hr[i]   = (lmhr_amed   + d_hra[i]*lmhr_astd)     + xs * (lmhr_bmed   - d_hra[i]  *lmhr_bstd)
-    ll_r[i]    = (lmr_amed    + d_ra[i]*lmr_astd)       + xs * (lmr_bmed    - d_ra[i]   *lmr_bstd)
-    ll_upl[i]  = (lmupl_amed  + d_upla[i]*lmupl_astd)   + xs * (lmupl_bmed  - d_upla[i] *lmupl_bstd)
-    ll_nupl[i] = (lmnupl_amed + d_nupla[i]*lmnupl_astd) + xs * (lmnupl_bmed - d_nupla[i]*lmnupl_bstd)
+# these will store the arrays of actual lines from the chain parameters
+ll_hr    = N.zeros([len(lmhr_alpha)-burnin,   len(xs)])
+ll_r     = N.zeros([len(lmr_alpha)-burnin,    len(xs)])
+ll_upl   = N.zeros([len(lmupl_alpha)-burnin,  len(xs)])
+ll_nupl  = N.zeros([len(lmnupl_alpha)-burnin, len(xs)])
 
-# the above made nsamp separate arrays of A lines. Now we want A arrays of nsamp yvalues
-# for each x value
+#xl_upl = ll_upl.copy()
+
+for i in range(len(lmhr_alpha)-burnin):
+    ll_hr[i]   = (lmhr_alpha[i+burnin])   + xs * (lmhr_beta[i+burnin])
+
+for i in range(len(lmr_alpha)-burnin):
+    ll_r[i]    = (lmr_alpha[i+burnin])    + xs * (lmr_beta[i+burnin])
+
+for i in range(len(lmupl_alpha)-burnin):
+    ll_upl[i]  = (lmupl_alpha[i+burnin])  + xs * (lmupl_beta[i+burnin])
+    #xl_upl[i]  = xs
+
+for i in range(len(lmnupl_alpha)-burnin):
+    ll_nupl[i] = (lmnupl_alpha[i+burnin]) + xs * (lmnupl_beta[i+burnin])
+
+# this was trying to figure out the shapes in y bins instead of x
+# but it's not quite working right, very slow, and the x way seems to work fine
+# yupl = ll_upl.flatten()
+# xupl = xl_upl.flatten()
+#
+# ymin_upl = min(yupl)
+# ymax_upl = max(yupl)
+#
+# if ymin_upl < 0.:
+#     ymin_upl = 0.
+#
+# if ymax_upl > 12.:
+#     ymax_upl = 12.
+#
+# ys = N.linspace(ymin_upl, ymax_upl, 200)
+# dy = ys[1] - ys[0]
+#
+# xupl_m = N.zeros(len(ys))
+# xupl_p = N.zeros(len(ys))
+#
+# for i, the_y in enumerate(ys):
+#     these_y = abs(yupl - the_y) <= dy/2.
+#     xupl_m[i] = N.percentile(xupl[these_y], pctiles[0])
+#     xupl_p[i] = N.percentile(xupl[these_y], pctiles[1])
+#
+# yysm = N.interp(xs, xupl_m, ys)
+# yysp = N.interp(xs, xupl_p, ys)
+
+
+# the above made nwalker separate arrays of lines, each with length len(xs).
+# Now we want len(xs) arrays of nwalker yvalues at each x value
 hrsamp   = ll_hr.T
 rsamp    = ll_r.T
 uplsamp  = ll_upl.T
 nuplsamp = ll_nupl.T
 
-# 3 sigma
-pctiles = [1, 99]
-# 2 sigma
-#pctiles = [5, 95]
-# 1 sigma
-#pctiles = [16, 84]
-
+# now get the percentiles of the distribution at each x value
 for i_x, thex in enumerate(xs):
     qhrysm[i_x]   = N.percentile(hrsamp[i_x], pctiles[0])
     qrysm[i_x]    = N.percentile(rsamp[i_x], pctiles[0])
     quplysm[i_x]  = N.percentile(uplsamp[i_x], pctiles[0])
     qnuplysm[i_x] = N.percentile(nuplsamp[i_x], pctiles[0])
+    #
     qhrysp[i_x]   = N.percentile(hrsamp[i_x], pctiles[1])
     qrysp[i_x]    = N.percentile(rsamp[i_x], pctiles[1])
     quplysp[i_x]  = N.percentile(uplsamp[i_x], pctiles[1])
@@ -534,7 +586,7 @@ for i_x, thex in enumerate(xs):
 
 
 
-
+# The individual plots of just total mass or just bulge mass are outdated at this point
 
 ####################################################
 # Just the total mass plot
@@ -555,7 +607,7 @@ for i_x, thex in enumerate(xs):
 ####################################################
 # Both plots together
 ####################################################
-plot_mbh_mbulge_mgal(xs, uplysb, uplysp, uplysm, nuplysb, qnuplysp, qnuplysm, xhr, yhr, xhrerr, yhrerr, hrysb, qhrysp, qhrysm, rysb, qrysp, qrysm, brooke_bulgemass, brooke_mtot, brooke_mbh, err_brooke_mtot, err_brooke_mbh, int_bulgemass, int_mtot, int_mbh, err_int_bulgemass, Err_int_mbh, bulgemass, sdss_mtot, sdss_mbh, Err_sdss_mtot, Err_sdss_mbh, int_is_meas )
+plot_mbh_mbulge_mgal(xs, uplysb, quplysp, quplysm, nuplysb, qnuplysp, qnuplysm, xhr, yhr, xhrerr, yhrerr, hrysb, qhrysp, qhrysm, rysb, qrysp, qrysm, brooke_bulgemass, brooke_mtot, brooke_mbh, err_brooke_mtot, err_brooke_mbh, int_bulgemass, int_mtot, int_mbh, err_int_bulgemass, Err_int_mbh, bulgemass, sdss_mtot, sdss_mbh, Err_sdss_mtot, Err_sdss_mbh, int_is_meas )
 
 
 
