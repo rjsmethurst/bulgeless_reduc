@@ -585,6 +585,18 @@ for i_x, thex in enumerate(xs):
 
 
 
+# which of the BH masses are above what would be expected based on HR04?
+
+mbh_expect_hr_sdss = lmhr_amed +     (bulgemass * lmhr_bmed)
+mbh_expect_hr_int  = lmhr_amed + (int_bulgemass * lmhr_bmed)
+
+above_hr_sdss = sdss_mbh > mbh_expect_hr_sdss
+above_hr_int  = int_mbh  > mbh_expect_hr_int
+
+print("SDSS spectra: %d black holes with masses higher than HR04 (of %d, or f = %.3f)" % (sum(above_hr_sdss), len(above_hr_sdss), float(sum(above_hr_sdss))/float(len(above_hr_sdss))))
+print("INT spectra: %d black holes with masses higher than HR04 (of %d, or f = %.3f)" % (sum(above_hr_int), len(above_hr_int), float(sum(above_hr_int))/float(len(above_hr_int))))
+print("Total: %d of %d above (f = %.3f)" % ((sum(above_hr_sdss)+sum(above_hr_int)), (len(above_hr_sdss)+len(above_hr_int)) , (float(sum(above_hr_sdss)+sum(above_hr_int))/float(len(above_hr_sdss)+len(above_hr_int)))))
+
 
 # The individual plots of just total mass or just bulge mass are outdated at this point
 
